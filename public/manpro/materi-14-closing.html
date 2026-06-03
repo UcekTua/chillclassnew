@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="id"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Materi 14: Closing Projects - ManPro Study</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Segoe UI',sans-serif; background:#0f0f1a; color:#e0e0e0; line-height:1.7; }
+.container { max-width:900px; margin:0 auto; padding:20px; }
+h1 { font-size:2em; background:linear-gradient(135deg,#6366f1,#a855f7); -webkit-background-clip:text; -webkit-text-fill-color:transparent; margin-bottom:10px; }
+h2 { color:#a78bfa; border-bottom:2px solid #a78bfa33; padding-bottom:8px; margin:30px 0 15px; font-size:1.4em; }
+h3 { color:#c4b5fd; margin:20px 0 10px; font-size:1.15em; }
+.card { background:#1a1a2e; border-radius:12px; padding:25px; margin:15px 0; border:1px solid #ffffff10; }
+.highlight { background:#2d1b69; border-left:4px solid #a855f7; padding:15px 20px; border-radius:0 8px 8px 0; margin:10px 0; }
+.tip { background:#1a2e1a; border-left:4px solid #4ade80; padding:15px 20px; border-radius:0 8px 8px 0; margin:10px 0; }
+.warn { background:#2e2a1a; border-left:4px solid #fbbf24; padding:15px 20px; border-radius:0 8px 8px 0; margin:10px 0; }
+table { width:100%; border-collapse:collapse; margin:15px 0; }
+th { background:#6366f133; color:#a78bfa; padding:12px; text-align:left; }
+td { padding:10px 12px; border-bottom:1px solid #ffffff10; }
+tr:hover { background:#ffffff05; }
+ul,ol { padding-left:25px; margin:10px 0; }
+li { margin:5px 0; }
+.quiz-section { background:#1a1a2e; border-radius:12px; padding:25px; margin:20px 0; border:1px solid #6366f133; }
+.question { background:#16162a; padding:20px; border-radius:10px; margin:15px 0; border:1px solid #ffffff08; }
+.question p { font-weight:600; margin-bottom:12px; color:#e2e8f0; }
+.option { display:block; padding:10px 15px; margin:5px 0; background:#1e1e3a; border-radius:8px; cursor:pointer; transition:all .2s; border:1px solid transparent; }
+.option:hover { background:#2a2a4a; border-color:#6366f155; }
+.option.selected { background:#6366f133; border-color:#6366f1; }
+.option.correct { background:#16a34a33; border-color:#16a34a; }
+.option.wrong { background:#dc262633; border-color:#dc2626; }
+.btn { background:linear-gradient(135deg,#6366f1,#a855f7); color:#fff; border:none; padding:12px 30px; border-radius:8px; cursor:pointer; font-size:1em; margin:10px 5px; transition:transform .2s; }
+.btn:hover { transform:scale(1.03); }
+.result { padding:20px; border-radius:10px; margin:15px 0; font-size:1.1em; font-weight:600; }
+.nav { display:flex; flex-wrap:wrap; gap:8px; margin:20px 0; }
+.nav a { background:#1a1a2e; color:#a78bfa; padding:8px 16px; border-radius:8px; text-decoration:none; border:1px solid #a78bfa33; font-size:.9em; transition:all .2s; }
+.nav a:hover { background:#6366f133; }
+.badge { display:inline-block; background:#6366f133; color:#a78bfa; padding:3px 10px; border-radius:20px; font-size:.8em; margin:2px; }
+details { margin:10px 0; }
+summary { cursor:pointer; color:#c4b5fd; font-weight:600; padding:8px; background:#16162a; border-radius:8px; }
+details[open] summary { border-radius:8px 8px 0 0; }
+details > div { background:#1e1e30; padding:15px; border-radius:0 0 8px 8px; }
+
+        /* Overrides for Chill Class Floating Integration */
+        .topnav { position:fixed !important; top:24px !important; right:24px !important; margin:0 !important; background:rgba(10,14,26,0.6) !important; padding:10px 24px !important; border-radius:100px !important; border:1px solid rgba(99,102,241,0.3) !important; box-shadow: 0 8px 32px rgba(0,0,0,0.5) !important; width:auto !important; flex-wrap: nowrap !important; display:flex !important; gap:12px !important; align-items:center !important; z-index:9999 !important; backdrop-filter: blur(10px) !important; }
+        .topnav a { background:transparent !important; border:none !important; padding:0 !important; color:#94a3b8 !important; font-weight:600 !important; font-size:0.85rem !important; transition:color 0.2s !important; }
+        .topnav a:hover { color:#c4b5fd !important; }
+        .topnav a[style*="background:#6366f1"] { color:#fff !important; font-weight: 800 !important; }
+        @media (max-width:768px) {
+            .topnav { top:auto !important; bottom:24px !important; right:50% !important; transform:translateX(50%) !important; padding:10px 16px !important; font-size: 0.8rem !important; white-space: nowrap !important; overflow-x: auto !important; max-width: 90vw !important; }
+        }
+        .container { padding-top: 80px !important; }
+    
+</style></head><body>
+<div class="container">
+<nav class="topnav"><a href="materi-10-communication-stakeholder.html">Ch 10</a><a href="materi-11-risk-procurement.html">Ch 11</a><a href="materi-12-executing.html">Ch 12</a><a href="materi-13-monitoring-controlling.html">Ch 13</a><a href="materi-14-closing.html" style="background:#6366f1;color:#fff;">Ch 14</a><a href="simulasi-uas.html">📝 UAS</a></nav>
+<h1>Materi 14: Closing Projects</h1>
+
+<div class="card">
+<h2>📌 Gambaran Umum</h2>
+<p><strong>Closing Projects</strong> adalah proses grup terakhir dalam manajemen proyek. Intinya: <em>menyelesaikan semua aktivitas, mengarsip informasi proyek, memastikan semua pekerjaan selesai, dan melepaskan sumber daya organisasi.</em></p>
+<p>Banyak tim proyek yang mengabaikan fase ini, padahal closing yang baik sangat penting untuk pembelajaran di proyek-proyek selanjutnya.</p>
+<div class="highlight">💡 <strong>Poin Kunci:</strong> Closing dilakukan baik untuk proyek yang <em>berhasil diselesaikan</em> maupun yang <em>dibatalkan</em>. Keduanya tetap perlu ditutup secara formal.</div>
+</div>
+
+<div class="card">
+<h2>🔄 4 Cara Menutup/Mengakhiri Proyek</h2>
+<table>
+<tr><th>Tipe</th><th>Penjelasan</th><th>Contoh</th></tr>
+<tr><td><strong>Integration</strong></td><td>Proyek selesai, hasilnya diintegrasikan ke operasi bisnis sehari-hari. <em>Ini yang paling umum!</em></td><td>Aplikasi baru selesai dibuat lalu diserahkan ke tim operasional untuk digunakan.</td></tr>
+<tr><td><strong>Addition</strong></td><td>Proyek menghasilkan produk/layanan baru yang membentuk unit organisasi baru (divisi/departemen baru).</td><td>Proyek R&D sukses → jadi divisi bisnis baru di perusahaan.</td></tr>
+<tr><td><strong>Extinction</strong></td><td>Proyek dihentikan karena sudah tercapai tujuannya (sukses) ATAU gagal/tidak relevan lagi.</td><td>Proyek riset selesai, tidak ada kelanjutan. Atau proyek dibatalkan karena teknologinya sudah ketinggalan.</td></tr>
+<tr><td><strong>Starvation</strong></td><td>Proyek "dimatikan pelan-pelan" dengan cara mengurangi/memotong anggarannya. Biasanya untuk menyembunyikan kegagalan.</td><td>Budget proyek terus dipotong sampai akhirnya tidak bisa jalan. Manajemen melakukan ini supaya tidak malu.</td></tr>
+</table>
+<div class="tip">🧠 <strong>Cara Mengingat (IAES):</strong> "<strong>I</strong>ndah <strong>A</strong>da <strong>E</strong>kstra <strong>S</strong>nack" → Integration, Addition, Extinction, Starvation</div>
+</div>
+
+<div class="card">
+<h2>📋 Output Utama Closing (Integration Management)</h2>
+<ol>
+<li><strong>Project Documents Updates</strong> — Semua dokumen proyek di-review dan ditandai sebagai versi final.</li>
+<li><strong>Final Product/Service/Result Transition</strong> — Produk akhir diserahkan dan ditransisikan ke bagian organisasi yang tepat. <em>Sponsor paling peduli pada bagian ini!</em></li>
+<li><strong>Final Report</strong> — Laporan akhir proyek dan presentasi penutupan.</li>
+<li><strong>Organizational Process Assets Updates</strong> — Memperbarui aset proses organisasi seperti template, kebijakan, dan terutama <strong>lessons-learned reports</strong>.</li>
+</ol>
+</div>
+
+<div class="card">
+<h2>📝 Dokumen-Dokumen Penting saat Closing</h2>
+
+<h3>1. Customer Acceptance/Project Completion Form</h3>
+<p>Formulir resmi yang menandakan bahwa customer/sponsor telah <strong>menerima dan menyetujui</strong> semua deliverable proyek. Ini adalah bukti formal bahwa proyek dianggap selesai.</p>
+
+<h3>2. Final Report</h3>
+<p>Laporan lengkap yang merangkum seluruh proyek: tujuan, pencapaian, perbandingan rencana vs aktual (scope, time, cost), dan ringkasan perubahan yang terjadi.</p>
+
+<h3>3. Transition Plan</h3>
+<p>Rencana detail bagaimana produk/hasil proyek akan diserahterimakan ke tim operasional. Mencakup pelatihan, dokumentasi teknis, dan periode pendampingan.</p>
+
+<h3>4. Lessons-Learned Report</h3>
+<p>Dokumen yang mencatat apa yang berjalan baik, apa yang bermasalah, dan rekomendasi untuk proyek masa depan. Ini adalah <strong>aset paling berharga</strong> dari closing!</p>
+<div class="highlight">💡 Lessons-Learned sebaiknya <strong>didokumentasikan sepanjang proyek berlangsung</strong>, bukan hanya di akhir. Bisa menggunakan blog, progress report, atau repository khusus.</div>
+</div>
+
+<div class="card">
+<h2>🤝 Close-Out Meeting</h2>
+<p>Mirip dengan kick-off meeting di awal proyek, close-out meeting mengundang <strong>stakeholder kunci</strong>. Yang dibahas:</p>
+<ol>
+<li>Review pencapaian scope, time, dan cost (target vs hasil aktual)</li>
+<li>Success criteria dan hasilnya</li>
+<li>Perubahan-perubahan utama yang terjadi dan bagaimana diatasi</li>
+<li>Lessons learned utama</li>
+<li>Ringkasan transition plan</li>
+</ol>
+<div class="warn">⚠️ Project champion/sponsor yang membuka meeting, lalu PM dan tim mempresentasikan informasi di atas.</div>
+</div>
+
+<div class="card">
+<h2>🔁 Knowledge Transfer</h2>
+<p><strong>Knowledge Transfer</strong> = proses mengkomunikasikan pengetahuan yang dikembangkan oleh satu orang/bagian organisasi ke orang/bagian lain.</p>
+<ul>
+<li>Orang yang akan <em>mengambil alih</em> produk/hasil proyek perlu menghabiskan waktu bersama tim proyek untuk memahami detail.</li>
+<li><strong>Human capital</strong> (pengetahuan karyawan) adalah salah satu aset terpenting organisasi.</li>
+<li>Knowledge transfer harus dijadikan <strong>prioritas</strong>, terutama jika benefit proyek tidak langsung terasa.</li>
+</ul>
+</div>
+
+<div class="card">
+<h2>🔄 Closing Agile/Hybrid Projects</h2>
+<p>Proyek agile juga punya aktivitas closing, tapi dilakukan secara iteratif:</p>
+<table>
+<tr><th>Event Scrum</th><th>Peran dalam Closing</th></tr>
+<tr><td><strong>Daily Scrum</strong></td><td>Bisa dianggap sebagai "closure" untuk hari sebelumnya. Tim fokus pada progress menuju sprint goal.</td></tr>
+<tr><td><strong>Sprint Review</strong></td><td>Closure untuk sprint. Stakeholder memberi feedback, menginspeksi hasil, dan menentukan adaptasi. Jika tidak ada value, bisa jadi tidak ada sprint selanjutnya.</td></tr>
+<tr><td><strong>Sprint Retrospective</strong></td><td>Tim membahas apa yang baik, masalah apa yang ditemui, dan bagaimana memperbaiki. Mirip lessons-learned tapi per sprint.</td></tr>
+</table>
+<p>Saat proyek agile berakhir, tim tetap harus:</p>
+<ol>
+<li>Transisi pekerjaan ke tim operasional</li>
+<li>Mengadakan close-out meeting</li>
+<li>Mengadakan <strong>final retrospective</strong> untuk seluruh proyek</li>
+<li>Merayakan akhir proyek! 🎉</li>
+</ol>
+</div>
+
+<div class="card">
+<h2>💡 Tips & Advice untuk Closing</h2>
+<ul>
+<li>✅ <strong>Rencanakan closing sejak awal</strong> — masukkan deliverable closing di WBS dan alokasikan resource</li>
+<li>✅ <strong>Dokumentasikan lessons learned sesegera mungkin</strong> — jangan tunggu akhir proyek</li>
+<li>✅ <strong>Ucapkan terima kasih</strong> ke tim dan stakeholder</li>
+<li>✅ <strong>Adakan perayaan</strong> — bisa formal (untuk proyek besar yang sukses) atau informal (makan bersama, gathering virtual)</li>
+<li>✅ Gunakan blog atau progress report untuk menangkap lessons learned secara berkala</li>
+</ul>
+</div>
+
+<div class="card">
+<h2>🧠 Ringkasan Poin Penting & Cara Menghafal</h2>
+<div class="highlight">
+<p><strong>CLOSING = FATUK</strong></p>
+<ul>
+<li><strong>F</strong>inal Report & dokumen</li>
+<li><strong>A</strong>rsip semua informasi proyek</li>
+<li><strong>T</strong>ransisi produk ke operasional</li>
+<li><strong>U</strong>capkan terima kasih & rayakan</li>
+<li><strong>K</strong>nowledge transfer & lessons learned</li>
+</ul>
+</div>
+<div class="tip">
+<p><strong>4 Cara Tutup Proyek = IAES:</strong> Integration (paling umum), Addition (unit baru), Extinction (selesai/gagal), Starvation (budget dipotong)</p>
+</div>
+</div>
+
+<div class="card">
+<h2>📖 Contoh Soal & Pembahasan</h2>
+<details><summary>Soal 1: Apa cara paling umum untuk menutup proyek?</summary>
+<div><p><strong>Jawaban: Integration</strong></p><p>Penjelasan: Pada Integration, proyek selesai dan produk/layanan yang dibuat diintegrasikan ke dalam operasi organisasi sehari-hari. Staff dan resource proyek dilepas kembali ke organisasi. Ini adalah cara paling umum menutup proyek.</p></div></details>
+
+<details><summary>Soal 2: Apa perbedaan antara Extinction dan Starvation?</summary>
+<div><p><strong>Jawaban:</strong></p><p><strong>Extinction</strong> = proyek dihentikan secara langsung/jelas, baik karena sukses (goal tercapai, tidak perlu lanjut) atau gagal.</p><p><strong>Starvation</strong> = proyek "dimatikan pelan-pelan" dengan memotong budget secara bertahap. Biasanya dilakukan manajemen untuk menghindari malu (avoid embarrassment) dari kegagalan proyek.</p></div></details>
+
+<details><summary>Soal 3: Mengapa lessons-learned sebaiknya tidak hanya didokumentasikan di akhir proyek?</summary>
+<div><p><strong>Jawaban:</strong> Karena jika menunggu akhir proyek, banyak detail penting yang sudah dilupakan. Mendokumentasikan lessons learned sepanjang proyek berlangsung memastikan informasi masih segar dan akurat. Bisa menggunakan blog, progress report, atau repository khusus.</p></div></details>
+
+<details><summary>Soal 4: Apa peran Sprint Retrospective dalam closing agile?</summary>
+<div><p><strong>Jawaban:</strong> Sprint Retrospective berfungsi sebagai mini-closing setiap sprint, di mana tim membahas apa yang baik, masalah yang ditemui, dan cara memperbaiki. Saat proyek berakhir, diadakan final retrospective yang fokus pada lessons learned seluruh proyek (bukan hanya satu sprint).</p></div></details>
+</div>
+
+
+<div class="quiz-section" id="quiz_closing">
+<h2>🎯 Latihan Soal: Closing Projects</h2>
+<p>Pilih jawaban yang paling tepat, lalu klik Submit untuk melihat hasilnya.</p>
+<div class="question" id="quiz_closing_q1"><p>1. Cara menutup proyek di mana hasilnya diintegrasikan ke operasi organisasi disebut...</p><label class="option" id="quiz_closing_q1_a" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_closing_q1" style="display:none">A. Extinction</label><label class="option" id="quiz_closing_q1_b" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_closing_q1" style="display:none">B. Addition</label><label class="option" id="quiz_closing_q1_c" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_closing_q1" style="display:none">C. Integration</label><label class="option" id="quiz_closing_q1_d" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_closing_q1" style="display:none">D. Starvation</label></div><div class="question" id="quiz_closing_q2"><p>2. Berikut ini yang BUKAN merupakan output utama dari closing project adalah...</p><label class="option" id="quiz_closing_q2_a" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_closing_q2" style="display:none">A. Final Report</label><label class="option" id="quiz_closing_q2_b" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_closing_q2" style="display:none">B. Risk Register Update</label><label class="option" id="quiz_closing_q2_c" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_closing_q2" style="display:none">C. Lessons-Learned Report</label><label class="option" id="quiz_closing_q2_d" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_closing_q2" style="display:none">D. Customer Acceptance Form</label></div><div class="question" id="quiz_closing_q3"><p>3. Ketika manajemen memotong budget proyek secara bertahap untuk menyembunyikan kegagalan, cara ini disebut...</p><label class="option" id="quiz_closing_q3_a" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_closing_q3" style="display:none">A. Extinction</label><label class="option" id="quiz_closing_q3_b" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_closing_q3" style="display:none">B. Integration</label><label class="option" id="quiz_closing_q3_c" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_closing_q3" style="display:none">C. Addition</label><label class="option" id="quiz_closing_q3_d" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_closing_q3" style="display:none">D. Starvation</label></div><div class="question" id="quiz_closing_q4"><p>4. Siapa yang biasanya membuka close-out meeting?</p><label class="option" id="quiz_closing_q4_a" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_closing_q4" style="display:none">A. Project Manager</label><label class="option" id="quiz_closing_q4_b" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_closing_q4" style="display:none">B. Project Champion/Sponsor</label><label class="option" id="quiz_closing_q4_c" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_closing_q4" style="display:none">C. Tim Developer</label><label class="option" id="quiz_closing_q4_d" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_closing_q4" style="display:none">D. Stakeholder Eksternal</label></div><div class="question" id="quiz_closing_q5"><p>5. Dalam agile, event mana yang berfungsi sebagai 'mini-closing' setiap sprint?</p><label class="option" id="quiz_closing_q5_a" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_closing_q5" style="display:none">A. Daily Scrum</label><label class="option" id="quiz_closing_q5_b" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_closing_q5" style="display:none">B. Sprint Planning</label><label class="option" id="quiz_closing_q5_c" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_closing_q5" style="display:none">C. Sprint Retrospective</label><label class="option" id="quiz_closing_q5_d" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_closing_q5" style="display:none">D. Backlog Refinement</label></div><div class="question" id="quiz_closing_q6"><p>6. Knowledge Transfer adalah proses...</p><label class="option" id="quiz_closing_q6_a" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_closing_q6" style="display:none">A. Memindahkan anggota tim ke proyek lain</label><label class="option" id="quiz_closing_q6_b" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_closing_q6" style="display:none">B. Mengkomunikasikan pengetahuan dari satu pihak ke pihak lain dalam organisasi</label><label class="option" id="quiz_closing_q6_c" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_closing_q6" style="display:none">C. Menghapus data proyek lama</label><label class="option" id="quiz_closing_q6_d" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_closing_q6" style="display:none">D. Membuat proposal proyek baru</label></div><div class="question" id="quiz_closing_q7"><p>7. Apa aset paling berharga yang dihasilkan dari proses closing?</p><label class="option" id="quiz_closing_q7_a" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_closing_q7" style="display:none">A. Final Report</label><label class="option" id="quiz_closing_q7_b" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_closing_q7" style="display:none">B. Customer Acceptance Form</label><label class="option" id="quiz_closing_q7_c" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_closing_q7" style="display:none">C. Lessons-Learned Report</label><label class="option" id="quiz_closing_q7_d" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_closing_q7" style="display:none">D. Transition Plan</label></div><div class="question" id="quiz_closing_q8"><p>8. Proyek yang menghasilkan produk baru sehingga membentuk divisi/unit baru di organisasi ditutup dengan cara...</p><label class="option" id="quiz_closing_q8_a" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_closing_q8" style="display:none">A. Integration</label><label class="option" id="quiz_closing_q8_b" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_closing_q8" style="display:none">B. Addition</label><label class="option" id="quiz_closing_q8_c" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_closing_q8" style="display:none">C. Extinction</label><label class="option" id="quiz_closing_q8_d" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_closing_q8" style="display:none">D. Starvation</label></div><div class="question" id="quiz_closing_q9"><p>9. Kapan sebaiknya lessons learned mulai didokumentasikan?</p><label class="option" id="quiz_closing_q9_a" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_closing_q9" style="display:none">A. Hanya di akhir proyek</label><label class="option" id="quiz_closing_q9_b" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_closing_q9" style="display:none">B. Saat close-out meeting</label><label class="option" id="quiz_closing_q9_c" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_closing_q9" style="display:none">C. Sepanjang proyek berlangsung</label><label class="option" id="quiz_closing_q9_d" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_closing_q9" style="display:none">D. Setelah proyek diaudit</label></div><div class="question" id="quiz_closing_q10"><p>10. Dalam closing agile project, final retrospective fokus pada...</p><label class="option" id="quiz_closing_q10_a" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_closing_q10" style="display:none">A. Hanya sprint terakhir</label><label class="option" id="quiz_closing_q10_b" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_closing_q10" style="display:none">B. Seluruh proyek dari awal hingga akhir</label><label class="option" id="quiz_closing_q10_c" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_closing_q10" style="display:none">C. Hanya bug yang belum diperbaiki</label><label class="option" id="quiz_closing_q10_d" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_closing_q10" style="display:none">D. Perencanaan proyek baru</label></div>
+<div style="margin-top:15px;">
+<button class="btn" onclick="submitQuiz('quiz_closing',{1:'c',2:'b',3:'d',4:'b',5:'c',6:'b',7:'c',8:'b',9:'c',10:'b'})">📊 Submit</button>
+<button class="btn" style="background:#374151;" onclick="resetQuiz('quiz_closing')">🔄 Reset</button>
+</div>
+<div id="quiz_closing_result"></div>
+</div>
+
+</div>
+<script>
+function initQuiz(quizId) {
+  var key = 'quiz_' + quizId;
+  var saved = localStorage.getItem(key);
+  if (saved) {
+    var data = JSON.parse(saved);
+    data.forEach(function(item) {
+      var opt = document.getElementById(item.id);
+      if (opt) { opt.classList.add('selected'); opt.querySelector('input').checked = true; }
+    });
+  }
+}
+function selectOpt(el, quizId) {
+  var qDiv = el.closest('.question');
+  qDiv.querySelectorAll('.option').forEach(function(o){ o.classList.remove('selected'); });
+  el.classList.add('selected');
+  el.querySelector('input').checked = true;
+  saveSelections(quizId);
+}
+function saveSelections(quizId) {
+  var key = 'quiz_' + quizId;
+  var selections = [];
+  document.querySelectorAll('#'+quizId+' .option.selected').forEach(function(el){
+    selections.push({id: el.id});
+  });
+  localStorage.setItem(key, JSON.stringify(selections));
+}
+function submitQuiz(quizId, answers) {
+  var score = 0;
+  var total = Object.keys(answers).length;
+  for (var qNum in answers) {
+    var q = document.getElementById(quizId + '_q' + qNum);
+    if (!q) continue;
+    var selected = q.querySelector('.option.selected');
+    var correctId = quizId + '_q' + qNum + '_' + answers[qNum];
+    var correctEl = document.getElementById(correctId);
+    if (correctEl) correctEl.classList.add('correct');
+    if (selected) {
+      if (selected.id === correctId) { score++; }
+      else { selected.classList.add('wrong'); }
+    }
+  }
+  var resultDiv = document.getElementById(quizId + '_result');
+  var pct = Math.round(score/total*100);
+  var color = pct >= 80 ? '#16a34a' : pct >= 60 ? '#eab308' : '#dc2626';
+  resultDiv.innerHTML = '<div class="result" style="background:'+color+'22;border:1px solid '+color+'">Skor: '+score+'/'+total+' ('+pct+'%)'+(pct>=80?' ✅ Excellent!':(pct>=60?' ⚠️ Perlu belajar lagi':' ❌ Pelajari ulang materinya'))+'</div>';
+  localStorage.setItem(quizId+'_score', JSON.stringify({score:score,total:total}));
+}
+function resetQuiz(quizId) {
+  document.querySelectorAll('#'+quizId+' .option').forEach(function(o){ o.classList.remove('selected','correct','wrong'); o.querySelector('input').checked=false; });
+  document.getElementById(quizId+'_result').innerHTML='';
+  localStorage.removeItem('quiz_'+quizId);
+  localStorage.removeItem(quizId+'_score');
+}
+</script>
+<script>document.addEventListener('DOMContentLoaded',function(){ initQuiz('quiz_closing'); });</script>
+</body></html>

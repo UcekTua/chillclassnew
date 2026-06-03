@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="id"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Materi 13: Monitoring and Controlling Projects - ManPro Study</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Segoe UI',sans-serif; background:#0f0f1a; color:#e0e0e0; line-height:1.7; }
+.container { max-width:900px; margin:0 auto; padding:20px; }
+h1 { font-size:2em; background:linear-gradient(135deg,#6366f1,#a855f7); -webkit-background-clip:text; -webkit-text-fill-color:transparent; margin-bottom:10px; }
+h2 { color:#a78bfa; border-bottom:2px solid #a78bfa33; padding-bottom:8px; margin:30px 0 15px; font-size:1.4em; }
+h3 { color:#c4b5fd; margin:20px 0 10px; font-size:1.15em; }
+.card { background:#1a1a2e; border-radius:12px; padding:25px; margin:15px 0; border:1px solid #ffffff10; }
+.highlight { background:#2d1b69; border-left:4px solid #a855f7; padding:15px 20px; border-radius:0 8px 8px 0; margin:10px 0; }
+.tip { background:#1a2e1a; border-left:4px solid #4ade80; padding:15px 20px; border-radius:0 8px 8px 0; margin:10px 0; }
+.warn { background:#2e2a1a; border-left:4px solid #fbbf24; padding:15px 20px; border-radius:0 8px 8px 0; margin:10px 0; }
+table { width:100%; border-collapse:collapse; margin:15px 0; }
+th { background:#6366f133; color:#a78bfa; padding:12px; text-align:left; }
+td { padding:10px 12px; border-bottom:1px solid #ffffff10; }
+tr:hover { background:#ffffff05; }
+ul,ol { padding-left:25px; margin:10px 0; }
+li { margin:5px 0; }
+.quiz-section { background:#1a1a2e; border-radius:12px; padding:25px; margin:20px 0; border:1px solid #6366f133; }
+.question { background:#16162a; padding:20px; border-radius:10px; margin:15px 0; border:1px solid #ffffff08; }
+.question p { font-weight:600; margin-bottom:12px; color:#e2e8f0; }
+.option { display:block; padding:10px 15px; margin:5px 0; background:#1e1e3a; border-radius:8px; cursor:pointer; transition:all .2s; border:1px solid transparent; }
+.option:hover { background:#2a2a4a; border-color:#6366f155; }
+.option.selected { background:#6366f133; border-color:#6366f1; }
+.option.correct { background:#16a34a33; border-color:#16a34a; }
+.option.wrong { background:#dc262633; border-color:#dc2626; }
+.btn { background:linear-gradient(135deg,#6366f1,#a855f7); color:#fff; border:none; padding:12px 30px; border-radius:8px; cursor:pointer; font-size:1em; margin:10px 5px; transition:transform .2s; }
+.btn:hover { transform:scale(1.03); }
+.result { padding:20px; border-radius:10px; margin:15px 0; font-size:1.1em; font-weight:600; }
+.nav { display:flex; flex-wrap:wrap; gap:8px; margin:20px 0; }
+.nav a { background:#1a1a2e; color:#a78bfa; padding:8px 16px; border-radius:8px; text-decoration:none; border:1px solid #a78bfa33; font-size:.9em; transition:all .2s; }
+.nav a:hover { background:#6366f133; }
+.badge { display:inline-block; background:#6366f133; color:#a78bfa; padding:3px 10px; border-radius:20px; font-size:.8em; margin:2px; }
+details { margin:10px 0; }
+summary { cursor:pointer; color:#c4b5fd; font-weight:600; padding:8px; background:#16162a; border-radius:8px; }
+details[open] summary { border-radius:8px 8px 0 0; }
+details > div { background:#1e1e30; padding:15px; border-radius:0 0 8px 8px; }
+
+        /* Overrides for Chill Class Floating Integration */
+        .topnav { position:fixed !important; top:24px !important; right:24px !important; margin:0 !important; background:rgba(10,14,26,0.6) !important; padding:10px 24px !important; border-radius:100px !important; border:1px solid rgba(99,102,241,0.3) !important; box-shadow: 0 8px 32px rgba(0,0,0,0.5) !important; width:auto !important; flex-wrap: nowrap !important; display:flex !important; gap:12px !important; align-items:center !important; z-index:9999 !important; backdrop-filter: blur(10px) !important; }
+        .topnav a { background:transparent !important; border:none !important; padding:0 !important; color:#94a3b8 !important; font-weight:600 !important; font-size:0.85rem !important; transition:color 0.2s !important; }
+        .topnav a:hover { color:#c4b5fd !important; }
+        .topnav a[style*="background:#6366f1"] { color:#fff !important; font-weight: 800 !important; }
+        @media (max-width:768px) {
+            .topnav { top:auto !important; bottom:24px !important; right:50% !important; transform:translateX(50%) !important; padding:10px 16px !important; font-size: 0.8rem !important; white-space: nowrap !important; overflow-x: auto !important; max-width: 90vw !important; }
+        }
+        .container { padding-top: 80px !important; }
+    
+</style></head><body>
+<div class="container">
+<nav class="topnav"><a href="materi-10-communication-stakeholder.html">Ch 10</a><a href="materi-11-risk-procurement.html">Ch 11</a><a href="materi-12-executing.html">Ch 12</a><a href="materi-13-monitoring-controlling.html" style="background:#6366f1;color:#fff;">Ch 13</a><a href="materi-14-closing.html">Ch 14</a><a href="simulasi-uas.html">📝 UAS</a></nav>
+<h1>Materi 13: Monitoring and Controlling Projects</h1>
+
+<div class="card">
+<h2>1. Gambaran Umum Monitoring & Controlling</h2>
+<p><strong>Monitoring and Controlling</strong> adalah proses mengukur kemajuan proyek secara berkala untuk memastikan proyek memenuhi tujuannya dan kebutuhan bisnis saat ini.</p>
+<p>Project manager dan timnya memonitor kemajuan terhadap rencana dan mengambil <strong>tindakan korektif (corrective action)</strong> jika diperlukan.</p>
+<div class="highlight">Proses ini berjalan <strong>sepanjang proyek</strong>, bukan hanya di satu fase tertentu. Tujuannya: deteksi penyimpangan sedini mungkin!</div>
+<h3>Output Umum untuk Semua Knowledge Area:</h3>
+<ul>
+<li>Change Requests</li>
+<li>Work Performance Information</li>
+<li>Project Management Plan Updates</li>
+<li>Project Documents Updates</li>
+<li>Organizational Process Assets Updates</li>
+</ul>
+</div>
+
+<div class="card">
+<h2>2. Earned Value Management (EVM) ⭐ SANGAT PENTING!</h2>
+<p>EVM adalah teknik pengukuran kinerja proyek yang <strong>mengintegrasikan scope, waktu, dan biaya</strong> dalam satu pengukuran terpadu.</p>
+
+<h3>2.1 Tiga Nilai Dasar EVM</h3>
+<table>
+<tr><th>Istilah</th><th>Rumus</th><th>Penjelasan Sederhana</th></tr>
+<tr><td><strong>Planned Value (PV)</strong></td><td>Budget yang dijadwalkan</td><td>Berapa uang yang <em>seharusnya sudah dihabiskan</em> sesuai jadwal pada titik waktu tertentu</td></tr>
+<tr><td><strong>Actual Cost (AC)</strong></td><td>Biaya aktual yang dikeluarkan</td><td>Berapa uang yang <em>benar-benar sudah dikeluarkan</em> sampai saat ini</td></tr>
+<tr><td><strong>Earned Value (EV)</strong></td><td>% pekerjaan selesai x BAC</td><td>Nilai pekerjaan yang <em>benar-benar sudah diselesaikan</em> dihitung berdasarkan budget</td></tr>
+<tr><td><strong>Budget at Completion (BAC)</strong></td><td>Total budget proyek</td><td>Total anggaran yang disetujui untuk seluruh proyek</td></tr>
+</table>
+
+<h3>2.2 Rumus-Rumus EVM</h3>
+<table>
+<tr><th>Metrik</th><th>Rumus</th><th>Interpretasi</th></tr>
+<tr><td><strong>Cost Variance (CV)</strong></td><td>EV - AC</td><td>Negatif = Over budget (jelek), Positif = Under budget (bagus)</td></tr>
+<tr><td><strong>Schedule Variance (SV)</strong></td><td>EV - PV</td><td>Negatif = Behind schedule (jelek), Positif = Ahead of schedule (bagus)</td></tr>
+<tr><td><strong>Cost Performance Index (CPI)</strong></td><td>EV / AC</td><td>&lt;1 = Over budget, &gt;1 = Under budget, =1 = On budget</td></tr>
+<tr><td><strong>Schedule Performance Index (SPI)</strong></td><td>EV / PV</td><td>&lt;1 = Behind schedule, &gt;1 = Ahead, =1 = On schedule</td></tr>
+<tr><td><strong>Estimate at Completion (EAC)</strong></td><td>BAC / CPI</td><td>Perkiraan total biaya akhir proyek berdasarkan kinerja saat ini</td></tr>
+<tr><td><strong>Estimate to Complete (ETC)</strong></td><td>EAC - AC</td><td>Sisa biaya yang dibutuhkan untuk menyelesaikan proyek</td></tr>
+<tr><td><strong>Estimated completion date</strong></td><td>Original time / SPI</td><td>Perkiraan kapan proyek akan selesai</td></tr>
+</table>
+
+<div class="tip">
+<p><strong>Cara Mengingat Rumus EVM:</strong></p>
+<p>"<strong>Semua Variance = EV dikurangi sesuatu</strong>" (CV = EV-AC, SV = EV-PV)</p>
+<p>"<strong>Semua Index = EV dibagi sesuatu</strong>" (CPI = EV/AC, SPI = EV/PV)</p>
+<p>"<strong>Negatif = Jelek, Kurang dari 1 = Jelek</strong>"</p>
+</div>
+
+<h3>2.3 Contoh Perhitungan EVM Lengkap</h3>
+<div class="highlight">
+<p><strong>Kasus:</strong> Proyek 10 bulan, BAC = Rp 500 juta (Rp 50 juta/bulan merata). Di akhir bulan ke-4:</p>
+<ul>
+<li>Pekerjaan seharusnya selesai: 40% (sesuai jadwal)</li>
+<li>Pekerjaan benar-benar selesai: 30%</li>
+<li>Biaya aktual: Rp 180 juta</li>
+</ul>
+<p><strong>Jawaban:</strong></p>
+<ul>
+<li>PV = 40% x 500 juta = <strong>Rp 200 juta</strong></li>
+<li>EV = 30% x 500 juta = <strong>Rp 150 juta</strong></li>
+<li>AC = <strong>Rp 180 juta</strong></li>
+<li>CV = 150 - 180 = <strong>-30 juta</strong> (Over budget!)</li>
+<li>SV = 150 - 200 = <strong>-50 juta</strong> (Behind schedule!)</li>
+<li>CPI = 150/180 = <strong>0.83</strong> (Setiap Rp 1 yang dikeluarkan hanya menghasilkan Rp 0.83 nilai kerja)</li>
+<li>SPI = 150/200 = <strong>0.75</strong> (Hanya 75% dari pekerjaan yang dijadwalkan yang selesai)</li>
+<li>EAC = 500/0.83 = <strong>Rp 602.4 juta</strong> (Proyek diperkirakan habis Rp 602.4 juta, bukan 500 juta)</li>
+<li>ETC = 602.4 - 180 = <strong>Rp 422.4 juta lagi</strong></li>
+<li>Perkiraan selesai = 10/0.75 = <strong>13.3 bulan</strong> (terlambat 3.3 bulan!)</li>
+</ul>
+<p><strong>Kesimpulan:</strong> Proyek ini dalam kondisi BURUK. Over budget DAN behind schedule. PM harus segera ambil tindakan korektif.</p>
+</div>
+
+<h3>2.4 Membaca Grafik EVM</h3>
+<ul>
+<li>Jika garis <strong>AC di atas EV</strong> = biaya lebih besar dari nilai kerja yang dihasilkan = <strong>Over budget (buruk)</strong></li>
+<li>Jika garis <strong>PV di atas EV</strong> = rencana lebih cepat dari aktual = <strong>Behind schedule (buruk)</strong></li>
+<li>Jika garis <strong>EV di atas PV</strong> = aktual lebih cepat dari rencana = <strong>Ahead of schedule (bagus)</strong></li>
+<li>Jika garis <strong>EV di atas AC</strong> = nilai kerja lebih besar dari biaya = <strong>Under budget (bagus)</strong></li>
+</ul>
+</div>
+
+<div class="card">
+<h2>3. Performance Reports</h2>
+<table>
+<tr><th>Jenis Report</th><th>Isi</th></tr>
+<tr><td><strong>Status Report</strong></td><td>Di mana posisi proyek <em>saat ini</em>? (scope, time, cost pada titik waktu tertentu)</td></tr>
+<tr><td><strong>Progress Report</strong></td><td>Apa yang sudah <em>dicapai</em> tim dalam periode tertentu? (mingguan/bulanan)</td></tr>
+<tr><td><strong>Forecast</strong></td><td>Prediksi <em>masa depan</em> proyek berdasarkan data dan tren saat ini (EAC, perkiraan waktu selesai)</td></tr>
+</table>
+</div>
+
+<div class="card">
+<h2>4. Integrated Change Control</h2>
+<p>Tiga tujuan utama:</p>
+<ol>
+<li><strong>Mempengaruhi faktor penyebab perubahan</strong> — pastikan perubahan itu bermanfaat (improve quality, reduce cost, save time)</li>
+<li><strong>Menentukan apakah perubahan sudah terjadi</strong> — PM harus tahu status area kunci proyek setiap saat</li>
+<li><strong>Mengelola perubahan aktual saat terjadi</strong> — ini peran kunci PM!</li>
+</ol>
+</div>
+
+<div class="card">
+<h2>5. Scope Management: Validating & Controlling Scope</h2>
+<h3>Validating Scope</h3>
+<ul>
+<li>= Penerimaan formal deliverable proyek oleh customer/stakeholder</li>
+<li>Dilakukan melalui <strong>inspeksi</strong> oleh customer, lalu <strong>sign-off</strong></li>
+<li><strong>Verified deliverable</strong> = sudah dicek kebenarannya (quality control)</li>
+<li><strong>Validated deliverable</strong> = sudah diterima oleh customer</li>
+</ul>
+<h3>Controlling Scope</h3>
+<ul>
+<li>Scope harus didefinisikan dengan jelas terlebih dahulu</li>
+<li>Harus ada proses untuk meminta dan memonitor perubahan scope</li>
+<li>Stakeholder didorong untuk menyarankan perubahan bermanfaat, tapi dicegah dari perubahan yang tidak perlu (<strong>scope creep</strong>)</li>
+</ul>
+<div class="warn">Scope creep = penambahan scope yang tidak terkontrol, tanpa melalui change control. Ini masalah umum!</div>
+</div>
+
+<div class="card">
+<h2>6. Schedule Control</h2>
+<ul>
+<li>Mengelola jadwal adalah tantangan terbesar bagi banyak PM</li>
+<li>Waktu adalah variabel yang <strong>paling tidak fleksibel</strong> — waktu terus berjalan apapun yang terjadi</li>
+<li><strong>Tracking Gantt Chart</strong> = alat yang sangat baik untuk memvisualisasikan jadwal (menampilkan planned vs actual)</li>
+<li><strong>Slipped milestone</strong> = milestone yang selesai lebih lambat dari rencana (ditandai diamond putih di tracking Gantt chart)</li>
+</ul>
+</div>
+
+<div class="card">
+<h2>7. Quality Control - 7 Basic Tools of Quality ⭐</h2>
+<table>
+<tr><th>#</th><th>Tool</th><th>Kegunaan</th><th>Cara Mengingat</th></tr>
+<tr><td>1</td><td><strong>Cause-and-Effect Diagram</strong> (Fishbone/Ishikawa)</td><td>Mencari akar penyebab masalah kualitas. Bisa gunakan teknik <strong>5 Whys</strong>.</td><td>Bentuknya seperti tulang ikan</td></tr>
+<tr><td>2</td><td><strong>Control Chart</strong></td><td>Menampilkan hasil proses dari waktu ke waktu. Mencegah defect, bukan mendeteksi. Gunakan <strong>Seven Run Rule</strong>.</td><td>Grafik dengan batas atas/bawah</td></tr>
+<tr><td>3</td><td><strong>Checksheet</strong></td><td>Mengumpulkan dan menganalisis data secara terstruktur (tally)</td><td>Formulir centang/tally</td></tr>
+<tr><td>4</td><td><strong>Scatter Diagram</strong></td><td>Menunjukkan hubungan antara 2 variabel</td><td>Titik-titik tersebar di grafik</td></tr>
+<tr><td>5</td><td><strong>Histogram</strong></td><td>Bar chart distribusi variabel</td><td>Grafik batang</td></tr>
+<tr><td>6</td><td><strong>Pareto Chart</strong></td><td>Histogram yang memprioritaskan masalah. <strong>Aturan 80/20</strong> = 80% masalah dari 20% penyebab.</td><td>Batang dari tinggi ke rendah</td></tr>
+<tr><td>7</td><td><strong>Flowchart</strong></td><td>Menampilkan logika dan alur proses</td><td>Kotak dan diamond dengan panah</td></tr>
+</table>
+
+<div class="tip">
+<p><strong>Cara Mengingat 7 Tools:</strong> "<strong>C</strong>ari <strong>C</strong>epat <strong>C</strong>atat <strong>S</strong>ebar <strong>H</strong>itung <strong>P</strong>rioritaskan <strong>F</strong>low"</p>
+<p>Cause-effect, Control chart, Checksheet, Scatter, Histogram, Pareto, Flowchart</p>
+</div>
+
+<h3>Seven Run Rule</h3>
+<p>Jika <strong>7 data point berturut-turut</strong> semuanya di bawah mean, di atas mean, atau semuanya naik/turun, maka proses perlu diperiksa karena ada masalah <strong>non-random</strong>.</p>
+</div>
+
+<div class="card">
+<h2>8. Resource, Communications, Stakeholder, Risk, Procurement</h2>
+
+<h3>Controlling Resources</h3>
+<p>Memastikan resource fisik yang ditugaskan ke proyek tersedia sesuai rencana. Monitor penggunaan planned vs actual.</p>
+
+<h3>Monitoring Communications</h3>
+<p>Memantau komunikasi sepanjang siklus hidup proyek untuk memastikan kebutuhan informasi stakeholder terpenuhi.</p>
+
+<h3>Monitoring Stakeholder Engagement</h3>
+<p>Anda <strong>tidak bisa mengontrol</strong> stakeholder, tapi bisa <strong>memonitor tingkat keterlibatan</strong> mereka dan menyesuaikan strategi.</p>
+
+<h3>Monitoring Risks</h3>
+<ul>
+<li>Melacak risiko yang teridentifikasi + mengidentifikasi risiko baru yang muncul</li>
+<li>Risiko baru harus melalui proses analisis yang sama</li>
+<li><strong>Workarounds</strong> = respons risiko yang <em>tidak direncanakan</em>, digunakan saat tidak ada contingency plan</li>
+<li>Output penting: <strong>update risk register</strong></li>
+</ul>
+
+<h3>Controlling Procurements</h3>
+<ul>
+<li>Mengelola hubungan procurement, memonitor kinerja kontrak</li>
+<li><strong>Constructive change order</strong> = tindakan lisan/tertulis yang bisa dianggap sebagai change order meskipun bukan change order formal. Hati-hati dengan ini!</li>
+<li>Semua perubahan kontrak harus <strong>didokumentasikan</strong> dan dikomunikasikan ke semua pihak terkait</li>
+</ul>
+</div>
+
+<div class="card">
+<h2>9. Prinsip: Embracing Adaptability & Resiliency</h2>
+<ul>
+<li><strong>Adaptability</strong> = kemampuan merespons perubahan kondisi</li>
+<li><strong>Resiliency</strong> = kemampuan menyerap dampak dan pulih cepat dari kegagalan</li>
+</ul>
+<p>Tips untuk tim:</p>
+<ol>
+<li>Bangun tim yang beragam dengan skill set luas</li>
+<li>Tekankan pentingnya continuous learning</li>
+<li>Dorong percakapan terbuka dan ide baru</li>
+<li>Berikan dan terima feedback sesering mungkin</li>
+<li>Fokus pada <strong>outcomes</strong>, bukan hanya deliverables</li>
+</ol>
+</div>
+
+<div class="card">
+<h2>10. Monitoring & Controlling di Agile</h2>
+<h3>Scrum Events untuk M&C:</h3>
+<ul>
+<li><strong>Daily Scrum</strong> — inspeksi progress menuju Sprint Goal, adaptasi Sprint Backlog</li>
+<li><strong>Sprint Review</strong> — inspeksi outcome Sprint, diskusi dengan stakeholder, tentukan adaptasi</li>
+</ul>
+
+<h3>Agile Artifacts untuk Monitoring:</h3>
+<table>
+<tr><th>Artifact</th><th>Penjelasan</th></tr>
+<tr><td><strong>Burndown Chart</strong></td><td>Menunjukkan sisa pekerjaan (task) vs rencana. Digunakan per sprint. <em>Tidak menunjukkan TASK MANA yang selesai, hanya jumlah.</em></td></tr>
+<tr><td><strong>Burnup Chart</strong></td><td>Menunjukkan pekerjaan yang sudah selesai vs rencana. Bisa menampilkan perubahan total planned work.</td></tr>
+<tr><td><strong>Velocity Chart</strong></td><td>Mengukur berapa banyak pekerjaan yang bisa diselesaikan tim per sprint. <em>Bukan untuk memonitor tim</em>, tapi untuk <strong>release planning</strong>.</td></tr>
+</table>
+<div class="warn">Velocity chart: upward trend bukan berarti selalu bagus, downward trend bukan berarti selalu buruk. Keduanya adalah sinyal untuk investigasi lebih dalam.</div>
+</div>
+
+<div class="card">
+<h2>Ringkasan & Poin Hafalan</h2>
+<div class="highlight">
+<p><strong>EVM = "EVA CUKUR SEPEDA"</strong></p>
+<ul>
+<li><strong>EV</strong>A = EV (Earned Value), <strong>A</strong>C (Actual Cost)</li>
+<li><strong>C</strong>V = EV - AC, <strong>C</strong>PI = EV/AC</li>
+<li><strong>S</strong>V = EV - PV, <strong>S</strong>PI = EV/PV</li>
+<li>EAC = BAC / CPI</li>
+</ul>
+<p><strong>Negatif/Kurang dari 1 = JELEK. Positif/Lebih dari 1 = BAGUS.</strong></p>
+</div>
+<div class="tip">
+<p><strong>7 Quality Tools = "3C-SHPF":</strong> Cause-effect, Control chart, Checksheet, Scatter, Histogram, Pareto, Flowchart</p>
+</div>
+</div>
+
+<div class="quiz-section" id="quiz_mc">
+<h2>Latihan Soal: Monitoring & Controlling</h2>
+<div class="question" id="quiz_mc_q1"><p>1. Proyek dengan BAC Rp 200 juta, 4 bulan. Di bulan ke-2: AC=Rp120jt, PV=Rp100jt, EV=Rp110jt. Berapa CV?</p><label class="option" id="quiz_mc_q1_a" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_mc_q1" style="display:none">A. Rp 10 juta</label><label class="option" id="quiz_mc_q1_b" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_mc_q1" style="display:none">B. -Rp 10 juta</label><label class="option" id="quiz_mc_q1_c" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_mc_q1" style="display:none">C. Rp 20 juta</label><label class="option" id="quiz_mc_q1_d" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_mc_q1" style="display:none">D. -Rp 20 juta</label></div><div class="question" id="quiz_mc_q2"><p>2. Dari soal di atas, berapa SPI?</p><label class="option" id="quiz_mc_q2_a" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_mc_q2" style="display:none">A. 0.92</label><label class="option" id="quiz_mc_q2_b" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_mc_q2" style="display:none">B. 1.10</label><label class="option" id="quiz_mc_q2_c" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_mc_q2" style="display:none">C. 0.83</label><label class="option" id="quiz_mc_q2_d" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_mc_q2" style="display:none">D. 1.20</label></div><div class="question" id="quiz_mc_q3"><p>3. CPI = 0.75 artinya...</p><label class="option" id="quiz_mc_q3_a" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_mc_q3" style="display:none">A. Proyek under budget 25%</label><label class="option" id="quiz_mc_q3_b" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_mc_q3" style="display:none">B. Setiap Rp 1 yang dikeluarkan hanya menghasilkan Rp 0.75 nilai kerja</label><label class="option" id="quiz_mc_q3_c" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_mc_q3" style="display:none">C. Proyek ahead of schedule</label><label class="option" id="quiz_mc_q3_d" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_mc_q3" style="display:none">D. 75% pekerjaan sudah selesai</label></div><div class="question" id="quiz_mc_q4"><p>4. Rumus EAC (Estimate at Completion) adalah...</p><label class="option" id="quiz_mc_q4_a" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_mc_q4" style="display:none">A. BAC x CPI</label><label class="option" id="quiz_mc_q4_b" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_mc_q4" style="display:none">B. BAC / SPI</label><label class="option" id="quiz_mc_q4_c" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_mc_q4" style="display:none">C. BAC / CPI</label><label class="option" id="quiz_mc_q4_d" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_mc_q4" style="display:none">D. BAC - CV</label></div><div class="question" id="quiz_mc_q5"><p>5. Aturan 80/20 (Pareto Analysis) menyatakan bahwa...</p><label class="option" id="quiz_mc_q5_a" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_mc_q5" style="display:none">A. 80% budget digunakan untuk 20% aktivitas</label><label class="option" id="quiz_mc_q5_b" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_mc_q5" style="display:none">B. 80% masalah disebabkan oleh 20% penyebab</label><label class="option" id="quiz_mc_q5_c" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_mc_q5" style="display:none">C. 80% tim mengerjakan 20% pekerjaan</label><label class="option" id="quiz_mc_q5_d" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_mc_q5" style="display:none">D. 80% waktu untuk planning, 20% untuk executing</label></div><div class="question" id="quiz_mc_q6"><p>6. Seven Run Rule pada Control Chart menyatakan bahwa proses perlu diperiksa jika...</p><label class="option" id="quiz_mc_q6_a" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_mc_q6" style="display:none">A. Ada 7 data point yang semuanya di atas rata-rata berturut-turut</label><label class="option" id="quiz_mc_q6_b" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_mc_q6" style="display:none">B. Ada 7 defect dalam satu batch</label><label class="option" id="quiz_mc_q6_c" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_mc_q6" style="display:none">C. Ada 7 keluhan dari customer</label><label class="option" id="quiz_mc_q6_d" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_mc_q6" style="display:none">D. Ada 7 change request dalam satu sprint</label></div><div class="question" id="quiz_mc_q7"><p>7. Apa perbedaan antara verified deliverable dan validated deliverable?</p><label class="option" id="quiz_mc_q7_a" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_mc_q7" style="display:none">A. Verified = diterima customer, Validated = dicek QC</label><label class="option" id="quiz_mc_q7_b" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_mc_q7" style="display:none">B. Verified = dicek kebenarannya (QC), Validated = diterima customer</label><label class="option" id="quiz_mc_q7_c" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_mc_q7" style="display:none">C. Keduanya sama saja</label><label class="option" id="quiz_mc_q7_d" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_mc_q7" style="display:none">D. Verified untuk agile, Validated untuk predictive</label></div><div class="question" id="quiz_mc_q8"><p>8. Workarounds adalah...</p><label class="option" id="quiz_mc_q8_a" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_mc_q8" style="display:none">A. Rencana cadangan yang sudah disiapkan sebelumnya</label><label class="option" id="quiz_mc_q8_b" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_mc_q8" style="display:none">B. Respons risiko yang TIDAK direncanakan, digunakan saat tidak ada contingency plan</label><label class="option" id="quiz_mc_q8_c" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_mc_q8" style="display:none">C. Proses eskalasi masalah ke manajemen</label><label class="option" id="quiz_mc_q8_d" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_mc_q8" style="display:none">D. Teknik untuk mempercepat jadwal proyek</label></div><div class="question" id="quiz_mc_q9"><p>9. Velocity chart pada agile paling berguna untuk...</p><label class="option" id="quiz_mc_q9_a" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_mc_q9" style="display:none">A. Memonitor kinerja individu tim</label><label class="option" id="quiz_mc_q9_b" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_mc_q9" style="display:none">B. Release planning</label><label class="option" id="quiz_mc_q9_c" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_mc_q9" style="display:none">C. Menghitung budget</label><label class="option" id="quiz_mc_q9_d" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_mc_q9" style="display:none">D. Quality control</label></div><div class="question" id="quiz_mc_q10"><p>10. SV = -50 juta dan CPI = 0.83. Mana pernyataan yang BENAR?</p><label class="option" id="quiz_mc_q10_a" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_mc_q10" style="display:none">A. Proyek ahead of schedule dan under budget</label><label class="option" id="quiz_mc_q10_b" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_mc_q10" style="display:none">B. Proyek behind schedule dan over budget</label><label class="option" id="quiz_mc_q10_c" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_mc_q10" style="display:none">C. Proyek ahead of schedule dan over budget</label><label class="option" id="quiz_mc_q10_d" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_mc_q10" style="display:none">D. Proyek behind schedule dan under budget</label></div><div class="question" id="quiz_mc_q11"><p>11. Constructive change order adalah...</p><label class="option" id="quiz_mc_q11_a" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_mc_q11" style="display:none">A. Perubahan resmi yang disetujui steering committee</label><label class="option" id="quiz_mc_q11_b" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_mc_q11" style="display:none">B. Tindakan lisan/tertulis yang bisa dianggap sebagai change order meskipun bukan formal</label><label class="option" id="quiz_mc_q11_c" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_mc_q11" style="display:none">C. Dokumen untuk menambah scope</label><label class="option" id="quiz_mc_q11_d" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_mc_q11" style="display:none">D. Formulir penolakan deliverable</label></div><div class="question" id="quiz_mc_q12"><p>12. Burndown chart TIDAK bisa menunjukkan...</p><label class="option" id="quiz_mc_q12_a" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_mc_q12" style="display:none">A. Jumlah task yang tersisa</label><label class="option" id="quiz_mc_q12_b" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_mc_q12" style="display:none">B. Tren penyelesaian pekerjaan</label><label class="option" id="quiz_mc_q12_c" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_mc_q12" style="display:none">C. Task MANA yang sudah selesai</label><label class="option" id="quiz_mc_q12_d" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_mc_q12" style="display:none">D. Perbandingan progress vs rencana</label></div>
+<div style="margin-top:15px;">
+<button class="btn" onclick="submitQuiz('quiz_mc',{1:'b',2:'b',3:'b',4:'c',5:'b',6:'a',7:'b',8:'b',9:'b',10:'b',11:'b',12:'c'})">Submit</button>
+<button class="btn" style="background:#374151;" onclick="resetQuiz('quiz_mc')">Reset</button>
+</div>
+<div id="quiz_mc_result"></div>
+</div>
+
+</div>
+<script>
+function initQuiz(quizId) {
+  var key = 'quiz_' + quizId;
+  var saved = localStorage.getItem(key);
+  if (saved) {
+    var data = JSON.parse(saved);
+    data.forEach(function(item) {
+      var opt = document.getElementById(item.id);
+      if (opt) { opt.classList.add('selected'); opt.querySelector('input').checked = true; }
+    });
+  }
+}
+function selectOpt(el, quizId) {
+  var qDiv = el.closest('.question');
+  qDiv.querySelectorAll('.option').forEach(function(o){ o.classList.remove('selected'); });
+  el.classList.add('selected');
+  el.querySelector('input').checked = true;
+  saveSelections(quizId);
+}
+function saveSelections(quizId) {
+  var key = 'quiz_' + quizId;
+  var selections = [];
+  document.querySelectorAll('#'+quizId+' .option.selected').forEach(function(el){
+    selections.push({id: el.id});
+  });
+  localStorage.setItem(key, JSON.stringify(selections));
+}
+function submitQuiz(quizId, answers) {
+  var score = 0;
+  var total = Object.keys(answers).length;
+  for (var qNum in answers) {
+    var q = document.getElementById(quizId + '_q' + qNum);
+    if (!q) continue;
+    var selected = q.querySelector('.option.selected');
+    var correctId = quizId + '_q' + qNum + '_' + answers[qNum];
+    var correctEl = document.getElementById(correctId);
+    if (correctEl) correctEl.classList.add('correct');
+    if (selected) {
+      if (selected.id === correctId) { score++; }
+      else { selected.classList.add('wrong'); }
+    }
+  }
+  var resultDiv = document.getElementById(quizId + '_result');
+  var pct = Math.round(score/total*100);
+  var color = pct >= 80 ? '#16a34a' : pct >= 60 ? '#eab308' : '#dc2626';
+  resultDiv.innerHTML = '<div class="result" style="background:'+color+'22;border:1px solid '+color+'">Skor: '+score+'/'+total+' ('+pct+'%)'+(pct>=80?' ✅ Excellent!':(pct>=60?' ⚠️ Perlu belajar lagi':' ❌ Pelajari ulang materinya'))+'</div>';
+  localStorage.setItem(quizId+'_score', JSON.stringify({score:score,total:total}));
+}
+function resetQuiz(quizId) {
+  document.querySelectorAll('#'+quizId+' .option').forEach(function(o){ o.classList.remove('selected','correct','wrong'); o.querySelector('input').checked=false; });
+  document.getElementById(quizId+'_result').innerHTML='';
+  localStorage.removeItem('quiz_'+quizId);
+  localStorage.removeItem(quizId+'_score');
+}
+</script>
+<script>document.addEventListener('DOMContentLoaded',function(){ initQuiz('quiz_mc'); });</script>
+</body></html>

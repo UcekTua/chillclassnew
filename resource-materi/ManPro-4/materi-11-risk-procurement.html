@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="id"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Materi 11: Project Risk & Procurement Management - ManPro Study</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Segoe UI',sans-serif; background:#0f0f1a; color:#e0e0e0; line-height:1.7; }
+.container { max-width:900px; margin:0 auto; padding:20px; }
+h1 { font-size:2em; background:linear-gradient(135deg,#6366f1,#a855f7); -webkit-background-clip:text; -webkit-text-fill-color:transparent; margin-bottom:10px; }
+h2 { color:#a78bfa; border-bottom:2px solid #a78bfa33; padding-bottom:8px; margin:30px 0 15px; font-size:1.4em; }
+h3 { color:#c4b5fd; margin:20px 0 10px; font-size:1.15em; }
+.card { background:#1a1a2e; border-radius:12px; padding:25px; margin:15px 0; border:1px solid #ffffff10; }
+.highlight { background:#2d1b69; border-left:4px solid #a855f7; padding:15px 20px; border-radius:0 8px 8px 0; margin:10px 0; }
+.tip { background:#1a2e1a; border-left:4px solid #4ade80; padding:15px 20px; border-radius:0 8px 8px 0; margin:10px 0; }
+.warn { background:#2e2a1a; border-left:4px solid #fbbf24; padding:15px 20px; border-radius:0 8px 8px 0; margin:10px 0; }
+table { width:100%; border-collapse:collapse; margin:15px 0; }
+th { background:#6366f133; color:#a78bfa; padding:12px; text-align:left; }
+td { padding:10px 12px; border-bottom:1px solid #ffffff10; }
+tr:hover { background:#ffffff05; }
+ul,ol { padding-left:25px; margin:10px 0; }
+li { margin:5px 0; }
+.quiz-section { background:#1a1a2e; border-radius:12px; padding:25px; margin:20px 0; border:1px solid #6366f133; }
+.question { background:#16162a; padding:20px; border-radius:10px; margin:15px 0; border:1px solid #ffffff08; }
+.question p { font-weight:600; margin-bottom:12px; color:#e2e8f0; }
+.option { display:block; padding:10px 15px; margin:5px 0; background:#1e1e3a; border-radius:8px; cursor:pointer; transition:all .2s; border:1px solid transparent; }
+.option:hover { background:#2a2a4a; border-color:#6366f155; }
+.option.selected { background:#6366f133; border-color:#6366f1; }
+.option.correct { background:#16a34a33; border-color:#16a34a; }
+.option.wrong { background:#dc262633; border-color:#dc2626; }
+.btn { background:linear-gradient(135deg,#6366f1,#a855f7); color:#fff; border:none; padding:12px 30px; border-radius:8px; cursor:pointer; font-size:1em; margin:10px 5px; transition:transform .2s; }
+.btn:hover { transform:scale(1.03); }
+.result { padding:20px; border-radius:10px; margin:15px 0; font-size:1.1em; font-weight:600; }
+.nav { display:flex; flex-wrap:wrap; gap:8px; margin:20px 0; }
+.nav a { background:#1a1a2e; color:#a78bfa; padding:8px 16px; border-radius:8px; text-decoration:none; border:1px solid #a78bfa33; font-size:.9em; transition:all .2s; }
+.nav a:hover { background:#6366f133; }
+.badge { display:inline-block; background:#6366f133; color:#a78bfa; padding:3px 10px; border-radius:20px; font-size:.8em; margin:2px; }
+details { margin:10px 0; }
+summary { cursor:pointer; color:#c4b5fd; font-weight:600; padding:8px; background:#16162a; border-radius:8px; }
+details[open] summary { border-radius:8px 8px 0 0; }
+details > div { background:#1e1e30; padding:15px; border-radius:0 0 8px 8px; }
+</style></head><body>
+<div class="container">
+<div class="nav"><a href="materi-10-communication-stakeholder.html">10: Comm & Stakeholder</a><a href="materi-11-risk-procurement.html" style="background:#6366f1;color:#fff;">11: Risk & Procurement</a><a href="materi-12-executing.html">12: Executing</a><a href="materi-13-monitoring-controlling.html">13: Monitoring & Control</a><a href="materi-14-closing.html">14: Closing</a><a href="simulasi-uas.html">📝 Simulasi UAS</a></div>
+<h1>Materi 11: Project Risk & Procurement Management</h1>
+
+<div class="card">
+<h2>BAGIAN A: PROJECT RISK MANAGEMENT</h2>
+</div>
+
+<div class="card">
+<h2>1. Pentingnya Risk Management</h2>
+<p><strong>Project Risk Management</strong> = seni dan ilmu mengidentifikasi, menganalisis, dan merespons risiko sepanjang siklus hidup proyek demi mencapai tujuan proyek.</p>
+<ul>
+<li>Risk management sering diabaikan, padahal bisa membantu memilih proyek yang tepat, menentukan scope, dan membuat estimasi realistis</li>
+<li>Risiko selalu ada di <strong>masa depan</strong>. Seiring proyek berjalan, risiko bisa terjadi atau tidak.</li>
+<li>Risk management planning diulang secara berkala (di akhir fase atau milestone)</li>
+</ul>
+<div class="highlight"><strong>Tujuan utama:</strong> Meminimalkan risiko NEGATIF (ancaman) dan memaksimalkan risiko POSITIF (peluang/opportunities)</div>
+</div>
+
+<div class="card">
+<h2>2. Definisi Risk</h2>
+<table>
+<tr><th>Tipe Risiko</th><th>Penjelasan</th><th>Contoh</th></tr>
+<tr><td><strong>Negative Risk (Threat)</strong></td><td>Masalah potensial yang menghambat keberhasilan proyek. Risk management-nya seperti <em>asuransi</em>.</td><td>Keterlambatan deliverable, pembengkakan biaya, supplier gagal kirim</td></tr>
+<tr><td><strong>Positive Risk (Opportunity)</strong></td><td>Ketidakpastian yang menghasilkan hal baik</td><td>Proyek selesai lebih cepat, biaya lebih murah dari perkiraan</td></tr>
+</table>
+
+<h3>Risk Utility / Risk Tolerance</h3>
+<table>
+<tr><th>Tipe Orang</th><th>Sikap terhadap Risiko</th></tr>
+<tr><td><strong>Risk-Averse</strong></td><td>Menghindari risiko. Kepuasan naik dengan rate menurun. Lebih pilih yang aman.</td></tr>
+<tr><td><strong>Risk-Seeking</strong></td><td>Toleransi tinggi. Kepuasan naik saat potensi keuntungan lebih besar.</td></tr>
+<tr><td><strong>Risk-Neutral</strong></td><td>Seimbang antara risiko dan keuntungan.</td></tr>
+</table>
+</div>
+
+<div class="card">
+<h2>3. Proses Risk Management (6 Proses)</h2>
+<ol>
+<li><strong>Planning Risk Management</strong> — Memutuskan pendekatan dan rencana aktivitas risk management</li>
+<li><strong>Identifying Risks</strong> — Menentukan risiko mana yang mungkin mempengaruhi proyek</li>
+<li><strong>Performing Qualitative Risk Analysis</strong> — Memprioritaskan risiko berdasarkan probability dan impact</li>
+<li><strong>Performing Quantitative Risk Analysis</strong> — Mengestimasi efek risiko secara numerik</li>
+<li><strong>Planning Risk Responses</strong> — Menentukan langkah untuk menangani risiko</li>
+<li><strong>Controlling Risk</strong> — Memonitor risiko, implementasi rencana respons, evaluasi efektivitas</li>
+</ol>
+<div class="tip">Ingat urutan: "<strong>P</strong>lan <strong>I</strong>dentify <strong>Q</strong>ualitative <strong>Q</strong>uantitative <strong>R</strong>esponse <strong>C</strong>ontrol" = "<strong>PIQ-QRC</strong>"</div>
+</div>
+
+<div class="card">
+<h2>4. Risk Management Plan</h2>
+<p>Dokumen utama yang berisi prosedur mengelola risiko. Isi:</p>
+<ol>
+<li>Methodology</li>
+<li>Roles and Responsibilities</li>
+<li>Budget and Schedule</li>
+<li>Risk Categories</li>
+<li>Risk Probability and Impact</li>
+<li>Revised Stakeholders' Tolerances</li>
+<li>Tracking</li>
+<li>Risk Documentation</li>
+</ol>
+
+<h3>Contingency vs Fallback Plans vs Reserves</h3>
+<table>
+<tr><th>Istilah</th><th>Penjelasan</th></tr>
+<tr><td><strong>Contingency Plan</strong></td><td>Rencana tindakan yang sudah disiapkan JIKA risiko terjadi</td></tr>
+<tr><td><strong>Fallback Plan</strong></td><td>Rencana cadangan jika contingency plan GAGAL. Untuk risiko berdampak tinggi.</td></tr>
+<tr><td><strong>Contingency Reserve</strong></td><td>Dana cadangan untuk risiko yang sudah teridentifikasi. BAGIAN dari cost baseline.</td></tr>
+<tr><td><strong>Management Reserve</strong></td><td>Dana cadangan untuk risiko yang TIDAK diketahui. BUKAN bagian cost baseline, tapi bagian dari total budget.</td></tr>
+</table>
+
+<h3>Risk Breakdown Structure (RBS)</h3>
+<p>Hierarki kategori risiko potensial (mirip WBS tapi untuk risiko). Kategori umum: Market, Financial, Technology, People, Structure/Process.</p>
+</div>
+
+<div class="card">
+<h2>5. Identifying Risks</h2>
+<p>Anda tidak bisa mengelola risiko jika belum mengidentifikasinya! Output utama: <strong>Risk Register</strong> dan <strong>Risk Report</strong>.</p>
+<h3>Tools untuk Identifikasi:</h3>
+<ul>
+<li><strong>Brainstorming</strong> — Menghasilkan ide spontan tanpa menghakimi. Perlu fasilitator berpengalaman. TAPI riset menunjukkan individu menghasilkan lebih banyak ide sendiri daripada brainstorming kelompok!</li>
+<li><strong>Interviewing</strong> — Wawancara orang berpengalaman (tatap muka, telepon, email)</li>
+<li><strong>SWOT Analysis</strong> — Strengths, Weaknesses, Opportunities, Threats</li>
+<li><strong>Document Review</strong> — Review dokumen-dokumen proyek yang ada</li>
+</ul>
+
+<h3>Risk Register (Isi Lengkap)</h3>
+<ol>
+<li>Identification number</li>
+<li>Rank</li>
+<li>Name of risk event</li>
+<li>Description</li>
+<li>Category</li>
+<li>Root cause</li>
+<li><strong>Triggers</strong> (indikator/gejala bahwa risiko akan terjadi)</li>
+<li>Potential responses</li>
+<li><strong>Risk owner</strong> (penanggung jawab)</li>
+<li>Probability and Impact</li>
+<li>Status</li>
+</ol>
+</div>
+
+<div class="card">
+<h2>6. Qualitative Risk Analysis</h2>
+<p>Menggunakan <strong>Probability/Impact Matrix</strong> untuk memprioritaskan risiko sebagai High, Medium, atau Low.</p>
+<ul>
+<li><strong>High</strong> = 75%-100% probability/impact</li>
+<li><strong>Medium</strong> = 25%-75%</li>
+<li><strong>Low</strong> = 0%-25%</li>
+</ul>
+<p>Fokus utama: risiko yang ada di area <strong>High-High</strong> pada matrix.</p>
+<p><strong>Watch List</strong> = daftar risiko prioritas rendah yang tetap dipantau.</p>
+</div>
+
+<div class="card">
+<h2>7. Quantitative Risk Analysis</h2>
+<p>Analisis numerik/statistik. Sering dilakukan untuk proyek besar dan kompleks. Teknik utama:</p>
+<ul>
+<li><strong>Decision Tree Analysis</strong> — Diagram untuk mengambil keputusan berdasarkan probabilitas dan nilai</li>
+<li><strong>Simulation</strong> — Monte Carlo simulation dll</li>
+<li><strong>Sensitivity Analysis</strong> — Menganalisis variabel mana yang paling berpengaruh</li>
+</ul>
+</div>
+
+<div class="card">
+<h2>8. Risk Response Strategies (SANGAT PENTING!)</h2>
+<h3>Untuk Risiko NEGATIF (Ancaman):</h3>
+<table>
+<tr><th>Strategy</th><th>Penjelasan</th><th>Contoh</th></tr>
+<tr><td><strong>Escalation</strong></td><td>Eskalasi ke manajer yang lebih tinggi jika di luar scope/authority PM</td><td>Risiko regulasi pemerintah → eskalasi ke direksi</td></tr>
+<tr><td><strong>Avoidance</strong></td><td>Menghilangkan ancaman dengan menghilangkan penyebabnya</td><td>Tidak menggunakan teknologi baru yang berisiko tinggi</td></tr>
+<tr><td><strong>Acceptance</strong></td><td>Menerima konsekuensi jika risiko terjadi</td><td>Risiko minor yang biaya penanganannya lebih besar dari dampaknya</td></tr>
+<tr><td><strong>Transference</strong></td><td>Mengalihkan tanggung jawab ke pihak ketiga</td><td>Beli asuransi, gunakan fixed-price contract</td></tr>
+<tr><td><strong>Mitigation</strong></td><td>Mengurangi dampak/probabilitas terjadinya risiko</td><td>Menambah testing, menyediakan backup, training tambahan</td></tr>
+</table>
+<div class="tip">Cara ingat Negative Risk: "<strong>EAATM</strong>" = "<strong>E</strong>scalate, <strong>A</strong>void, <strong>A</strong>ccept, <strong>T</strong>ransfer, <strong>M</strong>itigate"</div>
+
+<h3>Untuk Risiko POSITIF (Peluang):</h3>
+<table>
+<tr><th>Strategy</th><th>Penjelasan</th></tr>
+<tr><td><strong>Escalation</strong></td><td>Eskalasi jika di luar scope PM</td></tr>
+<tr><td><strong>Exploitation</strong></td><td>Melakukan segala cara agar peluang PASTI terjadi</td></tr>
+<tr><td><strong>Sharing</strong></td><td>Membagi kepemilikan peluang ke pihak lain yang lebih mampu memanfaatkannya</td></tr>
+<tr><td><strong>Enhancement</strong></td><td>Memperbesar peluang dengan mengidentifikasi dan memaksimalkan faktor pendorongnya</td></tr>
+<tr><td><strong>Acceptance</strong></td><td>Tim tidak bisa/memilih untuk tidak mengambil tindakan</td></tr>
+</table>
+
+<h3>Residual vs Secondary Risks</h3>
+<ul>
+<li><strong>Residual risks</strong> = risiko yang TERSISA setelah semua response strategy diimplementasikan</li>
+<li><strong>Secondary risks</strong> = risiko BARU yang muncul sebagai AKIBAT dari implementasi risk response</li>
+</ul>
+</div>
+
+<div class="card">
+<h2>BAGIAN B: PROJECT PROCUREMENT MANAGEMENT</h2>
+</div>
+
+<div class="card">
+<h2>9. Pentingnya Procurement Management</h2>
+<p>= Proses mengakuisisi/membeli barang dan jasa dari luar organisasi. PM harus melakukan yang terbaik untuk proyek, dan seringkali itu berarti <strong>membeli dari luar</strong>.</p>
+<p>Good procurement = <strong>win-win</strong> untuk buyer dan seller.</p>
+</div>
+
+<div class="card">
+<h2>10. Make-or-Buy Decision</h2>
+<p>Organisasi memutuskan apakah lebih menguntungkan <strong>membuat sendiri (Make)</strong> atau <strong>membeli dari luar (Buy)</strong>.</p>
+<div class="highlight">
+<p><strong>Contoh Perhitungan:</strong></p>
+<p>Opsi Make: In-house trainer $60/jam x 80 jam = $4,800 + Material $7,500 + Online facilitation $60/jam x 500 jam = $30,000 = <strong>Total $42,300</strong></p>
+<p>Opsi Buy: $1,000/peserta x 100 = $100,000 + Online $100/jam x 500 jam = $50,000 = <strong>Total $150,000</strong></p>
+<p>Selisih: $107,700. <strong>Rekomendasi: Make (hemat $107,700!)</strong></p>
+</div>
+</div>
+
+<div class="card">
+<h2>11. Types of Contracts (4 Tipe)</h2>
+<table>
+<tr><th>Tipe Kontrak</th><th>Penjelasan</th><th>Risiko di Siapa?</th></tr>
+<tr><td><strong>Fixed-Price / Lump-Sum</strong></td><td>Harga total tetap untuk produk/layanan yang well-defined. Subtipe: FFP, FPIF, FP-EPA.</td><td><strong>Seller</strong> menanggung risiko lebih besar</td></tr>
+<tr><td><strong>Cost-Reimbursable</strong></td><td>Buyer membayar biaya aktual (direct + indirect) + fee/profit. Subtipe: CPAF, CPFF, CPIF.</td><td><strong>Buyer</strong> menanggung risiko lebih besar</td></tr>
+<tr><td><strong>Time & Material (T&M)</strong></td><td>Hybrid. Tarif per jam + biaya material. Cocok untuk pekerjaan yang tidak bisa didefinisikan dengan jelas.</td><td>Risiko dibagi</td></tr>
+<tr><td><strong>IDIQ</strong></td><td>Kuantitas tidak terbatas untuk waktu tetap, dengan batas atas/bawah. Mencegah delay dan overrun.</td><td>Risiko dibagi</td></tr>
+</table>
+<div class="tip">Cara ingat: "<strong>Fixed = Seller risk, Cost = Buyer risk, T&M = Shared, IDIQ = Flexible</strong>"</div>
+</div>
+
+<div class="card">
+<h2>12. Dokumen Procurement</h2>
+<h3>Bid Documents:</h3>
+<ul>
+<li><strong>RFP (Request for Proposal)</strong> — Meminta proposal dengan pendekatan berbeda. Untuk pekerjaan yang kompleks.</li>
+<li><strong>RFQ (Request for Quote)</strong> — Meminta harga untuk item standar yang sudah jelas.</li>
+</ul>
+
+<h3>Procurement SOW (Statement of Work)</h3>
+<p>Dokumen kontraktual yang menjelaskan barang/jasa yang akan dibeli. Harus: clear, concise, complete. Gunakan kata "<strong>must/shall</strong>" bukan "may".</p>
+
+<h3>Supplier Evaluation Matrix</h3>
+<p>Weighted scoring model untuk mengevaluasi supplier berdasarkan kriteria (cost, quality, technology, past performance, management). Total bobot = 100%.</p>
+</div>
+
+<div class="card">
+<h2>13. Change Management</h2>
+<p><strong>Change management ≠ Change control!</strong></p>
+<ul>
+<li><strong>Change control</strong> = mengelola perubahan terhadap objective proyek</li>
+<li><strong>Change management</strong> = mengelola dampak proyek terhadap ORANG di organisasi</li>
+</ul>
+<h3>PMI's Steps for Change Management:</h3>
+<ol>
+<li><strong>Formulate change</strong> — Buat alasan perubahan, jelaskan kenapa masa depan lebih baik</li>
+<li><strong>Plan change</strong> — Identifikasi aktivitas untuk persiapan</li>
+<li><strong>Implement change</strong> — Tunjukkan manfaat, lakukan penyesuaian</li>
+<li><strong>Manage transition</strong> — Atasi aktivitas setelah future state tercapai (knowledge transfer)</li>
+<li><strong>Sustain change</strong> — Pastikan kapabilitas baru berlanjut</li>
+</ol>
+</div>
+<div class="quiz-section" id="quiz_risk"><h2>Latihan Soal: Risk & Procurement</h2><div class="question" id="quiz_risk_q1"><p>1. Strategi risk response untuk risiko NEGATIF yang mengalihkan tanggung jawab ke pihak ketiga disebut...</p><label class="option" id="quiz_risk_q1_a" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_risk_q1" style="display:none">A. Avoidance</label><label class="option" id="quiz_risk_q1_b" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_risk_q1" style="display:none">B. Mitigation</label><label class="option" id="quiz_risk_q1_c" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_risk_q1" style="display:none">C. Transference</label><label class="option" id="quiz_risk_q1_d" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_risk_q1" style="display:none">D. Acceptance</label></div><div class="question" id="quiz_risk_q2"><p>2. Pada fixed-price contract, siapa yang menanggung risiko LEBIH BESAR?</p><label class="option" id="quiz_risk_q2_a" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_risk_q2" style="display:none">A. Buyer</label><label class="option" id="quiz_risk_q2_b" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_risk_q2" style="display:none">B. Seller</label><label class="option" id="quiz_risk_q2_c" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_risk_q2" style="display:none">C. Keduanya sama</label><label class="option" id="quiz_risk_q2_d" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_risk_q2" style="display:none">D. Pihak ketiga</label></div><div class="question" id="quiz_risk_q3"><p>3. Apa perbedaan antara Contingency Reserve dan Management Reserve?</p><label class="option" id="quiz_risk_q3_a" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_risk_q3" style="display:none">A. Contingency = untuk risiko unknown, Management = untuk risiko known</label><label class="option" id="quiz_risk_q3_b" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_risk_q3" style="display:none">B. Contingency = bagian cost baseline untuk risiko known, Management = BUKAN bagian cost baseline untuk risiko unknown</label><label class="option" id="quiz_risk_q3_c" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_risk_q3" style="display:none">C. Keduanya sama</label><label class="option" id="quiz_risk_q3_d" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_risk_q3" style="display:none">D. Contingency lebih besar dari Management</label></div><div class="question" id="quiz_risk_q4"><p>4. Trigger dalam risk register adalah...</p><label class="option" id="quiz_risk_q4_a" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_risk_q4" style="display:none">A. Orang yang bertanggung jawab atas risiko</label><label class="option" id="quiz_risk_q4_b" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_risk_q4" style="display:none">B. Dampak dari risiko jika terjadi</label><label class="option" id="quiz_risk_q4_c" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_risk_q4" style="display:none">C. Indikator atau gejala bahwa risiko akan segera terjadi</label><label class="option" id="quiz_risk_q4_d" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_risk_q4" style="display:none">D. Solusi untuk mengatasi risiko</label></div><div class="question" id="quiz_risk_q5"><p>5. Secondary risk adalah...</p><label class="option" id="quiz_risk_q5_a" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_risk_q5" style="display:none">A. Risiko yang sudah terjadi</label><label class="option" id="quiz_risk_q5_b" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_risk_q5" style="display:none">B. Risiko yang tersisa setelah response strategy diimplementasikan</label><label class="option" id="quiz_risk_q5_c" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_risk_q5" style="display:none">C. Risiko BARU yang muncul sebagai AKIBAT dari implementasi risk response</label><label class="option" id="quiz_risk_q5_d" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_risk_q5" style="display:none">D. Risiko dengan prioritas kedua</label></div><div class="question" id="quiz_risk_q6"><p>6. RFP digunakan untuk...</p><label class="option" id="quiz_risk_q6_a" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_risk_q6" style="display:none">A. Meminta harga untuk item standar yang sudah jelas</label><label class="option" id="quiz_risk_q6_b" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_risk_q6" style="display:none">B. Meminta proposal dengan pendekatan berbeda untuk pekerjaan kompleks</label><label class="option" id="quiz_risk_q6_c" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_risk_q6" style="display:none">C. Membatalkan kontrak</label><label class="option" id="quiz_risk_q6_d" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_risk_q6" style="display:none">D. Mengevaluasi kinerja supplier</label></div><div class="question" id="quiz_risk_q7"><p>7. Strategi risk response 'Exploitation' digunakan untuk risiko...</p><label class="option" id="quiz_risk_q7_a" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_risk_q7" style="display:none">A. Negatif</label><label class="option" id="quiz_risk_q7_b" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_risk_q7" style="display:none">B. Positif (peluang)</label><label class="option" id="quiz_risk_q7_c" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_risk_q7" style="display:none">C. Keduanya</label><label class="option" id="quiz_risk_q7_d" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_risk_q7" style="display:none">D. Residual</label></div><div class="question" id="quiz_risk_q8"><p>8. Cost-reimbursable contract, buyer membayar...</p><label class="option" id="quiz_risk_q8_a" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_risk_q8" style="display:none">A. Harga tetap yang sudah disepakati</label><label class="option" id="quiz_risk_q8_b" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_risk_q8" style="display:none">B. Biaya aktual (direct + indirect) + fee/profit</label><label class="option" id="quiz_risk_q8_c" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_risk_q8" style="display:none">C. Per jam kerja saja</label><label class="option" id="quiz_risk_q8_d" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_risk_q8" style="display:none">D. Biaya material saja</label></div><div class="question" id="quiz_risk_q9"><p>9. Dalam procurement SOW, kata yang HARUS digunakan adalah...</p><label class="option" id="quiz_risk_q9_a" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_risk_q9" style="display:none">A. May atau Could</label><label class="option" id="quiz_risk_q9_b" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_risk_q9" style="display:none">B. Should atau Would</label><label class="option" id="quiz_risk_q9_c" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_risk_q9" style="display:none">C. Must atau Shall</label><label class="option" id="quiz_risk_q9_d" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_risk_q9" style="display:none">D. Can atau Might</label></div><div class="question" id="quiz_risk_q10"><p>10. Change Management fokus pada...</p><label class="option" id="quiz_risk_q10_a" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_risk_q10" style="display:none">A. Mengelola perubahan terhadap objective proyek</label><label class="option" id="quiz_risk_q10_b" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_risk_q10" style="display:none">B. Mengelola dampak proyek terhadap ORANG di organisasi</label><label class="option" id="quiz_risk_q10_c" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_risk_q10" style="display:none">C. Mengelola budget proyek</label><label class="option" id="quiz_risk_q10_d" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_risk_q10" style="display:none">D. Mengelola risiko teknis</label></div><div class="question" id="quiz_risk_q11"><p>11. Orang yang Risk-Averse cenderung...</p><label class="option" id="quiz_risk_q11_a" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_risk_q11" style="display:none">A. Mencari risiko tinggi untuk keuntungan besar</label><label class="option" id="quiz_risk_q11_b" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_risk_q11" style="display:none">B. Menghindari risiko dan lebih memilih yang aman</label><label class="option" id="quiz_risk_q11_c" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_risk_q11" style="display:none">C. Seimbang antara risiko dan keuntungan</label><label class="option" id="quiz_risk_q11_d" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_risk_q11" style="display:none">D. Mengabaikan risiko sepenuhnya</label></div><div class="question" id="quiz_risk_q12"><p>12. Qualitative Risk Analysis menggunakan tool utama berupa...</p><label class="option" id="quiz_risk_q12_a" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_risk_q12" style="display:none">A. Monte Carlo Simulation</label><label class="option" id="quiz_risk_q12_b" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_risk_q12" style="display:none">B. Decision Tree</label><label class="option" id="quiz_risk_q12_c" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_risk_q12" style="display:none">C. Probability/Impact Matrix</label><label class="option" id="quiz_risk_q12_d" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_risk_q12" style="display:none">D. Sensitivity Analysis</label></div>
+<div style="margin-top:15px;">
+<button class="btn" onclick="submitQuiz('quiz_risk',{1:'c',2:'b',3:'b',4:'c',5:'c',6:'b',7:'b',8:'b',9:'c',10:'b',11:'b',12:'c'})">Submit</button>
+<button class="btn" style="background:#374151;" onclick="resetQuiz('quiz_risk')">Reset</button>
+</div>
+<div id="quiz_risk_result"></div></div>
+</div>
+<script>
+function initQuiz(quizId) {
+  var key = 'quiz_' + quizId;
+  var saved = localStorage.getItem(key);
+  if (saved) {
+    var data = JSON.parse(saved);
+    data.forEach(function(item) {
+      var opt = document.getElementById(item.id);
+      if (opt) { opt.classList.add('selected'); opt.querySelector('input').checked = true; }
+    });
+  }
+}
+function selectOpt(el, quizId) {
+  var qDiv = el.closest('.question');
+  qDiv.querySelectorAll('.option').forEach(function(o){ o.classList.remove('selected'); });
+  el.classList.add('selected');
+  el.querySelector('input').checked = true;
+  saveSelections(quizId);
+}
+function saveSelections(quizId) {
+  var key = 'quiz_' + quizId;
+  var selections = [];
+  document.querySelectorAll('#'+quizId+' .option.selected').forEach(function(el){
+    selections.push({id: el.id});
+  });
+  localStorage.setItem(key, JSON.stringify(selections));
+}
+function submitQuiz(quizId, answers) {
+  var score = 0;
+  var total = Object.keys(answers).length;
+  for (var qNum in answers) {
+    var q = document.getElementById(quizId + '_q' + qNum);
+    if (!q) continue;
+    var selected = q.querySelector('.option.selected');
+    var correctId = quizId + '_q' + qNum + '_' + answers[qNum];
+    var correctEl = document.getElementById(correctId);
+    if (correctEl) correctEl.classList.add('correct');
+    if (selected) {
+      if (selected.id === correctId) { score++; }
+      else { selected.classList.add('wrong'); }
+    }
+  }
+  var resultDiv = document.getElementById(quizId + '_result');
+  var pct = Math.round(score/total*100);
+  var color = pct >= 80 ? '#16a34a' : pct >= 60 ? '#eab308' : '#dc2626';
+  resultDiv.innerHTML = '<div class="result" style="background:'+color+'22;border:1px solid '+color+'">Skor: '+score+'/'+total+' ('+pct+'%)'+(pct>=80?' ✅ Excellent!':(pct>=60?' ⚠️ Perlu belajar lagi':' ❌ Pelajari ulang materinya'))+'</div>';
+  localStorage.setItem(quizId+'_score', JSON.stringify({score:score,total:total}));
+}
+function resetQuiz(quizId) {
+  document.querySelectorAll('#'+quizId+' .option').forEach(function(o){ o.classList.remove('selected','correct','wrong'); o.querySelector('input').checked=false; });
+  document.getElementById(quizId+'_result').innerHTML='';
+  localStorage.removeItem('quiz_'+quizId);
+  localStorage.removeItem(quizId+'_score');
+}
+</script>
+<script>document.addEventListener('DOMContentLoaded',function(){ initQuiz('quiz_risk'); });</script>
+</body></html>

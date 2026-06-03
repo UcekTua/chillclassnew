@@ -19,6 +19,15 @@ export const PKPL_MATERIALS = [
   { id: "sim", title: 'Simulasi UAS PKPL', category: 'Interactive Module', ai_summary: '', file_url: '/pkpl/uas-simulation.html' }
 ];
 
+export const MANPRO_MATERIALS = [
+  { id: "ch10", title: 'Chapter 10: Communication & Stakeholder', category: 'Interactive Module', ai_summary: '', file_url: '/manpro/materi-10-communication-stakeholder.html' },
+  { id: "ch11", title: 'Chapter 11: Risk & Procurement', category: 'Interactive Module', ai_summary: '', file_url: '/manpro/materi-11-risk-procurement.html' },
+  { id: "ch12", title: 'Chapter 12: Executing', category: 'Interactive Module', ai_summary: '', file_url: '/manpro/materi-12-executing.html' },
+  { id: "ch13", title: 'Chapter 13: Monitoring & Controlling', category: 'Interactive Module', ai_summary: '', file_url: '/manpro/materi-13-monitoring-controlling.html' },
+  { id: "ch14", title: 'Chapter 14: Closing', category: 'Interactive Module', ai_summary: '', file_url: '/manpro/materi-14-closing.html' },
+  { id: "sim", title: 'Simulasi UAS Manajemen Proyek', category: 'Interactive Module', ai_summary: '', file_url: '/manpro/simulasi-uas.html' }
+];
+
 export const COURSES_DB = {
   "sipa-4-frontend": {
     id: "sipa-4-frontend",
@@ -33,5 +42,12 @@ export const COURSES_DB = {
     code: "PKPL-4",
     semester: 4,
     materials: PKPL_MATERIALS
+  },
+  "manpro-4-frontend": {
+    id: "manpro-4-frontend",
+    name: "Manajemen Proyek",
+    code: "MANPRO-4",
+    semester: 4,
+    materials: MANPRO_MATERIALS
   }
 };
