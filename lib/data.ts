@@ -11,11 +11,12 @@ export const SIPA_MATERIALS = [
 
 export const PKPL_MATERIALS = [
   { id: "idx", title: 'Index / Homepage Materi', category: 'Interactive Module', ai_summary: '', file_url: '/pkpl/index.html' },
-  { id: "ch01", title: 'Chapter 01: Unit Testing', category: 'Interactive Module', ai_summary: '', file_url: '/pkpl/ch01-unit-testing.html' },
-  { id: "ch02", title: 'Chapter 02: Regression Testing', category: 'Interactive Module', ai_summary: '', file_url: '/pkpl/ch02-regression-testing.html' },
-  { id: "ch03", title: 'Chapter 03: Integration & System Acceptance', category: 'Interactive Module', ai_summary: '', file_url: '/pkpl/ch03-integration-system-acceptance.html' },
-  { id: "ch04", title: 'Chapter 04: Penetration Testing', category: 'Interactive Module', ai_summary: '', file_url: '/pkpl/ch04-penetration-testing.html' },
-  { id: "ch05", title: 'Chapter 05: Law, Ethics & Cybercrime', category: 'Interactive Module', ai_summary: '', file_url: '/pkpl/ch05-law-ethics-cybercrime.html' },
+  { id: "ch01", title: 'Chapter 01: Database Security', category: 'Interactive Module', ai_summary: '', file_url: '/pkpl/ch01-database-security.html' },
+  { id: "ch02", title: 'Chapter 02: Unit Testing', category: 'Interactive Module', ai_summary: '', file_url: '/pkpl/ch02-unit-testing.html' },
+  { id: "ch03", title: 'Chapter 03: Regression Testing', category: 'Interactive Module', ai_summary: '', file_url: '/pkpl/ch03-regression-testing.html' },
+  { id: "ch04", title: 'Chapter 04: Integration & System Acceptance', category: 'Interactive Module', ai_summary: '', file_url: '/pkpl/ch04-integration-system-acceptance.html' },
+  { id: "ch05", title: 'Chapter 05: Penetration Testing', category: 'Interactive Module', ai_summary: '', file_url: '/pkpl/ch05-penetration-testing.html' },
+  { id: "ch06", title: 'Chapter 06: Law, Ethics & Cybercrime', category: 'Interactive Module', ai_summary: '', file_url: '/pkpl/ch06-law-ethics-cybercrime.html' },
   { id: "sim", title: 'Simulasi UAS PKPL', category: 'Interactive Module', ai_summary: '', file_url: '/pkpl/uas-simulation.html' }
 ];
 
