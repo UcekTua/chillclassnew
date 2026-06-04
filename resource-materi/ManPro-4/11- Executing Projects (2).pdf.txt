@@ -1,0 +1,1129 @@
+Note: 
+Adapted from slide of the textbook: Schwalbe, Kathy. An Introduction to Project 
+Management – Seventh Edition. Minneapolis, MN:  Schwalbe Publishing, 2021. 
+See the text itself for full citations. 
+MANAJEMEN PROYEK TI  – FASILKOM UI
+1
+IT PROJECT 
+MANAGEMENT
+TOPIC 12
+EXECUTING PROJECTS
+
+LEARNING OBJECTIVES
+a.
+List the processes and outputs of project execution when 
+using a predictive approach to project management 
+b.
+Discuss what is involved in directing and managing
+project work and managing project knowledge as part of 
+project integration management, including the 
+importance of producing promised deliverables, 
+implementing solutions to issues, evaluating work 
+performance data, preparing issue logs, requesting 
+changes to a project, and managing lessons learned 
+c.
+Explain the importance of creating quality reports, test 
+and evaluation documents, and change requests as part 
+of quality assurance 
+d.
+Describe the executing processes performed as part of 
+resource management—acquiring resources, developing 
+the team, and managing the team 
+e.
+Discuss important communications concepts, and 
+describe the process of managing communications 
+f.
+Describe the process of managing stakeholder
+engagement
+g.
+Understand the process of implementing risk responses
+h.
+Explain the process of conducting procurements and the 
+need to effectively select sellers and create agreements 
+i.
+Summarize leadership styles and project management 
+principles that assist in executing projects 
+j.
+Discuss unique aspects of executing agile/hybrid 
+projects
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+2
+
+EXECUTING PROJECT 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+3
+
+THE IMPORTANCE OF EXECUTING PROJECT WELL
+Good plans are important, but it is even more important to execute them well. 
+
+In fact, Fortune magazine summarized research showing that the main reason chief executive officers (CEOs) failed was poor 
+execution. Failed CEOs simply did not get things done, were indecisive, and did not deliver on commitments. 
+
+The same is true for project managers and all leaders. 
+Stakeholders expect to see results from their projects through effective execution.
+In general, the majority of a project’s time and budget is spent on project execution. 
+Many of the deliverables and outputs created in the other process groups are fairly similar from project to 
+project, but no two projects are ever executed in the exact same way. 
+
+Why? Because projects involve uncertainty or risk. No one can ever predict the challenges that project teams will face in trying 
+to meet project goals. 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+4
+
+SUMMARY OF EXECUTING PROCESSES AND OUTPUTS
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+5
+
+PROJECT INTEGRATION MANAGEMENT
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+6
+
+EXECUTING : PROJECT INTEGRATION MANAGEMENT
+
+During project execution, the project manager must direct and manage stakeholders to complete the project. 
+
+Coordinate planning and execution: If the project manager and team did a good job planning, the plans will be easier to 
+execute. As things change, team members need to update the plans to keep everyone working on the same page. 
+
+Develop and use soft skills: for example, strong leadership, effective team building, strong communication, motivation, 
+negotiation, conflict management, and problem solving. Project managers must lead by example in demonstrating the 
+importance of creating good project plans and then following them in project execution. 
+
+Provide a supportive organizational culture: Good project execution requires a supportive organizational culture. 
+
+Break the rules when needed: the project manager must use his or her political skills to convince concerned stakeholders 
+of the need to break the rules. 
+
+Capitalize on product, business, and application area knowledge: Project managers should use their expertise to guide 
+their team and make important decisions. 
+
+Use project execution tools and techniques: The project management methodology should include guidelines on how to 
+communicate project status, handle conflicts, work with suppliers and other stakeholders, and perform other important 
+tasks. 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+7
+
+DELIVERABLES
+
+Most project sponsors would say that the most important output of any project is its deliverables. 
+
+Recall that deliverables are products or services produced or provided as part of a project. 
+
+They include product and process-related items. 
+
+Process-related deliverables related to developing and delivering those training materials and courses include researching existing 
+training and meeting with potential partners. 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+8
+
+WORK PERFORMANCE DATA
+
+One of a project manager’s main jobs during project execution was collecting, assessing, and communicating work 
+performance data. 
+
+This data includes key performance indicators, technical performance measures, actuals (for start and end dates, 
+durations, and costs), etc. 
+
+In addition to reviewing this data, sometimes project managers use the “management by wandering around” 
+(MBWA) approach, meaning they informally observe and talk to project team members and other stakeholders as 
+much as possible. 
+
+A common way to summarize work performance data is by using a milestone report. 
+
+Recall that a milestone is a significant point or event in a project, such as completing a major deliverable or awarding a major contract 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+9
+
+ISSUE LOGS
+
+Many project managers keep an issue log to document, monitor, and track issues that need to be resolved for effective 
+work to take place. 
+
+An issue is a matter under question or dispute that could impede project success. 
+
+Issues could include situations in which people disagree, situations that need more clarification or investigation, or general concerns that need to 
+be addressed. 
+
+It is important to acknowledge issues that can hurt team performance and take action to resolve them. 
+
+A critical issue is anything that prevents progress on scheduled activities. 
+
+If the activity is on the critical path, resolution is urgent. 
+
+There should be an issue escalation process that ensures issue resolution action. 
+
+For critical activities, resolution time limits and responsible roles must be defined. 
+
+For some issues, the steering committee may be the final resolution authority. 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+10
+
+MILESTONE AND ISSUE LOGS EXAMPLE
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+11
+
+CHANGE REQUESTS
+
+Often, several change requests emerge during project execution. 
+
+Recall that a process for handling changes should be defined during project planning as part of the project management plan. 
+
+Next chapter, monitoring and controlling projects, provides detailed information on handling changes. 
+
+It is important during project execution to request appropriate changes formally and informally. 
+
+Project managers, team members, suppliers, and other stakeholders can make change requests, so it is important 
+to have a good process in place for handling them. 
+
+Also recall that some projects require change management to address people’s reactions when projects introduce 
+big changes in organizations. 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+12
+
+EXAMPLE PROJECT CHANGE REQUEST 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+13
+
+IMPLEMENTED SOLUTIONS TO PROBLEMS
+Some common problems encountered during project execution include the following: 
+1.
+The project sponsor and/or other senior managers are not very supportive of the project.
+2.
+Project stakeholders, such as people who would use the products and services the project is attempting to create, are not 
+sufficiently involved in project decision-making. 
+3.
+The project manager is inexperienced in managing people, working in a particular organization, or understanding the 
+application area of the project.
+4.
+The project objectives/scope are unclear.
+5.
+Estimates for time and cost goals are unreliable or unrealistic.
+6.
+Business needs/technology changes have impacted the project.
+7.
+People working on the project are incompetent or unmotivated
+8.
+There are poor conflict-management procedures.
+9.
+Communications are poor.
+10. Suppliers are not delivering as promised.
+The first five problems should have been addressed during project initiation or planning (and were addressed in previous 
+chapters), but they can also cause difficulties during execution. 
+Addressing business and technology changes are discussed in the next chapter on monitoring and controlling
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+14
+
+CONFLICT MANAGEMENT
+
+Most large projects are high-stake endeavors that are highly visible within organizations. They require tremendous 
+effort from team members, are expensive, require significant resources, and can have an extensive impact on the 
+way work is done in an organization. 
+
+When the stakes are high, conflict is never far away, and even small projects with low budgets have conflicts—it is a
+natural part of work and life in general.
+
+Project managers should lead their teams in developing norms for dealing with various types of
+conflicts that might arise. 
+
+For example, team members should know that disrespectful behavior toward any project stakeholder is
+inappropriate, and that team members are expected to try to work out small conflicts themselves before elevating 
+them to higher levels.
+
+The team charter, created during project planning, should address team conduct and conflict management. 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+15
+
+CONFLICT HANDLING MODES
+
+The Thomas-Kilmann Instrument is designed to measure a person’s 
+behavior in conflict situations, defined as times when the concerns of two 
+people appear to be incompatible. 
+
+In such conflict situations, you can describe an individual’s behavior 
+along two dimensions: (1) assertiveness, the extent to which people 
+attempt to satisfy their own concerns, and (2) cooperativeness, the extent 
+to which people attempt to satisfy the other person’s concerns.
+
+Project managers must also realize that not all conflict is bad.
+
+Conflict often produces important results, such as new ideas, better 
+alternatives, and motivation to work harder and more collaboratively. 
+
+Project team members might become stagnant or develop groupthinkk—
+conformance to the values or ethical standards of a group—if there are no 
+conflicting viewpoints on various aspects of a project 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+16
+
+MANAGING PROJECT KNOWLEDGE
+
+PMI added this new process to the PMBOK® Guide in 2017 to highlight the importance of managing project 
+knowledge. There are two basic types of knowledge:
+
+Explicit knowledge: This type of knowledge can be easily explained using words, pictures, or numbers and is easy to 
+communicate, store, and distribute. Examples include information found in textbooks and encyclopedias as well as 
+project documents and plans.
+
+Tacit knowledge: Unlike explicit knowledge, tacit knowledge, sometimes called informal knowledge, is difficult to 
+express and is highly personal. Examples include beliefs, insight, and experience. It is often shared through 
+conversations and interactions between people. Many organizations set up programs like mentorships, 
+communities of practice, or workshops to assist in passing on tacit knowledge.
+
+Knowledge management should be done before, during, and after projects are completed. It is often very difficult to 
+accomplish. Organizations can provide explicit knowledge in writing or other formats, including audio, pictures,
+and videos. They can also build a culture of trust and sharing so people work together to pass on tacit knowledge. 
+One of the main outputs of managing project knowledge is a lessons learned register. 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+17
+
+LESSONS LEARNED REGISTER
+
+A lessons learned register should document challenges, 
+problems, realized risks and opportunities, and other 
+content to assist in knowledge management on current 
+and future projects. 
+
+It is best if project team members document lessons 
+learned throughout the life of the project. 
+
+At the end of the project, all lessons learned should be 
+both discussed with the team and archived in a lessons 
+learned repository, a key organizational process asset. 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+18
+
+MANAGING QUALITY
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+19
+
+MANAGING QUALITY
+It is one thing to develop a plan for ensuring quality on a project; it is another to ensure delivery of 
+quality products and services. 
+The term quality assurance is often used to describe the activities related to satisfying the relevant 
+quality standards for a project. 
+
+It addresses the following question: Are we doing what we said we would do, when we said we would do it, 
+in the way we said we would do it, and can we do it better? 
+Another goal of managing quality is continual quality improvement. 
+Key outputs of managing quality include a quality report, test and evaluation documents, change 
+requests, project management plan updates, and project documents updates. 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+20
+
+QUALITY IMPROVEMENT TOOLS AND TECHNIQUES
+
+Benchmarking generates ideas for quality improvements by comparing specific project practices or product 
+characteristics to those of other projects or products within or outside of the organization itself.
+
+A quality audit is a structured review of specific quality management activities that helps identify lessons learned, 
+which could improve performance on current or future projects.
+
+In-house auditors or third parties with expertise in specific areas can perform quality audits, which can be either scheduled or random. 
+
+A quality audit could be done periodically to review the survey results. 
+
+Process analysis involves analyzing how a process operates and determining improvements. There are several ways 
+to perform process analysis. You can use a simple task board or kanban board to visually display work in columns 
+labeled To Do, In Progress, and Done. Root cause analysis is also often part of process analysis.
+
+Cause-and-effect diagrams—also called fishbone diagrams (because their structure resembles a fishbone) or Ishikawa diagrams
+(named after their creator)—can assist in ensuring and improving quality by finding the root causes of quality problems. 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+21
+
+SAMPLE KANBAN BOARD & CAUSE-EFFECT DIAGRAM
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+22
+
+PROJECT RESOURCE MANAGEMENT
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+23
+
+PROJECT RESOURCE MANAGEMENT 
+
+Effective use of resources is crucial to project execution. 
+
+The main processes project managers perform include acquiring resources, developing the team, and managing the 
+team. 
+
+Key outputs include physical resource assignments, project team assignments, resource calendars, team 
+performance assessment, change requests, and updates to the project management plan, enterprise 
+environmental factors, and organizational process assets.
+
+Resource calendars are simply calendars for each resource showing work assignment dates. 
+
+Before discussing resource assignments and team performance assessment, it is important to understand basic 
+concepts related to dealing with people in a work setting. Key concepts include motivation, influence, and 
+effectiveness. 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+24
+
+MOTIVATION 
+Psychologists, managers, coworkers, teachers, parents, and most people in general still struggle to 
+understand what motivates people, or why they do what they do. 
+Intrinsic motivation causes people to participate in an activity for their own enjoyment. For 
+example, some people love to read, write, or play an instrument because it makes them feel good. 
+Extrinsic motivation causes people to do something for a reward or to avoid a penalty. For example, 
+some young children would prefer not to play an instrument, but do so to receive a reward or avoid 
+a punishment. 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+25
+
+MASLOW’S HIERARCHY OF NEEDS
+
+The basic pyramid structure of Maslow’s hierarchy of needs, which states 
+that people’s behaviors are guided or motivated by a sequence of needs. 
+
+At the bottom of the hierarchy are physiological needs, such as air, water, 
+and food. 
+
+After physiological needs are satisfied, safety needs— such as shelter from 
+bad weather, lack of physical or mental abuse, and a lowcrime
+environment—guide behavior. 
+
+After safety needs are satisfied, social needs—such as having friends, 
+belonging to groups, and having a sense of community—come to the 
+forefront, and so on up the hierarchy. 
+
+Examples of esteem needs include personal achievement, recognition, and 
+respect, whereas self-actualization needs include a sense of fulfillment and 
+belief that one is working to his or her potential. 
+
+The order of these needs in the pyramid is significant. Maslow suggests that 
+each level of the hierarchy is a prerequisite for the level above 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+26
+
+HERZBERG’S MOTIVATION-HYGIENE THEORY
+
+Frederick Herzberg, a psychologist and professor, is best known for distinguishing between motivational factors and 
+hygiene factors when considering motivation in work settings. 
+
+He called factors that cause job satisfaction motivators, and factors that cause dissatisfaction hygiene factors. 
+
+A hygiene factor is a basic necessity, such as proper heating or cooling during extreme weather. 
+
+Hygiene factors would cause dissatisfaction if not present but would not motivate workers to do more if present. 
+
+Herzberg found that people were motivated to work mainly by feelings of personal achievement and recognition. 
+
+Motivators, Herzberg concluded, included achievement, recognition, the work itself, responsibility, advancement, and growth.
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+27
+
+MCCLELLAND’S ACQUIRED-NEEDS THEORY
+The main categories of acquired needs include achievement, affiliation, and power. Normally, one or two of these needs is 
+dominant in individuals. 
+
+Achievement: People with a high need for achievement (nAch) seek to excel and tend to avoid both low-risk and high-risk 
+situations to improve their chances of achieving something worthwhile. 
+
+Achievers need regular feedback and often prefer to work alone or with other high achievers. Managers should give high achievers challenging 
+projects with achievable goals. Achievers should receive frequent performance feedback, and although money is not an important motivator to 
+them, it is an effective form of feedback as a way to keep score.
+
+Affiliation: People with a high need for affiliation (nAff) desire harmonious relationships with other people and need to feel 
+accepted by others. 
+
+They tend to conform to the norms of their work group and prefer work that involves significant personal interaction. Managers should try to create 
+a cooperative work environment to meet the desires of people with a high need for affiliation.
+
+Power: People with a need for power (nPow) desire either personal power or institutional power. 
+
+People who need personal power want to direct others and can be seen as bossy. People who need institutional, or social, power want to organize 
+others to further the goals of the organization. Management should provide those seeking institutional power with the opportunity to manage 
+others, emphasizing the importance of meeting organizational goals. 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+28
+
+MCGREGOR’S THEORY X AND THEORY Y AND OUCHI’S THEORY Z
+McGregor found that although many managers spouted the right ideas, they actually followed a set of assumptions about 
+worker motivation that he called Theory X (sometimes referred to as classical systems theory). 
+
+People who believe in Theory X assume that workers dislike and avoid work if possible, so managers must use coercion, 
+threats, and various control schemes to get workers to make adequate efforts to meet objectives. Theory X managers 
+assume that the average worker wants to be directed and prefers to avoid responsibility, has little ambition, and wants 
+security above all else. 
+
+Managers who believe in Theory Y assume that individuals do not inherently dislike work but consider it as natural as play 
+or rest. The most significant rewards are the satisfaction of esteem and self-actualization needs, as described by Maslow. 
+McGregor urged managers to motivate people based on these more valid Theory Y notions. 
+William Ouchi, author of Theory Z (1981), developed this theory after making a comparative study of Japanese and American 
+management practices. 
+
+Theory Z emphasizes motivating workers and increasing loyalty by providing a job for life with a strong focus on the well-
+being of the employee, both on and off the job. Although the concept of a job for life is not very popular today, many people 
+reassessed their views of work-life balance during the COVID pandemic, as described in the following Media Snapshot. 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+29
+
+THAMHAIN AND WILEMON’S INFLUENCE BASES
+Many people working on a project do not report directly to project managers, and project managers often do not have control over project staff that 
+report to them. 
+1.
+Authority: The legitimate hierarchical right to issue orders
+2.
+Assignment: The project manager’s perceived ability to influence a worker’s assignment to future projects
+3.
+Budget: The project manager’s perceived ability to authorize the use of discretionary funds
+4.
+Promotion: The ability to improve a worker’s position
+5.
+Money: The ability to increase a worker’s pay and benefits
+6.
+Penalty: The project manager’s perceived ability to dispense or cause punishment
+7.
+Work challenge: The ability to assign work that capitalizes on a worker’s enjoyment of doing a particular task, which taps an intrinsic motivational 
+factor
+8.
+Expertise: The project manager’s perceived specialized knowledge that others deem important
+9.
+Friendship: The ability to establish friendly personal relationships between the project manager and others 
+Projects were more likely to fail when project managers relied too heavily on using authority, money, or penalty to influence people. 
+When project managers used work challenge and expertise to influence people, projects were more likely to succeed 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+30
+
+COVEY’S EFFECTIVENESS
+Covey’s first three habits of effective people—first three habits—help people achieve a private victory by becoming independent. 
+After achieving independence, people can then strive for interdependence by developing the next three habits and synergize. 
+Synergy is the concept that the whole is equal to more than the sum of its parts. Finally, seventh habit to develop and renew 
+their physical, spiritual, mental, and social/emotional selves.
+1.
+Be proactive: Project managers must be proactive, anticipate, and plan for problems and inevitable changes on projects.
+2.
+Begin with the end in mind: The project manager must have and share the vision of the final outcome of the project.
+3.
+Put first things first: Project managers should focus on important and not urgent activities, such as developing various 
+project plans, building relationships with major project stakeholders, and mentoring project team members.
+4.
+Think win/win: Project managers should strive to use a win/win approach in making decisions, but sometimes, especially 
+in competitive situations, they must use a win/lose paradigm
+5.
+Seek first to understand, then to be understood: Empathic listening is listening with the intent to understand by putting 
+yourself in the shoes of the other person. 
+6.
+Synergize: In projects, a project team can synergize by creating collaborative products that are much better than a 
+collection of individual efforts
+7.
+Sharpen the saw: Project managers must make sure that they themselves and their project team have time to retrain, 
+reenergize, and occasionally even relax to avoid burnout. 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+31
+
+ACQUIRING RESOURCES
+
+Project resources include both physical and human resources. 
+
+Physical resources include equipment, supplies, and materials. 
+
+Human resources include the people required to perform the project work. 
+
+There’s a saying that the project manager who is the smartest person on the team has done a poor job of recruiting!
+
+Project managers with strong influencing and negotiating skills are often good at getting internal people to work on 
+their project. 
+
+However, the organization must ensure that people assigned to the project best fit the project’s requirements, and 
+that these people are motivated to remain on the project.
+
+Problems that often occur when assigning resources are availability and overallocation. You can use resource 
+loading and leveling to help address these problems. 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+32
+
+RESOURCE LOADING
+
+Resource loading refers to the number of individual resources an 
+existing schedule requires during specific time periods.
+
+Resource loading helps project managers develop a general 
+understanding of the demands a project will make on the 
+organization’s resources (physical and human), as well as on 
+individual people’s schedules. 
+
+A histogram can be very helpful in determining staffing needs or in 
+identifying staffing problems. 
+
+A resource histogram can also show when work is being 
+overallocated to a certain resource or group. 
+
+Overallocation means more resources than are available are 
+assigned to perform work at a given time 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+33
+
+RESOURCE LEVELING
+
+Resource leveling is a technique for resolving resource 
+conflicts by delaying tasks. 
+
+It is a form of network analysis in which resource management 
+concerns drive scheduling decisions (start and finish dates). 
+
+The main purpose of resource leveling is to create a smoother 
+distribution of resource usage. 
+
+Project managers examine the network diagram for areas of 
+slack or float, and to identify resource conflicts. 
+
+Resource leveling, therefore, aims to minimize period-by-period 
+variations in resource loading by shifting tasks within their 
+slack or float allowances. 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+34
+
+RESOURCE LEVELING ADVANTAGE
+
+When resources are used on a more constant basis, they require less management.
+
+Resource leveling may enable project managers to use a just-in-time inventory type of policy for using 
+subcontractors or other expensive resources. 
+
+Resource leveling results in fewer problems for project personnel and accounting departments. Increasing and
+decreasing labor levels and human resources often produce additional work and confusion.
+
+Resource leveling often improves morale. People like to have some stability in their jobs. 
+Resource smoothing, also known as time constrained scheduling, is a technique you can use to finish a project on time 
+while avoiding peaks and valleys in resource demand. 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+35
+
+SAMPLE RESOURCE ASSIGNMENTS
+Sample Physical Resource Assignments
+Sample Project Team Assignments
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+36
+
+DEVELOPING THE PROJECT TEAM
+The main goal of team development is to help people work together 
+more effectively to improve project performance 
+It takes teamwork to successfully complete most projects
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+37
+
+TUCKMAN MODEL OF TEAM DEVELOPMENT
+1. Forming: introduction of team members
+2. Storming: team members have different opinions as to how the 
+team should operate
+3. Norming: develop a common working method
+4. Performing: emphasis on reaching the teams goal rather than 
+working on team process
+5. Adjourning: break-up the team after they successfully reach their 
+goals.
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+38
+
+TRAINING
+Training can help people understand themselves, each other, and 
+how to work better in teams
+Team building activities include:
+Physical challenges
+Psychological preference indicator tools
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+39
+
+MEYERS-BRIGGS TYPE INDICATOR (MBTI)
+MBTI is a popular tool for determining personality preferences and helping 
+teammates understand each other 
+Four dimensions include:
+Extrovert/Introvert (E/I)
+Sensation/Intuition (S/N): gather information, facts vs intuitive
+Thinking/Feeling (T/F): judgment, objective & logical vs subjective & personal
+Judgment/Perception (J/P): attitude, structure vs flexible
+40
+IT people vary most from the general population in not being 
+extroverted or sensing
+▪
+75% IT people Introvert, general population 25% introvert
+▪
+55% IT people Intuitive, general population 25%
+▪
+80% IT people Thinking, general population 50%
+
+SOCIAL STYLES 
+PROFILE
+People are perceived as behaving 
+primarily in one of four zones, based on 
+their assertiveness and responsiveness:
+Drivers: pro active & task oriented
+Expressives: proactive and people 
+oriented
+Analyticals: reactive & task oriented
+Amiables: reactive & people 
+oriented
+People on opposite corners (drivers and 
+amiables, analyticals and expressives) 
+may have difficulties getting along
+41
+
+REWARD AND RECOGNITION SYSTEMS
+Team-based reward and recognition systems can promote teamwork
+Focus on rewarding teams for achieving specific goals
+Allow time for team members to mentor and help each other to meet 
+project goals and develop human resources
+42
+
+SAMPLE TEAM PERFORMANCE ASSESSMENT 
+
+Project managers assess team performance in 
+several different ways.
+
+Note that the term performance assessment is 
+used for project teams while performance appraisal 
+is for individuals. 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+43
+
+MANAGING THE PROJECT TEAM
+Project managers must lead their teams in performing various project 
+activities
+After assessing team performance and related information, the 
+project manager must decide:
+If changes should be requested to the project
+If corrective or preventive actions should be recommended
+If updates are needed to the project management plan or organizational 
+process assets
+44
+
+APPROACHES FOR MANAGING PROJECT TEAMS
+Observation and conversation
+Feedback
+Conflict management
+45
+
+GENERAL ADVICE ON TEAMS
+Be patient and kind with your team
+Fix the problem instead of blaming people 
+Establish regular, effective meetings
+Allow time for teams to go through the basic team-building stages 
+Limit the size of work teams to three to seven members
+Plan some social activities to help project team members and other stakeholders 
+get to know each other better 
+Stress team identity
+Nurture team members and encourage them to help each other
+Take additional actions to work with virtual team members
+46
+
+ADDITIONAL ADVICE FOR MANAGING VIRTUAL TEAMS 
+1. Hire the right people. If your team is not in place yet, be sure to hire people with strong professional maturity who can work on projects 
+autonomously. If the team is already in place, take the time to address needs and concerns about working virtually. 
+2. Trust your people. Do not micromanage or try to monitor how they are spending their time. Focus on people completing work, not how or 
+when they complete it.
+3. Tailor communications. Understand how each team member prefers to communicate. Also let them know how you like to communicate.
+4. Use technology effectively. Decide what tools to use when, and provide training as needed. Establish rules for videoconferencing, like 
+having your video on.
+5. Use rituals. Planning the week on Monday mornings, reviewing accomplishments and previewing the week ahead on Fridays, and similar 
+rituals help teams and their leaders.
+6. Own your own schedule, and let people own theirs. Make sure meetings are meaningful. Use other tools like email for general topics and 
+project management software to enter and track progress.
+7. Make the time to get personal. Build connections by finding out what team members like to do outside of work. 
+8. Build a strong team culture. Work to build a sense of team using virtual meetings or events like virtual runs/walks.
+9. Be available. Check in with team members to see how they are doing.
+10.Be unavailable. Take time for yourself! Take time off when you need to, and let team members know they should do the same. 
+47
+
+PROJECT COMMUNICATIONS MANAGEMENT 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+48
+
+IMPORTANT PROJECT COMMUNICATIONS CONCEPTS 
+Key concepts include:
+
+formal and informal communications, 
+
+nonverbal communications, 
+
+using the appropriate communications medium, 
+
+understanding individual and group communication needs, and 
+
+the impact of team size on project communications. 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+49
+
+IMPORTANCE OF FACE-TO-FACE COMMUNICATION
+▪
+Research says that in a face-to-face interaction:
+▪
+58 percent of communication is through body language.
+▪
+35 percent of communication is through how the words are said
+▪
+7 percent of communication is through the content or words that are spoken
+▪
+Pay attention to more than just the actual words someone is saying
+▪
+A person’s tone of voice and body language say a lot about how he or she really 
+feels
+50
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+
+PERSONAL PREFERENCES AFFECT COMMUNICATION NEEDS
+Introverts like more private communications, while extroverts like to discuss things in public
+Intuitive people like to understand the big picture, while sensing people need step-by-step details
+Thinkers want to know the logic behind decisions, while feeling people want to know how 
+something affects them personally
+Judging people are driven to meet deadlines while perceiving people need more help in 
+developing and following plans
+Encouraging More Face-to-Face Interaction
+Short, frequent meetings are often very effective in IT projects
+Stand-up meetings force people to focus on what they really need to communication
+Some companies have policies preventing the use of e-mail between certain hours or even entire days of 
+the week
+51
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+
+DISTRIBUTING INFORMATION IN AN EFFECTIVE AND TIMELY MANNER
+Don’t bury crucial information
+Don’t be afraid to report bad information
+Oral communication via meetings and informal talks helps bring important information—good and 
+bad—out into the open
+Other Communication Considerations
+Rarely does the receiver interpret a message exactly as the sender intended
+Geographic location and cultural background affect the complexity of project communications
+Different working hours
+Language barriers
+Different cultural norms
+52
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+
+DETERMINING THE NUMBER OF COMMUNICATIONS CHANNELS
+53
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+
+PROJECT COMMUNICATIONS AND UPDATING BUSINESS PROCESSES 
+
+Getting project information to the right people at the right time and in a useful format is just as important as 
+developing the information in the first place. 
+
+The communications management plan prepared during project planning serves as a good starting point for project
+communications. 
+
+During execution, project teams must address important considerations for creating and distributing project
+communication, as described previously. 
+
+One of the outputs of managing communications is organizational process assets updates, such as improving 
+business processes. 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+54
+
+PROJECT STAKEHOLDER MANAGEMENT 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+55
+
+MANAGING STAKEHOLDER ENGAGEMENT 
+
+It is important for project managers to engage their stakeholders to help their projects succeed. 
+
+The stakeholder management plan should identify key stakeholders and describe strategies for managing relationships with them. 
+
+It is easy to say that all project managers have to do is follow their plans. 
+
+Managing stakeholder engagement, like managing student engagement, can be extremely difficult. 
+
+It is important to set the stage early that stakeholder engagement is expected and welcomed. 
+
+A project manager’s leadership and interpersonal skills are crucial in making that happen. 
+
+Inputs to managing stakeholder engagement include the project management plan, (especially the sections regarding 
+stakeholder engagement, communications, and risk), project documents (i.e., change log, issue log, lessons learned 
+register, and stakeholder register), enterprise environmental factors, and organizational process assets. 
+
+Many of the outputs are similar to other knowledge areas, such as change requests and updates to the project management plan and project 
+documents. 
+
+Tools and techniques include expert judgment, inspection, communication skills, interpersonal and team skills, ground 
+rules, and meetings. 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+56
+
+PROJECT RISK MANAGEMENT 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+57
+
+IMPLEMENTING RISK RESPONSES
+
+The main executing process performed as part of project risk management is implementing risk responses as 
+defined in the process to plan risk responses. 
+
+Key outputs include change requests and project documents updates (i.e., issue log, lessons learned register, 
+project team assignments, risk register, and risk report) 
+
+It is important to plan risk responses, and it is even more important to implement them well. 
+
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+58
+
+PROJECT PROCUREMENT MANAGEMENT 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+59
+
+CONDUCTING PROCUREMENTS 
+
+Approaching a preferred supplier: Many organizations have formed good working relationships with
+certain suppliers, so they want to continue working with them.
+
+Approaching several qualified suppliers: If it does not get the desired response, the buyer can either expand its list 
+of potential sellers until it gets the desired response or revise its procurement plans.
+
+Advertising to many potential suppliers: As a result of pursuing a competitive bidding strategy, the buyer can receive 
+better goods and services than expected at a lower price or with faster delivery. Advertising the procurement (on a 
+website, in a trade journal, or by other means) and receiving proposals and bids from multiple sources often takes 
+advantage of the competitive business environment.
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+60
+
+SAMPLE QUALIFIED SELLER LIST
+
+Selecting suppliers or sellers, often called source selection, involves:
+
+evaluating proposals or bids from sellers, 
+
+choosing the best one, 
+
+negotiating the contract, and 
+
+awarding the contract. 
+
+Several stakeholders in the procurement process should be involved in selecting 
+the best suppliers for the project. 
+
+Often, teams of people are responsible for evaluating various sections of the 
+proposals. 
+
+Often, buyers develop a short list of the top three to five suppliers to reduce the 
+work involved in selecting a source. 
+
+It is customary to conduct contract negotiations during the source selection 
+process.
+
+Sellers on the short list are often asked to prepare a best and final offer (BAFO). 
+
+Expert negotiators often conduct these negotiations, especially for contracts involving large 
+amounts of money. In addition, senior managers from both buying and selling 
+organizations often meet before making final decisions. 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+61
+
+SAMPLE AGREEMENT OR CONTRACT
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+62
+
+APPLYING LEADERSHIP STYLES AND PROJECT 
+MANAGEMENT PRINCIPLES TO PROJECT EXECUTION 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+63
+
+LEADERSHIP STYLES 
+The PMBOK® Guide – Sixth Edition briefly describes the following leadership styles:
+1.
+Laissez-faire: Meaning “let go,” this hands-off approach lets teams determine their own goals and how to achieve 
+them.
+2.
+Transactional: This management by exception approach focuses on achieving goals or compliance by offering team 
+members appropriate rewards and punishments.
+3.
+Servant leader: People using this approach focus on other people’s growth, learning, and autonomy and demonstrate
+service as a form of leadership.
+4.
+Transformational: By working with others to identify needed changes, these leaders empower others and guide 
+changes through inspiration.
+5.
+Charismatic: These people can inspire others based on their enthusiasm and confidence.
+6.
+Interactional: This leadership style is a combination of transactional, transformational, and charismatic. 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+64
+
+OTHER LEADERSHIP STYLE
+Daniel Goleman, author of Emotional Intelligence (1995), also wrote a book called Primal Leadership: Unleashing the Power of Emotional 
+Intelligence (2013), which describes six different styles of leadership and situations where they are most appropriate: 
+1.
+Visionary: Needed when an organization needs a new direction, and the goal is to move people towards a new set of shared dreams. The 
+leader articulates where the group is going, but lets them decide how to get there by being free to innovate, experiment, and take calculated 
+risks.
+2.
+Coaching: One-on-one style that focuses on developing individuals, showing them how to improve their performance. This approach works 
+best with workers who show initiative and request assistance.
+3.
+Affiliative: Emphasizes the importance of teamwork and creating harmony by connecting people to each other. This approach is effective 
+when trying to increase morale, improve communication, or repair broken trust.
+4.
+Democratic: Focuses on people’s knowledge and skills and creates a commitment to reaching shared goals. This leadership style works best 
+when the leader needs the collective wisdom of the group to decide on the best direction to take for the organization.
+5.
+Pacesetting: Used to set high standards for performance. The leader wants work to be done better and faster and expects everyone to put 
+forth their best effort.
+6.
+Commanding: Most often used, also called autocratic or military style leadership. This style is most effective in a crisis or when a turnaround 
+is needed. 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+65
+
+APPLYING PROJECT MANAGEMENT PRINCIPLES RELATED
+TO EXECUTING PROJECTS 
+Several project management principles can assist in executing projects:
+1.
+Demonstrate leadership behaviors. 
+2.
+Be a diligent, respectful, and caring steward. “Stewards act responsibly to carry out activities with integrity, care, 
+and trustworthiness while maintaining compliance with internal and external guidelines. 
+3.
+Effectively engage with stakeholders. By managing stakeholder engagement, people are more likely to be engaged 
+in projects. Projects are done by and for people,so it’s crucial to effectively engage with stakeholders.
+4.
+Recognize, evaluate, and respond to system interactions. Projects are not run in isolation. Project managers and 
+their teams need to take a holistic view of their projects, remembering that they are part of a larger system,
+especially during execution. 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+66
+
+EXECUTING AGILE/HYBRID PROJECTS
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+67
+
+EXECUTING AGILE/HYBRID PROJECTS
+
+Agile/hybrid project managers and their teams can use any of the predictive project executing processes, tools, or 
+techniques mentioned earlier. 
+
+For example, they still direct and manage project work, manage project knowledge, manage quality, acquire resources, develop teams, 
+manage teams, manage communications, implement risk responses, conduct procurements, and manage stakeholder engagement.
+
+An important characteristic of agile teams is that they should be self-directed. 
+
+The Scrum master or project manager, if there is one, should primarily use a servant-leader approach, focusing on
+other people’s growth, learning, and autonomy. 
+
+Agile teams can face the same problems addressed earlier (unsupportive project sponsors, unengaged 
+stakeholders, poor communications, etc.).
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+68
+
+THEORY VERSUS PRACTICE
+
+Theory: 
+
+that there are dozens of ways to run projects using an agile approach, with Scrum being the most popular. 
+
+Also Scrum does not include a project manager role. 
+
+Scrum teams have one product owner, one Scrum master, and several developers.
+
+According to The Scrum Guide, “Scrum Teams are cross-functional, meaning the members have all the skills necessary to create value
+each Sprint. They are also self-managing, meaning they internally decide who does what, when, and how.”
+
+The Scrum master, theoretically, would not assign tasks to individual people because the team is supposed to work together to decide who does what. 
+
+The Scrum master would also remove any roadblocks the team faces. 
+
+The product owner would share the vision of the project and provide the prioritized product backlog to ensure the team produces valuable work. 
+
+Several Scrum events, like the daily Scrum, would help the team communicate information in a timely manner. The sprint review would provide an opportunity 
+for various stakeholders to review the work completed to date. The sprint retrospective would give the team time to reflect on and improve their work process.
+
+However, practice does not always follow theory, as described in the next section. 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+69
+
+TEAM MEMBERS DO NOT HAVE ALL THE NECESSARY
+SKILLS
+
+Recall that one of the main reasons for using an agile approach is because you cannot define the scope of work 
+upfront. 
+
+If Scrum teams do not have any people on them who understand these technologies, how can they help develop 
+policies to hire, retain, and educate workers with these skills? One approach would be to identify this lack of 
+expertise as an impediment and raise it to senior management for resolution. They might decide to remove that 
+work from the product backlog and work on finding a better solution. That solution might involve not just using agile. 
+
+Example : the GCHC project was not a purely agile project. 
+
+Although they used Scrum, it was a modified version. They also agreed at the beginning of the project that they would follow whatever 
+practices made sense. For example, to address the problem of not having internal expertise in areas like 3-D printing, robotics, and 
+artificial intelligence, PM worked with other stakeholders to quickly develop and outsource several user stories related to those areas. 
+One of those user stories involved researching the option to acquire other companies with those capabilities. Sometimes it makes sense 
+to hire experts outside of the company (or acquire other companies) to meet specific needs. PM gladly handed over the management of 
+that work to someone in another department. 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+70
+
+TEAMS ARE NOT FOLLOWING SCRUM VALUES
+
+Effective teamwork is crucial to all projects, especially when using self-directed Scrum teams. 
+
+Even though people are trained in agile and have worked on Scrum teams in the past, they still might have problems working together. 
+
+Scrum theory emphasizes the values of commitment, focus, openness, respect, and courage, but these values are not easy to implement.  
+What can you do if you see that teams are not working well together?
+
+It’s important to address the root cause of the problem, especially with team dynamics. 
+
+For example, Debra (PM) noticed in the daily Scrum meetings with the incentives team that one team member, Scott, was very quiet, even after she asked him 
+if he had anything to add. She knew Scott was introverted, but she also knew that he often had brilliant, innovative ideas. She pulled Scott aside after a 
+meeting and openly discussed her concerns. It turned out the issue was that Scott was afraid to bring up ideas that differed from Vanessa’s, who was a high-
+level manager and very aggressive. He also totally disagreed with some of her suggestions related to retention policies. Scott had been working virtually since 
+the pandemic started, and if he was forced to go back into the office, he was ready to find another job. He knew many other workers felt the same way. Scott 
+had trouble implementing the Scrum values of openness and courage. Vanessa was also Debra’s boss, so she definitely related to this problem, knowing how 
+intimidating Vanessa could be. Debra remembered a study on team effectiveness that said the number one quality for a great team was psychological safety. 
+People have to feel safe to voice their opinions, especially if they differ from others. Debra talked to Vanessa and held a special meeting of the entire team to 
+discuss how they would promote a safe culture. Vanessa acknowledged that she often came across pretty strong, but that she respected everyone’s ideas and 
+would be more aware of and open to seeking other opinions. She was very happy that Scott opened up about the issue of virtual work and rethought her ideas 
+on policies related to it. 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+71
+
+REQUIREMENTS CHANGE TOO QUICKLY
+
+Part of the beauty of an agile culture is the ability to pivot quickly. 
+
+Product owners are responsible for prioritizing the product backlog before each sprint. But what if senior management keeps changing 
+priorities, even after a sprint has started? What if the organization’s culture is not receptive to such rapid changes?
+
+Sprint teams used to think that the sprint backlog could not change during a sprint. 
+
+However, The Scrum Guide (2020) states the following: “The Sprint Goal is created during the Sprint Planning event and then added to the 
+Sprint Backlog. As the Developers work during the Sprint, they keep the Sprint Goal in mind. If the work turns out to be different than they 
+expected, they collaborate with the Product Owner to negotiate the scope of the Sprint Backlog within the Sprint without affecting the Sprint 
+Goal.” 
+
+Therefore, agile teams have to be flexible and respond to changes very quickly. 
+
+Leaders must empower teams to be change agents, always focused on adding value to the organization. 
+
+For example, Debra and her incentives team held a special meeting to address the competitor’s new tuition policy. They might discover that the upfront 
+reimbursement only applied to a few online programs and not most accredited colleges and universities. They could investigate ways their company could 
+provide tuition assistance upfront in particular cases. They could also provide further incentives for employees to successfully complete courses. Her team 
+could then clarify their new policies to address these issues. 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+72
+
+CHAPTER SUMMARY
+
+Good execution is crucial to project success. Without it, the products, services, and results planned from the project 
+cannot materialize.
+
+This chapter summarizes the executing processes and key outputs for project integration, quality, resource, 
+communications,
+stakeholder, risk, and procurement management. It also discusses important concepts and tools and techniques to 
+help improve project
+execution. 
+
+Common outputs to these knowledge areas include change requests and updates to the project management plan, 
+project documents, and organizational process assets. 
+
+Integration management: deliverables, work performance data, issue log, and lessons learned register
+
+Quality management: Quality report, test and evaluation 
+
+Resource management: Physical resource assignments, project team assignments, resource calendars, and team performance 
+assessments 
+
+Communications management: Project communications Procurement management: selected sellers and agreements 
+
+It is also important to use effective leadership and apply several project management principles that assist in 
+executing projects. Project managers must understand the theory as well as the practice of executing agile projects. 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+73
+

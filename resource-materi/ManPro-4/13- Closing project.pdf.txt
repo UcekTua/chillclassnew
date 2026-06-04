@@ -1,0 +1,196 @@
+Note: 
+Adapted from slide of the textbook: Schwalbe, Kathy. An Introduction to Project 
+Management – Seventh Edition. Minneapolis, MN:  Schwalbe Publishing, 2021. 
+See the text itself for full citations. 
+MANAJEMEN PROYEK TI  – FASILKOM UI
+1
+IT PROJECT 
+MANAGEMENT
+TOPIC 13
+CLOSING PROJECTS
+
+LEARNING OBJECTIVES
+a. Describe common ways to close or terminate projects 
+b. Discuss the process of closing a project or phase performed as part of project 
+integration management when using a predictive approach to managing 
+projects
+c. Explain the importance of a project close-out meeting and knowledge transfer
+d. Describe the contents of a customer acceptance/project completion form, final 
+project report, and lessons-learned report 
+e. Discuss unique aspects of closing agile/hybrid projects
+f. Summarize advice on closing projects 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+2
+
+CLOSING PROCESSES 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+3
+
+CLOSING PROJECT
+
+Closing Project includes archiving project information, ensuring the planned work is complete, and releasing
+organizational resources. 
+
+It often includes a final presentation and report. 
+
+For both projects that are completed and those that are canceled before completion, it is important to formally
+close the project and reflect on what can be learned to improve future projects. 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+4
+
+COMMON WAYS TO CLOSE OR TERMINATE A PROJECT
+1.
+Integration: A project is completed, and products and services created are integrated into operations. 
+This is the most common approach. Project staff and other resources are released and distributed into the organization.
+2.
+Addition: A project creates a new product or service that results in a new unit in the organization, such as a 
+department, division, or company. Project staff and other resources move into the new unit.
+3.
+Extinction: A project may end because it was successful and achieved its goals, and there is no need for further 
+work. 
+Another form of extinction is when a project is stopped because it was unsuccessful or superseded. A special case of termination by 
+extinction, when there is a sudden end to a project.
+4.
+Starvation: A project can also be terminated by decreasing its budget or suddenly ending funding. 
+This approach is also known as withdrawal of life support. The reason for starving a project is generally to shadow the failure of no 
+accomplishment of the goals. Management sometimes uses this approach to avoid embarrassment. 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+5
+
+SUMMARY OF CLOSING OUTPUTS
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+6
+
+PROJECT INTEGRATION MANAGEMENT
+The main outputs of closing a project or phase are as follows: 
+1. Project documents updates: All project documents should be reviewed and marked as final versions. 
+2. Final product, service, or result transition: Project sponsors are usually most interested in making sure that 
+the final products, services, or results are delivered and transitioned to the appropriate part of the 
+organization. 
+3. Final report: A final project report and presentation are also commonly used during project closing. 
+4. Updates to organizational process assets: Examples of organizational process assets include plans, 
+processes, policies, procedures, and knowledge bases, such as templates and lessons-learned reports. 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+7
+
+SAMPLE CUSTOMER ACCEPTANCE/PROJECT COMPLETION FORM
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+8
+
+SAMPLE FINAL REPORT
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+9
+
+SAMPLE TRANSITION PLAN
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+10
+
+SAMPLE LESSONS-LEARNED REPORT
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+11
+
+SAMPLE LESSONS-LEARNED REPORT (CONT’)
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+12
+
+SAMPLE LESSONS-LEARNED REPORT (CONT’)
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+13
+
+PROJECT CLOSE-OUT MEETING 
+It is good practice to hold a close-out meeting as a project nears completion or termination.  At this 
+meeting, like the kick-off meeting, you should invite key project stakeholders. 
+The project champion should start off the meeting, and the project manager and his/her team 
+should review information such as: 
+1. The scope, time, and cost goals and outcomes
+2. The success criteria and results in achieving them
+3. Main changes that occurred during the project and how they were addressed
+4. The main lessons learned on the project
+5. A summary of the transition plan 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+14
+
+KNOWLEDGE TRANSFER
+Knowledge transfer is the process of communicating knowledge that was developed by one person 
+or in one part of an organization to another person or other parts of an organization. 
+In particular, people who will take over products or results produced as part of the project would 
+need to spend time with project team members so they understand what is involved in detail. 
+Many organizations are working hard to improve the knowledge transfer process, since employee 
+knowledge or human capital is one of their key assets. 
+It is crucial, therefore, to make project knowledge transfer a priority, especially if the benefits of a 
+project are not achieved immediately. 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+15
+
+CLOSING AGILE/HYBRID PROJECTS
+
+Daily Scrum: You can think of these meetings as providing closure for the day before. Teams focus on progress toward
+the sprint goal and produce an actionable plan for the next day of work. If there are impediments, they address them
+quickly. If the team is not following the Scrum values or processes, corrections are made. Project managers (or Scrum 
+masters, or any team member, in fact) must always be aware of people on their team and address any obvious or subtle 
+problems.
+
+Sprint reviews: Sprint reviews provide closure for sprints, and sometimes entire projects. Stakeholders provide
+feedback at sprint reviews, inspect the outcome of the sprint, and determine future adaptations. If customers do
+not see value in what the team produced, they can suggest no future sprints. Remember that sprints can be one month
+or less. If requirements change quickly, it might make sense to have sprints that only last a week or even less.
+
+Sprint retrospectives: The team discusses what went well during the sprint, what problems it encountered, and how
+those problems were or were not solved. They identify changes to improve team effectiveness and address them
+as soon as possible. This event is similar to a lessons learned, but it only focuses on a particular sprint. When a
+project ends, teams should hold a final retrospective to focus on all lessons learned. 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+16
+
+CLOSING AGILE/HYBRID PROJECTS
+Similar to a predictive project close-out meeting, participants should review: 
+1. The goals and outcomes of the project
+2. Main changes that occurred during the project and how they were addressed
+3. The main lessons learned on the project
+4. A summary of the transition plan 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+17
+
+ADVICE ON CLOSING PROJECTS
+Although project teams (predictive, agile, and hybrid) do not typically spend much time on closing projects, it is important to do 
+it well.
+
+It is important to plan for project closing. On a predictive project, there should be deliverables in the WBS and resources 
+allocated to perform project closing. 
+
+It will be much easier to close a project if the project team captures lessons learned and other important information 
+required for closing as soon as possible. 
+
+For example, the project team should have a lessons-learned repository where everyone can document lessons learned as they occur. A simple blog 
+would work well for this purpose, or team members could document lessons learned as part of progress reports. Because many agile teams prefer 
+discussing information instead of documenting it, capturing key points in some fashion, like a blog, would also be appropriate. 
+
+Project managers should take time to thank their team and other project stakeholders and have some type of closing
+celebration. 
+
+Just having a team lunch or informal gathering might be appropriate, or having a virtual celebration of some sort is appreciated, as long as you 
+make it fun! If it was a big, highly successful project, a more formal celebration and rewards would be appropriate. 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+18
+
+CHAPTER SUMMARY
+
+Closing projects or phases involves finalizing all activities and bringing the project or phase to an orderly end. 
+
+It includes archiving project information, ensuring the planned work is complete, and releasing organizational resources. 
+
+Closing outputs related to integration management include project documents updates, final products, services, or result 
+transition, a final report, and updates to organizational process assets. 
+
+It is also good practice to hold a close-out meeting and hold some type of celebration when a project is over. 
+
+Agile/hybrid projects also include closing activities. 
+
+Teams should transition work to operational groups as needed, hold a project close-out meeting, hold a final retrospective 
+to review lessons learned for the entire project, and celebrate the project’s end. 
+
+Helpful advice for closing projects includes planning for closure, documenting lessons learned and other important 
+information as soon as possible, and celebrating project closure. 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+19
+

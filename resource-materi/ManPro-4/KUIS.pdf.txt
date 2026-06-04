@@ -1,0 +1,462 @@
+Started on
+Thursday, 22 May 2025, 9:08 AM
+State
+Finished
+Completed on
+Thursday, 22 May 2025, 9:31 AM
+Time taken
+22 mins 59 secs
+Marks
+24.00/35.00
+Grade
+68.57 out of 100.00
+Question 1
+Correct
+Mark 1.00 out of 1.00
+Question 2
+Correct
+Mark 1.00 out of 1.00
+Question 3
+Incorrect
+Mark 0.00 out of 1.00
+Home / My courses / PROG. SI REGULAR / REG [SI] - Genap 2024/2025 / [SI.Reg] Manajemen Proyek TI (A,B,C) Genap 2024/2025
+/ Kuis dan Ujian / Kuis 2
+Adalah mereka yang memiliki toleransi yang lebih tinggi terhadap risiko, dan kepuasan mereka meningkat ketika lebih banyak hasil yang
+dipertaruhkan.
+a.
+Risk-averse
+b.
+Risk-neutral
+c.
+Risk-seeking
+d.
+Risk-avoid
+Berikut ini adalah event dimana tim mempresentasikan hasil kerja mereka kepada pemangku kepentingan utama untuk memeriksa hasil
+sprint dan menentukan adaptasi di masa depan
+a.
+sprint review
+b.
+sprint retrospective
+c.
+daily Scrum
+d.
+sprint planning
+“Pemasok outsourcing seringkali dapat menggunakan skala ekonomi yang mungkin menyediakan layanan tidak hanya untuk satu klien
+saja, terutama untuk perangkat keras dan perangkat lunak.” Manfaat outsourcing mana yang dirujuk oleh pernyataan ini?
+a.
+Reduce both fixed and recurrent costs
+b.
+Provide flexibility
+c.
+Access skills and technologies
+d.
+Allow the client organization to focus on its core business
+
+Question 4
+Correct
+Mark 1.00 out of 1.00
+Question 5
+Correct
+Mark 1.00 out of 1.00
+Question 6
+Correct
+Mark 1.00 out of 1.00
+Question 7
+Correct
+Mark 1.00 out of 1.00
+Proses yang melibatkan penentuan risiko mana yang mungkin mempengaruhi proyek dan mendokumentasikan karakteristik dari masing-
+masing risiko tersebut adalah...
+a.
+Performing quantitative risk analysis
+b.
+Planning risk management
+c.
+Identifying risks
+d.
+Performing qualitative risk analysis
+Dua dimensi yang seharusnya digunakan untuk mengevaluasi risiko dari proyek adalah…
+a.
+probability and impact
+b.
+awareness and desire
+c.
+cost and schedule
+d.
+negative and positive
+Dokumen yang digunakan untuk meminta penawaran harga dari calon pemasok dikenal sebagai...
+a.
+WBS
+b.
+RFQ
+c.
+RFP
+d.
+SOW
+Yang merupakan teknik dalam pemilihan seller/vendor adalah..
+a.
+Expected Monetary Value
+b.
+Monte Carlo Analysis
+c.
+Weighting scoring model
+d.
+SWOT analysis
+
+Question 8
+Correct
+Mark 1.00 out of 1.00
+Question 9
+Correct
+Mark 1.00 out of 1.00
+Question 10
+Correct
+Mark 1.00 out of 1.00
+Question 11
+Correct
+Mark 1.00 out of 1.00
+Melakukan pengurangan akibat dari terjadinya sebuah risiko dengan mengurangi kemungkinan keterjadian risiko tersebut, termasuk
+kedalam perencanaan risiko...
+a.
+Risk mitigation
+b.
+Risk transference
+c.
+Risk acceptance
+d.
+Risk avoidance
+Diagram RACI adalah tipe dari ...
+a.
+information radiator
+b.
+resource histogram
+c.
+project organizational chart
+d.
+responsibility assignment matrix
+Ketika sebuah tim berhasil menyelesaikan milestone penting, manajer memberikan sertifikat penghargaan dan ucapan terima kasih publik.
+Tingkatan kebutuhan Maslow manakah yang dituju?
+a.
+Safety
+b.
+Esteem
+c.
+Social
+d.
+Self-actualization
+… adalah tools yang dapat digunakan dalam mempelajari proses dan menganalisis akar dari permasalahan
+a.
+Fishbone diagram
+b.
+Kanban board
+c.
+Pareto chart
+d.
+Flow chart
+
+Question 12
+Incorrect
+Mark 0.00 out of 1.00
+Question 13
+Correct
+Mark 1.00 out of 1.00
+Question 14
+Incorrect
+Mark 0.00 out of 1.00
+Question 15
+Correct
+Mark 1.00 out of 1.00
+…. adalah rangkaian kegiatan proaktif yang dirancang untuk memastikan bahwa seluruh proses pengembangan produk—mulai
+perencanaan, desain, hingga implementasi—memenuhi standar kualitas yang telah ditetapkan.
+a.
+Quality planning
+b.
+Quality assurance
+c.
+Quality control
+d.
+Quality improvement
+Jika sebuah tim proyek terdiri dari 6 anggota, maka berapa jumlah saluran komunikasi yang terjadi?
+a.
+12
+b.
+18
+c.
+15
+d.
+21
+Manakah dari berikut ini yang bukan merupakan input untuk proses Managing Stakeholder Engagement?
+a.
+Stakeholder register
+b.
+Enterprise environmental factors
+c.
+Work Breakdown Structure (WBS)
+d.
+Change log
+Dalam tim proyek, ada seorang anggota yang paling menikmati bekerja dalam kelompok, selalu berusaha menjaga keharmonisan, dan
+sering mengundang rekan untuk diskusi santai agar hubungan tim tetap akrab. Kebutuhan McClelland manakah yang paling menonjol?
+a.
+Satisfaction
+b.
+Power
+c.
+Achievement
+d.
+Affiliation
+
+Question 16
+Incorrect
+Mark 0.00 out of 1.00
+Question 17
+Correct
+Mark 1.00 out of 1.00
+Question 18
+Correct
+Mark 1.00 out of 1.00
+Dalam sebuah proyek pengembangan aplikasi mobile, tim UI/UX mendesak penyelesaian fitur chat minggu ini untuk menguji desain baru,
+sementara tim backend harus menyelesaikan modul pembayaran yang krusial. Project Manager kemudian memfasilitasi diskusi singkat,
+mengusulkan penggunaan stub API chat ringan sehingga tim UI dapat melakukan pengujian tanpa menunggu backend selesai
+sepenuhnya. Dengan kesepakatan tersebut, tim backend tetap fokus pada modul pembayaran dan tim UI bisa melanjutkan uji coba,
+hingga akhirnya kedua tugas terselesaikan tepat waktu tanpa mengorbankan prioritas masing-masing. Strategi penanganan konflik yang
+dilakukan dalam contoh ini adalah…
+a.
+Avoiding
+b.
+Accommodating
+c.
+Compromising
+d.
+Collaborating
+Manakah output dari Managing Stakeholder Engagement yang sering mirip dengan output di area pengetahuan lain?
+a.
+Stakeholder engagement plan
+b.
+Lessons learned register
+c.
+Change requests
+d.
+Issue log
+Tujuan utama resource leveling adalah untuk:
+a.
+Menyeimbangkan beban kerja agar tidak ada over-allocation
+b.
+Mempercepat penyelesaian semua tugas proyek
+c.
+Menambah durasi aktivitas kritis
+d.
+Menurunkan biaya dengan mengurangi jumlah sumber daya
+
+Question 19
+Correct
+Mark 1.00 out of 1.00
+Question 20
+Correct
+Mark 1.00 out of 1.00
+Question 21
+Incorrect
+Mark 0.00 out of 1.00
+Salah satu pendekatan yang dapat digunakan oleh project manager untuk mengumpulkan dan menilai work performance data adalah…
+a.
+Knowledge management
+b.
+Quality assurance
+c.
+Conflict management
+d.
+Management by wandering around
+Ketika anggota tim diberi penghargaan berupa sertifikat dan pujian publik atas inisiatif mereka dalam mengusulkan solusi baru, faktor
+Herzberg manakah yang diaktifkan untuk meningkatkan kepuasan kerja?
+a.
+Safety
+b.
+Social
+c.
+Hygiene
+d.
+Motivator
+Berikut ini adalah contoh dari dokumen..
+a.
+Issue log
+b.
+Project  milestone report
+c.
+Lesson-learned register
+d.
+Change request
+
+Question 22
+Incorrect
+Mark 0.00 out of 1.00
+Question 23
+Correct
+Mark 1.00 out of 1.00
+Question 24
+Incorrect
+Mark 0.00 out of 1.00
+Question 25
+Correct
+Mark 1.00 out of 1.00
+Sprint teams use …. to measure how much work they can complete in each iteration.
+a.
+Burnup charts
+b.
+Velocity charts
+c.
+Combined burn charts
+d.
+Burndown charts
+Which of the following charts shows the amount of work (tasks) completed compared to the plan?
+a.
+Velocity charts
+b.
+Combined burn charts
+c.
+Burndown charts
+d.
+Burnup charts
+What technique can you use to resolve resource conflicts by delaying tasks?
+a.
+Critical path analysis
+b.
+Resource loading
+c.
+Overallocation
+d.
+Resource leveling
+... describe what the project team has accomplished during a certain period of time
+a.
+forecast
+b.
+status report
+c.
+progress report
+d.
+change request
+
+Question 26
+Incorrect
+Mark 0.00 out of 1.00
+Question 27
+Incorrect
+Mark 0.00 out of 1.00
+Question 28
+Correct
+Mark 1.00 out of 1.00
+Question 29
+Incorrect
+Mark 0.00 out of 1.00
+Yang bertanggung jawab untuk menyetujui atau menolak change request (terutama perubahan major) pada sebuah proyek adalah…
+a.
+Change control board
+b.
+Project manager
+c.
+Change control system
+d.
+Project team
+Current stakeholder engagement level is written in a ...
+a.
+issue log
+b.
+Stakeholder analysis
+c.
+stakeholder register
+d.
+Communication management plan
+..... which is a column chart that shows the number of resources assigned to the project over time
+a.
+resource graph
+b.
+resource histogram
+c.
+resource chart
+d.
+resource timeline
+The main outcomes of ... are acceptance decisions, rework, and process adjustments.
+a.
+quality maturity assessment
+b.
+quality planning
+c.
+quality assurance
+d.
+quality control
+
+Question 30
+Correct
+Mark 1.00 out of 1.00
+Question 31
+Correct
+Mark 1.00 out of 1.00
+Question 32
+Correct
+Mark 1.00 out of 1.00
+Question 33
+Incorrect
+Mark 0.00 out of 1.00
+If the actual cost for a WBS item is $1,500 and its earned value is $2,000, which of these condition is true?
+a.
+The cost variance is $500, which is under budget
+b.
+The cost variance is - $500, which is over budget
+c.
+The cost variance is - $2500, which is over budget
+d.
+The cost variance is $2500, which is under budget
+Jika dalam Sprint Review ditemukan bahwa Increment belum memenuhi “Definition of Done”, tim harus:
+a.
+Langsung memasukkan kembali item tersebut ke Sprint Backlog berikutnya tanpa diskusi
+b.
+Meminta Product Owner memperpanjang waktu pengerjaan
+c.
+Mengabaikannya karena Sprint telah dianggap selesai
+d.
+Menunda formal acceptance dan mendiskusikan dalam Retrospective untuk tindakan perbaikan
+Di organisasi Anda, template laporan closing disertai metrik biaya, jadwal, kualitas, dan kepuasan stakeholder. Jika metrik kepuasan
+stakeholder di bawah ambang batas, maka:
+a.
+Abaikan karena bukan parameter teknis
+b.
+Proyek tetap ditutup, dan laporan disimpan saja
+c.
+Tambahkan rekomendasi mitigasi dalam bagian lessons learned
+d.
+PMO memerintahkan re-open proyek untuk perbaikan
+Manakah langkah berikut yang TIDAK termasuk dalam administrative closure?
+a.
+Mengevaluasi kinerja vendor dalam Contract Closeout
+b.
+Mendapatkan tanda tangan sponsor pada dokumen penerimaan
+c.
+Mengarsipkan seluruh email komunikasi proyek
+d.
+Meng-update Organizational Process Assets dengan template baru
+
+Question 34
+Correct
+Mark 1.00 out of 1.00
+Question 35
+Correct
+Mark 1.00 out of 1.00
+Manakah dari berikut ini bukan merupakan aktivitas dalam proses Close Procurements?
+a.
+Audit performa vendor untuk perbaikan proses pengadaan mendatang
+b.
+Pembayaran sisa retensi berdasarkan hasil penerimaan akhir
+c.
+Validasi scope proyek dengan klien
+d.
+Verifikasi bahwa deliverable vendor telah diserahkan sesuai kontrak
+Setelah penutupan proyek, repository “lessons learned” diperbarui dan dijadikan bagian dari:
+a.
+Organizational Process Assets
+b.
+Enterprise Environmental Factors
+c.
+Project Management Plan
+d.
+Change Log
+◀︎ Kuis 1
+Jump to...
+Introduction to Project Management ▶︎
+

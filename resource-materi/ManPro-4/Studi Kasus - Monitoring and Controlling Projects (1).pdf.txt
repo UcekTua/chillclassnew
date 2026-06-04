@@ -1,0 +1,53 @@
+Monitoring and Controlling Projects 
+ 
+Studi Kasus 1: EVM 
+Proyek Pengembangan Sistem Informasi Akademik Universitas 
+Universitas X sedang mengembangkan sistem informasi akademik baru. Proyek 
+dijadwalkan selesai dalam 10 bulan dengan total anggaran Rp 500.000.000. 
+Anggaran direncanakan merata tiap bulan (Rp 50 juta/bulan). 
+Pada akhir bulan ke-4, dilakukan evaluasi dengan data berikut: 
+• 
+Pekerjaan yang seharusnya selesai: 40% dari total proyek 
+• 
+Pekerjaan yang benar-benar selesai: 30% dari total proyek 
+• 
+Biaya yang sudah dikeluarkan: Rp 180.000.000 
+Pertanyaan: 
+1. Hitung PV, EV, dan AC pada bulan ke-4 
+2. Hitung CV, SV, CPI, dan SPI, apa yang dapat disimpulkan? 
+3. Hitung EAC dan ETC, berapa perkiraan total biaya akhir proyek? 
+4. Kapan perkiraan proyek selesai? 
+5. Apakah proyek ini dalam kondisi baik? atau apakah proyek ini beresiko? 
+jelaskan 
+6. Apa rekomendasi Anda kepada project manager? 
+7. Buatlah grafik EVM seperti slide nomor 11 
+ 
+Studi Kasus 2: Quality Control (QC)  
+Sistem Ticketing Online Transportasi Publik 
+PT. TransJakarta Digital meluncurkan sistem ticketing online. Dalam 6 minggu pertama, 
+diterima 450 laporan keluhan dari pengguna dengan rincian: 
+Jenis Keluhan 
+Jumlah 
+Gagal login 
+180 
+Sistem error saat bayar 
+120 
+Tiket tidak terkirim ke email 
+75 
+Aplikasi lambat 
+50 
+Tampilan tidak sesuai di HP tertentu 
+25 
+ 
+
+ 
+Pertanyaan : 
+1. Buatlah Pareto Chart dari data di atas, keluhan mana yang harus diprioritaskan? 
+2. Untuk keluhan "Gagal login", buatlah Cause-and-Effect Diagram (fishbone) 
+yang mengidentifikasi kemungkinan penyebabnya 
+3. Buatlah Checksheet sederhana untuk mencatat keluhan selama seminggu 
+berdasarkan jenis dan hari 
+4. Kapan sebaiknya Control Chart digunakan dalam konteks sistem ticketing ini? 
+5. Bagaimana Pareto Analysis (80-20 rule) membantu tim QC memprioritaskan 
+perbaikan? 
+

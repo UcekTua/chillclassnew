@@ -1,0 +1,64 @@
+Deskripsi Proyek: Pengembangan Aplikasi Pemesanan dan Pengantaran 
+Makanan di Kantin Kampus 
+Latar Belakang 
+Kampus XYZ memiliki banyak kantin yang tersebar di banyak Fakultas. Namun, tidak semua 
+Fakultas memiliki kantin. Selain itu beberapa kantin mengalami kepadatan pada jam-jam 
+makan siang yang mengakibatkan antrean panjang dan waktu tunggu yang lama bagi 
+mahasiswa. Untuk mengatasi masalah ini, pihak pengelola kantin ingin mengembangkan 
+sebuah aplikasi pemesanan dan pengantaran makanan yang memungkinkan mahasiswa 
+memesan makanan dari berbagai tenant di kantin melalui aplikasi. 
+Tujuan Proyek: Membuat aplikasi perangkat lunak berbasis web yang memungkinkan: 
+1.​ Pemesanan makanan secara online dari berbagai tenant kantin. 
+2.​ Pengantaran makanan ke lokasi tertentu di dalam area kampus. 
+3.​ Pembayaran digital untuk meminimalisir transaksi tunai. 
+4.​ Pengelolaan menu dan harga oleh masing-masing tenant melalui dashboard admin. 
+Fitur Utama 
+1.​ Aplikasi Pengguna (Mahasiswa):​
+ 
+○​ Pendaftaran dan Login (Email, Nomor Telepon, atau SSO Kampus). 
+○​ Melihat menu dari berbagai tenant dan lokasi. 
+○​ Memesan makanan dengan opsi pengantaran atau pengambilan langsung. 
+○​ Pembayaran digital (E-wallet, Transfer Bank, Kartu Kredit). 
+○​ Melacak status pesanan (Dipesan, Diproses, Dikirim, Selesai). 
+○​ Memberikan ulasan dan rating. 
+2.​ Aplikasi Admin Tenant:​
+ 
+○​ Mengelola menu dan harga. 
+○​ Melihat pesanan yang masuk dan mengubah status pesanan. 
+○​ Melihat laporan penjualan. 
+3.​ Aplikasi Pengelola Pengiriman:​
+ 
+○​ Mengelola pesanan yang perlu diantarkan. 
+○​ Melihat lokasi pengantaran. 
+○​ Memperbarui status pengantaran. 
+4.​ Dashboard Pengelola Kantin (Super Admin):​
+ 
+○​ Melihat statistik penggunaan aplikasi. 
+○​ Mengelola tenant yang terdaftar. 
+○​ Mengelola promosi atau program khusus. 
+Asumsi Proyek 
+1.​ Proyek akan dikerjakan selama 3 bulan, membutuhkan setidaknya  
+
+-​ Pengembang Front-End: 2 orang 
+-​ Pengembang Back-End: 2 orang 
+-​ UI/UX Designer: 1 orang 
+-​ Tester: 1 orang 
+-​ Project Manager : 1 orang 
+-​ Analys : 1 orang 
+2.​ Kebutuhan Infrastruktur: 
+Server (Hosting dan Database) 
+API Gateway 
+Sertifikat SSL 
+3.​ Promosi dan Pelatihan Pengguna:​
+Pembuatan materi promosi 
+Sosialisasi kepada mahasiswa dan tenant kantin 
+Hasil yang Diharapkan 
+Sebuah aplikasi yang dapat diakses melalui web dan mobile dengan fitur-fitur yang 
+disebutkan, diimplementasikan dan siap digunakan oleh seluruh mahasiswa dan tenant di 
+kantin kampus. 
+Buatlah communication plan dari proyek tsb dan lakukan identifikasi stakeholder dari proyek 
+ini. Rujuklah pada pekerjaan Anda sebelumnya atau berikan asumsi jika dibutuhkan. 
+Kerjakan dalam kelompok 3-4 orang, kumpulkan pada forum Scele. 
+ 
+ 
+

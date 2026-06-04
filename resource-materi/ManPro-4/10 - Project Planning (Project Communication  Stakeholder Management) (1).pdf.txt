@@ -1,0 +1,351 @@
+Note: 
+Adapted from slide of the textbook: Schwalbe, Kathy. An Introduction to Project 
+Management – Seventh Edition. Minneapolis, MN:  Schwalbe Publishing, 2021. 
+See the text itself for full citations. 
+MANAJEMEN PROYEK TI  – FASILKOM UI
+1
+IT PROJECT 
+MANAGEMENT
+TOPIC 10
+PROJECT PLANNING (PROJECT 
+COMMUNICATION & STAKEHOLDER 
+MANAGEMENT)
+
+LEARNING OBJECTIVES
+a. Understand the importance of good 
+communications on projects and the need to 
+develop soft skills, especially for IT project 
+managers and their teams
+b. Explain the project communication 
+Management processes
+c. Review key concepts related to 
+communications
+d. Explain the elements of planning project 
+communications and how to create a 
+communications management plan
+e. Understand the importance of project 
+stakeholder management throughout the life of 
+a project
+f.
+Discuss the process of identifying 
+stakeholders, how to create a stakeholder 
+register, and how to perform a stakeholder 
+analysis
+g. Describe the contents of a stakeholder 
+management plan
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+2
+
+PROJECT COMMUNICATION MANAGEMENT
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+3
+
+IMPORTANCE OF GOOD COMMUNICATIONS
+▪
+The greatest threat to many projects is a failure to communicate
+▪
+Our culture does not portray IT professionals as being good communicators
+▪
+Research shows that IT professionals must be able to communicate effectively to succeed in 
+their positions
+▪
+Strong verbal and non-technical skills are a key factor in career advancement for IT professionals
+4
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+
+IMPORTANCE OF GOOD COMMUNICATIONS
+Many experts agree that the greatest threat to the success of any project is a failure to communicate. 
+▪
+It is often said that project managers spend 90% of time communicating. 
+▪
+Yet many project managers fail to take the time to plan for it. 
+▪
+Even though having a communications management plan does not guarantee that all project communications will flow smoothly, it certainly 
+helps. 
+▪Project communications management involves generating, collecting, disseminating, and storing project 
+information. 
+▪Key outputs produced for many projects, include a communications management plan and a project 
+website 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+5
+
+PLANNING COMMUNICATIONS MANAGEMENT
+Every project should include some type of communications management plan, a 
+document that guides project communications
+The communications management plan varies with the needs of the project, but some type of 
+written plan should always be prepared
+For small projects, the communications management plan can be part of the team contract
+For large projects, it should be a separate document
+
+The plan should describe who will provide and receive data, when, and how the information will be presented. 
+
+Stakeholders may change depending on the project phase, so the plan must be updated as needed. 
+6
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+
+COMMUNICATIONS MANAGEMENT PLAN CONTENTS
+1. Stakeholder communications requirements
+2. Information to be communicated, including 
+format, content, and level of detail
+3. Who will receive the information and who 
+will produce it
+4. Suggested methods or technologies for 
+conveying the information
+5. Frequency of communication
+6. Escalation procedures for resolving issues
+7. Revision procedures for updating the 
+communications management plan
+8. A glossary of common terminology
+7
+Stakeholders
+Document 
+Name
+Document 
+Format
+Contact Person
+Due
+Customer 
+management
+Monthly status 
+report
+Hard copy and 
+meeting
+Tina Erndt, 
+Tom Silve
+First of month
+Customer 
+business staff
+Monthly status 
+report
+Hard copy
+Julie Grant, 
+Sergey 
+Cristobal
+First of month
+Customer 
+technical staff 
+Monthly status 
+report
+E-mail
+Li Chau, Nancy 
+Michaels
+First of month
+Internal 
+management
+Monthly status 
+report
+Hard copy and 
+meeting
+Bob Thomson
+First of month
+Internal 
+business and 
+technical staff 
+Monthly status 
+report
+Intranet
+Angie Liu
+First of month
+Training 
+subcontractor
+Training plan
+Hard copy
+Jonathan 
+Kraus
+November 1
+Software 
+subcontractor
+Software 
+implementatio
+n plan
+E-mail
+Najwa Gates
+June 1
+Sample Stakeholder Analysis for Project Communications
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+
+SAMPLE COMMUNICATIONS 
+MANAGEMENT PLAN
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+8
+
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+9
+
+PROJECT WEBSITES
+
+Many project teams have started posting all or part of their project information to project websites. 
+
+Project websites provide a centralized way of delivering project documents and other communications. 
+
+Note that some organizations use a different type of repository to store information, such as a SharePoint site. 
+
+Some teams also create blogs—easy-to-use journals on the Web that allow users to write entries, create links, and upload 
+pictures, while allowing readers to post comments to entries. 
+
+Project teams can develop project websites using tools such as Wix, Google sites, or WordPress; project management software, if available; or a 
+combination of the two approaches. 
+
+Part of the website might be open to outside users, whereas other parts might be accessible only by certain stakeholders.
+
+Different levels of access would also be provided using the CRUD code: The user can Create, Read, Update, and/or Delete. 
+It is important to decide if and how to use a project website to help meet project communications requirements. 
+
+Some organizations also create quad charts as part of their project websites where the four quadrants show a project 
+summary, financials, schedules, and issues. 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+10
+
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+11
+
+AGILE COMMUNICATIONS PLANNING 
+
+Instead of documenting how project teams will communicate, the Scrum framework includes specific events where 
+a lot of communications takes place. 
+
+As specified in The Scrum Guide (2020), “The Sprint is a container for all other events. … Events are used in Scrum 
+to create regularity and to minimize the need for meetings not defined in Scrum. 
+
+Optimally, all events are held at the same time and place to reduce complexity. 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+12
+
+SAMPLE AGILE EVENTS TO AID IN COMMUNICATIONS
+
+Debra and her three Scrum teams did follow The Scrum Guide in terms of practicing the following events:
+
+Sprints: The GCHC project had fixed length sprints of one month to create consistency. Each sprint had a clear sprint goal. For example, 
+the incentives team’s first sprint goal was to plan for a successful hiring days event and draft important policies for hiring and retention. 
+The education team’s sprint goal was to develop 2 courses to attract potential new hires and thoroughly research good education 
+partners for additional educational opportunities for current and future workers.
+
+Sprint planning: Each sprint started with a sprint planning meeting that lasted 8 hours or less. Topics discussed included the value of the 
+sprint, what could be done during the sprint, and how the work would be done.
+
+Daily Scrum: These 15-minute or less meetings focused on inspecting progress toward meeting the sprint goal, adapting the sprint 
+backlog as needed, and adjusting the work for the next day. They improved communications by identifying impediments, promoting quick 
+decision-making, and eliminating the need for other meetings. 
+
+Sprint review: In this 4-hour or less meeting the team presented the results of their work to key stakeholders and held a working session 
+to inspect the outcome of the sprint and determine future adaptations. 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+13
+
+SAMPLE AGILE EVENTS TO AID IN COMMUNICATIONS
+
+Debra and her three Scrum teams did follow The Scrum Guide in terms of practicing the following events:
+
+Sprints: The GCHC project had fixed length sprints of one month to create consistency. Each sprint had a clear sprint goal. For example, 
+the incentives team’s first sprint goal was to plan for a successful hiring days event and draft important policies for hiring and retention. 
+The education team’s sprint goal was to develop 2 courses to attract potential new hires and thoroughly research good education 
+partners for additional educational opportunities for current and future workers.
+
+Sprint planning: Each sprint started with a sprint planning meeting that lasted 8 hours or less. Topics discussed included the value of the 
+sprint, what could be done during the sprint, and how the work would be done.
+
+Daily Scrum: These 15-minute or less meetings focused on inspecting progress toward meeting the sprint goal, adapting the sprint 
+backlog as needed, and adjusting the work for the next day. They improved communications by identifying impediments, promoting quick 
+decision-making, and eliminating the need for other meetings. 
+
+Sprint review: In this 4-hour or less meeting the team presented the results of their work to key stakeholders and held a working session 
+to inspect the outcome of the sprint and determine future adaptations. 
+
+Sprint retrospective: The purpose of this 3-hour or less meeting with team members only was to plan ways to increase quality and 
+effectiveness. Team members discussed what went well, what problems they encountered, and how those problems were (or were not) 
+solved. 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+14
+
+PROJECT STAKEHOLDER MANAGEMENT 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+15
+
+PROJECT STAKEHOLDER ENGAGEMENT PLANNING
+
+Project stakeholder engagement planning involves determining strategies to effectively engage stakeholders in project 
+decisions and
+activities based on their needs, interests, and potential impact. 
+
+The main output of this process is a stakeholder engagement plan.
+
+Stakeholders change as the project progresses, and stakeholder engagement planning should be updated based on those 
+changes.
+
+The staffing management plan shows when project team members join or leave the project. 
+
+The stakeholder engagement plan, the communications management plan, and the resource management plan should be in agreement with each 
+other.
+
+It is also important for organizations to address larger cultural changes that may occur due to projects. 
+
+For example, the Just-InTime Training project ended the current company training. 
+
+Some employees might be upset over that decision. The GCHC project planned to change hiring and retention policies while also changing 
+educational opportunities for both existing and potential workers. The impact of these new policies educational opportunities would definitely 
+impact many people. 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+16
+
+STAKEHOLDER ENGAGEMENT PLANS 
+
+After identifying and analyzing stakeholders, the project manager and team should develop a stakeholder 
+engagement plan to guide them in effectively engaging stakeholders to make sure good decisions are made 
+throughout the life of the project. 
+
+This plan may be formal or informal, based on the needs of the project. 
+
+A stakeholder engagement plan can include the following: 
+
+Current and desired engagement levels of key stakeholders
+
+Scope and impact of change to stakeholders
+
+Identified interrelationships between stakeholders and potential overlap
+
+Potential management strategies for each stakeholder classification
+
+Methods for updating the stakeholder management plan 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+17
+
+STAKEHOLDER ENGAGEMENT 
+PLAN
+
+Because a stakeholder engagement plan often 
+includes sensitive information, it should not be 
+part of the official project documents that are 
+normally available for all stakeholders to review.
+
+Often only project managers and a few other team 
+members prepare the stakeholder engagement plan. In 
+many cases, parts of the plan are not even written down, 
+and if they are, distribution is strictly limited.
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+18
+
+AGILE STAKEHOLDER PLANNING 
+
+As stated in the previous section, the sprint review meetings allow key stakeholders to inspect the outcomes of 
+each sprint and determine future adaptations. 
+
+Agile project teams also discuss any impediments they are facing or could face in their daily Scrum meetings. 
+
+The Scrum master or project manager works with the appropriate people to remove the impediments. 
+
+Teams should also ensure that key stakeholders participate in the sprint reviews, develop acceptance criteria, and 
+determine the Definition of Done for each increment. 
+
+The information radiators provide visibility into work progress for all interested stakeholders 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+19
+
+SUMMARY
+
+Planning outputs related to communications management include a communications management plan and 
+project website.
+
+Planning outputs related to stakeholder management include a stakeholder engagement plan 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+20
+

@@ -1,197 +1,316 @@
 <!DOCTYPE html>
 <html lang="id"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Materi 10: Project Communication & Stakeholder Management - ManPro Study</title>
+<title>Materi 10: Communication & Stakeholder Management - ManPro UAS Study</title>
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 * { margin:0; padding:0; box-sizing:border-box; }
-body { font-family:'Segoe UI',sans-serif; background:#0f0f1a; color:#e0e0e0; line-height:1.7; }
-.container { max-width:900px; margin:0 auto; padding:20px; }
-h1 { font-size:2em; background:linear-gradient(135deg,#6366f1,#a855f7); -webkit-background-clip:text; -webkit-text-fill-color:transparent; margin-bottom:10px; }
-h2 { color:#a78bfa; border-bottom:2px solid #a78bfa33; padding-bottom:8px; margin:30px 0 15px; font-size:1.4em; }
-h3 { color:#c4b5fd; margin:20px 0 10px; font-size:1.15em; }
-.card { background:#1a1a2e; border-radius:12px; padding:25px; margin:15px 0; border:1px solid #ffffff10; }
-.highlight { background:#2d1b69; border-left:4px solid #a855f7; padding:15px 20px; border-radius:0 8px 8px 0; margin:10px 0; }
-.tip { background:#1a2e1a; border-left:4px solid #4ade80; padding:15px 20px; border-radius:0 8px 8px 0; margin:10px 0; }
-.warn { background:#2e2a1a; border-left:4px solid #fbbf24; padding:15px 20px; border-radius:0 8px 8px 0; margin:10px 0; }
-table { width:100%; border-collapse:collapse; margin:15px 0; }
-th { background:#6366f133; color:#a78bfa; padding:12px; text-align:left; }
-td { padding:10px 12px; border-bottom:1px solid #ffffff10; }
-tr:hover { background:#ffffff05; }
-ul,ol { padding-left:25px; margin:10px 0; }
-li { margin:5px 0; }
-.quiz-section { background:#1a1a2e; border-radius:12px; padding:25px; margin:20px 0; border:1px solid #6366f133; }
-.question { background:#16162a; padding:20px; border-radius:10px; margin:15px 0; border:1px solid #ffffff08; }
-.question p { font-weight:600; margin-bottom:12px; color:#e2e8f0; }
-.option { display:block; padding:10px 15px; margin:5px 0; background:#1e1e3a; border-radius:8px; cursor:pointer; transition:all .2s; border:1px solid transparent; }
-.option:hover { background:#2a2a4a; border-color:#6366f155; }
-.option.selected { background:#6366f133; border-color:#6366f1; }
-.option.correct { background:#16a34a33; border-color:#16a34a; }
-.option.wrong { background:#dc262633; border-color:#dc2626; }
-.btn { background:linear-gradient(135deg,#6366f1,#a855f7); color:#fff; border:none; padding:12px 30px; border-radius:8px; cursor:pointer; font-size:1em; margin:10px 5px; transition:transform .2s; }
-.btn:hover { transform:scale(1.03); }
-.result { padding:20px; border-radius:10px; margin:15px 0; font-size:1.1em; font-weight:600; }
-.nav { display:flex; flex-wrap:wrap; gap:8px; margin:20px 0; }
-.nav a { background:#1a1a2e; color:#a78bfa; padding:8px 16px; border-radius:8px; text-decoration:none; border:1px solid #a78bfa33; font-size:.9em; transition:all .2s; }
-.nav a:hover { background:#6366f133; }
-.badge { display:inline-block; background:#6366f133; color:#a78bfa; padding:3px 10px; border-radius:20px; font-size:.8em; margin:2px; }
-details { margin:10px 0; }
-summary { cursor:pointer; color:#c4b5fd; font-weight:600; padding:8px; background:#16162a; border-radius:8px; }
-details[open] summary { border-radius:8px 8px 0 0; }
-details > div { background:#1e1e30; padding:15px; border-radius:0 0 8px 8px; }
+body { font-family:'Inter',sans-serif; background:#0a0a14; color:#d4d4e0; line-height:1.8; }
+.container { max-width:920px; margin:0 auto; padding:24px; }
+h1 { font-size:2.2em; font-weight:800; background:linear-gradient(135deg,#6366f1,#a855f7,#ec4899); -webkit-background-clip:text; -webkit-text-fill-color:transparent; margin-bottom:8px; letter-spacing:-0.5px; }
+.subtitle { color:#94a3b8; font-size:1em; margin-bottom:20px; }
+h2 { color:#a78bfa; border-bottom:2px solid #a78bfa22; padding-bottom:8px; margin:32px 0 16px; font-size:1.45em; font-weight:700; }
+h3 { color:#c4b5fd; margin:20px 0 10px; font-size:1.15em; font-weight:600; }
+h4 { color:#818cf8; margin:14px 0 8px; font-size:1.05em; font-weight:600; }
+.card { background:linear-gradient(145deg,#12122a,#161630); border-radius:14px; padding:28px; margin:18px 0; border:1px solid #ffffff08; box-shadow:0 4px 20px #00000040; }
+.highlight { background:#2d1b6980; border-left:4px solid #a855f7; padding:16px 20px; border-radius:0 10px 10px 0; margin:12px 0; }
+.tip { background:#0f291580; border-left:4px solid #4ade80; padding:16px 20px; border-radius:0 10px 10px 0; margin:12px 0; }
+.warn { background:#29200f80; border-left:4px solid #fbbf24; padding:16px 20px; border-radius:0 10px 10px 0; margin:12px 0; }
+.danger { background:#2a0f0f80; border-left:4px solid #f87171; padding:16px 20px; border-radius:0 10px 10px 0; margin:12px 0; }
+table { width:100%; border-collapse:collapse; margin:16px 0; font-size:.95em; }
+th { background:#6366f120; color:#a78bfa; padding:12px 14px; text-align:left; font-weight:600; }
+td { padding:11px 14px; border-bottom:1px solid #ffffff08; }
+tr:hover { background:#ffffff04; }
+ul,ol { padding-left:24px; margin:10px 0; }
+li { margin:6px 0; }
+.quiz-section { background:linear-gradient(145deg,#12122a,#161630); border-radius:14px; padding:28px; margin:22px 0; border:1px solid #6366f122; }
+.question { background:#0d0d20; padding:22px; border-radius:12px; margin:16px 0; border:1px solid #ffffff06; }
+.question p.q-text { font-weight:600; margin-bottom:14px; color:#e2e8f0; font-size:1.02em; line-height:1.6; }
+.option { display:block; padding:11px 16px; margin:6px 0; background:#14142e; border-radius:9px; cursor:pointer; transition:all .2s ease; border:2px solid transparent; font-size:.95em; }
+.option:hover { background:#1e1e42; border-color:#6366f144; }
+.option.selected { background:#6366f120; border-color:#6366f1; }
+.option.correct { background:#16a34a22; border-color:#16a34a; }
+.option.wrong { background:#dc262622; border-color:#dc2626; }
+.btn { background:linear-gradient(135deg,#6366f1,#a855f7); color:#fff; border:none; padding:12px 32px; border-radius:9px; cursor:pointer; font-size:1em; font-weight:600; margin:8px 6px 8px 0; transition:all .2s; letter-spacing:0.3px; }
+.btn:hover { transform:translateY(-1px); box-shadow:0 4px 16px #6366f140; }
+.btn-secondary { background:linear-gradient(135deg,#374151,#4b5563); }
+.btn-secondary:hover { box-shadow:0 4px 16px #37415140; }
+.result { padding:20px; border-radius:12px; margin:16px 0; font-size:1.1em; font-weight:700; }
+.nav { display:flex; flex-wrap:wrap; gap:8px; margin:20px 0; position:sticky; top:10px; z-index:100; background:#0a0a14ee; backdrop-filter:blur(10px); padding:12px; border-radius:12px; border:1px solid #ffffff08; }
+.nav a { background:#14142e; color:#a78bfa; padding:9px 18px; border-radius:9px; text-decoration:none; border:1px solid #a78bfa22; font-size:.88em; font-weight:500; transition:all .2s; }
+.nav a:hover { background:#6366f133; border-color:#6366f1; transform:translateY(-1px); }
+.nav a.active { background:linear-gradient(135deg,#6366f1,#a855f7); color:#fff; border-color:transparent; }
+.badge { display:inline-block; background:#6366f125; color:#a78bfa; padding:3px 12px; border-radius:20px; font-size:.82em; font-weight:600; margin:2px; }
+details { margin:12px 0; }
+summary { cursor:pointer; color:#c4b5fd; font-weight:600; padding:10px 14px; background:#0d0d20; border-radius:9px; transition:background .2s; list-style:none; }
+summary::-webkit-details-marker { display:none; }
+summary::before { content:'▸ '; color:#6366f1; }
+details[open] summary { border-radius:9px 9px 0 0; background:#161630; }
+details[open] summary::before { content:'▾ '; }
+details > div { background:#111128; padding:18px; border-radius:0 0 9px 9px; border:1px solid #ffffff06; border-top:none; }
+.comparison { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin:14px 0; }
+.comparison > div { background:#14142e; padding:18px; border-radius:10px; border:1px solid #ffffff08; }
+@media(max-width:700px) { .comparison { grid-template-columns:1fr; } .nav { position:static; } h1 { font-size:1.6em; } }
+.formula { background:#1a0a30; border:1px solid #a855f740; padding:16px 20px; border-radius:10px; margin:12px 0; font-family:'Courier New',monospace; font-size:1.05em; color:#e9d5ff; text-align:center; }
+.toc { background:#0d0d20; border-radius:12px; padding:20px 24px; margin:16px 0; border:1px solid #ffffff08; }
+.toc a { color:#818cf8; text-decoration:none; display:block; padding:4px 0; transition:color .2s; }
+.toc a:hover { color:#a855f7; }
+.emoji-card { text-align:center; padding:16px; background:#14142e; border-radius:10px; border:1px solid #ffffff08; }
+.emoji-card .emoji { font-size:2.4em; margin-bottom:8px; }
+.grid-3 { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:12px; margin:14px 0; }
+.explanation { background:#0f1520; padding:16px 18px; border-radius:8px; margin-top:10px; border-left:3px solid #3b82f6; display:none; }
+.explanation.show { display:block; }
+strong { color:#e2e8f0; }
+em { color:#c4b5fd; font-style:italic; }
+code { background:#1e1e3a; padding:2px 8px; border-radius:4px; font-size:.92em; color:#a5b4fc; }
+.progress-bar { background:#1a1a2e; border-radius:10px; height:12px; margin:10px 0; overflow:hidden; }
+.progress-fill { background:linear-gradient(90deg,#6366f1,#a855f7); height:100%; border-radius:10px; transition:width .5s ease; }
 
         /* Overrides for Chill Class Floating Integration */
         .topnav { position:fixed !important; top:24px !important; right:24px !important; margin:0 !important; background:rgba(10,14,26,0.6) !important; padding:10px 24px !important; border-radius:100px !important; border:1px solid rgba(99,102,241,0.3) !important; box-shadow: 0 8px 32px rgba(0,0,0,0.5) !important; width:auto !important; flex-wrap: nowrap !important; display:flex !important; gap:12px !important; align-items:center !important; z-index:9999 !important; backdrop-filter: blur(10px) !important; }
-        .topnav a { background:transparent !important; border:none !important; padding:0 !important; color:#94a3b8 !important; font-weight:600 !important; font-size:0.85rem !important; transition:color 0.2s !important; }
+        .topnav a { background:transparent !important; border:none !important; padding:0 !important; color:#94a3b8 !important; font-weight:600 !important; font-size:0.85rem !important; transition:color 0.2s !important; text-decoration:none !important; }
         .topnav a:hover { color:#c4b5fd !important; }
-        .topnav a[style*="background:#6366f1"] { color:#fff !important; font-weight: 800 !important; }
+        .topnav a.active { color:#fff !important; font-weight: 800 !important; }
         @media (max-width:768px) {
             .topnav { top:auto !important; bottom:24px !important; right:50% !important; transform:translateX(50%) !important; padding:10px 16px !important; font-size: 0.8rem !important; white-space: nowrap !important; overflow-x: auto !important; max-width: 90vw !important; }
         }
         .container { padding-top: 80px !important; }
-    
+        .nav { display: none !important; } /* hide old nav if exists */
+
 </style></head><body>
+<nav class="topnav"><div class="nav-links" style="display:flex;align-items:center;gap:4px;flex-wrap:nowrap;"><a href="materi-10-communication-stakeholder.html">🏠</a><span style="color:#475569;margin:0 4px;font-size:0.8rem;user-select:none">/</span><a class="active" style="color:#e2e8f0;font-weight:800;">10</a><span style="color:#475569;margin:0 4px;font-size:0.8rem;user-select:none">/</span><a href="materi-11-risk-procurement.html">Ch 11 →</a></div></nav>
 <div class="container">
-<nav class="topnav"><div class="nav-links" style="display:flex;align-items:center;gap:4px;flex-wrap:nowrap;"><a href="materi-10-communication-stakeholder.html" style="text-decoration:none;">🏠</a><span style="color:#475569;margin:0 4px;font-size:0.8rem;user-select:none">/</span><a class="active" style="color:#e2e8f0;font-weight:800;text-decoration:none;">10</a><span style="color:#475569;margin:0 4px;font-size:0.8rem;user-select:none">/</span><a href="materi-11-risk-procurement.html" style="text-decoration:none;">Ch 11 →</a></div></nav>
-<h1>Materi 10: Project Communication & Stakeholder Management</h1>
 
-<div class="card">
-<h2>BAGIAN A: PROJECT COMMUNICATION MANAGEMENT</h2>
+<h1>Materi 10: Communication & Stakeholder Management</h1>
+<p class="subtitle">Project Planning — Cara berkomunikasi efektif & mengelola stakeholder dalam proyek IT</p>
+
+<div class="toc">
+<h3>📑 Daftar Isi</h3>
+<a href="#importance">1. Pentingnya Komunikasi dalam Proyek</a>
+<a href="#comm-plan">2. Communications Management Plan</a>
+<a href="#website">3. Project Websites & Distribusi Informasi</a>
+<a href="#agile-comm">4. Agile Communications Planning</a>
+<a href="#stakeholder">5. Project Stakeholder Management</a>
+<a href="#engagement">6. Stakeholder Engagement Plan</a>
+<a href="#agile-stake">7. Agile Stakeholder Planning</a>
+<a href="#hafal">8. Ringkasan & Cara Menghafal</a>
+<a href="#contoh">9. Contoh Soal & Pembahasan</a>
+<a href="#latihan">10. Latihan Soal Interaktif</a>
 </div>
 
-<div class="card">
-<h2>1. Pentingnya Komunikasi</h2>
-<ul>
-<li><strong>Ancaman terbesar</strong> banyak proyek = kegagalan komunikasi</li>
-<li>PM menghabiskan <strong>90% waktunya</strong> untuk berkomunikasi</li>
-<li>Tapi banyak PM yang gagal merencanakan komunikasi!</li>
-<li>Budaya kita tidak menggambarkan profesional IT sebagai komunikator yang baik, padahal skill komunikasi sangat penting untuk karir IT</li>
-</ul>
-<p><strong>Project Communications Management</strong> meliputi: generating, collecting, disseminating, dan storing informasi proyek.</p>
-<div class="highlight">Output utama planning: <strong>Communications Management Plan</strong> dan <strong>Project Website</strong></div>
-</div>
+<div class="card" id="importance">
+<h2>📡 1. Pentingnya Komunikasi dalam Proyek</h2>
+<p>Bayangkan kamu membangun sebuah rumah. Kalau tukang kayu, tukang listrik, dan arsitek tidak pernah bicara satu sama lain, apa yang terjadi? <strong>Chaos!</strong> Sama halnya di proyek IT.</p>
 
-<div class="card">
-<h2>2. Communications Management Plan</h2>
-<p>Dokumen yang memandu komunikasi proyek. Setiap proyek HARUS punya, sekecil apapun.</p>
+<div class="danger">🚨 <strong>Fakta Penting:</strong> Ancaman terbesar untuk banyak proyek adalah <strong>kegagalan komunikasi</strong> (failure to communicate). Ini bukan pendapat, tapi hasil riset!</div>
+
+<h3>Kenapa komunikasi itu krusial?</h3>
 <ul>
-<li>Proyek kecil: bisa jadi bagian dari team contract</li>
-<li>Proyek besar: harus dokumen terpisah</li>
+<li><strong>Project Manager menghabiskan 90% waktunya untuk berkomunikasi</strong> — jadi kalau komunikasinya buruk, 90% waktunya terbuang sia-sia.</li>
+<li>Di dunia IT, profesional IT sering dianggap kurang pandai berkomunikasi. Padahal riset menunjukkan bahwa <strong>kemampuan verbal dan non-teknis</strong> adalah faktor kunci kemajuan karir.</li>
+<li>Banyak PM gagal karena <strong>tidak meluangkan waktu untuk merencanakan komunikasi</strong>.</li>
 </ul>
-<h3>Isi Communications Management Plan:</h3>
+
+<div class="highlight">💡 <strong>Project Communications Management</strong> mencakup: <em>generating</em> (membuat), <em>collecting</em> (mengumpulkan), <em>disseminating</em> (menyebarkan), dan <em>storing</em> (menyimpan) informasi proyek.</div>
+
+<h3>Output utama yang sering dihasilkan:</h3>
 <ol>
-<li><strong>Stakeholder communications requirements</strong></li>
-<li><strong>Information to be communicated</strong> (format, content, level of detail)</li>
-<li><strong>Who</strong> will receive and produce the information</li>
-<li><strong>Methods/technologies</strong> for conveying information</li>
-<li><strong>Frequency</strong> of communication</li>
-<li><strong>Escalation procedures</strong> for resolving issues</li>
-<li><strong>Revision procedures</strong> for updating the plan</li>
-<li><strong>Glossary</strong> of common terminology</li>
+<li><strong>Communications Management Plan</strong> — dokumen panduan komunikasi proyek</li>
+<li><strong>Project Website</strong> — tempat terpusat menyimpan & membagikan dokumen proyek</li>
 </ol>
-<div class="tip">Cara ingat isi Comm Plan: "<strong>SIWMFERG</strong>" = Stakeholder req, Info, Who, Methods, Frequency, Escalation, Revision, Glossary</div>
 </div>
 
-<div class="card">
-<h2>3. Stakeholder Analysis for Communications</h2>
-<p>Sebuah tabel yang menentukan:</p>
+<div class="card" id="comm-plan">
+<h2>📋 2. Communications Management Plan</h2>
+<p>Ini adalah <strong>dokumen yang menjadi panduan untuk semua komunikasi di proyek</strong>. Tidak peduli proyeknya besar atau kecil, harus ada rencana komunikasi tertulis!</p>
+
+<div class="comparison">
+<div>
+<h4>🔹 Proyek Kecil</h4>
+<p>Rencana komunikasi bisa <strong>digabung sebagai bagian dari Team Contract</strong> (kontrak tim).</p>
+</div>
+<div>
+<h4>🔹 Proyek Besar</h4>
+<p>Harus berupa <strong>dokumen terpisah</strong> yang lebih detail dan komprehensif.</p>
+</div>
+</div>
+
+<h3>Apa saja isi Communications Management Plan?</h3>
 <table>
-<tr><th>Kolom</th><th>Penjelasan</th></tr>
-<tr><td><strong>Stakeholders</strong></td><td>Siapa yang membutuhkan informasi?</td></tr>
-<tr><td><strong>Document Name</strong></td><td>Dokumen apa yang diberikan?</td></tr>
-<tr><td><strong>Document Format</strong></td><td>Hard copy, email, meeting, intranet?</td></tr>
-<tr><td><strong>Contact Person</strong></td><td>Siapa yang bertanggung jawab menyiapkan?</td></tr>
-<tr><td><strong>Due</strong></td><td>Kapan harus diberikan?</td></tr>
+<tr><th>No</th><th>Komponen</th><th>Penjelasan Sederhana</th></tr>
+<tr><td>1</td><td><strong>Stakeholder Communications Requirements</strong></td><td>Siapa saja yang perlu info? Apa yang mereka butuhkan?</td></tr>
+<tr><td>2</td><td><strong>Information to be Communicated</strong></td><td>Info apa yang dibagikan? Dalam format apa? Sedetail apa?</td></tr>
+<tr><td>3</td><td><strong>Who will receive & produce</strong></td><td>Siapa yang menerima dan siapa yang membuat informasi?</td></tr>
+<tr><td>4</td><td><strong>Suggested Methods/Technologies</strong></td><td>Pakai apa? Email, meeting, intranet, Slack?</td></tr>
+<tr><td>5</td><td><strong>Frequency of Communication</strong></td><td>Seberapa sering? Harian, mingguan, bulanan?</td></tr>
+<tr><td>6</td><td><strong>Escalation Procedures</strong></td><td>Kalau ada masalah, lapornya ke siapa? Prosedurnya bagaimana?</td></tr>
+<tr><td>7</td><td><strong>Revision Procedures</strong></td><td>Bagaimana cara memperbarui rencana komunikasi ini?</td></tr>
+<tr><td>8</td><td><strong>Glossary</strong></td><td>Daftar istilah umum supaya semua orang paham bahasa yang sama.</td></tr>
 </table>
+
+<div class="tip">🧠 <strong>Cara Menghafal 8 Komponen (SIFMER-RG):</strong><br>
+<strong>S</strong>takeholder requirements — <strong>I</strong>nformation — <strong>F</strong>or who (receiver/producer) — <strong>M</strong>ethods — fr<strong>E</strong>quency — escalation p<strong>R</strong>ocedures — <strong>R</strong>evision — <strong>G</strong>lossary</div>
+
+<div class="warn">⚠️ <strong>Ingat:</strong> Stakeholders bisa berubah tergantung fase proyek, jadi rencana komunikasi <strong>harus di-update sesuai kebutuhan!</strong></div>
 </div>
 
-<div class="card">
-<h2>4. Project Websites</h2>
+<div class="card" id="website">
+<h2>🌐 3. Project Websites & Distribusi Informasi</h2>
+<p>Banyak tim proyek sekarang memposting dokumen dan informasi proyek di <strong>project website</strong> sebagai pusat distribusi terpusat. Bisa dibuat menggunakan tools seperti:</p>
 <ul>
-<li>Banyak tim proyek memposting informasi proyek ke website proyek atau SharePoint</li>
-<li>Bisa juga menggunakan <strong>blogs</strong> — jurnal web yang mudah digunakan</li>
-<li>Beberapa bagian website bisa terbuka, bagian lain hanya bisa diakses stakeholder tertentu</li>
-<li>Menggunakan kode akses <strong>CRUD</strong> (Create, Read, Update, Delete)</li>
-<li><strong>Quad charts</strong> — grafik 4 kuadran: project summary, financials, schedules, dan issues</li>
+<li>Wix, Google Sites, WordPress</li>
+<li>SharePoint (banyak organisasi pakai ini)</li>
+<li>Blog proyek (untuk journal dan update)</li>
+<li>Software project management</li>
+</ul>
+
+<h3>Fitur Penting Project Website:</h3>
+<ul>
+<li><strong>Akses bertingkat</strong> — Ada bagian yang terbuka untuk publik, ada yang hanya untuk stakeholder tertentu</li>
+<li><strong>CRUD Code</strong> — Mengatur siapa bisa <strong>C</strong>reate, <strong>R</strong>ead, <strong>U</strong>pdate, dan <strong>D</strong>elete</li>
+<li><strong>Quad Charts</strong> — Beberapa organisasi membuat quad chart di website yang menampilkan 4 kuadran: <em>project summary, financials, schedules, issues</em></li>
 </ul>
 </div>
 
-<div class="card">
-<h2>5. Agile Communications Planning</h2>
-<p>Alih-alih mendokumentasikan rencana komunikasi, Scrum framework sudah memiliki event bawaan:</p>
+<div class="card" id="agile-comm">
+<h2>🏃 4. Agile Communications Planning</h2>
+<p>Di Scrum, komunikasi tidak direncanakan dalam dokumen terpisah. Sebaliknya, <strong>komunikasi dilakukan melalui event-event Scrum yang sudah terstruktur</strong>.</p>
+
+<div class="highlight">💡 Scrum Guide (2020): <em>"Events are used in Scrum to create regularity and to minimize the need for meetings not defined in Scrum."</em></div>
+
 <table>
-<tr><th>Scrum Event</th><th>Durasi Max</th><th>Fungsi Komunikasi</th></tr>
-<tr><td><strong>Sprint</strong></td><td>1 bulan</td><td>Container untuk semua event. Punya sprint goal yang jelas.</td></tr>
-<tr><td><strong>Sprint Planning</strong></td><td>8 jam</td><td>Merencanakan apa yang dikerjakan sprint ini (value, scope, how)</td></tr>
-<tr><td><strong>Daily Scrum</strong></td><td>15 menit</td><td>Inspeksi progress, adaptasi sprint backlog, rencana hari berikutnya. Menghilangkan kebutuhan meeting lain.</td></tr>
-<tr><td><strong>Sprint Review</strong></td><td>4 jam</td><td>Presentasi hasil kerja ke stakeholder kunci. Working session untuk inspeksi dan adaptasi.</td></tr>
-<tr><td><strong>Sprint Retrospective</strong></td><td>3 jam</td><td>Tim membahas apa yang baik, masalah, dan solusi. Hanya tim internal.</td></tr>
+<tr><th>Event Scrum</th><th>Durasi Max</th><th>Apa yang Terjadi</th></tr>
+<tr><td><strong>Sprint</strong></td><td>1 bulan (fixed)</td><td>Container/wadah untuk semua event lain. Setiap sprint punya <strong>Sprint Goal</strong> yang jelas.</td></tr>
+<tr><td><strong>Sprint Planning</strong></td><td>8 jam</td><td>Menentukan value sprint, apa yang bisa dikerjakan, dan bagaimana caranya.</td></tr>
+<tr><td><strong>Daily Scrum</strong></td><td>15 menit</td><td>Inspeksi progres menuju Sprint Goal, adaptasi Sprint Backlog, rencana kerja hari berikutnya. Mengidentifikasi <strong>impediments</strong>.</td></tr>
+<tr><td><strong>Sprint Review</strong></td><td>4 jam</td><td>Tim presentasi hasil kerja ke stakeholder. Menginspeksi outcome sprint & menentukan adaptasi masa depan.</td></tr>
+<tr><td><strong>Sprint Retrospective</strong></td><td>3 jam</td><td>Hanya anggota tim. Diskusi: apa yang baik, masalah apa, bagaimana memperbaiki kualitas & efektivitas.</td></tr>
 </table>
+
+<div class="tip">🧠 <strong>Cara Menghafal Urutan Event Scrum:</strong> "<strong>S</strong>iapa <strong>P</strong>erlu <strong>D</strong>iajak <strong>R</strong>apat <strong>R</strong>etrospeksi" → Sprint → Planning → Daily → Review → Retrospective</div>
 </div>
 
-<div class="card">
-<h2>BAGIAN B: PROJECT STAKEHOLDER MANAGEMENT</h2>
+<div class="card" id="stakeholder">
+<h2>👥 5. Project Stakeholder Management</h2>
+<p><strong>Stakeholder</strong> = siapa saja yang terkena dampak proyek atau bisa mempengaruhi proyek. Mereka bisa dari dalam (tim, manajemen) maupun luar (customer, supplier, pemerintah).</p>
+
+<h3>Stakeholder Engagement Planning</h3>
+<p>Ini adalah proses <strong>menentukan strategi untuk melibatkan stakeholder secara efektif</strong> dalam keputusan dan aktivitas proyek, berdasarkan kebutuhan, kepentingan, dan potensi dampak mereka.</p>
+
+<h4>Output utama → Stakeholder Engagement Plan</h4>
+
+<div class="warn">⚠️ <strong>Penting:</strong> Stakeholder berubah seiring proyek berjalan. Maka stakeholder engagement planning <strong>harus di-update</strong> secara berkala. Staffing Management Plan menunjukkan kapan anggota tim join/leave proyek.</div>
+
+<p>Ketiga dokumen ini harus <strong>saling sejalan (in agreement)</strong>:</p>
+<ol>
+<li>Stakeholder Engagement Plan</li>
+<li>Communications Management Plan</li>
+<li>Resource Management Plan</li>
+</ol>
 </div>
 
-<div class="card">
-<h2>6. Stakeholder Engagement Planning</h2>
-<p><strong>Stakeholder engagement planning</strong> = menentukan strategi untuk melibatkan stakeholder secara efektif dalam keputusan dan aktivitas proyek.</p>
+<div class="card" id="engagement">
+<h2>📊 6. Stakeholder Engagement Plan</h2>
+<p>Setelah stakeholder diidentifikasi dan dianalisis, PM dan tim membuat <strong>Stakeholder Engagement Plan</strong> untuk memandu pelibatan stakeholder agar keputusan yang baik bisa dibuat sepanjang proyek.</p>
+
+<h3>Isi Stakeholder Engagement Plan:</h3>
 <ul>
-<li>Output utama: <strong>Stakeholder Engagement Plan</strong></li>
-<li>Stakeholder berubah seiring proyek berjalan → plan harus di-update!</li>
-<li>Harus selaras dengan communications plan dan resource management plan</li>
-<li>Organisasi juga harus memperhatikan <strong>cultural changes</strong> yang disebabkan proyek</li>
+<li><strong>Current & Desired Engagement Levels</strong> — Di mana level engagement mereka sekarang? Di mana harusnya?</li>
+<li><strong>Scope & Impact of Change</strong> — Seberapa besar dampak perubahan terhadap stakeholder?</li>
+<li><strong>Interrelationships & Overlaps</strong> — Hubungan antar stakeholder, potensi tumpang tindih</li>
+<li><strong>Management Strategies</strong> — Strategi spesifik per klasifikasi stakeholder</li>
+<li><strong>Methods for Updating</strong> — Cara memperbarui rencana ini</li>
+</ul>
+
+<div class="danger">🚨 <strong>Sifatnya SENSITIF!</strong> Karena berisi informasi sensitif tentang stakeholder, dokumen ini:
+<ul>
+<li><strong>Tidak boleh jadi bagian dari dokumen proyek resmi</strong> yang bisa dilihat semua orang</li>
+<li>Sering kali <strong>hanya PM dan beberapa anggota tim</strong> yang menyiapkannya</li>
+<li>Kadang <strong>tidak ditulis</strong> (hanya didiskusikan), dan distribusinya sangat dibatasi</li>
+</ul></div>
+</div>
+
+<div class="card" id="agile-stake">
+<h2>🔄 7. Agile Stakeholder Planning</h2>
+<ul>
+<li><strong>Sprint Review</strong> = mekanisme utama pelibatan stakeholder. Stakeholder kunci menginspeksi hasil setiap sprint dan menentukan adaptasi.</li>
+<li><strong>Daily Scrum</strong> = tempat tim mendiskusikan <strong>impediments</strong> (hambatan). Scrum Master/PM bekerja menghilangkan hambatan ini.</li>
+<li>Tim harus memastikan stakeholder kunci <strong>berpartisipasi dalam sprint review</strong>, mengembangkan <strong>acceptance criteria</strong>, dan menentukan <strong>Definition of Done</strong>.</li>
+<li><strong>Information Radiators</strong> (papan informasi yang terlihat oleh semua) memberikan visibilitas terhadap progres kerja.</li>
 </ul>
 </div>
 
-<div class="card">
-<h2>7. Stakeholder Engagement Plan (Isi)</h2>
-<ul>
-<li><strong>Current and desired engagement levels</strong> of key stakeholders</li>
-<li><strong>Scope and impact</strong> of change to stakeholders</li>
-<li>Identified <strong>interrelationships</strong> between stakeholders</li>
-<li>Potential <strong>management strategies</strong> for each stakeholder classification</li>
-<li>Methods for <strong>updating</strong> the plan</li>
-</ul>
-<div class="warn">Stakeholder engagement plan sering berisi <strong>informasi sensitif</strong> sehingga TIDAK boleh menjadi bagian dari dokumen proyek resmi yang bisa dilihat semua stakeholder. Distribusinya sangat terbatas!</div>
-</div>
+<div class="card" id="hafal">
+<h2>🧠 8. Ringkasan & Cara Menghafal</h2>
 
-<div class="card">
-<h2>8. Agile Stakeholder Planning</h2>
-<ul>
-<li>Sprint Review memungkinkan stakeholder kunci menginspeksi outcome dan menentukan adaptasi</li>
-<li>Daily Scrum membahas impediment → Scrum Master menghapus impediment</li>
-<li>Stakeholder kunci harus berpartisipasi dalam sprint review, mengembangkan acceptance criteria, dan menentukan <strong>Definition of Done</strong></li>
-<li><strong>Information Radiators</strong> (seperti task board yang ditempel di dinding) memberikan visibilitas progress ke semua stakeholder</li>
-</ul>
-</div>
-
-<div class="card">
-<h2>Ringkasan & Poin Hafalan</h2>
 <div class="highlight">
-<p><strong>KOMUNIKASI = 90% waktu PM</strong></p>
-<p><strong>8 Isi Comm Plan:</strong> Stakeholder req, Info, Who, Methods, Frequency, Escalation, Revision, Glossary</p>
-<p><strong>5 Scrum Events:</strong> Sprint, Sprint Planning, Daily Scrum, Sprint Review, Sprint Retrospective</p>
+<h3>📌 POIN-POIN KUNCI YANG WAJIB DIINGAT:</h3>
+<ol>
+<li><strong>90% waktu PM digunakan untuk berkomunikasi</strong></li>
+<li><strong>Ancaman terbesar proyek = failure to communicate</strong></li>
+<li>Communications Management Plan berisi <strong>8 komponen</strong> (stakeholder req, info, who, methods, frequency, escalation, revision, glossary)</li>
+<li><strong>CRUD Code</strong> = Create, Read, Update, Delete (untuk akses project website)</li>
+<li>Scrum punya <strong>5 event utama</strong> untuk komunikasi: Sprint, Planning, Daily, Review, Retrospective</li>
+<li>Output utama Stakeholder Planning = <strong>Stakeholder Engagement Plan</strong></li>
+<li>Stakeholder Engagement Plan bersifat <strong>SENSITIF</strong>, distribusi terbatas</li>
+<li>Tiga plan yang harus sejalan: Stakeholder, Communications, Resource Management Plan</li>
+</ol>
 </div>
+
 <div class="tip">
-<p><strong>Stakeholder Engagement Plan = RAHASIA!</strong> Tidak boleh jadi bagian dokumen resmi yang bisa diakses semua stakeholder.</p>
-<p><strong>CRUD</strong> = Create, Read, Update, Delete (tingkat akses website proyek)</p>
+<h3>🔑 Tips Mengingat Cepat:</h3>
+<ul>
+<li><strong>Daily Scrum = 15 menit</strong> (seperti coffee break singkat)</li>
+<li><strong>Sprint Planning = 8 jam max</strong> (satu hari penuh)</li>
+<li><strong>Sprint Review = 4 jam max</strong> (setengah hari)</li>
+<li><strong>Sprint Retrospective = 3 jam max</strong> (seperempat hari)</li>
+<li>Information Radiator = "papan besar yang semua orang bisa lihat" (bukan dokumen rahasia)</li>
+</ul>
 </div>
 </div>
 
-<div class="card">
-<h2>Contoh Soal & Pembahasan</h2>
-<details><summary>Berapa persen waktu yang dihabiskan PM untuk berkomunikasi?</summary>
-<div><p><strong>Jawaban: 90%</strong>. Banyak ahli sepakat bahwa kegagalan komunikasi adalah ancaman terbesar untuk proyek.</p></div></details>
-<details><summary>Apa perbedaan Communication Management Plan di proyek kecil vs besar?</summary>
-<div><p>Proyek kecil: bisa menjadi bagian dari team contract. Proyek besar: harus menjadi dokumen terpisah yang lengkap.</p></div></details>
-<details><summary>Mengapa Stakeholder Engagement Plan bersifat rahasia?</summary>
-<div><p>Karena berisi informasi sensitif tentang strategi mengelola stakeholder tertentu (termasuk yang mungkin resisten). Jika terbuka, bisa merusak hubungan.</p></div></details>
+<div class="card" id="contoh">
+<h2>📖 9. Contoh Soal & Pembahasan</h2>
+
+<details><summary>Soal 1: Berapa jumlah communication channels jika tim terdiri dari 6 orang?</summary>
+<div>
+<p><strong>Jawaban: 15</strong></p>
+<p><strong>Rumus:</strong> n(n-1)/2 = 6(5)/2 = <strong>15</strong></p>
+<p>Rumus ini menghitung berapa banyak jalur komunikasi langsung (satu-ke-satu) yang mungkin terbentuk dalam tim. Semakin banyak anggota, semakin kompleks komunikasinya. Ini sebabnya ukuran tim harus dibatasi!</p>
+</div></details>
+
+<details><summary>Soal 2: Apa perbedaan Sprint Review dan Sprint Retrospective?</summary>
+<div>
+<p><strong>Sprint Review</strong> = Tim presentasi HASIL KERJA ke stakeholder kunci. Fokusnya pada <strong>produk/output</strong>. Stakeholder eksternal diundang.</p>
+<p><strong>Sprint Retrospective</strong> = HANYA anggota tim saja. Fokusnya pada <strong>proses kerja tim</strong> (apa yang baik, apa yang buruk, apa yang perlu diperbaiki).</p>
+<p>Analoginya: Review = "presentasi di depan klien", Retrospective = "evaluasi internal tim di ruang tertutup".</p>
+</div></details>
+
+<details><summary>Soal 3: Mengapa Stakeholder Engagement Plan bersifat sensitif?</summary>
+<div>
+<p><strong>Jawaban:</strong> Karena dokumen ini berisi strategi dan penilaian tentang stakeholder individual — misalnya siapa yang "sulit dikelola", siapa yang perlu "pendekatan khusus". Jika stakeholder membaca penilaian tentang diri mereka, bisa menyebabkan konflik dan ketidakpercayaan. Maka distribusinya sangat dibatasi dan sering tidak ditulis secara formal.</p>
+</div></details>
+
+<details><summary>Soal 4: Apa itu Information Radiator?</summary>
+<div>
+<p><strong>Jawaban:</strong> Information Radiator adalah display/papan informasi yang visible (terlihat) oleh semua stakeholder, memberikan transparansi tentang progres pekerjaan. Contoh: Kanban board yang ditempel di dinding, dashboard digital yang menampilkan burndown chart. Ide utamanya: informasi "memancar" keluar tanpa perlu diminta — siapa pun bisa melihatnya kapan saja.</p>
+</div></details>
 </div>
-<div class="quiz-section" id="quiz_comm"><h2>Latihan Soal: Communication & Stakeholder</h2><div class="question" id="quiz_comm_q1"><p>1. Berapa persen waktu yang dihabiskan PM untuk berkomunikasi?</p><label class="option" id="quiz_comm_q1_a" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_comm_q1" style="display:none">A. 50%</label><label class="option" id="quiz_comm_q1_b" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_comm_q1" style="display:none">B. 70%</label><label class="option" id="quiz_comm_q1_c" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_comm_q1" style="display:none">C. 90%</label><label class="option" id="quiz_comm_q1_d" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_comm_q1" style="display:none">D. 100%</label></div><div class="question" id="quiz_comm_q2"><p>2. Untuk proyek KECIL, communications management plan bisa...</p><label class="option" id="quiz_comm_q2_a" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_comm_q2" style="display:none">A. Tidak perlu dibuat</label><label class="option" id="quiz_comm_q2_b" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_comm_q2" style="display:none">B. Menjadi bagian dari team contract</label><label class="option" id="quiz_comm_q2_c" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_comm_q2" style="display:none">C. Hanya berupa email</label><label class="option" id="quiz_comm_q2_d" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_comm_q2" style="display:none">D. Dibuat setelah proyek selesai</label></div><div class="question" id="quiz_comm_q3"><p>3. CRUD pada akses website proyek singkatan dari...</p><label class="option" id="quiz_comm_q3_a" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_comm_q3" style="display:none">A. Create, Read, Update, Delete</label><label class="option" id="quiz_comm_q3_b" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_comm_q3" style="display:none">B. Create, Review, Upload, Download</label><label class="option" id="quiz_comm_q3_c" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_comm_q3" style="display:none">C. Check, Read, Update, Deploy</label><label class="option" id="quiz_comm_q3_d" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_comm_q3" style="display:none">D. Create, Revise, Undo, Delete</label></div><div class="question" id="quiz_comm_q4"><p>4. Stakeholder Engagement Plan bersifat...</p><label class="option" id="quiz_comm_q4_a" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_comm_q4" style="display:none">A. Publik dan bisa diakses semua stakeholder</label><label class="option" id="quiz_comm_q4_b" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_comm_q4" style="display:none">B. Rahasia dan distribusinya sangat terbatas</label><label class="option" id="quiz_comm_q4_c" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_comm_q4" style="display:none">C. Hanya dibuat untuk proyek besar</label><label class="option" id="quiz_comm_q4_d" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_comm_q4" style="display:none">D. Opsional dan tidak wajib</label></div><div class="question" id="quiz_comm_q5"><p>5. Daily Scrum berlangsung maksimal...</p><label class="option" id="quiz_comm_q5_a" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_comm_q5" style="display:none">A. 30 menit</label><label class="option" id="quiz_comm_q5_b" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_comm_q5" style="display:none">B. 1 jam</label><label class="option" id="quiz_comm_q5_c" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_comm_q5" style="display:none">C. 15 menit</label><label class="option" id="quiz_comm_q5_d" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_comm_q5" style="display:none">D. 2 jam</label></div><div class="question" id="quiz_comm_q6"><p>6. Information Radiators dalam agile bertujuan untuk...</p><label class="option" id="quiz_comm_q6_a" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_comm_q6" style="display:none">A. Menghangatkan ruangan meeting</label><label class="option" id="quiz_comm_q6_b" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_comm_q6" style="display:none">B. Memberikan visibilitas progress kerja ke semua stakeholder</label><label class="option" id="quiz_comm_q6_c" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_comm_q6" style="display:none">C. Mengirim email otomatis</label><label class="option" id="quiz_comm_q6_d" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_comm_q6" style="display:none">D. Mengukur kecepatan internet</label></div><div class="question" id="quiz_comm_q7"><p>7. Quad charts pada project website menampilkan 4 kuadran, yaitu...</p><label class="option" id="quiz_comm_q7_a" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_comm_q7" style="display:none">A. Scope, Time, Cost, Quality</label><label class="option" id="quiz_comm_q7_b" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_comm_q7" style="display:none">B. Project Summary, Financials, Schedules, Issues</label><label class="option" id="quiz_comm_q7_c" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_comm_q7" style="display:none">C. Risk, Budget, Team, Deliverables</label><label class="option" id="quiz_comm_q7_d" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_comm_q7" style="display:none">D. Planning, Executing, Monitoring, Closing</label></div><div class="question" id="quiz_comm_q8"><p>8. Sprint Retrospective hanya dihadiri oleh...</p><label class="option" id="quiz_comm_q8_a" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_comm_q8" style="display:none">A. Semua stakeholder</label><label class="option" id="quiz_comm_q8_b" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_comm_q8" style="display:none">B. Customer dan PM saja</label><label class="option" id="quiz_comm_q8_c" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_comm_q8" style="display:none">C. Tim internal (team members) saja</label><label class="option" id="quiz_comm_q8_d" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_comm_q8" style="display:none">D. Sponsor dan manajemen</label></div><div class="question" id="quiz_comm_q9"><p>9. Ancaman TERBESAR untuk keberhasilan proyek menurut banyak ahli adalah...</p><label class="option" id="quiz_comm_q9_a" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_comm_q9" style="display:none">A. Budget terbatas</label><label class="option" id="quiz_comm_q9_b" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_comm_q9" style="display:none">B. Teknologi berubah cepat</label><label class="option" id="quiz_comm_q9_c" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_comm_q9" style="display:none">C. Kegagalan komunikasi</label><label class="option" id="quiz_comm_q9_d" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_comm_q9" style="display:none">D. Tim yang kurang kompeten</label></div><div class="question" id="quiz_comm_q10"><p>10. Berikut yang BUKAN merupakan isi dari Communications Management Plan adalah...</p><label class="option" id="quiz_comm_q10_a" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_comm_q10" style="display:none">A. Frequency of communication</label><label class="option" id="quiz_comm_q10_b" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_comm_q10" style="display:none">B. Escalation procedures</label><label class="option" id="quiz_comm_q10_c" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_comm_q10" style="display:none">C. Risk Register</label><label class="option" id="quiz_comm_q10_d" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_comm_q10" style="display:none">D. Glossary of common terminology</label></div>
-<div style="margin-top:15px;">
-<button class="btn" onclick="submitQuiz('quiz_comm',{1:'c',2:'b',3:'a',4:'b',5:'c',6:'b',7:'b',8:'c',9:'c',10:'c'})">Submit</button>
-<button class="btn" style="background:#374151;" onclick="resetQuiz('quiz_comm')">Reset</button>
+
+
+<div class="quiz-section" id="quiz_comm">
+<h2>🎯 10. Latihan Soal: Communication & Stakeholder Management</h2>
+<p>Jawab semua soal, lalu klik <strong>Submit</strong> untuk melihat hasilnya. Jawaban tersimpan otomatis!</p>
+<div class="question" id="quiz_comm_q1"><p class="q-text">1. Ancaman terbesar terhadap keberhasilan proyek adalah...</p><label class="option" id="quiz_comm_q1_a" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_comm_q1" style="display:none">A. Kekurangan anggaran</label><label class="option" id="quiz_comm_q1_b" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_comm_q1" style="display:none">B. Kegagalan komunikasi</label><label class="option" id="quiz_comm_q1_c" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_comm_q1" style="display:none">C. Keterlambatan jadwal</label><label class="option" id="quiz_comm_q1_d" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_comm_q1" style="display:none">D. Pergantian anggota tim</label><div class="explanation"><strong>Jawaban: B.</strong> 'The greatest threat to many projects is a failure to communicate.' Ini adalah poin utama dari materi Communication Management.</div></div><div class="question" id="quiz_comm_q2"><p class="q-text">2. Untuk proyek kecil, Communications Management Plan bisa menjadi bagian dari...</p><label class="option" id="quiz_comm_q2_a" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_comm_q2" style="display:none">A. Risk Register</label><label class="option" id="quiz_comm_q2_b" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_comm_q2" style="display:none">B. Project Charter</label><label class="option" id="quiz_comm_q2_c" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_comm_q2" style="display:none">C. Team Contract</label><label class="option" id="quiz_comm_q2_d" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_comm_q2" style="display:none">D. WBS</label><div class="explanation"><strong>Jawaban: C.</strong> Untuk proyek kecil, rencana komunikasi bisa digabung menjadi bagian dari Team Contract (kontrak tim).</div></div><div class="question" id="quiz_comm_q3"><p class="q-text">3. Berikut adalah event di mana tim mempresentasikan hasil kerja mereka kepada stakeholder kunci untuk memeriksa hasil sprint dan menentukan adaptasi di masa depan:</p><label class="option" id="quiz_comm_q3_a" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_comm_q3" style="display:none">A. Sprint Planning</label><label class="option" id="quiz_comm_q3_b" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_comm_q3" style="display:none">B. Sprint Review</label><label class="option" id="quiz_comm_q3_c" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_comm_q3" style="display:none">C. Sprint Retrospective</label><label class="option" id="quiz_comm_q3_d" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_comm_q3" style="display:none">D. Daily Scrum</label><div class="explanation"><strong>Jawaban: B.</strong> Sprint Review = tim presentasi hasil kerja ke key stakeholders dan inspect outcome sprint.</div></div><div class="question" id="quiz_comm_q4"><p class="q-text">4. Jika tim proyek terdiri dari 6 anggota, berapa jumlah saluran komunikasi?</p><label class="option" id="quiz_comm_q4_a" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_comm_q4" style="display:none">A. 12</label><label class="option" id="quiz_comm_q4_b" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_comm_q4" style="display:none">B. 18</label><label class="option" id="quiz_comm_q4_c" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_comm_q4" style="display:none">C. 15</label><label class="option" id="quiz_comm_q4_d" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_comm_q4" style="display:none">D. 21</label><div class="explanation"><strong>Jawaban: C.</strong> Rumus: n(n-1)/2 = 6(5)/2 = 15.</div></div><div class="question" id="quiz_comm_q5"><p class="q-text">5. Manakah yang BUKAN merupakan input untuk proses Managing Stakeholder Engagement?</p><label class="option" id="quiz_comm_q5_a" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_comm_q5" style="display:none">A. Stakeholder Register</label><label class="option" id="quiz_comm_q5_b" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_comm_q5" style="display:none">B. Enterprise Environmental Factors</label><label class="option" id="quiz_comm_q5_c" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_comm_q5" style="display:none">C. Work Breakdown Structure (WBS)</label><label class="option" id="quiz_comm_q5_d" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_comm_q5" style="display:none">D. Change Log</label><div class="explanation"><strong>Jawaban: C.</strong> WBS bukan input untuk Managing Stakeholder Engagement. Inputnya adalah project management plan, project documents (change log, issue log, lessons learned register, stakeholder register), EEF, dan OPA.</div></div><div class="question" id="quiz_comm_q6"><p class="q-text">6. Output utama dari Project Stakeholder Engagement Planning adalah...</p><label class="option" id="quiz_comm_q6_a" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_comm_q6" style="display:none">A. Stakeholder Register</label><label class="option" id="quiz_comm_q6_b" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_comm_q6" style="display:none">B. Communications Management Plan</label><label class="option" id="quiz_comm_q6_c" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_comm_q6" style="display:none">C. Stakeholder Engagement Plan</label><label class="option" id="quiz_comm_q6_d" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_comm_q6" style="display:none">D. Risk Register</label><div class="explanation"><strong>Jawaban: C.</strong> Output utama adalah Stakeholder Engagement Plan.</div></div><div class="question" id="quiz_comm_q7"><p class="q-text">7. Dalam Scrum, meeting 15 menit yang berfokus pada inspeksi progres harian adalah...</p><label class="option" id="quiz_comm_q7_a" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_comm_q7" style="display:none">A. Sprint Planning</label><label class="option" id="quiz_comm_q7_b" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_comm_q7" style="display:none">B. Sprint Retrospective</label><label class="option" id="quiz_comm_q7_c" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_comm_q7" style="display:none">C. Daily Scrum</label><label class="option" id="quiz_comm_q7_d" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_comm_q7" style="display:none">D. Sprint Review</label><div class="explanation"><strong>Jawaban: C.</strong> Daily Scrum = 15 menit, fokus pada inspeksi progress toward Sprint Goal.</div></div><div class="question" id="quiz_comm_q8"><p class="q-text">8. CRUD Code pada project website berarti user bisa...</p><label class="option" id="quiz_comm_q8_a" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_comm_q8" style="display:none">A. Create, Review, Upload, Delete</label><label class="option" id="quiz_comm_q8_b" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_comm_q8" style="display:none">B. Create, Read, Update, Delete</label><label class="option" id="quiz_comm_q8_c" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_comm_q8" style="display:none">C. Copy, Read, Undo, Download</label><label class="option" id="quiz_comm_q8_d" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_comm_q8" style="display:none">D. Create, Revise, Upload, Distribute</label><div class="explanation"><strong>Jawaban: B.</strong> CRUD = Create, Read, Update, Delete.</div></div><div class="question" id="quiz_comm_q9"><p class="q-text">9. Stakeholder Engagement Plan bersifat sensitif karena...</p><label class="option" id="quiz_comm_q9_a" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_comm_q9" style="display:none">A. Berisi data keuangan proyek</label><label class="option" id="quiz_comm_q9_b" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_comm_q9" style="display:none">B. Berisi jadwal detail proyek</label><label class="option" id="quiz_comm_q9_c" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_comm_q9" style="display:none">C. Berisi informasi sensitif tentang stakeholder yang tidak boleh tersebar luas</label><label class="option" id="quiz_comm_q9_d" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_comm_q9" style="display:none">D. Berisi kode program rahasia</label><div class="explanation"><strong>Jawaban: C.</strong> Karena berisi strategi dan penilaian tentang stakeholder, distribusinya dibatasi dan sering tidak tertulis.</div></div><div class="question" id="quiz_comm_q10"><p class="q-text">10. Berapa persen waktu yang dihabiskan project manager untuk berkomunikasi?</p><label class="option" id="quiz_comm_q10_a" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_comm_q10" style="display:none">A. 50%</label><label class="option" id="quiz_comm_q10_b" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_comm_q10" style="display:none">B. 70%</label><label class="option" id="quiz_comm_q10_c" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_comm_q10" style="display:none">C. 90%</label><label class="option" id="quiz_comm_q10_d" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_comm_q10" style="display:none">D. 100%</label><div class="explanation"><strong>Jawaban: C.</strong> Project managers spend 90% of time communicating.</div></div><div class="question" id="quiz_comm_q11"><p class="q-text">11. Information Radiator pada Agile memberikan...</p><label class="option" id="quiz_comm_q11_a" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_comm_q11" style="display:none">A. Keamanan data proyek</label><label class="option" id="quiz_comm_q11_b" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_comm_q11" style="display:none">B. Visibilitas progres kerja untuk semua stakeholder yang tertarik</label><label class="option" id="quiz_comm_q11_c" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_comm_q11" style="display:none">C. Laporan keuangan otomatis</label><label class="option" id="quiz_comm_q11_d" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_comm_q11" style="display:none">D. Pengaturan jadwal otomatis</label><div class="explanation"><strong>Jawaban: B.</strong> Information radiators provide visibility into work progress for all interested stakeholders.</div></div><div class="question" id="quiz_comm_q12"><p class="q-text">12. Manakah output dari Managing Stakeholder Engagement yang sering mirip dengan output di area pengetahuan lain?</p><label class="option" id="quiz_comm_q12_a" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_comm_q12" style="display:none">A. Stakeholder Engagement Plan</label><label class="option" id="quiz_comm_q12_b" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_comm_q12" style="display:none">B. Lessons Learned Register</label><label class="option" id="quiz_comm_q12_c" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_comm_q12" style="display:none">C. Change Requests</label><label class="option" id="quiz_comm_q12_d" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_comm_q12" style="display:none">D. Issue Log</label><div class="explanation"><strong>Jawaban: C.</strong> Change requests adalah output yang sering muncul di banyak knowledge area.</div></div>
+<div style="margin-top:16px;">
+<button class="btn" onclick="submitQuiz('quiz_comm',{1:'b',2:'c',3:'b',4:'c',5:'c',6:'c',7:'c',8:'b',9:'c',10:'c',11:'b',12:'c'})">📊 Submit & Lihat Hasil</button>
+<button class="btn btn-secondary" onclick="resetQuiz('quiz_comm')">🔄 Reset</button>
 </div>
-<div id="quiz_comm_result"></div></div>
+<div id="quiz_comm_result"></div>
+</div>
+
+<div style="text-align:center;margin:40px 0 20px;color:#475569;font-size:.85em;">
+<p>📚 Manajemen Proyek TI — Fasilkom UI | UAS Study Material</p>
+</div>
 </div>
 <script>
 function initQuiz(quizId) {
@@ -203,6 +322,11 @@ function initQuiz(quizId) {
       var opt = document.getElementById(item.id);
       if (opt) { opt.classList.add('selected'); opt.querySelector('input').checked = true; }
     });
+  }
+  var scoreData = localStorage.getItem(quizId + '_submitted');
+  if (scoreData) {
+    var sd = JSON.parse(scoreData);
+    submitQuizSilent(quizId, sd.answers);
   }
 }
 function selectOpt(el, quizId) {
@@ -223,6 +347,7 @@ function saveSelections(quizId) {
 function submitQuiz(quizId, answers) {
   var score = 0;
   var total = Object.keys(answers).length;
+  document.querySelectorAll('#'+quizId+' .option').forEach(function(o){ o.classList.remove('correct','wrong'); });
   for (var qNum in answers) {
     var q = document.getElementById(quizId + '_q' + qNum);
     if (!q) continue;
@@ -230,22 +355,57 @@ function submitQuiz(quizId, answers) {
     var correctId = quizId + '_q' + qNum + '_' + answers[qNum];
     var correctEl = document.getElementById(correctId);
     if (correctEl) correctEl.classList.add('correct');
+    q.querySelectorAll('.option').forEach(function(o){ o.style.pointerEvents='none'; });
     if (selected) {
       if (selected.id === correctId) { score++; }
       else { selected.classList.add('wrong'); }
     }
+    var expDiv = q.querySelector('.explanation');
+    if (expDiv) expDiv.classList.add('show');
   }
   var resultDiv = document.getElementById(quizId + '_result');
   var pct = Math.round(score/total*100);
   var color = pct >= 80 ? '#16a34a' : pct >= 60 ? '#eab308' : '#dc2626';
-  resultDiv.innerHTML = '<div class="result" style="background:'+color+'22;border:1px solid '+color+'">Skor: '+score+'/'+total+' ('+pct+'%)'+(pct>=80?' ✅ Excellent!':(pct>=60?' ⚠️ Perlu belajar lagi':' ❌ Pelajari ulang materinya'))+'</div>';
-  localStorage.setItem(quizId+'_score', JSON.stringify({score:score,total:total}));
+  var emoji = pct >= 80 ? '🎉' : pct >= 60 ? '⚠️' : '❌';
+  var msg = pct >= 80 ? 'Excellent! Kamu sudah paham materi ini!' : pct >= 60 ? 'Lumayan, tapi perlu belajar lagi beberapa bagian.' : 'Pelajari ulang materinya ya, masih banyak yang perlu dipahami.';
+  resultDiv.innerHTML = '<div class="result" style="background:'+color+'18;border:2px solid '+color+'">'+emoji+' Skor: '+score+'/'+total+' ('+pct+'%) — '+msg+'</div>';
+  localStorage.setItem(quizId+'_submitted', JSON.stringify({answers:answers,score:score,total:total}));
+}
+function submitQuizSilent(quizId, answers) {
+  var score = 0;
+  var total = Object.keys(answers).length;
+  for (var qNum in answers) {
+    var q = document.getElementById(quizId + '_q' + qNum);
+    if (!q) continue;
+    var selected = q.querySelector('.option.selected');
+    var correctId = quizId + '_q' + qNum + '_' + answers[qNum];
+    var correctEl = document.getElementById(correctId);
+    if (correctEl) correctEl.classList.add('correct');
+    q.querySelectorAll('.option').forEach(function(o){ o.style.pointerEvents='none'; });
+    if (selected) {
+      if (selected.id === correctId) { score++; }
+      else { selected.classList.add('wrong'); }
+    }
+    var expDiv = q.querySelector('.explanation');
+    if (expDiv) expDiv.classList.add('show');
+  }
+  var resultDiv = document.getElementById(quizId + '_result');
+  var pct = Math.round(score/total*100);
+  var color = pct >= 80 ? '#16a34a' : pct >= 60 ? '#eab308' : '#dc2626';
+  var emoji = pct >= 80 ? '🎉' : pct >= 60 ? '⚠️' : '❌';
+  var msg = pct >= 80 ? 'Excellent! Kamu sudah paham materi ini!' : pct >= 60 ? 'Lumayan, tapi perlu belajar lagi beberapa bagian.' : 'Pelajari ulang materinya ya, masih banyak yang perlu dipahami.';
+  resultDiv.innerHTML = '<div class="result" style="background:'+color+'18;border:2px solid '+color+'">'+emoji+' Skor: '+score+'/'+total+' ('+pct+'%) — '+msg+'</div>';
 }
 function resetQuiz(quizId) {
-  document.querySelectorAll('#'+quizId+' .option').forEach(function(o){ o.classList.remove('selected','correct','wrong'); o.querySelector('input').checked=false; });
+  document.querySelectorAll('#'+quizId+' .option').forEach(function(o){
+    o.classList.remove('selected','correct','wrong');
+    o.querySelector('input').checked=false;
+    o.style.pointerEvents='auto';
+  });
+  document.querySelectorAll('#'+quizId+' .explanation').forEach(function(e){ e.classList.remove('show'); });
   document.getElementById(quizId+'_result').innerHTML='';
   localStorage.removeItem('quiz_'+quizId);
-  localStorage.removeItem(quizId+'_score');
+  localStorage.removeItem(quizId+'_submitted');
 }
 </script>
 <script>document.addEventListener('DOMContentLoaded',function(){ initQuiz('quiz_comm'); });</script>

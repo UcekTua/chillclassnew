@@ -1,274 +1,262 @@
 <!DOCTYPE html>
 <html lang="id"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Materi 12: Executing Projects - ManPro Study</title>
+<title>Materi 12: Executing Projects - ManPro UAS Study</title>
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 * { margin:0; padding:0; box-sizing:border-box; }
-body { font-family:'Segoe UI',sans-serif; background:#0f0f1a; color:#e0e0e0; line-height:1.7; }
-.container { max-width:900px; margin:0 auto; padding:20px; }
-h1 { font-size:2em; background:linear-gradient(135deg,#6366f1,#a855f7); -webkit-background-clip:text; -webkit-text-fill-color:transparent; margin-bottom:10px; }
-h2 { color:#a78bfa; border-bottom:2px solid #a78bfa33; padding-bottom:8px; margin:30px 0 15px; font-size:1.4em; }
-h3 { color:#c4b5fd; margin:20px 0 10px; font-size:1.15em; }
-.card { background:#1a1a2e; border-radius:12px; padding:25px; margin:15px 0; border:1px solid #ffffff10; }
-.highlight { background:#2d1b69; border-left:4px solid #a855f7; padding:15px 20px; border-radius:0 8px 8px 0; margin:10px 0; }
-.tip { background:#1a2e1a; border-left:4px solid #4ade80; padding:15px 20px; border-radius:0 8px 8px 0; margin:10px 0; }
-.warn { background:#2e2a1a; border-left:4px solid #fbbf24; padding:15px 20px; border-radius:0 8px 8px 0; margin:10px 0; }
-table { width:100%; border-collapse:collapse; margin:15px 0; }
-th { background:#6366f133; color:#a78bfa; padding:12px; text-align:left; }
-td { padding:10px 12px; border-bottom:1px solid #ffffff10; }
-tr:hover { background:#ffffff05; }
-ul,ol { padding-left:25px; margin:10px 0; }
-li { margin:5px 0; }
-.quiz-section { background:#1a1a2e; border-radius:12px; padding:25px; margin:20px 0; border:1px solid #6366f133; }
-.question { background:#16162a; padding:20px; border-radius:10px; margin:15px 0; border:1px solid #ffffff08; }
-.question p { font-weight:600; margin-bottom:12px; color:#e2e8f0; }
-.option { display:block; padding:10px 15px; margin:5px 0; background:#1e1e3a; border-radius:8px; cursor:pointer; transition:all .2s; border:1px solid transparent; }
-.option:hover { background:#2a2a4a; border-color:#6366f155; }
-.option.selected { background:#6366f133; border-color:#6366f1; }
-.option.correct { background:#16a34a33; border-color:#16a34a; }
-.option.wrong { background:#dc262633; border-color:#dc2626; }
-.btn { background:linear-gradient(135deg,#6366f1,#a855f7); color:#fff; border:none; padding:12px 30px; border-radius:8px; cursor:pointer; font-size:1em; margin:10px 5px; transition:transform .2s; }
-.btn:hover { transform:scale(1.03); }
-.result { padding:20px; border-radius:10px; margin:15px 0; font-size:1.1em; font-weight:600; }
-.nav { display:flex; flex-wrap:wrap; gap:8px; margin:20px 0; }
-.nav a { background:#1a1a2e; color:#a78bfa; padding:8px 16px; border-radius:8px; text-decoration:none; border:1px solid #a78bfa33; font-size:.9em; transition:all .2s; }
-.nav a:hover { background:#6366f133; }
-.badge { display:inline-block; background:#6366f133; color:#a78bfa; padding:3px 10px; border-radius:20px; font-size:.8em; margin:2px; }
-details { margin:10px 0; }
-summary { cursor:pointer; color:#c4b5fd; font-weight:600; padding:8px; background:#16162a; border-radius:8px; }
-details[open] summary { border-radius:8px 8px 0 0; }
-details > div { background:#1e1e30; padding:15px; border-radius:0 0 8px 8px; }
+body { font-family:'Inter',sans-serif; background:#0a0a14; color:#d4d4e0; line-height:1.8; }
+.container { max-width:920px; margin:0 auto; padding:24px; }
+h1 { font-size:2.2em; font-weight:800; background:linear-gradient(135deg,#6366f1,#a855f7,#ec4899); -webkit-background-clip:text; -webkit-text-fill-color:transparent; margin-bottom:8px; letter-spacing:-0.5px; }
+.subtitle { color:#94a3b8; font-size:1em; margin-bottom:20px; }
+h2 { color:#a78bfa; border-bottom:2px solid #a78bfa22; padding-bottom:8px; margin:32px 0 16px; font-size:1.45em; font-weight:700; }
+h3 { color:#c4b5fd; margin:20px 0 10px; font-size:1.15em; font-weight:600; }
+h4 { color:#818cf8; margin:14px 0 8px; font-size:1.05em; font-weight:600; }
+.card { background:linear-gradient(145deg,#12122a,#161630); border-radius:14px; padding:28px; margin:18px 0; border:1px solid #ffffff08; box-shadow:0 4px 20px #00000040; }
+.highlight { background:#2d1b6980; border-left:4px solid #a855f7; padding:16px 20px; border-radius:0 10px 10px 0; margin:12px 0; }
+.tip { background:#0f291580; border-left:4px solid #4ade80; padding:16px 20px; border-radius:0 10px 10px 0; margin:12px 0; }
+.warn { background:#29200f80; border-left:4px solid #fbbf24; padding:16px 20px; border-radius:0 10px 10px 0; margin:12px 0; }
+.danger { background:#2a0f0f80; border-left:4px solid #f87171; padding:16px 20px; border-radius:0 10px 10px 0; margin:12px 0; }
+table { width:100%; border-collapse:collapse; margin:16px 0; font-size:.95em; }
+th { background:#6366f120; color:#a78bfa; padding:12px 14px; text-align:left; font-weight:600; }
+td { padding:11px 14px; border-bottom:1px solid #ffffff08; }
+tr:hover { background:#ffffff04; }
+ul,ol { padding-left:24px; margin:10px 0; }
+li { margin:6px 0; }
+.quiz-section { background:linear-gradient(145deg,#12122a,#161630); border-radius:14px; padding:28px; margin:22px 0; border:1px solid #6366f122; }
+.question { background:#0d0d20; padding:22px; border-radius:12px; margin:16px 0; border:1px solid #ffffff06; }
+.question p.q-text { font-weight:600; margin-bottom:14px; color:#e2e8f0; font-size:1.02em; line-height:1.6; }
+.option { display:block; padding:11px 16px; margin:6px 0; background:#14142e; border-radius:9px; cursor:pointer; transition:all .2s ease; border:2px solid transparent; font-size:.95em; }
+.option:hover { background:#1e1e42; border-color:#6366f144; }
+.option.selected { background:#6366f120; border-color:#6366f1; }
+.option.correct { background:#16a34a22; border-color:#16a34a; }
+.option.wrong { background:#dc262622; border-color:#dc2626; }
+.btn { background:linear-gradient(135deg,#6366f1,#a855f7); color:#fff; border:none; padding:12px 32px; border-radius:9px; cursor:pointer; font-size:1em; font-weight:600; margin:8px 6px 8px 0; transition:all .2s; letter-spacing:0.3px; }
+.btn:hover { transform:translateY(-1px); box-shadow:0 4px 16px #6366f140; }
+.btn-secondary { background:linear-gradient(135deg,#374151,#4b5563); }
+.btn-secondary:hover { box-shadow:0 4px 16px #37415140; }
+.result { padding:20px; border-radius:12px; margin:16px 0; font-size:1.1em; font-weight:700; }
+.nav { display:flex; flex-wrap:wrap; gap:8px; margin:20px 0; position:sticky; top:10px; z-index:100; background:#0a0a14ee; backdrop-filter:blur(10px); padding:12px; border-radius:12px; border:1px solid #ffffff08; }
+.nav a { background:#14142e; color:#a78bfa; padding:9px 18px; border-radius:9px; text-decoration:none; border:1px solid #a78bfa22; font-size:.88em; font-weight:500; transition:all .2s; }
+.nav a:hover { background:#6366f133; border-color:#6366f1; transform:translateY(-1px); }
+.nav a.active { background:linear-gradient(135deg,#6366f1,#a855f7); color:#fff; border-color:transparent; }
+.badge { display:inline-block; background:#6366f125; color:#a78bfa; padding:3px 12px; border-radius:20px; font-size:.82em; font-weight:600; margin:2px; }
+details { margin:12px 0; }
+summary { cursor:pointer; color:#c4b5fd; font-weight:600; padding:10px 14px; background:#0d0d20; border-radius:9px; transition:background .2s; list-style:none; }
+summary::-webkit-details-marker { display:none; }
+summary::before { content:'▸ '; color:#6366f1; }
+details[open] summary { border-radius:9px 9px 0 0; background:#161630; }
+details[open] summary::before { content:'▾ '; }
+details > div { background:#111128; padding:18px; border-radius:0 0 9px 9px; border:1px solid #ffffff06; border-top:none; }
+.comparison { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin:14px 0; }
+.comparison > div { background:#14142e; padding:18px; border-radius:10px; border:1px solid #ffffff08; }
+@media(max-width:700px) { .comparison { grid-template-columns:1fr; } .nav { position:static; } h1 { font-size:1.6em; } }
+.formula { background:#1a0a30; border:1px solid #a855f740; padding:16px 20px; border-radius:10px; margin:12px 0; font-family:'Courier New',monospace; font-size:1.05em; color:#e9d5ff; text-align:center; }
+.toc { background:#0d0d20; border-radius:12px; padding:20px 24px; margin:16px 0; border:1px solid #ffffff08; }
+.toc a { color:#818cf8; text-decoration:none; display:block; padding:4px 0; transition:color .2s; }
+.toc a:hover { color:#a855f7; }
+.emoji-card { text-align:center; padding:16px; background:#14142e; border-radius:10px; border:1px solid #ffffff08; }
+.emoji-card .emoji { font-size:2.4em; margin-bottom:8px; }
+.grid-3 { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:12px; margin:14px 0; }
+.explanation { background:#0f1520; padding:16px 18px; border-radius:8px; margin-top:10px; border-left:3px solid #3b82f6; display:none; }
+.explanation.show { display:block; }
+strong { color:#e2e8f0; }
+em { color:#c4b5fd; font-style:italic; }
+code { background:#1e1e3a; padding:2px 8px; border-radius:4px; font-size:.92em; color:#a5b4fc; }
+.progress-bar { background:#1a1a2e; border-radius:10px; height:12px; margin:10px 0; overflow:hidden; }
+.progress-fill { background:linear-gradient(90deg,#6366f1,#a855f7); height:100%; border-radius:10px; transition:width .5s ease; }
 </style></head><body>
 <div class="container">
-<div class="nav"><a href="materi-10-communication-stakeholder.html">10: Comm & Stakeholder</a><a href="materi-11-risk-procurement.html">11: Risk & Procurement</a><a href="materi-12-executing.html" style="background:#6366f1;color:#fff;">12: Executing</a><a href="materi-13-monitoring-controlling.html">13: Monitoring & Control</a><a href="materi-14-closing.html">14: Closing</a><a href="simulasi-uas.html">📝 Simulasi UAS</a></div>
+<div class="nav"><a href="materi-10-communication-stakeholder.html">📡 Communication & Stakeholder</a><a href="materi-11-risk-procurement.html">⚠️ Risk & Procurement</a><a href="materi-12-executing.html" class="active">🚀 Executing</a><a href="materi-13-monitoring-controlling.html">📊 Monitoring & Controlling</a><a href="materi-14-closing.html">🏁 Closing</a><a href="simulasi-uas.html">📝 Simulasi UAS</a></div>
 <h1>Materi 12: Executing Projects</h1>
+<p class="subtitle">Eksekusi proyek — Dari teori motivasi hingga conflict management</p>
 
-<div class="card">
-<h2>1. Pentingnya Eksekusi Proyek</h2>
-<p>Planning bagus itu penting, tapi <strong>mengeksekusi dengan baik LEBIH penting lagi</strong>. Riset Fortune menunjukkan alasan utama CEO gagal adalah <em>poor execution</em> — mereka tidak menyelesaikan pekerjaan, tidak tegas, dan tidak memenuhi komitmen.</p>
-<ul>
-<li>Sebagian besar <strong>waktu dan budget</strong> proyek dihabiskan di fase eksekusi</li>
-<li>Tidak ada dua proyek yang dieksekusi dengan cara yang persis sama karena setiap proyek mengandung <strong>ketidakpastian (uncertainty/risk)</strong></li>
-</ul>
-</div>
+<div class="toc"><h3>📑 Daftar Isi</h3>
+<a href="#intro">1. Pentingnya Eksekusi</a>
+<a href="#integration">2. Integration Management</a>
+<a href="#conflict">3. Conflict Management</a>
+<a href="#knowledge">4. Managing Knowledge</a>
+<a href="#quality">5. Managing Quality</a>
+<a href="#resource">6. Resource Management</a>
+<a href="#motivation">7. Teori Motivasi</a>
+<a href="#team">8. Team Development</a>
+<a href="#comm-exec">9. Communications & Stakeholder</a>
+<a href="#leadership">10. Leadership Styles</a>
+<a href="#agile-exec">11. Agile Executing</a>
+<a href="#hafal">12. Ringkasan & Cara Menghafal</a>
+<a href="#latihan">13. Latihan Soal</a></div>
 
-<div class="card">
-<h2>2. Project Integration Management (Executing)</h2>
-<p>Hal-hal penting yang harus dilakukan PM saat eksekusi:</p>
-<ol>
-<li><strong>Koordinasi planning & execution</strong> — Update rencana saat ada perubahan</li>
-<li><strong>Develop and use soft skills</strong> — Leadership, team building, komunikasi, motivasi, negosiasi, conflict management, problem solving</li>
+<div class="card" id="intro"><h2>🚀 1. Pentingnya Eksekusi Proyek</h2>
+<p>Rencana bagus itu penting, tapi <strong>eksekusi yang baik jauh lebih penting</strong>. CEO gagal bukan karena rencana buruk, tapi karena <strong>gagal mengeksekusi</strong>.</p>
+<ul><li>Sebagian besar <strong>waktu & anggaran</strong> proyek dihabiskan pada eksekusi</li>
+<li>Tidak ada dua proyek yang dieksekusi dengan cara yang persis sama karena ada <strong>uncertainty/risk</strong></li>
+<li>Stakeholders mengharapkan <strong>hasil nyata</strong> dari eksekusi yang efektif</li></ul></div>
+
+<div class="card" id="integration"><h2>📦 2. Integration Management saat Eksekusi</h2>
+<h3>Hal-hal penting saat directing & managing project work:</h3>
+<ul><li><strong>Coordinate planning & execution</strong> — Update rencana saat ada perubahan</li>
+<li><strong>Develop soft skills</strong> — Leadership, team building, communication, motivation, negotiation, conflict management</li>
 <li><strong>Provide supportive organizational culture</strong></li>
-<li><strong>Break the rules when needed</strong> — Gunakan political skills untuk meyakinkan stakeholder</li>
-<li><strong>Capitalize on product/business knowledge</strong></li>
-<li><strong>Use project execution tools and techniques</strong></li>
-</ol>
+<li><strong>Break the rules when needed</strong> — Gunakan political skills jika perlu</li>
+<li><strong>Capitalize on expertise</strong> — Gunakan keahlian untuk bimbing tim</li></ul>
 
-<h3>Output Penting Integration Management:</h3>
-<ul>
-<li><strong>Deliverables</strong> — Output paling penting! Produk/layanan yang dihasilkan proyek</li>
-<li><strong>Work Performance Data</strong> — KPI, teknikal measures, data aktual. PM bisa menggunakan pendekatan <strong>MBWA (Management By Wandering Around)</strong> — informal observasi dan bicara langsung ke tim</li>
-<li><strong>Issue Log</strong> — Dokumen untuk mencatat, memonitor, dan melacak isu. <em>Critical issue</em> = isu yang menghentikan progress pada aktivitas di critical path. Harus ada <strong>escalation process</strong>.</li>
-<li><strong>Change Requests</strong> — Proses penanganan perubahan harus sudah didefinisikan saat planning</li>
-<li><strong>Lessons Learned Register</strong> — Mendokumentasikan tantangan, masalah, dan peluang</li>
-</ul>
+<h3>Output Utama Eksekusi:</h3>
+<table><tr><th>Output</th><th>Penjelasan</th></tr>
+<tr><td><strong>Deliverables</strong></td><td>Produk/jasa yang dihasilkan proyek — OUTPUT PALING PENTING menurut sponsor</td></tr>
+<tr><td><strong>Work Performance Data</strong></td><td>KPI, technical measures, actuals (tanggal, durasi, biaya). PM juga pakai <strong>MBWA</strong> (Management By Wandering Around) — informal observation</td></tr>
+<tr><td><strong>Issue Log</strong></td><td>Dokumen yang melacak masalah/disputes yang harus diselesaikan. Critical issue = hal yang menghalangi progress</td></tr>
+<tr><td><strong>Change Requests</strong></td><td>Permintaan perubahan formal/informal dari PM, tim, supplier, stakeholder</td></tr>
+<tr><td><strong>Lessons Learned Register</strong></td><td>Mencatat tantangan, masalah, dan pembelajaran sepanjang proyek</td></tr></table>
+
+<div class="highlight">💡 <strong>Milestone Report</strong> = cara umum merangkum work performance data. Milestone = titik penting dalam proyek.</div></div>
+
+<div class="card" id="conflict"><h2>⚔️ 3. Conflict Management</h2>
+<p>Konflik itu <strong>TIDAK selalu buruk</strong>! Bisa menghasilkan ide baru, alternatif lebih baik, dan motivasi. Tapi perlu dikelola.</p>
+
+<h3>Thomas-Kilmann Conflict Handling Modes</h3>
+<p>Dua dimensi: <strong>Assertiveness</strong> (memuaskan diri sendiri) & <strong>Cooperativeness</strong> (memuaskan orang lain)</p>
+<table><tr><th>Mode</th><th>Assert.</th><th>Coop.</th><th>Penjelasan</th></tr>
+<tr><td><strong>Competing</strong></td><td>Tinggi</td><td>Rendah</td><td>Win-lose, memaksakan pendapat sendiri</td></tr>
+<tr><td><strong>Collaborating</strong></td><td>Tinggi</td><td>Tinggi</td><td>Win-win, cari solusi yang memuaskan semua pihak</td></tr>
+<tr><td><strong>Compromising</strong></td><td>Sedang</td><td>Sedang</td><td>Masing-masing mengalah sedikit, "ketemu di tengah"</td></tr>
+<tr><td><strong>Avoiding</strong></td><td>Rendah</td><td>Rendah</td><td>Menghindar, menunda konflik</td></tr>
+<tr><td><strong>Accommodating</strong></td><td>Rendah</td><td>Tinggi</td><td>Mengalah, mengutamakan pihak lain</td></tr></table>
+
+<div class="tip">🧠 <strong>Groupthink</strong> = konformitas terhadap nilai kelompok tanpa berpikir kritis. Konflik yang sehat bisa mencegah ini.</div></div>
+
+<div class="card" id="knowledge"><h2>📚 4. Managing Project Knowledge</h2>
+<div class="comparison">
+<div><h4>📖 Explicit Knowledge</h4><p>Mudah dijelaskan dengan kata/gambar/angka. Mudah disimpan & didistribusikan. Contoh: textbook, dokumen, manual.</p></div>
+<div><h4>🧠 Tacit Knowledge</h4><p>Sulit diungkapkan, sangat personal. Contoh: beliefs, insight, pengalaman bertahun-tahun. Dibagi lewat interaksi & percakapan.</p></div></div>
+<p>Output utama: <strong>Lessons Learned Register</strong> — harus didokumentasikan SEPANJANG proyek, bukan hanya di akhir.</p></div>
+
+<div class="card" id="quality"><h2>✅ 5. Managing Quality</h2>
+<p><strong>Quality Assurance (QA)</strong> = aktivitas memastikan standar kualitas terpenuhi. Pertanyaan kuncinya: <em>"Are we doing what we said we would do?"</em></p>
+<h3>Tools Quality Improvement:</h3>
+<ul><li><strong>Benchmarking</strong> — Bandingkan dengan proyek/produk lain</li>
+<li><strong>Quality Audit</strong> — Review terstruktur, bisa internal/pihak ketiga</li>
+<li><strong>Process Analysis</strong> — Analisis proses, bisa pakai Kanban board</li>
+<li><strong>Cause-and-Effect Diagram</strong> (Fishbone/Ishikawa) — Cari root cause masalah kualitas</li></ul></div>
+
+<div class="card" id="resource"><h2>👥 6. Resource Management</h2>
+<h3>Resource Loading vs Resource Leveling</h3>
+<table><tr><th>Konsep</th><th>Penjelasan</th></tr>
+<tr><td><strong>Resource Loading</strong></td><td>Jumlah resource yang dibutuhkan jadwal pada periode tertentu. Ditampilkan dengan <strong>Resource Histogram</strong> (bar chart menunjukkan resource vs waktu).</td></tr>
+<tr><td><strong>Overallocation</strong></td><td>Lebih banyak resource ditugaskan daripada yang tersedia</td></tr>
+<tr><td><strong>Resource Leveling</strong></td><td>Menyelesaikan konflik resource dengan <strong>menunda task</strong>. Tujuan: distribusi resource lebih merata. Menggunakan slack/float.</td></tr>
+<tr><td><strong>Resource Smoothing</strong></td><td>Time-constrained scheduling — selesai tepat waktu sambil menghindari puncak & lembah resource</td></tr></table>
+
+<div class="highlight">💡 <strong>Resource Leveling</strong> mengurangi masalah manajemen, meningkatkan morale, dan memungkinkan kebijakan just-in-time.</div></div>
+
+<div class="card" id="motivation"><h2>💪 7. Teori-Teori Motivasi (WAJIB HAFAL!)</h2>
+
+<h3>A. Maslow's Hierarchy of Needs</h3>
+<p>Kebutuhan manusia berlapis seperti piramida (dari bawah ke atas):</p>
+<ol><li><strong>Physiological</strong> — Udara, air, makanan (kebutuhan dasar)</li>
+<li><strong>Safety</strong> — Keamanan fisik, lingkungan aman</li>
+<li><strong>Social</strong> — Pertemanan, komunitas, rasa memiliki</li>
+<li><strong>Esteem</strong> — Penghargaan, pengakuan, rasa hormat</li>
+<li><strong>Self-Actualization</strong> — Pemenuhan diri, bekerja pada potensi maksimal</li></ol>
+<div class="tip">🧠 Setiap level adalah <strong>prerequisite</strong> untuk level di atasnya. Hafal: <strong>P-S-S-E-S</strong> "Pak Sudi Suka Esteh Segar"</div>
+
+<h3>B. Herzberg's Motivation-Hygiene Theory</h3>
+<table><tr><th>Motivators (pemuas)</th><th>Hygiene Factors (pencegah ketidakpuasan)</th></tr>
+<tr><td>Achievement, Recognition, Work itself, Responsibility, Advancement, Growth</td><td>Gaji, kondisi kerja, supervisi, kebijakan perusahaan</td></tr></table>
+<div class="warn">⚠️ Hygiene factor TIDAK memotivasi kalau ada, tapi MENYEBABKAN ketidakpuasan kalau tidak ada!</div>
+
+<h3>C. McClelland's Acquired-Needs Theory</h3>
+<table><tr><th>Need</th><th>Ciri-ciri</th><th>Tips Manajemen</th></tr>
+<tr><td><strong>Achievement (nAch)</strong></td><td>Suka tantangan, hindari risiko terlalu tinggi/rendah, suka feedback, lebih suka kerja sendiri</td><td>Beri proyek menantang tapi achievable</td></tr>
+<tr><td><strong>Affiliation (nAff)</strong></td><td>Suka harmoni, butuh diterima kelompok, suka interaksi personal</td><td>Ciptakan lingkungan kooperatif</td></tr>
+<tr><td><strong>Power (nPow)</strong></td><td>Suka mengarahkan orang lain. Personal power = bossy. Institutional power = untuk tujuan organisasi</td><td>Beri kesempatan memimpin</td></tr></table>
+
+<h3>D. McGregor's Theory X dan Theory Y</h3>
+<div class="comparison">
+<div><h4>Theory X (Pesimis)</h4><p>Pekerja malas, perlu paksaan/ancaman/kontrol ketat. Pekerja mau diarahkan & menghindari tanggung jawab.</p></div>
+<div><h4>Theory Y (Optimis)</h4><p>Kerja itu natural. Orang termotivasi oleh kepuasan internal. Manajer harus memotivasi berdasarkan ini.</p></div></div>
+
+<h3>E. Ouchi's Theory Z</h3>
+<p>Berdasarkan perbandingan manajemen Jepang & Amerika. Menekankan: job for life, fokus kesejahteraan karyawan, work-life balance, loyalitas.</p>
+
+<h3>F. Thamhain & Wilemon's Influence Bases</h3>
+<p>9 basis pengaruh PM. Proyek GAGAL jika PM terlalu bergantung pada <strong>authority, money, penalty</strong>. Proyek SUKSES jika PM menggunakan <strong>work challenge & expertise</strong>.</p>
+
+<h3>G. Covey's 7 Habits</h3>
+<ol><li>Be Proactive</li><li>Begin with the End in Mind</li><li>Put First Things First</li>
+<li>Think Win/Win</li><li>Seek First to Understand, then to be Understood</li><li>Synergize</li><li>Sharpen the Saw</li></ol></div>
+
+<div class="card" id="team"><h2>🤝 8. Team Development</h2>
+<h3>Tuckman Model (5 Tahap)</h3>
+<table><tr><th>Tahap</th><th>Penjelasan</th></tr>
+<tr><td><strong>Forming</strong></td><td>Perkenalan anggota tim</td></tr>
+<tr><td><strong>Storming</strong></td><td>Konflik muncul — perbedaan pendapat tentang cara kerja</td></tr>
+<tr><td><strong>Norming</strong></td><td>Menemukan metode kerja bersama</td></tr>
+<tr><td><strong>Performing</strong></td><td>Fokus pada pencapaian tujuan</td></tr>
+<tr><td><strong>Adjourning</strong></td><td>Pembubaran tim setelah tujuan tercapai</td></tr></table>
+<div class="tip">🧠 Hafal: <strong>F-S-N-P-A</strong> = "Form-Storm-Norm-Perform-Adjourn"</div>
+
+<h3>MBTI (Myers-Briggs Type Indicator)</h3>
+<p>4 dimensi: E/I (Extrovert/Introvert), S/N (Sensing/Intuition), T/F (Thinking/Feeling), J/P (Judgment/Perception)</p>
+<p>Fakta IT: 75% introvert, 55% intuitive, 80% thinking.</p>
+
+<h3>Social Styles Profile</h3>
+<table><tr><th>Style</th><th>Ciri</th></tr>
+<tr><td><strong>Drivers</strong></td><td>Proactive & task-oriented</td></tr>
+<tr><td><strong>Expressives</strong></td><td>Proactive & people-oriented</td></tr>
+<tr><td><strong>Analyticals</strong></td><td>Reactive & task-oriented</td></tr>
+<tr><td><strong>Amiables</strong></td><td>Reactive & people-oriented</td></tr></table>
+
+<h3>Diagram RACI</h3>
+<p>RACI = <strong>Responsibility Assignment Matrix</strong>. R=Responsible, A=Accountable, C=Consulted, I=Informed.</p></div>
+
+<div class="card" id="comm-exec"><h2>📢 9. Communications & Stakeholder saat Eksekusi</h2>
+<h3>Fakta Komunikasi Face-to-Face:</h3>
+<ul><li><strong>58%</strong> melalui body language</li><li><strong>35%</strong> melalui CARA kata diucapkan (nada)</li><li><strong>7%</strong> melalui kata-kata itu sendiri</li></ul>
+<div class="formula">Communication Channels = n(n-1)/2</div>
+<h3>Tipe Laporan:</h3>
+<ul><li><strong>Status Report</strong> — Di mana posisi proyek SAAT INI</li>
+<li><strong>Progress Report</strong> — Apa yang SUDAH DISELESAIKAN dalam periode tertentu</li>
+<li><strong>Forecast</strong> — Prediksi masa depan berdasarkan tren</li></ul></div>
+
+<div class="card" id="leadership"><h2>👑 10. Leadership Styles</h2>
+<table><tr><th>Style</th><th>Penjelasan Singkat</th></tr>
+<tr><td><strong>Laissez-faire</strong></td><td>Hands-off, biarkan tim menentukan sendiri</td></tr>
+<tr><td><strong>Transactional</strong></td><td>Management by exception — reward & punishment</td></tr>
+<tr><td><strong>Servant Leader</strong></td><td>Fokus pada pertumbuhan & otonomi orang lain</td></tr>
+<tr><td><strong>Transformational</strong></td><td>Inspirasi & empowerment untuk perubahan</td></tr>
+<tr><td><strong>Charismatic</strong></td><td>Menginspirasi lewat antusiasme & kepercayaan diri</td></tr>
+<tr><td><strong>Interactional</strong></td><td>Kombinasi transactional + transformational + charismatic</td></tr></table>
+<div class="highlight">💡 Di Agile/Scrum, Scrum Master sebaiknya menggunakan pendekatan <strong>Servant Leader</strong>.</div></div>
+
+<div class="card" id="agile-exec"><h2>🏃 11. Agile/Hybrid Executing</h2>
+<ul><li>Tim agile harus <strong>self-directed</strong></li>
+<li>Scrum values: <strong>Commitment, Focus, Openness, Respect, Courage</strong></li>
+<li>Scrum team: 1 Product Owner + 1 Scrum Master + Developers</li>
+<li>Sprint Backlog bisa dinegosiasikan scope-nya dengan Product Owner selama sprint (tanpa mengubah Sprint Goal)</li></ul></div>
+
+<div class="card" id="hafal"><h2>🧠 12. Ringkasan & Cara Menghafal</h2>
+<div class="highlight"><h3>WAJIB INGAT:</h3>
+<ul><li>Maslow: P-S-S-E-S (Physiological→Safety→Social→Esteem→Self-Actualization)</li>
+<li>Herzberg: Motivator = hal positif, Hygiene = pencegah negatif</li>
+<li>McClelland: Achievement, Affiliation, Power</li>
+<li>Theory X = pesimis (pekerja malas), Theory Y = optimis (kerja itu natural)</li>
+<li>Tuckman: Form-Storm-Norm-Perform-Adjourn</li>
+<li>RACI = Responsibility Assignment Matrix</li>
+<li>Fishbone = Cause-and-Effect = Ishikawa diagram</li>
+<li>Resource Leveling = menunda task untuk seimbangkan resource</li>
+<li>PM sukses pakai: Work Challenge & Expertise. PM gagal pakai: Authority, Money, Penalty</li></ul></div></div>
+
+
+<div class="quiz-section" id="quiz_exec">
+<h2>🎯 13. Latihan Soal: Executing Projects</h2>
+<div class="question" id="quiz_exec_q1"><p class="q-text">1. Diagram RACI adalah tipe dari...</p><label class="option" id="quiz_exec_q1_a" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_exec_q1" style="display:none">A. Information Radiator</label><label class="option" id="quiz_exec_q1_b" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_exec_q1" style="display:none">B. Resource Histogram</label><label class="option" id="quiz_exec_q1_c" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_exec_q1" style="display:none">C. Project Organizational Chart</label><label class="option" id="quiz_exec_q1_d" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_exec_q1" style="display:none">D. Responsibility Assignment Matrix</label><div class="explanation"><strong>Jawaban: D.</strong> RACI = Responsibility Assignment Matrix.</div></div><div class="question" id="quiz_exec_q2"><p class="q-text">2. Ketika tim menyelesaikan milestone penting dan manajer memberikan sertifikat penghargaan serta pujian publik, kebutuhan Maslow yang dituju adalah...</p><label class="option" id="quiz_exec_q2_a" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_exec_q2" style="display:none">A. Safety</label><label class="option" id="quiz_exec_q2_b" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_exec_q2" style="display:none">B. Esteem</label><label class="option" id="quiz_exec_q2_c" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_exec_q2" style="display:none">C. Social</label><label class="option" id="quiz_exec_q2_d" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_exec_q2" style="display:none">D. Self-Actualization</label><div class="explanation"><strong>Jawaban: B.</strong> Penghargaan & pengakuan = Esteem needs.</div></div><div class="question" id="quiz_exec_q3"><p class="q-text">3. Tools untuk mempelajari proses dan menganalisis akar permasalahan adalah...</p><label class="option" id="quiz_exec_q3_a" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_exec_q3" style="display:none">A. Fishbone Diagram</label><label class="option" id="quiz_exec_q3_b" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_exec_q3" style="display:none">B. Kanban Board</label><label class="option" id="quiz_exec_q3_c" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_exec_q3" style="display:none">C. Pareto Chart</label><label class="option" id="quiz_exec_q3_d" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_exec_q3" style="display:none">D. Flowchart</label><div class="explanation"><strong>Jawaban: A.</strong> Fishbone/Cause-and-effect/Ishikawa diagram untuk root cause analysis.</div></div><div class="question" id="quiz_exec_q4"><p class="q-text">4. Anggota tim yang menikmati kerja kelompok, menjaga keharmonisan, dan sering mengundang diskusi santai memiliki kebutuhan McClelland...</p><label class="option" id="quiz_exec_q4_a" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_exec_q4" style="display:none">A. Satisfaction</label><label class="option" id="quiz_exec_q4_b" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_exec_q4" style="display:none">B. Power</label><label class="option" id="quiz_exec_q4_c" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_exec_q4" style="display:none">C. Achievement</label><label class="option" id="quiz_exec_q4_d" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_exec_q4" style="display:none">D. Affiliation</label><div class="explanation"><strong>Jawaban: D.</strong> Affiliation = desire harmonious relationships, need to feel accepted.</div></div><div class="question" id="quiz_exec_q5"><p class="q-text">5. PM memfasilitasi diskusi di mana kedua pihak menemukan solusi yang memuaskan semua tanpa mengorbankan prioritas masing-masing. Strategi konflik ini adalah...</p><label class="option" id="quiz_exec_q5_a" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_exec_q5" style="display:none">A. Avoiding</label><label class="option" id="quiz_exec_q5_b" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_exec_q5" style="display:none">B. Accommodating</label><label class="option" id="quiz_exec_q5_c" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_exec_q5" style="display:none">C. Compromising</label><label class="option" id="quiz_exec_q5_d" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_exec_q5" style="display:none">D. Collaborating</label><div class="explanation"><strong>Jawaban: D.</strong> Collaborating = win-win, semua pihak puas.</div></div><div class="question" id="quiz_exec_q6"><p class="q-text">6. Tujuan utama Resource Leveling adalah...</p><label class="option" id="quiz_exec_q6_a" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_exec_q6" style="display:none">A. Menyeimbangkan beban kerja agar tidak ada overallocation</label><label class="option" id="quiz_exec_q6_b" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_exec_q6" style="display:none">B. Mempercepat penyelesaian semua tugas</label><label class="option" id="quiz_exec_q6_c" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_exec_q6" style="display:none">C. Menambah durasi aktivitas kritis</label><label class="option" id="quiz_exec_q6_d" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_exec_q6" style="display:none">D. Mengurangi jumlah sumber daya</label><div class="explanation"><strong>Jawaban: A.</strong> Resource leveling = create smoother distribution, resolve overallocation.</div></div><div class="question" id="quiz_exec_q7"><p class="q-text">7. Pendekatan PM untuk mengumpulkan work performance data dengan cara informal mengobservasi dan bicara dengan tim disebut...</p><label class="option" id="quiz_exec_q7_a" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_exec_q7" style="display:none">A. Knowledge Management</label><label class="option" id="quiz_exec_q7_b" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_exec_q7" style="display:none">B. Quality Assurance</label><label class="option" id="quiz_exec_q7_c" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_exec_q7" style="display:none">C. Conflict Management</label><label class="option" id="quiz_exec_q7_d" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_exec_q7" style="display:none">D. Management by Wandering Around</label><div class="explanation"><strong>Jawaban: D.</strong> MBWA = informal observation and talk.</div></div><div class="question" id="quiz_exec_q8"><p class="q-text">8. Penghargaan sertifikat dan pujian publik atas inisiatif solusi baru mengaktifkan faktor Herzberg...</p><label class="option" id="quiz_exec_q8_a" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_exec_q8" style="display:none">A. Safety</label><label class="option" id="quiz_exec_q8_b" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_exec_q8" style="display:none">B. Social</label><label class="option" id="quiz_exec_q8_c" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_exec_q8" style="display:none">C. Hygiene</label><label class="option" id="quiz_exec_q8_d" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_exec_q8" style="display:none">D. Motivator</label><div class="explanation"><strong>Jawaban: D.</strong> Achievement & recognition = motivators (Herzberg).</div></div><div class="question" id="quiz_exec_q9"><p class="q-text">9. Tahap Tuckman di mana anggota tim mulai berselisih pendapat tentang cara tim beroperasi adalah...</p><label class="option" id="quiz_exec_q9_a" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_exec_q9" style="display:none">A. Forming</label><label class="option" id="quiz_exec_q9_b" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_exec_q9" style="display:none">B. Storming</label><label class="option" id="quiz_exec_q9_c" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_exec_q9" style="display:none">C. Norming</label><label class="option" id="quiz_exec_q9_d" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_exec_q9" style="display:none">D. Performing</label><div class="explanation"><strong>Jawaban: B.</strong> Storming = different opinions on how team should operate.</div></div><div class="question" id="quiz_exec_q10"><p class="q-text">10. Di Agile, Scrum Master sebaiknya menggunakan gaya kepemimpinan...</p><label class="option" id="quiz_exec_q10_a" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_exec_q10" style="display:none">A. Commanding</label><label class="option" id="quiz_exec_q10_b" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_exec_q10" style="display:none">B. Transactional</label><label class="option" id="quiz_exec_q10_c" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_exec_q10" style="display:none">C. Servant Leader</label><label class="option" id="quiz_exec_q10_d" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_exec_q10" style="display:none">D. Laissez-faire</label><div class="explanation"><strong>Jawaban: C.</strong> Servant leader = focus on others' growth, learning, autonomy.</div></div><div class="question" id="quiz_exec_q11"><p class="q-text">11. Pengetahuan yang sulit diungkapkan, sangat personal, dan dibagi lewat interaksi disebut...</p><label class="option" id="quiz_exec_q11_a" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_exec_q11" style="display:none">A. Explicit Knowledge</label><label class="option" id="quiz_exec_q11_b" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_exec_q11" style="display:none">B. Tacit Knowledge</label><label class="option" id="quiz_exec_q11_c" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_exec_q11" style="display:none">C. Process Knowledge</label><label class="option" id="quiz_exec_q11_d" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_exec_q11" style="display:none">D. Technical Knowledge</label><div class="explanation"><strong>Jawaban: B.</strong> Tacit = informal, personal, shared through conversations.</div></div><div class="question" id="quiz_exec_q12"><p class="q-text">12. Resource Histogram adalah...</p><label class="option" id="quiz_exec_q12_a" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_exec_q12" style="display:none">A. Diagram garis waktu proyek</label><label class="option" id="quiz_exec_q12_b" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_exec_q12" style="display:none">B. Column chart menunjukkan jumlah resource yang ditugaskan ke proyek dari waktu ke waktu</label><label class="option" id="quiz_exec_q12_c" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_exec_q12" style="display:none">C. Grafik biaya proyek</label><label class="option" id="quiz_exec_q12_d" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_exec_q12" style="display:none">D. Tabel daftar risiko</label><div class="explanation"><strong>Jawaban: B.</strong> Resource histogram = column chart showing resources assigned over time.</div></div>
+<div style="margin-top:16px;">
+<button class="btn" onclick="submitQuiz('quiz_exec',{1:'d',2:'b',3:'a',4:'d',5:'d',6:'a',7:'d',8:'d',9:'b',10:'c',11:'b',12:'b'})">📊 Submit</button>
+<button class="btn btn-secondary" onclick="resetQuiz('quiz_exec')">🔄 Reset</button>
+</div><div id="quiz_exec_result"></div></div>
+
+<div style="text-align:center;margin:40px 0 20px;color:#475569;font-size:.85em;">
+<p>📚 Manajemen Proyek TI — Fasilkom UI | UAS Study Material</p>
 </div>
-
-<div class="card">
-<h2>3. Managing Project Knowledge</h2>
-<p>Ada 2 jenis knowledge:</p>
-<table>
-<tr><th>Tipe</th><th>Penjelasan</th><th>Contoh</th></tr>
-<tr><td><strong>Explicit Knowledge</strong></td><td>Mudah dijelaskan dengan kata-kata, gambar, angka. Mudah dikomunikasikan dan disimpan.</td><td>Buku, dokumen proyek, encyclopedia, manual</td></tr>
-<tr><td><strong>Tacit Knowledge</strong></td><td>Sulit diungkapkan, sangat personal. Dibagikan melalui percakapan dan interaksi.</td><td>Keyakinan, insight, pengalaman, intuisi</td></tr>
-</table>
-<div class="tip">Knowledge management harus dilakukan SEBELUM, SELAMA, dan SETELAH proyek. Organisasi bisa menyediakan explicit knowledge secara tertulis, dan membangun budaya trust untuk berbagi tacit knowledge.</div>
-</div>
-
-<div class="card">
-<h2>4. Managing Quality (Quality Assurance)</h2>
-<p>Quality Assurance menjawab pertanyaan: <em>"Apakah kita melakukan apa yang kita katakan akan kita lakukan, kapan kita bilang, dengan cara yang kita bilang, dan bisakah kita melakukannya lebih baik?"</em></p>
-<h3>Tools & Techniques:</h3>
-<ul>
-<li><strong>Benchmarking</strong> — Membandingkan praktik proyek dengan proyek/produk lain</li>
-<li><strong>Quality Audit</strong> — Review terstruktur atas aktivitas quality management. Bisa dijadwalkan atau random. Bisa oleh auditor internal atau pihak ketiga.</li>
-<li><strong>Process Analysis</strong> — Menganalisis proses dan mencari perbaikan. Bisa menggunakan task board/kanban board (To Do, In Progress, Done)</li>
-<li><strong>Cause-and-Effect Diagram (Fishbone/Ishikawa)</strong> — Menemukan root cause masalah kualitas</li>
-</ul>
-</div>
-
-<div class="card">
-<h2>5. Project Resource Management</h2>
-<h3>5.1 Teori Motivasi (SANGAT PENTING untuk ujian!)</h3>
-
-<h3>a. Maslow's Hierarchy of Needs</h3>
-<p>Kebutuhan manusia berjenjang, harus dipenuhi dari bawah ke atas:</p>
-<ol>
-<li><strong>Physiological</strong> — Udara, air, makanan (kebutuhan dasar)</li>
-<li><strong>Safety</strong> — Keamanan, perlindungan dari bahaya</li>
-<li><strong>Social</strong> — Teman, komunitas, rasa memiliki</li>
-<li><strong>Esteem</strong> — Pencapaian, pengakuan, penghargaan</li>
-<li><strong>Self-actualization</strong> — Pemenuhan potensi diri</li>
-</ol>
-<div class="tip">Cara ingat (dari bawah): "<strong>P</strong>aling <strong>S</strong>uka <strong>S</strong>aling <strong>E</strong>jek <strong>S</strong>endiri" = Physiological, Safety, Social, Esteem, Self-actualization</div>
-
-<h3>b. Herzberg's Motivation-Hygiene Theory</h3>
-<table>
-<tr><th>Hygiene Factors (Penyebab Ketidakpuasan)</th><th>Motivators (Penyebab Kepuasan)</th></tr>
-<tr><td>Gaji, kondisi kerja, kebijakan perusahaan, hubungan interpersonal</td><td>Achievement, recognition, the work itself, responsibility, advancement, growth</td></tr>
-<tr><td>Jika TIDAK ada = tidak puas. Jika ADA = biasa saja (tidak menambah motivasi)</td><td>Jika ADA = termotivasi. Jika TIDAK ada = biasa saja</td></tr>
-</table>
-<div class="highlight">Poin kunci Herzberg: <strong>Uang (gaji) BUKAN motivator!</strong> Gaji adalah hygiene factor. Yang benar-benar memotivasi adalah achievement dan recognition.</div>
-
-<h3>c. McClelland's Acquired-Needs Theory</h3>
-<table>
-<tr><th>Need</th><th>Ciri-ciri</th><th>Cara Mengelola</th></tr>
-<tr><td><strong>Achievement (nAch)</strong></td><td>Suka tantangan, hindari risiko terlalu rendah/tinggi, butuh feedback rutin, lebih suka kerja sendiri/dengan achiever lain</td><td>Beri proyek menantang dengan goal yang bisa dicapai, feedback sering</td></tr>
-<tr><td><strong>Affiliation (nAff)</strong></td><td>Ingin hubungan harmonis, butuh diterima orang lain, mengikuti norma kelompok</td><td>Ciptakan lingkungan kerja kooperatif</td></tr>
-<tr><td><strong>Power (nPow)</strong></td><td>Personal power = suka memerintah. Institutional power = ingin mengorganisir untuk tujuan organisasi</td><td>Beri kesempatan memimpin, tekankan pentingnya tujuan organisasi</td></tr>
-</table>
-
-<h3>d. McGregor's Theory X & Y + Ouchi's Theory Z</h3>
-<table>
-<tr><th>Theory X</th><th>Theory Y</th><th>Theory Z</th></tr>
-<tr><td>Anggapan: Pekerja malas, harus dipaksa dan diancam. Pekerja suka diperintah, hindari tanggung jawab.</td><td>Anggapan: Bekerja itu alami. Orang akan mengarahkan dirinya sendiri jika komitmen. Motivasi terbesar: esteem & self-actualization.</td><td>Fokus pada loyalitas karyawan dengan job for life, kesejahteraan on/off the job, work-life balance.</td></tr>
-</table>
-</div>
-
-<div class="card">
-<h2>5.2 Thamhain & Wilemon's Influence Bases</h2>
-<p>9 basis pengaruh yang dimiliki PM:</p>
-<ol>
-<li><strong>Authority</strong> — Hak hierarkis resmi</li>
-<li><strong>Assignment</strong> — Kemampuan mempengaruhi penugasan di proyek masa depan</li>
-<li><strong>Budget</strong> — Kemampuan mengotorisasi dana</li>
-<li><strong>Promotion</strong> — Kemampuan menaikkan posisi</li>
-<li><strong>Money</strong> — Kemampuan menaikkan gaji</li>
-<li><strong>Penalty</strong> — Kemampuan memberikan hukuman</li>
-<li><strong>Work Challenge</strong> — Memberi tugas yang menantang dan menyenangkan (intrinsic)</li>
-<li><strong>Expertise</strong> — Pengetahuan khusus yang dianggap penting</li>
-<li><strong>Friendship</strong> — Hubungan pribadi yang baik</li>
-</ol>
-<div class="warn">Proyek GAGAL jika PM terlalu mengandalkan: Authority, Money, Penalty. Proyek SUKSES jika PM menggunakan: <strong>Work Challenge dan Expertise</strong>.</div>
-</div>
-
-<div class="card">
-<h2>5.3 Covey's 7 Habits of Highly Effective People</h2>
-<ol>
-<li><strong>Be proactive</strong> — Antisipasi dan rencanakan masalah</li>
-<li><strong>Begin with the end in mind</strong> — Punya dan bagikan visi hasil akhir</li>
-<li><strong>Put first things first</strong> — Fokus pada hal penting tapi tidak mendesak (planning, relationship building)</li>
-<li><strong>Think win/win</strong> — Keputusan yang menguntungkan semua pihak</li>
-<li><strong>Seek first to understand, then to be understood</strong> — Empathic listening</li>
-<li><strong>Synergize</strong> — Kolaborasi menghasilkan lebih dari jumlah bagian</li>
-<li><strong>Sharpen the saw</strong> — Retrain, reenergize, relax untuk hindari burnout</li>
-</ol>
-</div>
-
-<div class="card">
-<h2>5.4 Acquiring Resources</h2>
-<ul>
-<li><strong>Resource Loading</strong> — Jumlah resource yang dibutuhkan jadwal pada periode waktu tertentu. Gunakan <strong>histogram</strong>. <strong>Overallocation</strong> = lebih banyak resource ditugaskan daripada yang tersedia.</li>
-<li><strong>Resource Leveling</strong> — Teknik untuk menyelesaikan konflik resource dengan <strong>menunda task</strong>. Menggunakan slack/float. Tujuan: distribusi resource yang lebih merata. Keuntungan: resource butuh less management, meningkatkan morale, mengurangi masalah accounting.</li>
-<li><strong>Resource Smoothing</strong> — Teknik untuk menyelesaikan proyek tepat waktu sambil menghindari peaks and valleys dalam resource demand.</li>
-</ul>
-</div>
-
-<div class="card">
-<h2>5.5 Developing the Team (Tuckman Model)</h2>
-<table>
-<tr><th>Tahap</th><th>Penjelasan</th></tr>
-<tr><td><strong>1. Forming</strong></td><td>Perkenalan anggota tim. Bersikap sopan, belum ada konflik.</td></tr>
-<tr><td><strong>2. Storming</strong></td><td>Mulai ada perbedaan pendapat. Konflik tentang cara kerja tim.</td></tr>
-<tr><td><strong>3. Norming</strong></td><td>Tim menemukan cara kerja bersama. Aturan dan norma terbentuk.</td></tr>
-<tr><td><strong>4. Performing</strong></td><td>Tim fokus pada pencapaian goal. Kinerja optimal!</td></tr>
-<tr><td><strong>5. Adjourning</strong></td><td>Tim dibubarkan setelah goal tercapai.</td></tr>
-</table>
-<div class="tip">Ingat: "<strong>F</strong>orming → <strong>S</strong>torming → <strong>N</strong>orming → <strong>P</strong>erforming → <strong>A</strong>djourning" = Fans Sering Nonton Pertandingan Akhir</div>
-</div>
-
-<div class="card">
-<h2>5.6 MBTI & Social Styles</h2>
-<h3>MBTI (4 dimensi):</h3>
-<ul>
-<li><strong>E/I</strong> (Extrovert/Introvert) — 75% orang IT = Introvert!</li>
-<li><strong>S/N</strong> (Sensing/Intuition) — Fakta vs Big Picture. 55% IT = Intuitive</li>
-<li><strong>T/F</strong> (Thinking/Feeling) — Logis vs Personal. 80% IT = Thinking</li>
-<li><strong>J/P</strong> (Judgment/Perception) — Terstruktur vs Fleksibel</li>
-</ul>
-<h3>Social Styles Profile (4 zona):</h3>
-<ul>
-<li><strong>Drivers</strong> = proaktif & task-oriented</li>
-<li><strong>Expressives</strong> = proaktif & people-oriented</li>
-<li><strong>Analyticals</strong> = reaktif & task-oriented</li>
-<li><strong>Amiables</strong> = reaktif & people-oriented</li>
-</ul>
-<div class="warn">Orang di sudut berlawanan (Drivers vs Amiables, Analyticals vs Expressives) sering sulit bekerja sama!</div>
-</div>
-
-<div class="card">
-<h2>6. Conflict Management (Thomas-Kilmann)</h2>
-<p>Dua dimensi: <strong>Assertiveness</strong> (memuaskan diri sendiri) dan <strong>Cooperativeness</strong> (memuaskan pihak lain)</p>
-<table>
-<tr><th>Mode</th><th>Assertive?</th><th>Cooperative?</th><th>Penjelasan</th></tr>
-<tr><td><strong>Competing</strong></td><td>Tinggi</td><td>Rendah</td><td>Win-lose. Memaksakan pendapat sendiri.</td></tr>
-<tr><td><strong>Accommodating</strong></td><td>Rendah</td><td>Tinggi</td><td>Mengalah. Mengorbankan kepentingan sendiri.</td></tr>
-<tr><td><strong>Avoiding</strong></td><td>Rendah</td><td>Rendah</td><td>Menghindar dari konflik. Tidak ada resolusi.</td></tr>
-<tr><td><strong>Collaborating</strong></td><td>Tinggi</td><td>Tinggi</td><td>Win-win. Mencari solusi bersama. Paling ideal!</td></tr>
-<tr><td><strong>Compromising</strong></td><td>Sedang</td><td>Sedang</td><td>Kedua pihak mengorbankan sebagian. Give and take.</td></tr>
-</table>
-<div class="highlight">Konflik TIDAK selalu buruk. Konflik bisa menghasilkan ide baru, alternatif lebih baik, dan motivasi. Tanpa konflik bisa terjadi <strong>groupthink</strong> — konformitas berlebihan dalam kelompok.</div>
-</div>
-
-<div class="card">
-<h2>7. Leadership Styles</h2>
-<table>
-<tr><th>Style</th><th>Penjelasan</th></tr>
-<tr><td><strong>Laissez-faire</strong></td><td>"Let go" — Tim menentukan goal dan cara mencapainya sendiri</td></tr>
-<tr><td><strong>Transactional</strong></td><td>Management by exception — Reward dan punishment untuk capai goal</td></tr>
-<tr><td><strong>Servant Leader</strong></td><td>Fokus pada pertumbuhan, pembelajaran, dan otonomi orang lain. <em>Paling cocok untuk Scrum Master!</em></td></tr>
-<tr><td><strong>Transformational</strong></td><td>Memberdayakan orang lain dan memandu perubahan melalui inspirasi</td></tr>
-<tr><td><strong>Charismatic</strong></td><td>Menginspirasi melalui antusiasme dan kepercayaan diri</td></tr>
-<tr><td><strong>Interactional</strong></td><td>Kombinasi transactional + transformational + charismatic</td></tr>
-</table>
-</div>
-
-<div class="card">
-<h2>8. Communications & Stakeholder (Executing)</h2>
-<ul>
-<li>Riset menunjukkan komunikasi face-to-face: <strong>58% body language, 35% cara bicara, 7% kata-kata</strong></li>
-<li>Jumlah saluran komunikasi = <strong>n(n-1)/2</strong> (n = jumlah orang)</li>
-<li>Introvert suka komunikasi privat, Extrovert suka diskusi publik</li>
-<li>Managing Stakeholder Engagement membutuhkan leadership dan interpersonal skills PM yang kuat</li>
-</ul>
-</div>
-
-<div class="card">
-<h2>9. Procurement & Risk (Executing)</h2>
-<h3>Conducting Procurements:</h3>
-<ul>
-<li>3 pendekatan: (1) Approach preferred supplier, (2) Approach several qualified suppliers, (3) Advertise to many</li>
-<li><strong>Source Selection</strong> = evaluasi proposal, pilih terbaik, negosiasi, award kontrak</li>
-<li><strong>BAFO</strong> (Best and Final Offer) = penawaran terakhir dari seller di shortlist</li>
-</ul>
-<h3>Implementing Risk Responses:</h3>
-<p>Merencanakan risk response itu penting, tapi <strong>mengimplementasikannya dengan baik LEBIH penting</strong>.</p>
-</div>
-
-<div class="card">
-<h2>10. Executing Agile/Hybrid</h2>
-<ul>
-<li>Tim agile harus <strong>self-directed</strong></li>
-<li>Scrum Master menggunakan pendekatan <strong>servant-leader</strong></li>
-<li>Scrum theory menekankan values: <strong>Commitment, Focus, Openness, Respect, Courage</strong></li>
-<li><strong>Psychological safety</strong> = kualitas #1 untuk tim yang hebat — orang harus merasa aman untuk mengungkapkan pendapat</li>
-</ul>
-</div>
-<div class="quiz-section" id="quiz_exec"><h2>Latihan Soal: Executing Projects</h2><div class="question" id="quiz_exec_q1"><p>1. Menurut Herzberg, mana yang merupakan MOTIVATOR (bukan hygiene factor)?</p><label class="option" id="quiz_exec_q1_a" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_exec_q1" style="display:none">A. Gaji</label><label class="option" id="quiz_exec_q1_b" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_exec_q1" style="display:none">B. Kondisi kerja</label><label class="option" id="quiz_exec_q1_c" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_exec_q1" style="display:none">C. Achievement dan Recognition</label><label class="option" id="quiz_exec_q1_d" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_exec_q1" style="display:none">D. Kebijakan perusahaan</label></div><div class="question" id="quiz_exec_q2"><p>2. Dalam Tuckman Model, tahap di mana tim mulai berkonflik disebut...</p><label class="option" id="quiz_exec_q2_a" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_exec_q2" style="display:none">A. Forming</label><label class="option" id="quiz_exec_q2_b" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_exec_q2" style="display:none">B. Storming</label><label class="option" id="quiz_exec_q2_c" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_exec_q2" style="display:none">C. Norming</label><label class="option" id="quiz_exec_q2_d" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_exec_q2" style="display:none">D. Performing</label></div><div class="question" id="quiz_exec_q3"><p>3. Menurut Thamhain & Wilemon, basis pengaruh mana yang PALING efektif untuk keberhasilan proyek?</p><label class="option" id="quiz_exec_q3_a" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_exec_q3" style="display:none">A. Authority dan Penalty</label><label class="option" id="quiz_exec_q3_b" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_exec_q3" style="display:none">B. Money dan Promotion</label><label class="option" id="quiz_exec_q3_c" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_exec_q3" style="display:none">C. Work Challenge dan Expertise</label><label class="option" id="quiz_exec_q3_d" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_exec_q3" style="display:none">D. Budget dan Assignment</label></div><div class="question" id="quiz_exec_q4"><p>4. Dalam Thomas-Kilmann, mode konflik yang PALING ideal (win-win) adalah...</p><label class="option" id="quiz_exec_q4_a" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_exec_q4" style="display:none">A. Competing</label><label class="option" id="quiz_exec_q4_b" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_exec_q4" style="display:none">B. Avoiding</label><label class="option" id="quiz_exec_q4_c" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_exec_q4" style="display:none">C. Compromising</label><label class="option" id="quiz_exec_q4_d" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_exec_q4" style="display:none">D. Collaborating</label></div><div class="question" id="quiz_exec_q5"><p>5. Maslow's Hierarchy: Urutan dari bawah ke atas yang BENAR adalah...</p><label class="option" id="quiz_exec_q5_a" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_exec_q5" style="display:none">A. Safety, Physiological, Social, Esteem, Self-actualization</label><label class="option" id="quiz_exec_q5_b" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_exec_q5" style="display:none">B. Physiological, Safety, Social, Esteem, Self-actualization</label><label class="option" id="quiz_exec_q5_c" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_exec_q5" style="display:none">C. Social, Safety, Physiological, Esteem, Self-actualization</label><label class="option" id="quiz_exec_q5_d" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_exec_q5" style="display:none">D. Physiological, Social, Safety, Self-actualization, Esteem</label></div><div class="question" id="quiz_exec_q6"><p>6. Apa itu MBWA?</p><label class="option" id="quiz_exec_q6_a" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_exec_q6" style="display:none">A. Management By Wandering Around - observasi informal ke tim</label><label class="option" id="quiz_exec_q6_b" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_exec_q6" style="display:none">B. Most Basic Work Assessment</label><label class="option" id="quiz_exec_q6_c" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_exec_q6" style="display:none">C. Multiple Budget Work Allocation</label><label class="option" id="quiz_exec_q6_d" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_exec_q6" style="display:none">D. Manager-Based Work Authority</label></div><div class="question" id="quiz_exec_q7"><p>7. Resource Leveling bertujuan untuk...</p><label class="option" id="quiz_exec_q7_a" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_exec_q7" style="display:none">A. Menambah resource baru ke proyek</label><label class="option" id="quiz_exec_q7_b" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_exec_q7" style="display:none">B. Membuat distribusi penggunaan resource lebih merata dengan menunda task</label><label class="option" id="quiz_exec_q7_c" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_exec_q7" style="display:none">C. Mengurangi jumlah anggota tim</label><label class="option" id="quiz_exec_q7_d" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_exec_q7" style="display:none">D. Meningkatkan budget proyek</label></div><div class="question" id="quiz_exec_q8"><p>8. Dalam MBTI, mayoritas orang IT adalah...</p><label class="option" id="quiz_exec_q8_a" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_exec_q8" style="display:none">A. Extrovert, Sensing, Feeling</label><label class="option" id="quiz_exec_q8_b" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_exec_q8" style="display:none">B. Introvert, Intuitive, Thinking</label><label class="option" id="quiz_exec_q8_c" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_exec_q8" style="display:none">C. Extrovert, Intuitive, Feeling</label><label class="option" id="quiz_exec_q8_d" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_exec_q8" style="display:none">D. Introvert, Sensing, Thinking</label></div><div class="question" id="quiz_exec_q9"><p>9. Servant Leader paling cocok digunakan oleh...</p><label class="option" id="quiz_exec_q9_a" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_exec_q9" style="display:none">A. CEO perusahaan</label><label class="option" id="quiz_exec_q9_b" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_exec_q9" style="display:none">B. Scrum Master dalam tim agile</label><label class="option" id="quiz_exec_q9_c" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_exec_q9" style="display:none">C. Quality Auditor</label><label class="option" id="quiz_exec_q9_d" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_exec_q9" style="display:none">D. Vendor eksternal</label></div><div class="question" id="quiz_exec_q10"><p>10. Groupthink terjadi ketika...</p><label class="option" id="quiz_exec_q10_a" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_exec_q10" style="display:none">A. Tim terlalu banyak konflik</label><label class="option" id="quiz_exec_q10_b" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_exec_q10" style="display:none">B. Tim terlalu banyak anggota</label><label class="option" id="quiz_exec_q10_c" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_exec_q10" style="display:none">C. Tidak ada perbedaan pendapat sehingga tim menjadi konformis</label><label class="option" id="quiz_exec_q10_d" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_exec_q10" style="display:none">D. PM tidak hadir dalam rapat</label></div><div class="question" id="quiz_exec_q11"><p>11. Rumus menghitung jumlah saluran komunikasi dalam tim adalah...</p><label class="option" id="quiz_exec_q11_a" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_exec_q11" style="display:none">A. n x 2</label><label class="option" id="quiz_exec_q11_b" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_exec_q11" style="display:none">B. n(n-1)/2</label><label class="option" id="quiz_exec_q11_c" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_exec_q11" style="display:none">C. n(n+1)/2</label><label class="option" id="quiz_exec_q11_d" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_exec_q11" style="display:none">D. 2n - 1</label></div><div class="question" id="quiz_exec_q12"><p>12. McClelland: Orang dengan need for Achievement (nAch) biasanya...</p><label class="option" id="quiz_exec_q12_a" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_exec_q12" style="display:none">A. Suka risiko tinggi</label><label class="option" id="quiz_exec_q12_b" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_exec_q12" style="display:none">B. Suka risiko rendah</label><label class="option" id="quiz_exec_q12_c" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_exec_q12" style="display:none">C. Menghindari risiko tinggi DAN rendah, mencari yang achievable</label><label class="option" id="quiz_exec_q12_d" onclick="selectOpt(this,this.closest('.quiz-section').id)"><input type="radio" name="quiz_exec_q12" style="display:none">D. Tidak peduli dengan risiko</label></div>
-<div style="margin-top:15px;">
-<button class="btn" onclick="submitQuiz('quiz_exec',{1:'c',2:'b',3:'c',4:'d',5:'b',6:'a',7:'b',8:'b',9:'b',10:'c',11:'b',12:'c'})">Submit</button>
-<button class="btn" style="background:#374151;" onclick="resetQuiz('quiz_exec')">Reset</button>
-</div>
-<div id="quiz_exec_result"></div></div>
 </div>
 <script>
 function initQuiz(quizId) {
@@ -280,6 +268,11 @@ function initQuiz(quizId) {
       var opt = document.getElementById(item.id);
       if (opt) { opt.classList.add('selected'); opt.querySelector('input').checked = true; }
     });
+  }
+  var scoreData = localStorage.getItem(quizId + '_submitted');
+  if (scoreData) {
+    var sd = JSON.parse(scoreData);
+    submitQuizSilent(quizId, sd.answers);
   }
 }
 function selectOpt(el, quizId) {
@@ -300,6 +293,7 @@ function saveSelections(quizId) {
 function submitQuiz(quizId, answers) {
   var score = 0;
   var total = Object.keys(answers).length;
+  document.querySelectorAll('#'+quizId+' .option').forEach(function(o){ o.classList.remove('correct','wrong'); });
   for (var qNum in answers) {
     var q = document.getElementById(quizId + '_q' + qNum);
     if (!q) continue;
@@ -307,22 +301,57 @@ function submitQuiz(quizId, answers) {
     var correctId = quizId + '_q' + qNum + '_' + answers[qNum];
     var correctEl = document.getElementById(correctId);
     if (correctEl) correctEl.classList.add('correct');
+    q.querySelectorAll('.option').forEach(function(o){ o.style.pointerEvents='none'; });
     if (selected) {
       if (selected.id === correctId) { score++; }
       else { selected.classList.add('wrong'); }
     }
+    var expDiv = q.querySelector('.explanation');
+    if (expDiv) expDiv.classList.add('show');
   }
   var resultDiv = document.getElementById(quizId + '_result');
   var pct = Math.round(score/total*100);
   var color = pct >= 80 ? '#16a34a' : pct >= 60 ? '#eab308' : '#dc2626';
-  resultDiv.innerHTML = '<div class="result" style="background:'+color+'22;border:1px solid '+color+'">Skor: '+score+'/'+total+' ('+pct+'%)'+(pct>=80?' ✅ Excellent!':(pct>=60?' ⚠️ Perlu belajar lagi':' ❌ Pelajari ulang materinya'))+'</div>';
-  localStorage.setItem(quizId+'_score', JSON.stringify({score:score,total:total}));
+  var emoji = pct >= 80 ? '🎉' : pct >= 60 ? '⚠️' : '❌';
+  var msg = pct >= 80 ? 'Excellent! Kamu sudah paham materi ini!' : pct >= 60 ? 'Lumayan, tapi perlu belajar lagi beberapa bagian.' : 'Pelajari ulang materinya ya, masih banyak yang perlu dipahami.';
+  resultDiv.innerHTML = '<div class="result" style="background:'+color+'18;border:2px solid '+color+'">'+emoji+' Skor: '+score+'/'+total+' ('+pct+'%) — '+msg+'</div>';
+  localStorage.setItem(quizId+'_submitted', JSON.stringify({answers:answers,score:score,total:total}));
+}
+function submitQuizSilent(quizId, answers) {
+  var score = 0;
+  var total = Object.keys(answers).length;
+  for (var qNum in answers) {
+    var q = document.getElementById(quizId + '_q' + qNum);
+    if (!q) continue;
+    var selected = q.querySelector('.option.selected');
+    var correctId = quizId + '_q' + qNum + '_' + answers[qNum];
+    var correctEl = document.getElementById(correctId);
+    if (correctEl) correctEl.classList.add('correct');
+    q.querySelectorAll('.option').forEach(function(o){ o.style.pointerEvents='none'; });
+    if (selected) {
+      if (selected.id === correctId) { score++; }
+      else { selected.classList.add('wrong'); }
+    }
+    var expDiv = q.querySelector('.explanation');
+    if (expDiv) expDiv.classList.add('show');
+  }
+  var resultDiv = document.getElementById(quizId + '_result');
+  var pct = Math.round(score/total*100);
+  var color = pct >= 80 ? '#16a34a' : pct >= 60 ? '#eab308' : '#dc2626';
+  var emoji = pct >= 80 ? '🎉' : pct >= 60 ? '⚠️' : '❌';
+  var msg = pct >= 80 ? 'Excellent! Kamu sudah paham materi ini!' : pct >= 60 ? 'Lumayan, tapi perlu belajar lagi beberapa bagian.' : 'Pelajari ulang materinya ya, masih banyak yang perlu dipahami.';
+  resultDiv.innerHTML = '<div class="result" style="background:'+color+'18;border:2px solid '+color+'">'+emoji+' Skor: '+score+'/'+total+' ('+pct+'%) — '+msg+'</div>';
 }
 function resetQuiz(quizId) {
-  document.querySelectorAll('#'+quizId+' .option').forEach(function(o){ o.classList.remove('selected','correct','wrong'); o.querySelector('input').checked=false; });
+  document.querySelectorAll('#'+quizId+' .option').forEach(function(o){
+    o.classList.remove('selected','correct','wrong');
+    o.querySelector('input').checked=false;
+    o.style.pointerEvents='auto';
+  });
+  document.querySelectorAll('#'+quizId+' .explanation').forEach(function(e){ e.classList.remove('show'); });
   document.getElementById(quizId+'_result').innerHTML='';
   localStorage.removeItem('quiz_'+quizId);
-  localStorage.removeItem(quizId+'_score');
+  localStorage.removeItem(quizId+'_submitted');
 }
 </script>
 <script>document.addEventListener('DOMContentLoaded',function(){ initQuiz('quiz_exec'); });</script>

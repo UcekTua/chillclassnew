@@ -1,0 +1,247 @@
+Project Risk Management 
+ 
+Studi Kasus I  
+ 
+Proyek: Implementasi Sistem Informasi Manajemen Rumah 
+Sakit (SIMRS) 
+ 
+Latar Belakang Proyek 
+Rumah Sakit Umum Daerah (RSUD) Harapan Sehat adalah rumah sakit kelas B milik 
+pemerintah daerah dengan kapasitas 350 tempat tidur dan lebih dari 600 tenaga kesehatan. 
+Selama ini, seluruh proses administrasi mulai dari pendaftaran pasien, rekam medis, 
+pembayaran, hingga pelaporan ke BPJS Kesehatan masih dilakukan secara manual 
+menggunakan kertas dan spreadsheet Excel yang tidak terintegrasi. 
+Kondisi ini menyebabkan berbagai masalah operasional: antrian pasien yang panjang, rekam 
+medis yang sering hilang, kesalahan penagihan, keterlambatan laporan ke BPJS, dan tidak 
+adanya data real-time untuk pengambilan keputusan manajemen. 
+Deskripsi Proyek 
+Nama Proyek  :  Implementasi Sistem Informasi Manajemen Rumah Sakit (SIMRS) 
+Terintegrasi 
+Sponsor       :  Direktur RSUD Harapan Sehat & Dinas Kesehatan Kabupaten 
+Anggaran      :  Rp 2.400.000.000 (Dua Miliar Empat Ratus Juta Rupiah) 
+Durasi           :  18 bulan (Januari 2025 — Juni 2026) 
+Tujuan proyek adalah mengimplementasikan SIMRS berbasis web yang mengintegrasikan 
+seluruh unit layanan rumah sakit, meliputi: 
+• 
+Modul Pendaftaran & Antrian Pasien (termasuk pendaftaran online) 
+• 
+Modul Rekam Medis Elektronik (RME) berbasis HL7 FHIR 
+• 
+Modul Farmasi & Manajemen Obat 
+• 
+Modul Laboratorium & Radiologi 
+• 
+Modul Penagihan & Integrasi BPJS Kesehatan 
+• 
+Modul Laporan Manajemen & Business Intelligence 
+• 
+Infrastruktur: server on-premise + backup cloud, jaringan LAN seluruh gedung 
+Pemangku Kepentingan Utama 
+Pihak 
+Peran 
+Kepentingan 
+Direktur RSUD 
+Project Sponsor 
+Persetujuan anggaran, keputusan strategis 
+Manajer IT RS 
+Project Manager 
+Pimpinan tim proyek, pelaporan kemajuan 
+Kepala Bagian 
+Rekam Medis 
+Key User / Subject 
+Matter Expert 
+Persyaratan modul RME, validasi fitur 
+Kepala Keuangan 
+Key User 
+Persyaratan modul billing, integrasi BPJS 
+Vendor SIMRS (PT. 
+MedInfo) 
+Vendor / Implementor 
+Pengembangan, konfigurasi, pelatihan 
+
+Pihak 
+Peran 
+Kepentingan 
+Dokter & Perawat 
+End User 
+Pengguna harian sistem RME dan farmasi 
+Dinas Kesehatan 
+Kabupaten 
+Regulator / Stakeholder 
+Eksternal 
+Pengawasan, standar pelaporan 
+BPJS Kesehatan 
+Stakeholder Eksternal 
+Integrasi sistem klaim 
+Tantangan & Konteks Risiko 
+Kelompok anda diminta untuk bertindak sebagai konsultan manajemen risiko yang 
+ditugaskan oleh Direktur RSUD. Beberapa fakta penting yang perlu dipertimbangkan dalam 
+analisis risiko: 
+• 
+Infrastruktur jaringan RS saat ini sudah berusia 8 tahun dan belum pernah diupgrade 
+• 
+Sebagian besar staf (±70%) belum pernah menggunakan sistem informasi berbasis 
+komputer dalam pekerjaan sehari-hari 
+• 
+Data rekam medis pasien 10 tahun ke belakang masih dalam format kertas dan perlu 
+didigitalisasi 
+• 
+Kontrak dengan vendor SIMRS belum mencantumkan klausul penalti keterlambatan 
+• 
+Anggaran proyek bersumber dari APBD yang pencairannya sering terlambat 1-3 
+bulan 
+• 
+RS beroperasi 24/7 sehingga tidak ada downtime untuk migrasi sistem 
+• 
+Regulasi Kemenkes mengharuskan SIMRS bersertifikasi sebelum go-live 
+• 
+Tim IT internal RS hanya terdiri dari 3 orang dengan keahlian terbatas di bidang 
+sistem enterprise 
+ 
+Berdasarkan studi kasus di atas, buatlah dokumen berikut: 
+• 
+Risk Management Plan 
+mencakup metodologi, peran & tanggung jawab, pendanaan & waktu, kategori risiko, 
+probabilitas & dampak, risk appetite stakeholder, dan dokumentasi risiko 
+• 
+Risk Register 
+identifikasi minimal 8 risiko utama proyek dengan detail: nomor, peringkat, nama 
+risiko, deskripsi, kategori, akar penyebab, pemicu, respons risiko, pemilik risiko, 
+probabilitas, dampak, dan status 
+ 
+Gunakan template yang ada pada slide materi dan sesuaikan dengan konteks proyek 
+SIMRS. Pastikan setiap analisis didukung dengan alasan/asumsi yang logis berdasarkan 
+fakta dalam studi kasus. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+Project Procurement Management 
+ 
+Pilih salah satu (studi kasus IIA atau IIB) 
+Studi Kasus II A  
+ 
+Pengembangan Aplikasi Mobile Banking 
+Latar Belakang 
+PT. Nusantara Digital Bank (NDB) adalah bank umum swasta nasional dengan aset Rp 45 
+triliun dan lebih dari 2 juta nasabah aktif yang tersebar di 25 kota besar Indonesia. Saat ini 
+NDB hanya melayani transaksi digital melalui internet banking berbasis browser yang sudah 
+berusia 6 tahun dan tidak mobile-friendly. Tingkat penurunan (churn) nasabah muda (18-35 
+tahun) meningkat 18% dalam dua tahun terakhir, dan survei menunjukkan 74% nasabah 
+berpindah ke bank kompetitor karena alasan kemudahan aplikasi mobile. 
+Dewan Direksi NDB menyetujui anggaran proyek sebesar Rp 4.800.000.000 untuk 
+mengembangkan aplikasi mobile banking baru yang mendukung iOS dan Android. Target 
+go-live adalah 12 bulan dari kick-off, dengan fitur utama: transfer dana, pembayaran tagihan, 
+top-up e-wallet, informasi rekening/investasi, dan fitur keamanan biometrik. 
+Tim IT internal NDB terdiri dari 12 developer (fokus pada backend core banking dan sistem 
+legacy), 2 UI/UX designer, dan 1 project manager. Tidak ada satu pun developer internal 
+yang berpengalaman dalam pengembangan aplikasi mobile native (Swift/Kotlin). Rekruitmen 
+mobile developer senior memerlukan waktu 3-6 bulan dan kompetitif di pasar. 
+Keputusan yang Dianalisis 
+Pengembangan Aplikasi Mobile Banking NDB untuk platform iOS dan Android, mencakup 
+desain UI/UX, pengembangan frontend mobile, integrasi API dengan core banking, 
+pengujian keamanan (penetration testing), dan deployment ke App Store & Google Play. 
+Opsi yang Dianalisis 
+Opsi 1 — MAKE: Merekrut dan membentuk tim mobile developer internal untuk 
+mengembangkan aplikasi secara in-house. 
+Opsi 2 — BUY: Mengoutsource seluruh pengembangan aplikasi mobile banking kepada 
+perusahaan software development spesialis fintech (vendor eksternal). 
+Fakta Pendukung Analisis 
+• 
+Tidak ada developer mobile internal yang berpengalaman saat ini 
+• 
+Rekruitmen 6 mobile developer senior membutuhkan 3-6 bulan dan biaya kompetitif 
+• 
+Time-to-market sangat kritis — setiap bulan keterlambatan = potensi kehilangan 
+nasabah lebih lanjut 
+• 
+Regulasi OJK mensyaratkan penetration testing oleh pihak independen bersertifikat 
+• 
+Maintenance pasca-launch minimal 3 tahun diperlukan 
+• 
+Vendor fintech terpilih memiliki portofolio 8 aplikasi mobile banking serupa, tim 30 
+developer spesialis 
+• 
+Biaya lisensi tools pengembangan mobile (Xcode, Android Studio, testing framework) 
+termasuk dalam estimasi 
+ 
+ 
+ 
+ 
+
+Studi Kasus II B 
+ 
+Implementasi Sistem ERP untuk Perusahaan Manufaktur 
+ 
+ 
+Latar Belakang 
+PT. Maju Jaya Industri (MJI) adalah perusahaan manufaktur komponen otomotif berskala 
+menengah dengan 850 karyawan, 3 pabrik di Jawa dan Sumatera, dan omzet tahunan Rp 
+280 miliar. MJI saat ini menggunakan kombinasi software akuntansi standar (Zahir 
+Accounting), spreadsheet Excel untuk produksi dan inventori, serta sistem absensi manual. 
+Tidak ada integrasi antar sistem, menyebabkan duplikasi data, keterlambatan laporan 
+manajemen 3-5 hari, dan sering terjadi kesalahan perencanaan produksi yang 
+mengakibatkan overstock atau stockout bahan baku. 
+Manajemen MJI memutuskan untuk mengimplementasikan sistem ERP (Enterprise 
+Resource Planning) yang terintegrasi mencakup modul: Keuangan & Akuntansi, Manufaktur 
+& MRP, Inventori & Gudang, Pembelian, Penjualan, dan SDM & Penggajian. Anggaran yang 
+disetujui adalah Rp 3.600.000.000 dengan target implementasi 15 bulan. 
+Tim IT MJI terdiri dari 4 orang: 1 IT Manager, 2 sistem analis, dan 1 administrator jaringan. 
+Mereka memiliki pengalaman dalam administrasi sistem tetapi tidak ada yang pernah 
+mengimplementasikan sistem ERP skala enterprise sebelumnya. MJI mempertimbangkan 
+dua pendekatan: membangun sistem ERP custom dari nol menggunakan tim developer 
+yang akan direkrut, atau menggunakan ERP berbasis platform open-source (Odoo) yang 
+dikonfigurasi dan diimplementasikan oleh partner resmi Odoo. 
+Keputusan yang Dianalisis 
+Implementasi Sistem ERP Terintegrasi MJI, mencakup seluruh modul bisnis utama 
+(Keuangan, Manufaktur, Inventori, Pembelian, Penjualan, SDM), migrasi data dari sistem 
+lama, pelatihan pengguna, dan dukungan go-live. 
+Opsi yang Dianalisis 
+Opsi 1 — MAKE: Bangun sistem ERP custom dari nol dengan merekrut tim developer 
+internal (5 developer, 2 sistem analis, 1 database administrator). 
+Opsi 2 — BUY: Implementasikan ERP berbasis Odoo Community Edition (open-source) 
+melalui partner resmi Odoo Indonesia yang berpengalaman di industri manufaktur. 
+Fakta Pendukung Analisis 
+• 
+Tim IT internal tidak berpengalaman dalam pengembangan maupun implementasi 
+ERP enterprise 
+• 
+Odoo adalah platform ERP open-source terkemuka dengan modul manufaktur 
+(MRP) yang sudah terbukti 
+• 
+Partner Odoo yang diidentifikasi telah mengimplementasikan 15+ proyek manufaktur 
+serupa 
+• 
+Pengembangan ERP custom dari nol biasanya memerlukan 2-4 tahun untuk scope 
+yang setara 
+• 
+Biaya lisensi Odoo Enterprise: Rp 3.500.000/user/tahun untuk 50 user = Rp 
+175.000.000/tahun 
+• 
+Odoo Community (tanpa lisensi) tersedia gratis namun dengan fitur lebih terbatas; 
+partner Odoo menyediakan Enterprise 
+• 
+Migrasi data dari Zahir dan Excel ke ERP baru adalah pekerjaan kompleks yang 
+memerlukan keahlian khusus 
+
+• 
+Regulasi perpajakan Indonesia (e-Faktur, e-SPT) memerlukan konfigurasi khusus 
+yang sudah ada di Odoo Indonesia 
+ 
+ 
+Gunakan template MAKE-or-BUY decision yang ada pada slide materi dan sesuaikan 
+dengan konteks proyek studi kasus IIA/B. Berikan estimasi biaya-biaya yang berlaku saat ini 
+dan alasan/asumsi logis berdasarkan fakta dalam studi kasus untuk mendukung analisa 
+keputusan MAKE atau BUY. 
+

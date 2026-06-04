@@ -1,0 +1,37 @@
+Executing Projects 
+ 
+Studi Kasus 1: Konflik dalam Tim 
+Situasi: Sebuah perusahaan IT sedang mengembangkan aplikasi mobile banking. Di 
+tengah eksekusi proyek, terjadi konflik antara developer senior (Andi) dan UI/UX 
+designer (Rina). Andi merasa desain Rina tidak realistis secara teknis, sementara Rina 
+merasa Andi terlalu kaku dan tidak mau berkompromi. Akibatnya, progress sprint 
+terhambat selama 2 minggu dan kedua pihak menolak untuk berkolaborasi 
+langsung. 
+Pertanyaan : 
+1. Berdasarkan Thomas-Kilmann Conflict Handling Modes, identifikasi mode 
+konflik yang ditunjukkan Andi dan Rina. Jelaskan alasan kelompok Anda! 
+2. Sebagai project manager, mode penanganan konflik mana yang paling tepat 
+digunakan dalam situasi ini? Mengapa? 
+3. Bagaimana Tuckman Model menjelaskan situasi tim ini? Berada di tahap 
+manakah tim tersebut? 
+4. Langkah konkret apa yang harus diambil project manager dalam minggu 
+pertama untuk menyelesaikan masalah ini? 
+ 
+Studi Kasus 2: Kualitas Produk Buruk 
+Situasi: Sebuah startup fintech meluncurkan fitur transfer antar bank. Setelah 
+beberapa minggu, ditemukan banyak laporan bug: transfer gagal, notifikasi tidak 
+terkirim, dan saldo tidak terupdate real-time. Rating aplikasi turun dari 4.5 ke 2.8 di 
+Play Store. Investigasi awal menunjukkan bahwa proses testing dilakukan terburu-
+buru karena tekanan deadline dari manajemen. 
+Pertanyaan : 
+1. Proses managing quality apa saja yang gagal dijalankan oleh tim ini? Jelaskan 
+berdasarkan materi! 
+2. Buatlah Cause-and-Effect Diagram (Fishbone) sederhana untuk 
+mengidentifikasi kemungkinan penyebab turunnya kualitas aplikasi tersebut! 
+
+3. Apa peran Quality Audit dalam mencegah masalah seperti ini? Kapan 
+sebaiknya audit dilakukan? 
+4. Jika Anda adalah project manager, change request seperti apa yang akan 
+Anda ajukan untuk memperbaiki situasi ini? Sebutkan minimal 3 poin 
+perubahan! 
+

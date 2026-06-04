@@ -1,0 +1,1216 @@
+Note: 
+Adapted from slide of the textbook: Schwalbe, Kathy. An Introduction to Project 
+Management – Seventh Edition. Minneapolis, MN:  Schwalbe Publishing, 2021. 
+See the text itself for full citations. 
+MANAJEMEN PROYEK TI  – FASILKOM UI
+1
+IT PROJECT 
+MANAGEMENT
+TOPIC 11
+PROJECT PLANNING (PROJECT RISK & 
+PROCUREMENT MANAGEMENT)
+
+LEARNING OBJECTIVES
+a.
+Understand risk and the importance of good project risk 
+management
+b.
+Describes the risk management project processes
+c.
+Discuss the elements of planning risk management and the 
+contents of a risk management plan and common source of 
+risk
+d.
+Describe the process of identifying risks and create a risk 
+register
+e.
+Discuss qualitative risk analysis and explain how to calculate 
+risk factors, create probability/impact matrixes, and apply 
+the Top Ten Risk Item Tracking technique to rank risks
+f.
+Explain quantitative risk analysis and how to apply decision 
+trees, simulation, and sensitivity analysis to quantify risks
+g.
+Provide examples of using different risk response planning 
+strategies to address both negative and positive risks
+h.
+Understand the importance of project procurement 
+management and the increasing use of outsourcing for 
+information technology (IT) projects
+i.
+Describe project procurement management processes
+j.
+Describe the work involved in planning procurements for 
+projects, including determining the proper type of contract 
+to use and preparing a procurement management plan, 
+statement of work, source selection criteria, and make-or-
+buy analysis
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+2
+
+PROJECT RISK MANAGEMENT
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+3
+
+THE IMPORTANCE OF PROJECT RISK MANAGEMENT
+Project risk management is the art and science of identifying, analyzing, and responding to risk throughout 
+the life of a project and in the best interests of meeting project objectives
+Risk management is often overlooked in projects, but it can help improve project success by helping select 
+good projects, determining project scope, and developing realistic estimates
+Risks are always in the future, and some can only occur at specific times in the schedule. 
+
+As the project progresses, risks occur or they don’t. 
+
+Risks that are in the past as the project progresses are noted as being closed. 
+
+Risk management planning is repeated at a scheduled frequency such as at the end of a phase or a milestone. 
+You can also plan to reduce procurement-related risks by making risk-related contract decisions.
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+4
+
+BENEFITS FROM SOFTWARE RISK MANAGEMENT PRACTICES*
+*Source: Kulik and Weber, KLCI Research Group
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+5
+
+RISK
+
+A dictionary definition of risk is “the possibility of loss or injury”
+
+Negative Risk
+
+Negative risk involves understanding potential problems that might occur in the project and 
+how they might impede project success
+
+Negative risk management is like a form of insurance; it is an investment
+
+Positive Risk
+Positive risks are risks that result in good things happening; sometimes called opportunities
+
+A general definition of project risk is an uncertainty that can have a negative or positive effect
+on meeting project objectives
+The goal of project risk management is to minimize potential negative risks 
+while maximizing potential positive risks
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+6
+
+RISK UTILITY
+•
+Risk utility or risk tolerance is the amount 
+of satisfaction or pleasure received from 
+a potential payoff
+• Utility rises at a decreasing rate for people 
+who are risk-averse
+• Those who are risk-seeking have a higher 
+tolerance for risk and their satisfaction 
+increases when more payoff is at stake
+• The risk-neutral approach achieves a 
+balance between risk and payoff
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+7
+
+PROJECT RISK MANAGEMENT PROCESSES
+1.
+Planning risk management : Deciding how to approach and plan the risk management activities 
+for the project
+2.
+Identifying risks: Determining which risks are likely to affect a project and documenting the 
+characteristics of each
+3.
+Performing qualitative risk analysis: Prioritizing risks based on their probability and impact of 
+occurrence
+4.
+Performing quantitative risk analysis: Numerically estimating the effects of risks on project 
+objectives
+5.
+Planning risk responses: Taking steps to enhance opportunities and reduce threats to meeting 
+project objectives
+6.
+Controlling risk: Monitoring identified and residual risks, identifying new risks, carrying out risk 
+response plans, and evaluating the effectiveness of risk strategies throughout the life of the 
+project
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+8
+
+PLANNING RISK MANAGEMENT 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+9
+
+PLANNING RISK MANAGEMENT
+
+The main output of this process is a risk 
+management plan—a plan that 
+documents the procedures for managing 
+risk throughout a project
+
+The project team should review project 
+documents and understand the 
+organization’s and the sponsor’s 
+approaches to risk
+
+The level of detail will vary with the needs 
+of the project
+Topics Address in Risk Management Plan
+
+Methodology
+
+Roles and responsibilities
+
+Budget and schedule
+
+Risk categories
+
+Risk probability and impact
+
+Revised stakeholders’ tolerances
+
+Tracking
+
+Risk documentation
+In addition to a risk management plan, many projects also 
+include contingency plans, fallback or backup plans, and 
+reserves.
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+10
+
+CONTINGENCY AND FALLBACK PLANS, CONTINGENCY RESERVES
+Contingency plans are predefined actions that the project team will take if an 
+identified risk event occurs
+Fallback plans are developed for risks that have a high impact on meeting project 
+objectives, and are put into effect if attempts to reduce the risk are not effective
+Contingency reserves or allowances are provisions held by the project sponsor or 
+organization to reduce the risk of cost or schedule overruns to an acceptable 
+level; management reserves are funds held for unknown risks that are NOT part 
+of the cost baseline but ARE part of the budget and funding requirements
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+11
+
+COMMON SOURCES OF RISK IN INFORMATION TECHNOLOGY PROJECTS
+Success Criterion
+Relative 
+Importance
+User Involvement
+19
+Executive management support
+16
+Clear Statement of Requirements
+15
+Proper Planning
+11
+Realistic Expectations
+10
+Smaller Project Milestones
+9
+Competent Staff
+8
+Ownership
+6
+Clear Visions and Objectives
+3
+Hard-Working, Focused Staff
+3
+Total
+100
+Other broad categories of risk 
+help identify potential risks
+▪
+Market risk
+▪
+Financial risk
+▪
+Technology risk
+▪
+People risk
+▪
+Structure/process risk
+Several studies show that IT projects share some common sources of risk
+The Standish Group 
+developed an IT success 
+potential scoring sheet 
+based on potential risks
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+12
+
+SAMPLE RISK MANAGEMENT PLAN 
+Risk Management Plan – September 3
+1. Methodology
+The project team will review data available from the Phase I project and 
+past training programs within Global Construction. They will also review 
+information related to external projects similar to this one. The team will 
+use several tools and techniques, including brainstorming, surveys, and 
+risk-related checklists to assist in risk management.
+2. Roles and Responsibilities
+The project manager will be responsible for leading the team and other 
+stakeholders in performing risk-related activities. As detailed risk-
+related activities and deliverables are determined, the project manager 
+will delegate those activities to others as appropriate.
+3. Funding and Timing
+As specific risk-related activities and deliverables are determined, 
+budget and schedule information will be provided. Protocols for the 
+application of contingency and management reserves will be reviewed 
+with the project sponsor.
+4. Risk Categories
+General categories and subcategories for risk on this project include 
+business risks (suppliers and cash flow), technical risks (course content, 
+hardware, software, and network), organizational risks (executive 
+support, user support, supplier support, and team support), and project 
+management risks. 
+5. Risk Probability and Impact
+Risk probability and impact will initially be estimated as high, medium, 
+or low based on expert judgment. High means a 75% -100% probability 
+or impact, low means 0%-25%, and medium is in between. If more 
+advanced scoring is needed, the project team will determine an 
+appropriate approach.
+6. Stakeholder Risk Appetite
+Measurable risk thresholds for each project objective will be 
+documented for key stakeholders. These thresholds determine the 
+acceptable overall project risk exposure and influence the probability 
+and impact ratings.
+7. Risk Documentation
+All risk-related information will be summarized in a risk register. Detailed 
+documentation will be available in a secure area on the project website. 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+13
+
+RISK BREAKDOWN STRUCTURE
+A risk breakdown structure is a 
+hierarchy of potential risk categories 
+for a project
+Similar to a work breakdown structure 
+but used to identify and categorize 
+risks
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+14
+
+IDENTIFYING RISK
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+15
+
+IDENTIFYING RISKS
+You cannot manage risks until you identify them. Identifying risks involves determining which risks are likely to 
+affect a project and documenting the characteristics of each.
+The main outputs of this process are a risk register (described later in this chapter) and a risk report
+It is important to consider risks in various categories, such as market risks, financial risks, technical risks, people 
+risks, risks related to specific knowledge areas, and so on. 
+
+Risk identification tools and techniques include:
+Brainstorming
+Review 
+Document
+Interviewing
+SWOT 
+analysis
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+16
+
+BRAINSTORMING
+Brainstorming is a technique by which a group attempts to generate ideas or find 
+a solution for a specific problem by amassing ideas spontaneously and without 
+judgment
+An experienced facilitator should run the brainstorming session
+Be careful not to overuse or misuse brainstorming.
+Psychology literature shows that individuals produce a greater number of ideas working alone 
+than they do through brainstorming in small, face-to-face groups
+Group effects often inhibit idea generation
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+17
+
+INTERVIEWING AND SWOT ANALYSIS
+Interviewing
+
+Interviewing is a fact-finding technique for 
+collecting information in face-to-face, 
+phone, e-mail, or instant-messaging 
+discussions
+
+Interviewing people with similar project 
+experience is an important tool for 
+identifying potential risks
+SWOT Analysis
+
+SWOT analysis (strengths, weaknesses, opportunities, 
+and threats) can also be used during risk 
+identification
+
+Helps identify the broad negative and positive risks 
+that apply to a project
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+18
+
+RISK REGISTER
+The main output of the risk identification process is a list of identified risks and 
+other information needed to begin creating a risk register
+A risk register is:
+A document that contains the results of various risk management processes and 
+that is often displayed in a table or spreadsheet format
+A tool for documenting potential risk events and related information
+Risk events refer to specific, uncertain events that may occur to the detriment or 
+enhancement of the project
+
+For example, negative risk events or threats might include the performance failure of a product produced as part of a project, delays in 
+completing work as scheduled, increases in estimated costs, supply shortages, litigation against the company, and labor strikes.
+
+Examples of positive risk events or opportunities include completing work sooner than planned or at an unexpectedly reduced cost, 
+collaborating with suppliers to produce better products, and obtaining good publicity from the project. 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+19
+
+RISK REGISTER CONTENTS
+An identification number for each risk event
+A rank for each risk event
+The name of each risk event
+A description of each risk event
+The category under which each risk event falls
+The root cause of each risk
+Triggers for each risk; triggers are indicators or symptoms of actual risk events
+Potential responses to each risk
+The risk owner or person who will own or take responsibility for each risk
+The probability and impact of each risk occurring.
+The status of each risk
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+20
+
+RISK REPORT
+
+Overall project risk is the effect of uncertainty on the project as a whole. 
+
+Contents of a risk report include sources of overall project risk and summary information on risk events, such 
+as number of risks, distribution across risk categories, metrics, and trends. 
+
+The risk report is developed progressively during the entire risk planning processes.
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+21
+
+TABLE 11-5. SAMPLE RISK REGISTER
+No.
+Rank
+Risk
+Description
+Category
+Root Cause
+Triggers
+Potential Responses
+Risk owner
+Probability
+Impacts
+Status
+R15
+1
+Empty 
+cell
+Empty cell
+Empty cell
+Empty cell
+Empty cell
+Empty cell
+Empty cell
+Empty cell
+Empty cell
+Empty 
+cell
+R21
+2
+Empty 
+cell
+Empty cell
+Empty cell
+Empty cell
+Empty cell
+Empty cell
+Empty cell
+Empty cell
+Empty cell
+Empty 
+cell
+R7
+3
+Empty 
+cell
+Empty cell
+Empty cell
+Empty cell
+Empty cell
+Empty cell
+Empty cell
+Empty cell
+Empty cell
+Empty 
+cell
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+22
+No.
+: R15
+Rank
+: 1
+Risk
+: Poor survey response
+Description
+: Many people dislike surveys and avoid filling them out, or if they do, they don’t offer good or honest feedback 
+Category
+: Organizational/user support risk 
+Root cause
+: People don’t want to take the time and think their inputs aren’t important
+Triggers
+: Low survey response rate the first few days, incomplete surveys
+Risk Responses: Make sure senior management emphasizes the importance of this project and the survey for designing good courses. Have the 
+functional managers personally mention the survey to their people and stress its importance. Offer a reward like gift certificates to the department 
+with the most responses. Ensure that the survey instructions say it will take ten minutes or fewer to complete. Extend the deadline for survey 
+responses.
+Risk owner
+: Mike Sundby, Project champion
+Probability
+: Medium
+Impact
+: High
+Status
+: PM will set up the meeting within the week with the project steering committee to decide which response strategies to implement 
+
+PERFORMING QUALITATIVE RISK ANALYSIS
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+23
+
+PERFORMING QUALITATIVE RISK ANALYSIS
+Qualitative risk analysis often results in prioritizing risks as high, medium, or low. 
+A probability/impact matrix, as described in the following section, is a
+good technique to help decide which risks are most important on a
+project.
+There are two important dimensions of risk events: probability of the risk event occurring and the 
+impact or consequence if the risk does occur. 
+People often describe a risk event probability or impact as being high, medium, or low. (High 
+can be defined to mean a 75%-100% probability or impact, low 0%-25%, and medium in 
+between.) 
+Risk quantification tools and techniques include: 
+Probability/impact matrixes
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+24
+
+PROBABILITY/IMPACT MATRIX
+A probability/impact matrix or chart lists the relative 
+probability of a risk occurring on one side of a matrix or axis 
+on a chart and the relative impact of the risk occurring on 
+the other
+List the risks and then label each one as high, medium, or 
+low in terms of its probability of occurrence and its impact if 
+it did occur
+Project teams should initially focus on risk events that fall in 
+the high sections of the probability/impact matrix and 
+develop strategies for minimizing negative risk events and 
+maximizing positive ones 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+25
+
+SAMPLE OF PROBABILITY/IMPACT MATRIX
+
+On the Just-In-Time Training project, Kristin worked with several project stakeholders early in the project to begin 
+identifying several negative and positive risk events related to the project. 
+
+She held a brainstorming session in which over 100 risk events were identified.
+
+To differentiate between the two, she asked participants to identify negative risk events and then positive ones. 
+After people identified a risk event and wrote it down on a sticky note, Kristin asked them to mark each one as 
+having a high, medium, or low probability of occurrence and impact. 
+
+They defined high to mean a 75%-100% probability, low 0%-25%, and medium in between. Kristin had posted on the 
+whiteboard large probability/impact matrices—one for negative risk events and another for positive risk events. 
+
+Everyone put their sticky notes in the appropriate sections of the appropriate matrix. They then examined the results 
+to combine and reword risk events to improve collaboration and avoid duplicates. 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+26
+
+SAMPLE OF PROBABILITY/IMPACT MATRIX
+
+For example, risks 1 and 2 are listed as high in both 
+categories of probability and impact. Risks 9 and 10 
+are high in the probability category but low in the 
+impact category. 
+
+Risk 5 is high in the probability category and medium 
+in the impact category. 
+
+The team then discussed in detail how they planned to 
+respond to risks, especially those in the medium and 
+high categories, and documented the results in the risk 
+register, as described in the following section. 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+27
+
+CHART SHOWING HIGH, MEDIUM, AND LOW-RISK 
+TECHNOLOGIES
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+28
+
+WATCH LIST
+
+A watch list is a list of risks that are low priority, but are still identified as potential risks
+
+Qualitative analysis can also identify risks that should be evaluated on a quantitative basis
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+29
+
+PERFORMING QUANTITATIVE RISK ANALYSIS
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+30
+
+PERFORMING QUANTITATIVE RISK ANALYSIS
+On many projects, the team may only perform qualitative risk analysis 
+Often follows qualitative risk analysis, but both can be done together
+Large, complex projects involving leading edge technologies often require 
+extensive quantitative risk analysis
+Main techniques include:
+
+Decision tree analysis
+
+Simulation
+
+Sensitivity analysis
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+31
+
+PLANNING RISK RESPONSES
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+32
+
+PLANNING RISK RESPONSES
+
+After identifying and quantifying risks, you must decide how to respond to them
+
+Four main response strategies for negative risks:
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+33
+Escalation of the risk: If the risk is outside of the scope OR outside of the PM’s authority, escalate the risk to a higher-level 
+manager within the organization
+Risk avoidance: eliminating a specific threat, usually by eliminating its cause
+Risk acceptance: accepting the consequences should a risk occur
+Risk transference: shifting the consequences of a risk and responsibility for its management to a third party
+Risk mitigation: reducing the impact of a risk event by reducing the probability of its occurrences
+
+RESPONSE STRATEGIES FOR POSITIVE RISKS
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+34
+Escalation of the risk: If the risk is outside of the scope OR outside of the PM’s authority, escalate the risk to a higher-level 
+manager within the organization
+Risk exploitation: doing whatever you can to make sure the positive risk happen
+Risk sharing : allocating ownership of the risk to another part
+Risk enhancement: changing the size of the opportunity by identifying and maximizing key drivers for the positive risk
+Risk acceptance: the project team cannot or choose not to take any actions toward a risk. 
+
+RESIDUAL AND SECONDARY RISKS
+It’s also important to identify residual and secondary risks
+Residual risks are risks that remain after all of the response strategies have 
+been implemented
+Secondary risks are a direct result of implementing a risk response
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+35
+
+RISK-RELATED CONTRACT DECISIONS 
+
+Many projects, including the Just-In-Time Training project, involve outside suppliers. 
+
+Work done by outside suppliers or sellers should be well documented in contracts, which are mutually binding agreements 
+that obligate the seller to provide the specified products or services and obligate the buyer to pay for them. 
+
+Project managers should include clauses in contracts to help manage project risks. 
+
+For example, sellers can agree to be responsible for certain negative risks and incur the costs themselves if they occur. Or there can be incentive or 
+liquidated damage clauses in contracts based on seller performance to encourage positive risks and discourage negative risks. 
+
+You can also use certain types of contracts, such as fixedprice contracts, to reduce the risk of incurring higher costs.
+
+Competition for supplying goods and services can also help reduce negative risks and enhance positive risks on projects. 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+36
+
+AGILE RISK PLANNING
+
+Agile projects experience uncertainties that can have negative or positive effects on meeting objectives, just like 
+predictive projects.
+
+Emphasizing value to the customer, prioritizing work, and collaborating as a team focused on one sprint goal at a 
+time helps to address potential risks. 
+
+Teams should also openly discuss impediments as part of their daily Scrum meetings, and the Scrum master or 
+project manager should work hard to remove impediments so the teams can focus on accomplish meaningful work.
+
+Many agile teams also use risk registers, as described earlier in this chapter. 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+37
+
+PROJECT PROCUREMENT MANAGEMENT
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+38
+
+IMPORTANCE OF PROJECT PROCUREMENT MANAGEMENT
+
+Project procurement management includes acquiring or procuring goods and services for a project from outside the 
+organization. 
+
+Many project managers realize the advantages of buying goods and services required for their projects, especially as 
+sellers with better goods and services continue to become increasingly available. 
+
+They also realize that they can find qualified sellers throughout the world. Remember that project managers strive to do what is best for the project 
+and the organization, and that often means acquiring goods and services from the outside. 
+
+Good procurement management often provides a win-win situation for both buyers and sellers. 
+
+Planning project procurement management involves documenting procurement decisions, specifying the procurement 
+approach, and identifying potential sellers. 
+
+Key outputs include procurement management plans, procurement strategies, bid documents, procurement statements of 
+work, source selection criteria, make-or-buy decisions, independent cost estimates, change requests, project documents 
+updates, and organizational process assets updates. Several of these outputs are described in this section. 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+39
+
+MAKE-OR-BUY DECISIONS 
+
+With a make-or-buy decision, an organization decides if it would benefit more by making a product or performing a 
+service itself, or by buying the product or service from a supplier. 
+
+If there is no need to buy products or services from outside the organization, the organization can avoid the costs
+involved in managing procurement management processes. 
+
+Make-or-buy analysis involves estimating the internal costs of providing a product or service and comparing that 
+estimate to the cost of outsourcing. 
+
+Many organizations also use a lease-or-buy analysis to decide if they should purchase or lease items for a particular 
+project. 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+40
+
+SAMPLE MAKE-OR-BUY DECISION
+For example, based on information collected in the Phase I project, it was suggested that Global Construction could probably identify internal 
+people to conduct some of the face-to-face training or provide online advice for several courses. 
+Internal resources would be much less expensive than external contractors. 
+One of the requirements for the Just-In-Time Training project was to provide instructor-led basic project management training and facilitation 
+for online materials. To train 100 employees, there would be five, two-day instructor-led classes with 20 participants in each class in the first 
+year. There would also be 500 hours of online facilitation.
+One suggestion was to have current employees conduct the basic project management training—the “make” option—instead of having an 
+outside firm provide the training—the “buy” option. 
+There were a couple of project management professionals in the training department with experience in teaching face-to-face and online 
+courses. They had taken college courses in basic project management and knew of excellent books with online materials. They also knew of 
+several companies that conducted their own in-house courses for basic project management training and then brought in an outside expert, 
+often a qualified college professor, who would conduct advanced courses. They found that college professors or other independent consultants 
+provided high-quality training for much less than most training firms. 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+41
+
+SAMPLE MAKE-OR-BUY DECISION
+Make-Or-Buy Analysis
+September 1
+Project Name: Just-In-Time Training Project
+Background: Global Construction wants to train 100 employees and will 
+consider having the employees sent to an outside course (Buy option) or 
+provide the education using internal employees (Make option). Assuming 20 
+participants/class and 2 days average course length, 10 total days of training 
+will be needed. Assume 500 hours of online facilitation will be needed as well 
+(5 hours per participant).
+Decision Being Analyzed: Project management training
+Option 1: (Make): Use in-house instructors for the instructor-led basic project 
+management training and facilitation for online materials (includes 
+purchasing course materials) 
+Estimated cost per hour for in-house trainer (excludes participant time): $60
+Estimated training hours: 80 (10 total days of training X 8 hours per day) 
+Subtotal: $4,800 (80 hours X $60 per hour) 
+Materials cost: $7500 ($75/participant/course, 100 participants total) 
+Estimated cost per hour for online facilitation (excludes employee time): $60
+Estimated hours: 500
+Subtotal: $30,000 (500 hours X $60 per hour)
+Total: $42,300 ($4,800 + $7,500 + $30,000)
+Option 2: (Buy): Outsource instructor-led basic project management training 
+and facilitation for online materials (includes course materials)
+Estimated cost for class per participant = (Estimated Cost X Number of Days) 
+= $500 X 2 days = $1,000
+Cost of instructor-led classes ($1,000 X 100 participants)
+Subtotal: $100,000
+Estimated cost per hour for online facilitation (excludes student time): $100
+Estimated hours: 500
+Subtotal: $50,000 (500 hours X $100 per hour)
+Total $150,000 ($100,000 + $50,000)
+Cost Difference: $150,000 - $42,300 = $107,700
+Recommendation: Because we have qualified internal staff and can purchase 
+suitable materials, we recommend Option 1, in which we conduct the basic 
+project management training in-house.
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+42
+
+PROCUREMENT MANAGEMENT PLANS 
+
+A procurement management plan is a document that describes how the procurement processes will be managed, from 
+developing documentation for making outside purchases or acquisitions to contract closure. 
+
+Like other project plans, the contents of procurement management plans vary with project needs. 
+
+Some projects must follow government directives.
+
+Topics included in the procurement management plan include:
+•
+Guidelines on types of contracts to be used in different situations
+•
+Standard procurement documents or templates to be used, if applicable
+•
+Guidelines for creating contract work breakdown structures, statements of work, and other procurement documents
+•
+Roles and responsibilities of the project team and related departments, such as the purchasing or legal department
+•
+Guidelines on using independent estimates for evaluating sellers’ cost proposals
+•
+Suggestions on managing multiple providers
+•
+Processes for coordinating procurement decisions, such as make or-buy decisions, with other project areas
+•
+Constraints and assumptions related to purchases and acquisitions
+•
+Lead times for purchases and acquisitions
+•
+Risk-mitigation strategies for purchases and acquisitions, such as insurance contracts and bonds
+•
+Guidelines for identifying prequalified sellers and organizational lists of preferred sellers
+•
+Procurement metrics to assist in evaluating sellers and managing contracts 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+43
+
+TYPES OF CONTRACTS 
+
+Contract type is a key consideration in a procurement management plan.
+
+Different types of contracts can be used in different situations. 
+
+Four broad categories of contracts are fixed price, or lump sum; cost reimbursable; time and material; and 
+indefinite delivery indefinite quantity. 
+
+A single contract can include more than one of these categories, if it makes sense for that particular 
+procurement.
+
+For example, you could have a contract with a seller that includes purchasing specific products for a fixed price or lump 
+sum, some services that are provided on a cost-reimbursable basis, and other services that are provided on a time-and-
+material basis. It is important to understand and decide which approaches to use to meet project needs. 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+44
+
+FIXED-PRICE CONTRACTS OR LUMP-SUM CONTRACTS
+
+Involve a fixed total price for a well-defined product or service. 
+
+The buyer incurs little risk or uncertainty in this situation because the price is predetermined. 
+
+Sellers often pad their estimates somewhat to reduce their risk, while keeping in mind that their price must still be competitive. 
+
+For example, using a two-week, fixed-price contract, Global Construction could hire a consultant to develop a survey to determine requirements for its new 
+supplier management training courses under the Just-In-Time Training project. 
+
+Fixed-price contracts generally have well-defined deliverables and deadlines and may include incentives for meeting or exceeding selected 
+project objectives. 
+
+For example, the contract could include an incentive fee that would be paid for early delivery of the survey. 
+
+A firm-fixed price (FFP) contract has the least amount of risk for the buyer, followed by a fixed-price incentive fee (FPIF) contract. You can also 
+use a fixed-price with economic price adjustment (FP-EPA) contract to provide for upward and downward revision of the stated contract price 
+upon the occurrence of specified contingencies. Price adjustments can be based on established prices, actual costs of labor or material,
+or cost indexes of labor or material.
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+45
+
+COST-REIMBURSABLE CONTRACTS
+
+Involve payment to the seller for direct and indirect actual costs. 
+
+For example, the salaries for people working directly on a project and materials purchased for a specific project are direct costs, whereas the cost 
+of providing a workspace for those workers, office furniture, electricity, a cafeteria, and so on, are indirect costs. 
+
+Indirect costs are often calculated as a percentage of direct costs. 
+
+Cost-reimbursable contracts often include fees such as a profit percentage, and they can also include incentives for 
+meeting or exceeding selected project objectives. 
+
+Types of contracts include cost plus award fee (CPAF), cost plus fixed fee (CPFF), and cost plus incentive fee (CPIF). 
+
+For example, many contracts to build homes are cost reimbursable contracts. The buyer might expect the home to cost a certain amount, but the 
+total cost could vary if any of the costs of individual goods or services increase or decrease. 
+
+The buyer reimburses the contractor for allowable costs incurred and pays a fee or profit percentage as well. 
+
+Buyers absorb more of the risk with cost-reimbursable contracts than they do with fixed-price contracts. 
+
+For example, if the cost of wood doubles, the buyer would have to absorb the additional cost. 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+46
+
+TIME-AND-MATERIAL (T&M) CONTRACTS
+
+Hybrid of both fixed price and cost-reimbursable contracts. 
+
+For example, an independent consultant might have a contract with a company based on a fee of $100 per hour for his or her services 
+plus a fixed price of $10,000 for providing specific materials for the project. 
+
+The materials fee might also be based on approved receipts for purchasing items, with a ceiling of $10,000. 
+
+The consultant would send an invoice to the company each week or month, listing the materials fee, the number of hours worked, and a 
+description of the work produced. 
+
+This type of contract is often used for services that are needed when the work cannot be clearly specified and total 
+costs cannot be estimated in a contract, such as research projects. 
+
+Many consultants prefer time-and material contracts. 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+47
+
+INDEFINITE DELIVERY INDEFINITE QUANTITY (IDIQ) CONTRACTS
+
+Provide for an indefinite quantity of goods or services for a fixed time with a stated upper and lower limit. 
+
+This type of contract helps prevent project delays and budget overruns due to uncertainty over when goods or 
+services would be needed. 
+Notes.
+
+Organizations can also use other documents instead of contracts, such as a memorandum of agreement or 
+understanding, a basic ordering agreement, or a service level agreement 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+48
+
+SAMPLE PROCUREMENT MANAGEMENT PLAN 
+Procurement Management Plan
+September 17
+Project Name: Just-In-Time Training Project
+Guidelines on Types of Contracts: To reduce Global Construction’s risk, contracts for 
+the Just-In-Time Training project should be fixed price as often as possible. When 
+goods or services cannot be well defined, other contract types may be used. The 
+representative from the contracting department assigned to this project will work 
+with the project manager to determine the appropriate contract type for each 
+contract developed.
+Standard procurement documents or templates: Global Construction’s intranet site 
+includes many sample documents and templates for project procurement. The 
+project team will review these documents and templates and use them when 
+appropriate.
+Guidelines for creating procurement documents: Global Construction’s intranet site 
+provides guidelines for creating many procurement documents. The Just-In-Time 
+Training project team should review their current work breakdown structure and 
+scope statement to provide the basis for contract work breakdown structures and 
+statements of work.
+Roles and responsibilities: The project manager is the main contact for all 
+procurement matters directly related to the Just-InTime Training project. The 
+representative from the contracting department assigned to this project will 
+coordinate with other staff in the contracting and legal departments, as needed.
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+49
+
+BID DOCUMENTS: REQUESTS FOR INFORMATION,
+PROPOSALS, OR QUOTES 
+
+Request for Proposals: Used to solicit proposals 
+from prospective sellers
+
+A proposal is a document prepared by a 
+seller when there are different approaches 
+for meeting buyer needs
+
+Requests for Quotes: Used to solicit quotes or 
+bids from prospective suppliers
+
+A bid, also called a tender or quote (short for 
+quotation), is a document prepared by 
+sellers providing pricing for standard items 
+that have been clearly defined by the buyer
+Topics addressed in an RFP usually include the following:
+
+Purpose of the RFP
+
+Background information, describing the organization issuing
+the RFP and the project itself
+
+Basic requirements for the products and/or services being
+proposed
+
+Hardware and software environment (for technology-related
+proposals)
+
+RFP process, describing how sellers should prepare and 
+submit their proposals
+
+Statement of work and schedule information
+
+Appendices providing more detailed information, as
+appropriate 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+50
+
+SAMPLE REQUESTS FOR PROPOSAL 
+Request for Proposal
+August 1
+Project Name: Just-In-Time Training Project
+RFP Name: Qualified Sellers List for Just-In-Time Training Project
+Purpose of RFP
+Global Construction wants to improve training in supplier management, negotiating skills, 
+project management, and software for its employees. In the fast-paced, ever-changing 
+construction market, effectively training employees across a globally dispersed company with 
+different populations is a challenge. By redesigning our current training, Global Construction 
+can reduce training costs and improve productivity. In addition to traditional instructor-led 
+courses provided on-site, we also want to allow our employees to learn about specific topics 
+on a just-in-time basis by having quick access to materials and expert advice. The purpose of 
+this RFP is to hire experts to help us find qualified sellers to develop and deliver these new 
+training courses.
+Background Information
+Global Construction employs 10,000 full-time employees in ten different counties and fifteen 
+states in the U.S. We want to increase the productivity of our employees, especially in the 
+sales, purchasing, engineering, and information technology departments. The Just-In-Time 
+Training Project, a one-year project, began on July 2. A key part of this project is working with 
+outside firms to develop and provide just-in-time training in supplier management, negotiating 
+skills, project management, and software applications. See Appendix A for detailed 
+information on the project and specific
+training needs.
+Basic Requirements
+The basic requirements for this work include the following:
+1. Develop a list of qualified sellers to develop and provide the training as described in 
+Appendix A.
+2. Provide a summary description and detailed evaluation of each seller. Provide company 
+brochures, websites, annual reports, and other appropriate information.
+3. Work with Global Construction to develop an evaluation system to evaluate each seller.
+4. Provide an objective evaluation of each seller using this evaluation system.
+5. Develop a list of the top five sellers for each course. 
+6. Provide recommendations for developing partnerships/relationships with each of the top 
+five sellers.
+7. Complete the above work no later than September 9.
+RFP Process
+Prospective sellers will send written proposals to Global Construction no later than August 10. 
+To prepare your proposal, use the outline in Appendix B, and examine Appendix C for our
+evaluation criteria. We expect to award the contract no later than August 20.
+Statement of Work and Schedule Information
+See Appendix D for a statement of work. The work must be completed no later than 
+September 9.
+Appendices
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+51
+
+PROCUREMENT STATEMENTS OF WORK 
+
+Another important procurement document is a procurement statement of work (SOW), a document that describes the 
+goods or services to be purchased. 
+
+The SOW should be included with the RFP to clarify the work that needs to be performed. 
+
+It is a type of scope statement that describes the work in sufficient detail to allow prospective suppliers to both determine if 
+they are capable of providing the goods and services required and to determine an appropriate price for the work. 
+
+A procurement SOW should be clear, concise, and as complete as possible. 
+
+It should describe all services required and include performance information, such as the location and timing of the work. 
+
+It is important to use appropriate words in a procurement SOW—for example, must or shall instead of may. 
+
+The procurement SOW should specify the products and services required for the project, use industry terms, and refer to industry standards. Note 
+that a SOW is a contractual document, and as such it could have legal ramifications. 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+52
+
+SAMPLE PROCUREMENT STATEMENT OF WORK 
+Procurement Statement of Work
+August 1
+Project Name: Just-in-Time Training Project
+Contract Name: Qualified Sellers List
+Scope of Work:
+1. Develop a list of qualified sellers to develop and provide the training as described 
+in Appendix A.
+2. Provide a summary description and detailed evaluation of each seller. Provide 
+company brochures, websites, annual reports, and other appropriate information.
+3. Work with Global Construction to develop an evaluation system to evaluate each 
+seller.
+4. Provide an objective evaluation of each seller using this evaluation system.
+5. Develop a list of the top five sellers for each course.
+6. Provide recommendations for developing partnerships/relationships with each of 
+the top five sellers.
+7. Complete the above work no later than September 9.
+Location of Work:
+The seller can perform the work at any location. The seller must physically meet with 
+representatives from Global Construction in our corporate office at least twice during 
+the term of the contract.
+Period of Performance:
+Work is expected to start on or around August 20 and end no later than September 
+9. The seller will prepare a detailed schedule for all work required, including dates for 
+deliverables and meetings. After meeting with representatives from Global 
+Construction to review and update the schedule, the seller will agree to the schedule 
+for this work.
+Deliverables Schedule:
+The seller will prepare a detailed schedule for all required work, including dates for 
+all deliverables and meetings. After meeting with representatives from Global 
+Construction to review and update the schedule, the seller will agree to the schedule 
+for this work.
+Applicable Standards:
+The seller will use standard software to produce the required documentation for this 
+project. Draft and final documents will be sent via e-mail.
+cceptance Criteria:
+The seller will work closely with the project manager, Kristin Maur, to clarify 
+expectations and avoid problems in providing acceptable work. Kristin will provide 
+written acceptance/non-acceptance of all deliverables.
+Special Requirements:
+The seller’s staff assigned to work on this contract must verify appropriate education 
+and experience. The seller will work with Global Construction to make all travel 
+arrangements and minimize travel costs. 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+53
+
+SOURCE SELECTION CRITERIA AND SUPPLIER EVALUATION
+MATRICES 
+
+It is highly recommended that buyers use formal supplier evaluation procedures to help select sellers. 
+
+In addition to reviewing their proposals or quotes, buyers should also review sellers’ past performance, talk to 
+recent customers, interview management teams, and request sample products or demos, if applicable. 
+
+After doing a thorough evaluation, many organizations summarize criteria and evaluations using a supplier 
+evaluation matrix—a type of weighted scoring model. 
+
+Recall from Chapter 2 that a weighted scoring model provides a systematic process for selection based on
+numerous criteria. For example, suppliers are often evaluated on criteria related to cost, quality, technology, past 
+performance, and management. The weights for all of the criteria must add up to 100% 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+54
+
+SAMPLE SUPPLIER EVALUATION MATRIX 
+
+Kristin knew her team would have to evaluate 
+suppliers for various goods and services as part of the 
+Just-In-Time Training project. 
+
+Kristin and her team reviewed Global Construction’s 
+previously used supplier evaluation matrices, and then 
+prepared a simple matrix to evaluate the suppliers for 
+the qualified-sellers list, as shown in Figure 
+
+This figure was created using the supplier evaluation 
+matrix template from the companion website, and it 
+shows results based on three suppliers. 
+
+In this example, Supplier 2 has the highest weighted
+score, so that supplier would be selected. 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+55
+
+AGILE PROCUREMENT PLANNING 
+
+Valuing customer collaboration more than contract negotiation, as stated in the Agile Manifesto, does not mean 
+that there are no contracts on agile projects. 
+
+It does mean, however, that the buyer and seller should work together to create valuable products, services, and 
+results. 
+
+It might also mean that contracts are structured differently, allowing more incentives for sellers to work in 
+partnership with the buyer. 
+
+For some projects, a master agreement could be used for an overall contract. 
+
+A master agreement allows for some work to be added in an appendix or supplement, allowing changes to occur 
+without impacting the overall contract. 
+
+Some organizations have streamlined the procurement process by using lean-agile procurement, an agile approach 
+for procurements where collaboration between people is a key success factor.
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+56
+
+CHANGE MANAGEMENT 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+57
+
+CHANGE MANAGEMENT AND APPLYING PROJECT MANAGEMENT
+PRINCIPLES TO PLANNING PROJECTS 
+
+Some projects cause big changes in organizations, so project managers as well as other managers must
+address larger cultural issues 
+
+Note that change management is distinct from change control. 
+
+Change control focuses on managing changes to project objectives. Change management focuses on the impact of 
+projects and programs on people in organizations. 
+
+In fact, some projects include a change manager on the project team. 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+58
+
+MANAGING CHANGE IN ORGANIZATIONS: A PRACTICE GUIDE 
+
+PMI publishes several practice guides, including Managing Change in Organizations: A Practice Guide (2013). 
+
+The purpose of the guide is to provide “practical help to executives and managers who are charged with the 
+responsibility for making change happen in and through programs and projects. It sets the practices, processes, 
+and disciplines on managing change in the context of portfolio, program, and project management, and illustrates 
+how change management is an essential ingredient in using project management as the vehicle for delivering 
+organizational strategy.”
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+59
+
+MANAGING CHANGE IN ORGANIZATIONS: A PRACTICE GUIDE 
+The practice guide suggests the following steps required to successfully move an organization from its current state to a desired future state:
+1.
+Formulate change: Create the rationale for the project/change to help people understand how the future state will be better than the current state
+2.
+Plan change: Identify activities to help people prepare for changes required to move from the current state to the future state. These activities should 
+be included in various plans in related knowledge areas.
+3.
+Implement change: Show the benefits of the changes and make needed improvements or adaptations as needed to ensure the project is providing the 
+intended outcomes. During project execution and monitoring and controlling, project teams implement their plans and make adjustments to plans as 
+needed.
+4.
+Manage transition: Address activities required after the future state is achieved. For example, many projects include a transition plan and activities 
+related to knowledge transfer. 
+5.
+Sustain change: Ensure the new capabilities continue. 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+60
+
+OTHER CHANGE MANAGEMENT MODEL
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+61
+ADKAR ® 
+Model
+Kotter’s 8-
+Step Process 
+for
+Leading 
+Change
+Virginia Satir
+Change 
+Model
+Bridges 
+Transition 
+Model
+
+APPLYING PROJECT MANAGEMENT PRINCIPLES TO
+CHANGE MANAGEMENT AND PLANNING PROJECTS
+The following principles relate to change management as well as planning quality, resource, communications,
+stakeholder, risk, and procurement management for predictive, agile, and hybrid projects: 
+
+Create a collaborative project team environment
+
+Focus on value
+
+Build quality into processes and deliverables
+
+Navigate complexity
+
+Optimize risk responses
+
+Enable change to achieve the envisioned future state
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+62
+
+CHAPTER SUMMARY
+
+Risk management includes several planning processes: plan risk management, identify risks, perform qualitative risk analysis, perform 
+quantitative risk analysis, and plan risk responses. 
+
+Planning outputs related to risk management include developing a risk management plan, risk report, risk response strategies, a risk 
+register, and risk-related contract decisions. 
+
+Planning outputs related to procurement management include procurement management plans, procurement strategies, bid documents, 
+procurement statements of work, source selection criteria, make-or-buy decisions, independent cost estimates, and change requests. 
+
+It is important to address organizational change management and apply several project management principles. 
+
+Several change models and principles are discussed. 
+
+Managers of agile and hybrid projects also perform planning for quality, resource, communications, stakeholder, risk, and procurement 
+management, but the emphasis is on individuals and interactions, working solutions, customer collaboration, and responding to change. 
+Some specific agile approaches include using Definitions of Done, information radiators, Scrum events, and lean agile procurement. 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+63
+

@@ -1,0 +1,846 @@
+Note: 
+Adapted from slide of the textbook: Schwalbe, Kathy. An Introduction to Project 
+Management – Seventh Edition. Minneapolis, MN:  Schwalbe Publishing, 2021. 
+See the text itself for full citations. 
+MANAJEMEN PROYEK TI  – FASILKOM UI
+1
+IT PROJECT 
+MANAGEMENT
+TOPIC 13
+MONITORING AND CONTROLLING 
+PROJECTS
+
+LEARNING OBJECTIVES
+a.
+List several processes and outputs of project 
+monitoring and controlling, and describe outputs 
+common to all knowledge areas when using a 
+predictive approach to project management
+b.
+Discuss monitoring and controlling project work and 
+performing integrated change control as part of 
+project integration management and how to use 
+earned value management
+c.
+Explain the importance of validating and controlling 
+scope
+d.
+Describe the schedule control process and schedule 
+performance measurement tools, such as tracking 
+Gantt charts 
+e.
+Discuss tools and techniques to assist in cost control 
+f.
+List the Seven Basic Tools of Quality, and provide 
+examples of how they assist in performing quality 
+control
+g.
+Explain the process of controlling resources
+h.
+Summarize methods for monitoring communications
+i.
+Discuss different approaches to monitoring 
+stakeholder engagement 
+j.
+Describe the process of monitoring risks 
+k.
+Explain how to control procurements
+l.
+Apply the project management principles to 
+monitoring and controlling projects 
+m.
+Discuss unique aspects of monitoring and controlling 
+agile/hybrid projects 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+2
+
+MONITORING AND CONTROLLING PROCESSES 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+3
+
+GOALS
+Monitoring and controlling involves regularly measuring progress to ensure that the project is meeting its 
+objectives and addressing current business needs. 
+The project manager and other staff monitor progress against plans and take corrective action when 
+necessary. 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+4
+
+SUMMARY OF MONITORING AND CONTROLLING PROCESSES AND OUTPUTS
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+5
+
+PROJECT INTEGRATION MANAGEMENT
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+6
+
+MONITORING AND CONTROLLING PROJECT WORK 
+
+Project changes are inevitable, so it is important to develop and follow a process to monitor and control them. 
+
+Monitoring and controlling project work includes collecting, measuring, and disseminating performance information.
+
+The project team should continuously monitor project performance to assess the overall health of the project and identify areas that 
+require special attention.
+
+The project management plan, project documents, work performance reports (including earned value management 
+and performance reports), agreements, enterprise environmental factors, and organizational process assets are all 
+important inputs for monitoring and controlling project work. 
+
+The main tools and techniques for monitoring and controlling project work are expert judgment, data analysis, 
+decision making, and meetings. 
+
+Earned value management reports are a powerful tool for monitoring and controlling overall project performance. 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+7
+
+FORECASTING WITH EARNED VALUE MANAGEMENT 
+
+Earned value management (EVM) is a project performance measurement technique that integrates scope, time, 
+and cost data.
+
+Given a baseline, project managers and their teams can determine how well the project is meeting scope, time, and 
+cost goals by entering actual information and then comparing it to the baseline. 
+
+A baseline is a starting point, a measurement, or an observation that is documented so that it can be used for future comparison. 
+
+In earned value management, a baseline includes the following:
+
+Scope (WBS deliverables)
+
+Time (start and finish estimates for each activity)
+
+Cost information (cost estimates for each activity)
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+8
+
+EVM : PV, AC, EV
+Earned value management involves determining three values for each deliverable or summary deliverable from a 
+project’s WBS :
+1.
+The planned value (PV) is the authorized budget assigned to scheduled work. 
+The cost baseline for the Just-In-Time Training project included $5,000 to be spent on course development for supplier management 
+training. If the activity involved delivering a detailed course outline to be finished in one week for $5,000, then the planned value (PV) for 
+that activity that week would be $5,000.
+2.
+The actual cost (AC) is the realized cost incurred for the work performed on an activity during a specific time period
+For example, suppose it actually took one week and cost $6,000 to create the detailed course outline because the hourly rate for the person 
+doing the work was higher than planned. The actual cost (AC) for the activity would therefore be $6,000. 
+3.
+The earned value (EV) is the measure of work performed expressed in terms of the budget authorized for that work. 
+It cannot be greater than the authorized PV budget for a component as it is calculated as the sum of the PV of the completed work. For this 
+example, the EV is $5,000. 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+9
+
+EARNED VALUE FORMULA
+
+In general, negative numbers for cost 
+and schedule variance indicate 
+problems in those areas. 
+
+Negative numbers mean the
+project is costing more than planned 
+(over budget) or taking longer than 
+planned (behind schedule). 
+
+Likewise, CPI and SPI less than one or 
+less than 100% indicate problems.
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+10
+
+EVM GRAPH
+
+The budget at completion (BAC), or the approved 
+total budget for the project, can be divided by 
+the cost performance index to calculate the 
+estimate at completion (EAC), which is a 
+forecast of how much the project will cost upon 
+completion. 
+
+This calculation assumes you will be spending at the 
+same rate as your current level of spending. 
+
+Likewise, the approved time estimate for the 
+project can be divided by the schedule 
+performance index to calculate when the project 
+will be completed. 
+
+Earned value, therefore, provides an excellent 
+way to monitor project performance and provide 
+forecasts based on performance to date. 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+11
+
+EVM PRACTICE (2011)
+
+EVM is used worldwide, and it is 
+popular in the Middle East, South Asia, 
+Canada, and Europe. 
+
+Most countries require EVM for large 
+defense or government projects.
+
+Project budget size appears to be the 
+most important factor in deciding 
+whether or not to use EVM. 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+12
+
+EXAMPLE - FORECAST USING AN EARNED VALUE CHART 
+
+The budget at completion is $1.2 million for this 
+one-year project. The BAC point on the chart, 
+therefore, is at 12 months and $1.2 million. Based 
+on data for months one through six, an earned 
+value chart was created. In this example, the 
+planned value is $100,000 for each month, so the 
+cumulative planned value at month 6 is $600,000. 
+The earned value is $150,000 each month, with 
+the cumulative earned value at month 6 of 
+$900,000. The actual cost is $200,000 each 
+month, with the cumulative actual cost at month 6 
+of $1,200,000 
+
+CPI = EV/AC = $900,000/$1,200,000 = .75
+
+SPI = EV/PV = $900,000/$600,000 = 1.5
+
+EAC = BAC/CPI = $1,200,000/.75 = $1,600,000
+
+New completion date estimate = Original time 
+estimate/ SPI = 12 months/1.5 = 8 months* 
+
+*Note that some experts think SPI should not be used for estimating new completion 
+dates because you need to reevaluate the critical path of the project 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+13
+
+EXAMPLE - FORECAST USING AN EARNED VALUE CHART 
+
+If the project goes exactly as planned, it will finish in 12 months 
+and cost $1,200,000, as represented by the BAC point.
+
+Notice in the example that the actual cost line is always above the 
+earned value line. 
+
+When the actual cost line is above the earned value line, costs are more 
+than planned. That situation is usually not good. 
+
+The planned value line in this example is always below the earned 
+value line. 
+
+This relationship means that the project has been ahead of schedule the 
+first six months. That situation is normally good, but it may not be. 
+
+The forecasted completion date, therefore, is earlier than planned 
+while the forecasted total cost is higher than planned. 
+
+As this trend started at month one and continued each month, you can 
+assume that the project sponsor did want the project completed early and 
+was willing to pay the extra cost. If this was not the case and the sponsor 
+was not willing to pay more for an early completion, the project manager 
+would have to scramble to try to complete the project within the approved 
+time and budget constraints.
+
+The estimate at completion (EAC) is an important input to budget 
+decisions, especially if total funds are limited. 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+14
+
+PERFORMANCE REPORTS 
+
+Status reports describe where the project stands at a specific point in time. 
+
+Recall the importance of the triple constraint. Status reports address where the project stands in terms of meeting scope, time, and cost 
+goals. Is work being accomplished as planned? How long did it take to do certain activities? How much money has been spent to date? 
+Status reports can take various formats depending on the stakeholders’ needs.
+
+Progress reports describe what the project team has accomplished during a certain period. 
+
+In many projects, each team member prepares a weekly or monthly progress report. Team leaders often create consolidated progress 
+reports based on the information received from team members.
+
+Forecasts predict future project status and progress based on past information and trends. 
+
+How long will it take to finish the project based on how things are going? How much more money will be needed to complete the project?
+Project managers can also use earned value management, as described in the previous section, to answer these questions by 
+estimating the budget at completion and the projected completion date based on how the project is progressing. 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+15
+
+SAMPLE PERFORMANCE REPORT 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+16
+
+INTEGRATED CHANGE CONTROL 
+Integrated change control involves identifying, evaluating, and managing changes throughout the project’s life cycle. 
+The three main objectives of integrated change control are as follows:
+
+1. Influencing the factors that cause changes to ensure that changes are beneficial: Changes can often be good for 
+a project, so it is important to let everyone know that and  focus on promoting changes that are beneficial. 
+
+For example, changes that improve quality, reduce costs, save time, or improve stakeholder relationships are beneficial. 
+
+2. Determining that a change has occurred: To determine that a change has occurred, project managers must know 
+the status of key project areas at all times. 
+
+3. Managing actual changes as they occur: Managing change is a key role of project managers and their teams. 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+17
+
+PROJECT SCOPE MANAGEMENT 
+
+The main monitoring and controlling processes performed as part of project scope management are validating 
+scope and controlling scope. 
+
+Key outputs are accepted deliverables and work performance information. 
+
+Detailed procedures must be developed to ensure that customers are getting what they want and that the project 
+team has enough time and money to produce the desired products and services.
+
+Even when the project scope is fairly well defined, many projects suffer from scope creep
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+18
+
+VALIDATING SCOPE 
+
+Scope validation involves formal acceptance of the completed project deliverables by the project customer or designated 
+stakeholders. 
+
+This acceptance is often achieved through customer inspection and then sign-off on key deliverables. 
+
+To receive formal acceptance of the project scope, the project team must develop clear documentation of the project’s 
+products and procedures, which the appropriate stakeholders can then evaluate for completion and their satisfaction with 
+the results. 
+
+The project management plan, project documents, verified deliverables, and work performance data are the main inputs 
+for scope validation.
+
+A verified deliverable has been completed and checked for correctness as part of quality control, while validation means 
+acceptance by the customer or identified stakeholders. 
+
+The main tools for performing scope validation are inspection and decision-making. 
+
+The customer inspects the work after it is delivered to decide if it is acceptable. The customer is often more than one person, so group decision-
+making is often required for the inspection and acceptance. 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+19
+
+SAMPLE OF ACCEPTED AND UNACCEPTED DELIVERABLES
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+20
+
+CONTROLLING SCOPE 
+
+You cannot control the scope of a project unless you have first clearly defined the scope and set a scope validation 
+process in place. 
+
+You also need to develop a process for soliciting and monitoring changes to project scope. 
+
+Stakeholders should be encouraged to suggest beneficial changes and discouraged from suggesting unnecessary 
+changes 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+21
+
+PROJECT SCHEDULE MANAGEMENT 
+
+The main monitoring and controlling process performed as part of project schedule management is controlling the schedule or schedule control. 
+
+Project managers often cite delivering projects on time (schedule control) as one of their biggest challenges, because schedule problems often cause more conflict than other issues. 
+
+During project initiation, priorities and procedures are often most important, but as the project proceeds, especially during the middle and latter stages of a project, schedule issues become the predominant source of 
+conflict.
+
+Perhaps part of the reason schedule problems are so common is that time is easily and simply measured. 
+
+After a project schedule is set, anyone can quickly estimate schedule performance by subtracting the original time estimate from the time actually expended.
+
+People often compare planned and actual project completion times without considering the approved project changes. 
+
+Time is also the variable with the least amount of flexibility. 
+
+Time passes no matter what happens on a project. 
+
+Individual work styles and cultural differences may also cause schedule conflicts. For example, one dimension of the MyersBriggs team-building tool that was described in Chapter 6 (Judgment/Perception, or J/P) deals 
+with peoples’ attitudes toward structure and deadlines. Some people (J’s) prefer detailed schedules and focus on task completion. Others (P’s) prefer to keep things open and flexible. Different cultures and even entire 
+countries have different attitudes about schedules. For example, in some countries, businesses close for several hours every afternoon so workers can take naps. Others observe religious or secular holidays during which 
+little work is accomplished. Cultures may also have different perceptions of work ethic—some may value hard work and strict schedules, whereas others may value the ability to remain relaxed and flexible. 
+
+The goal of schedule control is to know the status of the schedule, influence the factors that cause schedule changes,
+determine whether the schedule has changed, and manage changes when they occur. Key outputs of schedule control include schedule
+forecasts and work performance information. There are several tools and techniques for schedule control, including data analysis (such as
+earned value management, as described earlier in this chapter), project management information systems, resource optimization,
+and several tools discussed in Chapter 5 (such as critical path method, leads and lags, and schedule compression). 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+22
+
+SAMPLE WORK PERFORMANCE INFORMATION 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+23
+
+Project managers often illustrate schedule progress at these meetings with a tracking Gantt chart—a Gantt chart that 
+compares planned and actual project schedule information. 
+
+Many project managers believe that tracking Gantt charts are an excellent tool for tracking project schedule performance 
+and reporting that information to stakeholders. 
+
+The tracking Gantt chart shows bars for both planned and actual start and finish dates for each task as well as the percent 
+of work completed. 
+
+SAMPLE WORK PERFORMANCE INFORMATION 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+24
+
+Notice that the tracking Gantt chart in Figure 8-8 often shows two horizontal bars for tasks. The top horizontal bar represents the 
+planned or baseline duration for each task.
+
+The bar below it represents the actual duration. 
+
+A white diamond on the tracking Gantt chart represents a slipped milestone. A slipped milestone refers to a milestone activity that 
+was completed later than originally planned. 
+
+Percentages to the right of the horizontal bars display the percentage of work completed for each task. 
+
+For example, 100% indicates that the task is finished, whereas 50% indicates that the task is still in progress and is 50% completed.
+
+In the columns to the left of the tracking Gantt chart, you can display baseline and actual start and finish dates 
+
+PROJECT COST MANAGEMENT 
+
+Cost control includes monitoring cost performance, ensuring that only appropriate project changes are included in a 
+revised cost baseline, and informing project stakeholders of authorized changes to the project that will affect costs.
+
+The project management plan, project documents, project funding requirements, work performance data, and 
+organizational process assets are inputs to the cost-control process. 
+
+Outputs of cost control include work performance information, cost forecasts, change requests, project 
+management plan updates, and project documents updates. Several tools and techniques assist in project cost 
+control, including expert judgment, data analysis, project management information systems, and the To-complete 
+performance index (TCPI), which is a measure of the cost performance that must be achieved on the remaining 
+work in order to meet a specified goal, such as the BAC or EAC. As mentioned in the following What Went Right? 
+examples, there is great room for improvement in project cost management in many industries. 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+25
+
+PROJECT QUALITY MANAGEMENT 
+The main project quality management process for monitoring and controlling is quality control. Key outputs include quality-
+control measurements, verified deliverables, work performance information, change requests, project management plan 
+updates, and project documents updates. Although one of the main goals of quality control is to ensure and improve quality, 
+the main outcomes of this process are acceptance decisions, rework, and process adjustments.
+1.
+Acceptance decisions determine if the products or services produced as part of the project will be accepted or rejected.
+If they are accepted, they are considered to be verified deliverables. If project stakeholders reject some of the products or 
+services produced as part of the project, there must be rework.
+2.
+Rework is action taken to bring rejected items into compliance with product requirements or specifications or other 
+stakeholder expectations. Rework can be very expensive, so the project manager who excels at quality planning and quality 
+assurance can reduce the need for rework.
+3.
+Process adjustments correct or prevent further quality problems. Based on the implementation of quality-control
+measurements, process adjustments often result in updates to the quality baseline, organizational process assets, and
+the project management plan. 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+26
+
+SAMPLE QUALITY-CONTROL TOOLS 
+Many different tools and techniques are available for performing quality control. The PMBOK® Guide – Sixth Edition, 
+lists the following:
+
+Data gathering: Checklists, check sheets, statistical sampling, questionnaires, and surveys
+
+Data analysis: Performance reviews and root cause analysis Inspection
+
+Testing/product evaluations Data representation: cause-and-effect diagrams, control charts, histograms, and 
+scatter diagrams 
+
+Meetings 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+27
+
+SEVEN BASIC TOOLS OF QUALITY 
+1. Cause-and-effect diagrams
+2. Quality Control Charts
+3. Checksheet
+4. Scatter diagram
+5. Histograms
+6. Pareto Charts
+7. Flowcharts
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+28
+
+1. CAUSE-AND-EFFECT DIAGRAMS
+Cause-and-effect diagrams trace  complaints about quality problems back to the responsible 
+production operations
+They help you find the root cause of a problem
+Also known as fishbone or Ishikawa diagrams
+Can also use the 5 whys technique where you repeated ask the question “Why” (five is a good rule 
+of thumb) to peel away the layers of symptoms that can lead to the root cause
+INFORMATION TECHNOLOGY PROJECT MANAGEMENT, EIGHTH EDITION
+29
+
+FIGURE 8-2. SAMPLE CAUSE-AND-EFFECT DIAGRAM
+30
+INFORMATION TECHNOLOGY PROJECT MANAGEMENT, EIGHTH EDITION
+
+2. QUALITY CONTROL CHARTS
+A control chart is a graphic display of data that illustrates the results of a process over 
+time
+The main use of control charts is to prevent defects, rather than to detect or reject them
+Quality control charts allow you to determine whether a process is in control or out of 
+control
+When a process is in control, any variations in the results of the process are created by random 
+events; processes that are in control do not need to be adjusted
+When a process is out of control, variations in the results of the process are caused by non-
+random events; you need to identify the causes of those non-random events and adjust the 
+process to correct or eliminate them
+INFORMATION TECHNOLOGY PROJECT MANAGEMENT, EIGHTH EDITION
+31
+
+THE SEVEN RUN RULE
+
+You can use quality control 
+charts and the seven run rule 
+to look for patterns in data
+
+The seven run rule states that 
+if seven data points in a row 
+are all below the mean, above 
+the mean, or are all increasing 
+or decreasing, then the process 
+needs to be examined for non-
+random problems
+32
+INFORMATION TECHNOLOGY PROJECT MANAGEMENT, EIGHTH EDITION
+
+3. CHECKSHEET
+
+A checksheet is used to collect and analyze data
+
+It is sometimes called a tally sheet or checklist, depending on its format
+
+In the example in Figure 8-4, most complaints arrive via text message, and there are more 
+complaints on Monday and Tuesday than on other days of the week
+
+This information might be useful in improving the process for handling complaints
+33
+INFORMATION TECHNOLOGY PROJECT MANAGEMENT, EIGHTH EDITION
+
+4. SCATTER DIAGRAM
+
+A scatter diagram helps to show if there is a relationship between two variables
+
+The closer data points are to a diagonal line, the more closely the two variables are related
+34
+INFORMATION TECHNOLOGY PROJECT MANAGEMENT, EIGHTH EDITION
+
+5. HISTOGRAMS
+
+A histogram is a bar graph of a distribution of variables
+
+Each bar represents an attribute or characteristic of a problem or situation, and the height of the bar 
+represents its frequency
+35
+INFORMATION TECHNOLOGY PROJECT MANAGEMENT, EIGHTH EDITION
+
+6. PARETO CHARTS
+
+A Pareto chart is a 
+histogram that can help you 
+identify and prioritize 
+problem areas
+
+Pareto analysis is also called 
+the 80-20 rule, meaning 
+that 80 percent of problems 
+are often due to 20 percent 
+of the causes
+INFORMATION TECHNOLOGY PROJECT MANAGEMENT, EIGHTH EDITION
+36
+
+7. FLOWCHARTS
+
+Flowcharts are graphic 
+displays of the logic and flow 
+of processes that help you 
+analyze how problems occur 
+and how processes can be 
+improved
+
+They show activities, 
+decision points, and the 
+order of how information is 
+processed
+INFORMATION TECHNOLOGY PROJECT MANAGEMENT, EIGHTH EDITION
+37
+
+PROJECT RESOURCE MANAGEMENT 
+
+Controlling resources involves ensuring that the physical resources assigned to the project are available as planned 
+and monitoring the planned versus actual resources utilization, taking corrective actions as needed. 
+
+Making effective use of team members is addressed under the Manage Team process. 
+
+Tools and techniques include data analysis, problem solving, interpersonal and team skills, and project 
+management information systems. 
+
+Key outputs include work performance information, change requests, project management plan updates, and 
+project document updates. 
+38
+
+PROJECT COMMUNICATIONS MANAGEMENT 
+
+Monitoring communications involves monitoring communications throughout the project life cycle to ensure that 
+stakeholder information needs are met. 
+
+Key outputs include work performance information, change requests, project management plan updates, and 
+project documents updates. 
+
+Work performance information focuses on how well project communication is performed compared to what was 
+planned. 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+39
+
+PROJECT STAKEHOLDER MANAGEMENT 
+
+You cannot control stakeholders, but you can monitor their level of engagement. 
+
+Monitoring stakeholder engagement involves monitoring overall project stakeholder relationships and adjusting 
+strategies and plans for engaging stakeholders as needed. 
+
+The project management plan, project documents, work performance data, enterprise environmental factors, and organizational process 
+assets are important inputs to this process. 
+
+The project team uses data analysis, decision making, data representation, communication skills, interpersonal and team skills, and 
+meetings as the main tools and techniques. 
+
+The outputs of monitoring stakeholder engagement are work performance information, change requests, project management plan 
+updates, and project document updates. 
+
+On some projects, stakeholder engagement is monitored by making them key members of the project team. 
+
+It’s important to understand the needs and desires of different types of customers as well. 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+40
+
+PROJECT RISK MANAGEMENT 
+
+Monitoring risks involves tracking identified risk events and implementing the risk response plans, while continuing to 
+identify and analyze new risks and evaluate risk process effectiveness. 
+
+Project risk management does not stop with the initial risk analysis. 
+
+Identified risk events may not materialize, or their probabilities of occurrence or impact may diminish or increase. 
+
+Similarly, new risk events are normally identified as the project progresses. 
+
+Newly identified risk events need to go through the same process of analysis and monitoring as those identified during the 
+initial risk assessment. 
+
+Project teams sometimes use workarounds— unplanned responses to risk events—when they do not have contingency 
+plans in place. 
+
+Data analysis (i.e., technical performance measurement and reserve analysis), audits, and meetings are all tools and 
+techniques for performing risk monitoring. 
+
+Outputs of this process include work performance information, change requests, project management plan updates, 
+project documents updates (especially updating the risk register), and organizational process assets updates. 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+41
+
+PROJECT PROCUREMENT MANAGEMENT 
+
+Controlling procurements involves managing procurement relationships, monitoring contract performance, making changes and taking 
+corrective actions as needed, and closing out contracts. 
+
+Several tools and techniques can help in contract administration, including expert judgment, claims administration, data analysis, inspection, 
+and audits. 
+
+In addition to work performance information, change requests, project management plan updates, project documents updates, and 
+organizational process asset updates, key outputs of controlling procurements include closed procurements and procurement 
+documentation updates. 
+
+It is very important to document all changes to the contract and communicate those changes to all affected stakeholders. 
+
+Project team members must be aware of the potential legal problems of their not understanding a contract. Changes must be handled 
+properly for items under contract. 
+
+Professionals in procurement management should be consulted as needed.
+
+It is critical that project managers and team members watch for constructive change orders. Constructive change orders are oral or written 
+acts or omissions by someone with actual or apparent authority that can be construed to have the same effect as a written change order. 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+42
+
+SAMPLE WRITTEN NOTICE OF A CLOSED CONTRACT 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+43
+
+APPLYING PROJECT MANAGEMENT PRINCIPLES TO MONITORING AND
+CONTROLLING PROJECTS 
+
+Although several of the project management principles apply to monitoring and controlling projects, the one 
+principle that stands out is embracing adaptability and resiliency. 
+
+Adaptability is the ability to respond to changing conditions. 
+
+Resiliency is the ability to absorb impacts and to recover quickly from a setback or failure.
+
+As described throughout this chapter, it’s important for project teams to expect changes, plan for them, and be 
+adaptable and resilient in responding to them. Below are a few suggestions to help teams embrace adaptability and 
+resiliency:
+1.Try to build diverse teams with broad skill sets and experiences
+2.Emphasize the importance of continuous learning and improvement
+3.Encourage open conversations and new ideas
+4.Provide and receive feedback often
+5.Focus on meeting desired outcomes instead of just providing planned deliverables 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+44
+
+MONITORING AND CONTROLLING AGILE/HYBRID PROJECTS 
+
+Hybrid projects can use any of the predictive processes, tools, and techniques to monitoring and controlling mentioned so 
+far in this chapter as well as any agile approaches they decide will help the project be successful. 
+
+The Scrum Guide (2020) does not mention project control directly, but several events assist in monitoring and controlling 
+as follows:
+
+Daily Scrum: “The purpose of the Daily Scrum is to inspect progress toward the Sprint Goal and adapt the Sprint Backlog as 
+necessary, adjusting the upcoming planned work.” Developers can also meet throughout the day to discuss adapting or 
+replanning the rest of the sprint’s work. 
+
+Sprint Review: “The purpose of the Sprint Review is to inspect the outcome of the Sprint and determine future adaptations. 
+The Scrum Team presents the results of their work to key stakeholders and progress toward the Product Goal is discussed. 
+During the event, the Scrum Team and stakeholders review what was accomplished in the Sprint and what has changed in 
+their environment. Based on this information, attendees collaborate on what to do next. The Product Backlog may also be 
+adjusted to meet new opportunities.”
+At the sprint level, Scrum teams often use several artifacts to monitor progress include task boards or Kanban boards, burn 
+charts, and velocity charts 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+45
+
+BURN CHARTS
+
+Burn charts show project team velocity. 
+
+“Velocity measures the productivity rate at which the deliverables are produced, validated, and accepted within a predefined interval.”
+
+Burndown charts show the amount of work (number of tasks) remaining compared to the plan. They are often used 
+for each sprint and discussed during sprint retrospectives.
+
+Burnup charts show the amount of work (tasks) completed compared to the plan. They can be used during each 
+sprint, and they can also show progress for several sprints. Recall that the total amount of planned work often 
+changes as the product backlog changes. Burnup charts show changes in planned work.
+
+Combined burn charts show how much work has been completed and how much remains.
+
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+46
+
+SAMPLE BURNDOWN CHARTS 
+
+It is important to note that 
+burn charts do not indicate 
+which tasks have been 
+completed. 
+
+This means that a team can 
+have a burndown chart that 
+shows continued progress, 
+but it does not show if the 
+team has completed the 
+most important tasks. 
+
+Burn charts only provide an 
+indication of trends rather 
+than giving explicit indication 
+of whether a team is 
+delivering the right product 
+backlog items if they do not 
+complete all tasks
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+47
+
+SAMPLE BURNUP CHARTS 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+48
+
+VELOCITY CHARTS 
+
+Sprint teams use velocity to measure how much work they can complete 
+in each iteration. 
+
+It is widely used to help teams create accurate and efficient timelines. 
+
+Sprint team velocity is not constant; rather, it varies. 
+
+Note that velocity charts are not intended to be a tool for monitoring the team. 
+
+They are most useful as a tool for release planning. 
+
+The velocity chart is created after the first sprint and updated after each 
+completed sprint. 
+
+The velocity of the sprints helps managers to calibrate the release plan.
+
+“There is no ideal velocity number; an upward trend is not necessarily a good 
+thing and a downward trend is not always negative. But both will signal you to 
+dig deeper into areas of the development process that can help you achieve 
+efficiency while maintaining technical quality.”
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+49
+
+CHAPTER SUMMARY
+
+Monitoring and controlling involves regularly measuring progress to ensure that the project is meeting its objectives and addressing current 
+business needs. 
+
+The project manager and other staff monitor progress against plans and take corrective action when necessary. 
+
+Outputs common to several knowledge areas include change requests, work performance information, organizational process assets 
+updates, project management plan updates, and project document updates.
+
+As part of integration management, project managers must monitor and control project work and perform integrated change control. 
+
+Earned value management is a project performance measurement technique that integrates scope, time, and cost data. 
+
+Monitoring and controlling processes related to scope management include validating scope and controlling scope. 
+
+Scope validation means the customer or designated stakeholders have formally accepted the completed project deliverables.
+
+Controlling costs and schedules are common challenges for project managers. 
+
+Earned value management can aid in creating cost and schedule forecasts. 
+
+Unique outputs of controlling quality include quality control measurements and verified deliverables. 
+
+Verified deliverables have been completed and checked for correctness as part of quality control. 
+
+There are many tools and techniques for controlling quality, including the seven basic tools of quality. 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+50
+
+CHAPTER SUMMARY
+
+Controlling resources involves ensuring that the physical resources assigned to the project are available as planned and monitoring the 
+planned versus actual resource utilization, taking corrective action as needed. 
+
+Monitoring communications involves monitoring communications throughout the project life cycle to ensure that stakeholder information 
+needs are met.
+
+Monitoring stakeholder engagement involves monitoring overall project stakeholder relationships and adjusting strategies and plans for 
+engaging stakeholders as needed. 
+
+It is important to reassess risks, and an important output of controlling risks is updating the risk register. 
+
+Controlling procurements involves managing procurement relationships, monitoring contract performance, making changes and taking 
+corrective actions as needed, and closing out contracts. 
+
+Project managers should apply the project management principle of embracing adaptability and resiliency when monitoring and controlling 
+projects. 
+
+Agile teams also monitor and control their projects. Daily Scrums and sprint reviews are events that assist in monitoring and controlling on a 
+regular basis. Burn charts, task boards, and velocity charts are artifacts that assist in showing progress to all interested stakeholders. 
+MANAJEMEN PROYEK TI 2020 – FASILKOM UI
+51
+

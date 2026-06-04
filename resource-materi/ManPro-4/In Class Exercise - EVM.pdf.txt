@@ -1,0 +1,22 @@
+Kerjakan dalam kelompok 2-3 orang
+Sebuah proyek pembangunan aplikasi mobile dijadwalkan berlangsung selama 4 bulan dengan total anggaran sebesar Rp 
+200.000.000. Pada akhir bulan ke-2:
+●
+Biaya aktual yang telah dikeluarkan adalah Rp 120.000.000
+●
+Nilai pekerjaan yang seharusnya selesai menurut jadwal adalah Rp 100.000.000
+●
+Nilai pekerjaan yang benar-benar telah diselesaikan  adalah Rp 110.000.000
+Pertanyaan:
+1.
+Hitung nilai Cost Variance (CV) dan interpretasinya.
+2.
+Hitung nilai Schedule Variance (SV) dan interpretasinya.
+3.
+Hitung nilai Cost Performance Index (CPI) dan Schedule Performance Index (SPI).
+4.
+Apakah proyek ini berada di bawah atau di atas anggaran? Dan apakah proyek ini sesuai jadwal?
+5.
+Berdasarkan kinerja di akhir bulan ke-2, berapakah biaya yang akan dihabiskan untuk menyelesaikan proyek, dan kapan 
+proyek akan selesai? (Buatlah grafik EVM nya)
+
