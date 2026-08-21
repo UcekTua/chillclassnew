@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulasi UAS Manajemen Bisnis (40 Soal PG) — Chill Class</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+            --bg: #0a0e1a; --bg2: #111827; --bg-card: rgba(17,24,39,0.7);
+            --border: rgba(244,63,94,0.2); --border-h: rgba(244,63,94,0.5);
+            --text: #f1f5f9; --text2: #94a3b8; --text3: #64748b;
+            --blue: #6366f1; --cyan: #06b6d4; --violet: #8b5cf6;
+            --emerald: #10b981; --amber: #f59e0b; --rose: #f43f5e;
+            --grad-uas: linear-gradient(135deg, #f43f5e, #f59e0b);
+        }
+        body { font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); line-height:1.8; }
+        .bg-orbs { position:fixed; top:0; left:0; width:100%; height:100%; z-index:0; overflow:hidden; pointer-events:none; }
+        .bg-orbs span { position:absolute; border-radius:50%; filter:blur(80px); opacity:0.12; }
+        .bg-orbs span:nth-child(1) { width:500px; height:500px; background:var(--rose); top:-10%; left:-5%; }
+        .bg-orbs span:nth-child(2) { width:400px; height:400px; background:var(--amber); bottom:10%; right:-5%; }
+
+        .wrapper { position:relative; z-index:1; max-width:920px; margin:0 auto; padding:40px 24px 80px; }
+
+        .topnav { display:flex; align-items:center; gap:12px; margin-bottom:48px; flex-wrap:wrap; position:sticky; top:0; z-index:100; background:rgba(10,14,26,0.85); backdrop-filter:blur(12px); padding:20px 0; }
+        .topnav a { color:var(--text2); text-decoration:none; font-size:0.85rem; font-weight:500; transition:color 0.3s; }
+        .topnav a:hover { color:var(--rose); }
+        .topnav .sep { color:var(--text3); }
+
+        .ch-header { margin-bottom:48px; text-align:center; animation:fadeUp .6s ease-out; }
+        .ch-badge { display:inline-block; padding:5px 16px; border-radius:100px; background:rgba(244,63,94,0.12); border:1px solid rgba(244,63,94,0.25); color:var(--rose); font-size:0.75rem; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; margin-bottom:16px; }
+        .ch-header h1 { font-size:clamp(2rem,4.5vw,3rem); font-weight:900; background:var(--grad-uas); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; margin-bottom:12px; }
+        .ch-header p { color:var(--text2); font-size:1.05rem; max-width:700px; margin: 0 auto; }
+
+        .q-card { background:var(--bg-card); backdrop-filter:blur(16px); border:1px solid var(--border); border-radius:16px; padding:28px 30px; margin-bottom:24px; transition:border-color 0.3s; }
+        .q-card.correct { border-color:var(--emerald) !important; background: rgba(16,185,129,0.05); }
+        .q-card.wrong { border-color:var(--rose) !important; background: rgba(244,63,94,0.05); }
+        .q-num { font-size:0.75rem; font-weight:700; color:var(--rose); text-transform:uppercase; letter-spacing:1.5px; margin-bottom:10px; display:flex; justify-content:space-between; align-items:center; }
+        .q-topic { font-size:0.72rem; padding:3px 10px; border-radius:100px; background:rgba(148,163,184,0.1); color:var(--text2); }
+        .q-text { font-size:1rem; font-weight:600; color:var(--text); margin-bottom:18px; line-height:1.6; }
+        .q-options label { display:flex; align-items:flex-start; gap:12px; padding:12px 16px; margin-bottom:8px; border-radius:12px; cursor:pointer; transition:background 0.2s, border-color 0.2s; font-size:0.92rem; color:var(--text2); border:1px solid rgba(148,163,184,0.08); }
+        .q-options label:hover { background:rgba(244,63,94,0.06); border-color:rgba(244,63,94,0.2); }
+        .q-options input[type="radio"] { margin-top:4px; accent-color:var(--rose); }
+
+        .q-feedback { margin-top:16px; padding:16px 20px; border-radius:12px; font-size:0.9rem; display:none; }
+        .q-feedback.show { display:block; }
+        .q-feedback.correct-fb { background:rgba(16,185,129,0.1); border:1px solid rgba(16,185,129,0.25); color:var(--emerald); }
+        .q-feedback.wrong-fb { background:rgba(244,63,94,0.1); border:1px solid rgba(244,63,94,0.25); color:var(--rose); }
+
+        .btn { display:inline-flex; align-items:center; gap:8px; padding:16px 36px; border:none; border-radius:14px; font-family:inherit; font-size:0.95rem; font-weight:700; cursor:pointer; transition:all 0.3s; }
+        .btn-primary { background:var(--grad-uas); color:#fff; }
+        .btn-primary:hover { transform:translateY(-2px); box-shadow:0 8px 24px rgba(244,63,94,0.35); }
+        .btn-secondary { background:rgba(148,163,184,0.1); color:var(--text2); border:1px solid var(--border); }
+        .btn-secondary:hover { border-color:var(--border-h); color:var(--text); }
+
+        .results-box { background:var(--bg-card); backdrop-filter:blur(20px); border:2px solid var(--rose); border-radius:24px; padding:40px; margin-top:36px; display:none; text-align:center; }
+        .results-box.show { display:block; animation:fadeUp .5s ease-out; }
+        .score-num { font-size:4rem; font-weight:900; line-height:1; margin-bottom:12px; }
+        .score-num.good { color:var(--emerald); }
+        .score-num.ok { color:var(--amber); }
+        .score-num.bad { color:var(--rose); }
+        .score-label { color:var(--text2); font-size:1.1rem; margin-bottom:24px; }
+
+        @keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+
+        @media (max-width:768px) {
+            .wrapper { padding:24px 16px 60px; }
+            .q-card { padding:20px; }
+        }
+        .topnav { position:fixed !important; top:24px !important; right:24px !important; margin:0 !important; background:rgba(10,14,26,0.6) !important; padding:10px 24px !important; border-radius:100px !important; border:1px solid rgba(99,102,241,0.3) !important; box-shadow: 0 8px 32px rgba(0,0,0,0.5) !important; width:auto !important; flex-wrap: nowrap !important; }
+        .bottom-nav { display:none !important; }
+        .watermark { display: none !important; }
+        .wrapper { padding-top: 80px !important; }
+        @media (max-width:768px) {
+            .topnav { top:auto !important; bottom:24px !important; right:50% !important; transform:translateX(50%) !important; padding:8px 16px !important; font-size: 0.8rem !important; white-space: nowrap !important; overflow-x: auto !important; max-width: 90vw !important; gap: 8px !important; }
+        }
+    </style>
+</head>
+<body>
+<div class="bg-orbs"><span></span><span></span></div>
+<div class="wrapper">
+
+<nav class="topnav">
+    <a href="index.html">🏠 Beranda</a>
+    <span class="sep">/</span>
+    <span style="color:var(--rose); font-weight:700;">🎯 Simulasi UAS (40 PG)</span>
+</nav>
+
+<div class="ch-header">
+    <div class="ch-badge">UAS Simulation</div>
+    <h1>Simulasi Ujian Akhir Semester</h1>
+    <p>40 Soal Pilihan Ganda mencakup seluruh 11 Topik Manajemen Bisnis. Jawabanmu tersimpan otomatis di browser (localStorage) sehingga tidak hilang walau di-refresh.</p>
+</div>
+
+<form id="uasForm">
+    <!-- Soal 1 s/d 40 -->
+    <div id="questionsContainer"></div>
+
+    <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap; margin-top:36px;">
+        <button type="button" class="btn btn-primary" onclick="submitUAS()">🚀 Submit & Lihat Hasil</button>
+        <button type="button" class="btn btn-secondary" onclick="resetUAS()">🔄 Reset Ujian</button>
+    </div>
+</form>
+
+<div class="results-box" id="resultsBox">
+    <div class="score-num" id="scoreNum">0/40</div>
+    <div class="score-label" id="scoreLabel">Hasil Ujian Kamu</div>
+    <p id="scoreDetail" style="color:var(--text2); font-size:0.95rem; margin-bottom:24px;"></p>
+    <button class="btn btn-secondary" onclick="window.scrollTo({top:0, behavior:'smooth'})">⬆️ Review Pembahasan Soal di Atas</button>
+</div>
+
+</div>
+
+<script>
+const STORAGE_KEY = 'manbis_uas_sim_v1';
+
+const uasQuestions = [
+    // Topik 1
+    { t: 'Topik 1', q: 'Aktivitas yang bertujuan menyediakan barang dan jasa untuk mendapatkan keuntungan (profit) disebut...', o: ['Entrepreneurship', 'Business', 'Outsourcing', 'Insourcing'], a: 'b', exp: 'Business adalah aktivitas menyediakan barang/jasa untuk mencari profit.' },
+    { t: 'Topik 1', q: 'Faktor produksi yang paling krusial dan berharga di era informasi saat ini adalah...', o: ['Land', 'Labor', 'Capital', 'Knowledge'], a: 'd', exp: 'Knowledge (data, pengetahuan, teknologi) adalah faktor produksi terpenting era modern.' },
+    { t: 'Topik 1', q: 'Seluruh pihak yang terdampak oleh keputusan dan aktivitas bisnis perusahaan dinamakan...', o: ['Shareholders', 'Stockholders', 'Stakeholders', 'Bondholders'], a: 'c', exp: 'Stakeholders mencakup semua pihak yang terdampak bisnis (karyawan, pembeli, bank, warga, dll).' },
+    { t: 'Topik 1', q: 'Mengontrakkan fungsi bisnis internal ke perusahaan luar (sering di negara lain) disebut...', o: ['Insourcing', 'Outsourcing', 'Offshoring', 'Franchising'], a: 'b', exp: 'Outsourcing = mengontrakkan fungsi ke luar.' },
+
+    // Topik 2
+    { t: 'Topik 2', q: 'Cabang ilmu ekonomi yang berfokus pada perilaku unit individu, rumah tangga, dan perusahaan tertentu adalah...', o: ['Makroekonomi', 'Mikroekonomi', 'Ekonometri', 'Ekonomi Pembangunan'], a: 'b', exp: 'Mikroekonomi berfokus pada unit keputusan kecil individu/perusahaan.' },
+    { t: 'Topik 2', q: 'Hukum penawaran (Supply) menyatakan bahwa jika harga suatu barang mengalami kenaikan, maka jumlah barang yang ditawarkan produsen akan...', o: ['Turun', 'Naik', 'Tetap', 'Hilang'], a: 'b', exp: 'Hukum Supply: Harga naik -> Penawaran naik.' },
+    { t: 'Topik 2', q: 'Pengangguran yang disebabkan oleh pergeseran atau ketidakcocokan antara keterampilan pekerja dengan kebutuhan teknologi industri dinamakan...', o: ['Frictional Unemployment', 'Structural Unemployment', 'Cyclical Unemployment', 'Seasonal Unemployment'], a: 'b', exp: 'Structural Unemployment terjadi karena skill mismatch/otomasi.' },
+    { t: 'Topik 2', q: 'Seseorang dari dalam perusahaan yang melaporkan praktik ilegal perusahaan ke publik atau pihak berwenang dinamakan...', o: ['Free rider', 'Whistleblower', 'Change agent', 'Stockholder'], a: 'b', exp: 'Whistleblower = pelapor kecurangan internal.' },
+
+    // Topik 3
+    { t: 'Topik 3', q: 'Bentuk bisnis yang memberikan perlindungan Limited Liability bagi para pemiliknya namun menghadapi pajak ganda (Double Taxation) adalah...', o: ['Sole Proprietorship', 'General Partnership', 'Corporation (PT)', 'Koperasi'], a: 'c', exp: 'Corporation (PT) memiliki keunggulan limited liability tetapi terkena double taxation.' },
+    { t: 'Topik 3', q: 'Penggabungan dua perusahaan dari tingkat pasokan/rantai produksi yang berbeda (misal: pembuat HP membeli pabrik layar) dinamakan...', o: ['Horizontal Merger', 'Vertical Merger', 'Conglomerate Merger', 'Joint Venture'], a: 'b', exp: 'Vertical Merger = penggabungan antar tahap rantai pasok.' },
+    { t: 'Topik 3', q: 'Investor perorangan kaya yang memberikan suntikan dana awal ke startup dinamakan...', o: ['Venture Capital', 'Angel Investor', 'Banker', 'Underwriter'], a: 'b', exp: 'Angel Investor = individu kaya pendana awal.' },
+    { t: 'Topik 3', q: 'Salah satu dari 9 elemen Business Model Canvas (BMC) yang menjelaskan manfaat unik produk bagi pelanggan adalah...', o: ['Key Activities', 'Cost Structure', 'Value Propositions', 'Revenue Streams'], a: 'c', exp: 'Value Propositions menjelaskan solusi & nilai unggul produk.' },
+
+    // Topik 4
+    { t: 'Topik 4', q: 'Elemen Bauran Pemasaran (Marketing Mix) terdiri dari 4P, yaitu...', o: ['Product, Price, Place, Promotion', 'Product, Price, Process, People', 'Plan, Price, Place, Promotion', 'Product, Profit, Place, Promotion'], a: 'a', exp: '4P = Product, Price, Place, Promotion.' },
+    { t: 'Topik 4', q: 'Barang-barang konsumsi harian yang dibeli dengan cepat tanpa banyak pertimbangan (seperti sabun dan air mineral) dikategorikan sebagai...', o: ['Shopping Goods', 'Convenience Goods', 'Specialty Goods', 'Unsought Goods'], a: 'b', exp: 'Convenience Goods = produk murah harian dibeli cepat.' },
+    { t: 'Topik 4', q: 'Tahapan dalam Product Life Cycle (PLC) di mana tingkat penjualan dan profit mencapai puncaknya lalu mulai stagnan adalah...', o: ['Introduction', 'Growth', 'Maturity', 'Decline'], a: 'c', exp: 'Maturity = tahap puncak jenuh penjualan.' },
+    { t: 'Topik 4', q: 'Strategi harga yang menetapkan harga awal sangat tinggi untuk meraih profit dari segmen atas dinamakan...', o: ['Penetration Pricing', 'Skimming Pricing', 'EDLP', 'Psychological Pricing'], a: 'b', exp: 'Skimming Pricing = harga awal mahal.' },
+
+    // Topik 5
+    { t: 'Topik 5', q: 'Perantara pemasaran yang mempertemukan pembeli dan penjual tanpa memegang hak kepemilikan barang adalah...', o: ['Wholesaler', 'Agent / Broker', 'Retailer', 'Distributor'], a: 'b', exp: 'Agent/Broker tidak memegang hak milik barang.' },
+    { t: 'Topik 5', q: 'Bentuk utility perantara yang memberikan kemudahan dalam proses pembayaran dan pemindahan kepemilikan produk adalah...', o: ['Form Utility', 'Time Utility', 'Place Utility', 'Possession Utility'], a: 'd', exp: 'Possession Utility mempermudah pemindahan hak milik & pembayaran.' },
+    { t: 'Topik 5', q: 'Strategi promosi di mana produsen mengarahkan iklan langsung ke konsumen akhir agar konsumen meminta produk ke toko dinamakan...', o: ['Push Strategy', 'Pull Strategy', 'Intensive Strategy', 'Direct Strategy'], a: 'b', exp: 'Pull strategy menarik permintaan dari pembeli akhir.' },
+
+    // Topik 6
+    { t: 'Topik 6', q: 'Persamaan dasar akuntansi yang benar adalah...', o: ['Assets = Liabilities - Owner\'s Equity', 'Assets = Liabilities + Owner\'s Equity', 'Liabilities = Assets + Owner\'s Equity', 'Owner\'s Equity = Liabilities - Assets'], a: 'b', exp: 'Assets = Liabilities + Owner\'s Equity.' },
+    { t: 'Topik 6', q: 'Laporan keuangan yang menggambarkan kondisi harta, utang, dan modal pada satu tanggal titik waktu tertentu dinamakan...', o: ['Income Statement', 'Balance Sheet (Neraca)', 'Cash Flow Statement', 'Retained Earnings Statement'], a: 'b', exp: 'Balance Sheet menyajikan posisi pada satu titik waktu.' },
+    { t: 'Topik 6', q: 'Rasio yang mengukur kemampuan perusahaan melunasi utang jangka pendeknya adalah...', o: ['Debt to Equity Ratio', 'Current Ratio', 'ROE', 'Net Profit Margin'], a: 'b', exp: 'Current Ratio mengukur likuiditas utang jangka pendek.' },
+    { t: 'Topik 6', q: 'Dalam laporan arus kas, penerimaan tunai dari hasil penjualan barang termasuk aktivitas...', o: ['Operating Activities', 'Investing Activities', 'Financing Activities', 'Capital Activities'], a: 'a', exp: 'Penjualan operasional = Operating Activities.' },
+
+    // Topik 7
+    { t: 'Topik 7', q: 'Tiga penyebab utama kegagalan finansial bisnis adalah undercapitalization, buruknya kontrol arus kas, dan...', o: ['Pajak tinggi', 'Inadequate cost control (pengendalian biaya buruk)', 'Kurang iklan', 'Terlalu banyak karyawan'], a: 'b', exp: '3 penyebab: Undercapitalization, Poor cash flow, Inadequate cost control.' },
+    { t: 'Topik 7', q: 'Aturan pengelolaan keuangan pribadi 50/30/20 mengalokasikan 20% pendapatan untuk...', o: ['Needs (Kebutuhan)', 'Wants (Keinginan)', 'Savings & Debt (Tabungan/Investasi/Utang)', 'Hiburan'], a: 'c', exp: '20% dialokasikan untuk masa depan (Savings/Debt).' },
+    { t: 'Topik 7', q: '4 Fungsi utama manajemen biasa disingkat dengan...', o: ['SWOT', 'POLC', 'PEST', 'PDCA'], a: 'b', exp: 'POLC = Planning, Organizing, Leading, Controlling.' },
+    { t: 'Topik 7', q: 'Masalah rutin, berulang, dan jelas yang diselesaikan memakai SOP termasuk tipe...', o: ['Unstructured Problem', 'Structured Problem', 'Strategic Problem', 'Creative Problem'], a: 'b', exp: 'Structured Problem diselesaikan dengan Programmed Decision/SOP.' },
+
+    // Topik 8
+    { t: 'Topik 8', q: 'Pandangan bahwa keberhasilan atau kegagalan perusahaan sepenuhnya tergantung pada keputusan manajer dinamakan...', o: ['Symbolic View', 'Omnipotent View', 'Contingency View', 'System View'], a: 'b', exp: 'Omnipotent View = manajer dianggap serba kuasa.' },
+    { t: 'Topik 8', q: 'Sikap manajerial yang beranggapan bahwa manajer di negara tujuan (host country) paling paham cara berbisnis di daerahnya dinamakan...', o: ['Ethnocentric Attitude', 'Polycentric Attitude', 'Geocentric Attitude', 'Parochialism'], a: 'b', exp: 'Polycentric Attitude menyerahkan keputusan ke manajer lokal.' },
+    { t: 'Topik 8', q: 'Metode ekspansi internasional dengan risiko dan tingkat investasi modal tertinggi adalah...', o: ['Global Sourcing', 'Exporting', 'Licensing', 'Foreign Subsidiary'], a: 'd', exp: 'Foreign Subsidiary = investasi penuh pabrik di luar negeri.' },
+    { t: 'Topik 8', q: 'Penggabungan ide kreatif menjadi produk atau cara kerja baru yang bermanfaat secara nyata dinamakan...', o: ['Creativity', 'Innovation', 'Invention', 'Brainstorming'], a: 'b', exp: 'Innovation = eksekusi ide kreatif menjadi produk/metode nyata.' },
+
+    // Topik 9
+    { t: 'Topik 9', q: 'Dalam analisis SWOT, faktor Strength dan Weakness merupakan variabel...', o: ['Eksternal', 'Internal', 'Global', 'Makro'], a: 'b', exp: 'Strength & Weakness = faktor internal perusahaan.' },
+    { t: 'Topik 9', q: 'Kategori Matriks BCG yang memiliki market share tinggi di industri dengan pertumbuhan lambat dinamakan...', o: ['Stars', 'Cash Cows', 'Question Marks', 'Dogs'], a: 'b', exp: 'Cash Cows = pangsa pasar tinggi di industri yang tumbuh lambat.' },
+    { t: 'Topik 9', q: 'Kondisi di mana perusahaan tidak memiliki keunggulan biaya terendah maupun keunggulan diferensiasi dinamakan Porter sebagai...', o: ['Cost Leadership', 'Stuck in the Middle', 'Focus Strategy', 'Dog Position'], a: 'b', exp: 'Stuck in the middle = posisi berbahaya tanpa keunggulan kompetitif.' },
+
+    // Topik 10
+    { t: 'Topik 10', q: 'Prinsip yang menyatakan bahwa setiap pekerja seharusnya hanya memiliki SATU atasan langsung dinamakan...', o: ['Span of Control', 'Unity of Command', 'Chain of Command', 'Formalization'], a: 'b', exp: 'Unity of Command = 1 pekerja melapor ke 1 atasan.' },
+    { t: 'Topik 10', q: 'Tahapan perkembangan kelompok yang ditandai timbulnya konflik internal mengenai peran dinamakan...', o: ['Forming', 'Storming', 'Norming', 'Performing'], a: 'b', exp: 'Storming = tahap timbulnya badai konflik tim.' },
+    { t: 'Topik 10', q: 'Kecenderungan seseorang mengeluarkan usaha lebih sedikit saat bekerja dalam kelompok dinamakan...', o: ['Groupthink', 'Social Loafing', 'Group Cohesiveness', 'Synergy Loss'], a: 'b', exp: 'Social Loafing = pemalas dalam kelompok.' },
+    { t: 'Topik 10', q: 'Dokumen yang mencakup perincian kualifikasi minimum (pendidikan/keterampilan) calon pekerja dinamakan...', o: ['Job Description', 'Job Specification', 'Job Analysis', 'Job Appraisal'], a: 'b', exp: 'Job Specification = syarat minimum manusia/kualifikasinya.' },
+
+    // Topik 11
+    { t: 'Topik 11', q: 'Pengendalian kinerja yang dilakukan SEBELUM aktivitas pekerjaan dimulai dinamakan...', o: ['Feedback Control', 'Concurrent Control', 'Feedforward Control', 'Budgetary Control'], a: 'c', exp: 'Feedforward Control = pencegahan di awal sebelum dimulai.' },
+    { t: 'Topik 11', q: 'Menurut Teori Dua Faktor Herzberg, faktor gaji dan kondisi lingkungan kerja dikategorikan sebagai...', o: ['Motivator factors', 'Hygiene factors', 'Intrinsic factors', 'Esteem factors'], a: 'b', exp: 'Hygiene factors = cegah ketidakpuasan (gaji, fasilitas).' },
+    { t: 'Topik 11', q: '4 Perspektif Balanced Scorecard mencakup Financial, Customer, Internal Processes, serta...', o: ['Political Perspective', 'People / Learning & Growth', 'Environmental Perspective', 'Competitor Perspective'], a: 'b', exp: '4 BSC: Financial, Customer, Internal Process, Learning & Growth.' },
+    { t: 'Topik 11', q: 'Mencari praktik terbaik (best practices) dari pesaing atau perusahaan lain untuk dijadikan standar tolok ukur dinamakan...', o: ['Outsourcing', 'Benchmarking', 'Crowdsourcing', 'Downsizing'], a: 'b', exp: 'Benchmarking = membandingkan dengan best practices luar.' }
+];
+
+function renderQuestions() {
+    const container = document.getElementById('questionsContainer');
+    let html = '';
+    uasQuestions.forEach((q, idx) => {
+        const qNum = idx + 1;
+        html += `
+        <div class="q-card" id="qcard_${qNum}">
+            <div class="q-num">
+                <span>Soal ${qNum} dari 40</span>
+                <span class="q-topic">${q.t}</span>
+            </div>
+            <div class="q-text">${q.q}</div>
+            <div class="q-options">
+                <label><input type="radio" name="uas_q${qNum}" value="a"> A. ${q.o[0]}</label>
+                <label><input type="radio" name="uas_q${qNum}" value="b"> B. ${q.o[1]}</label>
+                <label><input type="radio" name="uas_q${qNum}" value="c"> C. ${q.o[2]}</label>
+                <label><input type="radio" name="uas_q${qNum}" value="d"> D. ${q.o[3]}</label>
+            </div>
+            <div class="q-feedback" id="fb_${qNum}"></div>
+        </div>`;
+    });
+    container.innerHTML = html;
+}
+
+function saveAnswers() {
+    const data = {};
+    for (let i = 1; i <= 40; i++) {
+        const sel = document.querySelector(`input[name="uas_q${i}"]:checked`);
+        if (sel) data[`uas_q${i}`] = sel.value;
+    }
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+}
+
+function loadAnswers() {
+    const data = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+    for (const [key, val] of Object.entries(data)) {
+        const radio = document.querySelector(`input[name="${key}"][value="${val}"]`);
+        if (radio) radio.checked = true;
+    }
+}
+
+function submitUAS() {
+    saveAnswers();
+    let score = 0;
+    const total = 40;
+    for (let i = 1; i <= total; i++) {
+        const sel = document.querySelector(`input[name="uas_q${i}"]:checked`);
+        const fb = document.getElementById(`fb_${i}`);
+        const card = document.getElementById(`qcard_${i}`);
+        const correct = uasQuestions[i-1].a;
+        card.classList.remove('correct','wrong');
+        
+        if (sel && sel.value === correct) {
+            score++;
+            card.classList.add('correct');
+            fb.className = 'q-feedback show correct-fb';
+            fb.innerHTML = `✅ <strong>Benar!</strong> ${uasQuestions[i-1].exp}`;
+        } else {
+            card.classList.add('wrong');
+            fb.className = 'q-feedback show wrong-fb';
+            const userAns = sel ? sel.value.toUpperCase() : 'Belum Dijawab';
+            fb.innerHTML = `❌ <strong>Salah.</strong> Jawabanmu: ${userAns}. Jawaban benar: <strong>${correct.toUpperCase()}</strong>. ${uasQuestions[i-1].exp}`;
+        }
+    }
+    
+    const pct = Math.round((score/total)*100);
+    const box = document.getElementById('resultsBox');
+    const num = document.getElementById('scoreNum');
+    const lbl = document.getElementById('scoreLabel');
+    const detail = document.getElementById('scoreDetail');
+    
+    num.textContent = `${score} / ${total}`;
+    num.className = 'score-num ' + (pct >= 80 ? 'good' : pct >= 60 ? 'ok' : 'bad');
+    lbl.textContent = `Nilai Akhir: ${pct} / 100`;
+    detail.textContent = pct >= 80 
+        ? '🎉 LUAR BIASA! Kamu sudah sangat siap menghadapi UAS Manajemen Bisnis!' 
+        : pct >= 60 
+        ? '👍 CUKUP BAGUS! Periksa kembali pembahasan soal yang masih salah.' 
+        : '📖 MASIH PERLU BELAJAR! Pelajari kembali materi per topik yang belum dikuasai.';
+    
+    box.classList.add('show');
+    box.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+function resetUAS() {
+    if (confirm('Apakah kamu yakin ingin mengulang simulasi ujian dari awal?')) {
+        localStorage.removeItem(STORAGE_KEY);
+        document.getElementById('uasForm').reset();
+        for (let i = 1; i <= 40; i++) {
+            document.getElementById(`qcard_${i}`).classList.remove('correct','wrong');
+            const fb = document.getElementById(`fb_${i}`);
+            fb.className = 'q-feedback';
+            fb.innerHTML = '';
+        }
+        document.getElementById('resultsBox').classList.remove('show');
+        window.scrollTo({top:0, behavior:'smooth'});
+    }
+}
+
+document.addEventListener('change', (e) => {
+    if (e.target.name && e.target.name.startsWith('uas_q')) {
+        saveAnswers();
+    }
+});
+
+window.addEventListener('DOMContentLoaded', () => {
+    renderQuestions();
+    loadAnswers();
+});
+</script>
+</body>
+</html>

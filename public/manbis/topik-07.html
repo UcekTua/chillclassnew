@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topik 7: Financial Management & Decision Making — ManBis</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+            --bg: #0a0e1a; --bg2: #111827; --bg-card: rgba(17,24,39,0.7);
+            --border: rgba(99,102,241,0.15); --border-h: rgba(99,102,241,0.4);
+            --text: #f1f5f9; --text2: #94a3b8; --text3: #64748b;
+            --blue: #6366f1; --cyan: #06b6d4; --violet: #8b5cf6;
+            --emerald: #10b981; --amber: #f59e0b; --rose: #f43f5e;
+            --teal: #14b8a6;
+            --grad: linear-gradient(135deg, #14b8a6, #10b981);
+        }
+        body { font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); line-height:1.8; }
+        .bg-orbs { position:fixed; top:0; left:0; width:100%; height:100%; z-index:0; overflow:hidden; pointer-events:none; }
+        .bg-orbs span { position:absolute; border-radius:50%; filter:blur(80px); opacity:0.1; }
+        .bg-orbs span:nth-child(1) { width:500px; height:500px; background:var(--teal); top:-10%; left:-5%; }
+        .bg-orbs span:nth-child(2) { width:400px; height:400px; background:var(--emerald); bottom:10%; right:-5%; }
+
+        .wrapper { position:relative; z-index:1; max-width:900px; margin:0 auto; padding:40px 24px 80px; }
+
+        .topnav { display:flex; align-items:center; gap:12px; margin-bottom:48px; flex-wrap:wrap; position:sticky; top:0; z-index:100; background:rgba(10,14,26,0.85); backdrop-filter:blur(12px); padding:20px 0; }
+        .topnav a { color:var(--text2); text-decoration:none; font-size:0.85rem; font-weight:500; transition:color 0.3s; }
+        .topnav a:hover { color:var(--teal); }
+        .topnav .sep { color:var(--text3); }
+
+        .ch-header { margin-bottom:48px; animation:fadeUp .6s ease-out; }
+        .ch-badge { display:inline-block; padding:5px 14px; border-radius:100px; background:rgba(20,184,166,0.12); border:1px solid rgba(20,184,166,0.25); color:var(--teal); font-size:0.75rem; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; margin-bottom:16px; }
+        .ch-header h1 { font-size:clamp(1.8rem,4vw,2.6rem); font-weight:900; background:var(--grad); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; margin-bottom:12px; }
+        .ch-header p { color:var(--text2); font-size:1rem; max-width:700px; }
+
+        .toc { background:var(--bg-card); backdrop-filter:blur(16px); border:1px solid var(--border); border-radius:16px; padding:28px 32px; margin-bottom:48px; animation:fadeUp .6s ease-out .1s both; }
+        .toc h3 { font-size:0.85rem; font-weight:700; text-transform:uppercase; letter-spacing:1.5px; color:var(--teal); margin-bottom:16px; }
+        .toc ol { padding-left:20px; }
+        .toc li { margin-bottom:8px; }
+        .toc a { color:var(--text2); text-decoration:none; font-size:0.9rem; transition:color 0.3s; }
+        .toc a:hover { color:var(--cyan); }
+
+        .section { background:var(--bg-card); backdrop-filter:blur(16px); border:1px solid var(--border); border-radius:20px; padding:36px 36px; margin-bottom:32px; animation:fadeUp .6s ease-out both; }
+        .section h2 { font-size:1.5rem; font-weight:800; margin-bottom:20px; display:flex; align-items:center; gap:12px; }
+        .section h2 .icon { font-size:1.3rem; }
+        .section h3 { font-size:1.15rem; font-weight:700; margin:28px 0 12px; color:var(--cyan); }
+        .section h4 { font-size:1rem; font-weight:600; margin:20px 0 10px; color:var(--teal); }
+        .section p { color:var(--text2); margin-bottom:14px; font-size:0.95rem; }
+        .section ul, .section ol { padding-left:24px; margin-bottom:14px; }
+        .section li { color:var(--text2); margin-bottom:8px; font-size:0.95rem; }
+        .section li strong { color:var(--text); }
+
+        .highlight { border-radius:12px; padding:20px 24px; margin:20px 0; }
+        .highlight.blue { background:rgba(99,102,241,0.08); border-left:4px solid var(--blue); }
+        .highlight.emerald { background:rgba(16,185,129,0.08); border-left:4px solid var(--emerald); }
+        .highlight.amber { background:rgba(245,158,11,0.08); border-left:4px solid var(--amber); }
+
+        .table-wrap { overflow-x:auto; margin:20px 0; }
+        table { width:100%; border-collapse:collapse; font-size:0.88rem; }
+        th { background:rgba(20,184,166,0.12); color:var(--teal); font-weight:700; padding:12px 16px; text-align:left; border-bottom:2px solid rgba(20,184,166,0.2); }
+        td { padding:11px 16px; border-bottom:1px solid rgba(148,163,184,0.08); color:var(--text2); }
+        tr:hover td { background:rgba(20,184,166,0.04); }
+
+        .key-points { background:linear-gradient(135deg, rgba(16,185,129,0.06), rgba(6,182,212,0.06)); border:1px solid rgba(16,185,129,0.2); border-radius:16px; padding:28px 32px; margin:28px 0; }
+        .key-points h3 { color:var(--emerald); font-size:1rem; margin-bottom:16px; }
+
+        .memory-tips { background:linear-gradient(135deg, rgba(245,158,11,0.06), rgba(244,63,94,0.06)); border:1px solid rgba(245,158,11,0.2); border-radius:16px; padding:28px 32px; margin:28px 0; }
+        .memory-tips h3 { color:var(--amber); font-size:1rem; margin-bottom:16px; }
+
+        .example { background:rgba(20,184,166,0.06); border:1px solid rgba(20,184,166,0.2); border-radius:16px; padding:28px 32px; margin:28px 0; }
+        .example h3 { color:var(--teal); margin-top:0; margin-bottom:16px; }
+
+        .quiz-section { margin-top:48px; }
+        .quiz-section h2 { font-size:1.5rem; font-weight:800; margin-bottom:8px; }
+        .quiz-section .subtitle { color:var(--text2); margin-bottom:24px; }
+        .q-card { background:var(--bg-card); backdrop-filter:blur(16px); border:1px solid var(--border); border-radius:16px; padding:28px 30px; margin-bottom:20px; transition:border-color 0.3s; }
+        .q-card.correct { border-color:var(--emerald) !important; }
+        .q-card.wrong { border-color:var(--rose) !important; }
+        .q-num { font-size:0.75rem; font-weight:700; color:var(--teal); text-transform:uppercase; letter-spacing:1.5px; margin-bottom:10px; }
+        .q-text { font-size:0.95rem; font-weight:600; color:var(--text); margin-bottom:16px; line-height:1.6; }
+        .q-options label { display:flex; align-items:flex-start; gap:12px; padding:10px 14px; margin-bottom:8px; border-radius:10px; cursor:pointer; transition:background 0.2s; font-size:0.9rem; color:var(--text2); }
+        .q-options label:hover { background:rgba(20,184,166,0.06); }
+        .q-options input[type="radio"] { margin-top:3px; accent-color:var(--teal); }
+        .q-feedback { margin-top:14px; padding:14px 18px; border-radius:10px; font-size:0.88rem; display:none; }
+        .q-feedback.show { display:block; }
+        .q-feedback.correct-fb { background:rgba(16,185,129,0.1); border:1px solid rgba(16,185,129,0.25); color:var(--emerald); }
+        .q-feedback.wrong-fb { background:rgba(244,63,94,0.1); border:1px solid rgba(244,63,94,0.25); color:var(--rose); }
+
+        .btn { display:inline-flex; align-items:center; gap:8px; padding:14px 32px; border:none; border-radius:12px; font-family:inherit; font-size:0.9rem; font-weight:700; cursor:pointer; transition:all 0.3s; }
+        .btn-primary { background:var(--grad); color:#fff; }
+        .btn-primary:hover { transform:translateY(-2px); box-shadow:0 8px 24px rgba(20,184,166,0.3); }
+        .btn-secondary { background:rgba(148,163,184,0.1); color:var(--text2); border:1px solid var(--border); }
+        .btn-secondary:hover { border-color:var(--border-h); color:var(--text); }
+
+        .results-box { background:var(--bg-card); backdrop-filter:blur(16px); border:1px solid var(--border); border-radius:16px; padding:32px; margin-top:24px; display:none; }
+        .results-box.show { display:block; animation:fadeUp .4s ease-out; }
+        .score-display { text-align:center; margin-bottom:24px; }
+        .score-display .score-num { font-size:3rem; font-weight:900; }
+        .score-display .score-num.good { color:var(--emerald); }
+        .score-display .score-num.ok { color:var(--amber); }
+        .score-display .score-num.bad { color:var(--rose); }
+        .score-display .score-label { color:var(--text2); font-size:0.9rem; }
+
+        .bottom-nav { display:flex; justify-content:space-between; align-items:center; margin-top:48px; padding-top:32px; border-top:1px solid var(--border); }
+        .bottom-nav a { color:var(--text2); text-decoration:none; font-weight:600; font-size:0.9rem; transition:color 0.3s; }
+        .bottom-nav a:hover { color:var(--teal); }
+
+        @keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+
+        @media (max-width:768px) {
+            .wrapper { padding:24px 16px 60px; }
+            .section { padding:24px 20px; }
+            .toc { padding:20px 24px; }
+        }
+        .topnav { position:fixed !important; top:24px !important; right:24px !important; margin:0 !important; background:rgba(10,14,26,0.6) !important; padding:10px 24px !important; border-radius:100px !important; border:1px solid rgba(99,102,241,0.3) !important; box-shadow: 0 8px 32px rgba(0,0,0,0.5) !important; width:auto !important; flex-wrap: nowrap !important; }
+        .bottom-nav { display:none !important; }
+        .watermark { display: none !important; }
+        .wrapper { padding-top: 80px !important; }
+        @media (max-width:768px) {
+            .topnav { top:auto !important; bottom:24px !important; right:50% !important; transform:translateX(50%) !important; padding:8px 16px !important; font-size: 0.8rem !important; white-space: nowrap !important; overflow-x: auto !important; max-width: 90vw !important; gap: 8px !important; }
+        }
+    </style>
+</head>
+<body>
+<div class="bg-orbs"><span></span><span></span></div>
+<div class="wrapper">
+
+<nav class="topnav">
+    <a href="index.html">🏠</a>
+    <span class="sep">/</span>
+    <a href="topik-01.html">T1</a>
+    <span class="sep">·</span>
+    <a href="topik-02.html">T2</a>
+    <span class="sep">·</span>
+    <a href="topik-03.html">T3</a>
+    <span class="sep">·</span>
+    <a href="topik-04.html">T4</a>
+    <span class="sep">·</span>
+    <a href="topik-05.html">T5</a>
+    <span class="sep">·</span>
+    <a href="topik-06.html">T6</a>
+    <span class="sep">·</span>
+    <a href="topik-07.html" style="color:var(--teal);">T7</a>
+    <span class="sep">·</span>
+    <a href="topik-08.html">T8</a>
+    <span class="sep">·</span>
+    <a href="topik-09.html">T9</a>
+    <span class="sep">·</span>
+    <a href="topik-10.html">T10</a>
+    <span class="sep">·</span>
+    <a href="topik-11.html">T11</a>
+</nav>
+
+<div class="ch-header">
+    <div class="ch-badge">Topik 07</div>
+    <h1>Financial Management & Decision Making</h1>
+    <p>Memahami pengelolaan keuangan (Financial Management), pendanaan Debt vs Equity, aturan 50/30/20 personal finance, 4 fungsi dasar manajer (POLC), dan 8 langkah proses pengambilan keputusan.</p>
+</div>
+
+<div class="toc">
+    <h3>📑 Daftar Isi</h3>
+    <ol>
+        <li><a href="#s1">3 Penyebab Kegagalan Keuangan Bisnis</a></li>
+        <li><a href="#s2">Pendanaan Jangka Pendek vs Jangka Panjang</a></li>
+        <li><a href="#s3">Debt vs Equity Financing</a></li>
+        <li><a href="#s4">Personal Finance (Metode 50/30/20)</a></li>
+        <li><a href="#s5">Level & Fungsi Manajemen (POLC)</a></li>
+        <li><a href="#s6">8 Langkah Pengambilan Keputusan Manajerial</a></li>
+        <li><a href="#s7">Structured vs Unstructured Problems</a></li>
+        <li><a href="#kp">Poin-Poin Penting</a></li>
+        <li><a href="#mt">Tips Menghafal</a></li>
+        <li><a href="#ex">Contoh Soal & Pembahasan</a></li>
+        <li><a href="#quiz">Latihan Soal Interaktif</a></li>
+    </ol>
+</div>
+
+<!-- ===== SECTION 1 ===== -->
+<div class="section" id="s1">
+    <h2><span class="icon">💸</span> 1. Tiga Penyebab Kegagalan Keuangan Bisnis</h2>
+    <p>Financial Management adalah pengawasan dan pengelolaan dana perusahaan agar tujuan bisnis tercapai.</p>
+
+    <div class="table-wrap">
+        <table>
+            <tr><th>Penyebab Kegagalan</th><th>Penjelasan</th></tr>
+            <tr><td><strong>1. Undercapitalization</strong></td><td>Kekurangan modal awal saat memulai atau mengembangkan bisnis</td></tr>
+            <tr><td><strong>2. Poor Cash Flow Control</strong></td><td>Pengelolaan aliran uang masuk & keluar yang buruk (uang mandek di piutang/stok)</td></tr>
+            <tr><td><strong>3. Inadequate Cost Control</strong></td><td>Pengendalian biaya operasional yang tidak cermat/pemborosan</td></tr>
+        </table>
+    </div>
+</div>
+
+<!-- ===== SECTION 2 ===== -->
+<div class="section" id="s2">
+    <h2><span class="icon">⏳</span> 2. Pendanaan Jangka Pendek vs Jangka Panjang</h2>
+
+    <div class="table-wrap">
+        <table>
+            <tr><th>Jenis Pendanaan</th><th>Jangka Waktu</th><th>Sumber Pendanaan Utama</th></tr>
+            <tr>
+                <td><strong>Short-term Financing</strong></td>
+                <td><strong>≤ 1 Tahun</strong> (Jangka Pendek)</td>
+                <td>Trade Credit (kredit usaha), Pinjaman Bank Jangka Pendek, Commercial Paper</td>
+            </tr>
+            <tr>
+                <td><strong>Long-term Financing</strong></td>
+                <td><strong>> 1 Tahun</strong> (Jangka Panjang)</td>
+                <td>Obligasi (Bonds), Utang Bank Jangka Panjang, Penerbitan Saham, Laba Ditahan</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- ===== SECTION 3 ===== -->
+<div class="section" id="s3">
+    <h2><span class="icon">⚖️</span> 3. Debt Financing vs Equity Financing</h2>
+
+    <div class="table-wrap">
+        <table>
+            <tr><th>Aspek</th><th>Debt Financing (Utang)</th><th>Equity Financing (Ekuitas/Saham)</th></tr>
+            <tr><td><strong>Bentuk</strong></td><td>Pinjaman bank, Obligasi (Bonds)</td><td>Penerbitan saham baru, Venture Capital</td></tr>
+            <tr><td><strong>Kewajiban Pokok</strong></td><td>WAJIB dikembalikan sesuai tenggat</td><td>TIDAK ada kewajiban pengembalian pokok</td></tr>
+            <tr><td><strong>Bunga / Pembayaran</strong></td><td>Wajib bayar BUNGA rutin (beban pajak)</td><td>Pembayaran DIVIDEN (jika ada keputusan laba)</td></tr>
+            <tr><td><strong>Kepemilikan</strong></td><td>Kreditur TIDAK punya hak suara kontrol</td><td>Pemegang saham memiliki HAK SUARA kontrol</td></tr>
+        </table>
+    </div>
+</div>
+
+<!-- ===== SECTION 4 ===== -->
+<div class="section" id="s4">
+    <h2><span class="icon">💳</span> 4. Personal Finance (Metode 50/30/20)</h2>
+    <p>Pengelolaan keuangan pribadi sangat disarankan memakai aturan penganggaran 50/30/20:</p>
+
+    <ul>
+        <li><strong>50% Needs (Kebutuhan Pokok):</strong> Biaya sewa, makan, listrik, transportasi dasar.</li>
+        <li><strong>30% Wants (Keinginan/Lifestyle):</strong> Hiburan, belanja hobi, liburan, makan restoran.</li>
+        <li><strong>20% Savings & Debt (Tabungan/Investasi/Utang):</strong> Dana darurat, investasi saham/reksadana, cicilan utang.</li>
+    </ul>
+</div>
+
+<!-- ===== SECTION 5 ===== -->
+<div class="section" id="s5">
+    <h2><span class="icon">👔</span> 5. Level & Fungsi Manajemen (POLC)</h2>
+    <p>Manajer bertanggung jawab mengkoordinasi dan mengawasi pekerjaan orang lain.</p>
+
+    <h3>4 Fungsi Utama Manajemen (POLC):</h3>
+    <ol>
+        <li><strong>Planning (Perencanaan):</strong> Menetapkan tujuan, strategi, dan rencana kerja.</li>
+        <li><strong>Organizing (Pengorganisasian):</strong> Membagi tugas, menstruktur organisasi, dan mengalokasikan sumber daya.</li>
+        <li><strong>Leading (Kepemimpinan):</strong> Memotivasi, mengarahkan, dan memimpin karyawan.</li>
+        <li><strong>Controlling (Pengendalian):</strong> Memantau kinerja, membandingkan target, dan melakukan koreksi.</li>
+    </ol>
+</div>
+
+<!-- ===== SECTION 6 ===== -->
+<div class="section" id="s6">
+    <h2><span class="icon">🧭</span> 6. Delapan Langkah Pengambilan Keputusan</h2>
+
+    <ol>
+        <li><strong>Identify a Problem:</strong> Mengidentifikasi masalah nyata yang timbul.</li>
+        <li><strong>Identify Decision Criteria:</strong> Menentukan kriteria pertimbangan keputusan.</li>
+        <li><strong>Allocate Weights to Criteria:</strong> Memberikan bobot prioritas pada kriteria.</li>
+        <li><strong>Develop Alternatives:</strong> Menyusun berbagai pilihan alternatif solusi.</li>
+        <li><strong>Analyze Alternatives:</strong> Menganalisis kelebihan & kekurangan tiap alternatif.</li>
+        <li><strong>Select an Alternative:</strong> Memilih alternatif terbaik yang paling optimal.</li>
+        <li><strong>Implement the Alternative:</strong> Melaksanakan keputusan secara nyata.</li>
+        <li><strong>Evaluate Decision Effectiveness:</strong> Memulai evaluasi apakah masalah teratasi.</li>
+    </ol>
+</div>
+
+<!-- ===== SECTION 7 ===== -->
+<div class="section" id="s7">
+    <h2><span class="icon">🧩</span> 7. Structured vs Unstructured Problems</h2>
+
+    <div class="table-wrap">
+        <table>
+            <tr><th>Tipe Masalah</th><th>Karakteristik</th><th>Tipe Keputusan</th></tr>
+            <tr>
+                <td><strong>Structured Problems</strong></td>
+                <td>Masalah rutin, jelas, berulang, info lengkap</td><td><strong>Programmed Decision</strong> (pakai SOP, aturan, prosedur)</td>
+            </tr>
+            <tr>
+                <td><strong>Unstructured Problems</strong></td>
+                <td>Masalah baru, rumit, tidak biasa, info ambigu</td><td><strong>Non-Programmed Decision</strong> (solusi kustom, analisis khusus)</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- ===== KEY POINTS ===== -->
+<div class="section" id="kp">
+    <div class="key-points">
+        <h3>🔑 POIN-POIN PENTING TOPIK 7</h3>
+        <ol>
+            <li>3 Gagal Keuangan: Undercapitalization, Poor cash flow, Inadequate cost control.</li>
+            <li>Debt = utang bunga wajib (tanpa serahkan hak suara); Equity = penerbitan saham (ada hak suara).</li>
+            <li>Aturan 50/30/20: 50% Kebutuhan, 30% Keinginan, 20% Tabungan/Investasi.</li>
+            <li>4 Fungsi POLC: Planning, Organizing, Leading, Controlling.</li>
+            <li>Structured Problem ➔ Programmed Decision (SOP).</li>
+            <li>Unstructured Problem ➔ Non-Programmed Decision (Kustom).</li>
+        </ol>
+    </div>
+</div>
+
+<!-- ===== MEMORY TIPS ===== -->
+<div class="section" id="mt">
+    <div class="memory-tips">
+        <h3>🧠 TIPS MENGHAFAL</h3>
+        <ol>
+            <li><strong>POLC</strong>: <strong>P</strong>lanning, <strong>O</strong>rganizing, <strong>L</strong>eading, <strong>C</strong>ontrolling (Urutan fungsi manajemen).</li>
+            <li><strong>50/30/20</strong>: 50 Pokok, 30 Fun/Keinginan, 20 Masa depan/Tabungan.</li>
+            <li><strong>Debt vs Equity</strong>: Debt = Dituduh Berutang (Bayar Bunga); Equity = Ikut Ekuitas (Bagi Laba Dividen).</li>
+        </ol>
+    </div>
+</div>
+
+<!-- ===== CONTOH SOAL ===== -->
+<div class="section" id="ex">
+    <h2><span class="icon">📝</span> Contoh Soal & Pembahasan</h2>
+
+    <div class="example">
+        <h3>Soal 1</h3>
+        <p><strong>Masalah pengembalian barang rusak yang terjadi berulang kali di minimarket dapat diselesaikan dengan SOP standar. Hal ini termasuk jenis...</strong></p>
+        <p>A. Unstructured Problem & Non-Programmed Decision<br>B. Structured Problem & Programmed Decision<br>C. Strategic Problem & Non-Programmed Decision<br>D. Intuitive Decision</p>
+        <p><strong>Jawaban: B</strong></p>
+        <p><strong>Pembahasan:</strong> Masalah rutin dan jelas diselesaikan dengan Programmed Decision berupa SOP/aturan yang ditetapkan baku.</p>
+    </div>
+
+    <div class="example">
+        <h3>Soal 2</h3>
+        <p><strong>Manakah fungsi manajemen yang mencakup motivasi karyawan dan penyelesaian konflik tim?</strong></p>
+        <p>A. Planning<br>B. Organizing<br>C. Leading<br>D. Controlling</p>
+        <p><strong>Jawaban: C</strong></p>
+        <p><strong>Pembahasan:</strong> Leading berfokus pada hubungan manusia, motivasi, komunikasi, dan pengarahan tim.</p>
+    </div>
+</div>
+
+<!-- ===== QUIZ ===== -->
+<div class="quiz-section" id="quiz">
+    <h2>🎯 Latihan Soal Interaktif — Topik 7</h2>
+    <p class="subtitle">Kerjakan 10 soal, lalu klik "Lihat Hasil" untuk melihat skor dan pembahasanmu. Jawaban tersimpan otomatis.</p>
+
+    <form id="quizForm">
+        <div class="q-card" id="q1"><div class="q-num">Soal 1</div><div class="q-text">Kekurangan modal awal saat mendirikan usaha dinamakan...</div><div class="q-options"><label><input type="radio" name="q1" value="a"> Undercapitalization</label><label><input type="radio" name="q1" value="b"> Cash Flow Deficit</label><label><input type="radio" name="q1" value="c"> High Leverage</label><label><input type="radio" name="q1" value="d"> Insolvency</label></div><div class="q-feedback" id="fb1"></div></div>
+
+        <div class="q-card" id="q2"><div class="q-num">Soal 2</div><div class="q-text">Perbedaan utama antara Debt Financing dan Equity Financing adalah...</div><div class="q-options"><label><input type="radio" name="q2" value="a"> Debt financing memberikan hak suara kontrol kepada peminjam</label><label><input type="radio" name="q2" value="b"> Debt financing menimbulkan kewajiban membayar bunga secara wajib</label><label><input type="radio" name="q2" value="c"> Equity financing wajib dikembalikan dalam 1 tahun</label><label><input type="radio" name="q2" value="d"> Equity financing selalu lebih murah daripada utang bank</label></div><div class="q-feedback" id="fb2"></div></div>
+
+        <div class="q-card" id="q3"><div class="q-num">Soal 3</div><div class="q-text">Metode penganggaran personal finance 50/30/20 mengalokasikan 30% dari pendapatan untuk...</div><div class="q-options"><label><input type="radio" name="q3" value="a"> Kebutuhan pokok (Needs)</label><label><input type="radio" name="q3" value="b"> Keinginan & gaya hidup (Wants)</label><label><input type="radio" name="q3" value="c"> Tabungan & investasi (Savings)</label><label><input type="radio" name="q3" value="d"> Dana darurat</label></div><div class="q-feedback" id="fb3"></div></div>
+
+        <div class="q-card" id="q4"><div class="q-num">Soal 4</div><div class="q-text">Empat fungsi dasar manajemen disingkat dengan...</div><div class="q-options"><label><input type="radio" name="q4" value="a"> SWOT</label><label><input type="radio" name="q4" value="b"> POLC</label><label><input type="radio" name="q4" value="c"> PEST</label><label><input type="radio" name="q4" value="d"> BCG</label></div><div class="q-feedback" id="fb4"></div></div>
+
+        <div class="q-card" id="q5"><div class="q-num">Soal 5</div><div class="q-text">Fungsi manajemen yang bertugas memantau kinerja dan membandingkan hasil terhadap target adalah...</div><div class="q-options"><label><input type="radio" name="q5" value="a"> Planning</label><label><input type="radio" name="q5" value="b"> Organizing</label><label><input type="radio" name="q5" value="c"> Leading</label><label><input type="radio" name="q5" value="d"> Controlling</label></div><div class="q-feedback" id="fb5"></div></div>
+
+        <div class="q-card" id="q6"><div class="q-num">Soal 6</div><div class="q-text">Langkah pertama dalam 8 tahapan proses pengambilan keputusan manajerial adalah...</div><div class="q-options"><label><input type="radio" name="q6" value="a"> Menyusun alternatif</label><label><input type="radio" name="q6" value="b"> Mengidentifikasi masalah</label><label><input type="radio" name="q6" value="c"> Memberikan bobot kriteria</label><label><input type="radio" name="q6" value="d"> Memilih keputusan terbaik</label></div><div class="q-feedback" id="fb6"></div></div>
+
+        <div class="q-card" id="q7"><div class="q-num">Soal 7</div><div class="q-text">Masalah yang baru, ambigu, serta membutuhkan keputusan spesifik yang tidak ada dalam SOP dinamakan...</div><div class="q-options"><label><input type="radio" name="q7" value="a"> Structured Problem</label><label><input type="radio" name="q7" value="b"> Unstructured Problem</label><label><input type="radio" name="q7" value="c"> Programmed Problem</label><label><input type="radio" name="q7" value="d"> Operational Problem</label></div><div class="q-feedback" id="fb7"></div></div>
+
+        <div class="q-card" id="q8"><div class="q-num">Soal 8</div><div class="q-text">Pinjaman berjangka waktu kurang dari atau sama dengan 1 tahun dinamakan...</div><div class="q-options"><label><input type="radio" name="q8" value="a"> Long-term Financing</label><label><input type="radio" name="q8" value="b"> Short-term Financing</label><label><input type="radio" name="q8" value="c"> Equity Financing</label><label><input type="radio" name="q8" value="d"> Retained Earnings</label></div><div class="q-feedback" id="fb8"></div></div>
+
+        <div class="q-card" id="q9"><div class="q-num">Soal 9</div><div class="q-text">Keterbatasan manusia dalam memproses seluruh informasi keputusan secara sempurna sehingga memilih solusi yang 'cukup baik' (satisfice) dinamakan...</div><div class="q-options"><label><input type="radio" name="q9" value="a"> Perfect Rationality</label><label><input type="radio" name="q9" value="b"> Bounded Rationality</label><label><input type="radio" name="q9" value="c"> Intuitive Decision</label><label><input type="radio" name="q9" value="d"> Evidence-Based Management</label></div><div class="q-feedback" id="fb9"></div></div>
+
+        <div class="q-card" id="q10"><div class="q-num">Soal 10</div><div class="q-text">Instrumen utang jangka panjang berupa surat pengakuan utang yang diterbitkan oleh perusahaan dinamakan...</div><div class="q-options"><label><input type="radio" name="q10" value="a"> Saham Biasa</label><label><input type="radio" name="q10" value="b"> Obligasi (Bonds)</label><label><input type="radio" name="q10" value="c"> Commercial Paper</label><label><input type="radio" name="q10" value="d"> Trade Credit</label></div><div class="q-feedback" id="fb10"></div></div>
+
+        <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:24px;">
+            <button type="button" class="btn btn-primary" onclick="checkQuiz()">📊 Lihat Hasil</button>
+            <button type="button" class="btn btn-secondary" onclick="resetQuiz()">🔄 Reset</button>
+        </div>
+    </form>
+
+    <div class="results-box" id="resultsBox">
+        <div class="score-display">
+            <div class="score-num" id="scoreNum"></div>
+            <div class="score-label" id="scoreLabel"></div>
+        </div>
+    </div>
+</div>
+
+<div class="bottom-nav">
+    <a href="topik-06.html">← Topik 6: Accounting & Financial Info</a>
+    <a href="topik-08.html">Topik 8: Constraints & Change →</a>
+</div>
+
+</div>
+
+<script>
+const STORAGE_KEY = 'manbis_t07_quiz';
+const answers = {q1:'a',q2:'b',q3:'b',q4:'b',q5:'d',q6:'b',q7:'b',q8:'b',q9:'b',q10:'b'};
+const explanations = {
+    q1: 'Undercapitalization adalah kondisi kekurangan modal awal.',
+    q2: 'Debt financing mewajibkan pembayaran bunga rutin kepada kreditur.',
+    q3: '30% dialokasikan untuk gaya hidup dan keinginan (Wants).',
+    q4: 'POLC = Planning, Organizing, Leading, Controlling.',
+    q5: 'Controlling memantau dan membandingkan hasil kerja terhadap standar.',
+    q6: 'Tahap pertama pengambilan keputusan adalah mengidentifikasi masalah.',
+    q7: 'Unstructured problem bersifat baru dan ambigu tanpa SOP baku.',
+    q8: 'Pendanaan ≤ 1 tahun adalah Short-term financing.',
+    q9: 'Bounded rationality menjelaskan keterbatasan manusia sehingga memilih keputusan yang "cukup baik" (satisficing).',
+    q10: 'Bonds (Obligasi) adalah surat utang jangka panjang korporasi.'
+};
+
+function saveAnswers() {
+    const data = {};
+    for (let i = 1; i <= 10; i++) {
+        const sel = document.querySelector(`input[name="q${i}"]:checked`);
+        if (sel) data[`q${i}`] = sel.value;
+    }
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+}
+
+function loadAnswers() {
+    const data = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+    for (const [key, val] of Object.entries(data)) {
+        const radio = document.querySelector(`input[name="${key}"][value="${val}"]`);
+        if (radio) radio.checked = true;
+    }
+}
+
+function checkQuiz() {
+    saveAnswers();
+    let score = 0;
+    const total = 10;
+    for (let i = 1; i <= total; i++) {
+        const sel = document.querySelector(`input[name="q${i}"]:checked`);
+        const fb = document.getElementById(`fb${i}`);
+        const card = document.getElementById(`q${i}`);
+        const correct = answers[`q${i}`];
+        card.classList.remove('correct','wrong');
+        if (sel && sel.value === correct) {
+            score++;
+            card.classList.add('correct');
+            fb.className = 'q-feedback show correct-fb';
+            fb.innerHTML = `✅ <strong>Benar!</strong> ${explanations['q'+i]}`;
+        } else {
+            card.classList.add('wrong');
+            fb.className = 'q-feedback show wrong-fb';
+            const userAns = sel ? sel.value.toUpperCase() : '—';
+            fb.innerHTML = `❌ <strong>Salah.</strong> Jawabanmu: ${userAns}. Jawaban benar: <strong>${correct.toUpperCase()}</strong>. ${explanations['q'+i]}`;
+        }
+    }
+    const pct = Math.round((score/total)*100);
+    const box = document.getElementById('resultsBox');
+    const num = document.getElementById('scoreNum');
+    const lbl = document.getElementById('scoreLabel');
+    num.textContent = `${score}/${total}`;
+    num.className = 'score-num ' + (pct >= 80 ? 'good' : pct >= 60 ? 'ok' : 'bad');
+    lbl.textContent = pct >= 80 ? '🎉 Excellent! Kamu sudah menguasai materi ini!' : pct >= 60 ? '👍 Lumayan! Review lagi bagian yang salah.' : '📖 Perlu belajar lagi. Baca ulang materinya ya!';
+    box.classList.add('show');
+    box.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+function resetQuiz() {
+    localStorage.removeItem(STORAGE_KEY);
+    document.getElementById('quizForm').reset();
+    for (let i = 1; i <= 10; i++) {
+        document.getElementById(`q${i}`).classList.remove('correct','wrong');
+        const fb = document.getElementById(`fb${i}`);
+        fb.className = 'q-feedback';
+        fb.innerHTML = '';
+    }
+    document.getElementById('resultsBox').classList.remove('show');
+}
+
+document.querySelectorAll('input[type="radio"]').forEach(r => r.addEventListener('change', saveAnswers));
+window.addEventListener('DOMContentLoaded', loadAnswers);
+</script>
+</body>
+</html>

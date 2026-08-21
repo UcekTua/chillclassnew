@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topik 9: Planning & Strategic Management — ManBis</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+            --bg: #0a0e1a; --bg2: #111827; --bg-card: rgba(17,24,39,0.7);
+            --border: rgba(99,102,241,0.15); --border-h: rgba(99,102,241,0.4);
+            --text: #f1f5f9; --text2: #94a3b8; --text3: #64748b;
+            --blue: #6366f1; --cyan: #06b6d4; --violet: #8b5cf6;
+            --emerald: #10b981; --amber: #f59e0b; --rose: #f43f5e;
+            --pink: #ec4899;
+            --grad: linear-gradient(135deg, #ec4899, #8b5cf6);
+        }
+        body { font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); line-height:1.8; }
+        .bg-orbs { position:fixed; top:0; left:0; width:100%; height:100%; z-index:0; overflow:hidden; pointer-events:none; }
+        .bg-orbs span { position:absolute; border-radius:50%; filter:blur(80px); opacity:0.1; }
+        .bg-orbs span:nth-child(1) { width:500px; height:500px; background:var(--pink); top:-10%; left:-5%; }
+        .bg-orbs span:nth-child(2) { width:400px; height:400px; background:var(--violet); bottom:10%; right:-5%; }
+
+        .wrapper { position:relative; z-index:1; max-width:900px; margin:0 auto; padding:40px 24px 80px; }
+
+        .topnav { display:flex; align-items:center; gap:12px; margin-bottom:48px; flex-wrap:wrap; position:sticky; top:0; z-index:100; background:rgba(10,14,26,0.85); backdrop-filter:blur(12px); padding:20px 0; }
+        .topnav a { color:var(--text2); text-decoration:none; font-size:0.85rem; font-weight:500; transition:color 0.3s; }
+        .topnav a:hover { color:var(--pink); }
+        .topnav .sep { color:var(--text3); }
+
+        .ch-header { margin-bottom:48px; animation:fadeUp .6s ease-out; }
+        .ch-badge { display:inline-block; padding:5px 14px; border-radius:100px; background:rgba(236,72,153,0.12); border:1px solid rgba(236,72,153,0.25); color:var(--pink); font-size:0.75rem; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; margin-bottom:16px; }
+        .ch-header h1 { font-size:clamp(1.8rem,4vw,2.6rem); font-weight:900; background:var(--grad); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; margin-bottom:12px; }
+        .ch-header p { color:var(--text2); font-size:1rem; max-width:700px; }
+
+        .toc { background:var(--bg-card); backdrop-filter:blur(16px); border:1px solid var(--border); border-radius:16px; padding:28px 32px; margin-bottom:48px; animation:fadeUp .6s ease-out .1s both; }
+        .toc h3 { font-size:0.85rem; font-weight:700; text-transform:uppercase; letter-spacing:1.5px; color:var(--pink); margin-bottom:16px; }
+        .toc ol { padding-left:20px; }
+        .toc li { margin-bottom:8px; }
+        .toc a { color:var(--text2); text-decoration:none; font-size:0.9rem; transition:color 0.3s; }
+        .toc a:hover { color:var(--cyan); }
+
+        .section { background:var(--bg-card); backdrop-filter:blur(16px); border:1px solid var(--border); border-radius:20px; padding:36px 36px; margin-bottom:32px; animation:fadeUp .6s ease-out both; }
+        .section h2 { font-size:1.5rem; font-weight:800; margin-bottom:20px; display:flex; align-items:center; gap:12px; }
+        .section h2 .icon { font-size:1.3rem; }
+        .section h3 { font-size:1.15rem; font-weight:700; margin:28px 0 12px; color:var(--cyan); }
+        .section h4 { font-size:1rem; font-weight:600; margin:20px 0 10px; color:var(--pink); }
+        .section p { color:var(--text2); margin-bottom:14px; font-size:0.95rem; }
+        .section ul, .section ol { padding-left:24px; margin-bottom:14px; }
+        .section li { color:var(--text2); margin-bottom:8px; font-size:0.95rem; }
+        .section li strong { color:var(--text); }
+
+        .highlight { border-radius:12px; padding:20px 24px; margin:20px 0; }
+        .highlight.blue { background:rgba(99,102,241,0.08); border-left:4px solid var(--blue); }
+        .highlight.emerald { background:rgba(16,185,129,0.08); border-left:4px solid var(--emerald); }
+        .highlight.amber { background:rgba(245,158,11,0.08); border-left:4px solid var(--amber); }
+
+        .table-wrap { overflow-x:auto; margin:20px 0; }
+        table { width:100%; border-collapse:collapse; font-size:0.88rem; }
+        th { background:rgba(236,72,153,0.12); color:var(--pink); font-weight:700; padding:12px 16px; text-align:left; border-bottom:2px solid rgba(236,72,153,0.2); }
+        td { padding:11px 16px; border-bottom:1px solid rgba(148,163,184,0.08); color:var(--text2); }
+        tr:hover td { background:rgba(236,72,153,0.04); }
+
+        .key-points { background:linear-gradient(135deg, rgba(16,185,129,0.06), rgba(6,182,212,0.06)); border:1px solid rgba(16,185,129,0.2); border-radius:16px; padding:28px 32px; margin:28px 0; }
+        .key-points h3 { color:var(--emerald); font-size:1rem; margin-bottom:16px; }
+
+        .memory-tips { background:linear-gradient(135deg, rgba(245,158,11,0.06), rgba(244,63,94,0.06)); border:1px solid rgba(245,158,11,0.2); border-radius:16px; padding:28px 32px; margin:28px 0; }
+        .memory-tips h3 { color:var(--amber); font-size:1rem; margin-bottom:16px; }
+
+        .example { background:rgba(236,72,153,0.06); border:1px solid rgba(236,72,153,0.2); border-radius:16px; padding:28px 32px; margin:28px 0; }
+        .example h3 { color:var(--pink); margin-top:0; margin-bottom:16px; }
+
+        .quiz-section { margin-top:48px; }
+        .quiz-section h2 { font-size:1.5rem; font-weight:800; margin-bottom:8px; }
+        .quiz-section .subtitle { color:var(--text2); margin-bottom:24px; }
+        .q-card { background:var(--bg-card); backdrop-filter:blur(16px); border:1px solid var(--border); border-radius:16px; padding:28px 30px; margin-bottom:20px; transition:border-color 0.3s; }
+        .q-card.correct { border-color:var(--emerald) !important; }
+        .q-card.wrong { border-color:var(--rose) !important; }
+        .q-num { font-size:0.75rem; font-weight:700; color:var(--pink); text-transform:uppercase; letter-spacing:1.5px; margin-bottom:10px; }
+        .q-text { font-size:0.95rem; font-weight:600; color:var(--text); margin-bottom:16px; line-height:1.6; }
+        .q-options label { display:flex; align-items:flex-start; gap:12px; padding:10px 14px; margin-bottom:8px; border-radius:10px; cursor:pointer; transition:background 0.2s; font-size:0.9rem; color:var(--text2); }
+        .q-options label:hover { background:rgba(236,72,153,0.06); }
+        .q-options input[type="radio"] { margin-top:3px; accent-color:var(--pink); }
+        .q-feedback { margin-top:14px; padding:14px 18px; border-radius:10px; font-size:0.88rem; display:none; }
+        .q-feedback.show { display:block; }
+        .q-feedback.correct-fb { background:rgba(16,185,129,0.1); border:1px solid rgba(16,185,129,0.25); color:var(--emerald); }
+        .q-feedback.wrong-fb { background:rgba(244,63,94,0.1); border:1px solid rgba(244,63,94,0.25); color:var(--rose); }
+
+        .btn { display:inline-flex; align-items:center; gap:8px; padding:14px 32px; border:none; border-radius:12px; font-family:inherit; font-size:0.9rem; font-weight:700; cursor:pointer; transition:all 0.3s; }
+        .btn-primary { background:var(--grad); color:#fff; }
+        .btn-primary:hover { transform:translateY(-2px); box-shadow:0 8px 24px rgba(236,72,153,0.3); }
+        .btn-secondary { background:rgba(148,163,184,0.1); color:var(--text2); border:1px solid var(--border); }
+        .btn-secondary:hover { border-color:var(--border-h); color:var(--text); }
+
+        .results-box { background:var(--bg-card); backdrop-filter:blur(16px); border:1px solid var(--border); border-radius:16px; padding:32px; margin-top:24px; display:none; }
+        .results-box.show { display:block; animation:fadeUp .4s ease-out; }
+        .score-display { text-align:center; margin-bottom:24px; }
+        .score-display .score-num { font-size:3rem; font-weight:900; }
+        .score-display .score-num.good { color:var(--emerald); }
+        .score-display .score-num.ok { color:var(--amber); }
+        .score-display .score-num.bad { color:var(--rose); }
+        .score-display .score-label { color:var(--text2); font-size:0.9rem; }
+
+        .bottom-nav { display:flex; justify-content:space-between; align-items:center; margin-top:48px; padding-top:32px; border-top:1px solid var(--border); }
+        .bottom-nav a { color:var(--text2); text-decoration:none; font-weight:600; font-size:0.9rem; transition:color 0.3s; }
+        .bottom-nav a:hover { color:var(--pink); }
+
+        @keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+
+        @media (max-width:768px) {
+            .wrapper { padding:24px 16px 60px; }
+            .section { padding:24px 20px; }
+            .toc { padding:20px 24px; }
+        }
+        .topnav { position:fixed !important; top:24px !important; right:24px !important; margin:0 !important; background:rgba(10,14,26,0.6) !important; padding:10px 24px !important; border-radius:100px !important; border:1px solid rgba(99,102,241,0.3) !important; box-shadow: 0 8px 32px rgba(0,0,0,0.5) !important; width:auto !important; flex-wrap: nowrap !important; }
+        .bottom-nav { display:none !important; }
+        .watermark { display: none !important; }
+        .wrapper { padding-top: 80px !important; }
+        @media (max-width:768px) {
+            .topnav { top:auto !important; bottom:24px !important; right:50% !important; transform:translateX(50%) !important; padding:8px 16px !important; font-size: 0.8rem !important; white-space: nowrap !important; overflow-x: auto !important; max-width: 90vw !important; gap: 8px !important; }
+        }
+    </style>
+</head>
+<body>
+<div class="bg-orbs"><span></span><span></span></div>
+<div class="wrapper">
+
+<nav class="topnav">
+    <a href="index.html">🏠</a>
+    <span class="sep">/</span>
+    <a href="topik-01.html">T1</a>
+    <span class="sep">·</span>
+    <a href="topik-02.html">T2</a>
+    <span class="sep">·</span>
+    <a href="topik-03.html">T3</a>
+    <span class="sep">·</span>
+    <a href="topik-04.html">T4</a>
+    <span class="sep">·</span>
+    <a href="topik-05.html">T5</a>
+    <span class="sep">·</span>
+    <a href="topik-06.html">T6</a>
+    <span class="sep">·</span>
+    <a href="topik-07.html">T7</a>
+    <span class="sep">·</span>
+    <a href="topik-08.html">T8</a>
+    <span class="sep">·</span>
+    <a href="topik-09.html" style="color:var(--pink);">T9</a>
+    <span class="sep">·</span>
+    <a href="topik-10.html">T10</a>
+    <span class="sep">·</span>
+    <a href="topik-11.html">T11</a>
+</nav>
+
+<div class="ch-header">
+    <div class="ch-badge">Topik 09</div>
+    <h1>Planning, Goal Setting & Strategic Planning</h1>
+    <p>Memahami konsep perencanaan formal, penetapan tujuan (MBO, SMART goals), 6 langkah proses Manajemen Strategis (termasuk Analisis SWOT), Matriks BCG, serta Porter's Five Forces.</p>
+</div>
+
+<div class="toc">
+    <h3>📑 Daftar Isi</h3>
+    <ol>
+        <li><a href="#s1">Apa itu Planning & 4 Alasan Manajer Merencana</a></li>
+        <li><a href="#s2">Jenis-Jenis Rencana (Types of Plans)</a></li>
+        <li><a href="#s3">Traditional Goal Setting vs MBO & SMART Goals</a></li>
+        <li><a href="#s4">6 Langkah Strategic Management Process & SWOT</a></li>
+        <li><a href="#s5">Strategi Korporat (Growth, Stability, Renewal)</a></li>
+        <li><a href="#s6">Analisis Matriks BCG</a></li>
+        <li><a href="#s7">Porter's Five Forces & Strategi Bersaing</a></li>
+        <li><a href="#kp">Poin-Poin Penting</a></li>
+        <li><a href="#mt">Tips Menghafal</a></li>
+        <li><a href="#ex">Contoh Soal & Pembahasan</a></li>
+        <li><a href="#quiz">Latihan Soal Interaktif</a></li>
+    </ol>
+</div>
+
+<!-- ===== SECTION 1 ===== -->
+<div class="section" id="s1">
+    <h2><span class="icon">🗺️</span> 1. Apa itu Planning & 4 Alasan Manajer Merencana</h2>
+    <p><strong>Planning</strong> adalah fungsi utama manajemen yang mencakup penetapan tujuan, penyusunan strategi, dan pengembangan rencana untuk mengoordinasikan aktivitas kerja.</p>
+
+    <div class="highlight blue">
+        <h4>🎯 4 Alasan Utama Mengapa Manajer Merencana:</h4>
+        <ol>
+            <li><strong>Memberi Arah (Provides Direction):</strong> Agar seluruh karyawan tahu ke mana harus melangkah.</li>
+            <li><strong>Mengurangi Ketidakpastian (Reduces Uncertainty):</strong> Memaksa manajer mengantisipasi perubahan.</li>
+            <li><strong>Meminimalkan Pemborosan (Minimizes Waste & Redundancy):</strong> Menghilangkan efisiensi kerja yang tidak perlu.</li>
+            <li><strong>Menetapkan Standar Pengendalian (Sets Standards for Controlling):</strong> Menyediakan tolok ukur untuk evaluasi.</li>
+        </ol>
+    </div>
+</div>
+
+<!-- ===== SECTION 2 ===== -->
+<div class="section" id="s2">
+    <h2><span class="icon">📄</span> 2. Jenis-Jenis Rencana (Types of Plans)</h2>
+
+    <div class="table-wrap">
+        <table>
+            <tr><th>Kategori Rencana</th><th>Tipe Rencana</th><th>Definisi</th></tr>
+            <tr>
+                <td><strong>Berdasarkan Jangkauan (Breadth)</strong></td>
+                <td><strong>Strategic Plans</strong><br><strong>Operational Plans</strong></td>
+                <td>Rencana menyeluruh seluruh organisasi jangka panjang.<br>Rencana detail untuk area operasional spesifik.</td>
+            </tr>
+            <tr>
+                <td><strong>Berdasarkan Kerangka Waktu</strong></td>
+                <td><strong>Long-term Plans</strong><br><strong>Short-term Plans</strong></td>
+                <td>Jangka waktu > 3 tahun.<br>Jangka waktu ≤ 1 tahun.</td>
+            </tr>
+            <tr>
+                <td><strong>Berdasarkan Spesifisitas</strong></td>
+                <td><strong>Specific Plans</strong><br><strong>Directional Plans</strong></td>
+                <td>Jelas, terdefinisi tanpa ruang interpretasi.<br>Fleksibel, panduan umum.</td>
+            </tr>
+            <tr>
+                <td><strong>Berdasarkan Frekuensi</strong></td>
+                <td><strong>Single-use Plan</strong><br><strong>Standing Plan</strong></td>
+                <td>Rencana satu kali untuk situasi unik.<br>Rencana berkelanjutan berulang (SOP/Kebijakan).</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- ===== SECTION 3 ===== -->
+<div class="section" id="s3">
+    <h2><span class="icon">🎯</span> 3. Goal Setting: MBO & SMART Goals</h2>
+
+    <h3>Traditional Goal Setting vs MBO:</h3>
+    <ul>
+        <li><strong>Traditional Goal Setting:</strong> Target ditetapkan oleh manajemen puncak (top-down) lalu diturunkan menjadi sub-target bawahan. (Kelemahan: ambigu saat sampai di bawah).</li>
+        <li><strong>MBO (Management by Objectives):</strong> Proses penetapan target yang disepakati **bersama** antara manajer dan bawahan, lalu digunakan untuk mengevaluasi kinerja. (4 Elemen: Goal specificity, Participative decision making, Explicit time period, Performance feedback).</li>
+    </ul>
+
+    <div class="highlight emerald">
+        <h4>⭐ SMART Goals:</h4>
+        <p><strong>S</strong>pecific (spesifik), <strong>M</strong>easurable (dapat diukur), <strong>A</strong>chievable (dapat dicapai), <strong>R</strong>elevant (relevan), <strong>T</strong>ime-bound (memiliki batas waktu jelas).</p>
+    </div>
+</div>
+
+<!-- ===== SECTION 4 ===== -->
+<div class="section" id="s4">
+    <h2><span class="icon">🔍</span> 4. Proses Manajemen Strategis & SWOT</h2>
+
+    <h3>6 Langkah Strategic Management Process:</h3>
+    <ol>
+        <li>Identifikasi Misi, Tujuan, & Strategi saat ini.</li>
+        <li>Analisis Eksternal (Peluang & Ancaman).</li>
+        <li>Analisis Internal (Kekuatan & Kelemahan).</li>
+        <li>Formulasi Strategi (menggabungkan analisis internal & eksternal melalui **SWOT**).</li>
+        <li>Implementasi Strategi.</li>
+        <li>Evaluasi Hasil.</li>
+    </ol>
+
+    <div class="table-wrap">
+        <table>
+            <tr><th>Analisis SWOT</th><th>Faktor Internal</th><th>Faktor Eksternal</th></tr>
+            <tr><td><strong>Positif</strong></td><td><strong>Strengths (Kekuatan)</strong></td><td><strong>Opportunities (Peluang)</strong></td></tr>
+            <tr><td><strong>Negatif</strong></td><td><strong>Weaknesses (Kelemahan)</strong></td><td><strong>Threats (Ancaman)</strong></td></tr>
+        </table>
+    </div>
+</div>
+
+<!-- ===== SECTION 5 ===== -->
+<div class="section" id="s5">
+    <h2><span class="icon">🏢</span> 5. Strategi Korporat</h2>
+
+    <ul>
+        <li><strong>Growth Strategy (Pertumbuhan):</strong> Ekspansi jumlah pasar/produk.
+            <ul>
+                <li><em>Concentration:</em> Fokus pada lini bisnis utama.</li>
+                <li><em>Vertical Integration:</em> Backward (jadi pemasok sendiri) / Forward (jadi distributor sendiri).</li>
+                <li><em>Horizontal Integration:</em> Penggabungan dengan kompetitor.</li>
+                <li><em>Diversification:</em> Related (industri terkait) / Unrelated (industri beda).</li>
+            </ul>
+        </li>
+        <li><strong>Stability Strategy:</strong> Pertahankan status quo / operasional saat ini.</li>
+        <li><strong>Renewal Strategy:</strong> Mengatasi penurunan kinerja (Retrenchment untuk masalah minor / Turnaround untuk krisis parah).</li>
+    </ul>
+</div>
+
+<!-- ===== SECTION 6 ===== -->
+<div class="section" id="s6">
+    <h2><span class="icon">📊</span> 6. Matriks BCG</h2>
+    <p>Alat alokasi sumber daya berdasarkan <strong>Market Share</strong> (pangsa pasar) dan <strong>Anticipated Market Growth Rate</strong> (tingkat pertumbuhan pasar):</p>
+
+    <div class="table-wrap">
+        <table>
+            <tr><th>Kategori BCG</th><th>Market Share</th><th>Market Growth</th><th>Strategi Tindakan</th></tr>
+            <tr><td>⭐ <strong>Stars</strong></td><td>Tinggi (High)</td><td>Tinggi (High)</td><td>Investasi besar untuk pertahankan posisi</td></tr>
+            <tr><td>🐄 <strong>Cash Cows</strong></td><td>Tinggi (High)</td><td>Rendah (Low)</td><td>Sapi perah ("Milk" cash), batasi investasi baru</td></tr>
+            <tr><td>❓ <strong>Question Marks</strong></td><td>Rendah (Low)</td><td>Tinggi (High)</td><td>Analisis ketat: kembangkan jadi Stars atau jual</td></tr>
+            <tr><td>🐕 <strong>Dogs</strong></td><td>Rendah (Low)</td><td>Rendah (Low)</td><td>Divestasi / Jual / Likuidasi</td></tr>
+        </table>
+    </div>
+</div>
+
+<!-- ===== SECTION 7 ===== -->
+<div class="section" id="s7">
+    <h2><span class="icon">⚔️</span> 7. Porter's Five Forces & Strategi Bersaing</h2>
+
+    <h3>5 Kekuatan Industri Porter:</h3>
+    <ol>
+        <li>Threat of New Entrants (Ancaman Pendatang Baru).</li>
+        <li>Threat of Substitutes (Ancaman Produk Pengganti).</li>
+        <li>Bargaining Power of Buyers (Daya Tawar Pembeli).</li>
+        <li>Bargaining Power of Suppliers (Daya Tawar Pemasok).</li>
+        <li>Current Industry Rivalry (Tingkat Persaingan Kompetitor Sejenis).</li>
+    </ol>
+
+    <h3>3 Strategi Bersaing Porter:</h3>
+    <ul>
+        <li><strong>Cost Leadership:</strong> Berkompetisi dengan menjadi produsen **berbiaya terendah** di industri.</li>
+        <li><strong>Differentiation:</strong> Berkompetisi dengan menawarkan produk **unik** yang bernilai tinggi bagi konsumen.</li>
+        <li><strong>Focus Strategy:</strong> Berfokus pada keunggulan biaya/diferensiasi di segmen pasar yang **sempit/niche**.</li>
+        <li><strong style="color:var(--rose)">Stuck in the Middle:</strong> Kondisi berbahaya ketika perusahaan tidak punya keunggulan biaya maupun diferensiasi.</li>
+    </ul>
+</div>
+
+<!-- ===== KEY POINTS ===== -->
+<div class="section" id="kp">
+    <div class="key-points">
+        <h3>🔑 POIN-POIN PENTING TOPIK 9</h3>
+        <ol>
+            <li>4 Alasan Planning: Direction, Reduce uncertainty, Minimize waste, Set control standards.</li>
+            <li>Single-use Plan (1x pakai); Standing Plan (SOP/berulang).</li>
+            <li>SWOT: Internal (Strengths/Weaknesses); Eksternal (Opportunities/Threats).</li>
+            <li>Matriks BCG: Stars, Cash Cows, Question Marks, Dogs.</li>
+            <li>Porter 5 Forces tentukan daya tarik industri; 3 Strategi: Cost Leadership, Differentiation, Focus.</li>
+            <li>Stuck in the Middle = gagal memiliki keunggulan kompetitif jelas.</li>
+        </ol>
+    </div>
+</div>
+
+<!-- ===== MEMORY TIPS ===== -->
+<div class="section" id="mt">
+    <div class="memory-tips">
+        <h3>🧠 TIPS MENGHAFAL</h3>
+        <ol>
+            <li><strong>SWOT</strong>: <strong>S</strong>trengths & <strong>W</strong>eaknesses ada di DALAM perusahaan; <strong>O</strong>pportunities & <strong>T</strong>hreats ada di LUAR.</li>
+            <li><strong>BCG Matrix</strong>: Cash Cow = Sapi perah penghasil uang tanpa perlu makan (pertumbuhan) lagi!</li>
+        </ol>
+    </div>
+</div>
+
+<!-- ===== CONTOH SOAL ===== -->
+<div class="section" id="ex">
+    <h2><span class="icon">📝</span> Contoh Soal & Pembahasan</h2>
+
+    <div class="example">
+        <h3>Soal 1</h3>
+        <p><strong>Dalam Matriks BCG, unit bisnis yang memiliki pangsa pasar tinggi (High Market Share) namun berada di industri dengan pertumbuhan lambat (Low Growth Rate) dikategorikan sebagai...</strong></p>
+        <p>A. Stars<br>B. Question Marks<br>C. Cash Cows<br>D. Dogs</p>
+        <p><strong>Jawaban: C</strong></p>
+        <p><strong>Pembahasan:</strong> Cash Cows adalah unit bisnis matang bernilai tinggi yang menghasilkan arus kas stabil tanpa perlu investasi ekspansi tinggi lagi.</p>
+    </div>
+
+    <div class="example">
+        <h3>Soal 2</h3>
+        <p><strong>Apple memproduksi smartphone sendiri dan juga membuka toko ritel Apple Store milik sendiri untuk mendistribusikan produknya. Ini adalah contoh strategi...</strong></p>
+        <p>A. Backward Vertical Integration<br>B. Forward Vertical Integration<br>C. Horizontal Integration<br>D. Unrelated Diversification</p>
+        <p><strong>Jawaban: B</strong></p>
+        <p><strong>Pembahasan:</strong> Forward vertical integration terjadi ketika produsen menjadi distributor/pengecer produknya sendiri.</p>
+    </div>
+</div>
+
+<!-- ===== QUIZ ===== -->
+<div class="quiz-section" id="quiz">
+    <h2>🎯 Latihan Soal Interaktif — Topik 9</h2>
+    <p class="subtitle">Kerjakan 10 soal, lalu klik "Lihat Hasil" untuk melihat skor dan pembahasanmu. Jawaban tersimpan otomatis.</p>
+
+    <form id="quizForm">
+        <div class="q-card" id="q1"><div class="q-num">Soal 1</div><div class="q-text">Manakah yang BUKAN merupakan alasan utama manajer melakukan perencanaan (planning)?</div><div class="q-options"><label><input type="radio" name="q1" value="a"> Memberi arah (direction)</label><label><input type="radio" name="q1" value="b"> Mengurangi ketidakpastian</label><label><input type="radio" name="q1" value="c"> Menjamin 100% keuntungan pasti tercapai</label><label><input type="radio" name="q1" value="d"> Menetapkan standar pengendalian</label></div><div class="q-feedback" id="fb1"></div></div>
+
+        <div class="q-card" id="q2"><div class="q-num">Soal 2</div><div class="q-text">Rencana yang berlangsung secara berkelanjutan dan menyediakan panduan aktivitas yang dilakukan berulang kali (seperti SOP) dinamakan...</div><div class="q-options"><label><input type="radio" name="q2" value="a"> Single-use plan</label><label><input type="radio" name="q2" value="b"> Standing plan</label><label><input type="radio" name="q2" value="c"> Directional plan</label><label><input type="radio" name="q2" value="d"> Strategic plan</label></div><div class="q-feedback" id="fb2"></div></div>
+
+        <div class="q-card" id="q3"><div class="q-num">Soal 3</div><div class="q-text">Proses penetapan target yang disepakati bersama antara manajer dan bawahan untuk mengevaluasi kinerja dinamakan...</div><div class="q-options"><label><input type="radio" name="q3" value="a"> MBO (Management by Objectives)</label><label><input type="radio" name="q3" value="b"> Traditional Goal Setting</label><label><input type="radio" name="q3" value="c"> SWOT Analysis</label><label><input type="radio" name="q3" value="d"> BCG Matrix</label></div><div class="q-feedback" id="fb3"></div></div>
+
+        <div class="q-card" id="q4"><div class="q-num">Soal 4</div><div class="q-text">Dalam analisis SWOT, faktor Strengths dan Weaknesses dikategorikan sebagai faktor...</div><div class="q-options"><label><input type="radio" name="q4" value="a"> Eksternal</label><label><input type="radio" name="q4" value="b"> Internal</label><label><input type="radio" name="q4" value="c"> Global</label><label><input type="radio" name="q4" value="d"> Makro</label></div><div class="q-feedback" id="fb4"></div></div>
+
+        <div class="q-card" id="q5"><div class="q-num">Soal 5</div><div class="q-text">Perusahaan ritel yang membeli pabrik susu pemasoknya agar mendapat harga susu lebih murah menerapkan strategi...</div><div class="q-options"><label><input type="radio" name="q5" value="a"> Backward Vertical Integration</label><label><input type="radio" name="q5" value="b"> Forward Vertical Integration</label><label><input type="radio" name="q5" value="c"> Horizontal Integration</label><label><input type="radio" name="q5" value="d"> Retrenchment</label></div><div class="q-feedback" id="fb5"></div></div>
+
+        <div class="q-card" id="q6"><div class="q-num">Soal 6</div><div class="q-text">Kategori dalam Matriks BCG yang memiliki market share rendah namun berada di pasar berpertumbuhan tinggi adalah...</div><div class="q-options"><label><input type="radio" name="q6" value="a"> Stars</label><label><input type="radio" name="q6" value="b"> Cash Cows</label><label><input type="radio" name="q6" value="c"> Question Marks</label><label><input type="radio" name="q6" value="d"> Dogs</label></div><div class="q-feedback" id="fb6"></div></div>
+
+        <div class="q-card" id="q7"><div class="q-num">Soal 7</div><div class="q-text">Manakah di bawah ini yang BUKAN merupakan salah satu dari 5 Kekuatan Industri Porter (Porter's Five Forces)?</div><div class="q-options"><label><input type="radio" name="q7" value="a"> Threat of New Entrants</label><label><input type="radio" name="q7" value="b"> Bargaining Power of Buyers</label><label><input type="radio" name="q7" value="c"> Fluktuasi Nilai Tukar Mata Uang</label><label><input type="radio" name="q7" value="d"> Threat of Substitutes</label></div><div class="q-feedback" id="fb7"></div></div>
+
+        <div class="q-card" id="q8"><div class="q-num">Soal 8</div><div class="q-text">Perusahaan yang memilih berkompetisi dengan menawarkan produk paling unik dan berkualitas tinggi di pasar menggunakan strategi...</div><div class="q-options"><label><input type="radio" name="q8" value="a"> Cost Leadership</label><label><input type="radio" name="q8" value="b"> Differentiation</label><label><input type="radio" name="q8" value="c"> Stability</label><label><input type="radio" name="q8" value="d"> Retrenchment</label></div><div class="q-feedback" id="fb8"></div></div>
+
+        <div class="q-card" id="q9"><div class="q-num">Soal 9</div><div class="q-text">Kondisi ketika perusahaan tidak mampu mencapai keunggulan biaya terendah maupun diferensiasi dinamakan Porter sebagai...</div><div class="q-options"><label><input type="radio" name="q9" value="a"> Cost Leadership</label><label><input type="radio" name="q9" value="b"> Stuck in the Middle</label><label><input type="radio" name="q9" value="c"> Question Mark</label><label><input type="radio" name="q9" value="d"> Dog Position</label></div><div class="q-feedback" id="fb9"></div></div>
+
+        <div class="q-card" id="q10"><div class="q-num">Soal 10</div><div class="q-text">Strategi pemulihan jangka pendek yang digunakan organisasi untuk mengatasi masalah penurunan kinerja minor adalah...</div><div class="q-options"><label><input type="radio" name="q10" value="a"> Turnaround Strategy</label><label><input type="radio" name="q10" value="b"> Retrenchment Strategy</label><label><input type="radio" name="q10" value="c"> Concentration Strategy</label><label><input type="radio" name="q10" value="d"> Diversification Strategy</label></div><div class="q-feedback" id="fb10"></div></div>
+
+        <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:24px;">
+            <button type="button" class="btn btn-primary" onclick="checkQuiz()">📊 Lihat Hasil</button>
+            <button type="button" class="btn btn-secondary" onclick="resetQuiz()">🔄 Reset</button>
+        </div>
+    </form>
+
+    <div class="results-box" id="resultsBox">
+        <div class="score-display">
+            <div class="score-num" id="scoreNum"></div>
+            <div class="score-label" id="scoreLabel"></div>
+        </div>
+    </div>
+</div>
+
+<div class="bottom-nav">
+    <a href="topik-08.html">← Topik 8: Constraints & Change</a>
+    <a href="topik-10.html">Topik 10: Org Design, Teams & HRM →</a>
+</div>
+
+</div>
+
+<script>
+const STORAGE_KEY = 'manbis_t09_quiz';
+const answers = {q1:'c',q2:'b',q3:'a',q4:'b',q5:'a',q6:'c',q7:'c',q8:'b',q9:'b',q10:'b'};
+const explanations = {
+    q1: 'Perencanaan mengurangi risiko tetapi tidak dapat menjamin keuntungan 100% pasti.',
+    q2: 'Standing plan adalah rencana berkelanjutan untuk aktivitas berulang (SOP).',
+    q3: 'MBO melibatkan penetapan tujuan bersama antara manajer dan bawahan.',
+    q4: 'Strengths & Weaknesses adalah variabel internal organisasi.',
+    q5: 'Backward vertical integration berarti perusahaan menjadi pemasoknya sendiri.',
+    q6: 'Question marks berada di pasar tumbuh cepat tetapi memiliki share kecil.',
+    q7: 'Fluktuasi kurs mata uang adalah faktor ekonomi makro, bukan salah satu 5 kekuatan Porter.',
+    q8: 'Differentiation berkompetisi berdasarkan keunikan & nilai tinggi.',
+    q9: 'Stuck in the middle adalah posisi berbahaya tanpa keunggulan biaya/diferensiasi.',
+    q10: 'Retrenchment adalah strategi pemulihan jangka pendek untuk masalah minor.'
+};
+
+function saveAnswers() {
+    const data = {};
+    for (let i = 1; i <= 10; i++) {
+        const sel = document.querySelector(`input[name="q${i}"]:checked`);
+        if (sel) data[`q${i}`] = sel.value;
+    }
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+}
+
+function loadAnswers() {
+    const data = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+    for (const [key, val] of Object.entries(data)) {
+        const radio = document.querySelector(`input[name="${key}"][value="${val}"]`);
+        if (radio) radio.checked = true;
+    }
+}
+
+function checkQuiz() {
+    saveAnswers();
+    let score = 0;
+    const total = 10;
+    for (let i = 1; i <= total; i++) {
+        const sel = document.querySelector(`input[name="q${i}"]:checked`);
+        const fb = document.getElementById(`fb${i}`);
+        const card = document.getElementById(`q${i}`);
+        const correct = answers[`q${i}`];
+        card.classList.remove('correct','wrong');
+        if (sel && sel.value === correct) {
+            score++;
+            card.classList.add('correct');
+            fb.className = 'q-feedback show correct-fb';
+            fb.innerHTML = `✅ <strong>Benar!</strong> ${explanations['q'+i]}`;
+        } else {
+            card.classList.add('wrong');
+            fb.className = 'q-feedback show wrong-fb';
+            const userAns = sel ? sel.value.toUpperCase() : '—';
+            fb.innerHTML = `❌ <strong>Salah.</strong> Jawabanmu: ${userAns}. Jawaban benar: <strong>${correct.toUpperCase()}</strong>. ${explanations['q'+i]}`;
+        }
+    }
+    const pct = Math.round((score/total)*100);
+    const box = document.getElementById('resultsBox');
+    const num = document.getElementById('scoreNum');
+    const lbl = document.getElementById('scoreLabel');
+    num.textContent = `${score}/${total}`;
+    num.className = 'score-num ' + (pct >= 80 ? 'good' : pct >= 60 ? 'ok' : 'bad');
+    lbl.textContent = pct >= 80 ? '🎉 Excellent! Kamu sudah menguasai materi ini!' : pct >= 60 ? '👍 Lumayan! Review lagi bagian yang salah.' : '📖 Perlu belajar lagi. Baca ulang materinya ya!';
+    box.classList.add('show');
+    box.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+function resetQuiz() {
+    localStorage.removeItem(STORAGE_KEY);
+    document.getElementById('quizForm').reset();
+    for (let i = 1; i <= 10; i++) {
+        document.getElementById(`q${i}`).classList.remove('correct','wrong');
+        const fb = document.getElementById(`fb${i}`);
+        fb.className = 'q-feedback';
+        fb.innerHTML = '';
+    }
+    document.getElementById('resultsBox').classList.remove('show');
+}
+
+document.querySelectorAll('input[type="radio"]').forEach(r => r.addEventListener('change', saveAnswers));
+window.addEventListener('DOMContentLoaded', loadAnswers);
+</script>
+</body>
+</html>

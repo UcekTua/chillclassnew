@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topik 6: Accounting & Financial Information — ManBis</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+            --bg: #0a0e1a; --bg2: #111827; --bg-card: rgba(17,24,39,0.7);
+            --border: rgba(99,102,241,0.15); --border-h: rgba(99,102,241,0.4);
+            --text: #f1f5f9; --text2: #94a3b8; --text3: #64748b;
+            --blue: #6366f1; --cyan: #06b6d4; --violet: #8b5cf6;
+            --emerald: #10b981; --amber: #f59e0b; --rose: #f43f5e;
+            --grad: linear-gradient(135deg, #eab308, #f59e0b);
+        }
+        body { font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); line-height:1.8; }
+        .bg-orbs { position:fixed; top:0; left:0; width:100%; height:100%; z-index:0; overflow:hidden; pointer-events:none; }
+        .bg-orbs span { position:absolute; border-radius:50%; filter:blur(80px); opacity:0.1; }
+        .bg-orbs span:nth-child(1) { width:500px; height:500px; background:var(--amber); top:-10%; left:-5%; }
+        .bg-orbs span:nth-child(2) { width:400px; height:400px; background:var(--emerald); bottom:10%; right:-5%; }
+
+        .wrapper { position:relative; z-index:1; max-width:900px; margin:0 auto; padding:40px 24px 80px; }
+
+        .topnav { display:flex; align-items:center; gap:12px; margin-bottom:48px; flex-wrap:wrap; position:sticky; top:0; z-index:100; background:rgba(10,14,26,0.85); backdrop-filter:blur(12px); padding:20px 0; }
+        .topnav a { color:var(--text2); text-decoration:none; font-size:0.85rem; font-weight:500; transition:color 0.3s; }
+        .topnav a:hover { color:var(--amber); }
+        .topnav .sep { color:var(--text3); }
+
+        .ch-header { margin-bottom:48px; animation:fadeUp .6s ease-out; }
+        .ch-badge { display:inline-block; padding:5px 14px; border-radius:100px; background:rgba(234,179,8,0.12); border:1px solid rgba(234,179,8,0.25); color:#eab308; font-size:0.75rem; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; margin-bottom:16px; }
+        .ch-header h1 { font-size:clamp(1.8rem,4vw,2.6rem); font-weight:900; background:var(--grad); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; margin-bottom:12px; }
+        .ch-header p { color:var(--text2); font-size:1rem; max-width:700px; }
+
+        .toc { background:var(--bg-card); backdrop-filter:blur(16px); border:1px solid var(--border); border-radius:16px; padding:28px 32px; margin-bottom:48px; animation:fadeUp .6s ease-out .1s both; }
+        .toc h3 { font-size:0.85rem; font-weight:700; text-transform:uppercase; letter-spacing:1.5px; color:#eab308; margin-bottom:16px; }
+        .toc ol { padding-left:20px; }
+        .toc li { margin-bottom:8px; }
+        .toc a { color:var(--text2); text-decoration:none; font-size:0.9rem; transition:color 0.3s; }
+        .toc a:hover { color:var(--cyan); }
+
+        .section { background:var(--bg-card); backdrop-filter:blur(16px); border:1px solid var(--border); border-radius:20px; padding:36px 36px; margin-bottom:32px; animation:fadeUp .6s ease-out both; }
+        .section h2 { font-size:1.5rem; font-weight:800; margin-bottom:20px; display:flex; align-items:center; gap:12px; }
+        .section h2 .icon { font-size:1.3rem; }
+        .section h3 { font-size:1.15rem; font-weight:700; margin:28px 0 12px; color:var(--cyan); }
+        .section h4 { font-size:1rem; font-weight:600; margin:20px 0 10px; color:#eab308; }
+        .section p { color:var(--text2); margin-bottom:14px; font-size:0.95rem; }
+        .section ul, .section ol { padding-left:24px; margin-bottom:14px; }
+        .section li { color:var(--text2); margin-bottom:8px; font-size:0.95rem; }
+        .section li strong { color:var(--text); }
+
+        .highlight { border-radius:12px; padding:20px 24px; margin:20px 0; }
+        .highlight.blue { background:rgba(99,102,241,0.08); border-left:4px solid var(--blue); }
+        .highlight.emerald { background:rgba(16,185,129,0.08); border-left:4px solid var(--emerald); }
+        .highlight.amber { background:rgba(245,158,11,0.08); border-left:4px solid var(--amber); }
+
+        .table-wrap { overflow-x:auto; margin:20px 0; }
+        table { width:100%; border-collapse:collapse; font-size:0.88rem; }
+        th { background:rgba(234,179,8,0.12); color:#eab308; font-weight:700; padding:12px 16px; text-align:left; border-bottom:2px solid rgba(234,179,8,0.2); }
+        td { padding:11px 16px; border-bottom:1px solid rgba(148,163,184,0.08); color:var(--text2); }
+        tr:hover td { background:rgba(234,179,8,0.04); }
+
+        .equation { text-align:center; padding:28px; margin:24px 0; background:linear-gradient(135deg, rgba(234,179,8,0.1), rgba(16,185,129,0.1)); border:1px solid rgba(234,179,8,0.2); border-radius:16px; }
+        .equation .formula { font-size:1.3rem; font-weight:800; color:var(--text); }
+
+        .key-points { background:linear-gradient(135deg, rgba(16,185,129,0.06), rgba(6,182,212,0.06)); border:1px solid rgba(16,185,129,0.2); border-radius:16px; padding:28px 32px; margin:28px 0; }
+        .key-points h3 { color:var(--emerald); font-size:1rem; margin-bottom:16px; }
+
+        .memory-tips { background:linear-gradient(135deg, rgba(245,158,11,0.06), rgba(244,63,94,0.06)); border:1px solid rgba(245,158,11,0.2); border-radius:16px; padding:28px 32px; margin:28px 0; }
+        .memory-tips h3 { color:var(--amber); font-size:1rem; margin-bottom:16px; }
+
+        .example { background:rgba(234,179,8,0.06); border:1px solid rgba(234,179,8,0.2); border-radius:16px; padding:28px 32px; margin:28px 0; }
+        .example h3 { color:#eab308; margin-top:0; margin-bottom:16px; }
+
+        .quiz-section { margin-top:48px; }
+        .quiz-section h2 { font-size:1.5rem; font-weight:800; margin-bottom:8px; }
+        .quiz-section .subtitle { color:var(--text2); margin-bottom:24px; }
+        .q-card { background:var(--bg-card); backdrop-filter:blur(16px); border:1px solid var(--border); border-radius:16px; padding:28px 30px; margin-bottom:20px; transition:border-color 0.3s; }
+        .q-card.correct { border-color:var(--emerald) !important; }
+        .q-card.wrong { border-color:var(--rose) !important; }
+        .q-num { font-size:0.75rem; font-weight:700; color:#eab308; text-transform:uppercase; letter-spacing:1.5px; margin-bottom:10px; }
+        .q-text { font-size:0.95rem; font-weight:600; color:var(--text); margin-bottom:16px; line-height:1.6; }
+        .q-options label { display:flex; align-items:flex-start; gap:12px; padding:10px 14px; margin-bottom:8px; border-radius:10px; cursor:pointer; transition:background 0.2s; font-size:0.9rem; color:var(--text2); }
+        .q-options label:hover { background:rgba(234,179,8,0.06); }
+        .q-options input[type="radio"] { margin-top:3px; accent-color:#eab308; }
+        .q-feedback { margin-top:14px; padding:14px 18px; border-radius:10px; font-size:0.88rem; display:none; }
+        .q-feedback.show { display:block; }
+        .q-feedback.correct-fb { background:rgba(16,185,129,0.1); border:1px solid rgba(16,185,129,0.25); color:var(--emerald); }
+        .q-feedback.wrong-fb { background:rgba(244,63,94,0.1); border:1px solid rgba(244,63,94,0.25); color:var(--rose); }
+
+        .btn { display:inline-flex; align-items:center; gap:8px; padding:14px 32px; border:none; border-radius:12px; font-family:inherit; font-size:0.9rem; font-weight:700; cursor:pointer; transition:all 0.3s; }
+        .btn-primary { background:var(--grad); color:#fff; }
+        .btn-primary:hover { transform:translateY(-2px); box-shadow:0 8px 24px rgba(234,179,8,0.3); }
+        .btn-secondary { background:rgba(148,163,184,0.1); color:var(--text2); border:1px solid var(--border); }
+        .btn-secondary:hover { border-color:var(--border-h); color:var(--text); }
+
+        .results-box { background:var(--bg-card); backdrop-filter:blur(16px); border:1px solid var(--border); border-radius:16px; padding:32px; margin-top:24px; display:none; }
+        .results-box.show { display:block; animation:fadeUp .4s ease-out; }
+        .score-display { text-align:center; margin-bottom:24px; }
+        .score-display .score-num { font-size:3rem; font-weight:900; }
+        .score-display .score-num.good { color:var(--emerald); }
+        .score-display .score-num.ok { color:var(--amber); }
+        .score-display .score-num.bad { color:var(--rose); }
+        .score-display .score-label { color:var(--text2); font-size:0.9rem; }
+
+        .bottom-nav { display:flex; justify-content:space-between; align-items:center; margin-top:48px; padding-top:32px; border-top:1px solid var(--border); }
+        .bottom-nav a { color:var(--text2); text-decoration:none; font-weight:600; font-size:0.9rem; transition:color 0.3s; }
+        .bottom-nav a:hover { color:#eab308; }
+
+        @keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+
+        @media (max-width:768px) {
+            .wrapper { padding:24px 16px 60px; }
+            .section { padding:24px 20px; }
+            .toc { padding:20px 24px; }
+        }
+        .topnav { position:fixed !important; top:24px !important; right:24px !important; margin:0 !important; background:rgba(10,14,26,0.6) !important; padding:10px 24px !important; border-radius:100px !important; border:1px solid rgba(99,102,241,0.3) !important; box-shadow: 0 8px 32px rgba(0,0,0,0.5) !important; width:auto !important; flex-wrap: nowrap !important; }
+        .bottom-nav { display:none !important; }
+        .watermark { display: none !important; }
+        .wrapper { padding-top: 80px !important; }
+        @media (max-width:768px) {
+            .topnav { top:auto !important; bottom:24px !important; right:50% !important; transform:translateX(50%) !important; padding:8px 16px !important; font-size: 0.8rem !important; white-space: nowrap !important; overflow-x: auto !important; max-width: 90vw !important; gap: 8px !important; }
+        }
+    </style>
+</head>
+<body>
+<div class="bg-orbs"><span></span><span></span></div>
+<div class="wrapper">
+
+<nav class="topnav">
+    <a href="index.html">🏠</a>
+    <span class="sep">/</span>
+    <a href="topik-01.html">T1</a>
+    <span class="sep">·</span>
+    <a href="topik-02.html">T2</a>
+    <span class="sep">·</span>
+    <a href="topik-03.html">T3</a>
+    <span class="sep">·</span>
+    <a href="topik-04.html">T4</a>
+    <span class="sep">·</span>
+    <a href="topik-05.html">T5</a>
+    <span class="sep">·</span>
+    <a href="topik-06.html" style="color:#eab308;">T6</a>
+    <span class="sep">·</span>
+    <a href="topik-07.html">T7</a>
+    <span class="sep">·</span>
+    <a href="topik-08.html">T8</a>
+    <span class="sep">·</span>
+    <a href="topik-09.html">T9</a>
+    <span class="sep">·</span>
+    <a href="topik-10.html">T10</a>
+    <span class="sep">·</span>
+    <a href="topik-11.html">T11</a>
+</nav>
+
+<div class="ch-header">
+    <div class="ch-badge">Topik 06</div>
+    <h1>Understanding Accounting & Financial Info</h1>
+    <p>Memahami peran penting akuntansi dalam mengukur kinerja bisnis, tiga laporan keuangan utama (Balance Sheet, Income Statement, Statement of Cash Flows), serta analisis rasio keuangan.</p>
+</div>
+
+<div class="toc">
+    <h3>📑 Daftar Isi</h3>
+    <ol>
+        <li><a href="#s1">Definisi & Siklus Akuntansi</a></li>
+        <li><a href="#s2">Persamaan Dasar Akuntansi (The Accounting Equation)</a></li>
+        <li><a href="#s3">Balance Sheet (Neraca)</a></li>
+        <li><a href="#s4">Income Statement (Laporan Laba Rugi)</a></li>
+        <li><a href="#s5">Statement of Cash Flows (Laporan Arus Kas)</a></li>
+        <li><a href="#s6">Analisis Rasio Keuangan (Ratio Analysis)</a></li>
+        <li><a href="#kp">Poin-Poin Penting</a></li>
+        <li><a href="#mt">Tips Menghafal</a></li>
+        <li><a href="#ex">Contoh Soal & Pembahasan</a></li>
+        <li><a href="#quiz">Latihan Soal Interaktif</a></li>
+    </ol>
+</div>
+
+<!-- ===== SECTION 1 ===== -->
+<div class="section" id="s1">
+    <h2><span class="icon">📒</span> 1. Definisi & Siklus Akuntansi</h2>
+    <p><strong>Accounting</strong> adalah proses mencatat, mengklasifikasikan, merangkum, dan menginterpretasikan transaksi keuangan untuk memberikan informasi pengambilan keputusan.</p>
+
+    <div class="highlight blue">
+        <h4>🔑 Bookkeeping vs Accounting</h4>
+        <p><strong>Bookkeeping:</strong> Hanya bagian teknis pencatatan transaksi ekonomi secara rutin.<br>
+        <strong>Accounting:</strong> Jauh lebih luas mencakup analisis, evaluasi, dan penyajian laporan keuangan.</p>
+    </div>
+</div>
+
+<!-- ===== SECTION 2 ===== -->
+<div class="section" id="s2">
+    <h2><span class="icon">⚡</span> 2. Persamaan Dasar Akuntansi</h2>
+    <p>Seluruh sistem akuntansi didasarkan pada persamaan seimbang:</p>
+
+    <div class="equation">
+        <div class="formula">Assets = Liabilities + Owner's Equity</div>
+        <div class="sub">Harta Perusahaan = Utang dari Kreditur + Modal Milik Pemilik</div>
+    </div>
+</div>
+
+<!-- ===== SECTION 3 ===== -->
+<div class="section" id="s3">
+    <h2><span class="icon">📊</span> 3. Balance Sheet (Neraca)</h2>
+    <p>Melaporkan posisi keuangan perusahaan pada <strong>satu titik waktu tertentu (As of specific date)</strong>.</p>
+
+    <div class="table-wrap">
+        <table>
+            <tr><th>Komponen</th><th>Sub-Komponen</th><th>Contoh</th></tr>
+            <tr>
+                <td><strong>Assets (Harta)</strong></td>
+                <td>Current Assets (< 1 thn)<br>Fixed Assets (> 1 thn)<br>Intangible Assets</td>
+                <td>Kas, Piutang (Accounts Receivable), Persediaan<br>Gedung, Mesin, Peralatan<br>Paten, Trademark, Goodwill</td>
+            </tr>
+            <tr>
+                <td><strong>Liabilities (Utang)</strong></td>
+                <td>Current Liabilities (< 1 thn)<br>Long-term Liabilities (> 1 thn)</td>
+                <td>Utang Usaha (Accounts Payable), Gaji Terutang<br>Utang Bank Jangka Panjang, Obligasi</td>
+            </tr>
+            <tr>
+                <td><strong>Owner's Equity</strong></td>
+                <td>Capital & Retained Earnings</td>
+                <td>Modal saham disetor + Laba ditahan yang tidak dibagi</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- ===== SECTION 4 ===== -->
+<div class="section" id="s4">
+    <h2><span class="icon">📈</span> 4. Income Statement (Laporan Laba Rugi)</h2>
+    <p>Melaporkan pendapatan dan beban perusahaan selama <strong>suatu periode waktu tertentu (For the period ended)</strong>.</p>
+
+    <div class="equation">
+        <div class="formula">Revenue − Cost of Goods Sold (COGS) = Gross Profit<br>Gross Profit − Operating Expenses = Net Income (Laba Bersih)</div>
+    </div>
+</div>
+
+<!-- ===== SECTION 5 ===== -->
+<div class="section" id="s5">
+    <h2><span class="icon">💸</span> 5. Statement of Cash Flows (Laporan Arus Kas)</h2>
+    <p>Melaporkan arus masuk dan keluar uang tunai yang dibagi menjadi 3 aktivitas utama:</p>
+
+    <ul>
+        <li><strong>Operating Activities:</strong> Arus kas dari kegiatan operasional utama (pembayaran pelanggan, bayar gaji, sewa).</li>
+        <li><strong>Investing Activities:</strong> Arus kas dari pembelian/penjualan aset tetap jangka panjang (beli mesin, jual tanah).</li>
+        <li><strong>Financing Activities:</strong> Arus kas dari kegiatan penerbitan saham, pinjaman bank, atau pembayaran dividen.</li>
+    </ul>
+</div>
+
+<!-- ===== SECTION 6 ===== -->
+<div class="section" id="s6">
+    <h2><span class="icon">🔬</span> 6. Analisis Rasio Keuangan (Ratio Analysis)</h2>
+
+    <div class="table-wrap">
+        <table>
+            <tr><th>Kategori Rasio</th><th>Rumus / Contoh Rasio</th><th>Fungsi Mengukur</th></tr>
+            <tr>
+                <td><strong>Liquidity Ratios</strong></td>
+                <td><strong>Current Ratio</strong> = Current Assets ÷ Current Liabilities<br><strong>Quick Ratio</strong> = (Current Assets - Inventory) ÷ Current Liabilities</td>
+                <td>Kemampuan membayar utang jangka pendek yang segera jatuh tempo</td>
+            </tr>
+            <tr>
+                <td><strong>Leverage Ratios</strong></td>
+                <td><strong>Debt to Equity Ratio</strong> = Total Liabilities ÷ Owner's Equity</td>
+                <td>Seberapa besar bisnis dibiayai oleh modal utang dibanding ekuitas</td>
+            </tr>
+            <tr>
+                <td><strong>Profitability Ratios</strong></td>
+                <td><strong>Net Profit Margin</strong> = Net Income ÷ Revenue<br><strong>ROE</strong> = Net Income ÷ Owner's Equity</td>
+                <td>Efektivitas perusahaan dalam menghasilkan laba bersih</td>
+            </tr>
+            <tr>
+                <td><strong>Activity Ratios</strong></td>
+                <td><strong>Inventory Turnover</strong> = COGS ÷ Average Inventory</td>
+                <td>Efisiensi pengelolaan persediaan/aset bisnis</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- ===== KEY POINTS ===== -->
+<div class="section" id="kp">
+    <div class="key-points">
+        <h3>🔑 POIN-POIN PENTING TOPIK 6</h3>
+        <ol>
+            <li>Persamaan dasar: Assets = Liabilities + Owner's Equity.</li>
+            <li>Balance Sheet = kondisi keuangan pada titik waktu tertentu.</li>
+            <li>Income Statement = hasil kinerja laba rugi dalam satu periode.</li>
+            <li>Cash Flow: Operating (operasional), Investing (aset tetap), Financing (utang/saham).</li>
+            <li>Current Ratio mengukur likuiditas utang jangka pendek.</li>
+            <li>Debt to Equity mengukur risiko tingkat utang perusahaan.</li>
+        </ol>
+    </div>
+</div>
+
+<!-- ===== MEMORY TIPS ===== -->
+<div class="section" id="mt">
+    <div class="memory-tips">
+        <h3>🧠 TIPS MENGHAFAL</h3>
+        <ol>
+            <li><strong>"ALO" = Aset = Liabilities + Owner's Equity</strong>.</li>
+            <li><strong>Balance Sheet = Foto (Snapshot)</strong> titik waktu; <strong>Income Statement = Video</strong> durasi periode.</li>
+            <li><strong>Current Ratio ideal ≥ 2.0</strong> (Asset lancar 2x dari utang lancar).</li>
+        </ol>
+    </div>
+</div>
+
+<!-- ===== CONTOH SOAL ===== -->
+<div class="section" id="ex">
+    <h2><span class="icon">📝</span> Contoh Soal & Pembahasan</h2>
+
+    <div class="example">
+        <h3>Soal 1</h3>
+        <p><strong>Sebuah perusahaan memiliki Current Assets sebesar Rp 200 juta dan Current Liabilities sebesar Rp 100 juta. Berapakah nilai Current Ratio perusahaan tersebut?</strong></p>
+        <p>A. 0.5<br>B. 1.0<br>C. 2.0<br>D. 3.0</p>
+        <p><strong>Jawaban: C</strong></p>
+        <p><strong>Pembahasan:</strong> Current Ratio = Current Assets ÷ Current Liabilities = 200 Juta ÷ 100 Juta = 2.0.</p>
+    </div>
+
+    <div class="example">
+        <h3>Soal 2</h3>
+        <p><strong>Arus kas yang berasal dari kegiatan pembelian peralatan pabrik baru dimasukkan dalam laporan arus kas kategori...</strong></p>
+        <p>A. Operating Activities<br>B. Investing Activities<br>C. Financing Activities<br>D. Revenue Activities</p>
+        <p><strong>Jawaban: B</strong></p>
+        <p><strong>Pembahasan:</strong> Pembelian aset tetap jangka panjang (peralatan) merupakan bagian dari Investing Activities.</p>
+    </div>
+</div>
+
+<!-- ===== QUIZ ===== -->
+<div class="quiz-section" id="quiz">
+    <h2>🎯 Latihan Soal Interaktif — Topik 6</h2>
+    <p class="subtitle">Kerjakan 10 soal, lalu klik "Lihat Hasil" untuk melihat skor dan pembahasanmu. Jawaban tersimpan otomatis.</p>
+
+    <form id="quizForm">
+        <div class="q-card" id="q1"><div class="q-num">Soal 1</div><div class="q-text">Persamaan dasar akuntansi yang benar adalah...</div><div class="q-options"><label><input type="radio" name="q1" value="a"> Assets = Liabilities - Equity</label><label><input type="radio" name="q1" value="b"> Assets = Liabilities + Owner's Equity</label><label><input type="radio" name="q1" value="c"> Liabilities = Assets + Owner's Equity</label><label><input type="radio" name="q1" value="d"> Owner's Equity = Liabilities - Assets</label></div><div class="q-feedback" id="fb1"></div></div>
+
+        <div class="q-card" id="q2"><div class="q-num">Soal 2</div><div class="q-text">Laporan keuangan yang menyajikan harta, utang, dan modal pada satu tanggal titik waktu tertentu adalah...</div><div class="q-options"><label><input type="radio" name="q2" value="a"> Income Statement</label><label><input type="radio" name="q2" value="b"> Balance Sheet</label><label><input type="radio" name="q2" value="c"> Cash Flow Statement</label><label><input type="radio" name="q2" value="d"> Retained Earnings Statement</label></div><div class="q-feedback" id="fb2"></div></div>
+
+        <div class="q-card" id="q3"><div class="q-num">Soal 3</div><div class="q-text">Manakah di bawah ini yang termasuk kelompok Current Assets (Aset Lancar)?</div><div class="q-options"><label><input type="radio" name="q3" value="a"> Gedung kantor</label><label><input type="radio" name="q3" value="b"> Uang Kas dan Piutang</label><label><input type="radio" name="q3" value="c"> Hak Paten</label><label><input type="radio" name="q3" value="d"> Utang Bank Jangka Panjang</label></div><div class="q-feedback" id="fb3"></div></div>
+
+        <div class="q-card" id="q4"><div class="q-num">Soal 4</div><div class="q-text">Hasil pengurangan antara Gross Profit dengan Operating Expenses pada Income Statement menghasilkan...</div><div class="q-options"><label><input type="radio" name="q4" value="a"> Cost of Goods Sold</label><label><input type="radio" name="q4" value="b"> Total Revenue</label><label><input type="radio" name="q4" value="c"> Net Income (Laba Bersih)</label><label><input type="radio" name="q4" value="d"> Owner's Equity</label></div><div class="q-feedback" id="fb4"></div></div>
+
+        <div class="q-card" id="q5"><div class="q-num">Soal 5</div><div class="q-text">Arus kas keluar untuk pembayaran gaji karyawan dimasukkan dalam aktivitas...</div><div class="q-options"><label><input type="radio" name="q5" value="a"> Operating Activities</label><label><input type="radio" name="q5" value="b"> Investing Activities</label><label><input type="radio" name="q5" value="c"> Financing Activities</label><label><input type="radio" name="q5" value="d"> Capital Activities</label></div><div class="q-feedback" id="fb5"></div></div>
+
+        <div class="q-card" id="q6"><div class="q-num">Soal 6</div><div class="q-text">Rasio yang mengukur kemampuan perusahaan membayar kewajiban jangka pendeknya dinamakan...</div><div class="q-options"><label><input type="radio" name="q6" value="a"> Leverage Ratio</label><label><input type="radio" name="q6" value="b"> Liquidity Ratio</label><label><input type="radio" name="q6" value="c"> Profitability Ratio</label><label><input type="radio" name="q6" value="d"> Activity Ratio</label></div><div class="q-feedback" id="fb6"></div></div>
+
+        <div class="q-card" id="q7"><div class="q-num">Soal 7</div><div class="q-text">Pembayaran dividen kepada pemegang saham dikelompokkan dalam Cash Flow aktivitas...</div><div class="q-options"><label><input type="radio" name="q7" value="a"> Operating</label><label><input type="radio" name="q7" value="b"> Investing</label><label><input type="radio" name="q7" value="c"> Financing</label><label><input type="radio" name="q7" value="d"> Sales</label></div><div class="q-feedback" id="fb7"></div></div>
+
+        <div class="q-card" id="q8"><div class="q-num">Soal 8</div><div class="q-text">Proses mencatat transaksi harian bisnis secara rutin saja dinamakan...</div><div class="q-options"><label><input type="radio" name="q8" value="a"> Accounting</label><label><input type="radio" name="q8" value="b"> Auditing</label><label><input type="radio" name="q8" value="c"> Bookkeeping</label><label><input type="radio" name="q8" value="d"> Budgeting</label></div><div class="q-feedback" id="fb8"></div></div>
+
+        <div class="q-card" id="q9"><div class="q-num">Soal 9</div><div class="q-text">Rumus untuk menghitung Debt to Equity Ratio adalah...</div><div class="q-options"><label><input type="radio" name="q9" value="a"> Total Liabilities ÷ Owner's Equity</label><label><input type="radio" name="q9" value="b"> Current Assets ÷ Current Liabilities</label><label><input type="radio" name="q9" value="c"> Net Income ÷ Revenue</label><label><input type="radio" name="q9" value="d"> COGS ÷ Inventory</label></div><div class="q-feedback" id="fb9"></div></div>
+
+        <div class="q-card" id="q10"><div class="q-num">Soal 10</div><div class="q-text">Aset tidak berwujud seperti hak paten dan merek dagang (trademark) dikategorikan sebagai...</div><div class="q-options"><label><input type="radio" name="q10" value="a"> Current Assets</label><label><input type="radio" name="q10" value="b"> Tangible Assets</label><label><input type="radio" name="q10" value="c"> Intangible Assets</label><label><input type="radio" name="q10" value="d"> Fixed Assets</label></div><div class="q-feedback" id="fb10"></div></div>
+
+        <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:24px;">
+            <button type="button" class="btn btn-primary" onclick="checkQuiz()">📊 Lihat Hasil</button>
+            <button type="button" class="btn btn-secondary" onclick="resetQuiz()">🔄 Reset</button>
+        </div>
+    </form>
+
+    <div class="results-box" id="resultsBox">
+        <div class="score-display">
+            <div class="score-num" id="scoreNum"></div>
+            <div class="score-label" id="scoreLabel"></div>
+        </div>
+    </div>
+</div>
+
+<div class="bottom-nav">
+    <a href="topik-05.html">← Topik 5: Distributing & Promotion</a>
+    <a href="topik-07.html">Topik 7: Financial Management →</a>
+</div>
+
+</div>
+
+<script>
+const STORAGE_KEY = 'manbis_t06_quiz';
+const answers = {q1:'b',q2:'b',q3:'b',q4:'c',q5:'a',q6:'b',q7:'c',q8:'c',q9:'a',q10:'c'};
+const explanations = {
+    q1: 'Assets = Liabilities + Owner\'s Equity.',
+    q2: 'Balance Sheet melaporkan aset, utang, modal pada titik waktu tertentu.',
+    q3: 'Kas & piutang dapat dicairkan < 1 tahun (Current Assets).',
+    q4: 'Gross Profit - Operating Expenses = Net Income.',
+    q5: 'Pembayaran gaji karyawan adalah kegiatan operasional harian.',
+    q6: 'Likuiditas mengukur kewajiban utang jangka pendek.',
+    q7: 'Pembayaran dividen merupakan aktivitas pendanaan (Financing).',
+    q8: 'Pencatatan transaksi rutin saja disebut Bookkeeping.',
+    q9: 'Debt to Equity = Total Liabilities ÷ Owner\'s Equity.',
+    q10: 'Paten & trademark adalah aset tak berwujud (Intangible Assets).'
+};
+
+function saveAnswers() {
+    const data = {};
+    for (let i = 1; i <= 10; i++) {
+        const sel = document.querySelector(`input[name="q${i}"]:checked`);
+        if (sel) data[`q${i}`] = sel.value;
+    }
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+}
+
+function loadAnswers() {
+    const data = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+    for (const [key, val] of Object.entries(data)) {
+        const radio = document.querySelector(`input[name="${key}"][value="${val}"]`);
+        if (radio) radio.checked = true;
+    }
+}
+
+function checkQuiz() {
+    saveAnswers();
+    let score = 0;
+    const total = 10;
+    for (let i = 1; i <= total; i++) {
+        const sel = document.querySelector(`input[name="q${i}"]:checked`);
+        const fb = document.getElementById(`fb${i}`);
+        const card = document.getElementById(`q${i}`);
+        const correct = answers[`q${i}`];
+        card.classList.remove('correct','wrong');
+        if (sel && sel.value === correct) {
+            score++;
+            card.classList.add('correct');
+            fb.className = 'q-feedback show correct-fb';
+            fb.innerHTML = `✅ <strong>Benar!</strong> ${explanations['q'+i]}`;
+        } else {
+            card.classList.add('wrong');
+            fb.className = 'q-feedback show wrong-fb';
+            const userAns = sel ? sel.value.toUpperCase() : '—';
+            fb.innerHTML = `❌ <strong>Salah.</strong> Jawabanmu: ${userAns}. Jawaban benar: <strong>${correct.toUpperCase()}</strong>. ${explanations['q'+i]}`;
+        }
+    }
+    const pct = Math.round((score/total)*100);
+    const box = document.getElementById('resultsBox');
+    const num = document.getElementById('scoreNum');
+    const lbl = document.getElementById('scoreLabel');
+    num.textContent = `${score}/${total}`;
+    num.className = 'score-num ' + (pct >= 80 ? 'good' : pct >= 60 ? 'ok' : 'bad');
+    lbl.textContent = pct >= 80 ? '🎉 Excellent! Kamu sudah menguasai materi ini!' : pct >= 60 ? '👍 Lumayan! Review lagi bagian yang salah.' : '📖 Perlu belajar lagi. Baca ulang materinya ya!';
+    box.classList.add('show');
+    box.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+function resetQuiz() {
+    localStorage.removeItem(STORAGE_KEY);
+    document.getElementById('quizForm').reset();
+    for (let i = 1; i <= 10; i++) {
+        document.getElementById(`q${i}`).classList.remove('correct','wrong');
+        const fb = document.getElementById(`fb${i}`);
+        fb.className = 'q-feedback';
+        fb.innerHTML = '';
+    }
+    document.getElementById('resultsBox').classList.remove('show');
+}
+
+document.querySelectorAll('input[type="radio"]').forEach(r => r.addEventListener('change', saveAnswers));
+window.addEventListener('DOMContentLoaded', loadAnswers);
+</script>
+</body>
+</html>

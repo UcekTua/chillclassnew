@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topik 5: Distributing Product & Effective Promotion — ManBis</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+            --bg: #0a0e1a; --bg2: #111827; --bg-card: rgba(17,24,39,0.7);
+            --border: rgba(99,102,241,0.15); --border-h: rgba(99,102,241,0.4);
+            --text: #f1f5f9; --text2: #94a3b8; --text3: #64748b;
+            --blue: #6366f1; --cyan: #06b6d4; --violet: #8b5cf6;
+            --emerald: #10b981; --amber: #f59e0b; --rose: #f43f5e;
+            --grad: linear-gradient(135deg, #06b6d4, #3b82f6);
+        }
+        body { font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); line-height:1.8; }
+        .bg-orbs { position:fixed; top:0; left:0; width:100%; height:100%; z-index:0; overflow:hidden; pointer-events:none; }
+        .bg-orbs span { position:absolute; border-radius:50%; filter:blur(80px); opacity:0.1; }
+        .bg-orbs span:nth-child(1) { width:500px; height:500px; background:var(--cyan); top:-10%; left:-5%; }
+        .bg-orbs span:nth-child(2) { width:400px; height:400px; background:var(--blue); bottom:10%; right:-5%; }
+
+        .wrapper { position:relative; z-index:1; max-width:900px; margin:0 auto; padding:40px 24px 80px; }
+
+        .topnav { display:flex; align-items:center; gap:12px; margin-bottom:48px; flex-wrap:wrap; position:sticky; top:0; z-index:100; background:rgba(10,14,26,0.85); backdrop-filter:blur(12px); padding:20px 0; }
+        .topnav a { color:var(--text2); text-decoration:none; font-size:0.85rem; font-weight:500; transition:color 0.3s; }
+        .topnav a:hover { color:var(--cyan); }
+        .topnav .sep { color:var(--text3); }
+
+        .ch-header { margin-bottom:48px; animation:fadeUp .6s ease-out; }
+        .ch-badge { display:inline-block; padding:5px 14px; border-radius:100px; background:rgba(6,182,212,0.12); border:1px solid rgba(6,182,212,0.25); color:var(--cyan); font-size:0.75rem; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; margin-bottom:16px; }
+        .ch-header h1 { font-size:clamp(1.8rem,4vw,2.6rem); font-weight:900; background:var(--grad); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; margin-bottom:12px; }
+        .ch-header p { color:var(--text2); font-size:1rem; max-width:700px; }
+
+        .toc { background:var(--bg-card); backdrop-filter:blur(16px); border:1px solid var(--border); border-radius:16px; padding:28px 32px; margin-bottom:48px; animation:fadeUp .6s ease-out .1s both; }
+        .toc h3 { font-size:0.85rem; font-weight:700; text-transform:uppercase; letter-spacing:1.5px; color:var(--cyan); margin-bottom:16px; }
+        .toc ol { padding-left:20px; }
+        .toc li { margin-bottom:8px; }
+        .toc a { color:var(--text2); text-decoration:none; font-size:0.9rem; transition:color 0.3s; }
+        .toc a:hover { color:var(--cyan); }
+
+        .section { background:var(--bg-card); backdrop-filter:blur(16px); border:1px solid var(--border); border-radius:20px; padding:36px 36px; margin-bottom:32px; animation:fadeUp .6s ease-out both; }
+        .section h2 { font-size:1.5rem; font-weight:800; margin-bottom:20px; display:flex; align-items:center; gap:12px; }
+        .section h2 .icon { font-size:1.3rem; }
+        .section h3 { font-size:1.15rem; font-weight:700; margin:28px 0 12px; color:var(--cyan); }
+        .section h4 { font-size:1rem; font-weight:600; margin:20px 0 10px; color:var(--cyan); }
+        .section p { color:var(--text2); margin-bottom:14px; font-size:0.95rem; }
+        .section ul, .section ol { padding-left:24px; margin-bottom:14px; }
+        .section li { color:var(--text2); margin-bottom:8px; font-size:0.95rem; }
+        .section li strong { color:var(--text); }
+
+        .highlight { border-radius:12px; padding:20px 24px; margin:20px 0; }
+        .highlight.blue { background:rgba(99,102,241,0.08); border-left:4px solid var(--blue); }
+        .highlight.emerald { background:rgba(16,185,129,0.08); border-left:4px solid var(--emerald); }
+        .highlight.amber { background:rgba(245,158,11,0.08); border-left:4px solid var(--amber); }
+
+        .table-wrap { overflow-x:auto; margin:20px 0; }
+        table { width:100%; border-collapse:collapse; font-size:0.88rem; }
+        th { background:rgba(6,182,212,0.12); color:var(--cyan); font-weight:700; padding:12px 16px; text-align:left; border-bottom:2px solid rgba(6,182,212,0.2); }
+        td { padding:11px 16px; border-bottom:1px solid rgba(148,163,184,0.08); color:var(--text2); }
+        tr:hover td { background:rgba(6,182,212,0.04); }
+
+        .key-points { background:linear-gradient(135deg, rgba(16,185,129,0.06), rgba(6,182,212,0.06)); border:1px solid rgba(16,185,129,0.2); border-radius:16px; padding:28px 32px; margin:28px 0; }
+        .key-points h3 { color:var(--emerald); font-size:1rem; margin-bottom:16px; }
+
+        .memory-tips { background:linear-gradient(135deg, rgba(245,158,11,0.06), rgba(244,63,94,0.06)); border:1px solid rgba(245,158,11,0.2); border-radius:16px; padding:28px 32px; margin:28px 0; }
+        .memory-tips h3 { color:var(--amber); font-size:1rem; margin-bottom:16px; }
+
+        .example { background:rgba(6,182,212,0.06); border:1px solid rgba(6,182,212,0.2); border-radius:16px; padding:28px 32px; margin:28px 0; }
+        .example h3 { color:var(--cyan); margin-top:0; margin-bottom:16px; }
+
+        .quiz-section { margin-top:48px; }
+        .quiz-section h2 { font-size:1.5rem; font-weight:800; margin-bottom:8px; }
+        .quiz-section .subtitle { color:var(--text2); margin-bottom:24px; }
+        .q-card { background:var(--bg-card); backdrop-filter:blur(16px); border:1px solid var(--border); border-radius:16px; padding:28px 30px; margin-bottom:20px; transition:border-color 0.3s; }
+        .q-card.correct { border-color:var(--emerald) !important; }
+        .q-card.wrong { border-color:var(--rose) !important; }
+        .q-num { font-size:0.75rem; font-weight:700; color:var(--cyan); text-transform:uppercase; letter-spacing:1.5px; margin-bottom:10px; }
+        .q-text { font-size:0.95rem; font-weight:600; color:var(--text); margin-bottom:16px; line-height:1.6; }
+        .q-options label { display:flex; align-items:flex-start; gap:12px; padding:10px 14px; margin-bottom:8px; border-radius:10px; cursor:pointer; transition:background 0.2s; font-size:0.9rem; color:var(--text2); }
+        .q-options label:hover { background:rgba(6,182,212,0.06); }
+        .q-options input[type="radio"] { margin-top:3px; accent-color:var(--cyan); }
+        .q-feedback { margin-top:14px; padding:14px 18px; border-radius:10px; font-size:0.88rem; display:none; }
+        .q-feedback.show { display:block; }
+        .q-feedback.correct-fb { background:rgba(16,185,129,0.1); border:1px solid rgba(16,185,129,0.25); color:var(--emerald); }
+        .q-feedback.wrong-fb { background:rgba(244,63,94,0.1); border:1px solid rgba(244,63,94,0.25); color:var(--rose); }
+
+        .btn { display:inline-flex; align-items:center; gap:8px; padding:14px 32px; border:none; border-radius:12px; font-family:inherit; font-size:0.9rem; font-weight:700; cursor:pointer; transition:all 0.3s; }
+        .btn-primary { background:var(--grad); color:#fff; }
+        .btn-primary:hover { transform:translateY(-2px); box-shadow:0 8px 24px rgba(6,182,212,0.3); }
+        .btn-secondary { background:rgba(148,163,184,0.1); color:var(--text2); border:1px solid var(--border); }
+        .btn-secondary:hover { border-color:var(--border-h); color:var(--text); }
+
+        .results-box { background:var(--bg-card); backdrop-filter:blur(16px); border:1px solid var(--border); border-radius:16px; padding:32px; margin-top:24px; display:none; }
+        .results-box.show { display:block; animation:fadeUp .4s ease-out; }
+        .score-display { text-align:center; margin-bottom:24px; }
+        .score-display .score-num { font-size:3rem; font-weight:900; }
+        .score-display .score-num.good { color:var(--emerald); }
+        .score-display .score-num.ok { color:var(--amber); }
+        .score-display .score-num.bad { color:var(--rose); }
+        .score-display .score-label { color:var(--text2); font-size:0.9rem; }
+
+        .bottom-nav { display:flex; justify-content:space-between; align-items:center; margin-top:48px; padding-top:32px; border-top:1px solid var(--border); }
+        .bottom-nav a { color:var(--text2); text-decoration:none; font-weight:600; font-size:0.9rem; transition:color 0.3s; }
+        .bottom-nav a:hover { color:var(--cyan); }
+
+        @keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+
+        @media (max-width:768px) {
+            .wrapper { padding:24px 16px 60px; }
+            .section { padding:24px 20px; }
+            .toc { padding:20px 24px; }
+        }
+        .topnav { position:fixed !important; top:24px !important; right:24px !important; margin:0 !important; background:rgba(10,14,26,0.6) !important; padding:10px 24px !important; border-radius:100px !important; border:1px solid rgba(99,102,241,0.3) !important; box-shadow: 0 8px 32px rgba(0,0,0,0.5) !important; width:auto !important; flex-wrap: nowrap !important; }
+        .bottom-nav { display:none !important; }
+        .watermark { display: none !important; }
+        .wrapper { padding-top: 80px !important; }
+        @media (max-width:768px) {
+            .topnav { top:auto !important; bottom:24px !important; right:50% !important; transform:translateX(50%) !important; padding:8px 16px !important; font-size: 0.8rem !important; white-space: nowrap !important; overflow-x: auto !important; max-width: 90vw !important; gap: 8px !important; }
+        }
+    </style>
+</head>
+<body>
+<div class="bg-orbs"><span></span><span></span></div>
+<div class="wrapper">
+
+<nav class="topnav">
+    <a href="index.html">🏠</a>
+    <span class="sep">/</span>
+    <a href="topik-01.html">T1</a>
+    <span class="sep">·</span>
+    <a href="topik-02.html">T2</a>
+    <span class="sep">·</span>
+    <a href="topik-03.html">T3</a>
+    <span class="sep">·</span>
+    <a href="topik-04.html">T4</a>
+    <span class="sep">·</span>
+    <a href="topik-05.html" style="color:var(--cyan);">T5</a>
+    <span class="sep">·</span>
+    <a href="topik-06.html">T6</a>
+    <span class="sep">·</span>
+    <a href="topik-07.html">T7</a>
+    <span class="sep">·</span>
+    <a href="topik-08.html">T8</a>
+    <span class="sep">·</span>
+    <a href="topik-09.html">T9</a>
+    <span class="sep">·</span>
+    <a href="topik-10.html">T10</a>
+    <span class="sep">·</span>
+    <a href="topik-11.html">T11</a>
+</nav>
+
+<div class="ch-header">
+    <div class="ch-badge">Topik 05</div>
+    <h1>Distributing Product & Effective Promotion</h1>
+    <p>Memahami saluran distribusi (Channel of Distribution), nilai tambah perantara (Marketing Intermediaries), logistik, serta bauran promosi (Promotion Mix) dan strategi Push vs Pull.</p>
+</div>
+
+<div class="toc">
+    <h3>📑 Daftar Isi</h3>
+    <ol>
+        <li><a href="#s1">Channel of Distribution & Perantara</a></li>
+        <li><a href="#s2">6 Bentuk Utility Perantara Pemasaran</a></li>
+        <li><a href="#s3">Strategi Distribusi Ritel (Intensive, Selective, Exclusive)</a></li>
+        <li><a href="#s4">Logistik & Supply Chain Management</a></li>
+        <li><a href="#s5">The Promotion Mix & IMC</a></li>
+        <li><a href="#s6">Personal Selling, PR, & Publicity</a></li>
+        <li><a href="#s7">Push Strategy vs Pull Strategy</a></li>
+        <li><a href="#kp">Poin-Poin Penting</a></li>
+        <li><a href="#mt">Tips Menghafal</a></li>
+        <li><a href="#ex">Contoh Soal & Pembahasan</a></li>
+        <li><a href="#quiz">Latihan Soal Interaktif</a></li>
+    </ol>
+</div>
+
+<!-- ===== SECTION 1 ===== -->
+<div class="section" id="s1">
+    <h2><span class="icon">🚚</span> 1. Channel of Distribution & Perantara</h2>
+    <p><strong>Channel of Distribution</strong> adalah rangkaian perantara (intermediaries) yang membantu memindahkan barang/jasa dari produsen hingga sampai ke konsumen akhir.</p>
+
+    <div class="table-wrap">
+        <table>
+            <tr><th>Perantara</th><th>Definisi</th><th>Kepemilikan Barang</th></tr>
+            <tr><td><strong>Agent / Broker</strong></td><td>Mempertemukan pembeli dan penjual tanpa memiliki barangnya secara fisik (komisi)</td><td>TIDAK memiliki barang</td></tr>
+            <tr><td><strong>Wholesaler (Pedagang Besar)</strong></td><td>Membeli barang dari produsen dalam jumlah besar untuk dijual kembali ke pengecer</td><td>MEMILIKI barang</td></tr>
+            <tr><td><strong>Retailer (Pengecer)</strong></td><td>Menjual produk langsung ke konsumen akhir untuk penggunaan pribadi</td><td>MEMILIKI barang</td></tr>
+        </table>
+    </div>
+</div>
+
+<!-- ===== SECTION 2 ===== -->
+<div class="section" id="s2">
+    <h2><span class="icon">💡</span> 2. Enam Bentuk Utility (Nilai Tambah) Perantara</h2>
+
+    <div class="table-wrap">
+        <table>
+            <tr><th>Bentuk Utility</th><th>Penjelasan</th><th>Contoh</th></tr>
+            <tr><td><strong>Form Utility</strong></td><td>Mengubah bahan mentah menjadi bentuk produk yang lebih berguna</td><td>Mengubah kain menjadi baju siap pakai</td></tr>
+            <tr><td><strong>Time Utility</strong></td><td>Menyediakan produk tepat pada saat konsumen menginginkannya</td><td>Toko 24 jam, persediaan barang musim hujan</td></tr>
+            <tr><td><strong>Place Utility</strong></td><td>Menyediakan produk di lokasi yang paling nyaman dijangkau konsumen</td><td>Minimarket di pemukiman, mesin Vending</td></tr>
+            <tr><td><strong>Possession Utility</strong></td><td>Mempermudah pemindahan kepemilikan barang dari penjual ke pembeli</td><td>Fasilitas cicilan kredit, bayar via QRIS/debit</td></tr>
+            <tr><td><strong>Information Utility</strong></td><td>Membuka saluran komunikasi & informasi dua arah mengenai produk</td><td>Display toko, buku panduan, customer service</td></tr>
+            <tr><td><strong>Service Utility</strong></td><td>Memberikan bantuan teknis & layanan purnajual (after-sales)</td><td>Jasa instalasi TV, garansi servis produk</td></tr>
+        </table>
+    </div>
+</div>
+
+<!-- ===== SECTION 3 ===== -->
+<div class="section" id="s3">
+    <h2><span class="icon">🏪</span> 3. Strategi Distribusi Ritel</h2>
+
+    <div class="table-wrap">
+        <table>
+            <tr><th>Strategi</th><th>Cakupan Outlet</th><th>Cocok Untuk Produk</th></tr>
+            <tr><td><strong>Intensive Distribution</strong></td><td>Menjual melalui <strong>sebanyak mungkin toko/outlet</strong> di suatu wilayah</td><td>Convenience goods (Air mineral, rokok, snack)</td></tr>
+            <tr><td><strong>Selective Distribution</strong></td><td>Menjual melalui <strong>beberapa outlet pilihan tertentu</strong> yang memenuhi syarat</td><td>Shopping goods (Sepatu Nike, laptop ASUS)</td></tr>
+            <tr><td><strong>Exclusive Distribution</strong></td><td>Menjual melalui <strong>hanya SATU outlet khusus per daerah</strong> tertentu</td><td>Specialty goods (Mobil mewah Porsche, Rolex)</td></tr>
+        </table>
+    </div>
+</div>
+
+<!-- ===== SECTION 4 ===== -->
+<div class="section" id="s4">
+    <h2><span class="icon">📦</span> 4. Logistik & Supply Chain Management</h2>
+    <p><strong>Logistics</strong> mencakup perencanaan, implementasi, dan pengontrolan aliran fisik barang dan bahan baku dari tempat asal hingga konsumsi akhir.</p>
+
+    <ul>
+        <li><strong>Inbound Logistics:</strong> Pengelolaan pasokan bahan baku dari supplier ke pabrik.</li>
+        <li><strong>Outbound Logistics:</strong> Pengelolaan pengiriman barang jadi dari pabrik ke distributor/konsumen.</li>
+        <li><strong>Reverse Logistics:</strong> Pengelolaan pengembalian barang rusak/didaur ulang kembali ke pabrik.</li>
+    </ul>
+</div>
+
+<!-- ===== SECTION 5 ===== -->
+<div class="section" id="s5">
+    <h2><span class="icon">📢</span> 5. The Promotion Mix & IMC</h2>
+    <p><strong>Promotion Mix</strong> adalah kombinasi alat promosi yang digunakan perusahaan untuk menyampaikan pesan nilai produk.</p>
+
+    <div class="highlight blue">
+        <h4>📢 IMC (Integrated Marketing Communication)</h4>
+        <p>Menggabungkan dan mengoordinasikan seluruh alat promosi (Iklan, PR, Sales Promo, Personal Selling) agar memberikan pesan yang **konsisten, jelas, dan memikat** di semua saluran.</p>
+    </div>
+</div>
+
+<!-- ===== SECTION 6 ===== -->
+<div class="section" id="s6">
+    <h2><span class="icon">🤝</span> 6. Personal Selling, PR, & Publicity</h2>
+
+    <ul>
+        <li><strong>Advertising (Iklan):</strong> Komunikasi non-personal berbayar melalui media massa (TV, Sosial Media, Billboard).</li>
+        <li><strong>Personal Selling:</strong> Presentasi tatap muka langsung oleh tenaga penjual untuk membangun hubungan dan menutup penjualan (banyak digunakan di B2B).</li>
+        <li><strong>Public Relations (PR):</strong> Membangun hubungan baik dengan publik & media guna menciptakan citra positif perusahaan.</li>
+        <li><strong>Publicity:</strong> Informasi gratis yang disiarkan media tanpa dibayar perusahaan. Kelemahan: tidak bisa dikontrol pesan oleh perusahaan.</li>
+        <li><strong>Sales Promotion:</strong> Insentif jangka pendek untuk merangsang pembelian cepat (Diskon 50%, Kupon, Buy 1 Get 1).</li>
+    </ul>
+</div>
+
+<!-- ===== SECTION 7 ===== -->
+<div class="section" id="s7">
+    <h2><span class="icon">🪠</span> 7. Push Strategy vs Pull Strategy</h2>
+
+    <div class="table-wrap">
+        <table>
+            <tr><th>Strategi Promosi</th><th>Arah Aliran Promosi</th><th>Penjelasan</th></tr>
+            <tr>
+                <td><strong>Push Strategy</strong></td>
+                <td>Produsen ➔ Wholesaler ➔ Retailer ➔ Konsumen</td>
+                <td>Produsen "mendorong" produk ke anggota saluran perantara (pengecer) menggunakan sales force & insentif perdagangan.</td>
+            </tr>
+            <tr>
+                <td><strong>Pull Strategy</strong></td>
+                <td>Konsumen ➔ Retailer ➔ Wholesaler ➔ Produsen</td>
+                <td>Produsen mengarahkan iklan besar ke konsumen akhir agar konsumen "menarik" produk dengan meminta stok ke toko ritel.</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- ===== KEY POINTS ===== -->
+<div class="section" id="kp">
+    <div class="key-points">
+        <h3>🔑 POIN-POIN PENTING TOPIK 5</h3>
+        <ol>
+            <li>Agent/Broker tidak memiliki barang; Wholesaler & Retailer memiliki barang.</li>
+            <li>6 Utility: Form, Time, Place, Possession, Information, Service.</li>
+            <li>Intensive = di mana-mana; Selective = beberapa pilihan; Exclusive = 1 outlet khusus.</li>
+            <li>IMC = integrasi semua pesan promosi agar konsisten.</li>
+            <li>Publicity = gratis tapi tak bisa dikontrol isi beritanya.</li>
+            <li>Push = dorong ke retailer; Pull = tarik lewat permintaan konsumen.</li>
+        </ol>
+    </div>
+</div>
+
+<!-- ===== MEMORY TIPS ===== -->
+<div class="section" id="mt">
+    <div class="memory-tips">
+        <h3>🧠 TIPS MENGHAFAL</h3>
+        <ol>
+            <li><strong>"Push = Pengecer"</strong>: Produsen dorong sales ke pengecer.</li>
+            <li><strong>"Pull = Pelanggan"</strong>: Produsen membuat iklan agar pelanggan menarik barang dari toko.</li>
+            <li><strong>Broker = Makelar</strong>: Hanya minta komisi perjumpaan, tidak punya barang!</li>
+        </ol>
+    </div>
+</div>
+
+<!-- ===== CONTOH SOAL ===== -->
+<div class="section" id="ex">
+    <h2><span class="icon">📝</span> Contoh Soal & Pembahasan</h2>
+
+    <div class="example">
+        <h3>Soal 1</h3>
+        <p><strong>Strategi di mana produsen mengarahkan iklan besar-besaran langsung ke konsumen akhir agar konsumen mendatangi toko ritel dan meminta produk tersebut dinamakan...</strong></p>
+        <p>A. Push Strategy<br>B. Pull Strategy<br>C. Intensive Strategy<br>D. Selective Strategy</p>
+        <p><strong>Jawaban: B</strong></p>
+        <p><strong>Pembahasan:</strong> Pull strategy menciptakan permintaan langsung dari konsumen akhir sehingga konsumen "menarik" produk melalui saluran distribusi.</p>
+    </div>
+
+    <div class="example">
+        <h3>Soal 2</h3>
+        <p><strong>Layanan pembayaran QRIS, cicilan kredit 0%, dan pembayaran kartu debit di minimarket memberikan bentuk utility berupa...</strong></p>
+        <p>A. Form Utility<br>B. Place Utility<br>C. Possession Utility<br>D. Time Utility</p>
+        <p><strong>Jawaban: C</strong></p>
+        <p><strong>Pembahasan:</strong> Possession utility mempermudah pembeli untuk memindahkan dan mendapatkan hak kepemilikan produk melalui kemudahan metode pembayaran.</p>
+    </div>
+</div>
+
+<!-- ===== QUIZ ===== -->
+<div class="quiz-section" id="quiz">
+    <h2>🎯 Latihan Soal Interaktif — Topik 5</h2>
+    <p class="subtitle">Kerjakan 10 soal, lalu klik "Lihat Hasil" untuk melihat skor dan pembahasanmu. Jawaban tersimpan otomatis.</p>
+
+    <form id="quizForm">
+        <div class="q-card" id="q1"><div class="q-num">Soal 1</div><div class="q-text">Perantara pemasaran yang bertugas mempertemukan pembeli dan penjual TANPA memegang hak kepemilikan fisik atas barang adalah...</div><div class="q-options"><label><input type="radio" name="q1" value="a"> Wholesaler</label><label><input type="radio" name="q1" value="b"> Agent / Broker</label><label><input type="radio" name="q1" value="c"> Retailer</label><label><input type="radio" name="q1" value="d"> Distributor</label></div><div class="q-feedback" id="fb1"></div></div>
+
+        <div class="q-card" id="q2"><div class="q-num">Soal 2</div><div class="q-text">Memberikan fasilitas minimarket yang buka 24 jam sehari merupakan contoh penerapan...</div><div class="q-options"><label><input type="radio" name="q2" value="a"> Place Utility</label><label><input type="radio" name="q2" value="b"> Time Utility</label><label><input type="radio" name="q2" value="c"> Form Utility</label><label><input type="radio" name="q2" value="d"> Information Utility</label></div><div class="q-feedback" id="fb2"></div></div>
+
+        <div class="q-card" id="q3"><div class="q-num">Soal 3</div><div class="q-text">Strategi distribusi barang kebutuhan sehari-hari (convenience goods) yang menempatkan produk di sebanyak mungkin outlet adalah...</div><div class="q-options"><label><input type="radio" name="q3" value="a"> Selective Distribution</label><label><input type="radio" name="q3" value="b"> Exclusive Distribution</label><label><input type="radio" name="q3" value="c"> Intensive Distribution</label><label><input type="radio" name="q3" value="d"> Direct Distribution</label></div><div class="q-feedback" id="fb3"></div></div>
+
+        <div class="q-card" id="q4"><div class="q-num">Soal 4</div><div class="q-text">Mengintegrasikan seluruh pesan dan alat promosi agar menghasilkan penyampaian nilai yang konsisten di semua media dinamakan...</div><div class="q-options"><label><input type="radio" name="q4" value="a"> Strategic Promotion</label><label><input type="radio" name="q4" value="b"> Integrated Marketing Communication (IMC)</label><label><input type="radio" name="q4" value="c"> Direct Marketing</label><label><input type="radio" name="q4" value="d"> Public Relations Management</label></div><div class="q-feedback" id="fb4"></div></div>
+
+        <div class="q-card" id="q5"><div class="q-num">Soal 5</div><div class="q-text">Bentuk informasi mengenai perusahaan yang disiarkan oleh media massa TANPA dibayar oleh perusahaan dinamakan...</div><div class="q-options"><label><input type="radio" name="q5" value="a"> Advertising</label><label><input type="radio" name="q5" value="b"> Sales Promotion</label><label><input type="radio" name="q5" value="c"> Publicity</label><label><input type="radio" name="q5" value="d"> Personal Selling</label></div><div class="q-feedback" id="fb5"></div></div>
+
+        <div class="q-card" id="q6"><div class="q-num">Soal 6</div><div class="q-text">Produsen memberikan insentif diskon grosir besar kepada perantara ritel agar bersedia menyetok produknya. Ini adalah contoh dari...</div><div class="q-options"><label><input type="radio" name="q6" value="a"> Pull Strategy</label><label><input type="radio" name="q6" value="b"> Push Strategy</label><label><input type="radio" name="q6" value="c"> Intensive Strategy</label><label><input type="radio" name="q6" value="d"> Direct Sales</label></div><div class="q-feedback" id="fb6"></div></div>
+
+        <div class="q-card" id="q7"><div class="q-num">Soal 7</div><div class="q-text">Pengelolaan pengembalian barang rusak atau cacat dari konsumen kembali ke pabrik dinamakan...</div><div class="q-options"><label><input type="radio" name="q7" value="a"> Inbound Logistics</label><label><input type="radio" name="q7" value="b"> Outbound Logistics</label><label><input type="radio" name="q7" value="c"> Reverse Logistics</label><label><input type="radio" name="q7" value="d"> Materials Handling</label></div><div class="q-feedback" id="fb7"></div></div>
+
+        <div class="q-card" id="q8"><div class="q-num">Soal 8</div><div class="q-text">Menjual mobil mewah Rolls-Royce hanya melalui satu showroom tunggal di wilayah Jakarta merupakan contoh strategi...</div><div class="q-options"><label><input type="radio" name="q8" value="a"> Intensive Distribution</label><label><input type="radio" name="q8" value="b"> Exclusive Distribution</label><label><input type="radio" name="q8" value="c"> Selective Distribution</label><label><input type="radio" name="q8" value="d"> Mass Distribution</label></div><div class="q-feedback" id="fb8"></div></div>
+
+        <div class="q-card" id="q9"><div class="q-num">Soal 9</div><div class="q-text">Insentif jangka pendek seperti promo 'Beli 1 Gratis 1' atau kupon potongan harga termasuk dalam...</div><div class="q-options"><label><input type="radio" name="q9" value="a"> Personal Selling</label><label><input type="radio" name="q9" value="b"> Sales Promotion</label><label><input type="radio" name="q9" value="c"> Publicity</label><label><input type="radio" name="q9" value="d"> Institutional Advertising</label></div><div class="q-feedback" id="fb9"></div></div>
+
+        <div class="q-card" id="q10"><div class="q-num">Soal 10</div><div class="q-text">Perantara yang menjual produk dalam jumlah besar ke pedagang eceran (retailer) dinamakan...</div><div class="q-options"><label><input type="radio" name="q10" value="a"> Retailer</label><label><input type="radio" name="q10" value="b"> Broker</label><label><input type="radio" name="q10" value="c"> Wholesaler</label><label><input type="radio" name="q10" value="d"> Consumer</label></div><div class="q-feedback" id="fb10"></div></div>
+
+        <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:24px;">
+            <button type="button" class="btn btn-primary" onclick="checkQuiz()">📊 Lihat Hasil</button>
+            <button type="button" class="btn btn-secondary" onclick="resetQuiz()">🔄 Reset</button>
+        </div>
+    </form>
+
+    <div class="results-box" id="resultsBox">
+        <div class="score-display">
+            <div class="score-num" id="scoreNum"></div>
+            <div class="score-label" id="scoreLabel"></div>
+        </div>
+    </div>
+</div>
+
+<div class="bottom-nav">
+    <a href="topik-04.html">← Topik 4: Marketing & Pricing</a>
+    <a href="topik-06.html">Topik 6: Accounting & Financial Info →</a>
+</div>
+
+</div>
+
+<script>
+const STORAGE_KEY = 'manbis_t05_quiz';
+const answers = {q1:'b',q2:'b',q3:'c',q4:'b',q5:'c',q6:'b',q7:'c',q8:'b',q9:'b',q10:'c'};
+const explanations = {
+    q1: 'Agent/Broker mempertemukan pihak pembeli & penjual tanpa memiliki barang.',
+    q2: 'Minimarket 24 jam menyediakan Time Utility (kapan pun dibutuhkan).',
+    q3: 'Intensive distribution menyebar produk ke sebanyak mungkin lokasi.',
+    q4: 'IMC mengoordinasikan seluruh pesan promosi agar konsisten.',
+    q5: 'Publicity adalah informasi media mengenai perusahaan tanpa dibayar.',
+    q6: 'Push strategy mendorong perantara ritel dengan insentif penjualan.',
+    q7: 'Reverse logistics mengurus aliran pengembalian barang/retur.',
+    q8: 'Exclusive distribution menggunakan hanya satu outlet khusus per area.',
+    q9: 'Sales promotion memberikan dorongan insentif diskon/kupon jangka pendek.',
+    q10: 'Wholesaler (grosir) menjual jumlah besar ke pengecer.'
+};
+
+function saveAnswers() {
+    const data = {};
+    for (let i = 1; i <= 10; i++) {
+        const sel = document.querySelector(`input[name="q${i}"]:checked`);
+        if (sel) data[`q${i}`] = sel.value;
+    }
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+}
+
+function loadAnswers() {
+    const data = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+    for (const [key, val] of Object.entries(data)) {
+        const radio = document.querySelector(`input[name="${key}"][value="${val}"]`);
+        if (radio) radio.checked = true;
+    }
+}
+
+function checkQuiz() {
+    saveAnswers();
+    let score = 0;
+    const total = 10;
+    for (let i = 1; i <= total; i++) {
+        const sel = document.querySelector(`input[name="q${i}"]:checked`);
+        const fb = document.getElementById(`fb${i}`);
+        const card = document.getElementById(`q${i}`);
+        const correct = answers[`q${i}`];
+        card.classList.remove('correct','wrong');
+        if (sel && sel.value === correct) {
+            score++;
+            card.classList.add('correct');
+            fb.className = 'q-feedback show correct-fb';
+            fb.innerHTML = `✅ <strong>Benar!</strong> ${explanations['q'+i]}`;
+        } else {
+            card.classList.add('wrong');
+            fb.className = 'q-feedback show wrong-fb';
+            const userAns = sel ? sel.value.toUpperCase() : '—';
+            fb.innerHTML = `❌ <strong>Salah.</strong> Jawabanmu: ${userAns}. Jawaban benar: <strong>${correct.toUpperCase()}</strong>. ${explanations['q'+i]}`;
+        }
+    }
+    const pct = Math.round((score/total)*100);
+    const box = document.getElementById('resultsBox');
+    const num = document.getElementById('scoreNum');
+    const lbl = document.getElementById('scoreLabel');
+    num.textContent = `${score}/${total}`;
+    num.className = 'score-num ' + (pct >= 80 ? 'good' : pct >= 60 ? 'ok' : 'bad');
+    lbl.textContent = pct >= 80 ? '🎉 Excellent! Kamu sudah menguasai materi ini!' : pct >= 60 ? '👍 Lumayan! Review lagi bagian yang salah.' : '📖 Perlu belajar lagi. Baca ulang materinya ya!';
+    box.classList.add('show');
+    box.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+function resetQuiz() {
+    localStorage.removeItem(STORAGE_KEY);
+    document.getElementById('quizForm').reset();
+    for (let i = 1; i <= 10; i++) {
+        document.getElementById(`q${i}`).classList.remove('correct','wrong');
+        const fb = document.getElementById(`fb${i}`);
+        fb.className = 'q-feedback';
+        fb.innerHTML = '';
+    }
+    document.getElementById('resultsBox').classList.remove('show');
+}
+
+document.querySelectorAll('input[type="radio"]').forEach(r => r.addEventListener('change', saveAnswers));
+window.addEventListener('DOMContentLoaded', loadAnswers);
+</script>
+</body>
+</html>

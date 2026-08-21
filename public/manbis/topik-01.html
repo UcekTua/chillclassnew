@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topik 1: Taking Risks and Making Profits — ManBis</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+            --bg: #0a0e1a; --bg2: #111827; --bg-card: rgba(17,24,39,0.7);
+            --border: rgba(99,102,241,0.15); --border-h: rgba(99,102,241,0.4);
+            --text: #f1f5f9; --text2: #94a3b8; --text3: #64748b;
+            --blue: #6366f1; --cyan: #06b6d4; --violet: #8b5cf6;
+            --emerald: #10b981; --amber: #f59e0b; --rose: #f43f5e;
+            --grad: linear-gradient(135deg, #6366f1, #06b6d4);
+        }
+        body { font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); line-height:1.8; }
+        .bg-orbs { position:fixed; top:0; left:0; width:100%; height:100%; z-index:0; overflow:hidden; pointer-events:none; }
+        .bg-orbs span { position:absolute; border-radius:50%; filter:blur(80px); opacity:0.1; }
+        .bg-orbs span:nth-child(1) { width:500px; height:500px; background:var(--blue); top:-10%; left:-5%; }
+        .bg-orbs span:nth-child(2) { width:400px; height:400px; background:var(--violet); bottom:10%; right:-5%; }
+
+        .wrapper { position:relative; z-index:1; max-width:900px; margin:0 auto; padding:40px 24px 80px; }
+
+        .topnav { display:flex; align-items:center; gap:12px; margin-bottom:48px; flex-wrap:wrap; position:sticky; top:0; z-index:100; background:rgba(10,14,26,0.85); backdrop-filter:blur(12px); padding:20px 0; }
+        .topnav a { color:var(--text2); text-decoration:none; font-size:0.85rem; font-weight:500; transition:color 0.3s; }
+        .topnav a:hover { color:var(--blue); }
+        .topnav .sep { color:var(--text3); }
+
+        .ch-header { margin-bottom:48px; animation:fadeUp .6s ease-out; }
+        .ch-badge { display:inline-block; padding:5px 14px; border-radius:100px; background:rgba(99,102,241,0.12); border:1px solid rgba(99,102,241,0.25); color:var(--blue); font-size:0.75rem; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; margin-bottom:16px; }
+        .ch-header h1 { font-size:clamp(1.8rem,4vw,2.6rem); font-weight:900; background:var(--grad); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; margin-bottom:12px; }
+        .ch-header p { color:var(--text2); font-size:1rem; max-width:700px; }
+
+        .toc { background:var(--bg-card); backdrop-filter:blur(16px); border:1px solid var(--border); border-radius:16px; padding:28px 32px; margin-bottom:48px; animation:fadeUp .6s ease-out .1s both; }
+        .toc h3 { font-size:0.85rem; font-weight:700; text-transform:uppercase; letter-spacing:1.5px; color:var(--blue); margin-bottom:16px; }
+        .toc ol { padding-left:20px; }
+        .toc li { margin-bottom:8px; }
+        .toc a { color:var(--text2); text-decoration:none; font-size:0.9rem; transition:color 0.3s; }
+        .toc a:hover { color:var(--cyan); }
+
+        .section { background:var(--bg-card); backdrop-filter:blur(16px); border:1px solid var(--border); border-radius:20px; padding:36px 36px; margin-bottom:32px; animation:fadeUp .6s ease-out both; }
+        .section h2 { font-size:1.5rem; font-weight:800; margin-bottom:20px; display:flex; align-items:center; gap:12px; }
+        .section h2 .icon { font-size:1.3rem; }
+        .section h3 { font-size:1.15rem; font-weight:700; margin:28px 0 12px; color:var(--cyan); }
+        .section h4 { font-size:1rem; font-weight:600; margin:20px 0 10px; color:var(--violet); }
+        .section p { color:var(--text2); margin-bottom:14px; font-size:0.95rem; }
+        .section ul, .section ol { padding-left:24px; margin-bottom:14px; }
+        .section li { color:var(--text2); margin-bottom:8px; font-size:0.95rem; }
+        .section li strong { color:var(--text); }
+
+        .highlight { border-radius:12px; padding:20px 24px; margin:20px 0; }
+        .highlight.blue { background:rgba(99,102,241,0.08); border-left:4px solid var(--blue); }
+        .highlight.emerald { background:rgba(16,185,129,0.08); border-left:4px solid var(--emerald); }
+        .highlight.amber { background:rgba(245,158,11,0.08); border-left:4px solid var(--amber); }
+        .highlight.rose { background:rgba(244,63,94,0.08); border-left:4px solid var(--rose); }
+        .highlight.violet { background:rgba(139,92,246,0.08); border-left:4px solid var(--violet); }
+        .highlight h4 { margin-top:0 !important; }
+        .highlight p, .highlight li { color:var(--text2); }
+
+        .table-wrap { overflow-x:auto; margin:20px 0; }
+        table { width:100%; border-collapse:collapse; font-size:0.88rem; }
+        th { background:rgba(99,102,241,0.12); color:var(--blue); font-weight:700; padding:12px 16px; text-align:left; border-bottom:2px solid rgba(99,102,241,0.2); }
+        td { padding:11px 16px; border-bottom:1px solid rgba(148,163,184,0.08); color:var(--text2); }
+        tr:hover td { background:rgba(99,102,241,0.04); }
+
+        .equation { text-align:center; padding:28px; margin:24px 0; background:linear-gradient(135deg, rgba(99,102,241,0.1), rgba(6,182,212,0.1)); border:1px solid rgba(99,102,241,0.2); border-radius:16px; }
+        .equation .formula { font-size:1.4rem; font-weight:800; color:var(--text); letter-spacing:1px; }
+        .equation .formula span.eq-blue { color:var(--blue); }
+        .equation .formula span.eq-rose { color:var(--rose); }
+        .equation .formula span.eq-emerald { color:var(--emerald); }
+        .equation .sub { font-size:0.82rem; color:var(--text2); margin-top:10px; }
+
+        .key-points { background:linear-gradient(135deg, rgba(16,185,129,0.06), rgba(6,182,212,0.06)); border:1px solid rgba(16,185,129,0.2); border-radius:16px; padding:28px 32px; margin:28px 0; }
+        .key-points h3 { color:var(--emerald); font-size:1rem; margin-bottom:16px; }
+        .key-points li { margin-bottom:10px; }
+
+        .memory-tips { background:linear-gradient(135deg, rgba(245,158,11,0.06), rgba(244,63,94,0.06)); border:1px solid rgba(245,158,11,0.2); border-radius:16px; padding:28px 32px; margin:28px 0; }
+        .memory-tips h3 { color:var(--amber); font-size:1rem; margin-bottom:16px; }
+        .memory-tips li { margin-bottom:10px; }
+
+        .example { background:rgba(139,92,246,0.06); border:1px solid rgba(139,92,246,0.2); border-radius:16px; padding:28px 32px; margin:28px 0; }
+        .example h3 { color:var(--violet); margin-top:0; margin-bottom:16px; }
+
+        .quiz-section { margin-top:48px; }
+        .quiz-section h2 { font-size:1.5rem; font-weight:800; margin-bottom:8px; }
+        .quiz-section .subtitle { color:var(--text2); margin-bottom:24px; }
+        .q-card { background:var(--bg-card); backdrop-filter:blur(16px); border:1px solid var(--border); border-radius:16px; padding:28px 30px; margin-bottom:20px; transition:border-color 0.3s; }
+        .q-card.correct { border-color:var(--emerald) !important; }
+        .q-card.wrong { border-color:var(--rose) !important; }
+        .q-num { font-size:0.75rem; font-weight:700; color:var(--blue); text-transform:uppercase; letter-spacing:1.5px; margin-bottom:10px; }
+        .q-text { font-size:0.95rem; font-weight:600; color:var(--text); margin-bottom:16px; line-height:1.6; }
+        .q-options label { display:flex; align-items:flex-start; gap:12px; padding:10px 14px; margin-bottom:8px; border-radius:10px; cursor:pointer; transition:background 0.2s; font-size:0.9rem; color:var(--text2); }
+        .q-options label:hover { background:rgba(99,102,241,0.06); }
+        .q-options input[type="radio"] { margin-top:3px; accent-color:var(--blue); }
+        .q-feedback { margin-top:14px; padding:14px 18px; border-radius:10px; font-size:0.88rem; display:none; }
+        .q-feedback.show { display:block; }
+        .q-feedback.correct-fb { background:rgba(16,185,129,0.1); border:1px solid rgba(16,185,129,0.25); color:var(--emerald); }
+        .q-feedback.wrong-fb { background:rgba(244,63,94,0.1); border:1px solid rgba(244,63,94,0.25); color:var(--rose); }
+
+        .btn { display:inline-flex; align-items:center; gap:8px; padding:14px 32px; border:none; border-radius:12px; font-family:inherit; font-size:0.9rem; font-weight:700; cursor:pointer; transition:all 0.3s; }
+        .btn-primary { background:var(--grad); color:#fff; }
+        .btn-primary:hover { transform:translateY(-2px); box-shadow:0 8px 24px rgba(99,102,241,0.3); }
+        .btn-secondary { background:rgba(148,163,184,0.1); color:var(--text2); border:1px solid var(--border); }
+        .btn-secondary:hover { border-color:var(--border-h); color:var(--text); }
+
+        .results-box { background:var(--bg-card); backdrop-filter:blur(16px); border:1px solid var(--border); border-radius:16px; padding:32px; margin-top:24px; display:none; }
+        .results-box.show { display:block; animation:fadeUp .4s ease-out; }
+        .score-display { text-align:center; margin-bottom:24px; }
+        .score-display .score-num { font-size:3rem; font-weight:900; }
+        .score-display .score-num.good { color:var(--emerald); }
+        .score-display .score-num.ok { color:var(--amber); }
+        .score-display .score-num.bad { color:var(--rose); }
+        .score-display .score-label { color:var(--text2); font-size:0.9rem; }
+
+        .bottom-nav { display:flex; justify-content:space-between; align-items:center; margin-top:48px; padding-top:32px; border-top:1px solid var(--border); }
+        .bottom-nav a { color:var(--text2); text-decoration:none; font-weight:600; font-size:0.9rem; transition:color 0.3s; }
+        .bottom-nav a:hover { color:var(--blue); }
+
+        @keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+
+        @media (max-width:768px) {
+            .wrapper { padding:24px 16px 60px; }
+            .section { padding:24px 20px; }
+            .toc { padding:20px 24px; }
+        }
+        /* Overrides for Chill Class */
+        .topnav { position:fixed !important; top:24px !important; right:24px !important; margin:0 !important; background:rgba(10,14,26,0.6) !important; padding:10px 24px !important; border-radius:100px !important; border:1px solid rgba(99,102,241,0.3) !important; box-shadow: 0 8px 32px rgba(0,0,0,0.5) !important; width:auto !important; flex-wrap: nowrap !important; }
+        .bottom-nav { display:none !important; }
+        .watermark { position:fixed !important; bottom:24px !important; right:24px !important; z-index:9999 !important; box-shadow: 0 8px 24px rgba(0,0,0,0.3) !important; margin:0 !important; }
+        .wrapper { padding-top: 80px !important; }
+        @media (max-width:768px) {
+            .topnav { top:auto !important; bottom:24px !important; right:50% !important; transform:translateX(50%) !important; padding:8px 16px !important; font-size: 0.8rem !important; }
+            .watermark { display:none !important; }
+        }
+        .watermark { display: none !important; }
+        @media (max-width:768px) { .topnav { white-space: nowrap !important; overflow-x: auto !important; max-width: 90vw !important; gap: 8px !important; } }
+    </style>
+</head>
+<body>
+<div class="bg-orbs"><span></span><span></span></div>
+<div class="wrapper">
+
+<nav class="topnav">
+    <a href="index.html">🏠</a>
+    <span class="sep">/</span>
+    <a href="topik-01.html" style="color:var(--blue);">T1</a>
+    <span class="sep">·</span>
+    <a href="topik-02.html">T2</a>
+    <span class="sep">·</span>
+    <a href="topik-03.html">T3</a>
+    <span class="sep">·</span>
+    <a href="topik-04.html">T4</a>
+    <span class="sep">·</span>
+    <a href="topik-05.html">T5</a>
+    <span class="sep">·</span>
+    <a href="topik-06.html">T6</a>
+    <span class="sep">·</span>
+    <a href="topik-07.html">T7</a>
+    <span class="sep">·</span>
+    <a href="topik-08.html">T8</a>
+    <span class="sep">·</span>
+    <a href="topik-09.html">T9</a>
+    <span class="sep">·</span>
+    <a href="topik-10.html">T10</a>
+    <span class="sep">·</span>
+    <a href="topik-11.html">T11</a>
+</nav>
+
+<div class="ch-header">
+    <div class="ch-badge">Topik 01</div>
+    <h1>Taking Risks and Making Profits</h1>
+    <p>Topik paling fundamental. Di sini kamu akan belajar apa itu bisnis, siapa entrepreneur, bagaimana profit dan risk bekerja, siapa saja stakeholders, dan lingkungan apa saja yang mempengaruhi bisnis.</p>
+</div>
+
+<div class="toc">
+    <h3>📑 Daftar Isi</h3>
+    <ol>
+        <li><a href="#s1">Apa Itu Bisnis?</a></li>
+        <li><a href="#s2">Profit, Loss, dan Risk</a></li>
+        <li><a href="#s3">Standard of Living vs Quality of Life</a></li>
+        <li><a href="#s4">Stakeholders</a></li>
+        <li><a href="#s5">Outsourcing dan Insourcing</a></li>
+        <li><a href="#s6">Nonprofit Organization</a></li>
+        <li><a href="#s7">Faktor-Faktor Produksi</a></li>
+        <li><a href="#s8">Lima Lingkungan Bisnis</a></li>
+        <li><a href="#kp">Poin-Poin Penting</a></li>
+        <li><a href="#mt">Tips Menghafal</a></li>
+        <li><a href="#ex">Contoh Soal & Pembahasan</a></li>
+        <li><a href="#quiz">Latihan Soal Interaktif</a></li>
+    </ol>
+</div>
+
+<!-- ===== SECTION 1 ===== -->
+<div class="section" id="s1">
+    <h2><span class="icon">📖</span> 1. Apa Itu Bisnis?</h2>
+    <p>Bisnis ada di mana-mana dalam hidupmu — mulai dari warung nasi dekat kampus, sampai perusahaan raksasa seperti Apple dan Tokopedia. Tapi apa sebenarnya definisi "bisnis"?</p>
+
+    <div class="highlight blue">
+        <h4>💡 Definisi</h4>
+        <p><strong>Business</strong> adalah aktivitas apapun yang bertujuan menyediakan <strong>goods</strong> (barang) dan <strong>services</strong> (jasa) kepada orang lain, sambil <strong>mencari profit</strong> (keuntungan).</p>
+    </div>
+
+    <h3>Perbedaan Goods dan Services</h3>
+    <div class="table-wrap">
+        <table>
+            <tr><th>Aspek</th><th>Goods (Barang)</th><th>Services (Jasa)</th></tr>
+            <tr><td>Wujud</td><td><strong>Tangible</strong> — bisa dipegang, dilihat</td><td><strong>Intangible</strong> — tidak bisa dipegang</td></tr>
+            <tr><td>Contoh</td><td>HP, baju, makanan, mobil</td><td>Pendidikan, konsultasi, asuransi, ojek online</td></tr>
+            <tr><td>Kepemilikan</td><td>Bisa dimiliki setelah dibeli</td><td>Hanya dinikmati, tidak bisa dimiliki secara fisik</td></tr>
+        </table>
+    </div>
+
+    <h3>Entrepreneur</h3>
+    <p><strong>Entrepreneur</strong> adalah orang yang <strong>mempertaruhkan waktu dan uangnya</strong> untuk memulai dan mengelola bisnis. Mereka menerima risiko karena mengharapkan profit sebagai imbalannya.</p>
+
+    <div class="highlight emerald">
+        <h4>🔑 Contoh Entrepreneur</h4>
+        <ul>
+            <li><strong>Elon Musk</strong> — Pertaruhkan seluruh kekayaannya untuk SpaceX dan Tesla</li>
+            <li><strong>Nadiem Makarim</strong> — Tinggalkan karier mapan untuk mendirikan Gojek</li>
+            <li><strong>Edward Tirtanata</strong> — Dirikan Kopi Kenangan dari nol menjadi unicorn</li>
+        </ul>
+    </div>
+</div>
+
+<!-- ===== SECTION 2 ===== -->
+<div class="section" id="s2">
+    <h2><span class="icon">💰</span> 2. Profit, Loss, dan Risk</h2>
+
+    <h3>Istilah Kunci</h3>
+    <div class="table-wrap">
+        <table>
+            <tr><th>Istilah</th><th>Penjelasan</th></tr>
+            <tr><td><strong>Revenue</strong></td><td>Total uang yang <strong>masuk</strong> dari penjualan selama periode tertentu</td></tr>
+            <tr><td><strong>Profit</strong></td><td>Uang yang <strong>tersisa</strong> setelah semua biaya dikurangi dari revenue</td></tr>
+            <tr><td><strong>Loss</strong></td><td>Terjadi ketika biaya (expenses) <strong>lebih besar</strong> dari revenue</td></tr>
+            <tr><td><strong>Risk</strong></td><td>Peluang seorang entrepreneur <strong>kehilangan</strong> waktu dan uangnya</td></tr>
+        </table>
+    </div>
+
+    <div class="equation">
+        <div class="formula"><span class="eq-emerald">Profit</span> = <span class="eq-blue">Revenue</span> − <span class="eq-rose">Expenses</span></div>
+        <div class="sub">Jika hasilnya negatif → itu namanya Loss</div>
+    </div>
+
+    <div class="highlight amber">
+        <h4>📌 Prinsip Penting: Risk-Return Tradeoff</h4>
+        <p>Semakin besar <strong>risiko</strong> yang diambil, semakin besar <strong>potensi keuntungan</strong> (tapi juga semakin besar potensi kerugian!). Contoh: Mark Zuckerberg membeli WhatsApp seharga $19 miliar — saat itu WhatsApp belum menghasilkan uang, tapi sekarang bernilai jauh lebih besar.</p>
+    </div>
+</div>
+
+<!-- ===== SECTION 3 ===== -->
+<div class="section" id="s3">
+    <h2><span class="icon">🏠</span> 3. Standard of Living vs Quality of Life</h2>
+    <p>Dua istilah ini sering tertukar, padahal berbeda:</p>
+
+    <div class="table-wrap">
+        <table>
+            <tr><th>Aspek</th><th>Standard of Living</th><th>Quality of Life</th></tr>
+            <tr><td><strong>Definisi</strong></td><td>Berapa banyak barang/jasa yang bisa dibeli dengan uangmu</td><td>Kesejahteraan masyarakat secara keseluruhan</td></tr>
+            <tr><td><strong>Diukur dengan</strong></td><td>Uang, GDP per kapita, daya beli</td><td>Kebebasan politik, lingkungan, pendidikan, keamanan, waktu luang</td></tr>
+            <tr><td><strong>Contoh</strong></td><td>"Gaji saya cukup untuk beli rumah dan mobil"</td><td>"Saya hidup di lingkungan yang aman, udara bersih, dan bebas berpendapat"</td></tr>
+        </table>
+    </div>
+
+    <div class="highlight blue">
+        <h4>💡 Ingat!</h4>
+        <p>Bisnis <strong>meningkatkan standard of living</strong> dengan menyediakan barang/jasa yang dibutuhkan masyarakat, dan juga berkontribusi pada <strong>quality of life</strong> melalui pajak (untuk infrastruktur), donasi, dan penciptaan lapangan kerja.</p>
+    </div>
+</div>
+
+<!-- ===== SECTION 4 ===== -->
+<div class="section" id="s4">
+    <h2><span class="icon">👥</span> 4. Stakeholders</h2>
+    <p><strong>Stakeholders</strong> adalah semua pihak yang <strong>terdampak</strong> oleh kegiatan bisnis. Bukan hanya pemilik, tapi juga pihak-pihak lain yang berkepentingan.</p>
+
+    <div class="table-wrap">
+        <table>
+            <tr><th>Stakeholder</th><th>Kepentingan</th></tr>
+            <tr><td><strong>Stockholders/Shareholders</strong></td><td>Pemegang saham — ingin profit & dividen</td></tr>
+            <tr><td><strong>Customers</strong></td><td>Pelanggan — ingin produk berkualitas & harga wajar</td></tr>
+            <tr><td><strong>Employees</strong></td><td>Karyawan — ingin gaji layak, lingkungan kerja baik</td></tr>
+            <tr><td><strong>Suppliers</strong></td><td>Pemasok — ingin hubungan bisnis yang stabil</td></tr>
+            <tr><td><strong>Bankers</strong></td><td>Pemberi pinjaman — ingin pinjaman dikembalikan tepat waktu</td></tr>
+            <tr><td><strong>Government</strong></td><td>Pemerintah — ingin pajak dibayar & regulasi dipatuhi</td></tr>
+            <tr><td><strong>Surrounding Community</strong></td><td>Masyarakat sekitar — ingin bisnis tidak merusak lingkungan</td></tr>
+            <tr><td><strong>Media</strong></td><td>Pers — ingin transparansi untuk pemberitaan</td></tr>
+        </table>
+    </div>
+
+    <div class="highlight rose">
+        <h4>⚠️ Tantangan</h4>
+        <p>Kepentingan stakeholders sering <strong>bertentangan</strong>. Contoh: stockholders ingin profit maksimal, tapi karyawan ingin gaji tinggi. Tugas manajer adalah <strong>menyeimbangkan</strong> semua kepentingan ini.</p>
+    </div>
+</div>
+
+<!-- ===== SECTION 5 ===== -->
+<div class="section" id="s5">
+    <h2><span class="icon">🔄</span> 5. Outsourcing dan Insourcing</h2>
+
+    <div class="table-wrap">
+        <table>
+            <tr><th>Aspek</th><th>Outsourcing</th><th>Insourcing</th></tr>
+            <tr><td><strong>Definisi</strong></td><td>Mengontrakkan fungsi bisnis ke perusahaan <strong>luar</strong> (sering di negara lain)</td><td>Perusahaan <strong>asing</strong> membuka operasi di negara kita</td></tr>
+            <tr><td><strong>Dampak</strong></td><td>Bisa <strong>menghilangkan</strong> pekerjaan lokal</td><td><strong>Menciptakan</strong> pekerjaan baru di negara tujuan</td></tr>
+            <tr><td><strong>Contoh</strong></td><td>Apple memproduksi iPhone di China melalui Foxconn</td><td>Toyota membuka pabrik di Karawang, Indonesia</td></tr>
+        </table>
+    </div>
+
+    <div class="highlight emerald">
+        <h4>🔑 Mengapa Outsourcing?</h4>
+        <ul>
+            <li>Biaya tenaga kerja lebih murah</li>
+            <li>Fokus pada <strong>core competency</strong> (keahlian utama) perusahaan</li>
+            <li>Akses ke keahlian spesialis</li>
+        </ul>
+    </div>
+</div>
+
+<!-- ===== SECTION 6 ===== -->
+<div class="section" id="s6">
+    <h2><span class="icon">🤝</span> 6. Nonprofit Organization</h2>
+    <p><strong>Nonprofit organization</strong> adalah organisasi yang tujuannya <strong>bukan untuk mencari profit</strong>, tapi untuk melayani misi sosial tertentu. Namun, mereka tetap butuh prinsip-prinsip bisnis agar berjalan efektif!</p>
+
+    <ul>
+        <li><strong>Contoh dunia:</strong> Red Cross, Greenpeace, Wikipedia</li>
+        <li><strong>Contoh Indonesia:</strong> Kitabisa.com, Dompet Dhuafa, Yayasan Kanker Indonesia</li>
+        <li><strong>Muhammad Yunus</strong> dengan Grameen Bank — memberikan microloans kepada orang miskin di Bangladesh</li>
+    </ul>
+
+    <div class="highlight blue">
+        <h4>💡 Kenapa Ini Penting?</h4>
+        <p>Nonprofit tetap butuh <strong>revenue</strong> (dari donasi, grants, atau biaya layanan) untuk menutupi expenses. Bedanya, <strong>surplus tidak dibagikan ke pemilik</strong>, tapi digunakan kembali untuk misi organisasi.</p>
+    </div>
+</div>
+
+<!-- ===== SECTION 7 ===== -->
+<div class="section" id="s7">
+    <h2><span class="icon">⚙️</span> 7. Faktor-Faktor Produksi</h2>
+    <p>Untuk membuat barang dan jasa, dibutuhkan <strong>5 faktor produksi</strong> (factors of production):</p>
+
+    <div class="table-wrap">
+        <table>
+            <tr><th>Faktor</th><th>Penjelasan</th><th>Contoh</th></tr>
+            <tr><td><strong>Land (Tanah)</strong></td><td>Semua sumber daya alam</td><td>Tanah, air, mineral, hutan</td></tr>
+            <tr><td><strong>Labor (Tenaga Kerja)</strong></td><td>Tenaga fisik & mental pekerja</td><td>Buruh pabrik, programmer, guru</td></tr>
+            <tr><td><strong>Capital (Modal)</strong></td><td>Mesin, alat, fasilitas (bukan uang!)</td><td>Pabrik, komputer, kendaraan</td></tr>
+            <tr><td><strong>Entrepreneurship</strong></td><td>Kemampuan menggabungkan faktor lain</td><td>Visi, keberanian mengambil risiko</td></tr>
+            <tr><td><strong>Knowledge (Pengetahuan)</strong></td><td>Informasi, data, keahlian teknologi</td><td>Software, paten, riset</td></tr>
+        </table>
+    </div>
+
+    <div class="highlight amber">
+        <h4>📌 Yang Paling Penting di Era Modern</h4>
+        <p><strong>Knowledge</strong> adalah faktor produksi yang paling penting saat ini. Di era informasi, perusahaan yang punya data dan pengetahuan lebih unggul. Contoh: Google tidak punya pabrik, tapi bernilai triliunan dolar berkat data dan teknologi.</p>
+    </div>
+</div>
+
+<!-- ===== SECTION 8 ===== -->
+<div class="section" id="s8">
+    <h2><span class="icon">🌐</span> 8. Lima Lingkungan Bisnis</h2>
+    <p>Bisnis tidak berjalan dalam ruang hampa. Ada <strong>5 lingkungan</strong> yang mempengaruhi keberhasilan bisnis:</p>
+
+    <h3>1. Economic & Legal Environment</h3>
+    <p>Peran pemerintah sangat penting dalam menciptakan lingkungan bisnis yang kondusif:</p>
+    <ul>
+        <li>Meminimalkan pajak dan regulasi yang memberatkan</li>
+        <li>Menjaga mata uang tetap stabil</li>
+        <li>Menegakkan hukum anti-korupsi dan perlindungan properti intelektual</li>
+        <li>Mengurangi hambatan perdagangan</li>
+    </ul>
+
+    <h3>2. Technological Environment</h3>
+    <ul>
+        <li><strong>E-commerce</strong> mengubah cara bisnis beroperasi: B2C (Business-to-Consumer), B2B (Business-to-Business)</li>
+        <li><strong>Productivity</strong> = Output yang dihasilkan per unit input</li>
+        <li><strong>Effectiveness</strong> = Mengerjakan hal yang benar</li>
+        <li><strong>Efficiency</strong> = Mengerjakan dengan cara yang benar (hemat sumber daya)</li>
+    </ul>
+
+    <h3>3. Competitive Environment</h3>
+    <ul>
+        <li><strong>Exceeding customer expectations</strong> — jangan hanya memenuhi, tapi melampaui harapan pelanggan</li>
+        <li><strong>Empowerment</strong> — memberi karyawan wewenang untuk membuat keputusan cepat</li>
+    </ul>
+
+    <h3>4. Social Environment</h3>
+    <ul>
+        <li>Diversitas (keragaman) tenaga kerja</li>
+        <li>Populasi menua (aging population)</li>
+        <li>Pergeseran demografi: single-parent families, Gen Z yang berbeda dari generasi sebelumnya</li>
+    </ul>
+
+    <h3>5. Global Business Environment</h3>
+    <ul>
+        <li>Perdagangan bebas — pasar semakin global</li>
+        <li>Perubahan iklim, terorisme, dan ketidakstabilan geopolitik</li>
+        <li>Peluang di pasar berkembang (Asia, Afrika, Amerika Latin)</li>
+    </ul>
+
+    <div class="highlight violet">
+        <h4>🧩 Ingat Singkatan: ETSCG</h4>
+        <p><strong>E</strong>conomic & Legal, <strong>T</strong>echnological, <strong>S</strong>ocial, <strong>C</strong>ompetitive, <strong>G</strong>lobal — lima lingkungan bisnis. Atau ingat: "<strong>E</strong>very <strong>T</strong>eam <strong>S</strong>hould <strong>C</strong>ompete <strong>G</strong>lobally".</p>
+    </div>
+</div>
+
+<!-- ===== KEY POINTS ===== -->
+<div class="section" id="kp">
+    <div class="key-points">
+        <h3>🔑 POIN-POIN PENTING TOPIK 1</h3>
+        <ol>
+            <li><strong>Business</strong> = Aktivitas menyediakan goods/services untuk mendapat profit</li>
+            <li><strong>Entrepreneur</strong> = Orang yang mempertaruhkan waktu & uang untuk memulai bisnis</li>
+            <li><strong>Profit = Revenue − Expenses</strong>; jika negatif → Loss</li>
+            <li>Semakin besar <strong>risk</strong>, semakin besar potensi <strong>return</strong></li>
+            <li><strong>Standard of Living</strong> = daya beli (kuantitatif); <strong>Quality of Life</strong> = kesejahteraan keseluruhan (kualitatif)</li>
+            <li><strong>Stakeholders</strong> = semua pihak yang terdampak bisnis (bukan hanya pemilik!)</li>
+            <li><strong>Outsourcing</strong> = kontrak ke luar; <strong>Insourcing</strong> = asing masuk ke sini</li>
+            <li>5 <strong>Faktor Produksi</strong>: Land, Labor, Capital, Entrepreneurship, Knowledge</li>
+            <li><strong>Knowledge</strong> adalah faktor produksi terpenting di era modern</li>
+            <li>5 <strong>Lingkungan Bisnis</strong>: Economic/Legal, Technological, Social, Competitive, Global</li>
+            <li><strong>Nonprofit</strong> tetap butuh prinsip bisnis, bedanya surplus tidak dibagikan ke pemilik</li>
+        </ol>
+    </div>
+</div>
+
+<!-- ===== MEMORY TIPS ===== -->
+<div class="section" id="mt">
+    <div class="memory-tips">
+        <h3>🧠 TIPS MENGHAFAL</h3>
+        <ol>
+            <li><strong>"R – E = P"</strong> → Revenue − Expenses = Profit. Sesederhana itu!</li>
+            <li><strong>"LLCEK"</strong> → 5 faktor produksi: <strong>L</strong>and, <strong>L</strong>abor, <strong>C</strong>apital, <strong>E</strong>ntrepreneurship, <strong>K</strong>nowledge</li>
+            <li><strong>"ETSCG"</strong> → 5 lingkungan bisnis: <strong>E</strong>conomic, <strong>T</strong>echnological, <strong>S</strong>ocial, <strong>C</strong>ompetitive, <strong>G</strong>lobal → "<strong>Every Team Should Compete Globally</strong>"</li>
+            <li><strong>Stakeholder vs Stockholder</strong> → Stockholder = pemegang SAHAM (stock). Stakeholder = SEMUA pihak yang berkepentingan (stake = taruhan/kepentingan)</li>
+            <li><strong>Outsourcing = OUT</strong> (keluar) → pekerjaan kita dikirim ke LUAR. <strong>Insourcing = IN</strong> (masuk) → pekerjaan dari luar MASUK ke kita</li>
+            <li><strong>Goods = bisa di-GRAB</strong> (dipegang), <strong>Services = SENYUM</strong> (tidak bisa dipegang tapi bisa dirasakan)</li>
+            <li><strong>Capital ≠ Cash!</strong> → Capital = mesin & peralatan, bukan uang tunai</li>
+        </ol>
+    </div>
+</div>
+
+<!-- ===== CONTOH SOAL ===== -->
+<div class="section" id="ex">
+    <h2><span class="icon">📝</span> Contoh Soal & Pembahasan</h2>
+
+    <div class="example">
+        <h3>Soal 1</h3>
+        <p><strong>Apa perbedaan antara revenue dan profit?</strong></p>
+        <p>A. Revenue dan profit adalah hal yang sama<br>
+        B. Revenue adalah total pendapatan; profit adalah revenue dikurangi semua expenses<br>
+        C. Revenue hanya dari penjualan barang; profit dari penjualan jasa<br>
+        D. Revenue adalah keuntungan bersih; profit adalah pendapatan kotor</p>
+        <p><strong>Jawaban: B</strong></p>
+        <p><strong>Pembahasan:</strong> Revenue = total uang masuk dari penjualan. Profit = Revenue − Expenses (uang yang tersisa setelah dikurangi semua biaya). Jadi revenue belum tentu profit, karena belum dikurangi biaya.</p>
+    </div>
+
+    <div class="example">
+        <h3>Soal 2</h3>
+        <p><strong>Faktor produksi yang paling penting di era informasi saat ini adalah...</strong></p>
+        <p>A. Land &nbsp; B. Labor &nbsp; C. Capital &nbsp; D. Knowledge</p>
+        <p><strong>Jawaban: D</strong></p>
+        <p><strong>Pembahasan:</strong> Di era modern, Knowledge (pengetahuan, data, teknologi) menjadi faktor paling penting. Perusahaan seperti Google bernilai triliunan dolar berkat data dan pengetahuan, bukan pabrik fisik.</p>
+    </div>
+
+    <div class="example">
+        <h3>Soal 3</h3>
+        <p><strong>Yang termasuk stakeholder tapi BUKAN stockholder adalah...</strong></p>
+        <p>A. Pemegang saham &nbsp; B. Karyawan &nbsp; C. Investor yang membeli saham &nbsp; D. Pemilik saham mayoritas</p>
+        <p><strong>Jawaban: B</strong></p>
+        <p><strong>Pembahasan:</strong> Karyawan adalah stakeholder (pihak yang berkepentingan) tapi bukan stockholder (pemegang saham). Stockholder adalah BAGIAN dari stakeholder, tapi tidak semua stakeholder adalah stockholder.</p>
+    </div>
+</div>
+
+<!-- ===== QUIZ ===== -->
+<div class="quiz-section" id="quiz">
+    <h2>🎯 Latihan Soal Interaktif — Topik 1</h2>
+    <p class="subtitle">Kerjakan 10 soal, lalu klik "Lihat Hasil" untuk melihat skor dan pembahasanmu. Jawaban tersimpan otomatis.</p>
+
+    <form id="quizForm">
+        <div class="q-card" id="q1"><div class="q-num">Soal 1</div><div class="q-text">Business didefinisikan sebagai aktivitas yang menyediakan goods dan services dengan tujuan...</div><div class="q-options"><label><input type="radio" name="q1" value="a"> Melayani masyarakat tanpa imbalan</label><label><input type="radio" name="q1" value="b"> Mencari profit</label><label><input type="radio" name="q1" value="c"> Menguasai pasar</label><label><input type="radio" name="q1" value="d"> Mengalahkan kompetitor</label></div><div class="q-feedback" id="fb1"></div></div>
+
+        <div class="q-card" id="q2"><div class="q-num">Soal 2</div><div class="q-text">Goods berbeda dengan services karena goods bersifat...</div><div class="q-options"><label><input type="radio" name="q2" value="a"> Intangible</label><label><input type="radio" name="q2" value="b"> Tangible</label><label><input type="radio" name="q2" value="c"> Digital</label><label><input type="radio" name="q2" value="d"> Gratis</label></div><div class="q-feedback" id="fb2"></div></div>
+
+        <div class="q-card" id="q3"><div class="q-num">Soal 3</div><div class="q-text">Jika revenue sebuah perusahaan Rp 500 juta dan expenses Rp 600 juta, maka perusahaan mengalami...</div><div class="q-options"><label><input type="radio" name="q3" value="a"> Profit Rp 100 juta</label><label><input type="radio" name="q3" value="b"> Loss Rp 100 juta</label><label><input type="radio" name="q3" value="c"> Break even</label><label><input type="radio" name="q3" value="d"> Revenue yang tinggi</label></div><div class="q-feedback" id="fb3"></div></div>
+
+        <div class="q-card" id="q4"><div class="q-num">Soal 4</div><div class="q-text">Quality of life berbeda dengan standard of living karena quality of life mencakup...</div><div class="q-options"><label><input type="radio" name="q4" value="a"> Hanya daya beli seseorang</label><label><input type="radio" name="q4" value="b"> Jumlah barang yang bisa dibeli</label><label><input type="radio" name="q4" value="c"> Kesejahteraan secara keseluruhan termasuk kebebasan dan lingkungan</label><label><input type="radio" name="q4" value="d"> GDP per kapita suatu negara</label></div><div class="q-feedback" id="fb4"></div></div>
+
+        <div class="q-card" id="q5"><div class="q-num">Soal 5</div><div class="q-text">Manakah yang BUKAN termasuk stakeholder perusahaan?</div><div class="q-options"><label><input type="radio" name="q5" value="a"> Karyawan</label><label><input type="radio" name="q5" value="b"> Pelanggan</label><label><input type="radio" name="q5" value="c"> Perusahaan pesaing yang tidak terkait</label><label><input type="radio" name="q5" value="d"> Pemerintah</label></div><div class="q-feedback" id="fb5"></div></div>
+
+        <div class="q-card" id="q6"><div class="q-num">Soal 6</div><div class="q-text">Outsourcing berarti...</div><div class="q-options"><label><input type="radio" name="q6" value="a"> Membuka cabang di luar negeri</label><label><input type="radio" name="q6" value="b"> Mengontrakkan fungsi bisnis ke perusahaan lain</label><label><input type="radio" name="q6" value="c"> Mengimpor bahan baku dari luar negeri</label><label><input type="radio" name="q6" value="d"> Merekrut karyawan asing</label></div><div class="q-feedback" id="fb6"></div></div>
+
+        <div class="q-card" id="q7"><div class="q-num">Soal 7</div><div class="q-text">Faktor produksi "Capital" merujuk pada...</div><div class="q-options"><label><input type="radio" name="q7" value="a"> Uang tunai dan tabungan</label><label><input type="radio" name="q7" value="b"> Mesin, peralatan, dan fasilitas produksi</label><label><input type="radio" name="q7" value="c"> Kekayaan bersih pemilik</label><label><input type="radio" name="q7" value="d"> Saham dan obligasi</label></div><div class="q-feedback" id="fb7"></div></div>
+
+        <div class="q-card" id="q8"><div class="q-num">Soal 8</div><div class="q-text">Faktor produksi yang paling krusial di era informasi saat ini adalah...</div><div class="q-options"><label><input type="radio" name="q8" value="a"> Land</label><label><input type="radio" name="q8" value="b"> Labor</label><label><input type="radio" name="q8" value="c"> Capital</label><label><input type="radio" name="q8" value="d"> Knowledge</label></div><div class="q-feedback" id="fb8"></div></div>
+
+        <div class="q-card" id="q9"><div class="q-num">Soal 9</div><div class="q-text">Nonprofit organization berbeda dari bisnis biasa karena...</div><div class="q-options"><label><input type="radio" name="q9" value="a"> Tidak pernah mendapat revenue</label><label><input type="radio" name="q9" value="b"> Surplus tidak dibagikan ke pemilik, melainkan untuk misi organisasi</label><label><input type="radio" name="q9" value="c"> Tidak membutuhkan karyawan</label><label><input type="radio" name="q9" value="d"> Tidak boleh mengelola uang</label></div><div class="q-feedback" id="fb9"></div></div>
+
+        <div class="q-card" id="q10"><div class="q-num">Soal 10</div><div class="q-text">Yang termasuk dalam technological environment bisnis adalah...</div><div class="q-options"><label><input type="radio" name="q10" value="a"> Kebijakan pajak pemerintah</label><label><input type="radio" name="q10" value="b"> Pertumbuhan e-commerce dan inovasi digital</label><label><input type="radio" name="q10" value="c"> Diversitas tenaga kerja</label><label><input type="radio" name="q10" value="d"> Perdagangan internasional</label></div><div class="q-feedback" id="fb10"></div></div>
+
+        <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:24px;">
+            <button type="button" class="btn btn-primary" onclick="checkQuiz()">📊 Lihat Hasil</button>
+            <button type="button" class="btn btn-secondary" onclick="resetQuiz()">🔄 Reset</button>
+        </div>
+    </form>
+
+    <div class="results-box" id="resultsBox">
+        <div class="score-display">
+            <div class="score-num" id="scoreNum"></div>
+            <div class="score-label" id="scoreLabel"></div>
+        </div>
+    </div>
+</div>
+
+<div class="bottom-nav">
+    <a href="index.html">← Kembali ke Beranda</a>
+    <a href="topik-02.html">Topik 2: Economics & Ethics →</a>
+</div>
+
+</div>
+
+<script>
+const STORAGE_KEY = 'manbis_t01_quiz';
+const answers = {q1:'b',q2:'b',q3:'b',q4:'c',q5:'c',q6:'b',q7:'b',q8:'d',q9:'b',q10:'b'};
+const explanations = {
+    q1: 'Business bertujuan mencari profit melalui penyediaan goods dan services.',
+    q2: 'Goods bersifat tangible (berwujud, bisa dipegang), sedangkan services bersifat intangible.',
+    q3: 'Revenue (500) − Expenses (600) = −100 juta → Loss. Expenses lebih besar dari revenue.',
+    q4: 'Quality of life mencakup kesejahteraan secara keseluruhan: kebebasan politik, lingkungan, pendidikan, keamanan — bukan hanya daya beli.',
+    q5: 'Perusahaan pesaing yang tidak terkait bukan stakeholder. Stakeholder adalah pihak yang terdampak langsung oleh kegiatan bisnis.',
+    q6: 'Outsourcing = mengontrakkan fungsi bisnis ke perusahaan lain (sering di luar negeri) untuk efisiensi biaya.',
+    q7: 'Capital dalam faktor produksi = mesin, peralatan, dan fasilitas — BUKAN uang tunai! Uang tunai disebut financial capital, berbeda dari capital sebagai faktor produksi.',
+    q8: 'Knowledge (pengetahuan, data, teknologi) adalah faktor produksi paling krusial di era informasi. Contoh: Google bernilai triliunan dolar berkat data.',
+    q9: 'Nonprofit tetap bisa mendapat revenue, tapi surplus tidak dibagikan ke pemilik — digunakan kembali untuk misi organisasi.',
+    q10: 'E-commerce dan inovasi digital termasuk technological environment. Pajak = economic/legal, diversitas = social, perdagangan internasional = global.'
+};
+
+function saveAnswers() {
+    const data = {};
+    for (let i = 1; i <= 10; i++) {
+        const sel = document.querySelector(`input[name="q${i}"]:checked`);
+        if (sel) data[`q${i}`] = sel.value;
+    }
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+}
+
+function loadAnswers() {
+    const data = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+    for (const [key, val] of Object.entries(data)) {
+        const radio = document.querySelector(`input[name="${key}"][value="${val}"]`);
+        if (radio) radio.checked = true;
+    }
+}
+
+function checkQuiz() {
+    saveAnswers();
+    let score = 0;
+    const total = 10;
+    for (let i = 1; i <= total; i++) {
+        const sel = document.querySelector(`input[name="q${i}"]:checked`);
+        const fb = document.getElementById(`fb${i}`);
+        const card = document.getElementById(`q${i}`);
+        const correct = answers[`q${i}`];
+        card.classList.remove('correct','wrong');
+        if (sel && sel.value === correct) {
+            score++;
+            card.classList.add('correct');
+            fb.className = 'q-feedback show correct-fb';
+            fb.innerHTML = `✅ <strong>Benar!</strong> ${explanations['q'+i]}`;
+        } else {
+            card.classList.add('wrong');
+            fb.className = 'q-feedback show wrong-fb';
+            const userAns = sel ? sel.value.toUpperCase() : '—';
+            fb.innerHTML = `❌ <strong>Salah.</strong> Jawabanmu: ${userAns}. Jawaban benar: <strong>${correct.toUpperCase()}</strong>. ${explanations['q'+i]}`;
+        }
+    }
+    const pct = Math.round((score/total)*100);
+    const box = document.getElementById('resultsBox');
+    const num = document.getElementById('scoreNum');
+    const lbl = document.getElementById('scoreLabel');
+    num.textContent = `${score}/${total}`;
+    num.className = 'score-num ' + (pct >= 80 ? 'good' : pct >= 60 ? 'ok' : 'bad');
+    lbl.textContent = pct >= 80 ? '🎉 Excellent! Kamu sudah menguasai materi ini!' : pct >= 60 ? '👍 Lumayan! Review lagi bagian yang salah.' : '📖 Perlu belajar lagi. Baca ulang materinya ya!';
+    box.classList.add('show');
+    box.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+function resetQuiz() {
+    localStorage.removeItem(STORAGE_KEY);
+    document.getElementById('quizForm').reset();
+    for (let i = 1; i <= 10; i++) {
+        document.getElementById(`q${i}`).classList.remove('correct','wrong');
+        const fb = document.getElementById(`fb${i}`);
+        fb.className = 'q-feedback';
+        fb.innerHTML = '';
+    }
+    document.getElementById('resultsBox').classList.remove('show');
+}
+
+document.querySelectorAll('input[type="radio"]').forEach(r => r.addEventListener('change', saveAnswers));
+window.addEventListener('DOMContentLoaded', loadAnswers);
+</script>
+</body>
+</html>

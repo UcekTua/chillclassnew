@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topik 11: OB, Leadership, Motivation & Controlling — ManBis</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+            --bg: #0a0e1a; --bg2: #111827; --bg-card: rgba(17,24,39,0.7);
+            --border: rgba(99,102,241,0.15); --border-h: rgba(99,102,241,0.4);
+            --text: #f1f5f9; --text2: #94a3b8; --text3: #64748b;
+            --blue: #6366f1; --cyan: #06b6d4; --violet: #8b5cf6;
+            --emerald: #10b981; --amber: #f59e0b; --rose: #f43f5e;
+            --sky: #0ea5e9;
+            --grad: linear-gradient(135deg, #0ea5e9, #6366f1);
+        }
+        body { font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); line-height:1.8; }
+        .bg-orbs { position:fixed; top:0; left:0; width:100%; height:100%; z-index:0; overflow:hidden; pointer-events:none; }
+        .bg-orbs span { position:absolute; border-radius:50%; filter:blur(80px); opacity:0.1; }
+        .bg-orbs span:nth-child(1) { width:500px; height:500px; background:var(--sky); top:-10%; left:-5%; }
+        .bg-orbs span:nth-child(2) { width:400px; height:400px; background:var(--blue); bottom:10%; right:-5%; }
+
+        .wrapper { position:relative; z-index:1; max-width:900px; margin:0 auto; padding:40px 24px 80px; }
+
+        .topnav { display:flex; align-items:center; gap:12px; margin-bottom:48px; flex-wrap:wrap; position:sticky; top:0; z-index:100; background:rgba(10,14,26,0.85); backdrop-filter:blur(12px); padding:20px 0; }
+        .topnav a { color:var(--text2); text-decoration:none; font-size:0.85rem; font-weight:500; transition:color 0.3s; }
+        .topnav a:hover { color:var(--sky); }
+        .topnav .sep { color:var(--text3); }
+
+        .ch-header { margin-bottom:48px; animation:fadeUp .6s ease-out; }
+        .ch-badge { display:inline-block; padding:5px 14px; border-radius:100px; background:rgba(14,165,233,0.12); border:1px solid rgba(14,165,233,0.25); color:var(--sky); font-size:0.75rem; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; margin-bottom:16px; }
+        .ch-header h1 { font-size:clamp(1.8rem,4vw,2.6rem); font-weight:900; background:var(--grad); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; margin-bottom:12px; }
+        .ch-header p { color:var(--text2); font-size:1rem; max-width:700px; }
+
+        .toc { background:var(--bg-card); backdrop-filter:blur(16px); border:1px solid var(--border); border-radius:16px; padding:28px 32px; margin-bottom:48px; animation:fadeUp .6s ease-out .1s both; }
+        .toc h3 { font-size:0.85rem; font-weight:700; text-transform:uppercase; letter-spacing:1.5px; color:var(--sky); margin-bottom:16px; }
+        .toc ol { padding-left:20px; }
+        .toc li { margin-bottom:8px; }
+        .toc a { color:var(--text2); text-decoration:none; font-size:0.9rem; transition:color 0.3s; }
+        .toc a:hover { color:var(--cyan); }
+
+        .section { background:var(--bg-card); backdrop-filter:blur(16px); border:1px solid var(--border); border-radius:20px; padding:36px 36px; margin-bottom:32px; animation:fadeUp .6s ease-out both; }
+        .section h2 { font-size:1.5rem; font-weight:800; margin-bottom:20px; display:flex; align-items:center; gap:12px; }
+        .section h2 .icon { font-size:1.3rem; }
+        .section h3 { font-size:1.15rem; font-weight:700; margin:28px 0 12px; color:var(--cyan); }
+        .section h4 { font-size:1rem; font-weight:600; margin:20px 0 10px; color:var(--sky); }
+        .section p { color:var(--text2); margin-bottom:14px; font-size:0.95rem; }
+        .section ul, .section ol { padding-left:24px; margin-bottom:14px; }
+        .section li { color:var(--text2); margin-bottom:8px; font-size:0.95rem; }
+        .section li strong { color:var(--text); }
+
+        .highlight { border-radius:12px; padding:20px 24px; margin:20px 0; }
+        .highlight.blue { background:rgba(99,102,241,0.08); border-left:4px solid var(--blue); }
+        .highlight.emerald { background:rgba(16,185,129,0.08); border-left:4px solid var(--emerald); }
+        .highlight.amber { background:rgba(245,158,11,0.08); border-left:4px solid var(--amber); }
+
+        .table-wrap { overflow-x:auto; margin:20px 0; }
+        table { width:100%; border-collapse:collapse; font-size:0.88rem; }
+        th { background:rgba(14,165,233,0.12); color:var(--sky); font-weight:700; padding:12px 16px; text-align:left; border-bottom:2px solid rgba(14,165,233,0.2); }
+        td { padding:11px 16px; border-bottom:1px solid rgba(148,163,184,0.08); color:var(--text2); }
+        tr:hover td { background:rgba(14,165,233,0.04); }
+
+        .key-points { background:linear-gradient(135deg, rgba(16,185,129,0.06), rgba(6,182,212,0.06)); border:1px solid rgba(16,185,129,0.2); border-radius:16px; padding:28px 32px; margin:28px 0; }
+        .key-points h3 { color:var(--emerald); font-size:1rem; margin-bottom:16px; }
+
+        .memory-tips { background:linear-gradient(135deg, rgba(245,158,11,0.06), rgba(244,63,94,0.06)); border:1px solid rgba(245,158,11,0.2); border-radius:16px; padding:28px 32px; margin:28px 0; }
+        .memory-tips h3 { color:var(--amber); font-size:1rem; margin-bottom:16px; }
+
+        .example { background:rgba(14,165,233,0.06); border:1px solid rgba(14,165,233,0.2); border-radius:16px; padding:28px 32px; margin:28px 0; }
+        .example h3 { color:var(--sky); margin-top:0; margin-bottom:16px; }
+
+        .quiz-section { margin-top:48px; }
+        .quiz-section h2 { font-size:1.5rem; font-weight:800; margin-bottom:8px; }
+        .quiz-section .subtitle { color:var(--text2); margin-bottom:24px; }
+        .q-card { background:var(--bg-card); backdrop-filter:blur(16px); border:1px solid var(--border); border-radius:16px; padding:28px 30px; margin-bottom:20px; transition:border-color 0.3s; }
+        .q-card.correct { border-color:var(--emerald) !important; }
+        .q-card.wrong { border-color:var(--rose) !important; }
+        .q-num { font-size:0.75rem; font-weight:700; color:var(--sky); text-transform:uppercase; letter-spacing:1.5px; margin-bottom:10px; }
+        .q-text { font-size:0.95rem; font-weight:600; color:var(--text); margin-bottom:16px; line-height:1.6; }
+        .q-options label { display:flex; align-items:flex-start; gap:12px; padding:10px 14px; margin-bottom:8px; border-radius:10px; cursor:pointer; transition:background 0.2s; font-size:0.9rem; color:var(--text2); }
+        .q-options label:hover { background:rgba(14,165,233,0.06); }
+        .q-options input[type="radio"] { margin-top:3px; accent-color:var(--sky); }
+        .q-feedback { margin-top:14px; padding:14px 18px; border-radius:10px; font-size:0.88rem; display:none; }
+        .q-feedback.show { display:block; }
+        .q-feedback.correct-fb { background:rgba(16,185,129,0.1); border:1px solid rgba(16,185,129,0.25); color:var(--emerald); }
+        .q-feedback.wrong-fb { background:rgba(244,63,94,0.1); border:1px solid rgba(244,63,94,0.25); color:var(--rose); }
+
+        .btn { display:inline-flex; align-items:center; gap:8px; padding:14px 32px; border:none; border-radius:12px; font-family:inherit; font-size:0.9rem; font-weight:700; cursor:pointer; transition:all 0.3s; }
+        .btn-primary { background:var(--grad); color:#fff; }
+        .btn-primary:hover { transform:translateY(-2px); box-shadow:0 8px 24px rgba(14,165,233,0.3); }
+        .btn-secondary { background:rgba(148,163,184,0.1); color:var(--text2); border:1px solid var(--border); }
+        .btn-secondary:hover { border-color:var(--border-h); color:var(--text); }
+
+        .results-box { background:var(--bg-card); backdrop-filter:blur(16px); border:1px solid var(--border); border-radius:16px; padding:32px; margin-top:24px; display:none; }
+        .results-box.show { display:block; animation:fadeUp .4s ease-out; }
+        .score-display { text-align:center; margin-bottom:24px; }
+        .score-display .score-num { font-size:3rem; font-weight:900; }
+        .score-display .score-num.good { color:var(--emerald); }
+        .score-display .score-num.ok { color:var(--amber); }
+        .score-display .score-num.bad { color:var(--rose); }
+        .score-display .score-label { color:var(--text2); font-size:0.9rem; }
+
+        .bottom-nav { display:flex; justify-content:space-between; align-items:center; margin-top:48px; padding-top:32px; border-top:1px solid var(--border); }
+        .bottom-nav a { color:var(--text2); text-decoration:none; font-weight:600; font-size:0.9rem; transition:color 0.3s; }
+        .bottom-nav a:hover { color:var(--sky); }
+
+        @keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+
+        @media (max-width:768px) {
+            .wrapper { padding:24px 16px 60px; }
+            .section { padding:24px 20px; }
+            .toc { padding:20px 24px; }
+        }
+        .topnav { position:fixed !important; top:24px !important; right:24px !important; margin:0 !important; background:rgba(10,14,26,0.6) !important; padding:10px 24px !important; border-radius:100px !important; border:1px solid rgba(99,102,241,0.3) !important; box-shadow: 0 8px 32px rgba(0,0,0,0.5) !important; width:auto !important; flex-wrap: nowrap !important; }
+        .bottom-nav { display:none !important; }
+        .watermark { display: none !important; }
+        .wrapper { padding-top: 80px !important; }
+        @media (max-width:768px) {
+            .topnav { top:auto !important; bottom:24px !important; right:50% !important; transform:translateX(50%) !important; padding:8px 16px !important; font-size: 0.8rem !important; white-space: nowrap !important; overflow-x: auto !important; max-width: 90vw !important; gap: 8px !important; }
+        }
+    </style>
+</head>
+<body>
+<div class="bg-orbs"><span></span><span></span></div>
+<div class="wrapper">
+
+<nav class="topnav">
+    <a href="index.html">🏠</a>
+    <span class="sep">/</span>
+    <a href="topik-01.html">T1</a>
+    <span class="sep">·</span>
+    <a href="topik-02.html">T2</a>
+    <span class="sep">·</span>
+    <a href="topik-03.html">T3</a>
+    <span class="sep">·</span>
+    <a href="topik-04.html">T4</a>
+    <span class="sep">·</span>
+    <a href="topik-05.html">T5</a>
+    <span class="sep">·</span>
+    <a href="topik-06.html">T6</a>
+    <span class="sep">·</span>
+    <a href="topik-07.html">T7</a>
+    <span class="sep">·</span>
+    <a href="topik-08.html">T8</a>
+    <span class="sep">·</span>
+    <a href="topik-09.html">T9</a>
+    <span class="sep">·</span>
+    <a href="topik-10.html">T10</a>
+    <span class="sep">·</span>
+    <a href="topik-11.html" style="color:var(--sky);">T11</a>
+</nav>
+
+<div class="ch-header">
+    <div class="ch-badge">Topik 11</div>
+    <h1>OB, Leadership, Motivation & Controlling</h1>
+    <p>Memahami Perilaku Organisasi (Big Five, MBTI), Teori Kepemimpinan & 5 Jenis Power, Teori Motivasi (Maslow, Herzberg, Equity, Expectancy), 3 Langkah Control Process, serta Balanced Scorecard.</p>
+</div>
+
+<div class="toc">
+    <h3>📑 Daftar Isi</h3>
+    <ol>
+        <li><a href="#s1">Organizational Behavior (Sikap & Kepribadian)</a></li>
+        <li><a href="#s2">Gaya Kepemimpinan & 5 Sumber Power</a></li>
+        <li><a href="#s3">Teori Motivasi Klasik (Maslow, Theory X/Y, Herzberg)</a></li>
+        <li><a href="#s4">Teori Motivasi Kontemporer (Equity & Expectancy)</a></li>
+        <li><a href="#s5">Fungsi Control & 3 Langkah Control Process</a></li>
+        <li><a href="#s6">Feedforward, Concurrent, & Feedback Control</a></li>
+        <li><a href="#s7">Balanced Scorecard (BSC)</a></li>
+        <li><a href="#kp">Poin-Poin Penting</a></li>
+        <li><a href="#mt">Tips Menghafal</a></li>
+        <li><a href="#ex">Contoh Soal & Pembahasan</a></li>
+        <li><a href="#quiz">Latihan Soal Interaktif</a></li>
+    </ol>
+</div>
+
+<!-- ===== SECTION 1 ===== -->
+<div class="section" id="s1">
+    <h2><span class="icon">🧠</span> 1. Organizational Behavior (Sikap & Kepribadian)</h2>
+    <p><strong>Organizational Behavior (OB):</strong> Studi tentang tindakan orang-orang saat bekerja di dalam organisasi.</p>
+
+    <h3>3 Komponen Sikap (Attitude):</h3>
+    <ul>
+        <li><strong>Cognitive:</strong> Keyakinan/pengetahuan ("Diskriminasi itu salah").</li>
+        <li><strong>Affective:</strong> Perasaan/emosi ("Saya tidak suka manajer yang diskriminatif").</li>
+        <li><strong>Behavioral:</strong> Niat bertindak ("Saya akan menghindari bekerja dengannya").</li>
+    </ul>
+
+    <h3>Model Kepribadian Big Five:</h3>
+    <p>Extraversion (sosialis), Agreeableness (kooperatif), Conscientiousness (bertanggung jawab/andal), Emotional Stability (tenang/stabil), Openness to Experience (terbuka ide baru).</p>
+</div>
+
+<!-- ===== SECTION 2 ===== -->
+<div class="section" id="s2">
+    <h2><span class="icon">👑</span> 2. Kepemimpinan & 5 Sumber Power</h2>
+
+    <div class="table-wrap">
+        <table>
+            <tr><th>Sumber Power</th><th>Definisi</th></tr>
+            <tr><td><strong>Legitimate Power</strong></td><td>Wewenang resmi akibat posisi jabatan hirarki dalam organisasi.</td></tr>
+            <tr><td><strong>Coercive Power</strong></td><td>Kekuasaan untuk menghukum atau mengontrol bawahan.</td></tr>
+            <tr><td><strong>Reward Power</strong></td><td>Kekuasaan memberikan imbalan positif / hadiah / bonus.</td></tr>
+            <tr><td><strong>Expert Power</strong></td><td>Pengaruh yang timbul akibat keahlian / keterampilan spesifik.</td></tr>
+            <tr><td><strong>Referent Power</strong></td><td>Kekuasaan yang timbul karena kekaguman/karisma kepribadian pemimpin.</td></tr>
+        </table>
+    </div>
+
+    <h3>Transactional vs Transformational Leaders:</h3>
+    <ul>
+        <li><strong>Transactional Leaders:</strong> Memimpin melalui pertukaran sosial (memberi reward atas pencapaian target).</li>
+        <li><strong>Transformational Leaders:</strong> Menginspirasi dan mengubah bawahan untuk mencapai hasil luar biasa melampaui ekspektasi.</li>
+    </ul>
+</div>
+
+<!-- ===== SECTION 3 ===== -->
+<div class="section" id="s3">
+    <h2><span class="icon">🔥</span> 3. Teori Motivasi Klasik</h2>
+
+    <div class="table-wrap">
+        <table>
+            <tr><th>Teori Motivasi</th><th>Inti Penjelasan</th></tr>
+            <tr>
+                <td><strong>Maslow's Hierarchy of Needs</strong></td>
+                <td>Kebutuhan bertingkat: 1. Physiological ➔ 2. Safety ➔ 3. Social ➔ 4. Esteem ➔ 5. Self-Actualization</td>
+            </tr>
+            <tr>
+                <td><strong>McGregor's Theory X & Y</strong></td>
+                <td><strong>Theory X:</strong> Karyawan dianggap malas, harus dipaksa.<br><strong>Theory Y:</strong> Karyawan dianggap kreatif, menikmati kerja mandiri.</td>
+            </tr>
+            <tr>
+                <td><strong>Herzberg's Two-Factor Theory</strong></td>
+                <td><strong>Hygiene Factors:</strong> Ekstrinsik (Gaji, kondisi kerja) ➔ cegah ketidakpuasan.<br><strong>Motivators:</strong> Intrinsik (Prestasi, tanggung jawab) ➔ dorong kepuasan nyata.</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- ===== SECTION 4 ===== -->
+<div class="section" id="s4">
+    <h2><span class="icon">⚖️</span> 4. Teori Motivasi Kontemporer</h2>
+
+    <h3>Equity Theory (Teori Keadilan):</h3>
+    <p>Karyawan membandingkan rasio **input-outcome** pekerjaan mereka dengan orang lain (referents). Jika dirasa tidak adil (inequity), karyawan akan mengurangi usaha atau menuntut kenaikan.</p>
+
+    <h3>Expectancy Theory (Vroom):</h3>
+    <p>Motivasi tergantung pada 3 hubungan rantai:</p>
+    <ol>
+        <li><strong>Expectancy (Effort ➔ Performance):</strong> Apakah usaha saya menghasilkan kinerja?</li>
+        <li><strong>Instrumentality (Performance ➔ Reward):</strong> Apakah kinerja menghasilkan imbalan?</li>
+        <li><strong>Valence (Reward ➔ Personal Goal):</strong> Seberapa menarik nilai imbalan tersebut bagi saya?</li>
+    </ol>
+</div>
+
+<!-- ===== SECTION 5 ===== -->
+<div class="section" id="s5">
+    <h2><span class="icon">📊</span> 5. Control Process (Proses Pengendalian)</h2>
+    <p><strong>Controlling:</strong> Proses memantau, membandingkan, dan mengoreksi kinerja pekerjaan.</p>
+
+    <h3>3 Langkah Control Process:</h3>
+    <ol>
+        <li><strong>Measuring Actual Performance:</strong> Mengukur kinerja aktual (laporan, observasi).</li>
+        <li><strong>Comparing Actual Performance Against Standard:</strong> Membandingkan hasil terhadap target standar (**Range of Variation**).</li>
+        <li><strong>Taking Managerial Action:</strong> Mengambil tindakan korektif (Immediate/Basic) atau merevisi standar.</li>
+    </ol>
+</div>
+
+<!-- ===== SECTION 6 ===== -->
+<div class="section" id="s6">
+    <h2><span class="icon">⏱️</span> 6. Feedforward, Concurrent, & Feedback Control</h2>
+
+    <div class="table-wrap">
+        <table>
+            <tr><th>Tipe Pengendalian</th><th>Waktu Pelaksanaan</th><th>Contoh</th></tr>
+            <tr>
+                <td><strong>Feedforward Control</strong></td>
+                <td><strong>SEBELUM</strong> kegiatan dimulai (Preventif)</td><td>Cek kualitas bahan baku sebelum produksi</td></tr>
+            <tr>
+                <td><strong>Concurrent Control</strong></td>
+                <td><strong>SELAMA</strong> kegiatan berlangsung</td><td>Management by Walking Around (MBWA), monitoring langsung</td></tr>
+            <tr>
+                <td><strong>Feedback Control</strong></td>
+                <td><strong>SETELAH</strong> kegiatan selesai</td><td>Evaluasi laporan penjualan bulanan</td></tr>
+        </table>
+    </div>
+</div>
+
+<!-- ===== SECTION 7 ===== -->
+<div class="section" id="s7">
+    <h2><span class="icon">🎯</span> 7. Balanced Scorecard (BSC)</h2>
+    <p>BSC mengukur kinerja organisasi secara seimbang dari **4 Perspektif Utama**:</p>
+
+    <ol>
+        <li><strong>Financial Perspective:</strong> Kinerja keuangan (ROI, profit margin).</li>
+        <li><strong>Customer Perspective:</strong> Kepuasan & retensi pelanggan.</li>
+        <li><strong>Internal Business Processes Perspective:</strong> Efisiensi & kualitas proses internal.</li>
+        <li><strong>People / Learning & Growth Assets Perspective:</strong> Inovasi, kapabilitas & pelatihan SDM.</li>
+    </ol>
+</div>
+
+<!-- ===== KEY POINTS ===== -->
+<div class="section" id="kp">
+    <div class="key-points">
+        <h3>🔑 POIN-POIN PENTING TOPIK 11</h3>
+        <ol>
+            <li>3 Komponen Sikap: Cognitive (pikir), Affective (rasa), Behavioral (tindakan).</li>
+            <li>5 Power: Legitimate, Coercive, Reward, Expert, Referent.</li>
+            <li>Herzberg: Hygiene faktor hapus ketidakpuasan; Motivator faktor dorong kepuasan.</li>
+            <li>Expectancy Theory: Effort ➔ Performance ➔ Reward ➔ Personal Goal.</li>
+            <li>Control Process: Measure ➔ Compare ➔ Take Action.</li>
+            <li>Control Waktu: Feedforward (sebelum), Concurrent (selama), Feedback (setelah).</li>
+            <li>Balanced Scorecard 4 perspektif: Financial, Customer, Internal Process, Learning & Growth.</li>
+        </ol>
+    </div>
+</div>
+
+<!-- ===== MEMORY TIPS ===== -->
+<div class="section" id="mt">
+    <div class="memory-tips">
+        <h3>🧠 TIPS MENGHAFAL</h3>
+        <ol>
+            <li><strong>FCIP</strong> (4 Perspektif BSC): <strong>F</strong>inancial, <strong>C</strong>ustomer, <strong>I</strong>nternal process, <strong>P</strong>eople (Learning/Growth).</li>
+            <li><strong>FCF Control</strong>: <strong>F</strong>eedforward (Awal), <strong>C</strong>oncurrent (Tengah/Jalan), <strong>F</strong>eedback (Akhir).</li>
+        </ol>
+    </div>
+</div>
+
+<!-- ===== CONTOH SOAL ===== -->
+<div class="section" id="ex">
+    <h2><span class="icon">📝</span> Contoh Soal & Pembahasan</h2>
+
+    <div class="example">
+        <h3>Soal 1</h3>
+        <p><strong>Pemeriksaan kualitas bahan kain sebelum dijahit menjadi pakaian di pabrik tektil merupakan bentuk pengendalian...</strong></p>
+        <p>A. Feedback Control<br>B. Concurrent Control<br>C. Feedforward Control<br>D. Output Control</p>
+        <p><strong>Jawaban: C</strong></p>
+        <p><strong>Pembahasan:</strong> Feedforward control dilakukan sebelum aktivitas dimulai untuk mencegah masalah di awal.</p>
+    </div>
+
+    <div class="example">
+        <h3>Soal 2</h3>
+        <p><strong>Seorang manajer yang dipatuhi karyawannya karena keahlian teknis pemrogramannya yang sangat tinggi menggunakan sumber kekuasaan...</strong></p>
+        <p>A. Legitimate Power<br>B. Expert Power<br>C. Referent Power<br>D. Reward Power</p>
+        <p><strong>Jawaban: B</strong></p>
+        <p><strong>Pembahasan:</strong> Expert Power timbul dari pengetahuan atau keahlian spesialis tertentu.</p>
+    </div>
+</div>
+
+<!-- ===== QUIZ ===== -->
+<div class="quiz-section" id="quiz">
+    <h2>🎯 Latihan Soal Interaktif — Topik 11</h2>
+    <p class="subtitle">Kerjakan 10 soal, lalu klik "Lihat Hasil" untuk melihat skor dan pembahasanmu. Jawaban tersimpan otomatis.</p>
+
+    <form id="quizForm">
+        <div class="q-card" id="q1"><div class="q-num">Soal 1</div><div class="q-text">Komponen sikap (attitude) yang berkaitan dengan emosi atau perasaan seseorang dinamakan...</div><div class="q-options"><label><input type="radio" name="q1" value="a"> Cognitive component</label><label><input type="radio" name="q1" value="b"> Affective component</label><label><input type="radio" name="q1" value="c"> Behavioral component</label><label><input type="radio" name="q1" value="d"> Social component</label></div><div class="q-feedback" id="fb1"></div></div>
+
+        <div class="q-card" id="q2"><div class="q-num">Soal 2</div><div class="q-text">Kekuasaan pemimpin yang timbul akibat kekaguman pengikut terhadap kepribadian dan karismanya dinamakan...</div><div class="q-options"><label><input type="radio" name="q2" value="a"> Legitimate Power</label><label><input type="radio" name="q2" value="b"> Coercive Power</label><label><input type="radio" name="q2" value="c"> Referent Power</label><label><input type="radio" name="q2" value="d"> Expert Power</label></div><div class="q-feedback" id="fb2"></div></div>
+
+        <div class="q-card" id="q3"><div class="q-num">Soal 3</div><div class="q-text">Menurut Teori Dua Faktor Herzberg, gaji dan kondisi kerja dikategorikan sebagai...</div><div class="q-options"><label><input type="radio" name="q3" value="a"> Motivator factors</label><label><input type="radio" name="q3" value="b"> Hygiene factors</label><label><input type="radio" name="q3" value="c"> Intrinsic factors</label><label><input type="radio" name="q3" value="d"> Esteem factors</label></div><div class="q-feedback" id="fb3"></div></div>
+
+        <div class="q-card" id="q4"><div class="q-num">Soal 4</div><div class="q-text">Teori motivasi yang menyatakan bahwa individu membandingkan rasio input-outcome pekerjaannya dengan orang lain dinamakan...</div><div class="q-options"><label><input type="radio" name="q4" value="a"> Expectancy Theory</label><label><input type="radio" name="q4" value="b"> Equity Theory</label><label><input type="radio" name="q4" value="c"> Reinforcement Theory</label><label><input type="radio" name="q4" value="d"> Goal-Setting Theory</label></div><div class="q-feedback" id="fb4"></div></div>
+
+        <div class="q-card" id="q5"><div class="q-num">Soal 5</div><div class="q-text">Langkah pertama dalam 3 tahapan proses pengendalian (Control Process) adalah...</div><div class="q-options"><label><input type="radio" name="q5" value="a"> Comparing performance against standard</label><label><input type="radio" name="q5" value="b"> Measuring actual performance</label><label><input type="radio" name="q5" value="c"> Taking managerial action</label><label><input type="radio" name="q5" value="d"> Revising standards</label></div><div class="q-feedback" id="fb5"></div></div>
+
+        <div class="q-card" id="q6"><div class="q-num">Soal 6</div><div class="q-text">Pengendalian yang dilakukan saat kegiatan kerja sedang berlangsung (seperti MBWA - Management by Walking Around) dinamakan...</div><div class="q-options"><label><input type="radio" name="q6" value="a"> Feedforward Control</label><label><input type="radio" name="q6" value="b"> Concurrent Control</label><label><input type="radio" name="q6" value="c"> Feedback Control</label><label><input type="radio" name="q6" value="d"> Budgetary Control</label></div><div class="q-feedback" id="fb6"></div></div>
+
+        <div class="q-card" id="q7"><div class="q-num">Soal 7</div><div class="q-text">Balanced Scorecard (BSC) menilai kinerja perusahaan dari 4 perspektif utama, KECUALI...</div><div class="q-options"><label><input type="radio" name="q7" value="a"> Financial Perspective</label><label><input type="radio" name="q7" value="b"> Customer Perspective</label><label><input type="radio" name="q7" value="c"> Political Perspective</label><label><input type="radio" name="q7" value="d"> Internal Business Processes</label></div><div class="q-feedback" id="fb7"></div></div>
+
+        <div class="q-card" id="q8"><div class="q-num">Soal 8</div><div class="q-text">Pemimpin yang memimpin dengan cara menginspirasi dan mentransformasi pengikut untuk mencapai hasil luar biasa dinamakan...</div><div class="q-options"><label><input type="radio" name="q8" value="a"> Transactional Leader</label><label><input type="radio" name="q8" value="b"> Transformational Leader</label><label><input type="radio" name="q8" value="c"> Autocratic Leader</label><label><input type="radio" name="q8" value="d"> Laissez-faire Leader</label></div><div class="q-feedback" id="fb8"></div></div>
+
+        <div class="q-card" id="q9"><div class="q-num">Soal 9</div><div class="q-text">Keyakinan individu bahwa dirinya mampu menyelesaikan suatu tugas dinamakan...</div><div class="q-options"><label><input type="radio" name="q9" value="a"> Self-esteem</label><label><input type="radio" name="q9" value="b"> Self-efficacy</label><label><input type="radio" name="q9" value="c"> Self-monitoring</label><label><input type="radio" name="q9" value="d"> Self-actualization</label></div><div class="q-feedback" id="fb9"></div></div>
+
+        <div class="q-card" id="q10"><div class="q-num">Soal 10</div><div class="q-text">Mencari praktik-praktik terbaik (best practices) dari pesaing atau non-pesaing untuk dijadikan tolok ukur perbandingan dinamakan...</div><div class="q-options"><label><input type="radio" name="q10" value="a"> Outsourcing</label><label><input type="radio" name="q10" value="b"> Benchmarking</label><label><input type="radio" name="q10" value="c"> Crowdsourcing</label><label><input type="radio" name="q10" value="d"> Downsizing</label></div><div class="q-feedback" id="fb10"></div></div>
+
+        <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:24px;">
+            <button type="button" class="btn btn-primary" onclick="checkQuiz()">📊 Lihat Hasil</button>
+            <button type="button" class="btn btn-secondary" onclick="resetQuiz()">🔄 Reset</button>
+        </div>
+    </form>
+
+    <div class="results-box" id="resultsBox">
+        <div class="score-display">
+            <div class="score-num" id="scoreNum"></div>
+            <div class="score-label" id="scoreLabel"></div>
+        </div>
+    </div>
+</div>
+
+<div class="bottom-nav">
+    <a href="topik-10.html">← Topik 10: Org Design, Teams & HRM</a>
+    <a href="uas-simulation.html">🎯 Simulasi UAS (40 PG) →</a>
+</div>
+
+</div>
+
+<script>
+const STORAGE_KEY = 'manbis_t11_quiz';
+const answers = {q1:'b',q2:'c',q3:'b',q4:'b',q5:'b',q6:'b',q7:'c',q8:'b',q9:'b',q10:'b'};
+const explanations = {
+    q1: 'Affective component berkaitan dengan perasaan dan emosi.',
+    q2: 'Referent power timbul dari daya tarik kepribadian dan kekaguman.',
+    q3: 'Gaji dan kondisi kerja adalah Hygiene factors.',
+    q4: 'Equity theory berfokus pada perbandingan rasio input-outcome.',
+    q5: 'Langkah pertama control process adalah mengukur kinerja aktual.',
+    q6: 'Concurrent control dilakukan saat aktivitas sedang berjalan.',
+    q7: 'Political perspective bukan bagian dari 4 perspektif BSC.',
+    q8: 'Transformational leader menginspirasi anggota mencapai pencapaian tinggi.',
+    q9: 'Self-efficacy adalah keyakinan atas kemampuan diri melakukan tugas.',
+    q10: 'Benchmarking mencari best practices sebagai perbandingan.'
+};
+
+function saveAnswers() {
+    const data = {};
+    for (let i = 1; i <= 10; i++) {
+        const sel = document.querySelector(`input[name="q${i}"]:checked`);
+        if (sel) data[`q${i}`] = sel.value;
+    }
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+}
+
+function loadAnswers() {
+    const data = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+    for (const [key, val] of Object.entries(data)) {
+        const radio = document.querySelector(`input[name="${key}"][value="${val}"]`);
+        if (radio) radio.checked = true;
+    }
+}
+
+function checkQuiz() {
+    saveAnswers();
+    let score = 0;
+    const total = 10;
+    for (let i = 1; i <= total; i++) {
+        const sel = document.querySelector(`input[name="q${i}"]:checked`);
+        const fb = document.getElementById(`fb${i}`);
+        const card = document.getElementById(`q${i}`);
+        const correct = answers[`q${i}`];
+        card.classList.remove('correct','wrong');
+        if (sel && sel.value === correct) {
+            score++;
+            card.classList.add('correct');
+            fb.className = 'q-feedback show correct-fb';
+            fb.innerHTML = `✅ <strong>Benar!</strong> ${explanations['q'+i]}`;
+        } else {
+            card.classList.add('wrong');
+            fb.className = 'q-feedback show wrong-fb';
+            const userAns = sel ? sel.value.toUpperCase() : '—';
+            fb.innerHTML = `❌ <strong>Salah.</strong> Jawabanmu: ${userAns}. Jawaban benar: <strong>${correct.toUpperCase()}</strong>. ${explanations['q'+i]}`;
+        }
+    }
+    const pct = Math.round((score/total)*100);
+    const box = document.getElementById('resultsBox');
+    const num = document.getElementById('scoreNum');
+    const lbl = document.getElementById('scoreLabel');
+    num.textContent = `${score}/${total}`;
+    num.className = 'score-num ' + (pct >= 80 ? 'good' : pct >= 60 ? 'ok' : 'bad');
+    lbl.textContent = pct >= 80 ? '🎉 Excellent! Kamu sudah menguasai materi ini!' : pct >= 60 ? '👍 Lumayan! Review lagi bagian yang salah.' : '📖 Perlu belajar lagi. Baca ulang materinya ya!';
+    box.classList.add('show');
+    box.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+function resetQuiz() {
+    localStorage.removeItem(STORAGE_KEY);
+    document.getElementById('quizForm').reset();
+    for (let i = 1; i <= 10; i++) {
+        document.getElementById(`q${i}`).classList.remove('correct','wrong');
+        const fb = document.getElementById(`fb${i}`);
+        fb.className = 'q-feedback';
+        fb.innerHTML = '';
+    }
+    document.getElementById('resultsBox').classList.remove('show');
+}
+
+document.querySelectorAll('input[type="radio"]').forEach(r => r.addEventListener('change', saveAnswers));
+window.addEventListener('DOMContentLoaded', loadAnswers);
+</script>
+</body>
+</html>

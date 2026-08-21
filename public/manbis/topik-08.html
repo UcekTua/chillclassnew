@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topik 8: Constraints, Change & Global Management — ManBis</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+            --bg: #0a0e1a; --bg2: #111827; --bg-card: rgba(17,24,39,0.7);
+            --border: rgba(99,102,241,0.15); --border-h: rgba(99,102,241,0.4);
+            --text: #f1f5f9; --text2: #94a3b8; --text3: #64748b;
+            --blue: #6366f1; --cyan: #06b6d4; --violet: #8b5cf6;
+            --emerald: #10b981; --amber: #f59e0b; --rose: #f43f5e;
+            --orange: #f97316;
+            --grad: linear-gradient(135deg, #f97316, #f59e0b);
+        }
+        body { font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); line-height:1.8; }
+        .bg-orbs { position:fixed; top:0; left:0; width:100%; height:100%; z-index:0; overflow:hidden; pointer-events:none; }
+        .bg-orbs span { position:absolute; border-radius:50%; filter:blur(80px); opacity:0.1; }
+        .bg-orbs span:nth-child(1) { width:500px; height:500px; background:var(--orange); top:-10%; left:-5%; }
+        .bg-orbs span:nth-child(2) { width:400px; height:400px; background:var(--amber); bottom:10%; right:-5%; }
+
+        .wrapper { position:relative; z-index:1; max-width:900px; margin:0 auto; padding:40px 24px 80px; }
+
+        .topnav { display:flex; align-items:center; gap:12px; margin-bottom:48px; flex-wrap:wrap; position:sticky; top:0; z-index:100; background:rgba(10,14,26,0.85); backdrop-filter:blur(12px); padding:20px 0; }
+        .topnav a { color:var(--text2); text-decoration:none; font-size:0.85rem; font-weight:500; transition:color 0.3s; }
+        .topnav a:hover { color:var(--orange); }
+        .topnav .sep { color:var(--text3); }
+
+        .ch-header { margin-bottom:48px; animation:fadeUp .6s ease-out; }
+        .ch-badge { display:inline-block; padding:5px 14px; border-radius:100px; background:rgba(249,115,22,0.12); border:1px solid rgba(249,115,22,0.25); color:var(--orange); font-size:0.75rem; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; margin-bottom:16px; }
+        .ch-header h1 { font-size:clamp(1.8rem,4vw,2.6rem); font-weight:900; background:var(--grad); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; margin-bottom:12px; }
+        .ch-header p { color:var(--text2); font-size:1rem; max-width:700px; }
+
+        .toc { background:var(--bg-card); backdrop-filter:blur(16px); border:1px solid var(--border); border-radius:16px; padding:28px 32px; margin-bottom:48px; animation:fadeUp .6s ease-out .1s both; }
+        .toc h3 { font-size:0.85rem; font-weight:700; text-transform:uppercase; letter-spacing:1.5px; color:var(--orange); margin-bottom:16px; }
+        .toc ol { padding-left:20px; }
+        .toc li { margin-bottom:8px; }
+        .toc a { color:var(--text2); text-decoration:none; font-size:0.9rem; transition:color 0.3s; }
+        .toc a:hover { color:var(--cyan); }
+
+        .section { background:var(--bg-card); backdrop-filter:blur(16px); border:1px solid var(--border); border-radius:20px; padding:36px 36px; margin-bottom:32px; animation:fadeUp .6s ease-out both; }
+        .section h2 { font-size:1.5rem; font-weight:800; margin-bottom:20px; display:flex; align-items:center; gap:12px; }
+        .section h2 .icon { font-size:1.3rem; }
+        .section h3 { font-size:1.15rem; font-weight:700; margin:28px 0 12px; color:var(--cyan); }
+        .section h4 { font-size:1rem; font-weight:600; margin:20px 0 10px; color:var(--orange); }
+        .section p { color:var(--text2); margin-bottom:14px; font-size:0.95rem; }
+        .section ul, .section ol { padding-left:24px; margin-bottom:14px; }
+        .section li { color:var(--text2); margin-bottom:8px; font-size:0.95rem; }
+        .section li strong { color:var(--text); }
+
+        .highlight { border-radius:12px; padding:20px 24px; margin:20px 0; }
+        .highlight.blue { background:rgba(99,102,241,0.08); border-left:4px solid var(--blue); }
+        .highlight.emerald { background:rgba(16,185,129,0.08); border-left:4px solid var(--emerald); }
+        .highlight.amber { background:rgba(245,158,11,0.08); border-left:4px solid var(--amber); }
+
+        .table-wrap { overflow-x:auto; margin:20px 0; }
+        table { width:100%; border-collapse:collapse; font-size:0.88rem; }
+        th { background:rgba(249,115,22,0.12); color:var(--orange); font-weight:700; padding:12px 16px; text-align:left; border-bottom:2px solid rgba(249,115,22,0.2); }
+        td { padding:11px 16px; border-bottom:1px solid rgba(148,163,184,0.08); color:var(--text2); }
+        tr:hover td { background:rgba(249,115,22,0.04); }
+
+        .key-points { background:linear-gradient(135deg, rgba(16,185,129,0.06), rgba(6,182,212,0.06)); border:1px solid rgba(16,185,129,0.2); border-radius:16px; padding:28px 32px; margin:28px 0; }
+        .key-points h3 { color:var(--emerald); font-size:1rem; margin-bottom:16px; }
+
+        .memory-tips { background:linear-gradient(135deg, rgba(245,158,11,0.06), rgba(244,63,94,0.06)); border:1px solid rgba(245,158,11,0.2); border-radius:16px; padding:28px 32px; margin:28px 0; }
+        .memory-tips h3 { color:var(--amber); font-size:1rem; margin-bottom:16px; }
+
+        .example { background:rgba(249,115,22,0.06); border:1px solid rgba(249,115,22,0.2); border-radius:16px; padding:28px 32px; margin:28px 0; }
+        .example h3 { color:var(--orange); margin-top:0; margin-bottom:16px; }
+
+        .quiz-section { margin-top:48px; }
+        .quiz-section h2 { font-size:1.5rem; font-weight:800; margin-bottom:8px; }
+        .quiz-section .subtitle { color:var(--text2); margin-bottom:24px; }
+        .q-card { background:var(--bg-card); backdrop-filter:blur(16px); border:1px solid var(--border); border-radius:16px; padding:28px 30px; margin-bottom:20px; transition:border-color 0.3s; }
+        .q-card.correct { border-color:var(--emerald) !important; }
+        .q-card.wrong { border-color:var(--rose) !important; }
+        .q-num { font-size:0.75rem; font-weight:700; color:var(--orange); text-transform:uppercase; letter-spacing:1.5px; margin-bottom:10px; }
+        .q-text { font-size:0.95rem; font-weight:600; color:var(--text); margin-bottom:16px; line-height:1.6; }
+        .q-options label { display:flex; align-items:flex-start; gap:12px; padding:10px 14px; margin-bottom:8px; border-radius:10px; cursor:pointer; transition:background 0.2s; font-size:0.9rem; color:var(--text2); }
+        .q-options label:hover { background:rgba(249,115,22,0.06); }
+        .q-options input[type="radio"] { margin-top:3px; accent-color:var(--orange); }
+        .q-feedback { margin-top:14px; padding:14px 18px; border-radius:10px; font-size:0.88rem; display:none; }
+        .q-feedback.show { display:block; }
+        .q-feedback.correct-fb { background:rgba(16,185,129,0.1); border:1px solid rgba(16,185,129,0.25); color:var(--emerald); }
+        .q-feedback.wrong-fb { background:rgba(244,63,94,0.1); border:1px solid rgba(244,63,94,0.25); color:var(--rose); }
+
+        .btn { display:inline-flex; align-items:center; gap:8px; padding:14px 32px; border:none; border-radius:12px; font-family:inherit; font-size:0.9rem; font-weight:700; cursor:pointer; transition:all 0.3s; }
+        .btn-primary { background:var(--grad); color:#fff; }
+        .btn-primary:hover { transform:translateY(-2px); box-shadow:0 8px 24px rgba(249,115,22,0.3); }
+        .btn-secondary { background:rgba(148,163,184,0.1); color:var(--text2); border:1px solid var(--border); }
+        .btn-secondary:hover { border-color:var(--border-h); color:var(--text); }
+
+        .results-box { background:var(--bg-card); backdrop-filter:blur(16px); border:1px solid var(--border); border-radius:16px; padding:32px; margin-top:24px; display:none; }
+        .results-box.show { display:block; animation:fadeUp .4s ease-out; }
+        .score-display { text-align:center; margin-bottom:24px; }
+        .score-display .score-num { font-size:3rem; font-weight:900; }
+        .score-display .score-num.good { color:var(--emerald); }
+        .score-display .score-num.ok { color:var(--amber); }
+        .score-display .score-num.bad { color:var(--rose); }
+        .score-display .score-label { color:var(--text2); font-size:0.9rem; }
+
+        .bottom-nav { display:flex; justify-content:space-between; align-items:center; margin-top:48px; padding-top:32px; border-top:1px solid var(--border); }
+        .bottom-nav a { color:var(--text2); text-decoration:none; font-weight:600; font-size:0.9rem; transition:color 0.3s; }
+        .bottom-nav a:hover { color:var(--orange); }
+
+        @keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+
+        @media (max-width:768px) {
+            .wrapper { padding:24px 16px 60px; }
+            .section { padding:24px 20px; }
+            .toc { padding:20px 24px; }
+        }
+        .topnav { position:fixed !important; top:24px !important; right:24px !important; margin:0 !important; background:rgba(10,14,26,0.6) !important; padding:10px 24px !important; border-radius:100px !important; border:1px solid rgba(99,102,241,0.3) !important; box-shadow: 0 8px 32px rgba(0,0,0,0.5) !important; width:auto !important; flex-wrap: nowrap !important; }
+        .bottom-nav { display:none !important; }
+        .watermark { display: none !important; }
+        .wrapper { padding-top: 80px !important; }
+        @media (max-width:768px) {
+            .topnav { top:auto !important; bottom:24px !important; right:50% !important; transform:translateX(50%) !important; padding:8px 16px !important; font-size: 0.8rem !important; white-space: nowrap !important; overflow-x: auto !important; max-width: 90vw !important; gap: 8px !important; }
+        }
+    </style>
+</head>
+<body>
+<div class="bg-orbs"><span></span><span></span></div>
+<div class="wrapper">
+
+<nav class="topnav">
+    <a href="index.html">🏠</a>
+    <span class="sep">/</span>
+    <a href="topik-01.html">T1</a>
+    <span class="sep">·</span>
+    <a href="topik-02.html">T2</a>
+    <span class="sep">·</span>
+    <a href="topik-03.html">T3</a>
+    <span class="sep">·</span>
+    <a href="topik-04.html">T4</a>
+    <span class="sep">·</span>
+    <a href="topik-05.html">T5</a>
+    <span class="sep">·</span>
+    <a href="topik-06.html">T6</a>
+    <span class="sep">·</span>
+    <a href="topik-07.html">T7</a>
+    <span class="sep">·</span>
+    <a href="topik-08.html" style="color:var(--orange);">T8</a>
+    <span class="sep">·</span>
+    <a href="topik-09.html">T9</a>
+    <span class="sep">·</span>
+    <a href="topik-10.html">T10</a>
+    <span class="sep">·</span>
+    <a href="topik-11.html">T11</a>
+</nav>
+
+<div class="ch-header">
+    <div class="ch-badge">Topik 08</div>
+    <h1>Constraints, Change & Global Management</h1>
+    <p>Memahami batasan manajerial (Omnipotent vs Symbolic view), Budaya Organisasi (Organizational Culture), Pengelolaan Perubahan & Inovasi, serta Manajemen Global (Perspektif Ethnocentric, Polycentric, Geocentric).</p>
+</div>
+
+<div class="toc">
+    <h3>📑 Daftar Isi</h3>
+    <ol>
+        <li><a href="#s1">Omnipotent View vs Symbolic View</a></li>
+        <li><a href="#s2">Organizational Culture (Budaya Organisasi)</a></li>
+        <li><a href="#s3">Managing Change (Pengelolaan Perubahan)</a></li>
+        <li><a href="#s4">Stimulating Innovation & Design Thinking</a></li>
+        <li><a href="#s5">3 Perspektif Sikap Global (Global Perspectives)</a></li>
+        <li><a href="#s6">Mekanisme Perdagangan & Aliansi Global</a></li>
+        <li><a href="#s7">Metode Ekspansi Bisnis Internasional</a></li>
+        <li><a href="#kp">Poin-Poin Penting</a></li>
+        <li><a href="#mt">Tips Menghafal</a></li>
+        <li><a href="#ex">Contoh Soal & Pembahasan</a></li>
+        <li><a href="#quiz">Latihan Soal Interaktif</a></li>
+    </ol>
+</div>
+
+<!-- ===== SECTION 1 ===== -->
+<div class="section" id="s1">
+    <h2><span class="icon">👑</span> 1. Omnipotent View vs Symbolic View</h2>
+
+    <div class="table-wrap">
+        <table>
+            <tr><th>Pandangan Manajemen</th><th>Inti Penjelasan</th></tr>
+            <tr>
+                <td><strong>Omnipotent View (Pandangan Serba Kuasa)</strong></td>
+                <td>Pandangan bahwa manajer bertanggung jawab **penuh** dan langsung atas sukses atau gagalnya organisasi. (Contoh: Pelatih bola langsung dipecat jika tim kalah terus).</td>
+            </tr>
+            <tr>
+                <td><strong>Symbolic View (Pandangan Simbolis)</strong></td>
+                <td>Pandangan bahwa sebagian besar keberhasilan/kegagalan perusahaan disebabkan oleh **faktor eksternal di luar kontrol** manajer (ekonomi, politik). Manajer hanya berperan sebagai simbol pengendali.</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="highlight blue">
+        <h4>💡 Realita Manajemen</h4>
+        <p>Manajer tidak serba kuasa dan tidak juga tak berdaya. Tindakan manajer dibatasi oleh dua hal: <strong>Internal Constraints</strong> (Budaya Organisasi) dan <strong>External Constraints</strong> (Lingkungan Eksternal PESTLE).</p>
+    </div>
+</div>
+
+<!-- ===== SECTION 2 ===== -->
+<div class="section" id="s2">
+    <h2><span class="icon">🏛️</span> 2. Organizational Culture (Budaya Organisasi)</h2>
+    <p><strong>Organizational Culture</strong> adalah nilai-nilai, prinsip, tradisi, dan cara kerja bersama yang mempengaruhi perilaku anggota organisasi.</p>
+
+    <ul>
+        <li><strong>Strong Culture:</strong> Budaya di mana nilai-nilai kunci dipegang teguh dan disepakati secara luas oleh seluruh karyawan. Memiliki dampak kuat pada perilaku.</li>
+        <li><strong>Bagaimana Karyawan Mempelajari Budaya:</strong> Melalui Cerita (Stories), Ritual (Rituals), Simbol/Artifak Fisik (Material Artifacts/Symbols), dan Bahasa/Jargon (Language).</li>
+    </ul>
+</div>
+
+<!-- ===== SECTION 3 ===== -->
+<div class="section" id="s3">
+    <h2><span class="icon">🔄</span> 3. Managing Change (Pengelolaan Perubahan)</h2>
+    <p><strong>Change Agent:</strong> Orang yang bertindak sebagai katalis dan bertanggung jawab mengelola proses perubahan organisasi.</p>
+
+    <h3>4 Area Perubahan Organisasi:</h3>
+    <ul>
+        <li><strong>Strategy:</strong> Mengubah pendekatan kompetitif perusahaan.</li>
+        <li><strong>Structure:</strong> Mengubah komponen desain struktural (pelaporan, rantai komando).</li>
+        <li><strong>Technology:</strong> Mengadopsi peralatan, metode operasional, atau otomatisasi baru.</li>
+        <li><strong>People:</strong> Mengubah sikap, persepsi, dan perilaku karyawan.</li>
+    </ul>
+</div>
+
+<!-- ===== SECTION 4 ===== -->
+<div class="section" id="s4">
+    <h2><span class="icon">💡</span> 4. Inovasi & Design Thinking</h2>
+    <p><strong>Creativity</strong> = Kemampuan menggabungkan ide unik. <strong>Innovation</strong> = Mengubah ide kreatif menjadi produk/layanan yang berguna secara nyata.</p>
+
+    <div class="highlight emerald">
+        <h4>🎨 Design Thinking</h4>
+        <p>Pendekatan pemecahan masalah seperti seorang desainer dengan fokus memahami kebutuhan mendalam pelanggan (Empathize ➔ Define ➔ Ideate ➔ Prototype ➔ Test).</p>
+    </div>
+</div>
+
+<!-- ===== SECTION 5 ===== -->
+<div class="section" id="s5">
+    <h2><span class="icon">🌍</span> 5. Tiga Perspektif Sikap Global</h2>
+
+    <div class="table-wrap">
+        <table>
+            <tr><th>Sikap Global</th><th>Fokus Pandangan</th></tr>
+            <tr>
+                <td><strong>Ethnocentric Attitude</strong></td>
+                <td>Berpandangan sempit (parochialistic) bahwa pendekatan kerja & praktik negara **asal (home country)** adalah yang terbaik.</td>
+            </tr>
+            <tr>
+                <td><strong>Polycentric Attitude</strong></td>
+                <td>Pandangan bahwa manajer di negara **tujuan (host country)** paling tahu praktik terbaik untuk bisnis di wilayahnya.</td>
+            </tr>
+            <tr>
+                <td><strong>Geocentric Attitude</strong></td>
+                <td>Pandangan berorientasi dunia yang berfokus menggunakan pendekatan & orang **terbaik dari seluruh dunia** tanpa memandang asal negara.</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- ===== SECTION 6 ===== -->
+<div class="section" id="s6">
+    <h2><span class="icon">🤝</span> 6. Mekanisme Perdagangan & Aliansi Global</h2>
+    <ul>
+        <li><strong>Regional Trading Alliances:</strong> EU (European Union), NAFTA/USMCA, ASEAN (Association of Southeast Asian Nations).</li>
+        <li><strong>Global Trade Mechanisms:</strong> WTO (World Trade Organization), IMF (International Monetary Fund), World Bank.</li>
+    </ul>
+</div>
+
+<!-- ===== SECTION 7 ===== -->
+<div class="section" id="s7">
+    <h2><span class="icon">🚀</span> 7. Metode Ekspansi Bisnis Internasional</h2>
+    <p>Tingkat risiko & investasi dari rendah ke tinggi:</p>
+
+    <ol>
+        <li><strong>Global Sourcing:</strong> Membeli bahan baku / tenaga kerja murah dari seluruh dunia.</li>
+        <li><strong>Exporting / Importing:</strong> Menjual produk domestik ke luar negeri / membeli produk luar negeri untuk dijual lokal.</li>
+        <li><strong>Licensing / Franchising:</strong> Memberikan hak nama/teknologi ke organisasi lain dengan biaya lisensi.</li>
+        <li><strong>Strategic Alliance / Joint Venture:</strong> Kemitraan berbagi sumber daya dengan perusahaan asing (Joint Venture membentuk entitas terpisah baru).</li>
+        <li><strong>Foreign Subsidiary (Investasi Langsung):</strong> Berinvestasi penuh membuat fasilitas pabrik/kantor independen di negara asing.</li>
+    </ol>
+</div>
+
+<!-- ===== KEY POINTS ===== -->
+<div class="section" id="kp">
+    <div class="key-points">
+        <h3>🔑 POIN-POIN PENTING TOPIK 8</h3>
+        <ol>
+            <li>Omnipotent = manajer serba kuasa; Symbolic = hasil ditentukan lingkungan eksternal.</li>
+            <li>Budaya dipelajari lewat: Stories, Rituals, Symbols, Language.</li>
+            <li>Ethnocentric = home country terbaik; Polycentric = host country terbaik; Geocentric = terbaik dari mana saja.</li>
+            <li>Ekspansi risiko terendah = Global Sourcing; risiko tertinggi = Foreign Subsidiary.</li>
+            <li>Joint Venture = membentuk entitas bisnis terpisah baru bersama mitra asing.</li>
+        </ol>
+    </div>
+</div>
+
+<!-- ===== MEMORY TIPS ===== -->
+<div class="section" id="mt">
+    <div class="memory-tips">
+        <h3>🧠 TIPS MENGHAFAL</h3>
+        <ol>
+            <li><strong>Ethno vs Poly vs Geo</strong>: <strong>Ethno</strong>centric (Home/Ego sendiri), <strong>Poly</strong>centric (Banyak/Lokal daerah), <strong>Geo</strong>centric (Global/Dunia).</li>
+            <li><strong>Foreign Subsidiary = Sultan</strong>: Buka pabrik penuh sendiri di luar negeri (investasi & risiko paling tinggi!).</li>
+        </ol>
+    </div>
+</div>
+
+<!-- ===== CONTOH SOAL ===== -->
+<div class="section" id="ex">
+    <h2><span class="icon">📝</span> Contoh Soal & Pembahasan</h2>
+
+    <div class="example">
+        <h3>Soal 1</h3>
+        <p><strong>Manajer yang percaya bahwa staf lokal di negara tujuan lebih paham cara menjalankan bisnis di negara tersebut memiliki sikap...</strong></p>
+        <p>A. Ethnocentric Attitude<br>B. Polycentric Attitude<br>C. Geocentric Attitude<br>D. Egocentric Attitude</p>
+        <p><strong>Jawaban: B</strong></p>
+        <p><strong>Pembahasan:</strong> Polycentric attitude menyerahkan keputusan terbaik kepada manajer lokal di negara tujuan (host country).</p>
+    </div>
+
+    <div class="example">
+        <h3>Soal 2</h3>
+        <p><strong>Dua perusahaan dari negara berbeda sepakat bergabung mendirikan perusahaan independen baru untuk tujuan bisnis bersama. Metode ini disebut...</strong></p>
+        <p>A. Foreign Subsidiary<br>B. Joint Venture<br>C. Licensing<br>D. Global Sourcing</p>
+        <p><strong>Jawaban: B</strong></p>
+        <p><strong>Pembahasan:</strong> Joint Venture adalah bentuk aliansi strategis di mana para mitra membentuk organisasi independen terpisah baru.</p>
+    </div>
+</div>
+
+<!-- ===== QUIZ ===== -->
+<div class="quiz-section" id="quiz">
+    <h2>🎯 Latihan Soal Interaktif — Topik 8</h2>
+    <p class="subtitle">Kerjakan 10 soal, lalu klik "Lihat Hasil" untuk melihat skor dan pembahasanmu. Jawaban tersimpan otomatis.</p>
+
+    <form id="quizForm">
+        <div class="q-card" id="q1"><div class="q-num">Soal 1</div><div class="q-text">Pandangan yang menyatakan bahwa kesuksesan atau kegagalan perusahaan sepenuhnya bergantung langsung pada keputusan manajer adalah...</div><div class="q-options"><label><input type="radio" name="q1" value="a"> Symbolic view</label><label><input type="radio" name="q1" value="b"> Omnipotent view</label><label><input type="radio" name="q1" value="c"> Contingency view</label><label><input type="radio" name="q1" value="d"> System view</label></div><div class="q-feedback" id="fb1"></div></div>
+
+        <div class="q-card" id="q2"><div class="q-num">Soal 2</div><div class="q-text">Karyawan mempelajari budaya organisasi melalui cara-cara berikut, KECUALI...</div><div class="q-options"><label><input type="radio" name="q2" value="a"> Stories (Cerita)</label><label><input type="radio" name="q2" value="b"> Rituals (Ritual rutin)</label><label><input type="radio" name="q2" value="c"> Material Symbols (Simbol fisik)</label><label><input type="radio" name="q2" value="d"> Financial Ratios (Rasio keuangan)</label></div><div class="q-feedback" id="fb2"></div></div>
+
+        <div class="q-card" id="q3"><div class="q-num">Soal 3</div><div class="q-text">Orang yang bertindak sebagai katalisator dan bertanggung jawab memimpin proses perubahan organisasi dinamakan...</div><div class="q-options"><label><input type="radio" name="q3" value="a"> Change Agent</label><label><input type="radio" name="q3" value="b"> Idea Champion</label><label><input type="radio" name="q3" value="c"> Whistleblower</label><label><input type="radio" name="q3" value="d"> Arbitrator</label></div><div class="q-feedback" id="fb3"></div></div>
+
+        <div class="q-card" id="q4"><div class="q-num">Soal 4</div><div class="q-text">Sikap manajerial berpandangan sempit yang menganggap praktik kerja di negara asal (home country) adalah yang terbaik dinamakan...</div><div class="q-options"><label><input type="radio" name="q4" value="a"> Ethnocentric Attitude</label><label><input type="radio" name="q4" value="b"> Polycentric Attitude</label><label><input type="radio" name="q4" value="c"> Geocentric Attitude</label><label><input type="radio" name="q4" value="d"> Egocentric Attitude</label></div><div class="q-feedback" id="fb4"></div></div>
+
+        <div class="q-card" id="q5"><div class="q-num">Soal 5</div><div class="q-text">Metode penetrasi pasar internasional dengan tingkat investasi modal dan risiko paling tinggi adalah...</div><div class="q-options"><label><input type="radio" name="q5" value="a"> Global Sourcing</label><label><input type="radio" name="q5" value="b"> Exporting</label><label><input type="radio" name="q5" value="c"> Licensing</label><label><input type="radio" name="q5" value="d"> Foreign Subsidiary</label></div><div class="q-feedback" id="fb5"></div></div>
+
+        <div class="q-card" id="q6"><div class="q-num">Soal 6</div><div class="q-text">Organisasi perdagangan global yang terdiri dari 150+ negara anggota untuk menangani aturan perdagangan internasional adalah...</div><div class="q-options"><label><input type="radio" name="q6" value="a"> WTO</label><label><input type="radio" name="q6" value="b"> IMF</label><label><input type="radio" name="q6" value="c"> World Bank</label><label><input type="radio" name="q6" value="d"> OECD</label></div><div class="q-feedback" id="fb6"></div></div>
+
+        <div class="q-card" id="q7"><div class="q-num">Soal 7</div><div class="q-text">Mengubah ide-ide kreatif menjadi produk atau metode operasional yang bermanfaat secara nyata dinamakan...</div><div class="q-options"><label><input type="radio" name="q7" value="a"> Creativity</label><label><input type="radio" name="q7" value="b"> Innovation</label><label><input type="radio" name="q7" value="c"> Brainstorming</label><label><input type="radio" name="q7" value="d"> Invention</label></div><div class="q-feedback" id="fb7"></div></div>
+
+        <div class="q-card" id="q8"><div class="q-num">Soal 8</div><div class="q-text">Membeli bahan baku atau tenaga kerja dari lokasi mana saja di seluruh dunia yang paling murah dinamakan...</div><div class="q-options"><label><input type="radio" name="q8" value="a"> Global Sourcing</label><label><input type="radio" name="q8" value="b"> Franchising</label><label><input type="radio" name="q8" value="c"> Exporting</label><label><input type="radio" name="q8" value="d"> Joint Venture</label></div><div class="q-feedback" id="fb8"></div></div>
+
+        <div class="q-card" id="q9"><div class="q-num">Soal 9</div><div class="q-text">Aliansi perdagangan negara-negara di kawasan Asia Tenggara dinamakan...</div><div class="q-options"><label><input type="radio" name="q9" value="a"> EU</label><label><input type="radio" name="q9" value="b"> NAFTA</label><label><input type="radio" name="q9" value="c"> ASEAN</label><label><input type="radio" name="q9" value="d"> APEC</label></div><div class="q-feedback" id="fb9"></div></div>
+
+        <div class="q-card" id="q10"><div class="q-num">Soal 10</div><div class="q-text">Pendekatan berpikir manajerial yang berfokus empati pada pemahaman mendalam kebutuhan pelanggan dinamakan...</div><div class="q-options"><label><input type="radio" name="q10" value="a"> Critical Thinking</label><label><input type="radio" name="q10" value="b"> Strategic Thinking</label><label><input type="radio" name="q10" value="c"> Design Thinking</label><label><input type="radio" name="q10" value="d"> System Thinking</label></div><div class="q-feedback" id="fb10"></div></div>
+
+        <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:24px;">
+            <button type="button" class="btn btn-primary" onclick="checkQuiz()">📊 Lihat Hasil</button>
+            <button type="button" class="btn btn-secondary" onclick="resetQuiz()">🔄 Reset</button>
+        </div>
+    </form>
+
+    <div class="results-box" id="resultsBox">
+        <div class="score-display">
+            <div class="score-num" id="scoreNum"></div>
+            <div class="score-label" id="scoreLabel"></div>
+        </div>
+    </div>
+</div>
+
+<div class="bottom-nav">
+    <a href="topik-07.html">← Topik 7: Financial Management</a>
+    <a href="topik-09.html">Topik 9: Planning & Strategy →</a>
+</div>
+
+</div>
+
+<script>
+const STORAGE_KEY = 'manbis_t08_quiz';
+const answers = {q1:'b',q2:'d',q3:'a',q4:'a',q5:'d',q6:'a',q7:'b',q8:'a',q9:'c',q10:'c'};
+const explanations = {
+    q1: 'Omnipotent view menganggap manajer bertanggung jawab penuh atas hasil.',
+    q2: 'Financial ratios adalah alat akuntansi, bukan cara mempelajari budaya.',
+    q3: 'Change agent bertindak sebagai pemimpin perubahan.',
+    q4: 'Ethnocentric menganggap praktik negara asal (home country) paling unggul.',
+    q5: 'Foreign Subsidiary memiliki risiko dan investasi modal paling tinggi.',
+    q6: 'WTO mengurusi aturan perdagangan antar negara anggota.',
+    q7: 'Inovasi adalah eksekusi nyata dari ide kreatif.',
+    q8: 'Global sourcing mencari bahan/tenaga termurah di pasar dunia.',
+    q9: 'ASEAN adalah aliansi regional perdagangan di Asia Tenggara.',
+    q10: 'Design thinking menekankan empati pada kebutuhan konsumen.'
+};
+
+function saveAnswers() {
+    const data = {};
+    for (let i = 1; i <= 10; i++) {
+        const sel = document.querySelector(`input[name="q${i}"]:checked`);
+        if (sel) data[`q${i}`] = sel.value;
+    }
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+}
+
+function loadAnswers() {
+    const data = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+    for (const [key, val] of Object.entries(data)) {
+        const radio = document.querySelector(`input[name="${key}"][value="${val}"]`);
+        if (radio) radio.checked = true;
+    }
+}
+
+function checkQuiz() {
+    saveAnswers();
+    let score = 0;
+    const total = 10;
+    for (let i = 1; i <= total; i++) {
+        const sel = document.querySelector(`input[name="q${i}"]:checked`);
+        const fb = document.getElementById(`fb${i}`);
+        const card = document.getElementById(`q${i}`);
+        const correct = answers[`q${i}`];
+        card.classList.remove('correct','wrong');
+        if (sel && sel.value === correct) {
+            score++;
+            card.classList.add('correct');
+            fb.className = 'q-feedback show correct-fb';
+            fb.innerHTML = `✅ <strong>Benar!</strong> ${explanations['q'+i]}`;
+        } else {
+            card.classList.add('wrong');
+            fb.className = 'q-feedback show wrong-fb';
+            const userAns = sel ? sel.value.toUpperCase() : '—';
+            fb.innerHTML = `❌ <strong>Salah.</strong> Jawabanmu: ${userAns}. Jawaban benar: <strong>${correct.toUpperCase()}</strong>. ${explanations['q'+i]}`;
+        }
+    }
+    const pct = Math.round((score/total)*100);
+    const box = document.getElementById('resultsBox');
+    const num = document.getElementById('scoreNum');
+    const lbl = document.getElementById('scoreLabel');
+    num.textContent = `${score}/${total}`;
+    num.className = 'score-num ' + (pct >= 80 ? 'good' : pct >= 60 ? 'ok' : 'bad');
+    lbl.textContent = pct >= 80 ? '🎉 Excellent! Kamu sudah menguasai materi ini!' : pct >= 60 ? '👍 Lumayan! Review lagi bagian yang salah.' : '📖 Perlu belajar lagi. Baca ulang materinya ya!';
+    box.classList.add('show');
+    box.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+function resetQuiz() {
+    localStorage.removeItem(STORAGE_KEY);
+    document.getElementById('quizForm').reset();
+    for (let i = 1; i <= 10; i++) {
+        document.getElementById(`q${i}`).classList.remove('correct','wrong');
+        const fb = document.getElementById(`fb${i}`);
+        fb.className = 'q-feedback';
+        fb.innerHTML = '';
+    }
+    document.getElementById('resultsBox').classList.remove('show');
+}
+
+document.querySelectorAll('input[type="radio"]').forEach(r => r.addEventListener('change', saveAnswers));
+window.addEventListener('DOMContentLoaded', loadAnswers);
+</script>
+</body>
+</html>

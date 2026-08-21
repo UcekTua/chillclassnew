@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topik 3: How to Form a Business & Entrepreneurship — ManBis</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+            --bg: #0a0e1a; --bg2: #111827; --bg-card: rgba(17,24,39,0.7);
+            --border: rgba(99,102,241,0.15); --border-h: rgba(99,102,241,0.4);
+            --text: #f1f5f9; --text2: #94a3b8; --text3: #64748b;
+            --blue: #6366f1; --cyan: #06b6d4; --violet: #8b5cf6;
+            --emerald: #10b981; --amber: #f59e0b; --rose: #f43f5e;
+            --grad: linear-gradient(135deg, #10b981, #06b6d4);
+        }
+        body { font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); line-height:1.8; }
+        .bg-orbs { position:fixed; top:0; left:0; width:100%; height:100%; z-index:0; overflow:hidden; pointer-events:none; }
+        .bg-orbs span { position:absolute; border-radius:50%; filter:blur(80px); opacity:0.1; }
+        .bg-orbs span:nth-child(1) { width:500px; height:500px; background:var(--emerald); top:-10%; left:-5%; }
+        .bg-orbs span:nth-child(2) { width:400px; height:400px; background:var(--cyan); bottom:10%; right:-5%; }
+
+        .wrapper { position:relative; z-index:1; max-width:900px; margin:0 auto; padding:40px 24px 80px; }
+
+        .topnav { display:flex; align-items:center; gap:12px; margin-bottom:48px; flex-wrap:wrap; position:sticky; top:0; z-index:100; background:rgba(10,14,26,0.85); backdrop-filter:blur(12px); padding:20px 0; }
+        .topnav a { color:var(--text2); text-decoration:none; font-size:0.85rem; font-weight:500; transition:color 0.3s; }
+        .topnav a:hover { color:var(--emerald); }
+        .topnav .sep { color:var(--text3); }
+
+        .ch-header { margin-bottom:48px; animation:fadeUp .6s ease-out; }
+        .ch-badge { display:inline-block; padding:5px 14px; border-radius:100px; background:rgba(16,185,129,0.12); border:1px solid rgba(16,185,129,0.25); color:var(--emerald); font-size:0.75rem; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; margin-bottom:16px; }
+        .ch-header h1 { font-size:clamp(1.8rem,4vw,2.6rem); font-weight:900; background:var(--grad); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; margin-bottom:12px; }
+        .ch-header p { color:var(--text2); font-size:1rem; max-width:700px; }
+
+        .toc { background:var(--bg-card); backdrop-filter:blur(16px); border:1px solid var(--border); border-radius:16px; padding:28px 32px; margin-bottom:48px; animation:fadeUp .6s ease-out .1s both; }
+        .toc h3 { font-size:0.85rem; font-weight:700; text-transform:uppercase; letter-spacing:1.5px; color:var(--emerald); margin-bottom:16px; }
+        .toc ol { padding-left:20px; }
+        .toc li { margin-bottom:8px; }
+        .toc a { color:var(--text2); text-decoration:none; font-size:0.9rem; transition:color 0.3s; }
+        .toc a:hover { color:var(--cyan); }
+
+        .section { background:var(--bg-card); backdrop-filter:blur(16px); border:1px solid var(--border); border-radius:20px; padding:36px 36px; margin-bottom:32px; animation:fadeUp .6s ease-out both; }
+        .section h2 { font-size:1.5rem; font-weight:800; margin-bottom:20px; display:flex; align-items:center; gap:12px; }
+        .section h2 .icon { font-size:1.3rem; }
+        .section h3 { font-size:1.15rem; font-weight:700; margin:28px 0 12px; color:var(--cyan); }
+        .section h4 { font-size:1rem; font-weight:600; margin:20px 0 10px; color:var(--emerald); }
+        .section p { color:var(--text2); margin-bottom:14px; font-size:0.95rem; }
+        .section ul, .section ol { padding-left:24px; margin-bottom:14px; }
+        .section li { color:var(--text2); margin-bottom:8px; font-size:0.95rem; }
+        .section li strong { color:var(--text); }
+
+        .highlight { border-radius:12px; padding:20px 24px; margin:20px 0; }
+        .highlight.blue { background:rgba(99,102,241,0.08); border-left:4px solid var(--blue); }
+        .highlight.emerald { background:rgba(16,185,129,0.08); border-left:4px solid var(--emerald); }
+        .highlight.amber { background:rgba(245,158,11,0.08); border-left:4px solid var(--amber); }
+        .highlight.rose { background:rgba(244,63,94,0.08); border-left:4px solid var(--rose); }
+        .highlight.violet { background:rgba(139,92,246,0.08); border-left:4px solid var(--violet); }
+        .highlight h4 { margin-top:0 !important; }
+
+        .table-wrap { overflow-x:auto; margin:20px 0; }
+        table { width:100%; border-collapse:collapse; font-size:0.88rem; }
+        th { background:rgba(16,185,129,0.12); color:var(--emerald); font-weight:700; padding:12px 16px; text-align:left; border-bottom:2px solid rgba(16,185,129,0.2); }
+        td { padding:11px 16px; border-bottom:1px solid rgba(148,163,184,0.08); color:var(--text2); }
+        tr:hover td { background:rgba(16,185,129,0.04); }
+
+        .key-points { background:linear-gradient(135deg, rgba(16,185,129,0.06), rgba(6,182,212,0.06)); border:1px solid rgba(16,185,129,0.2); border-radius:16px; padding:28px 32px; margin:28px 0; }
+        .key-points h3 { color:var(--emerald); font-size:1rem; margin-bottom:16px; }
+        .key-points li { margin-bottom:10px; }
+
+        .memory-tips { background:linear-gradient(135deg, rgba(245,158,11,0.06), rgba(244,63,94,0.06)); border:1px solid rgba(245,158,11,0.2); border-radius:16px; padding:28px 32px; margin:28px 0; }
+        .memory-tips h3 { color:var(--amber); font-size:1rem; margin-bottom:16px; }
+
+        .example { background:rgba(16,185,129,0.06); border:1px solid rgba(16,185,129,0.2); border-radius:16px; padding:28px 32px; margin:28px 0; }
+        .example h3 { color:var(--emerald); margin-top:0; margin-bottom:16px; }
+
+        .quiz-section { margin-top:48px; }
+        .quiz-section h2 { font-size:1.5rem; font-weight:800; margin-bottom:8px; }
+        .quiz-section .subtitle { color:var(--text2); margin-bottom:24px; }
+        .q-card { background:var(--bg-card); backdrop-filter:blur(16px); border:1px solid var(--border); border-radius:16px; padding:28px 30px; margin-bottom:20px; transition:border-color 0.3s; }
+        .q-card.correct { border-color:var(--emerald) !important; }
+        .q-card.wrong { border-color:var(--rose) !important; }
+        .q-num { font-size:0.75rem; font-weight:700; color:var(--emerald); text-transform:uppercase; letter-spacing:1.5px; margin-bottom:10px; }
+        .q-text { font-size:0.95rem; font-weight:600; color:var(--text); margin-bottom:16px; line-height:1.6; }
+        .q-options label { display:flex; align-items:flex-start; gap:12px; padding:10px 14px; margin-bottom:8px; border-radius:10px; cursor:pointer; transition:background 0.2s; font-size:0.9rem; color:var(--text2); }
+        .q-options label:hover { background:rgba(16,185,129,0.06); }
+        .q-options input[type="radio"] { margin-top:3px; accent-color:var(--emerald); }
+        .q-feedback { margin-top:14px; padding:14px 18px; border-radius:10px; font-size:0.88rem; display:none; }
+        .q-feedback.show { display:block; }
+        .q-feedback.correct-fb { background:rgba(16,185,129,0.1); border:1px solid rgba(16,185,129,0.25); color:var(--emerald); }
+        .q-feedback.wrong-fb { background:rgba(244,63,94,0.1); border:1px solid rgba(244,63,94,0.25); color:var(--rose); }
+
+        .btn { display:inline-flex; align-items:center; gap:8px; padding:14px 32px; border:none; border-radius:12px; font-family:inherit; font-size:0.9rem; font-weight:700; cursor:pointer; transition:all 0.3s; }
+        .btn-primary { background:var(--grad); color:#fff; }
+        .btn-primary:hover { transform:translateY(-2px); box-shadow:0 8px 24px rgba(16,185,129,0.3); }
+        .btn-secondary { background:rgba(148,163,184,0.1); color:var(--text2); border:1px solid var(--border); }
+        .btn-secondary:hover { border-color:var(--border-h); color:var(--text); }
+
+        .results-box { background:var(--bg-card); backdrop-filter:blur(16px); border:1px solid var(--border); border-radius:16px; padding:32px; margin-top:24px; display:none; }
+        .results-box.show { display:block; animation:fadeUp .4s ease-out; }
+        .score-display { text-align:center; margin-bottom:24px; }
+        .score-display .score-num { font-size:3rem; font-weight:900; }
+        .score-display .score-num.good { color:var(--emerald); }
+        .score-display .score-num.ok { color:var(--amber); }
+        .score-display .score-num.bad { color:var(--rose); }
+        .score-display .score-label { color:var(--text2); font-size:0.9rem; }
+
+        .bottom-nav { display:flex; justify-content:space-between; align-items:center; margin-top:48px; padding-top:32px; border-top:1px solid var(--border); }
+        .bottom-nav a { color:var(--text2); text-decoration:none; font-weight:600; font-size:0.9rem; transition:color 0.3s; }
+        .bottom-nav a:hover { color:var(--emerald); }
+
+        @keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+
+        @media (max-width:768px) {
+            .wrapper { padding:24px 16px 60px; }
+            .section { padding:24px 20px; }
+            .toc { padding:20px 24px; }
+        }
+        .topnav { position:fixed !important; top:24px !important; right:24px !important; margin:0 !important; background:rgba(10,14,26,0.6) !important; padding:10px 24px !important; border-radius:100px !important; border:1px solid rgba(99,102,241,0.3) !important; box-shadow: 0 8px 32px rgba(0,0,0,0.5) !important; width:auto !important; flex-wrap: nowrap !important; }
+        .bottom-nav { display:none !important; }
+        .watermark { display: none !important; }
+        .wrapper { padding-top: 80px !important; }
+        @media (max-width:768px) {
+            .topnav { top:auto !important; bottom:24px !important; right:50% !important; transform:translateX(50%) !important; padding:8px 16px !important; font-size: 0.8rem !important; white-space: nowrap !important; overflow-x: auto !important; max-width: 90vw !important; gap: 8px !important; }
+        }
+    </style>
+</head>
+<body>
+<div class="bg-orbs"><span></span><span></span></div>
+<div class="wrapper">
+
+<nav class="topnav">
+    <a href="index.html">🏠</a>
+    <span class="sep">/</span>
+    <a href="topik-01.html">T1</a>
+    <span class="sep">·</span>
+    <a href="topik-02.html">T2</a>
+    <span class="sep">·</span>
+    <a href="topik-03.html" style="color:var(--emerald);">T3</a>
+    <span class="sep">·</span>
+    <a href="topik-04.html">T4</a>
+    <span class="sep">·</span>
+    <a href="topik-05.html">T5</a>
+    <span class="sep">·</span>
+    <a href="topik-06.html">T6</a>
+    <span class="sep">·</span>
+    <a href="topik-07.html">T7</a>
+    <span class="sep">·</span>
+    <a href="topik-08.html">T8</a>
+    <span class="sep">·</span>
+    <a href="topik-09.html">T9</a>
+    <span class="sep">·</span>
+    <a href="topik-10.html">T10</a>
+    <span class="sep">·</span>
+    <a href="topik-11.html">T11</a>
+</nav>
+
+<div class="ch-header">
+    <div class="ch-badge">Topik 03</div>
+    <h1>Forming a Business & Entrepreneurship</h1>
+    <p>Memahami bentuk-bentuk legal kepemilikan bisnis (Sole Proprietorship, Partnership, Corporation, Franchise, Koperasi), kewirausahaan, penyusunan Business Plan, dan kerangka Business Model Canvas (BMC).</p>
+</div>
+
+<div class="toc">
+    <h3>📑 Daftar Isi</h3>
+    <ol>
+        <li><a href="#s1">Bentuk Kepemilikan Bisnis Utama</a></li>
+        <li><a href="#s2">Sole Proprietorship vs Partnership vs Corporation</a></li>
+        <li><a href="#s3">Franchise & Koperasi</a></li>
+        <li><a href="#s4">Merger & Penggabungan Perusahaan</a></li>
+        <li><a href="#s5">Kewirausahaan (Entrepreneurship) & UMKM</a></li>
+        <li><a href="#s6">Business Plan & Pendanaan</a></li>
+        <li><a href="#s7">Business Model Canvas (BMC) & Value Proposition</a></li>
+        <li><a href="#kp">Poin-Poin Penting</a></li>
+        <li><a href="#mt">Tips Menghafal</a></li>
+        <li><a href="#ex">Contoh Soal & Pembahasan</a></li>
+        <li><a href="#quiz">Latihan Soal Interaktif</a></li>
+    </ol>
+</div>
+
+<!-- ===== SECTION 1 ===== -->
+<div class="section" id="s1">
+    <h2><span class="icon">🏢</span> 1. Bentuk Kepemilikan Bisnis Utama</h2>
+    <p>Ketika memulai bisnis, pengusaha harus memilih struktur legal yang tepat. Pilihan ini berdampak pada tanggung jawab utang (liability), pajak, kepemilikan, dan kontrol.</p>
+
+    <div class="highlight blue">
+        <h4>💡 Unlimited Liability vs Limited Liability</h4>
+        <ul>
+            <li><strong>Unlimited Liability:</strong> Pemilik bertanggung jawab penuh secara pribadi atas SELURUH utang bisnis. Jika bisnis bangkrut, kekayaan pribadi (rumah, mobil) bisa disita untuk melunasi utang.</li>
+            <li><strong>Limited Liability:</strong> Pemilik hanya bertanggung jawab sebatas jumlah uang/modal yang diinvestasikan. Harta pribadi aman dari utang perusahaan.</li>
+        </ul>
+    </div>
+</div>
+
+<!-- ===== SECTION 2 ===== -->
+<div class="section" id="s2">
+    <h2><span class="icon">⚖️</span> 2. Perbandingan Sole Proprietorship, Partnership, & Corporation</h2>
+
+    <div class="table-wrap">
+        <table>
+            <tr><th>Aspek</th><th>Sole Proprietorship (UD)</th><th>Partnership (Firma/CV)</th><th>Corporation (PT)</th></tr>
+            <tr><td><strong>Pemilik</strong></td><td>1 Orang</td><td>2 Orang atau lebih</td><td>Pemegang Saham (Stockholders)</td></tr>
+            <tr><td><strong>Tanggung Jawab (Liability)</strong></td><td><strong style="color:var(--rose)">Unlimited Liability</strong></td><td><strong style="color:var(--rose)">Unlimited</strong> (General Partner)</td><td><strong style="color:var(--emerald)">Limited Liability</strong></td></tr>
+            <tr><td><strong>Kemudahan Mendirikan</strong></td><td>Sangat Mudah & Murah</td><td>Relatif Mudah (Perjanjian)</td><td>Sulit, Birokrasi & Biaya Mahal</td></tr>
+            <tr><td><strong>Pajak</strong></td><td>Pajak Penghasilan Pribadi</td><td>Pajak Penghasilan Masing2 Partner</td><td><strong>Double Taxation</strong> (Pajak PT + Pajak Dividen)</td></tr>
+            <tr><td><strong>Pengumpulan Modal</strong></td><td>Terbatas pada tabungan pribadi</td><td>Terbatas pada modal para partner</td><td>Sangat Mudah (Terbitkan Saham/Obligasi)</td></tr>
+            <tr><td><strong>Keberlangsungan (Continuity)</strong></td><td>Terbatas umur pemilik</td><td>Bisa bubar jika partner keluar</td><td><strong>Tak Terbatas</strong> (Permanent Life)</td></tr>
+        </table>
+    </div>
+</div>
+
+<!-- ===== SECTION 3 ===== -->
+<div class="section" id="s3">
+    <h2><span class="icon">🍦</span> 3. Franchise & Koperasi</h2>
+
+    <h3>Franchise (Waralaba):</h3>
+    <p>Perjanjian di mana <strong>Franchisor</strong> (pemilik lisensi) menjual hak penggunaan nama merek dan sistem operasi bisnis kepada <strong>Franchisee</strong> (pembeli lisensi).</p>
+    <ul>
+        <li><strong>Keuntungan:</strong> Merek sudah terkenal, risiko gagal lebih rendah, dapat pelatihan & bantuan manajemen.</li>
+        <li><strong>Kerugian:</strong> Biaya royalti awal & bulanan tinggi, aturan kaku dari franchisor, tidak ada kebebasan inovasi.</li>
+        <li><strong>Contoh:</strong> McDonald's, Indomaret, Kopi Janji Jiwa.</li>
+    </ul>
+
+    <h3>Cooperative (Koperasi):</h3>
+    <p>Organisasi bisnis yang dimiliki dan dioperasikan oleh <strong>para anggotanya</strong> untuk kepentingan bersama berdasarkan prinsip kekeluargaan.</p>
+    <ul>
+        <li>Keuntungan dibagi kepada anggota berupa <strong>SHU (Sisa Hasil Usaha)</strong> secara adil sesuai partisipasi.</li>
+    </ul>
+</div>
+
+<!-- ===== SECTION 4 ===== -->
+<div class="section" id="s4">
+    <h2><span class="icon">🧩</span> 4. Merger & Penggabungan Perusahaan</h2>
+
+    <ul>
+        <li><strong>Merger:</strong> Penggabungan dua perusahaan menjadi satu perusahaan baru.
+            <ul>
+                <li><strong>Vertical Merger:</strong> Penggabungan perusahaan pada tahap produksi berbeda (misal: pabrik mobil membeli pabrik ban).</li>
+                <li><strong>Horizontal Merger:</strong> Penggabungan dua perusahaan di industri & tahap yang sama/kompetitor (misal: Tokopedia & Gojek jadi GoTo).</li>
+                <li><strong>Conglomerate Merger:</strong> Penggabungan perusahaan dari industri yang sama sekali tidak berhubungan.</li>
+            </ul>
+        </li>
+        <li><strong>Acquisition (Akuisisi):</strong> Satu perusahaan membeli seluruh/sebagian besar saham perusahaan lain (perusahaan yang dibeli tetap ada tapi dikontrol).</li>
+    </ul>
+</div>
+
+<!-- ===== SECTION 5 ===== -->
+<div class="section" id="s5">
+    <h2><span class="icon">💡</span> 5. Kewirausahaan & UMKM</h2>
+    <p><strong>Entrepreneurship</strong> adalah proses menerima risiko memulai dan mengelola bisnis.</p>
+
+    <div class="highlight emerald">
+        <h4>⭐ Karakteristik Entrepreneur Sukses:</h4>
+        <ul>
+            <li><strong>Self-Directed:</strong> Disiplin dan mampu memimpin diri sendiri.</li>
+            <li><strong>Action-Oriented:</strong> Cepat mengeksekusi ide, bukan sekadar teori.</li>
+            <li><strong>Tolerance for Uncertainty:</strong> Berani menghadapi ketidakpastian risiko.</li>
+            <li><strong>Highly Energetic:</strong> Memiliki energi dan ketahanan kerja tinggi.</li>
+        </ul>
+    </div>
+
+    <h3>UMKM di Indonesia:</h3>
+    <p>UMKM (Usaha Mikro, Kecil, dan Menengah) menyumbang lebih dari <strong>60% PDB Indonesia</strong> dan menyerap sekitar 97% tenaga kerja nasional.</p>
+</div>
+
+<!-- ===== SECTION 6 ===== -->
+<div class="section" id="s6">
+    <h2><span class="icon">📄</span> 6. Business Plan & Pendanaan</h2>
+    <p><strong>Business Plan</strong> adalah dokumen tertulis detail yang menjelaskan gagasan bisnis, target pasar, operasional, analisis kompetitor, dan proyeksi keuangan perusahaan.</p>
+
+    <h3>Sumber Pendanaan Bisnis:</h3>
+    <ul>
+        <li><strong>Bootstrapping / Personal Funds:</strong> Menggunakan tabungan sendiri dan modal keluarga/teman.</li>
+        <li><strong>Angel Investors:</strong> Individu kaya yang menginvestasikan modal pribadi ke startup tahap awal.</li>
+        <li><strong>Venture Capital (VC):</strong> Perusahaan investasi profesional yang mengelola dana besar untuk investasi ke bisnis berpotensi tumbuh cepat (high-growth).</li>
+        <li><strong>Crowdfunding:</strong> Mengumpulkan modal kecil dari banyak orang via platform digital (misal: Kickstarter, Santara).</li>
+    </ul>
+</div>
+
+<!-- ===== SECTION 7 ===== -->
+<div class="section" id="s7">
+    <h2><span class="icon">🎨</span> 7. Business Model Canvas (BMC)</h2>
+    <p>BMC adalah alat manajemen strategis visual untuk menjelaskan, mendesain, dan memetakan model bisnis dalam <strong>9 blok utama</strong>:</p>
+
+    <div class="table-wrap">
+        <table>
+            <tr><th>Blok BMC</th><th>Pertanyaan Kunci</th></tr>
+            <tr><td><strong>1. Value Propositions</strong></td><td>Nilai / solusi unggul apa yang ditawarkan ke pelanggan?</td></tr>
+            <tr><td><strong>2. Customer Segments</strong></td><td>Siapa target pasar utama yang ingin dilayani?</td></tr>
+            <tr><td><strong>3. Channels</strong></td><td>Lewat media/saluran mana produk disampaikan ke pelanggan?</td></tr>
+            <tr><td><strong>4. Customer Relationships</strong></td><td>Bagaimana cara membangun & menjaga hubungan dengan pelanggan?</td></tr>
+            <tr><td><strong>5. Revenue Streams</strong></td><td>Dari mana saja aliran pendapatan bisnis didapatkan?</td></tr>
+            <tr><td><strong>6. Key Resources</strong></td><td>Aset/sumber daya utama apa yang wajib dimiliki?</td></tr>
+            <tr><td><strong>7. Key Activities</strong></td><td>Kegiatan operasional utama apa yang wajib dilakukan?</td></tr>
+            <tr><td><strong>8. Key Partners</strong></td><td>Siapa mitra/pemasok strategis yang diajak bekerja sama?</td></tr>
+            <tr><td><strong>9. Cost Structure</strong></td><td>Biaya terbesarnya untuk apa saja?</td></tr>
+        </table>
+    </div>
+</div>
+
+<!-- ===== KEY POINTS ===== -->
+<div class="section" id="kp">
+    <div class="key-points">
+        <h3>🔑 POIN-POIN PENTING TOPIK 3</h3>
+        <ol>
+            <li>Sole Proprietorship & Partnership = Unlimited Liability (harta pribadi terancam).</li>
+            <li>Corporation (PT) = Limited Liability & Double Taxation.</li>
+            <li>Franchisor = pemilik lisensi; Franchisee = pembeli lisensi merek.</li>
+            <li>Vertical Merger = tahap produksi berbeda; Horizontal = kompetitor sejenis; Conglomerate = industri beda.</li>
+            <li>Angel Investor = individu kaya; Venture Capital = institusi pengelola dana investasi.</li>
+            <li>Business Model Canvas (BMC) terdiri dari 9 elemen visual.</li>
+        </ol>
+    </div>
+</div>
+
+<!-- ===== MEMORY TIPS ===== -->
+<div class="section" id="mt">
+    <div class="memory-tips">
+        <h3>🧠 TIPS MENGHAFAL</h3>
+        <ol>
+            <li><strong>PT = Proteksi Terbatas (Limited Liability)</strong>: Ingat PT melindungi harta pribadi!</li>
+            <li><strong>"V-H-C Merger"</strong>: <strong>V</strong>ertical (rantai pasok atas-bawah), <strong>H</strong>orizontal (sejajar/kompetitor), <strong>C</strong>onglomerate (acak/beda jenis).</li>
+            <li><strong>Angel vs VC</strong>: Angel = 1 Malaikat (Individu/Personal); VC = Perusahaan Venture (Lembaga/Institusi).</li>
+        </ol>
+    </div>
+</div>
+
+<!-- ===== CONTOH SOAL ===== -->
+<div class="section" id="ex">
+    <h2><span class="icon">📝</span> Contoh Soal & Pembahasan</h2>
+
+    <div class="example">
+        <h3>Soal 1</h3>
+        <p><strong>Bentuk kepemilikan bisnis yang memberikan perlindungan Limited Liability namun menghadapi masalah Double Taxation adalah...</strong></p>
+        <p>A. Sole Proprietorship<br>B. General Partnership<br>C. Corporation (PT)<br>D. Cooperative</p>
+        <p><strong>Jawaban: C</strong></p>
+        <p><strong>Pembahasan:</strong> Perusahaan perseroan (Corporation) memiliki tanggung jawab terbatas (limited liability), tetapi keuntungannya dikenakan pajak dua kali (pajak korporasi & pajak dividen).</p>
+    </div>
+
+    <div class="example">
+        <h3>Soal 2</h3>
+        <p><strong>Penggabungan antara produsen sepatu dengan toko pengecer sepatu disebut jenis merger...</strong></p>
+        <p>A. Horizontal Merger<br>B. Vertical Merger<br>C. Conglomerate Merger<br>D. Circular Merger</p>
+        <p><strong>Jawaban: B</strong></p>
+        <p><strong>Pembahasan:</strong> Vertical merger terjadi ketika dua perusahaan di tingkat pasokan/produksi yang berbeda bergabung.</p>
+    </div>
+</div>
+
+<!-- ===== QUIZ ===== -->
+<div class="quiz-section" id="quiz">
+    <h2>🎯 Latihan Soal Interaktif — Topik 3</h2>
+    <p class="subtitle">Kerjakan 10 soal, lalu klik "Lihat Hasil" untuk melihat skor dan pembahasanmu. Jawaban tersimpan otomatis.</p>
+
+    <form id="quizForm">
+        <div class="q-card" id="q1"><div class="q-num">Soal 1</div><div class="q-text">Keuntungan utama dari bentuk bisnis Sole Proprietorship adalah...</div><div class="q-options"><label><input type="radio" name="q1" value="a"> Tanggung jawab utang yang terbatas</label><label><input type="radio" name="q1" value="b"> Kemudahan dalam mendirikan dan menjadi bos sendiri</label><label><input type="radio" name="q1" value="c"> Kemampuan tak terbatas mengumpulkan modal</label><label><input type="radio" name="q1" value="d"> Terhindar dari seluruh jenis pajak</label></div><div class="q-feedback" id="fb1"></div></div>
+
+        <div class="q-card" id="q2"><div class="q-num">Soal 2</div><div class="q-text">Istilah 'Unlimited Liability' berarti...</div><div class="q-options"><label><input type="radio" name="q2" value="a"> Tanggung jawab kerugian hanya sebatas uang yang diinvestasikan</label><label><input type="radio" name="q2" value="b"> Pemilik bertanggung jawab secara pribadi hingga harta pribadinya jika bisnis berutang</label><label><input type="radio" name="q2" value="c"> Perusahaan bebas dari pajak pemerintah</label><label><input type="radio" name="q2" value="d"> Pemilik tidak memiliki kewajiban hukum</label></div><div class="q-feedback" id="fb2"></div></div>
+
+        <div class="q-card" id="q3"><div class="q-num">Soal 3</div><div class="q-text">Dalam perseroan terbatas (Corporation), pemegang saham menikmati keunggulan berupa...</div><div class="q-options"><label><input type="radio" name="q3" value="a"> Unlimited liability</label><label><input type="radio" name="q3" value="b"> Limited liability</label><label><input type="radio" name="q3" value="c"> Bebas biaya operasional</label><label><input type="radio" name="q3" value="d"> Pengambilan keputusan tanpa direksi</label></div><div class="q-feedback" id="fb3"></div></div>
+
+        <div class="q-card" id="q4"><div class="q-num">Soal 4</div><div class="q-text">Pihak yang membeli hak untuk menggunakan nama merek dan sistem operasional bisnis dinamakan...</div><div class="q-options"><label><input type="radio" name="q4" value="a"> Franchisor</label><label><input type="radio" name="q4" value="b"> Franchisee</label><label><input type="radio" name="q4" value="c"> Stockholder</label><label><input type="radio" name="q4" value="d"> Venture Capitalist</label></div><div class="q-feedback" id="fb4"></div></div>
+
+        <div class="q-card" id="q5"><div class="q-num">Soal 5</div><div class="q-text">Penggabungan dua perusahaan yang memproduksi produk sejenis dan saling berkompetisi langsung dinamakan...</div><div class="q-options"><label><input type="radio" name="q5" value="a"> Vertical Merger</label><label><input type="radio" name="q5" value="b"> Horizontal Merger</label><label><input type="radio" name="q5" value="c"> Conglomerate Merger</label><label><input type="radio" name="q5" value="d"> Joint Venture</label></div><div class="q-feedback" id="fb5"></div></div>
+
+        <div class="q-card" id="q6"><div class="q-num">Soal 6</div><div class="q-text">Penggabungan antara perusahaan pembuat smartphone dan perusahaan tambang minyak merupakan contoh dari...</div><div class="q-options"><label><input type="radio" name="q6" value="a"> Horizontal Merger</label><label><input type="radio" name="q6" value="b"> Vertical Merger</label><label><input type="radio" name="q6" value="c"> Conglomerate Merger</label><label><input type="radio" name="q6" value="d"> Strategic Alliance</label></div><div class="q-feedback" id="fb6"></div></div>
+
+        <div class="q-card" id="q7"><div class="q-num">Soal 7</div><div class="q-text">Individu kaya yang menyuntikkan modal pribadinya ke startup tahap awal disebut...</div><div class="q-options"><label><input type="radio" name="q7" value="a"> Venture Capitalist</label><label><input type="radio" name="q7" value="b"> Angel Investor</label><label><input type="radio" name="q7" value="c"> Commercial Banker</label><label><input type="radio" name="q7" value="d"> Underwriter</label></div><div class="q-feedback" id="fb7"></div></div>
+
+        <div class="q-card" id="q8"><div class="q-num">Soal 8</div><div class="q-text">Dokumen tertulis rinci yang memuat tujuan bisnis, proyeksi keuangan, dan strategi operasional disebut...</div><div class="q-options"><label><input type="radio" name="q8" value="a"> Business Plan</label><label><input type="radio" name="q8" value="b"> Balance Sheet</label><label><input type="radio" name="q8" value="c"> Articles of Incorporation</label><label><input type="radio" name="q8" value="d"> Code of Ethics</label></div><div class="q-feedback" id="fb8"></div></div>
+
+        <div class="q-card" id="q9"><div class="q-num">Soal 9</div><div class="q-text">Dalam Business Model Canvas (BMC), elemen yang menjelaskan bagaimana solusi/nilai unik produk ditawarkan ke konsumen adalah...</div><div class="q-options"><label><input type="radio" name="q9" value="a"> Cost Structure</label><label><input type="radio" name="q9" value="b"> Key Activities</label><label><input type="radio" name="q9" value="c"> Value Propositions</label><label><input type="radio" name="q9" value="d"> Revenue Streams</label></div><div class="q-feedback" id="fb9"></div></div>
+
+        <div class="q-card" id="q10"><div class="q-num">Soal 10</div><div class="q-text">Organisasi bisnis yang berasaskan kekeluargaan dan bertujuan menyejahterakan para anggotanya adalah...</div><div class="q-options"><label><input type="radio" name="q10" value="a"> PT Terbuka</label><label><input type="radio" name="q10" value="b"> Koperasi</label><label><input type="radio" name="q10" value="c"> Firma</label><label><input type="radio" name="q10" value="d"> Franchise</label></div><div class="q-feedback" id="fb10"></div></div>
+
+        <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:24px;">
+            <button type="button" class="btn btn-primary" onclick="checkQuiz()">📊 Lihat Hasil</button>
+            <button type="button" class="btn btn-secondary" onclick="resetQuiz()">🔄 Reset</button>
+        </div>
+    </form>
+
+    <div class="results-box" id="resultsBox">
+        <div class="score-display">
+            <div class="score-num" id="scoreNum"></div>
+            <div class="score-label" id="scoreLabel"></div>
+        </div>
+    </div>
+</div>
+
+<div class="bottom-nav">
+    <a href="topik-02.html">← Topik 2: Economics & Ethics</a>
+    <a href="topik-04.html">Topik 4: Marketing & Pricing →</a>
+</div>
+
+</div>
+
+<script>
+const STORAGE_KEY = 'manbis_t03_quiz';
+const answers = {q1:'b',q2:'b',q3:'b',q4:'b',q5:'b',q6:'c',q7:'b',q8:'a',q9:'c',q10:'b'};
+const explanations = {
+    q1: 'Sole Proprietorship sangat mudah didirikan & pemilik berkuasa penuh.',
+    q2: 'Unlimited Liability membuat kekayaan pribadi bisa disita untuk melunasi utang usaha.',
+    q3: 'Corporation memberikan keunggulan Limited Liability bagi investornya.',
+    q4: 'Franchisee adalah pembeli hak lisensi merek waralaba.',
+    q5: 'Horizontal merger adalah penggabungan antar kompetitor di industri sejenis.',
+    q6: 'Conglomerate merger adalah penggabungan antar bisnis dari industri berbeda.',
+    q7: 'Angel Investor adalah perseorangan kaya yang mendanai bisnis awal.',
+    q8: 'Business Plan memuat rencana komprehensif pendirian dan strategi bisnis.',
+    q9: 'Value Propositions menjelaskan keunggulan dan nilai unik penawaran produk.',
+    q10: 'Koperasi berlandaskan asas kekeluargaan untuk kesejahteraan anggota.'
+};
+
+function saveAnswers() {
+    const data = {};
+    for (let i = 1; i <= 10; i++) {
+        const sel = document.querySelector(`input[name="q${i}"]:checked`);
+        if (sel) data[`q${i}`] = sel.value;
+    }
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+}
+
+function loadAnswers() {
+    const data = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+    for (const [key, val] of Object.entries(data)) {
+        const radio = document.querySelector(`input[name="${key}"][value="${val}"]`);
+        if (radio) radio.checked = true;
+    }
+}
+
+function checkQuiz() {
+    saveAnswers();
+    let score = 0;
+    const total = 10;
+    for (let i = 1; i <= total; i++) {
+        const sel = document.querySelector(`input[name="q${i}"]:checked`);
+        const fb = document.getElementById(`fb${i}`);
+        const card = document.getElementById(`q${i}`);
+        const correct = answers[`q${i}`];
+        card.classList.remove('correct','wrong');
+        if (sel && sel.value === correct) {
+            score++;
+            card.classList.add('correct');
+            fb.className = 'q-feedback show correct-fb';
+            fb.innerHTML = `✅ <strong>Benar!</strong> ${explanations['q'+i]}`;
+        } else {
+            card.classList.add('wrong');
+            fb.className = 'q-feedback show wrong-fb';
+            const userAns = sel ? sel.value.toUpperCase() : '—';
+            fb.innerHTML = `❌ <strong>Salah.</strong> Jawabanmu: ${userAns}. Jawaban benar: <strong>${correct.toUpperCase()}</strong>. ${explanations['q'+i]}`;
+        }
+    }
+    const pct = Math.round((score/total)*100);
+    const box = document.getElementById('resultsBox');
+    const num = document.getElementById('scoreNum');
+    const lbl = document.getElementById('scoreLabel');
+    num.textContent = `${score}/${total}`;
+    num.className = 'score-num ' + (pct >= 80 ? 'good' : pct >= 60 ? 'ok' : 'bad');
+    lbl.textContent = pct >= 80 ? '🎉 Excellent! Kamu sudah menguasai materi ini!' : pct >= 60 ? '👍 Lumayan! Review lagi bagian yang salah.' : '📖 Perlu belajar lagi. Baca ulang materinya ya!';
+    box.classList.add('show');
+    box.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+function resetQuiz() {
+    localStorage.removeItem(STORAGE_KEY);
+    document.getElementById('quizForm').reset();
+    for (let i = 1; i <= 10; i++) {
+        document.getElementById(`q${i}`).classList.remove('correct','wrong');
+        const fb = document.getElementById(`fb${i}`);
+        fb.className = 'q-feedback';
+        fb.innerHTML = '';
+    }
+    document.getElementById('resultsBox').classList.remove('show');
+}
+
+document.querySelectorAll('input[type="radio"]').forEach(r => r.addEventListener('change', saveAnswers));
+window.addEventListener('DOMContentLoaded', loadAnswers);
+</script>
+</body>
+</html>

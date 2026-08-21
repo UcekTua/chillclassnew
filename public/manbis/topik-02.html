@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topik 2: Economics & Ethical Responsibility — ManBis</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+            --bg: #0a0e1a; --bg2: #111827; --bg-card: rgba(17,24,39,0.7);
+            --border: rgba(99,102,241,0.15); --border-h: rgba(99,102,241,0.4);
+            --text: #f1f5f9; --text2: #94a3b8; --text3: #64748b;
+            --blue: #6366f1; --cyan: #06b6d4; --violet: #8b5cf6;
+            --emerald: #10b981; --amber: #f59e0b; --rose: #f43f5e;
+            --grad: linear-gradient(135deg, #8b5cf6, #ec4899);
+        }
+        body { font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); line-height:1.8; }
+        .bg-orbs { position:fixed; top:0; left:0; width:100%; height:100%; z-index:0; overflow:hidden; pointer-events:none; }
+        .bg-orbs span { position:absolute; border-radius:50%; filter:blur(80px); opacity:0.1; }
+        .bg-orbs span:nth-child(1) { width:500px; height:500px; background:var(--violet); top:-10%; left:-5%; }
+        .bg-orbs span:nth-child(2) { width:400px; height:400px; background:var(--blue); bottom:10%; right:-5%; }
+
+        .wrapper { position:relative; z-index:1; max-width:900px; margin:0 auto; padding:40px 24px 80px; }
+
+        .topnav { display:flex; align-items:center; gap:12px; margin-bottom:48px; flex-wrap:wrap; position:sticky; top:0; z-index:100; background:rgba(10,14,26,0.85); backdrop-filter:blur(12px); padding:20px 0; }
+        .topnav a { color:var(--text2); text-decoration:none; font-size:0.85rem; font-weight:500; transition:color 0.3s; }
+        .topnav a:hover { color:var(--blue); }
+        .topnav .sep { color:var(--text3); }
+
+        .ch-header { margin-bottom:48px; animation:fadeUp .6s ease-out; }
+        .ch-badge { display:inline-block; padding:5px 14px; border-radius:100px; background:rgba(139,92,246,0.12); border:1px solid rgba(139,92,246,0.25); color:var(--violet); font-size:0.75rem; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; margin-bottom:16px; }
+        .ch-header h1 { font-size:clamp(1.8rem,4vw,2.6rem); font-weight:900; background:var(--grad); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; margin-bottom:12px; }
+        .ch-header p { color:var(--text2); font-size:1rem; max-width:700px; }
+
+        .toc { background:var(--bg-card); backdrop-filter:blur(16px); border:1px solid var(--border); border-radius:16px; padding:28px 32px; margin-bottom:48px; animation:fadeUp .6s ease-out .1s both; }
+        .toc h3 { font-size:0.85rem; font-weight:700; text-transform:uppercase; letter-spacing:1.5px; color:var(--violet); margin-bottom:16px; }
+        .toc ol { padding-left:20px; }
+        .toc li { margin-bottom:8px; }
+        .toc a { color:var(--text2); text-decoration:none; font-size:0.9rem; transition:color 0.3s; }
+        .toc a:hover { color:var(--cyan); }
+
+        .section { background:var(--bg-card); backdrop-filter:blur(16px); border:1px solid var(--border); border-radius:20px; padding:36px 36px; margin-bottom:32px; animation:fadeUp .6s ease-out both; }
+        .section h2 { font-size:1.5rem; font-weight:800; margin-bottom:20px; display:flex; align-items:center; gap:12px; }
+        .section h2 .icon { font-size:1.3rem; }
+        .section h3 { font-size:1.15rem; font-weight:700; margin:28px 0 12px; color:var(--cyan); }
+        .section h4 { font-size:1rem; font-weight:600; margin:20px 0 10px; color:var(--violet); }
+        .section p { color:var(--text2); margin-bottom:14px; font-size:0.95rem; }
+        .section ul, .section ol { padding-left:24px; margin-bottom:14px; }
+        .section li { color:var(--text2); margin-bottom:8px; font-size:0.95rem; }
+        .section li strong { color:var(--text); }
+
+        .highlight { border-radius:12px; padding:20px 24px; margin:20px 0; }
+        .highlight.blue { background:rgba(99,102,241,0.08); border-left:4px solid var(--blue); }
+        .highlight.emerald { background:rgba(16,185,129,0.08); border-left:4px solid var(--emerald); }
+        .highlight.amber { background:rgba(245,158,11,0.08); border-left:4px solid var(--amber); }
+        .highlight.rose { background:rgba(244,63,94,0.08); border-left:4px solid var(--rose); }
+        .highlight.violet { background:rgba(139,92,246,0.08); border-left:4px solid var(--violet); }
+        .highlight h4 { margin-top:0 !important; }
+        .highlight p, .highlight li { color:var(--text2); }
+
+        .table-wrap { overflow-x:auto; margin:20px 0; }
+        table { width:100%; border-collapse:collapse; font-size:0.88rem; }
+        th { background:rgba(139,92,246,0.12); color:var(--violet); font-weight:700; padding:12px 16px; text-align:left; border-bottom:2px solid rgba(139,92,246,0.2); }
+        td { padding:11px 16px; border-bottom:1px solid rgba(148,163,184,0.08); color:var(--text2); }
+        tr:hover td { background:rgba(139,92,246,0.04); }
+
+        .equation { text-align:center; padding:28px; margin:24px 0; background:linear-gradient(135deg, rgba(139,92,246,0.1), rgba(6,182,212,0.1)); border:1px solid rgba(139,92,246,0.2); border-radius:16px; }
+        .equation .formula { font-size:1.4rem; font-weight:800; color:var(--text); letter-spacing:1px; }
+
+        .key-points { background:linear-gradient(135deg, rgba(16,185,129,0.06), rgba(6,182,212,0.06)); border:1px solid rgba(16,185,129,0.2); border-radius:16px; padding:28px 32px; margin:28px 0; }
+        .key-points h3 { color:var(--emerald); font-size:1rem; margin-bottom:16px; }
+        .key-points li { margin-bottom:10px; }
+
+        .memory-tips { background:linear-gradient(135deg, rgba(245,158,11,0.06), rgba(244,63,94,0.06)); border:1px solid rgba(245,158,11,0.2); border-radius:16px; padding:28px 32px; margin:28px 0; }
+        .memory-tips h3 { color:var(--amber); font-size:1rem; margin-bottom:16px; }
+        .memory-tips li { margin-bottom:10px; }
+
+        .example { background:rgba(139,92,246,0.06); border:1px solid rgba(139,92,246,0.2); border-radius:16px; padding:28px 32px; margin:28px 0; }
+        .example h3 { color:var(--violet); margin-top:0; margin-bottom:16px; }
+
+        .quiz-section { margin-top:48px; }
+        .quiz-section h2 { font-size:1.5rem; font-weight:800; margin-bottom:8px; }
+        .quiz-section .subtitle { color:var(--text2); margin-bottom:24px; }
+        .q-card { background:var(--bg-card); backdrop-filter:blur(16px); border:1px solid var(--border); border-radius:16px; padding:28px 30px; margin-bottom:20px; transition:border-color 0.3s; }
+        .q-card.correct { border-color:var(--emerald) !important; }
+        .q-card.wrong { border-color:var(--rose) !important; }
+        .q-num { font-size:0.75rem; font-weight:700; color:var(--violet); text-transform:uppercase; letter-spacing:1.5px; margin-bottom:10px; }
+        .q-text { font-size:0.95rem; font-weight:600; color:var(--text); margin-bottom:16px; line-height:1.6; }
+        .q-options label { display:flex; align-items:flex-start; gap:12px; padding:10px 14px; margin-bottom:8px; border-radius:10px; cursor:pointer; transition:background 0.2s; font-size:0.9rem; color:var(--text2); }
+        .q-options label:hover { background:rgba(139,92,246,0.06); }
+        .q-options input[type="radio"] { margin-top:3px; accent-color:var(--violet); }
+        .q-feedback { margin-top:14px; padding:14px 18px; border-radius:10px; font-size:0.88rem; display:none; }
+        .q-feedback.show { display:block; }
+        .q-feedback.correct-fb { background:rgba(16,185,129,0.1); border:1px solid rgba(16,185,129,0.25); color:var(--emerald); }
+        .q-feedback.wrong-fb { background:rgba(244,63,94,0.1); border:1px solid rgba(244,63,94,0.25); color:var(--rose); }
+
+        .btn { display:inline-flex; align-items:center; gap:8px; padding:14px 32px; border:none; border-radius:12px; font-family:inherit; font-size:0.9rem; font-weight:700; cursor:pointer; transition:all 0.3s; }
+        .btn-primary { background:var(--grad); color:#fff; }
+        .btn-primary:hover { transform:translateY(-2px); box-shadow:0 8px 24px rgba(139,92,246,0.3); }
+        .btn-secondary { background:rgba(148,163,184,0.1); color:var(--text2); border:1px solid var(--border); }
+        .btn-secondary:hover { border-color:var(--border-h); color:var(--text); }
+
+        .results-box { background:var(--bg-card); backdrop-filter:blur(16px); border:1px solid var(--border); border-radius:16px; padding:32px; margin-top:24px; display:none; }
+        .results-box.show { display:block; animation:fadeUp .4s ease-out; }
+        .score-display { text-align:center; margin-bottom:24px; }
+        .score-display .score-num { font-size:3rem; font-weight:900; }
+        .score-display .score-num.good { color:var(--emerald); }
+        .score-display .score-num.ok { color:var(--amber); }
+        .score-display .score-num.bad { color:var(--rose); }
+        .score-display .score-label { color:var(--text2); font-size:0.9rem; }
+
+        .bottom-nav { display:flex; justify-content:space-between; align-items:center; margin-top:48px; padding-top:32px; border-top:1px solid var(--border); }
+        .bottom-nav a { color:var(--text2); text-decoration:none; font-weight:600; font-size:0.9rem; transition:color 0.3s; }
+        .bottom-nav a:hover { color:var(--violet); }
+
+        @keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+
+        @media (max-width:768px) {
+            .wrapper { padding:24px 16px 60px; }
+            .section { padding:24px 20px; }
+            .toc { padding:20px 24px; }
+        }
+        .topnav { position:fixed !important; top:24px !important; right:24px !important; margin:0 !important; background:rgba(10,14,26,0.6) !important; padding:10px 24px !important; border-radius:100px !important; border:1px solid rgba(99,102,241,0.3) !important; box-shadow: 0 8px 32px rgba(0,0,0,0.5) !important; width:auto !important; flex-wrap: nowrap !important; }
+        .bottom-nav { display:none !important; }
+        .watermark { display: none !important; }
+        .wrapper { padding-top: 80px !important; }
+        @media (max-width:768px) {
+            .topnav { top:auto !important; bottom:24px !important; right:50% !important; transform:translateX(50%) !important; padding:8px 16px !important; font-size: 0.8rem !important; white-space: nowrap !important; overflow-x: auto !important; max-width: 90vw !important; gap: 8px !important; }
+        }
+    </style>
+</head>
+<body>
+<div class="bg-orbs"><span></span><span></span></div>
+<div class="wrapper">
+
+<nav class="topnav">
+    <a href="index.html">🏠</a>
+    <span class="sep">/</span>
+    <a href="topik-01.html">T1</a>
+    <span class="sep">·</span>
+    <a href="topik-02.html" style="color:var(--violet);">T2</a>
+    <span class="sep">·</span>
+    <a href="topik-03.html">T3</a>
+    <span class="sep">·</span>
+    <a href="topik-04.html">T4</a>
+    <span class="sep">·</span>
+    <a href="topik-05.html">T5</a>
+    <span class="sep">·</span>
+    <a href="topik-06.html">T6</a>
+    <span class="sep">·</span>
+    <a href="topik-07.html">T7</a>
+    <span class="sep">·</span>
+    <a href="topik-08.html">T8</a>
+    <span class="sep">·</span>
+    <a href="topik-09.html">T9</a>
+    <span class="sep">·</span>
+    <a href="topik-10.html">T10</a>
+    <span class="sep">·</span>
+    <a href="topik-11.html">T11</a>
+</nav>
+
+<div class="ch-header">
+    <div class="ch-badge">Topik 02</div>
+    <h1>Economics & Ethical Responsibility</h1>
+    <p>Memahami bagaimana sistem ekonomi mempengaruhi keputusan bisnis, mekanisme supply & demand, struktur pasar, serta pentingnya etika bisnis dan Tanggung Jawab Sosial Perusahaan (CSR).</p>
+</div>
+
+<div class="toc">
+    <h3>📑 Daftar Isi</h3>
+    <ol>
+        <li><a href="#s1">Mikroekonomi vs Makroekonomi</a></li>
+        <li><a href="#s2">Sistem Ekonomi Utama (Capitalism vs Command)</a></li>
+        <li><a href="#s3">Mekanisme Pasar (Supply & Demand)</a></li>
+        <li><a href="#s4">4 Tingkat Kompetisi Pasar</a></li>
+        <li><a href="#s5">Indikator Ekonomi & Business Cycle</a></li>
+        <li><a href="#s6">Etika Bisnis & Whistleblower</a></li>
+        <li><a href="#s7">Corporate Social Responsibility (CSR)</a></li>
+        <li><a href="#kp">Poin-Poin Penting</a></li>
+        <li><a href="#mt">Tips Menghafal</a></li>
+        <li><a href="#ex">Contoh Soal & Pembahasan</a></li>
+        <li><a href="#quiz">Latihan Soal Interaktif</a></li>
+    </ol>
+</div>
+
+<!-- ===== SECTION 1 ===== -->
+<div class="section" id="s1">
+    <h2><span class="icon">📊</span> 1. Mikroekonomi vs Makroekonomi</h2>
+    <p>Ilmu ekonomi dibagi menjadi dua cabang utama berdasarkan skala analisisnya:</p>
+
+    <div class="table-wrap">
+        <table>
+            <tr><th>Cabang</th><th>Skala / Fokus</th><th>Contoh Topik</th></tr>
+            <tr>
+                <td><strong>Macroeconomics (Makroekonomi)</strong></td>
+                <td>Studi tentang perekonomian secara <strong>keseluruhan (nasional/global)</strong></td>
+                <td>GDP, Inflasi, Pengangguran, Kebijakan Moneter & Fiskal</td>
+            </tr>
+            <tr>
+                <td><strong>Microeconomics (Mikroekonomi)</strong></td>
+                <td>Studi tentang perilaku <strong>individu, rumah tangga, dan perusahaan</strong> spesifik</td>
+                <td>Harga produk A, penawaran beras di kota X, keputusan konsumen</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- ===== SECTION 2 ===== -->
+<div class="section" id="s2">
+    <h2><span class="icon">🏛️</span> 2. Sistem Ekonomi Utama</h2>
+
+    <div class="table-wrap">
+        <table>
+            <tr><th>Aspek</th><th>Free-Market Economy (Capitalism)</th><th>Command Economy (Socialism / Communism)</th></tr>
+            <tr><td><strong>Pengendali Utama</strong></td><td><strong>Pasar (Pasar Bebas / Swasta)</strong></td><td><strong>Pemerintah (Central Planning)</strong></td></tr>
+            <tr><td><strong>Kepemilikan Aset</strong></td><td>Dimiliki oleh individu & bisnis swasta</td><td>Dimiliki oleh negara/pemerintah</td></tr>
+            <tr><td><strong>Hak Dasar</strong></td><td>Milik pribadi, berbisnis, kompetisi, kebebasan memilih</td><td>Dikontrol pemerintah untuk kesetaraan</td></tr>
+            <tr><td><strong>Kelebihan</strong></td><td>Inovasi tinggi, efisiensi, dorongan profit</td><td>Pemerataan sumber daya, fasilitas umum gratis</td></tr>
+            <tr><td><strong>Kelemahan</strong></td><td>Ketimpangan sosial, resiko monopoli swasta</td><td>Kurang inovasi, birokrasi kaku, <em>brain drain</em></td></tr>
+        </table>
+    </div>
+
+    <div class="highlight blue">
+        <h4>💡 Mixed Economy (Ekonomi Campuran)</h4>
+        <p>Hampir tidak ada negara yang 100% Kapitalis murni atau Komunis murni. Sebagian besar negara menggunakan <strong>Mixed Economy</strong> (termasuk Indonesia), di mana pasar bebas berjalan tetapi pemerintah tetap mengintervensi fasilitas umum dan regulasi vital (PLN, Pertamina, dll).</p>
+    </div>
+</div>
+
+<!-- ===== SECTION 3 ===== -->
+<div class="section" id="s3">
+    <h2><span class="icon">📈</span> 3. Mekanisme Pasar: Supply & Demand</h2>
+
+    <div class="table-wrap">
+        <table>
+            <tr><th>Konsep</th><th>Definisi</th><th>Hukum</th></tr>
+            <tr>
+                <td><strong>Demand (Permintaan)</strong></td>
+                <td>Jumlah barang/jasa yang **ingin & mampu dibeli** konsumen pada tingkat harga tertentu</td>
+                <td>Harga naik ↑ → Permintaan turun ↓ (berbanding terbalik)</td>
+            </tr>
+            <tr>
+                <td><strong>Supply (Penawaran)</strong></td>
+                <td>Jumlah barang/jasa yang **ingin & mampu dijual** produsen pada tingkat harga tertentu</td>
+                <td>Harga naik ↑ → Penawaran naik ↑ (sebanding)</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="equation">
+        <div class="formula"><span class="eq-emerald">Equilibrium Price</span> = Titik temu kVA Demand & Supply</div>
+        <div class="sub">Di titik ini, jumlah yang ingin dibeli konsumen pas dengan jumlah yang ingin dijual produsen.</div>
+    </div>
+</div>
+
+<!-- ===== SECTION 4 ===== -->
+<div class="section" id="s4">
+    <h2><span class="icon">🥊</span> 4. Empat Tingkat Kompetisi Pasar</h2>
+
+    <div class="table-wrap">
+        <table>
+            <tr><th>Tingkat Kompetisi</th><th>Ciri-ciri Utama</th><th>Contoh</th></tr>
+            <tr>
+                <td><strong>Perfect Competition</strong></td>
+                <td>Sangat banyak penjual & pembeli, produk persis sama (identik), harga ditentukan pasar</td>
+                <td>Pasar komoditas beras, sayur, gandum</td>
+            </tr>
+            <tr>
+                <td><strong>Monopolistic Competition</strong></td>
+                <td>Banyak penjual, produk serupa tapi ter-diferensiasi (berbeda merek/kemasan/rasa)</td>
+                <td>Restoran cepat saji, kopi kekinian, kafe</td>
+            </tr>
+            <tr>
+                <td><strong>Oligopoly</strong></td>
+                <td>Hanya sedikit (beberapa) penjual besar yang mendominasi seluruh industri</td>
+                <td>Provider Telekomunikasi (Telkomsel, Indosat, XL), Industri Penerbangan</td>
+            </tr>
+            <tr>
+                <td><strong>Monopoly</strong></td>
+                <td>Hanya SATU penjual yang mengontrol seluruh penawaran barang/jasa tanpa substitusi dekat</td>
+                <td>PLN (Listrik), PT KAI (Kereta Api penumpang)</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- ===== SECTION 5 ===== -->
+<div class="section" id="s5">
+    <h2><span class="icon">🔄</span> 5. Indikator Ekonomi & Business Cycle</h2>
+
+    <h3>4 Jenis Pengangguran (Unemployment):</h3>
+    <ul>
+        <li><strong>Frictional Unemployment:</strong> Pengangguran sementara karena sedang transisi/pindah kerja mencari yang lebih cocok.</li>
+        <li><strong>Structural Unemployment:</strong> Pengangguran akibat ketidakcocokan skill (keterampilan) pekerja dengan kebutuhan industri (misal: akibat otomasi).</li>
+        <li><strong>Cyclical Unemployment:</strong> Pengangguran akibat penurunan siklus ekonomi (resesi/krisis).</li>
+        <li><strong>Seasonal Unemployment:</strong> Pengangguran akibat perubahan musim (misal: petani saat bukan musim panen).</li>
+    </ul>
+
+    <h3>Indikator Inflasi & Pertumbuhan:</h3>
+    <ul>
+        <li><strong>GDP (Gross Domestic Product):</strong> Total nilai barang & jasa akhir yang diproduksi suatu negara dalam 1 tahun.</li>
+        <li><strong>Inflation (Inflasi):</strong> Kenaikan harga barang/jasa secara umum dan terus menerus.</li>
+        <li><strong>Deflation (Deflasi):</strong> Penurunan harga barang/jasa secara umum.</li>
+        <li><strong>Stagflation (Stagflasi):</strong> Kondisi ekonomi stagnan/lambat tetapi inflasi tetap tinggi.</li>
+    </ul>
+
+    <h3>Business Cycle (Siklus Bisnis):</h3>
+    <p>Pergerakan ekonomi naik-turun yang terdiri dari 4 fase: <strong>Boom (Expansion) → Recession → Depression → Recovery</strong>.</p>
+</div>
+
+<!-- ===== SECTION 6 ===== -->
+<div class="section" id="s6">
+    <h2><span class="icon">⚖️</span> 6. Etika Bisnis & Whistleblower</h2>
+    <p><strong>Ethics (Etika)</strong> adalah standar moral dan perilaku yang diterima masyarakat tentang apa yang benar vs salah.</p>
+
+    <div class="highlight rose">
+        <h4>🚨 3 Pertanyaan Dilema Etis</h4>
+        <ol>
+            <li>Apakah tindakan ini <strong>legal</strong>?</li>
+            <li>Apakah tindakan ini <strong>seimbang / adil</strong> bagi semua pihak?</li>
+            <li>Bagaimana perasaan saya terhadap <strong>diri sendiri</strong> setelah melakukannya?</li>
+        </ol>
+    </div>
+
+    <h3>Kode Etik Perusahaan:</h3>
+    <ul>
+        <li><strong>Compliance-Based Ethics Code:</strong> Fokus mencegah perilaku ilegal dengan membuat aturan ketat & hukuman jelas.</li>
+        <li><strong>Integrity-Based Ethics Code:</strong> Fokus mendefinisikan nilai-nilai bersama, mendukung perilaku etis, dan akuntabilitas.</li>
+    </ul>
+
+    <p><strong>Whistleblower:</strong> Karyawan atau orang dalam yang melaporkan tindakan ilegal/tidak etis perusahaan ke pihak berwenang atau publik. Mereka harus dilindungi oleh hukum.</p>
+</div>
+
+<!-- ===== SECTION 7 ===== -->
+<div class="section" id="s7">
+    <h2><span class="icon">🌱</span> 7. Corporate Social Responsibility (CSR)</h2>
+    <p><strong>CSR</strong> adalah komitmen bisnis untuk berkontribusi pada pembangunan ekonomi berkelanjutan dan kesejahteraan masyarakat.</p>
+
+    <div class="table-wrap">
+        <table>
+            <tr><th>Bentuk Tanggung Jawab</th><th>Penjelasan</th></tr>
+            <tr><td><strong>Corporate Philanthropy</strong></td><td>Sumbangan / donasi amal langsung ke lembaga sosial</td></tr>
+            <tr><td><strong>Corporate Social Initiatives</strong></td><td>Program sosial yang berkaitan langsung dengan kompetensi utama perusahaan</td></tr>
+            <tr><td><strong>Corporate Responsibility</strong></td><td>Tanggung jawab operasional (keselamatan kerja, produk aman, lingkungan)</td></tr>
+            <tr><td><strong>Social Audit</strong></td><td>Evaluasi sistematis tentang sejauh mana perusahaan menerapkan program sosialnya</td></tr>
+        </table>
+    </div>
+</div>
+
+<!-- ===== KEY POINTS ===== -->
+<div class="section" id="kp">
+    <div class="key-points">
+        <h3>🔑 POIN-POIN PENTING TOPIK 2</h3>
+        <ol>
+            <li>Makroekonomi = skala negara/keseluruhan; Mikroekonomi = skala bisnis/individu.</li>
+            <li>Kapitalisme dikendalikan oleh pasar; Command economy dikendalikan oleh pemerintah.</li>
+            <li>Hukum Demand: Harga naik → Permintaan turun. Hukum Supply: Harga naik → Penawaran naik.</li>
+            <li>4 Tingkat Pasar: Perfect Competition, Monopolistic Competition, Oligopoly, Monopoly.</li>
+            <li>4 Pengangguran: Frictional (transisi), Structural (skill mismatch), Cyclical (resesi), Seasonal (musiman).</li>
+            <li>Compliance Ethics = cegah hukum; Integrity Ethics = bangun nilai & etika positif.</li>
+            <li>Whistleblower = pelapor pelanggaran internal yang wajib dilindungi.</li>
+        </ol>
+    </div>
+</div>
+
+<!-- ===== MEMORY TIPS ===== -->
+<div class="section" id="mt">
+    <div class="memory-tips">
+        <h3>🧠 TIPS MENGHAFAL</h3>
+        <ol>
+            <li><strong>"FSCS"</strong> untuk 4 jenis pengangguran: <strong>F</strong>rictional (fleksibel/pindah), <strong>S</strong>tructural (skill beda), <strong>C</strong>yclical (cycle/resesi), <strong>S</strong>easonal (saat musim).</li>
+            <li><strong>"PMOM"</strong> untuk 4 kompetisi: <strong>P</strong>erfect (banyak seragam), <strong>M</strong>onopolistic (banyak beda merk), <strong>O</strong>ligopoly (beberapa raksasa), <strong>M</strong>onopoly (hanya 1).</li>
+            <li><strong>Demand vs Supply</strong>: Konsumen pengen HARGA MURAH (Demand terbalik dengan harga), Penjual pengen HARGA MAHAL (Supply searah dengan harga).</li>
+        </ol>
+    </div>
+</div>
+
+<!-- ===== CONTOH SOAL ===== -->
+<div class="section" id="ex">
+    <h2><span class="icon">📝</span> Contoh Soal & Pembahasan</h2>
+
+    <div class="example">
+        <h3>Soal 1</h3>
+        <p><strong>Seorang pekerja pabrik kehilangan pekerjaan karena posisinya digantikan oleh robot otomatisasi. Jenis pengangguran ini disebut...</strong></p>
+        <p>A. Frictional Unemployment<br>B. Structural Unemployment<br>C. Cyclical Unemployment<br>D. Seasonal Unemployment</p>
+        <p><strong>Jawaban: B</strong></p>
+        <p><strong>Pembahasan:</strong> Structural Unemployment terjadi akibat perubahan struktur ekonomi atau teknologi yang membuat keterampilan pekerja tidak lagi sesuai (mismatch skill).</p>
+    </div>
+
+    <div class="example">
+        <h3>Soal 2</h3>
+        <p><strong>Pasar di mana terdapat beberapa perusahaan besar yang mendominasi industri telekomunikasi (seperti Telkomsel, Indosat, XL) termasuk ke dalam bentuk...</strong></p>
+        <p>A. Perfect Competition<br>B. Monopolistic Competition<br>C. Oligopoly<br>D. Monopoly</p>
+        <p><strong>Jawaban: C</strong></p>
+        <p><strong>Pembahasan:</strong> Oligopoly adalah pasar yang dikuasai oleh sedikit (beberapa) perusahaan besar.</p>
+    </div>
+</div>
+
+<!-- ===== QUIZ ===== -->
+<div class="quiz-section" id="quiz">
+    <h2>🎯 Latihan Soal Interaktif — Topik 2</h2>
+    <p class="subtitle">Kerjakan 10 soal, lalu klik "Lihat Hasil" untuk melihat skor dan pembahasanmu. Jawaban tersimpan otomatis.</p>
+
+    <form id="quizForm">
+        <div class="q-card" id="q1"><div class="q-num">Soal 1</div><div class="q-text">Studi yang mempelajari keputusan ekonomi individu, rumah tangga, dan perusahaan tertentu disebut...</div><div class="q-options"><label><input type="radio" name="q1" value="a"> Makroekonomi</label><label><input type="radio" name="q1" value="b"> Mikroekonomi</label><label><input type="radio" name="q1" value="c"> Ekometrika</label><label><input type="radio" name="q1" value="d"> Ekonomi Pembangunan</label></div><div class="q-feedback" id="fb1"></div></div>
+
+        <div class="q-card" id="q2"><div class="q-num">Soal 2</div><div class="q-text">Dalam sistem ekonomi pasar bebas (Kapitalisme), alokasi sumber daya terutama ditentukan oleh...</div><div class="q-options"><label><input type="radio" name="q2" value="a"> Keputusan pemerintah</label><label><input type="radio" name="q2" value="b"> Interaksi permintaan dan penawaran di pasar</label><label><input type="radio" name="q2" value="c"> Lembaga nirlaba</label><label><input type="radio" name="q2" value="d"> Perencanaan terpusat</label></div><div class="q-feedback" id="fb2"></div></div>
+
+        <div class="q-card" id="q3"><div class="q-num">Soal 3</div><div class="q-text">Hukum permintaan menyatakan bahwa jika harga suatu barang naik, maka jumlah permintaan akan...</div><div class="q-options"><label><input type="radio" name="q3" value="a"> Naik</label><label><input type="radio" name="q3" value="b"> Turun</label><label><input type="radio" name="q3" value="c"> Tetap</label><label><input type="radio" name="q3" value="d"> Tidak terpengaruh</label></div><div class="q-feedback" id="fb3"></div></div>
+
+        <div class="q-card" id="q4"><div class="q-num">Soal 4</div><div class="q-text">Struktur pasar di mana hanya ada SATU produsen yang mengontrol seluruh penjualan tanpa ada barang pengganti adalah...</div><div class="q-options"><label><input type="radio" name="q4" value="a"> Monopoly</label><label><input type="radio" name="q4" value="b"> Oligopoly</label><label><input type="radio" name="q4" value="c"> Perfect Competition</label><label><input type="radio" name="q4" value="d"> Monopolistic Competition</label></div><div class="q-feedback" id="fb4"></div></div>
+
+        <div class="q-card" id="q5"><div class="q-num">Soal 5</div><div class="q-text">Pengangguran akibat resesi ekonomi dan penurunan aktivitas bisnis secara umum disebut...</div><div class="q-options"><label><input type="radio" name="q5" value="a"> Frictional Unemployment</label><label><input type="radio" name="q5" value="b"> Structural Unemployment</label><label><input type="radio" name="q5" value="c"> Cyclical Unemployment</label><label><input type="radio" name="q5" value="d"> Seasonal Unemployment</label></div><div class="q-feedback" id="fb5"></div></div>
+
+        <div class="q-card" id="q6"><div class="q-num">Soal 6</div><div class="q-text">Kondisi ekonomi di mana terjadi kenaikan harga-harga secara umum dan terus-menerus disebut...</div><div class="q-options"><label><input type="radio" name="q6" value="a"> Deflasi</label><label><input type="radio" name="q6" value="b"> Inflasi</label><label><input type="radio" name="q6" value="c"> Resesi</label><label><input type="radio" name="q6" value="d"> Stagnasi</label></div><div class="q-feedback" id="fb6"></div></div>
+
+        <div class="q-card" id="q7"><div class="q-num">Soal 7</div><div class="q-text">Seseorang yang melaporkan praktik kecurangan atau ilegal di dalam tempat kerjanya ke pihak luar/otoritas disebut...</div><div class="q-options"><label><input type="radio" name="q7" value="a"> Free rider</label><label><input type="radio" name="q7" value="b"> Whistleblower</label><label><input type="radio" name="q7" value="c"> Stakeholder</label><label><input type="radio" name="q7" value="d"> Shareholder</label></div><div class="q-feedback" id="fb7"></div></div>
+
+        <div class="q-card" id="q8"><div class="q-num">Soal 8</div><div class="q-text">Kode etik perusahaan yang berfokus mencegah kecurangan dengan menciptakan hukum & sanksi tegas disebut...</div><div class="q-options"><label><input type="radio" name="q8" value="a"> Integrity-based ethics code</label><label><input type="radio" name="q8" value="b"> Compliance-based ethics code</label><label><input type="radio" name="q8" value="c"> Social audit code</label><label><input type="radio" name="q8" value="d"> Morality code</label></div><div class="q-feedback" id="fb8"></div></div>
+
+        <div class="q-card" id="q9"><div class="q-num">Soal 9</div><div class="q-text">Evaluasi sistematis mengenai efektivitas pelaksanaan program tanggung jawab sosial perusahaan dinamakan...</div><div class="q-options"><label><input type="radio" name="q9" value="a"> Financial Audit</label><label><input type="radio" name="q9" value="b"> Social Audit</label><label><input type="radio" name="q9" value="c"> Environmental Impact Assessment</label><label><input type="radio" name="q9" value="d"> Compliance Audit</label></div><div class="q-feedback" id="fb9"></div></div>
+
+        <div class="q-card" id="q10"><div class="q-num">Soal 10</div><div class="q-text">Pasar persaingan monopolistik (Monopolistic Competition) ditandai dengan...</div><div class="q-options"><label><input type="radio" name="q10" value="a"> Satu penjual tunggal</label><label><input type="radio" name="q10" value="b"> Produk identik tanpa perbedaan merk</label><label><input type="radio" name="q10" value="c"> Banyak penjual dengan produk serupa namun terdiferensiasi</label><label><input type="radio" name="q10" value="d"> Hambatan masuk pasar yang sangat tinggi</label></div><div class="q-feedback" id="fb10"></div></div>
+
+        <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:24px;">
+            <button type="button" class="btn btn-primary" onclick="checkQuiz()">📊 Lihat Hasil</button>
+            <button type="button" class="btn btn-secondary" onclick="resetQuiz()">🔄 Reset</button>
+        </div>
+    </form>
+
+    <div class="results-box" id="resultsBox">
+        <div class="score-display">
+            <div class="score-num" id="scoreNum"></div>
+            <div class="score-label" id="scoreLabel"></div>
+        </div>
+    </div>
+</div>
+
+<div class="bottom-nav">
+    <a href="topik-01.html">← Topik 1: Taking Risks</a>
+    <a href="topik-03.html">Topik 3: Forming a Business →</a>
+</div>
+
+</div>
+
+<script>
+const STORAGE_KEY = 'manbis_t02_quiz';
+const answers = {q1:'b',q2:'b',q3:'b',q4:'a',q5:'c',q6:'b',q7:'b',q8:'b',q9:'b',q10:'c'};
+const explanations = {
+    q1: 'Mikroekonomi mempelajari unit-unit kecil seperti keputusan individu & perusahaan.',
+    q2: 'Sistem kapitalisme bergantung pada mekanisme pasar (supply & demand).',
+    q3: 'Hukum permintaan: Harga naik → Permintaan turun.',
+    q4: 'Monopoly adalah kondisi pasar dengan hanya 1 produsen tunggal.',
+    q5: 'Cyclical unemployment berhubungan langsung dengan gelombang krisis/resesi ekonomi.',
+    q6: 'Inflasi adalah kenaikan harga umum secara terus menerus.',
+    q7: 'Whistleblower adalah istilah bagi pelapor kecurangan internal.',
+    q8: 'Compliance-based berfokus pada pencegahan lewat aturan & kepatuhan sanksi.',
+    q9: 'Social Audit dilakukan untuk menilai efektivitas program sosial/CSR.',
+    q10: 'Monopolistic competition memiliki banyak penjual dengan barang terdiferensiasi (merk/kemasan).'
+};
+
+function saveAnswers() {
+    const data = {};
+    for (let i = 1; i <= 10; i++) {
+        const sel = document.querySelector(`input[name="q${i}"]:checked`);
+        if (sel) data[`q${i}`] = sel.value;
+    }
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+}
+
+function loadAnswers() {
+    const data = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+    for (const [key, val] of Object.entries(data)) {
+        const radio = document.querySelector(`input[name="${key}"][value="${val}"]`);
+        if (radio) radio.checked = true;
+    }
+}
+
+function checkQuiz() {
+    saveAnswers();
+    let score = 0;
+    const total = 10;
+    for (let i = 1; i <= total; i++) {
+        const sel = document.querySelector(`input[name="q${i}"]:checked`);
+        const fb = document.getElementById(`fb${i}`);
+        const card = document.getElementById(`q${i}`);
+        const correct = answers[`q${i}`];
+        card.classList.remove('correct','wrong');
+        if (sel && sel.value === correct) {
+            score++;
+            card.classList.add('correct');
+            fb.className = 'q-feedback show correct-fb';
+            fb.innerHTML = `✅ <strong>Benar!</strong> ${explanations['q'+i]}`;
+        } else {
+            card.classList.add('wrong');
+            fb.className = 'q-feedback show wrong-fb';
+            const userAns = sel ? sel.value.toUpperCase() : '—';
+            fb.innerHTML = `❌ <strong>Salah.</strong> Jawabanmu: ${userAns}. Jawaban benar: <strong>${correct.toUpperCase()}</strong>. ${explanations['q'+i]}`;
+        }
+    }
+    const pct = Math.round((score/total)*100);
+    const box = document.getElementById('resultsBox');
+    const num = document.getElementById('scoreNum');
+    const lbl = document.getElementById('scoreLabel');
+    num.textContent = `${score}/${total}`;
+    num.className = 'score-num ' + (pct >= 80 ? 'good' : pct >= 60 ? 'ok' : 'bad');
+    lbl.textContent = pct >= 80 ? '🎉 Excellent! Kamu sudah menguasai materi ini!' : pct >= 60 ? '👍 Lumayan! Review lagi bagian yang salah.' : '📖 Perlu belajar lagi. Baca ulang materinya ya!';
+    box.classList.add('show');
+    box.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+function resetQuiz() {
+    localStorage.removeItem(STORAGE_KEY);
+    document.getElementById('quizForm').reset();
+    for (let i = 1; i <= 10; i++) {
+        document.getElementById(`q${i}`).classList.remove('correct','wrong');
+        const fb = document.getElementById(`fb${i}`);
+        fb.className = 'q-feedback';
+        fb.innerHTML = '';
+    }
+    document.getElementById('resultsBox').classList.remove('show');
+}
+
+document.querySelectorAll('input[type="radio"]').forEach(r => r.addEventListener('change', saveAnswers));
+window.addEventListener('DOMContentLoaded', loadAnswers);
+</script>
+</body>
+</html>
