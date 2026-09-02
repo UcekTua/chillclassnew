@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulasi Kuis Exam (PG & Essay) — PENGSTAT-4</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- KaTeX Math Renderer -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true},{left: '$', right: '$', display: false}]});"></script>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+            --bg: #0a0e1a; --bg2: #111827; --card-bg: rgba(17, 24, 39, 0.75);
+            --border: rgba(244, 63, 94, 0.2); --border-h: rgba(244, 63, 94, 0.5);
+            --text: #f1f5f9; --text2: #94a3b8; --text3: #64748b;
+            --blue: #6366f1; --cyan: #06b6d4; --violet: #8b5cf6;
+            --emerald: #10b981; --amber: #f59e0b; --rose: #f43f5e;
+            --grad: linear-gradient(135deg, #f43f5e, #8b5cf6);
+        }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.75; overflow-x: hidden; }
+        .bg-orbs { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; overflow: hidden; pointer-events: none; }
+        .bg-orbs span { position: absolute; border-radius: 50%; filter: blur(90px); opacity: 0.12; }
+        .bg-orbs span:nth-child(1) { width: 600px; height: 600px; background: var(--rose); top: -10%; left: -10%; }
+        .bg-orbs span:nth-child(2) { width: 500px; height: 500px; background: var(--violet); bottom: -10%; right: -10%; }
+
+        .wrapper { position: relative; z-index: 1; max-width: 960px; margin: 0 auto; padding: 30px 24px 80px; }
+        .topnav { display: flex; align-items: center; justify-content: space-between; margin-bottom: 36px; padding: 14px 24px; background: rgba(10, 14, 26, 0.85); backdrop-filter: blur(12px); border-radius: 100px; border: 1px solid var(--border); position: sticky; top: 16px; z-index: 100; }
+        .topnav a { color: var(--text2); text-decoration: none; font-size: 0.88rem; font-weight: 600; transition: color 0.3s; }
+        .topnav a:hover { color: var(--rose); }
+
+        .ch-header { text-align: center; margin-bottom: 40px; }
+        .ch-badge { display: inline-block; padding: 5px 14px; border-radius: 100px; background: rgba(244, 63, 94, 0.12); border: 1px solid rgba(244, 63, 94, 0.25); color: var(--rose); font-size: 0.78rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 14px; }
+        .ch-header h1 { font-size: clamp(1.8rem, 4vw, 2.7rem); font-weight: 900; background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 12px; }
+        .ch-header p { color: var(--text2); max-width: 680px; margin: 0 auto; font-size: 0.98rem; }
+
+        .results-box { background: var(--card-bg); border: 1px solid var(--rose); border-radius: 24px; padding: 36px; margin-bottom: 36px; display: none; text-align: center; backdrop-filter: blur(20px); }
+        .results-box.show { display: block; animation: fadeIn 0.5s ease-out; }
+        .score-num { font-size: 3.8rem; font-weight: 900; background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        
+        .q-card { background: var(--card-bg); backdrop-filter: blur(16px); border: 1px solid var(--border); border-radius: 20px; padding: 32px; margin-bottom: 28px; transition: border-color 0.3s; }
+        .q-card.reviewed { border-color: var(--emerald) !important; }
+        .q-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+        .q-num { font-size: 0.8rem; font-weight: 800; color: var(--rose); text-transform: uppercase; letter-spacing: 1px; }
+        .q-points { font-size: 0.75rem; padding: 3px 10px; border-radius: 100px; background: rgba(244, 63, 94, 0.1); color: var(--rose); border: 1px solid rgba(244, 63, 94, 0.2); }
+        
+        .q-title { font-size: 1.1rem; font-weight: 700; color: var(--text); margin-bottom: 16px; line-height: 1.6; }
+        .q-card label { display: flex; align-items: flex-start; gap: 10px; padding: 10px 14px; border-radius: 10px; cursor: pointer; color: var(--text2); font-size: 0.92rem; margin-bottom: 8px; border: 1px solid rgba(148, 163, 184, 0.08); transition: background 0.2s; }
+        .q-card label:hover { background: rgba(244, 63, 94, 0.08); }
+        
+        textarea { width: 100%; height: 140px; background: rgba(10, 14, 26, 0.85); border: 1px solid var(--border); border-radius: 12px; color: var(--text); padding: 14px; font-family: inherit; font-size: 0.92rem; resize: vertical; margin-bottom: 16px; line-height: 1.6; }
+        textarea:focus { outline: none; border-color: var(--rose); }
+
+        .rubric-box { display: none; background: rgba(17, 24, 39, 0.95); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 14px; padding: 20px; margin-top: 16px; font-size: 0.92rem; }
+        .rubric-box.show { display: block; }
+        .rubric-box h5 { color: var(--emerald); font-size: 0.95rem; font-weight: 800; margin-bottom: 8px; }
+        .model-ans { color: var(--text2); line-height: 1.7; background: rgba(10, 14, 26, 0.6); padding: 14px; border-radius: 10px; border-left: 3px solid var(--emerald); margin-top: 8px; }
+
+        .feedback-box { display: none; padding: 12px 16px; border-radius: 10px; margin-top: 10px; font-size: 0.88rem; }
+        .feedback-box.show { display: block; }
+        .feedback-box.correct { background: rgba(16, 185, 129, 0.1); border: 1px solid var(--emerald); color: var(--emerald); }
+        .feedback-box.wrong { background: rgba(244, 63, 94, 0.1); border: 1px solid var(--rose); color: var(--rose); }
+
+        .btn { display: inline-flex; align-items: center; justify-content: center; width: 100%; padding: 18px; border: none; border-radius: 14px; font-family: inherit; font-size: 1.05rem; font-weight: 800; cursor: pointer; transition: all 0.3s; }
+        .btn-primary { background: var(--grad); color: #fff; box-shadow: 0 10px 25px rgba(244, 63, 94, 0.25); }
+        .btn-primary:hover { opacity: 0.95; transform: translateY(-2px); }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body>
+<div class="bg-orbs"><span></span><span></span></div>
+<div class="wrapper">
+
+    <nav class="topnav">
+        <a href="index.html">🏠 Hub PENGSTAT</a>
+        <span style="color:var(--text3);">|</span>
+        <span style="color:var(--rose); font-weight:700;">🔥 Simulasi Kuis (PG & Essay)</span>
+    </nav>
+
+    <header class="ch-header">
+        <div class="ch-badge">SIMULASI UJIAN LENGKAP PENGSTAT-4</div>
+        <h1>Simulasi Kuis Exam (Pilihan Ganda & Essay)</h1>
+        <p>Uji kesiapan penuhmu dengan mengerjakan 12 Soal Pilihan Ganda (PG) dan 6 Soal Ujian Essay. Setelah disubmit, skor PG akan dihitung otomatis serta Model Jawaban Dosen dan Rubrik Evaluasi Essay akan ditampilkan. Jawabanmu tersimpan di browser!</p>
+    </header>
+
+    <div class="results-box" id="resultsBox">
+        <h2 style="font-size: 1.5rem; margin-bottom: 8px;">🎉 Evaluasi Ujian Selesai!</h2>
+        <div class="score-num" id="scoreNum">0 / 100</div>
+        <p id="scoreMsg" style="color: var(--text2); margin-top: 10px; font-size: 0.95rem;">Review lengkap soal Pilihan Ganda dan Ujian Essay di bawah ini.</p>
+    </div>
+
+    <form id="kuisForm">
+        
+        <!-- BAGIAN I: PILIHAN GANDA (12 SOAL) -->
+        <h2 style="color: var(--rose); margin-bottom: 24px; font-size: 1.5rem; border-bottom: 1px solid rgba(244,63,94,0.2); padding-bottom: 10px;">
+            Bagian I: Soal Pilihan Ganda (12 Soal)
+        </h2>
+
+        <!-- PG 1 -->
+        <div class="q-card" id="card-pg1">
+            <div class="q-meta"><span class="q-num">Materi 1 — PG 1</span></div>
+            <div class="q-title">1. Manakah simbol yang digunakan untuk menyatakan nilai Rata-Rata Populasi dan Rata-Rata Sampel secara berurutan?</div>
+            <label><input type="radio" name="pg1" value="A"> A. $\mu$ dan $M$ (atau $\bar{X}$)</label>
+            <label><input type="radio" name="pg1" value="B"> B. $M$ dan $\mu$</label>
+            <label><input type="radio" name="pg1" value="C"> C. $\sigma$ dan $s$</label>
+            <label><input type="radio" name="pg1" value="D"> D. $N$ dan $n$</label>
+            <div id="fb-pg1" class="feedback-box"></div>
+        </div>
+
+        <!-- PG 2 -->
+        <div class="q-card" id="card-pg2">
+            <div class="q-meta"><span class="q-num">Materi 1 — PG 2</span></div>
+            <div class="q-title">2. Metode penelitian manakah yang secara khusus mampu membuktikan hubungan sebab-akibat (causation)?</div>
+            <label><input type="radio" name="pg2" value="A"> A. Metode Korelasional</label>
+            <label><input type="radio" name="pg2" value="B"> B. Metode Eksperimental</label>
+            <label><input type="radio" name="pg2" value="C"> C. Metode Observasional</label>
+            <label><input type="radio" name="pg2" value="D"> D. Metode Survei Deskriptif</label>
+            <div id="fb-pg2" class="feedback-box"></div>
+        </div>
+
+        <!-- PG 3 -->
+        <div class="q-card" id="card-pg3">
+            <div class="q-meta"><span class="q-num">Materi 2 — PG 3</span></div>
+            <div class="q-title">3. Pada jenis grafik manakah antar batang diwajibkan digambar MENEMPEL rapat tanpa celah?</div>
+            <label><input type="radio" name="pg3" value="A"> A. Bar Graph</label>
+            <label><input type="radio" name="pg3" value="B"> B. Histogram</label>
+            <label><input type="radio" name="pg3" value="C"> C. Pie Chart</label>
+            <label><input type="radio" name="pg3" value="D"> D. Poligon</label>
+            <div id="fb-pg3" class="feedback-box"></div>
+        </div>
+
+        <!-- PG 4 -->
+        <div class="q-card" id="card-pg4">
+            <div class="q-meta"><span class="q-num">Materi 2 — PG 4</span></div>
+            <div class="q-title">4. Jika ekor suatu kurva distribusi frekuensi memanjang ke arah KANAN (nilai positif tinggi), kurva tersebut dinamakan...</div>
+            <label><input type="radio" name="pg4" value="A"> A. Symmetrical</label>
+            <label><input type="radio" name="pg4" value="B"> B. Negatively Skewed</label>
+            <label><input type="radio" name="pg4" value="C"> C. Positively Skewed</label>
+            <label><input type="radio" name="pg4" value="D"> D. Bimodal</label>
+            <div id="fb-pg4" class="feedback-box"></div>
+        </div>
+
+        <!-- PG 5 -->
+        <div class="q-card" id="card-pg5">
+            <div class="q-meta"><span class="q-num">Materi 3 — PG 5</span></div>
+            <div class="q-title">5. Ukuran pemusatan data manakah yang paling resisten / tidak terpengaruh oleh keberadaan nilai ekstrem (outlier)?</div>
+            <label><input type="radio" name="pg5" value="A"> A. Mean</label>
+            <label><input type="radio" name="pg5" value="B"> B. Median</label>
+            <label><input type="radio" name="pg5" value="C"> C. Weighted Mean</label>
+            <label><input type="radio" name="pg5" value="D"> D. Deviasi Standar</label>
+            <div id="fb-pg5" class="feedback-box"></div>
+        </div>
+
+        <!-- PG 6 -->
+        <div class="q-card" id="card-pg6">
+            <div class="q-meta"><span class="q-num">Materi 3 — PG 6</span></div>
+            <div class="q-title">6. Pada kurva Positively Skewed, manakah urutan nilai yang benar dari posisi puncak hingga ekor paling kanan?</div>
+            <label><input type="radio" name="pg6" value="A"> A. Mode < Median < Mean</label>
+            <label><input type="radio" name="pg6" value="B"> B. Mean < Median < Mode</label>
+            <label><input type="radio" name="pg6" value="C"> C. Median < Mode < Mean</label>
+            <label><input type="radio" name="pg6" value="D"> D. Mode = Median = Mean</label>
+            <div id="fb-pg6" class="feedback-box"></div>
+        </div>
+
+        <!-- PG 7 -->
+        <div class="q-card" id="card-pg7">
+            <div class="q-meta"><span class="q-num">Materi 4 — PG 7</span></div>
+            <div class="q-title">7. Mengapa rumus varians sampel menggunakan pembagi derajat kebebasan $df = n - 1$ bukannya $n$?</div>
+            <label><input type="radio" name="pg7" value="A"> A. Agar hasilnya selalu bernilai bulat</label>
+            <label><input type="radio" name="pg7" value="B"> B. Agar sampel varians menjadi Unbiased Estimator bagi varians populasi</label>
+            <label><input type="radio" name="pg7" value="C"> C. Karena varians populasi bernilai nol</label>
+            <label><input type="radio" name="pg7" value="D"> D. Agar nilai SS menjadi lebih kecil</label>
+            <div id="fb-pg7" class="feedback-box"></div>
+        </div>
+
+        <!-- PG 8 -->
+        <div class="q-card" id="card-pg8">
+            <div class="q-meta"><span class="q-num">Materi 4 — PG 8</span></div>
+            <div class="q-title">8. Jika setiap skor dalam distribusi ditambahkan dengan angka konstanta C = +5, maka Deviasi Standar ($s$) akan...</div>
+            <label><input type="radio" name="pg8" value="A"> A. Bertambah 5 poin</label>
+            <label><input type="radio" name="pg8" value="B"> B. Berkurang 5 poin</label>
+            <label><input type="radio" name="pg8" value="C"> C. Berkelipatan 5 kali</label>
+            <label><input type="radio" name="pg8" value="D"> D. Tidak berubah sama sekali</label>
+            <div id="fb-pg8" class="feedback-box"></div>
+        </div>
+
+        <!-- PG 9 -->
+        <div class="q-card" id="card-pg9">
+            <div class="q-meta"><span class="q-num">Materi 5 — PG 9</span></div>
+            <div class="q-title">9. Berapakah nilai Rata-Rata ($\mu_z$) dan Deviasi Standar ($\sigma_z$) dari sebuah distribusi terstandar $z$-score?</div>
+            <label><input type="radio" name="pg9" value="A"> A. $\mu_z = 0$ dan $\sigma_z = 1$</label>
+            <label><input type="radio" name="pg9" value="B"> B. $\mu_z = 100$ dan $\sigma_z = 15$</label>
+            <label><input type="radio" name="pg9" value="C"> C. $\mu_z = 1$ dan $\sigma_z = 0$</label>
+            <label><input type="radio" name="pg9" value="D"> D. $\mu_z = 50$ dan $\sigma_z = 10$</label>
+            <div id="fb-pg9" class="feedback-box"></div>
+        </div>
+
+        <!-- PG 10 -->
+        <div class="q-card" id="card-pg10">
+            <div class="q-meta"><span class="q-num">Materi 5 — PG 10</span></div>
+            <div class="q-title">10. Sebuah skor mentah $X$ memiliki $z = +2.0$ pada populasi dengan $\mu = 50$ dan $\sigma = 10$. Berapakah nilai skor mentah $X$?</div>
+            <label><input type="radio" name="pg10" value="A"> A. 60</label>
+            <label><input type="radio" name="pg10" value="B"> B. 70</label>
+            <label><input type="radio" name="pg10" value="C"> C. 40</label>
+            <label><input type="radio" name="pg10" value="D"> D. 30</label>
+            <div id="fb-pg10" class="feedback-box"></div>
+        </div>
+
+        <!-- PG 11 -->
+        <div class="q-card" id="card-pg11">
+            <div class="q-meta"><span class="q-num">Materi 6 — PG 11</span></div>
+            <div class="q-title">11. Berdasarkan Golden Rule of Percentiles, angka Persentase Kumulatif ($c\%$) SELALU berkorespondensi tepat pada titik...</div>
+            <label><input type="radio" name="pg11" value="A"> A. Lower Real Limit (LRL)</label>
+            <label><input type="radio" name="pg11" value="B"> B. Upper Real Limit (URL)</label>
+            <label><input type="radio" name="pg11" value="C"> C. Midpoint (Nilai Tengah)</label>
+            <label><input type="radio" name="pg11" value="D"> D. Nilai Skor Mentah Bulat</label>
+            <div id="fb-pg11" class="feedback-box"></div>
+        </div>
+
+        <!-- PG 12 -->
+        <div class="q-card" id="card-pg12">
+            <div class="q-meta"><span class="q-num">Materi 6 — PG 12</span></div>
+            <div class="q-title">12. Peringkat Persentil ke-50 ($P_{50}$) pada distribusi frekuensi memiliki nilai yang TEPAT SAMA dengan...</div>
+            <label><input type="radio" name="pg12" value="A"> A. Mean</label>
+            <label><input type="radio" name="pg12" value="B"> B. Median</label>
+            <label><input type="radio" name="pg12" value="C"> C. Modus</label>
+            <label><input type="radio" name="pg12" value="D"> D. Range</label>
+            <div id="fb-pg12" class="feedback-box"></div>
+        </div>
+
+
+        <!-- BAGIAN II: UJIAN ESSAY (6 SOAL) -->
+        <h2 style="color: var(--rose); margin-top: 40px; margin-bottom: 24px; font-size: 1.5rem; border-bottom: 1px solid rgba(244,63,94,0.2); padding-bottom: 10px;">
+            Bagian II: Soal Ujian Essay (6 Soal Komprehensif)
+        </h2>
+
+        <!-- SOAL ESSAY 1 -->
+        <div class="q-card" id="card-essay1">
+            <div class="q-meta">
+                <span class="q-num">Essay 1 — Materi 1 (Fondasi & Metodologi)</span>
+            </div>
+            <div class="q-title">
+                Jelaskan perbedaan mendasar antara <strong>Populasi vs Sampel</strong> dan <strong>Parameter vs Statistik</strong>! Berikan contoh konkrit fenomena <em>Sampling Error</em> serta jelaskan mengapa <strong>Metode Eksperimental</strong> mampu membuktikan hubungan sebab-akibat (causation) sedangkan Metode Korelasional tidak bisa!
+            </div>
+            <textarea id="ans-essay1" placeholder="Tuliskan jawaban essay lengkapmu di sini..."></textarea>
+            
+            <div class="rubric-box" id="rubric1">
+                <h5>✅ Model Jawaban Dosen & Rubrik Evaluasi Essay 1</h5>
+                <div class="model-ans">
+                    <strong>1. Populasi vs Sampel & Parameter vs Statistik</strong>:<br>
+                    - <em>Populasi</em>: Seluruh himpunan individu/objek fokus studi. Parameter mengukur populasi ($\mu, \sigma$).<br>
+                    - <em>Sampel</em>: Sebagian individu dari populasi. Statistik mengukur sampel ($M, s$).<br><br>
+                    <strong>2. Sampling Error</strong>: Perbedaan alami antara statistik sampel dan parameter populasi (Contoh: Rata-rata IQ populasi $\mu=112.5$ vs Sampel #1 $M=104.6$).<br><br>
+                    <strong>3. Pembuktian Cause-and-Effect</strong>: Metode Eksperimental memanipulasi *Independent Variable (IV)* dan mengontrol *Confounding Variables*, sedangkan Metode Korelasional hanya mengamati tanpa kontrol.
+                </div>
+            </div>
+        </div>
+
+        <!-- SOAL ESSAY 2 -->
+        <div class="q-card" id="card-essay2">
+            <div class="q-meta">
+                <span class="q-num">Essay 2 — Materi 2 (Distribusi Frekuensi & Skewness)</span>
+            </div>
+            <div class="q-title">
+                Peneliti menemukan bahwa kurva distribusi frekuensi bersifat <strong>Positively Skewed</strong>. Jelaskan ciri visual kurva tersebut, dimana tumpukan nilai terbanyak, ke mana arah ekor memanjang, dan urutan posisi relatif antara Mean, Median, serta Modus!
+            </div>
+            <textarea id="ans-essay2" placeholder="Tuliskan jawaban essay lengkapmu di sini..."></textarea>
+            
+            <div class="rubric-box" id="rubric2">
+                <h5>✅ Model Jawaban Dosen & Rubrik Evaluasi Essay 2</h5>
+                <div class="model-ans">
+                    <strong>1. Bentuk Visual</strong>: Tumpukan skor terbanyak di <strong>KIRI (nilai rendah)</strong>. Ekor kurva memanjang ke <strong>KANAN (nilai tinggi)</strong>.<br>
+                    <strong>2. Urutan Tendensi Sentral</strong>: $$\text{Mode} < \text{Median} < \text{Mean}$$
+                </div>
+            </div>
+        </div>
+
+        <!-- SOAL ESSAY 3 -->
+        <div class="q-card" id="card-essay3">
+            <div class="q-meta">
+                <span class="q-num">Essay 3 — Materi 3 (Tendensi Sentral & Median Presisi)</span>
+            </div>
+            <div class="q-title">
+                Diketahui data kontinu skor $X$: $2, 3, 5, 5, 5, 5, 8, 9$ ($N = 8$).<br>
+                Hitunglah Mean ($\mu$), Modus, dan **Median Presisi Variabel Kontinu** dengan langkah-langkah detail!
+            </div>
+            <textarea id="ans-essay3" placeholder="Tuliskan langkah kalkulasi detailmu di sini..."></textarea>
+            
+            <div class="rubric-box" id="rubric3">
+                <h5>✅ Model Jawaban Dosen & Rubrik Evaluasi Essay 3</h5>
+                <div class="model-ans">
+                    1. Mean $\mu = 42/8 = 5.25$.<br>
+                    2. Modus = 5.<br>
+                    3. Median Presisi Kontinu: Butuh 4 skor. Skor 2, 3 mengambil 2 subjek. Nilai $X=5$ (real limit 4.5 - 5.5) butuh 2 dari 4 subjek. $\text{Median} = 4.5 + (2/4)(1.0) = 5.00$.
+                </div>
+            </div>
+        </div>
+
+        <!-- SOAL ESSAY 4 -->
+        <div class="q-card" id="card-essay4">
+            <div class="q-meta">
+                <span class="q-num">Essay 4 — Materi 4 (Variabilitas & Unbiased Estimator)</span>
+            </div>
+            <div class="q-title">
+                Sampel $n = 5$ memiliki skor: $2, 4, 6, 8, 10$.<br>
+                Hitunglah $SS$, Varians Sampel ($s^2$), Deviasi Standar Sampel ($s$), dan jelaskan mengapa pembaginya harus $df = n - 1$!
+            </div>
+            <textarea id="ans-essay4" placeholder="Tuliskan langkah kalkulasi & penjelasan di sini..."></textarea>
+            
+            <div class="rubric-box" id="rubric4">
+                <h5>✅ Model Jawaban Dosen & Rubrik Evaluasi Essay 4</h5>
+                <div class="model-ans">
+                    1. $M = 6$. Deviasi: $-4, -2, 0, 2, 4$. Kuadrat: $16, 4, 0, 4, 16$.<br>
+                    2. $SS = 40$.<br>
+                    3. Varians Sampel $s^2 = 40/4 = 10.0$.<br>
+                    4. Deviasi Standar $s = \sqrt{10.0} \approx 3.16$.<br>
+                    5. Pembagi $n-1$ menjadikan $s^2$ sebagai **Unbiased Estimator** bagi $\sigma^2$.
+                </div>
+            </div>
+        </div>
+
+        <!-- SOAL ESSAY 5 -->
+        <div class="q-card" id="card-essay5">
+            <div class="q-meta">
+                <span class="q-num">Essay 5 — Materi 5 (z-Scores & Transformasi Skala)</span>
+            </div>
+            <div class="q-title">
+                Skor awal Budi adalah $X = 65$ pada populasi ($\mu = 50, \sigma = 10$). Lembaga Psikologi mengubah seluruh skor ke skala terstandar baru dengan $\mu_{\text{baru}} = 500$ dan $\sigma_{\text{baru}} = 100$. Hitunglah $z$-score Budi dan skor akhirnya pada skala baru!
+            </div>
+            <textarea id="ans-essay5" placeholder="Tuliskan 2 langkah kalkulasi di sini..."></textarea>
+            
+            <div class="rubric-box" id="rubric5">
+                <h5>✅ Model Jawaban Dosen & Rubrik Evaluasi Essay 5</h5>
+                <div class="model-ans">
+                    Langkah 1: $z = (65 - 50)/10 = +1.5$.<br>
+                    Langkah 2: $X_{\text{baru}} = 500 + (+1.5)(100) = 650$.
+                </div>
+            </div>
+        </div>
+
+        <!-- SOAL ESSAY 6 -->
+        <div class="q-card" id="card-essay6">
+            <div class="q-meta">
+                <span class="q-num">Essay 6 — Materi 6 (Interpolasi Linier Persentil)</span>
+            </div>
+            <div class="q-title">
+                Data frekuensi berkelompok $N = 40$:<br>
+                - Interval 30–34: $cf = 40, c\% = 100\%$, URL = 34.5<br>
+                - Interval 25–29: $cf = 30, c\% = 75\%$, URL = 29.5<br>
+                - Interval 20–24: $cf = 10, c\% = 25\%$, URL = 24.5<br>
+                Hitunglah Persentil ke-50 ($P_{50}$ / Median) menggunakan 4-Langkah Interpolasi Linier!
+            </div>
+            <textarea id="ans-essay6" placeholder="Tuliskan 4-langkah kalkulasi detail di sini..."></textarea>
+            
+            <div class="rubric-box" id="rubric6">
+                <h5>✅ Model Jawaban Dosen & Rubrik Evaluasi Essay 6</h5>
+                <div class="model-ans">
+                    1. Target $50\%$ antara $25\%$ (URL 24.5) dan $75\%$ (URL 29.5). Lebar $\Delta c\% = 50\%$, $\Delta X = 5.0$.<br>
+                    2. Fraksi = $(50\% - 25\%)/50\% = 0.5$.<br>
+                    3. Proyeksi Skor = $0.5 \times 5.0 = 2.5$.<br>
+                    4. $P_{50} = 24.5 + 2.5 = 27.0$.
+                </div>
+            </div>
+        </div>
+
+        <button type="button" class="btn btn-primary" onclick="submitSimulasi()">SUBMIT UJIAN PG & ESSAY</button>
+    </form>
+
+</div>
+
+<script>
+    const pgKey = {
+        pg1: 'A', pg2: 'B', pg3: 'B', pg4: 'C',
+        pg5: 'B', pg6: 'A', pg7: 'B', pg8: 'D',
+        pg9: 'A', pg10: 'B', pg11: 'B', pg12: 'B'
+    };
+
+    function submitSimulasi() {
+        let pgCorrectCount = 0;
+        let pgAnswers = {};
+
+        // Grade PG
+        for (let i = 1; i <= 12; i++) {
+            let key = 'pg' + i;
+            let sel = document.querySelector(`input[name="${key}"]:checked`);
+            let fb = document.getElementById('fb-' + i);
+            let val = sel ? sel.value : '';
+            pgAnswers[key] = val;
+
+            if (val === pgKey[key]) {
+                pgCorrectCount++;
+                fb.className = 'feedback-box show correct';
+                fb.innerHTML = `✅ Benar! Jawaban: ${pgKey[key]}`;
+            } else {
+                fb.className = 'feedback-box show wrong';
+                fb.innerHTML = `❌ Salah. Jawaban Benar: ${pgKey[key]}`;
+            }
+        }
+
+        // Check Essays
+        let essayAnswers = {};
+        let filledEssayCount = 0;
+        for (let i = 1; i <= 6; i++) {
+            let val = document.getElementById('ans-essay' + i).value.trim();
+            essayAnswers['essay' + i] = val;
+            if (val.length > 5) filledEssayCount++;
+
+            document.getElementById('card-essay' + i).className = 'q-card reviewed';
+            document.getElementById('rubric' + i).className = 'rubric-box show';
+        }
+
+        let pgScore = Math.round((pgCorrectCount / 12) * 50); // 50 pts PG
+        let essayScore = Math.round((filledEssayCount / 6) * 50); // 50 pts Essay
+        let totalScore = pgScore + essayScore;
+
+        document.getElementById('resultsBox').className = 'results-box show';
+        document.getElementById('scoreNum').innerText = totalScore + ' / 100';
+        document.getElementById('scoreMsg').innerText = `Skor Pilihan Ganda: ${pgScore}/50 (${pgCorrectCount}/12 Benar) | Skor Review Essay: ${essayScore}/50 (${filledEssayCount}/6 Dijawab). Silakan pelajari pembahasan lengkap di bawah!`;
+
+        localStorage.setItem('pengstat_simulasi_full_v2', JSON.stringify({
+            pgAnswers: pgAnswers,
+            essayAnswers: essayAnswers,
+            totalScore: totalScore,
+            submitted: true
+        }));
+
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    window.onload = function() {
+        let saved = localStorage.getItem('pengstat_simulasi_full_v2');
+        if (saved) {
+            let data = JSON.parse(saved);
+            if (data.pgAnswers) {
+                for (let k in data.pgAnswers) {
+                    let val = data.pgAnswers[k];
+                    if (val) {
+                        let r = document.querySelector(`input[name="${k}"][value="${val}"]`);
+                        if (r) r.checked = true;
+                    }
+                }
+            }
+            if (data.essayAnswers) {
+                for (let k in data.essayAnswers) {
+                    let el = document.getElementById('ans-' + k);
+                    if (el) el.value = data.essayAnswers[k];
+                }
+            }
+            if (data.submitted) {
+                submitSimulasi();
+            }
+        }
+    };
+</script>
+</body>
+</html>

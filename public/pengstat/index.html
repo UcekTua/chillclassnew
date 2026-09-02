@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PENGSTAT-4 — Master Class Statistika Deskriptif</title>
+    <meta name="description" content="Platform belajar lengkap persiapan Kuis & Exam Pengantar Statistika (PENGSTAT-4). Materi terperinci, cara cepat menghafal, contoh soal essay, soal pilihan ganda interaktif, dan simulasi ujian lengkap.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- KaTeX Math Renderer -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true},{left: '$', right: '$', display: false}]});"></script>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+            --bg-primary: #0a0e1a;
+            --bg-secondary: #111827;
+            --bg-card: rgba(17, 24, 39, 0.7);
+            --bg-card-hover: rgba(30, 41, 59, 0.9);
+            --border-color: rgba(99, 102, 241, 0.15);
+            --border-hover: rgba(99, 102, 241, 0.4);
+            --text-primary: #f1f5f9;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --accent-blue: #6366f1;
+            --accent-cyan: #06b6d4;
+            --accent-violet: #8b5cf6;
+            --accent-emerald: #10b981;
+            --accent-amber: #f59e0b;
+            --accent-rose: #f43f5e;
+            --gradient-1: linear-gradient(135deg, #6366f1, #06b6d4);
+            --gradient-2: linear-gradient(135deg, #8b5cf6, #ec4899);
+            --gradient-3: linear-gradient(135deg, #10b981, #06b6d4);
+            --gradient-4: linear-gradient(135deg, #f59e0b, #ef4444);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        .bg-orbs {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: 0; pointer-events: none; overflow: hidden;
+        }
+        .orb {
+            position: absolute; border-radius: 50%; filter: blur(100px); opacity: 0.15;
+            animation: orbFloat 20s infinite alternate ease-in-out;
+        }
+        .orb-1 { width: 500px; height: 500px; background: var(--accent-blue); top: -10%; left: -10%; }
+        .orb-2 { width: 600px; height: 600px; background: var(--accent-cyan); bottom: -20%; right: -10%; animation-delay: -5s; }
+        .orb-3 { width: 400px; height: 400px; background: var(--accent-violet); top: 40%; left: 30%; animation-delay: -10s; }
+
+        @keyframes orbFloat {
+            0% { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(50px, 30px) scale(1.1); }
+        }
+
+        .wrapper {
+            position: relative; z-index: 1; max-width: 1200px; margin: 0 auto; padding: 40px 24px 80px;
+        }
+
+        .navbar {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 16px 28px; background: rgba(17, 24, 39, 0.6); backdrop-filter: blur(16px);
+            border: 1px solid var(--border-color); border-radius: 100px; margin-bottom: 48px;
+        }
+        .brand { display: flex; align-items: center; gap: 12px; font-weight: 800; font-size: 1.1rem; color: #fff; text-decoration: none; }
+        .brand-badge {
+            background: var(--gradient-1); padding: 4px 10px; border-radius: 20px; font-size: 0.75rem;
+            font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase; color: #fff;
+        }
+        .nav-links { display: flex; gap: 20px; }
+        .nav-link { color: var(--text-secondary); text-decoration: none; font-size: 0.9rem; font-weight: 600; transition: color 0.3s; }
+        .nav-link:hover { color: var(--accent-cyan); }
+
+        .hero { text-align: center; margin-bottom: 60px; }
+        .hero-pill {
+            display: inline-flex; align-items: center; gap: 8px; padding: 6px 16px;
+            background: rgba(99, 102, 241, 0.1); border: 1px solid rgba(99, 102, 241, 0.25);
+            border-radius: 100px; font-size: 0.82rem; font-weight: 700; color: var(--accent-cyan);
+            margin-bottom: 20px; backdrop-filter: blur(10px);
+        }
+        .hero-title {
+            font-size: clamp(2.2rem, 5vw, 3.8rem); font-weight: 900; tracking-tight: -0.02em; line-height: 1.15;
+            margin-bottom: 18px; background: linear-gradient(135deg, #ffffff 30%, #94a3b8 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .hero-title span {
+            background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .hero-desc {
+            font-size: 1.1rem; color: var(--text-secondary); max-width: 720px; margin: 0 auto 32px; font-weight: 400; line-height: 1.7;
+        }
+
+        .modules-grid { display: grid; grid-cols-1: 1fr; gap: 24px; }
+        @media (min-width: 768px) { .modules-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (min-width: 1024px) { .modules-grid { grid-template-columns: repeat(3, 1fr); } }
+
+        .mod-card {
+            background: var(--bg-card); backdrop-filter: blur(16px); border: 1px solid var(--border-color);
+            border-radius: 24px; padding: 32px; display: flex; flex-direction: column; justify-content: space-between;
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1); text-decoration: none; color: inherit; position: relative; overflow: hidden;
+        }
+        .mod-card:hover {
+            transform: translateY(-6px); border-color: var(--border-hover); background: var(--bg-card-hover);
+            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5), 0 0 30px rgba(99, 102, 241, 0.15);
+        }
+        .mod-card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px; }
+        .mod-num { font-size: 0.8rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; color: var(--accent-cyan); }
+        .mod-icon { width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); }
+        .mod-title { font-size: 1.25rem; font-weight: 800; color: #fff; margin-bottom: 10px; line-height: 1.35; }
+        .mod-desc { font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 24px; line-height: 1.6; flex-grow: 1; }
+        
+        .mod-footer { display: flex; align-items: center; justify-content: space-between; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 16px; font-size: 0.82rem; font-weight: 700; color: var(--accent-blue); }
+        .mod-card:hover .mod-footer { color: var(--accent-cyan); }
+
+        .sim-section {
+            margin-top: 48px; background: linear-gradient(135deg, rgba(244, 63, 94, 0.1), rgba(139, 92, 246, 0.1));
+            border: 1px solid rgba(244, 63, 94, 0.25); border-radius: 28px; padding: 40px; text-align: center; backdrop-filter: blur(20px);
+        }
+        .sim-title { font-size: 1.8rem; font-weight: 900; margin-bottom: 12px; color: #fff; }
+        .sim-desc { color: var(--text-secondary); max-width: 640px; margin: 0 auto 28px; font-size: 0.95rem; }
+        .btn-sim {
+            display: inline-flex; align-items: center; gap: 10px; padding: 14px 36px; border-radius: 100px;
+            background: var(--gradient-2); color: #fff; font-weight: 800; font-size: 1rem; text-decoration: none;
+            box-shadow: 0 10px 25px rgba(244, 63, 94, 0.3); transition: all 0.3s;
+        }
+        .btn-sim:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 15px 35px rgba(244, 63, 94, 0.4); }
+    </style>
+</head>
+<body>
+
+<div class="bg-orbs">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+</div>
+
+<div class="wrapper">
+
+    <nav class="navbar">
+        <a href="/" class="brand">
+            <span>CHILL CLASS</span>
+            <span class="brand-badge">PENGSTAT-4</span>
+        </a>
+        <div class="nav-links">
+            <a href="/" class="nav-link">← Portal Utama</a>
+            <a href="simulasi-kuis.html" class="nav-link" style="color: var(--accent-rose);">🔥 Simulasi Ujian</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-pill">
+            ✨ Master Class Persiapan Kuis & Exam Statistika Deskriptif
+        </div>
+        <h1 class="hero-title">
+            Pengantar Statistika <span>PENGSTAT-4</span>
+        </h1>
+        <p class="hero-desc">
+            Sintesis materi super lengkap, terperinci, dan tidak ada yang tertinggal dari seluruh slide kuliah. Dilengkapi trik cepat menghafal, gambar diagram visual slide asli, soal pilihan ganda interaktif, dan simulasi ujian essay terlengkap.
+        </p>
+    </section>
+
+    <!-- GRID MODUL MATERI -->
+    <div class="modules-grid">
+
+        <!-- MATERI 1 -->
+        <a href="materi-1.html" class="mod-card">
+            <div>
+                <div class="mod-card-header">
+                    <span class="mod-num">Materi 01</span>
+                    <div class="mod-icon">📋</div>
+                </div>
+                <h3 class="mod-title">Fondasi Utama Statistika & Metodologi</h3>
+                <p class="mod-desc">Populasi ($\mu, \sigma$) vs Sampel ($M, s$), Sampling Error, Variabel Diskrit vs Kontinu, Batas Nyata (LRL & URL), Skala NOIR, serta Metode Eksperimental vs Korelasional.</p>
+            </div>
+            <div class="mod-footer">
+                <span>Pelajari Materi 1</span>
+                <span>➔</span>
+            </div>
+        </a>
+
+        <!-- MATERI 2 -->
+        <a href="materi-2.html" class="mod-card">
+            <div>
+                <div class="mod-card-header">
+                    <span class="mod-num">Materi 02</span>
+                    <div class="mod-icon">📊</div>
+                </div>
+                <h3 class="mod-title">Distribusi Frekuensi & Visualisasi Grafik</h3>
+                <p class="mod-desc">Tabel Frekuensi, Proporsi ($p$), Persentase ($\%$), Aturan Interval $i=2,5,10$, Grafik Histogram vs Bar Graph, Poligon, serta Kurva Positively & Negatively Skewed.</p>
+            </div>
+            <div class="mod-footer">
+                <span>Pelajari Materi 2</span>
+                <span>➔</span>
+            </div>
+        </a>
+
+        <!-- MATERI 3 -->
+        <a href="materi-3.html" class="mod-card">
+            <div>
+                <div class="mod-card-header">
+                    <span class="mod-num">Materi 03</span>
+                    <div class="mod-icon">🎯</div>
+                </div>
+                <h3 class="mod-title">Tendensi Sentral (Pemusatan Data)</h3>
+                <p class="mod-desc">Rata-rata Mean ($\mu, M$), Weighted Mean, Sifat matematika Mean, Perhitungan Median Presisi Variabel Kontinu, Modus, dan urutan posisi relatif pada kurva skewed.</p>
+            </div>
+            <div class="mod-footer">
+                <span>Pelajari Materi 3</span>
+                <span>➔</span>
+            </div>
+        </a>
+
+        <!-- MATERI 4 -->
+        <a href="materi-4.html" class="mod-card">
+            <div>
+                <div class="mod-card-header">
+                    <span class="mod-num">Materi 04</span>
+                    <div class="mod-icon">📈</div>
+                </div>
+                <h3 class="mod-title">Variabilitas & Deviasi Standar</h3>
+                <p class="mod-desc">Range, IQR ($Q_3 - Q_1$), Sum of Squares ($SS$ Definisi vs Komputasi), Caution $SS$, Varians & SD Populasi vs Sampel, serta pembuktian Unbiased Estimator $df = n - 1$.</p>
+            </div>
+            <div class="mod-footer">
+                <span>Pelajari Materi 4</span>
+                <span>➔</span>
+            </div>
+        </a>
+
+        <!-- MATERI 5 -->
+        <a href="materi-5.html" class="mod-card">
+            <div>
+                <div class="mod-card-header">
+                    <span class="mod-num">Materi 05</span>
+                    <div class="mod-icon">⚡</div>
+                </div>
+                <h3 class="mod-title">Skor Terstandar (z-Scores)</h3>
+                <p class="mod-desc">Makna $z$-score sebagai unit deviasi standar, Tanda (+/-), Sifat Distribusi $z$ ($\mu_z = 0, \sigma_z = 1$), Prosedur 2-Langkah Konversi Skala Baru (SAT & IQ), dan Inferensial.</p>
+            </div>
+            <div class="mod-footer">
+                <span>Pelajari Materi 5</span>
+                <span>➔</span>
+            </div>
+        </a>
+
+        <!-- MATERI 6 -->
+        <a href="materi-6.html" class="mod-card">
+            <div>
+                <div class="mod-card-header">
+                    <span class="mod-num">Materi 06</span>
+                    <div class="mod-icon">📐</div>
+                </div>
+                <h3 class="mod-title">Persentil & Interpolasi Linier</h3>
+                <p class="mod-desc">Persentil vs Peringkat Persentil, Frekuensi Kumulatif ($cf$), Persentase Kumulatif ($c\%$), **Aturan Emas URL**, dan Prosedur 4-Langkah Interpolasi Linier Data Berkelompok.</p>
+            </div>
+            <div class="mod-footer">
+                <span>Pelajari Materi 6</span>
+                <span>➔</span>
+            </div>
+        </a>
+
+    </div>
+
+    <!-- SIMULASI SECTION -->
+    <div class="sim-section">
+        <h2 class="sim-title">🔥 Ready for Kuis & Exam PENGSTAT-4?</h2>
+        <p class="sim-desc">
+            Uji kesiapan penuhmu dengan mengerjakan 12 Soal Pilihan Ganda (PG) dan 6 Soal Ujian Essay. Setelah disubmit, skor PG akan dihitung otomatis serta Model Jawaban Dosen dan Rubrik Evaluasi Essay akan ditampilkan. Jawabanmu otomatis tersimpan di browser!
+        </p>
+        <a href="simulasi-kuis.html" class="btn-sim">
+            Mulai Simulasi Ujian PG & Essay Sekarang ➔
+        </a>
+    </div>
+
+</div>
+
+</body>
+</html>

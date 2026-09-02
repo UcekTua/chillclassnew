@@ -29,6 +29,17 @@ export const MANPRO_MATERIALS = [
   { id: "sim", title: 'Simulasi UAS Manajemen Proyek', category: 'Interactive Module', ai_summary: '', file_url: '/manpro/simulasi-uas.html' }
 ];
 
+export const PENGSTAT_MATERIALS = [
+  { id: "idx", title: 'Index / Hub Master PENGSTAT', category: 'Interactive Module', ai_summary: '', file_url: '/pengstat/index.html' },
+  { id: "m01", title: 'Materi 1: Fondasi Statistika & Metodologi', category: 'Interactive Module', ai_summary: '', file_url: '/pengstat/materi-1.html' },
+  { id: "m02", title: 'Materi 2: Distribusi Frekuensi & Grafik', category: 'Interactive Module', ai_summary: '', file_url: '/pengstat/materi-2.html' },
+  { id: "m03", title: 'Materi 3: Tendensi Sentral (Mean, Median, Modus)', category: 'Interactive Module', ai_summary: '', file_url: '/pengstat/materi-3.html' },
+  { id: "m04", title: 'Materi 4: Variabilitas & Deviasi Standar', category: 'Interactive Module', ai_summary: '', file_url: '/pengstat/materi-4.html' },
+  { id: "m05", title: 'Materi 5: Skor Terstandar (z-Scores)', category: 'Interactive Module', ai_summary: '', file_url: '/pengstat/materi-5.html' },
+  { id: "m06", title: 'Materi 6: Persentil & Interpolasi Linier', category: 'Interactive Module', ai_summary: '', file_url: '/pengstat/materi-6.html' },
+  { id: "sim", title: 'Simulasi Kuis Essay PENGSTAT', category: 'Interactive Module', ai_summary: '', file_url: '/pengstat/simulasi-kuis.html' }
+];
+
 export const COURSES_DB = {
   "sipa-4-frontend": {
     id: "sipa-4-frontend",
@@ -50,5 +61,12 @@ export const COURSES_DB = {
     code: "MANPRO-4",
     semester: 4,
     materials: MANPRO_MATERIALS
+  },
+  "pengstat-4-frontend": {
+    id: "pengstat-4-frontend",
+    name: "Pengantar Statistika",
+    code: "PENGSTAT-4",
+    semester: 4,
+    materials: PENGSTAT_MATERIALS
   }
 };

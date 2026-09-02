@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materi 5: Skor Terstandar (z-Scores) — PENGSTAT-4</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- KaTeX Math Renderer -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true},{left: '$', right: '$', display: false}]});"></script>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+            --bg: #0a0e1a; --bg2: #111827; --card-bg: rgba(17, 24, 39, 0.75);
+            --border: rgba(6, 182, 212, 0.18); --border-h: rgba(6, 182, 212, 0.45);
+            --text: #f1f5f9; --text2: #94a3b8; --text3: #64748b;
+            --blue: #6366f1; --cyan: #06b6d4; --violet: #8b5cf6;
+            --emerald: #10b981; --amber: #f59e0b; --rose: #f43f5e;
+            --grad: linear-gradient(135deg, #06b6d4, #3b82f6);
+        }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.75; overflow-x: hidden; }
+        .bg-orbs { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; overflow: hidden; pointer-events: none; }
+        .bg-orbs span { position: absolute; border-radius: 50%; filter: blur(90px); opacity: 0.1; }
+        .bg-orbs span:nth-child(1) { width: 500px; height: 500px; background: var(--cyan); top: -10%; right: 20%; }
+
+        .wrapper { position: relative; z-index: 1; max-width: 960px; margin: 0 auto; padding: 30px 24px 80px; }
+        .topnav { display: flex; align-items: center; justify-content: space-between; margin-bottom: 36px; padding: 14px 24px; background: rgba(10, 14, 26, 0.85); backdrop-filter: blur(12px); border-radius: 100px; border: 1px solid var(--border); position: sticky; top: 16px; z-index: 100; }
+        .topnav a { color: var(--text2); text-decoration: none; font-size: 0.88rem; font-weight: 600; transition: color 0.3s; }
+        .topnav a:hover { color: var(--cyan); }
+
+        .ch-header { text-align: center; margin-bottom: 40px; }
+        .ch-badge { display: inline-block; padding: 5px 14px; border-radius: 100px; background: rgba(6, 182, 212, 0.12); border: 1px solid rgba(6, 182, 212, 0.25); color: var(--cyan); font-size: 0.78rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 14px; }
+        .ch-header h1 { font-size: clamp(1.8rem, 4vw, 2.7rem); font-weight: 900; background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 12px; }
+
+        .sec-card { background: var(--card-bg); backdrop-filter: blur(16px); border: 1px solid var(--border); border-radius: 20px; padding: 32px; margin-bottom: 32px; }
+        .sec-card h2 { font-size: 1.4rem; font-weight: 800; color: var(--text); margin-bottom: 16px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid rgba(148, 163, 184, 0.1); padding-bottom: 12px; }
+        .sec-card h3 { font-size: 1.1rem; font-weight: 700; color: var(--cyan); margin: 20px 0 10px; }
+
+        .concept-box { background: rgba(6, 182, 212, 0.08); border-left: 4px solid var(--cyan); padding: 16px 20px; border-radius: 0 12px 12px 0; margin: 16px 0; font-size: 0.95rem; }
+        .mnemonic-box { background: rgba(16, 185, 129, 0.08); border: 1px dashed var(--emerald); padding: 20px; border-radius: 14px; margin: 20px 0; }
+        .mnemonic-box h4 { color: var(--emerald); font-size: 1rem; font-weight: 800; margin-bottom: 8px; }
+
+        .slide-img-container { margin: 20px 0; text-align: center; background: rgba(10, 14, 26, 0.6); padding: 16px; border-radius: 16px; border: 1px solid var(--border); }
+        .slide-img-container img { max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 8px 24px rgba(0,0,0,0.4); }
+        .slide-img-caption { font-size: 0.82rem; color: var(--text2); margin-top: 10px; font-weight: 500; }
+
+        .essay-box { background: rgba(245, 158, 11, 0.08); border: 1px solid rgba(245, 158, 11, 0.25); border-radius: 16px; padding: 24px; margin: 20px 0; }
+        .essay-box h4 { color: var(--amber); font-size: 1rem; font-weight: 800; margin-bottom: 10px; }
+        .essay-ans { background: rgba(17, 24, 39, 0.9); border-radius: 10px; padding: 16px; margin-top: 10px; font-size: 0.92rem; color: var(--text2); border-left: 3px solid var(--amber); }
+
+        table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.9rem; }
+        th, td { padding: 12px 16px; text-align: left; border-bottom: 1px solid rgba(148, 163, 184, 0.12); }
+        th { background: rgba(6, 182, 212, 0.12); color: var(--cyan); font-weight: 700; }
+
+        .q-card { background: rgba(17, 24, 39, 0.9); border: 1px solid var(--border); border-radius: 16px; padding: 24px; margin-bottom: 20px; }
+        .q-card h4 { font-size: 1rem; font-weight: 700; color: var(--text); margin-bottom: 12px; }
+        .q-card label { display: flex; align-items: flex-start; gap: 10px; padding: 8px 12px; border-radius: 8px; cursor: pointer; color: var(--text2); font-size: 0.9rem; margin-bottom: 6px; }
+        .q-card label:hover { background: rgba(6, 182, 212, 0.08); }
+        textarea { width: 100%; height: 100px; background: rgba(10, 14, 26, 0.8); border: 1px solid var(--border); border-radius: 10px; color: var(--text); padding: 12px; font-family: inherit; font-size: 0.9rem; resize: vertical; margin-bottom: 12px; }
+        textarea:focus { outline: none; border-color: var(--cyan); }
+        
+        .btn { display: inline-flex; align-items: center; justify-content: center; padding: 12px 28px; border: none; border-radius: 10px; font-family: inherit; font-size: 0.9rem; font-weight: 700; cursor: pointer; transition: all 0.3s; }
+        .btn-primary { background: var(--grad); color: #fff; }
+        .btn-primary:hover { opacity: 0.9; transform: translateY(-2px); }
+
+        .feedback-box { display: none; padding: 16px; border-radius: 10px; margin-top: 12px; font-size: 0.9rem; }
+        .feedback-box.show { display: block; }
+        .feedback-box.correct { background: rgba(16, 185, 129, 0.1); border: 1px solid var(--emerald); color: var(--emerald); }
+        .feedback-box.wrong { background: rgba(244, 63, 94, 0.1); border: 1px solid var(--rose); color: var(--rose); }
+    </style>
+</head>
+<body>
+<div class="bg-orbs"><span></span></div>
+<div class="wrapper">
+
+    <nav class="topnav">
+        <a href="materi-4.html">📈 Materi 4</a>
+        <a href="index.html">🏠 Hub PENGSTAT</a>
+        <a href="materi-6.html">Materi 6 ➔</a>
+    </nav>
+
+    <header class="ch-header">
+        <div class="ch-badge">Materi 5 — Pembahasan Terperinci</div>
+        <h1>Skor Terstandar (z-Scores)</h1>
+        <p>Memahami posisi relatif skor dalam unit deviasi standar, sifat distribusi terstandar, serta prosedur 2-langkah transformasi ke skala baru (SAT/IQ).</p>
+    </header>
+
+    <!-- SECTION 1 -->
+    <section class="sec-card">
+        <h2>1. Makna & Formulasi Utama z-Score</h2>
+        <p><strong>z-Score</strong> adalah nilai terstandar yang menunjukkan lokasi presisi suatu skor mentah ($X$) relatif terhadap rata-rata ($\mu$), diukur dalam satuan unit deviasi standar ($\sigma$).</p>
+
+        <div class="concept-box">
+            <strong>Formulasi z-Score & Skor Mentah ($X$)</strong>:
+            $$z = \frac{X - \mu}{\sigma} \quad \text{dan} \quad X = \mu + z\sigma$$
+        </div>
+    </section>
+
+    <!-- SECTION 2 -->
+    <section class="sec-card">
+        <h2>2. Sifat-Sifat Distribusi Terstandar z</h2>
+
+        <div class="slide-img-container">
+            <img src="./images/fig_z_distribution.png" alt="Gambar Distribusi z-Score Slide">
+            <div class="slide-img-caption">📷 Diagram Asli Slide: Distribusi Terstandar z-Score dengan Mean = 0 dan Deviasi Standar = 1</div>
+        </div>
+
+        <ol>
+            <li><strong>Bentuk Grafik (Shape)</strong>: Bentuk kurva <strong>100% PERSIS SAMA</strong> dengan distribusi skor mentah aslinya.</li>
+            <li><strong>Rata-Rata Baru ($\mu_z$)</strong>: Selalu tepat bernilai **0** ($\mu_z = 0$).</li>
+            <li><strong>Deviasi Standar Baru ($\sigma_z$)</strong>: Selalu tepat bernilai **1** ($\sigma_z = 1$).</li>
+        </ol>
+    </section>
+
+    <!-- SECTION 3 -->
+    <section class="sec-card">
+        <h2>3. Prosedur 2-Langkah Transformasi Skala Baru</h2>
+        
+        <div class="concept-box">
+            <strong>Langkah 1</strong>: Ubah skor mentah asli ($X_{\text{lama}}$) menjadi $z$-score:
+            $$z = \frac{X_{\text{lama}} - \mu_{\text{lama}}}{\sigma_{\text{lama}}}$$
+            
+            <strong>Langkah 2</strong>: Konversikan $z$-score ke skor baru ($X_{\text{baru}}$):
+            $$X_{\text{baru}} = \mu_{\text{baru}} + z \cdot \sigma_{\text{baru}}$$
+        </div>
+    </section>
+
+    <!-- MNEMONICS -->
+    <div class="sec-card" style="border-color: var(--emerald);">
+        <h2>💡 CARA CEPAAT MENGHAFAL (MNEMONICS)</h2>
+        
+        <div class="mnemonic-box">
+            <h4>🧠 Trik Hafal Karakteristik Distribusi z</h4>
+            <p>Distribusi $z$ itu seperti tangga netral: <strong>Pusatnya di 0 ($\mu=0$)</strong> dan <strong>Langkah tangganya bernilai 1 ($\sigma=1$)</strong>!</p>
+        </div>
+    </div>
+
+    <!-- INTERACTIVE PRACTICE QUIZ (PG + ESSAY) -->
+    <section class="sec-card">
+        <h2>✍️ LATIHAN SOAL INTERAKTIF (Pilihan Ganda & Essay)</h2>
+
+        <!-- PG -->
+        <h3 style="color:var(--cyan); margin-bottom:16px;">Bagian I: Soal Pilihan Ganda (PG)</h3>
+        
+        <div class="q-card" id="pg1-card">
+            <h4>1. Berapakah nilai Rata-Rata (μ) dan Deviasi Standar (σ) dari suatu distribusi terstandar z-score?</h4>
+            <label><input type="radio" name="pg1" value="A"> A. μ = 100, σ = 15</label>
+            <label><input type="radio" name="pg1" value="B"> B. μ = 0, σ = 1</label>
+            <label><input type="radio" name="pg1" value="C"> C. μ = 1, σ = 0</label>
+            <label><input type="radio" name="pg1" value="D"> D. μ = 50, σ = 10</label>
+            <div id="pg1-fb" class="feedback-box"></div>
+        </div>
+
+        <div class="q-card" id="pg2-card">
+            <h4>2. Jika sebuah skor mentah X memiliki nilai z = -2.0 pada populasi dengan μ = 60 dan σ = 5, maka nilai skor mentah X tersebut adalah...</h4>
+            <label><input type="radio" name="pg2" value="A"> A. 70</label>
+            <label><input type="radio" name="pg2" value="B"> B. 65</label>
+            <label><input type="radio" name="pg2" value="C"> C. 55</label>
+            <label><input type="radio" name="pg2" value="D"> D. 50</label>
+            <div id="pg2-fb" class="feedback-box"></div>
+        </div>
+
+        <!-- ESSAY -->
+        <h3 style="color:var(--cyan); margin-top:28px; margin-bottom:16px;">Bagian II: Soal Essay</h3>
+        <div class="q-card">
+            <h4>Soal Essay: Transformasikan X=55 dari populasi (μ=50, σ=10) ke dalam skala baru yang memiliki μ=100 dan σ=15! Tuliskan 2 langkahnya!</h4>
+            <textarea id="ans1" placeholder="Ketik langkah hitunganmu di sini..."></textarea>
+            <div id="fb1" class="feedback-box"></div>
+        </div>
+
+        <button type="button" class="btn btn-primary" onclick="checkAnswers()">SUBMIT LATIHAN SOAL MATERI 5</button>
+    </section>
+
+</div>
+
+<script>
+    function checkAnswers() {
+        let pg1 = document.querySelector('input[name="pg1"]:checked');
+        let pg1Fb = document.getElementById('pg1-fb');
+        if (pg1 && pg1.value === 'B') {
+            pg1Fb.className = 'feedback-box show correct';
+            pg1Fb.innerHTML = '✅ Benar! Distribusi z selalu memiliki μ = 0 dan σ = 1.';
+        } else {
+            pg1Fb.className = 'feedback-box show wrong';
+            pg1Fb.innerHTML = '❌ Salah. Jawaban benar: B. μ = 0, σ = 1.';
+        }
+
+        let pg2 = document.querySelector('input[name="pg2"]:checked');
+        let pg2Fb = document.getElementById('pg2-fb');
+        if (pg2 && pg2.value === 'D') {
+            pg2Fb.className = 'feedback-box show correct';
+            pg2Fb.innerHTML = '✅ Benar! X = 60 + (-2.0)(5) = 60 - 10 = 50.';
+        } else {
+            pg2Fb.className = 'feedback-box show wrong';
+            pg2Fb.innerHTML = '❌ Salah. Jawaban benar: D. 50.';
+        }
+
+        let a1 = document.getElementById('ans1').value.trim();
+        let fb1 = document.getElementById('fb1');
+        fb1.className = 'feedback-box show correct';
+        fb1.innerHTML = '<strong>Model Jawaban Evaluasi Essay:</strong><br>Langkah 1: z = (55 - 50)/10 = +0.5.<br>Langkah 2: X_baru = 100 + (+0.5)(15) = 107.5.';
+
+        localStorage.setItem('pengstat_materi5_quiz_v2', JSON.stringify({
+            pg1: pg1 ? pg1.value : '',
+            pg2: pg2 ? pg2.value : '',
+            ans1: a1,
+            checked: true
+        }));
+    }
+
+    window.onload = function() {
+        let saved = localStorage.getItem('pengstat_materi5_quiz_v2');
+        if (saved) {
+            let data = JSON.parse(saved);
+            if (data.pg1) { let r = document.querySelector(`input[name="pg1"][value="${data.pg1}"]`); if(r) r.checked = true; }
+            if (data.pg2) { let r = document.querySelector(`input[name="pg2"][value="${data.pg2}"]`); if(r) r.checked = true; }
+            if (data.ans1) document.getElementById('ans1').value = data.ans1;
+            if (data.checked) checkAnswers();
+        }
+    };
+</script>
+</body>
+</html>

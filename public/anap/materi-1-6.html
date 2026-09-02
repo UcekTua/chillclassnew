@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materi 1.6: UML (Unified Modeling Language) — Belajar ANAP</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+            --bg: #0a0e1a; --bg2: #111827; --bg-card: rgba(17,24,39,0.7);
+            --border: rgba(99,102,241,0.15); --border-h: rgba(99,102,241,0.4);
+            --text: #f1f5f9; --text2: #94a3b8; --text3: #64748b;
+            --blue: #6366f1; --cyan: #06b6d4; --violet: #8b5cf6;
+            --emerald: #10b981; --amber: #f59e0b; --rose: #f43f5e;
+            --grad: linear-gradient(135deg, #6366f1, #06b6d4);
+        }
+        body { font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); line-height:1.8; }
+        .bg-orbs { position:fixed; top:0; left:0; width:100%; height:100%; z-index:0; overflow:hidden; pointer-events:none; }
+        .bg-orbs span { position:absolute; border-radius:50%; filter:blur(80px); opacity:0.1; }
+        .bg-orbs span:nth-child(1) { width:500px; height:500px; background:var(--blue); top:-10%; left:-5%; }
+        .bg-orbs span:nth-child(2) { width:400px; height:400px; background:var(--violet); bottom:10%; right:-5%; }
+
+        .wrapper { position:relative; z-index:1; max-width:900px; margin:0 auto; padding:40px 24px 80px; }
+        .topnav { display:flex; align-items:center; gap:12px; margin-bottom:48px; flex-wrap:wrap; position:sticky; top:0; z-index:100; background:rgba(10,14,26,0.85); backdrop-filter:blur(12px); padding:20px 0; }
+        .topnav a { color:var(--text2); text-decoration:none; font-size:0.85rem; font-weight:500; transition:color 0.3s; }
+        .topnav a:hover { color:var(--blue); }
+        .topnav .sep { color:var(--text3); }
+
+        .ch-header { margin-bottom:48px; }
+        .ch-badge { display:inline-block; padding:5px 14px; border-radius:100px; background:rgba(99,102,241,0.12); border:1px solid rgba(99,102,241,0.25); color:var(--blue); font-size:0.75rem; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; margin-bottom:16px; }
+        .ch-header h1 { font-size:clamp(1.8rem,4vw,2.6rem); font-weight:900; background:var(--grad); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; margin-bottom:12px; }
+        .ch-header p { color:var(--text2); font-size:1rem; max-width:700px; }
+
+        .toc { background:var(--bg-card); backdrop-filter:blur(16px); border:1px solid var(--border); border-radius:16px; padding:28px 32px; margin-bottom:48px; }
+        .toc h3 { font-size:0.85rem; font-weight:700; text-transform:uppercase; letter-spacing:1.5px; color:var(--blue); margin-bottom:16px; }
+        .toc ol { padding-left:20px; }
+        .toc li { margin-bottom:8px; }
+        .toc a { color:var(--text2); text-decoration:none; font-size:0.9rem; transition:color 0.3s; }
+        .toc a:hover { color:var(--cyan); }
+
+        .section { background:var(--bg-card); backdrop-filter:blur(16px); border:1px solid var(--border); border-radius:20px; padding:36px; margin-bottom:32px; }
+        .section h2 { font-size:1.5rem; font-weight:800; margin-bottom:20px; display:flex; align-items:center; gap:12px; }
+        .section h3 { font-size:1.15rem; font-weight:700; margin:28px 0 12px; color:var(--cyan); }
+        .section p { color:var(--text2); margin-bottom:14px; font-size:0.95rem; }
+        .section ul, .section ol { padding-left:24px; margin-bottom:14px; }
+        .section li { color:var(--text2); margin-bottom:8px; font-size:0.95rem; }
+
+        .highlight { border-radius:12px; padding:20px 24px; margin:20px 0; }
+        .highlight.blue { background:rgba(99,102,241,0.08); border-left:4px solid var(--blue); }
+        .highlight.emerald { background:rgba(16,185,129,0.08); border-left:4px solid var(--emerald); }
+
+        .table-wrap { overflow-x:auto; margin:20px 0; }
+        table { width:100%; border-collapse:collapse; font-size:0.88rem; }
+        th { background:rgba(99,102,241,0.12); color:var(--blue); font-weight:700; padding:12px 16px; text-align:left; border-bottom:2px solid rgba(99,102,241,0.2); }
+        td { padding:11px 16px; border-bottom:1px solid rgba(148,163,184,0.08); color:var(--text2); }
+
+        .key-points { background:linear-gradient(135deg, rgba(16,185,129,0.06), rgba(6,182,212,0.06)); border:1px solid rgba(16,185,129,0.2); border-radius:16px; padding:28px 32px; margin:28px 0; }
+        .memory-tips { background:linear-gradient(135deg, rgba(245,158,11,0.06), rgba(244,63,94,0.06)); border:1px solid rgba(245,158,11,0.2); border-radius:16px; padding:28px 32px; margin:28px 0; }
+        .example { background:rgba(139,92,246,0.06); border:1px solid rgba(139,92,246,0.2); border-radius:16px; padding:28px 32px; margin:28px 0; }
+
+        .quiz-section { margin-top:48px; }
+        .q-card { background:var(--bg-card); backdrop-filter:blur(16px); border:1px solid var(--border); border-radius:16px; padding:28px 30px; margin-bottom:20px; }
+        .q-card.correct { border-color:var(--emerald) !important; }
+        .q-card.wrong { border-color:var(--rose) !important; }
+        .q-num { font-size:0.75rem; font-weight:700; color:var(--blue); text-transform:uppercase; letter-spacing:1.5px; margin-bottom:10px; }
+        .q-text { font-size:0.95rem; font-weight:600; color:var(--text); margin-bottom:16px; }
+        .q-options label { display:flex; align-items:flex-start; gap:12px; padding:10px 14px; margin-bottom:8px; border-radius:10px; cursor:pointer; font-size:0.9rem; color:var(--text2); }
+        .q-options label:hover { background:rgba(99,102,241,0.06); }
+        .q-feedback { margin-top:14px; padding:14px 18px; border-radius:10px; font-size:0.88rem; display:none; }
+        .q-feedback.show { display:block; }
+        .q-feedback.correct-fb { background:rgba(16,185,129,0.1); border:1px solid rgba(16,185,129,0.25); color:var(--emerald); }
+        .q-feedback.wrong-fb { background:rgba(244,63,94,0.1); border:1px solid rgba(244,63,94,0.25); color:var(--rose); }
+
+        .btn { display:inline-flex; align-items:center; gap:8px; padding:14px 32px; border:none; border-radius:12px; font-family:inherit; font-size:0.9rem; font-weight:700; cursor:pointer; transition:all 0.3s; }
+        .btn-primary { background:var(--grad); color:#fff; }
+        .results-box { background:var(--bg-card); border:1px solid var(--border); border-radius:16px; padding:32px; margin-top:24px; display:none; }
+        .results-box.show { display:block; }
+        .score-display { text-align:center; }
+        .score-display .score-num { font-size:3rem; font-weight:900; color:var(--cyan); }
+    </style>
+</head>
+<body>
+<div class="bg-orbs"><span></span><span></span></div>
+<div class="wrapper">
+
+<nav class="topnav">
+    <a href="index.html">🏠 Beranda ANAP</a>
+    <span class="sep">/</span>
+    <a href="materi-1-5.html">Materi 1.5</a>
+    <span class="sep">/</span>
+    <a href="materi-1-6.html" style="color:var(--blue);">Materi 1.6</a>
+    <span class="sep">/</span>
+    <a href="simulasi-uas.html">Simulasi UAS →</a>
+</nav>
+
+<div class="ch-header">
+    <div class="ch-badge">Materi 1.6</div>
+    <h1>UML (Unified Modeling Language)</h1>
+    <p>Memahami sejarah terbentuknya standar UML serta dua pengelompokan utama diagram UML: Structure Diagrams dan Behavior Diagrams.</p>
+</div>
+
+<div class="toc">
+    <h3>📑 Daftar Isi</h3>
+    <ol>
+        <li><a href="#s1">Sejarah Singkat UML (1995)</a></li>
+        <li><a href="#s2">Dua Kategori Utama UML Diagram</a></li>
+        <li><a href="#s3">Poin-Poin Penting & Cara Menghafal</a></li>
+        <li><a href="#s4">Contoh Soal UAS & Pembahasan</a></li>
+        <li><a href="#quiz">Latihan Soal Interaktif (Jawaban Tersimpan)</a></li>
+    </ol>
+</div>
+
+<div class="section" id="s1">
+    <h2><span class="icon">📜</span> 1. Sejarah Singkat UML (1995)</h2>
+    <p>Sebelum tahun 1995, konsep Berbasis Objek (OO) sangat populer namun diimplementasikan dalam berbagai notasi berbeda oleh para pengembang (seperti Booch, Coad, OMT, OOSE, SOMA).</p>
+    <p>Pada tahun 1995, <strong>Rational Software</strong> menyatukan 3 pakar utama industri (Three Amigos: Grady Booch, Ivar Jacobson, dan James Rumbaugh) untuk menciptakan standar notasi tunggal: <strong>UML (Unified Modeling Language)</strong>.</p>
+    <div class="highlight blue">
+        <h4>Tujuan Utama UML</h4>
+        <p>Menyediakan kosakata umum (common vocabulary) dari istilah-istilah objek dan teknik pemodelan diagram yang cukup kaya untuk memodelkan proyek pengembangan sistem dari tahap analisis hingga implementasi.</p>
+    </div>
+</div>
+
+<div class="section" id="s2">
+    <h2><span class="icon">📐</span> 2. Dua Kategori Utama UML Diagram</h2>
+
+    <div class="table-wrap">
+        <table>
+            <thead>
+                <tr>
+                    <th>Kategori Diagram UML</th>
+                    <th>Tujuan & Fungsi Pemodelan</th>
+                    <th>Contoh Diagram Termasuk</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>1. Structure Diagrams (Diagram Struktur)</strong></td>
+                    <td>Merepresentasikan data dan hubungan statis (static relationships) dalam sistem informasi.</td>
+                    <td>Class Diagram, Object Diagram, Package Diagram, Component Diagram, Deployment Diagram, Composite Structure Diagram, Profile Diagram.</td>
+                </tr>
+                <tr>
+                    <td><strong>2. Behavior Diagrams (Diagram Perilaku)</strong></td>
+                    <td>Menggambarkan hubungan dinamis (dynamic relationships) dan perilaku objek dari waktu ke waktu. Menyajikan requirement fungsional.</td>
+                    <td>Use-Case Diagram, Activity Diagram, Sequence Diagram, Communication Diagram, State Machine Diagram, Timing Diagram, Interaction Overview Diagram.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="section" id="s3">
+    <h2><span class="icon">💡</span> 3. Poin-Poin Penting & Cara Menghafal</h2>
+    <div class="key-points">
+        <h3>📌 Poin Utama UAS</h3>
+        <ul>
+            <li>UML diciptakan oleh Rational Software pada tahun 1995.</li>
+            <li>Structure Diagram = Hubungan Statis (Contoh: Class Diagram).</li>
+            <li>Behavior Diagram = Hubungan Dinamis (Contoh: Use-Case Diagram, Activity Diagram, Sequence Diagram).</li>
+        </ul>
+    </div>
+    <div class="memory-tips">
+        <h3>🧠 Jembatan Keledai</h3>
+        <p><strong>"Statis-Structure / Dinamis-Behavior"</strong> ➔ Statis = Structure Diagram, Dinamis = Behavior Diagram.</p>
+    </div>
+</div>
+
+<div class="section" id="s4">
+    <h2><span class="icon">✍️</span> 4. Contoh Soal UAS & Pembahasan</h2>
+    <div class="example">
+        <h3>Soal 1 (Pilihan Ganda)</h3>
+        <p><strong>Manakah di antara diagram berikut yang tergolong ke dalam kategori Structure Diagram di UML?</strong></p>
+        <p>A. Use-Case Diagram<br>
+        B. Sequence Diagram<br>
+        C. Class Diagram<br>
+        D. Activity Diagram</p>
+        <p><strong>Jawaban: C. Class Diagram</strong></p>
+        <p><em>Pembahasan: Class Diagram menggambarkan hubungan statis antar-kelas sehingga termasuk Structure Diagram. Pilihan A, B, dan D adalah Behavior Diagram.</em></p>
+    </div>
+</div>
+
+<div class="quiz-section" id="quiz">
+    <h2>🎯 Latihan Soal Interaktif — Materi 1.6</h2>
+
+    <form id="quizForm">
+        <div class="q-card" id="q1">
+            <div class="q-num">Soal 1</div>
+            <div class="q-text">Kategori diagram UML yang berfungsi mendeskripsikan hubungan dinamis dan pertukaran pesan antar-objek sepanjang waktu adalah...</div>
+            <div class="q-options">
+                <label><input type="radio" name="q1" value="A"> A. Structure Diagrams</label>
+                <label><input type="radio" name="q1" value="B"> B. Behavior Diagrams</label>
+                <label><input type="radio" name="q1" value="C"> C. Static Diagrams</label>
+                <label><input type="radio" name="q1" value="D"> D. Profile Diagrams</label>
+            </div>
+            <div class="q-feedback" id="fb1"></div>
+        </div>
+
+        <div class="q-card" id="q2">
+            <div class="q-num">Soal 2</div>
+            <div class="q-text">UML pertama kali dipelopori dan disatukan oleh perusahaan apa pada tahun 1995?</div>
+            <div class="q-options">
+                <label><input type="radio" name="q2" value="A"> A. Microsoft</label>
+                <label><input type="radio" name="q2" value="B"> B. Rational Software</label>
+                <label><input type="radio" name="q2" value="C"> C. IBM</label>
+                <label><input type="radio" name="q2" value="D"> D. Oracle</label>
+            </div>
+            <div class="q-feedback" id="fb2"></div>
+        </div>
+
+        <button type="button" class="btn btn-primary" onclick="submitQuiz()">Submit & Cek Jawaban</button>
+    </form>
+
+    <div class="results-box" id="resultsBox">
+        <div class="score-display">
+            <div class="score-num" id="scoreNum">0 / 100</div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+<script>
+    const answerKey = { q1: 'B', q2: 'B' };
+    const explanations = {
+        q1: 'Behavior Diagrams memodelkan perilaku dinamis dan pertukaran pesan antar-objek.',
+        q2: 'Rational Software menyatukan para ahli untuk membuat notasi standar UML pada tahun 1995.'
+    };
+
+    function submitQuiz() {
+        let score = 0;
+        let total = Object.keys(answerKey).length;
+        let userAnswers = {};
+
+        for (let q in answerKey) {
+            let selected = document.querySelector(`input[name="${q}"]:checked`);
+            let card = document.getElementById(q);
+            let fb = document.getElementById('fb' + q.replace('q',''));
+            
+            if (selected) {
+                userAnswers[q] = selected.value;
+                if (selected.value === answerKey[q]) {
+                    score += (100 / total);
+                    card.className = 'q-card correct';
+                    fb.className = 'q-feedback show correct-fb';
+                    fb.innerHTML = '✅ Benar! ' + explanations[q];
+                } else {
+                    card.className = 'q-card wrong';
+                    fb.className = 'q-feedback show wrong-fb';
+                    fb.innerHTML = '❌ Salah. Jawaban benar: ' + answerKey[q] + '. ' + explanations[q];
+                }
+            } else {
+                card.className = 'q-card wrong';
+                fb.className = 'q-feedback show wrong-fb';
+                fb.innerHTML = '⚠️ Kamu belum memilih jawaban.';
+            }
+        }
+
+        document.getElementById('resultsBox').className = 'results-box show';
+        document.getElementById('scoreNum').innerText = Math.round(score) + ' / 100';
+
+        localStorage.setItem('anap_quiz_1_6', JSON.stringify({ answers: userAnswers, score: score }));
+    }
+
+    window.onload = function() {
+        let saved = localStorage.getItem('anap_quiz_1_6');
+        if (saved) {
+            let data = JSON.parse(saved);
+            for (let q in data.answers) {
+                let radio = document.querySelector(`input[name="${q}"][value="${data.answers[q]}"]`);
+                if (radio) radio.checked = true;
+            }
+            submitQuiz();
+        }
+    };
+</script>
+</body>
+</html>

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materi 4: Variabilitas & Deviasi Standar — PENGSTAT-4</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- KaTeX Math Renderer -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true},{left: '$', right: '$', display: false}]});"></script>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+            --bg: #0a0e1a; --bg2: #111827; --card-bg: rgba(17, 24, 39, 0.75);
+            --border: rgba(245, 158, 11, 0.18); --border-h: rgba(245, 158, 11, 0.45);
+            --text: #f1f5f9; --text2: #94a3b8; --text3: #64748b;
+            --blue: #6366f1; --cyan: #06b6d4; --violet: #8b5cf6;
+            --emerald: #10b981; --amber: #f59e0b; --rose: #f43f5e;
+            --grad: linear-gradient(135deg, #f59e0b, #ef4444);
+        }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.75; overflow-x: hidden; }
+        .bg-orbs { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; overflow: hidden; pointer-events: none; }
+        .bg-orbs span { position: absolute; border-radius: 50%; filter: blur(90px); opacity: 0.1; }
+        .bg-orbs span:nth-child(1) { width: 500px; height: 500px; background: var(--amber); top: -10%; left: -5%; }
+
+        .wrapper { position: relative; z-index: 1; max-width: 960px; margin: 0 auto; padding: 30px 24px 80px; }
+        .topnav { display: flex; align-items: center; justify-content: space-between; margin-bottom: 36px; padding: 14px 24px; background: rgba(10, 14, 26, 0.85); backdrop-filter: blur(12px); border-radius: 100px; border: 1px solid var(--border); position: sticky; top: 16px; z-index: 100; }
+        .topnav a { color: var(--text2); text-decoration: none; font-size: 0.88rem; font-weight: 600; transition: color 0.3s; }
+        .topnav a:hover { color: var(--amber); }
+
+        .ch-header { text-align: center; margin-bottom: 40px; }
+        .ch-badge { display: inline-block; padding: 5px 14px; border-radius: 100px; background: rgba(245, 158, 11, 0.12); border: 1px solid rgba(245, 158, 11, 0.25); color: var(--amber); font-size: 0.78rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 14px; }
+        .ch-header h1 { font-size: clamp(1.8rem, 4vw, 2.7rem); font-weight: 900; background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 12px; }
+
+        .sec-card { background: var(--card-bg); backdrop-filter: blur(16px); border: 1px solid var(--border); border-radius: 20px; padding: 32px; margin-bottom: 32px; }
+        .sec-card h2 { font-size: 1.4rem; font-weight: 800; color: var(--text); margin-bottom: 16px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid rgba(148, 163, 184, 0.1); padding-bottom: 12px; }
+        .sec-card h3 { font-size: 1.1rem; font-weight: 700; color: var(--amber); margin: 20px 0 10px; }
+
+        .concept-box { background: rgba(245, 158, 11, 0.08); border-left: 4px solid var(--amber); padding: 16px 20px; border-radius: 0 12px 12px 0; margin: 16px 0; font-size: 0.95rem; }
+        .caution-box { background: rgba(244, 63, 94, 0.08); border: 1px solid rgba(244, 63, 94, 0.3); padding: 20px; border-radius: 14px; margin: 20px 0; color: var(--rose); }
+        .mnemonic-box { background: rgba(16, 185, 129, 0.08); border: 1px dashed var(--emerald); padding: 20px; border-radius: 14px; margin: 20px 0; }
+        .mnemonic-box h4 { color: var(--emerald); font-size: 1rem; font-weight: 800; margin-bottom: 8px; }
+
+        .essay-box { background: rgba(245, 158, 11, 0.08); border: 1px solid rgba(245, 158, 11, 0.25); border-radius: 16px; padding: 24px; margin: 20px 0; }
+        .essay-box h4 { color: var(--amber); font-size: 1rem; font-weight: 800; margin-bottom: 10px; }
+        .essay-ans { background: rgba(17, 24, 39, 0.9); border-radius: 10px; padding: 16px; margin-top: 10px; font-size: 0.92rem; color: var(--text2); border-left: 3px solid var(--amber); }
+
+        table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.9rem; }
+        th, td { padding: 12px 16px; text-align: left; border-bottom: 1px solid rgba(148, 163, 184, 0.12); }
+        th { background: rgba(245, 158, 11, 0.12); color: var(--amber); font-weight: 700; }
+
+        .q-card { background: rgba(17, 24, 39, 0.9); border: 1px solid var(--border); border-radius: 16px; padding: 24px; margin-bottom: 20px; }
+        .q-card h4 { font-size: 1rem; font-weight: 700; color: var(--text); margin-bottom: 12px; }
+        .q-card label { display: flex; align-items: flex-start; gap: 10px; padding: 8px 12px; border-radius: 8px; cursor: pointer; color: var(--text2); font-size: 0.9rem; margin-bottom: 6px; }
+        .q-card label:hover { background: rgba(245, 158, 11, 0.08); }
+        textarea { width: 100%; height: 100px; background: rgba(10, 14, 26, 0.8); border: 1px solid var(--border); border-radius: 10px; color: var(--text); padding: 12px; font-family: inherit; font-size: 0.9rem; resize: vertical; margin-bottom: 12px; }
+        textarea:focus { outline: none; border-color: var(--amber); }
+        
+        .btn { display: inline-flex; align-items: center; justify-content: center; padding: 12px 28px; border: none; border-radius: 10px; font-family: inherit; font-size: 0.9rem; font-weight: 700; cursor: pointer; transition: all 0.3s; }
+        .btn-primary { background: var(--grad); color: #fff; }
+        .btn-primary:hover { opacity: 0.9; transform: translateY(-2px); }
+
+        .feedback-box { display: none; padding: 16px; border-radius: 10px; margin-top: 12px; font-size: 0.9rem; }
+        .feedback-box.show { display: block; }
+        .feedback-box.correct { background: rgba(16, 185, 129, 0.1); border: 1px solid var(--emerald); color: var(--emerald); }
+        .feedback-box.wrong { background: rgba(244, 63, 94, 0.1); border: 1px solid var(--rose); color: var(--rose); }
+    </style>
+</head>
+<body>
+<div class="bg-orbs"><span></span></div>
+<div class="wrapper">
+
+    <nav class="topnav">
+        <a href="materi-3.html">🎯 Materi 3</a>
+        <a href="index.html">🏠 Hub PENGSTAT</a>
+        <a href="materi-5.html">Materi 5 ➔</a>
+    </nav>
+
+    <header class="ch-header">
+        <div class="ch-badge">Materi 4 — Pembahasan Terperinci</div>
+        <h1>Variabilitas & Deviasi Standar</h1>
+        <p>Mengukur tingkat penyebaran data: Range, IQR, Sum of Squares (SS), Varians & Deviasi Standar Populasi vs Sampel, serta pembuktian Unbiased Estimator df (n-1).</p>
+    </header>
+
+    <!-- SECTION 1 -->
+    <section class="sec-card">
+        <h2>1. Range & Interquartile Range (IQR)</h2>
+        <p><strong>Variabilitas</strong> mengukur jarak dan penyebaran skor di dalam distribusi data.</p>
+        <ul>
+            <li><strong>Range (Rentang)</strong>: Jarak antara skor tertinggi dan terendah: $\text{Range} = X_{\text{max, URL}} - X_{\text{min, LRL}}$.</li>
+            <li><strong>Interquartile Range (IQR)</strong>: Rentang yang mencakup 50% data di tengah: $\text{IQR} = Q_3 - Q_1 = P_{75} - P_{25}$.</li>
+        </ul>
+    </section>
+
+    <!-- SECTION 2 -->
+    <section class="sec-card">
+        <h2>2. Sum of Squares (SS) — Definisi vs Komputasi</h2>
+        
+        <div class="concept-box">
+            <strong>Formula Definisi (Definitional Formula)</strong>:
+            $$SS = \sum (X - \mu)^2$$
+            
+            <strong>Formula Komputasi (Computational Formula)</strong>:
+            $$SS = \sum X^2 - \frac{(\sum X)^2}{N}$$
+        </div>
+
+        <div class="caution-box">
+            <h4>⚠️ PERINGATAN KRITIS PADA SOAL HITUNGAN (Slide 74)</h4>
+            <ul>
+                <li>$SS \neq \sum X^2$</li>
+                <li>$SS \neq (\sum X)^2$</li>
+                <li>$\sum X^2 \neq (\sum X)^2$ (Kuadratkan masing-masing $X$ lalu jumlahkan $\neq$ Jumlahkan dulu $X$ lalu kuadratkan!).</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- SECTION 3 -->
+    <section class="sec-card">
+        <h2>3. Varians & Deviasi Standar Populasi vs Sampel</h2>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Ukuran</th>
+                    <th>Formulasi Populasi</th>
+                    <th>Formulasi Sampel (Unbiased Estimator)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Varians</strong></td>
+                    <td>$$\sigma^2 = \frac{SS}{N}$$</td>
+                    <td>$$s^2 = \frac{SS}{n - 1} = \frac{SS}{df}$$</td>
+                </tr>
+                <tr>
+                    <td><strong>Deviasi Standar</strong></td>
+                    <td>$$\sigma = \sqrt{\frac{SS}{N}}$$</td>
+                    <td>$$s = \sqrt{\frac{SS}{n - 1}} = \sqrt{s^2}$$</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Mengapa Dibagi $n - 1$? Degrees of Freedom ($df$)</h3>
+        <p>Sampel cenderung memiliki variabilitas yang lebih kecil daripada populasi (*underestimate*). Membagi $SS$ dengan **$df = n - 1$** menghasilkan varians sampel ($s^2$) yang bersifat **Unbiased Estimator** bagi $\sigma^2$.</p>
+    </section>
+
+    <!-- MNEMONICS -->
+    <div class="sec-card" style="border-color: var(--emerald);">
+        <h2>💡 CARA CEPAAT MENGHAFAL (MNEMONICS)</h2>
+        
+        <div class="mnemonic-box">
+            <h4>🧠 Trik Hafal Pembagi $(n-1)$</h4>
+            <p>Sampel itu "pelit variasi" (hasil varians terlalu kecil kalau dibagi $n$). Biar adil mewakili populasi, pembaginya kita kurangi 1 ($n-1$) supaya nilai varians sampel naik menjadi **Unbiased Estimator**!</p>
+        </div>
+    </div>
+
+    <!-- INTERACTIVE PRACTICE QUIZ (PG + ESSAY) -->
+    <section class="sec-card">
+        <h2>✍️ LATIHAN SOAL INTERAKTIF (Pilihan Ganda & Essay)</h2>
+
+        <!-- PG -->
+        <h3 style="color:var(--amber); margin-bottom:16px;">Bagian I: Soal Pilihan Ganda (PG)</h3>
+        
+        <div class="q-card" id="pg1-card">
+            <h4>1. Mengapa varians sampel dihitung menggunakan pembagi df = n - 1 bukannya n?</h4>
+            <label><input type="radio" name="pg1" value="A"> A. Agar perhitungannya lebih cepat</label>
+            <label><input type="radio" name="pg1" value="B"> B. Agar varians sampel menjadi unbiased estimator bagi varians populasi</label>
+            <label><input type="radio" name="pg1" value="C"> C. Karena derajat kebebasan selalu bernilai nol</label>
+            <label><input type="radio" name="pg1" value="D"> D. Agar nilai deviasi standar bernilai negatif</label>
+            <div id="pg1-fb" class="feedback-box"></div>
+        </div>
+
+        <div class="q-card" id="pg2-card">
+            <h4>2. Jika setiap skor dalam sampel dikalikan dengan angka 3, maka nilai Deviasi Standar yang baru akan...</h4>
+            <label><input type="radio" name="pg2" value="A"> A. Tidak berubah sama sekali</label>
+            <label><input type="radio" name="pg2" value="B"> B. Bertambah 3 poin</label>
+            <label><input type="radio" name="pg2" value="C"> C. Menjadi 3 kali deviasi standar semula</label>
+            <label><input type="radio" name="pg2" value="D"> D. Menjadi 9 kali deviasi standar semula</label>
+            <div id="pg2-fb" class="feedback-box"></div>
+        </div>
+
+        <!-- ESSAY -->
+        <h3 style="color:var(--amber); margin-top:28px; margin-bottom:16px;">Bagian II: Soal Essay</h3>
+        <div class="q-card">
+            <h4>Soal Essay: Hitunglah nilai SS, Varians Populasi (σ²), dan Deviasi Standar Populasi (σ) untuk populasi N=4 skor: 1, 4, 6, 1!</h4>
+            <textarea id="ans1" placeholder="Ketik langkah hitunganmu di sini..."></textarea>
+            <div id="fb1" class="feedback-box"></div>
+        </div>
+
+        <button type="button" class="btn btn-primary" onclick="checkAnswers()">SUBMIT LATIHAN SOAL MATERI 4</button>
+    </section>
+
+</div>
+
+<script>
+    function checkAnswers() {
+        let pg1 = document.querySelector('input[name="pg1"]:checked');
+        let pg1Fb = document.getElementById('pg1-fb');
+        if (pg1 && pg1.value === 'B') {
+            pg1Fb.className = 'feedback-box show correct';
+            pg1Fb.innerHTML = '✅ Benar! Pembagi (n-1) menghasilkan Unbiased Estimator.';
+        } else {
+            pg1Fb.className = 'feedback-box show wrong';
+            pg1Fb.innerHTML = '❌ Salah. Jawaban benar: B. Unbiased estimator.';
+        }
+
+        let pg2 = document.querySelector('input[name="pg2"]:checked');
+        let pg2Fb = document.getElementById('pg2-fb');
+        if (pg2 && pg2.value === 'C') {
+            pg2Fb.className = 'feedback-box show correct';
+            pg2Fb.innerHTML = '✅ Benar! Mengalikan skor dengan C akan mengalikan deviasi standar dengan C.';
+        } else {
+            pg2Fb.className = 'feedback-box show wrong';
+            pg2Fb.innerHTML = '❌ Salah. Jawaban benar: C. Menjadi 3 kali deviasi standar semula.';
+        }
+
+        let a1 = document.getElementById('ans1').value.trim();
+        let fb1 = document.getElementById('fb1');
+        fb1.className = 'feedback-box show correct';
+        fb1.innerHTML = '<strong>Model Jawaban Evaluasi Essay:</strong><br>1. Mean μ = 12/4 = 3.<br>2. Deviasi (X - μ): -2, 1, 3, -2.<br>3. Kuadrat Deviasi: 4, 1, 9, 4.<br>4. SS = 18.<br>5. Varians σ² = 18/4 = 4.5.<br>6. Deviasi Standar σ = √4.5 ≈ 2.12.';
+
+        localStorage.setItem('pengstat_materi4_quiz_v2', JSON.stringify({
+            pg1: pg1 ? pg1.value : '',
+            pg2: pg2 ? pg2.value : '',
+            ans1: a1,
+            checked: true
+        }));
+    }
+
+    window.onload = function() {
+        let saved = localStorage.getItem('pengstat_materi4_quiz_v2');
+        if (saved) {
+            let data = JSON.parse(saved);
+            if (data.pg1) { let r = document.querySelector(`input[name="pg1"][value="${data.pg1}"]`); if(r) r.checked = true; }
+            if (data.pg2) { let r = document.querySelector(`input[name="pg2"][value="${data.pg2}"]`); if(r) r.checked = true; }
+            if (data.ans1) document.getElementById('ans1').value = data.ans1;
+            if (data.checked) checkAnswers();
+        }
+    };
+</script>
+</body>
+</html>

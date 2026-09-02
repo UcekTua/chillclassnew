@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materi 1: Fondasi Utama Statistika & Metodologi — PENGSTAT-4</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- KaTeX Math Renderer -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true},{left: '$', right: '$', display: false}]});"></script>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+            --bg: #0a0e1a; --bg2: #111827; --card-bg: rgba(17, 24, 39, 0.75);
+            --border: rgba(99, 102, 241, 0.18); --border-h: rgba(99, 102, 241, 0.45);
+            --text: #f1f5f9; --text2: #94a3b8; --text3: #64748b;
+            --blue: #6366f1; --cyan: #06b6d4; --violet: #8b5cf6;
+            --emerald: #10b981; --amber: #f59e0b; --rose: #f43f5e;
+            --grad: linear-gradient(135deg, #6366f1, #06b6d4);
+        }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.75; overflow-x: hidden; }
+        .bg-orbs { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; overflow: hidden; pointer-events: none; }
+        .bg-orbs span { position: absolute; border-radius: 50%; filter: blur(90px); opacity: 0.1; }
+        .bg-orbs span:nth-child(1) { width: 500px; height: 500px; background: var(--blue); top: -10%; left: -5%; }
+        
+        .wrapper { position: relative; z-index: 1; max-width: 960px; margin: 0 auto; padding: 30px 24px 80px; }
+        .topnav { display: flex; align-items: center; justify-content: space-between; margin-bottom: 36px; padding: 14px 24px; background: rgba(10, 14, 26, 0.85); backdrop-filter: blur(12px); border-radius: 100px; border: 1px solid var(--border); position: sticky; top: 16px; z-index: 100; }
+        .topnav a { color: var(--text2); text-decoration: none; font-size: 0.88rem; font-weight: 600; transition: color 0.3s; }
+        .topnav a:hover { color: var(--blue); }
+
+        .ch-header { text-align: center; margin-bottom: 40px; }
+        .ch-badge { display: inline-block; padding: 5px 14px; border-radius: 100px; background: rgba(99, 102, 241, 0.12); border: 1px solid rgba(99, 102, 241, 0.25); color: var(--blue); font-size: 0.78rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 14px; }
+        .ch-header h1 { font-size: clamp(1.8rem, 4vw, 2.7rem); font-weight: 900; background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 12px; }
+
+        .sec-card { background: var(--card-bg); backdrop-filter: blur(16px); border: 1px solid var(--border); border-radius: 20px; padding: 32px; margin-bottom: 32px; }
+        .sec-card h2 { font-size: 1.4rem; font-weight: 800; color: var(--text); margin-bottom: 16px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid rgba(148, 163, 184, 0.1); padding-bottom: 12px; }
+        .sec-card h3 { font-size: 1.1rem; font-weight: 700; color: var(--cyan); margin: 20px 0 10px; }
+
+        .concept-box { background: rgba(99, 102, 241, 0.08); border-left: 4px solid var(--blue); padding: 16px 20px; border-radius: 0 12px 12px 0; margin: 16px 0; font-size: 0.95rem; }
+        .mnemonic-box { background: rgba(16, 185, 129, 0.08); border: 1px dashed var(--emerald); padding: 20px; border-radius: 14px; margin: 20px 0; }
+        .mnemonic-box h4 { color: var(--emerald); font-size: 1rem; font-weight: 800; margin-bottom: 8px; }
+
+        .slide-img-container { margin: 20px 0; text-align: center; background: rgba(10, 14, 26, 0.6); padding: 16px; border-radius: 16px; border: 1px solid var(--border); }
+        .slide-img-container img { max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 8px 24px rgba(0,0,0,0.4); }
+        .slide-img-caption { font-size: 0.82rem; color: var(--text2); margin-top: 10px; font-weight: 500; }
+
+        .essay-box { background: rgba(245, 158, 11, 0.08); border: 1px solid rgba(245, 158, 11, 0.25); border-radius: 16px; padding: 24px; margin: 20px 0; }
+        .essay-box h4 { color: var(--amber); font-size: 1rem; font-weight: 800; margin-bottom: 10px; }
+        .essay-ans { background: rgba(17, 24, 39, 0.9); border-radius: 10px; padding: 16px; margin-top: 10px; font-size: 0.92rem; color: var(--text2); border-left: 3px solid var(--amber); }
+
+        table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.9rem; }
+        th, td { padding: 12px 16px; text-align: left; border-bottom: 1px solid rgba(148, 163, 184, 0.12); }
+        th { background: rgba(99, 102, 241, 0.12); color: var(--blue); font-weight: 700; }
+
+        .q-card { background: rgba(17, 24, 39, 0.9); border: 1px solid var(--border); border-radius: 16px; padding: 24px; margin-bottom: 20px; }
+        .q-card h4 { font-size: 1rem; font-weight: 700; color: var(--text); margin-bottom: 12px; }
+        .q-card label { display: flex; align-items: flex-start; gap: 10px; padding: 8px 12px; border-radius: 8px; cursor: pointer; color: var(--text2); font-size: 0.9rem; margin-bottom: 6px; }
+        .q-card label:hover { background: rgba(99, 102, 241, 0.08); }
+        textarea { width: 100%; height: 100px; background: rgba(10, 14, 26, 0.8); border: 1px solid var(--border); border-radius: 10px; color: var(--text); padding: 12px; font-family: inherit; font-size: 0.9rem; resize: vertical; margin-bottom: 12px; }
+        textarea:focus { outline: none; border-color: var(--blue); }
+        
+        .btn { display: inline-flex; align-items: center; justify-content: center; padding: 12px 28px; border: none; border-radius: 10px; font-family: inherit; font-size: 0.9rem; font-weight: 700; cursor: pointer; transition: all 0.3s; }
+        .btn-primary { background: var(--grad); color: #fff; }
+        .btn-primary:hover { opacity: 0.9; transform: translateY(-2px); }
+
+        .feedback-box { display: none; padding: 16px; border-radius: 10px; margin-top: 12px; font-size: 0.9rem; }
+        .feedback-box.show { display: block; }
+        .feedback-box.correct { background: rgba(16, 185, 129, 0.1); border: 1px solid var(--emerald); color: var(--emerald); }
+        .feedback-box.wrong { background: rgba(244, 63, 94, 0.1); border: 1px solid var(--rose); color: var(--rose); }
+    </style>
+</head>
+<body>
+<div class="bg-orbs"><span></span></div>
+<div class="wrapper">
+
+    <nav class="topnav">
+        <a href="index.html">🏠 Hub PENGSTAT</a>
+        <span style="color:var(--text3);">|</span>
+        <a href="materi-2.html">Materi 2 ➔</a>
+    </nav>
+
+    <header class="ch-header">
+        <div class="ch-badge">Materi 1 — Pembahasan Terperinci</div>
+        <h1>Fondasi Utama Statistika Deskriptif & Metodologi Penelitian</h1>
+        <p>Memahami konsep dasar populasi, sampel, sampling error, jenis variabel, batas nyata, skala pengukuran, dan metode penelitian ilmiah.</p>
+    </header>
+
+    <!-- SECTION 1 -->
+    <section class="sec-card">
+        <h2>1. Populasi vs Sampel & Parameter vs Statistik</h2>
+        <p>Dalam ilmu statistik, hal paling dasar yang wajib dipahami adalah membedakan kelompok subjek yang diteliti.</p>
+        
+        <div class="concept-box">
+            <strong>Populasi (Population)</strong>: Seluruh himpunan individu, objek, atau kejadian yang menjadi fokus utama perhatian peneliti.<br>
+            <strong>Sampel (Sample)</strong>: Sebagian individu yang dipilih dari populasi untuk mewakili populasi dalam studi penelitian.
+        </div>
+
+        <h3>Parameter vs Statistik</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Ukuran</th>
+                    <th>Asal Kelompok</th>
+                    <th>Simbol Notasi Umum</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Parameter</strong></td>
+                    <td>Mengukur Karakteristik <strong>Populasi</strong></td>
+                    <td>Huruf Yunani: Rata-rata ($\mu$), Deviasi Standar ($\sigma$), Jumlah ($N$)</td>
+                </tr>
+                <tr>
+                    <td><strong>Statistik (Statistic)</strong></td>
+                    <td>Mengukur Karakteristik <strong>Sampel</strong></td>
+                    <td>Huruf Latin: Rata-rata ($M$ atau $\bar{X}$), Deviasi Standar ($s$), Jumlah ($n$)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Sampling Error (Kesalahan Pengambilan Sampel)</h3>
+        <p><strong>Sampling Error</strong> adalah perbedaan atau ketidakcocokan alami (*discrepancy*) yang selalu terjadi antara statistik sampel dengan parameter populasi yang bersesuaian.</p>
+
+        <!-- VISUAL DIAGRAM SLIDE EMBED -->
+        <div class="slide-img-container">
+            <img src="./images/fig_1_2_sampling_error.png" alt="Gambar Diagram Sampling Error">
+            <div class="slide-img-caption">📷 Diagram Asli Slide: Ilustrasi Populasi (1000 Mahasiswa, $\mu=112.5$) vs Sampel #1 ($M=104.6$) & Sampel #2 ($M=114.2$) yang Menunjukkan Sampling Error</div>
+        </div>
+
+        <p><em>Penjelasan Diagram di Atas</em>: Sebuah populasi 1000 mahasiswa memiliki rata-rata IQ ($\mu$) = 112.5. Saat peneliti mengambil Sampel #1 (5 orang), diperoleh rata-rata IQ ($M$) = 104.6. Saat mengambil Sampel #2 (5 orang), diperoleh $M$ = 114.2. Perbedaan antara 104.6 atau 114.2 dengan 112.5 inilah yang disebut <strong>Sampling Error</strong>.</p>
+    </section>
+
+    <!-- SECTION 2 -->
+    <section class="sec-card">
+        <h2>2. Cabang Statistika, Variabel, & Batas Nyata (Real Limits)</h2>
+        
+        <h3>Dua Cabang Utama Statistika</h3>
+        <ul>
+            <li><strong>Statistika Deskriptif (Descriptive Statistics)</strong>: Prosedur statistik untuk menyederhanakan, merangkum, dan mengorganisasi data agar dapat disajikan secara sistematis (misal: tabel frekuensi, grafik, rata-rata, deviasi standar).</li>
+            <li><strong>Statistika Inferensial (Inferential Statistics)</strong>: Prosedur mempelajari sampel untuk membuat generalisasi atau kesimpulan mengenai populasi asal sampel tersebut.</li>
+        </ul>
+
+        <h3>Jenis Variabel: Diskrit vs Kontinu</h3>
+        <ul>
+            <li><strong>Variabel Diskrit (Discrete Variable)</strong>: Terdiri dari kategori terpisah yang tidak dapat dibagi lagi. Nilainya berupa bilangan bulat utuh tanpa nilai pecahan di antaranya (Contoh: Jumlah anak dalam keluarga, jumlah lemparan dadu, jenis kelamin).</li>
+            <li><strong>Variabel Kontinu (Continuous Variable)</strong>: Memiliki jumlah nilai tak terbatas di antara dua nilai yang diobservasi. Variabel ini dapat dibagi menjadi pecahan tak terbatas (Contoh: Tinggi badan, berat badan, waktu, suhu).</li>
+        </ul>
+
+        <div class="concept-box">
+            <strong>Batas Nyata (Real Limits) pada Variabel Kontinu</strong>:<br>
+            Karena variabel kontinu selalu dapat dibagi menjadi pecahan desimal, setiap skor mentah $X$ sebenarnya mewakili suatu interval yang dibatasi oleh:
+            <ul>
+                <li><strong>Lower Real Limit (LRL / Batas Nyata Bawah)</strong>: Ujung bawah interval ($X - 0.5$).</li>
+                <li><strong>Upper Real Limit (URL / Batas Nyata Atas)</strong>: Ujung atas interval ($X + 0.5$).</li>
+            </ul>
+        </div>
+
+        <!-- VISUAL DIAGRAM SLIDE EMBED -->
+        <div class="slide-img-container">
+            <img src="./images/fig_real_limits.png" alt="Gambar Diagram Batas Nyata Real Limits">
+            <div class="slide-img-caption">📷 Diagram Asli Slide: Batas Nyata (*Real Limits*) Skor $X=150$ yang Dibatasi oleh LRL 149.5 hingga URL 150.5</div>
+        </div>
+
+        <p><em>Penjelasan Diagram</em>: Skor $X = 150$ memiliki batas nyata dari <strong>149.5 (LRL)</strong> hingga <strong>150.5 (URL)</strong>. Nilai seperti 149.6 atau 150.3 secara resmi dihitung masuk ke dalam kategori $X = 150$.</p>
+    </section>
+
+    <!-- SECTION 3 -->
+    <section class="sec-card">
+        <h2>3. Skala Pengukuran (Scales of Measurement)</h2>
+        <p>Ada 4 tingkat skala pengukuran data yang wajib dihafalkan:</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Skala Pengukuran</th>
+                    <th>Karakteristik Utama</th>
+                    <th>Contoh Konkret</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Nominal</strong></td>
+                    <td>Kategori/Label tanpa urutan nilai kuantitatif</td>
+                    <td>Jenis Kelamin, Agama, Nomor Punggung Pemain, Warna Mata</td>
+                </tr>
+                <tr>
+                    <td><strong>Ordinal</strong></td>
+                    <td>Kategori berurutan (peringkat), tetapi jarak antar peringkat tidak harus sama</td>
+                    <td>Peringkat Juara (1, 2, 3), Ukuran Baju (S, M, L), Tingkat Kepuasan (Rendah, Sedang, Tinggi)</td>
+                </tr>
+                <tr>
+                    <td><strong>Interval</strong></td>
+                    <td>Urutan + jarak interval sama, tetapi <strong>TIDAK ADA titik nol mutlak</strong> (nol bersifat arbitrer)</td>
+                    <td>Suhu Celsius/Fahrenheit (0°C bukan berarti tidak ada suhu), Skor IQ, Skor Tes SAT</td>
+                </tr>
+                <tr>
+                    <td><strong>Rasio (Ratio)</strong></td>
+                    <td>Urutan + interval sama + <strong>Terdapat titik NOL MUTLAK (Absolute Zero)</strong></td>
+                    <td>Berat Badan (0 kg = tidak ada massa), Waktu, Jumlah Uang, Tinggi Badan</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- SECTION 4 -->
+    <section class="sec-card">
+        <h2>4. Struktur Data & Metode Penelitian</h2>
+        
+        <h3>1. Metode Korelasional (Correlational Method)</h3>
+        <p>Mengamati dua variabel berbeda pada setiap individu untuk melihat apakah terdapat hubungan statistik di antara keduanya.</p>
+
+        <div class="slide-img-container">
+            <img src="./images/fig_correlational_study.png" alt="Studi Korelasional Slide">
+            <div class="slide-img-caption">📷 Diagram Asli Slide: Studi Korelasional Mengukur Waktu Bangun Tidur dan IPK Mahasiswa</div>
+        </div>
+
+        <p><strong>Keterbatasan Utama</strong>: Metode korelasional tidak dapat membuktikan hubungan sebab-akibat (*causation*).</p>
+
+        <h3>2. Metode Eksperimental (Experimental Method)</h3>
+        <p>Bertujuan membuktikan <strong>hubungan sebab-akibat (cause-and-effect)</strong>.</p>
+        
+        <div class="slide-img-container">
+            <img src="./images/fig_experimental_study.png" alt="Studi Eksperimental Slide">
+            <div class="slide-img-caption">📷 Diagram Asli Slide: Struktur Eksperimen dengan Variabel Bebas (IV), Terikat (DV), dan Kontrol</div>
+        </div>
+
+        <ul>
+            <li><strong>Independent Variable (IV / Variabel Bebas)</strong>: Variabel yang dimanipulasi secara sengaja oleh peneliti.</li>
+            <li><strong>Dependent Variable (DV / Variabel Terikat)</strong>: Variabel yang diukur untuk melihat dampak atau efek dari IV.</li>
+            <li><strong>Kontrol Variabel Pengganggu (Confounding Variables)</strong>: Memastikan variabel luar tidak mengacaukan hasil eksperimen melalui *random assignment*.</li>
+            <li><strong>Kelompok Eksperimen vs Kontrol</strong>: Kelompok Eksperimen menerima perlakuan (*treatment*), sedangkan Kelompok Kontrol tidak menerima perlakuan/placebo.</li>
+        </ul>
+    </section>
+
+    <!-- MNEMONIC BOX -->
+    <div class="sec-card" style="border-color: var(--emerald);">
+        <h2>💡 CARA CEPAAT MENGHAFAL (MNEMONICS)</h2>
+        
+        <div class="mnemonic-box">
+            <h4>🧠 Trik Hafal Populasi vs Sampel</h4>
+            <p>Ingat pasangan huruf depannya: <strong>P</strong>opulasi $\leftrightarrow$ <strong>P</strong>arameter (Pakai Huruf Yunani $\mu, \sigma$). <strong>S</strong>ampel $\leftrightarrow$ <strong>S</strong>tatistik (Pakai Huruf Latin $M, s$).</p>
+        </div>
+
+        <div class="mnemonic-box">
+            <h4>🧠 Trik Hafal 4 Skala Pengukuran: "NOIR"</h4>
+            <ul>
+                <li><strong>N</strong>ominal $\to$ <strong>N</strong>ame/Nama saja (Label).</li>
+                <li><strong>O</strong>rdinal $\to$ <strong>O</strong>rder/Urutan peringkat.</li>
+                <li><strong>I</strong>nterval $\to$ <strong>I</strong>nterval sama, tapi **I**nvalid Nol Mutlak (Nol arbitrer).</li>
+                <li><strong>R</strong>atio $\to$ **R**eal Zero (Ada Nol Mutlak / Rasio perbandingan).</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- ESSAY EXAM PREPARATION -->
+    <section class="sec-card">
+        <h2>📝 CONTOH SOAL ESSAY UJIAN & JAWABAN STANDAR DOSEN</h2>
+        
+        <div class="essay-box">
+            <h4>Soal Essay 1: Sampling Error & Generabilitas</h4>
+            <p><strong>Pertanyaan</strong>: Jelaskan apa yang dimaksud dengan <em>Sampling Error</em>! Mengapa <em>Sampling Error</em> selalu terjadi dalam penelitian dan bagaimana dampaknya terhadap proses inferensi statistik?</p>
+            <div class="essay-ans">
+                <strong>Jawaban Standar Dosen</strong>:<br>
+                <em>Sampling Error</em> adalah perbedaan atau ketidakcocokan alami (*discrepancy*) yang terjadi antara nilai statistik sampel (misal: rata-rata sampel $M$) dengan nilai parameter populasi yang bersesuaian (rata-rata populasi $\mu$).<br><br>
+                Sampling error selalu terjadi karena sampel hanyalah sebagian kecil dari keseluruhan populasi, sehingga variasi individu dalam sampel tidak akan pernah bisa persis 100% identik dengan populasi asal. Dampaknya terhadap inferensi statistik adalah peneliti harus menggunakan teknik statistika inferensial untuk menentukan apakah perbedaan hasil sampel terjadi secara kebetulan akibat sampling error atau karena ada efek nyata.
+            </div>
+        </div>
+    </section>
+
+    <!-- INTERACTIVE PRACTICE QUIZ (PG + ESSAY) -->
+    <section class="sec-card">
+        <h2>✍️ LATIHAN SOAL INTERAKTIF (Pilihan Ganda & Essay)</h2>
+
+        <!-- BAGIAN PILIHAN GANDA -->
+        <h3 style="color:var(--cyan); margin-bottom:16px;">Bagian I: Soal Pilihan Ganda (PG)</h3>
+        
+        <div class="q-card" id="pg1-card">
+            <h4>1. Karakteristik populasi yang diukur dengan angka numerik dinamakan...</h4>
+            <label><input type="radio" name="pg1" value="A"> A. Statistik</label>
+            <label><input type="radio" name="pg1" value="B"> B. Parameter</label>
+            <label><input type="radio" name="pg1" value="C"> C. Sampling Error</label>
+            <label><input type="radio" name="pg1" value="D"> D. Variabel Diskrit</label>
+            <div id="pg1-fb" class="feedback-box"></div>
+        </div>
+
+        <div class="q-card" id="pg2-card">
+            <h4>2. Manakah di bawah ini yang merupakan contoh variabel kontinu?</h4>
+            <label><input type="radio" name="pg2" value="A"> A. Jumlah mahasiswa di kelas</label>
+            <label><input type="radio" name="pg2" value="B"> B. Jumlah anak dalam keluarga</label>
+            <label><input type="radio" name="pg2" value="C"> C. Waktu yang dibutuhkan menyelesaikan ujian</label>
+            <label><input type="radio" name="pg2" value="D"> D. Jumlah angka saat melempar dadu</label>
+            <div id="pg2-fb" class="feedback-box"></div>
+        </div>
+
+        <div class="q-card" id="pg3-card">
+            <h4>3. Skala pengukuran yang memiliki jarak interval setara tetapi TIDAK memiliki titik nol mutlak adalah...</h4>
+            <label><input type="radio" name="pg3" value="A"> A. Nominal</label>
+            <label><input type="radio" name="pg3" value="B"> B. Ordinal</label>
+            <label><input type="radio" name="pg3" value="C"> C. Interval</label>
+            <label><input type="radio" name="pg3" value="D"> D. Rasio</label>
+            <div id="pg3-fb" class="feedback-box"></div>
+        </div>
+
+        <!-- BAGIAN ESSAY -->
+        <h3 style="color:var(--cyan); margin-top:28px; margin-bottom:16px;">Bagian II: Soal Essay</h3>
+        <div class="q-card">
+            <h4>Soal Essay: Tentukan Batas Nyata (Real Limits) Lower dan Upper untuk skor kontinu $X = 28$ dan jelaskan maknanya!</h4>
+            <textarea id="ans1" placeholder="Ketik jawaban essaymu di sini..."></textarea>
+            <div id="fb1" class="feedback-box"></div>
+        </div>
+
+        <button type="button" class="btn btn-primary" onclick="checkAnswers()">SUBMIT LATIHAN SOAL MATERI 1</button>
+    </section>
+
+</div>
+
+<script>
+    function checkAnswers() {
+        // PG 1
+        let pg1 = document.querySelector('input[name="pg1"]:checked');
+        let pg1Fb = document.getElementById('pg1-fb');
+        if (pg1 && pg1.value === 'B') {
+            pg1Fb.className = 'feedback-box show correct';
+            pg1Fb.innerHTML = '✅ Benar! Parameter adalah ukuran kuantitatif populasi.';
+        } else {
+            pg1Fb.className = 'feedback-box show wrong';
+            pg1Fb.innerHTML = '❌ Salah. Jawaban benar: B. Parameter (Populasi dikukur oleh Parameter).';
+        }
+
+        // PG 2
+        let pg2 = document.querySelector('input[name="pg2"]:checked');
+        let pg2Fb = document.getElementById('pg2-fb');
+        if (pg2 && pg2.value === 'C') {
+            pg2Fb.className = 'feedback-box show correct';
+            pg2Fb.innerHTML = '✅ Benar! Waktu dapat dibagi menjadi desimal tak terbatas (kontinu).';
+        } else {
+            pg2Fb.className = 'feedback-box show wrong';
+            pg2Fb.innerHTML = '❌ Salah. Jawaban benar: C. Waktu adalah variabel kontinu.';
+        }
+
+        // PG 3
+        let pg3 = document.querySelector('input[name="pg3"]:checked');
+        let pg3Fb = document.getElementById('pg3-fb');
+        if (pg3 && pg3.value === 'C') {
+            pg3Fb.className = 'feedback-box show correct';
+            pg3Fb.innerHTML = '✅ Benar! Skala Interval memiliki interval sama tanpa nol mutlak (contoh: Suhu Celsius).';
+        } else {
+            pg3Fb.className = 'feedback-box show wrong';
+            pg3Fb.innerHTML = '❌ Salah. Jawaban benar: C. Skala Interval.';
+        }
+
+        // Essay
+        let a1 = document.getElementById('ans1').value.trim();
+        let fb1 = document.getElementById('fb1');
+        fb1.className = 'feedback-box show correct';
+        fb1.innerHTML = '<strong>Model Jawaban Evaluasi Essay:</strong><br>Lower Real Limit (LRL) = 27.5, Upper Real Limit (URL) = 28.5. Maknanya: Semua nilai pengukuran dari 27.5 hingga 28.5 tercakup ke dalam kategori skor X = 28.';
+
+        localStorage.setItem('pengstat_materi1_quiz_v2', JSON.stringify({
+            pg1: pg1 ? pg1.value : '',
+            pg2: pg2 ? pg2.value : '',
+            pg3: pg3 ? pg3.value : '',
+            ans1: a1,
+            checked: true
+        }));
+    }
+
+    window.onload = function() {
+        let saved = localStorage.getItem('pengstat_materi1_quiz_v2');
+        if (saved) {
+            let data = JSON.parse(saved);
+            if (data.pg1) { let r = document.querySelector(`input[name="pg1"][value="${data.pg1}"]`); if(r) r.checked = true; }
+            if (data.pg2) { let r = document.querySelector(`input[name="pg2"][value="${data.pg2}"]`); if(r) r.checked = true; }
+            if (data.pg3) { let r = document.querySelector(`input[name="pg3"][value="${data.pg3}"]`); if(r) r.checked = true; }
+            if (data.ans1) document.getElementById('ans1').value = data.ans1;
+            if (data.checked) checkAnswers();
+        }
+    };
+</script>
+</body>
+</html>

@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materi 1.1: Computer-Based Information Systems — Belajar ANAP</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+            --bg: #0a0e1a; --bg2: #111827; --bg-card: rgba(17,24,39,0.7);
+            --border: rgba(99,102,241,0.15); --border-h: rgba(99,102,241,0.4);
+            --text: #f1f5f9; --text2: #94a3b8; --text3: #64748b;
+            --blue: #6366f1; --cyan: #06b6d4; --violet: #8b5cf6;
+            --emerald: #10b981; --amber: #f59e0b; --rose: #f43f5e;
+            --grad: linear-gradient(135deg, #6366f1, #06b6d4);
+        }
+        body { font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); line-height:1.8; }
+        .bg-orbs { position:fixed; top:0; left:0; width:100%; height:100%; z-index:0; overflow:hidden; pointer-events:none; }
+        .bg-orbs span { position:absolute; border-radius:50%; filter:blur(80px); opacity:0.1; }
+        .bg-orbs span:nth-child(1) { width:500px; height:500px; background:var(--blue); top:-10%; left:-5%; }
+        .bg-orbs span:nth-child(2) { width:400px; height:400px; background:var(--violet); bottom:10%; right:-5%; }
+
+        .wrapper { position:relative; z-index:1; max-width:900px; margin:0 auto; padding:40px 24px 80px; }
+        .topnav { display:flex; align-items:center; gap:12px; margin-bottom:48px; flex-wrap:wrap; position:sticky; top:0; z-index:100; background:rgba(10,14,26,0.85); backdrop-filter:blur(12px); padding:20px 0; }
+        .topnav a { color:var(--text2); text-decoration:none; font-size:0.85rem; font-weight:500; transition:color 0.3s; }
+        .topnav a:hover { color:var(--blue); }
+        .topnav .sep { color:var(--text3); }
+
+        .ch-header { margin-bottom:48px; }
+        .ch-badge { display:inline-block; padding:5px 14px; border-radius:100px; background:rgba(99,102,241,0.12); border:1px solid rgba(99,102,241,0.25); color:var(--blue); font-size:0.75rem; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; margin-bottom:16px; }
+        .ch-header h1 { font-size:clamp(1.8rem,4vw,2.6rem); font-weight:900; background:var(--grad); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; margin-bottom:12px; }
+        .ch-header p { color:var(--text2); font-size:1rem; max-width:700px; }
+
+        .toc { background:var(--bg-card); backdrop-filter:blur(16px); border:1px solid var(--border); border-radius:16px; padding:28px 32px; margin-bottom:48px; }
+        .toc h3 { font-size:0.85rem; font-weight:700; text-transform:uppercase; letter-spacing:1.5px; color:var(--blue); margin-bottom:16px; }
+        .toc ol { padding-left:20px; }
+        .toc li { margin-bottom:8px; }
+        .toc a { color:var(--text2); text-decoration:none; font-size:0.9rem; transition:color 0.3s; }
+        .toc a:hover { color:var(--cyan); }
+
+        .section { background:var(--bg-card); backdrop-filter:blur(16px); border:1px solid var(--border); border-radius:20px; padding:36px; margin-bottom:32px; }
+        .section h2 { font-size:1.5rem; font-weight:800; margin-bottom:20px; display:flex; align-items:center; gap:12px; }
+        .section h3 { font-size:1.15rem; font-weight:700; margin:28px 0 12px; color:var(--cyan); }
+        .section p { color:var(--text2); margin-bottom:14px; font-size:0.95rem; }
+        .section ul, .section ol { padding-left:24px; margin-bottom:14px; }
+        .section li { color:var(--text2); margin-bottom:8px; font-size:0.95rem; }
+
+        .highlight { border-radius:12px; padding:20px 24px; margin:20px 0; }
+        .highlight.blue { background:rgba(99,102,241,0.08); border-left:4px solid var(--blue); }
+        .highlight.emerald { background:rgba(16,185,129,0.08); border-left:4px solid var(--emerald); }
+        .highlight.amber { background:rgba(245,158,11,0.08); border-left:4px solid var(--amber); }
+
+        .table-wrap { overflow-x:auto; margin:20px 0; }
+        table { width:100%; border-collapse:collapse; font-size:0.88rem; }
+        th { background:rgba(99,102,241,0.12); color:var(--blue); font-weight:700; padding:12px 16px; text-align:left; border-bottom:2px solid rgba(99,102,241,0.2); }
+        td { padding:11px 16px; border-bottom:1px solid rgba(148,163,184,0.08); color:var(--text2); }
+
+        .key-points { background:linear-gradient(135deg, rgba(16,185,129,0.06), rgba(6,182,212,0.06)); border:1px solid rgba(16,185,129,0.2); border-radius:16px; padding:28px 32px; margin:28px 0; }
+        .key-points h3 { color:var(--emerald); font-size:1rem; margin-bottom:16px; }
+
+        .memory-tips { background:linear-gradient(135deg, rgba(245,158,11,0.06), rgba(244,63,94,0.06)); border:1px solid rgba(245,158,11,0.2); border-radius:16px; padding:28px 32px; margin:28px 0; }
+        .memory-tips h3 { color:var(--amber); font-size:1rem; margin-bottom:16px; }
+
+        .example { background:rgba(139,92,246,0.06); border:1px solid rgba(139,92,246,0.2); border-radius:16px; padding:28px 32px; margin:28px 0; }
+        .example h3 { color:var(--violet); margin-top:0; margin-bottom:16px; }
+
+        .quiz-section { margin-top:48px; }
+        .q-card { background:var(--bg-card); backdrop-filter:blur(16px); border:1px solid var(--border); border-radius:16px; padding:28px 30px; margin-bottom:20px; }
+        .q-card.correct { border-color:var(--emerald) !important; }
+        .q-card.wrong { border-color:var(--rose) !important; }
+        .q-num { font-size:0.75rem; font-weight:700; color:var(--blue); text-transform:uppercase; letter-spacing:1.5px; margin-bottom:10px; }
+        .q-text { font-size:0.95rem; font-weight:600; color:var(--text); margin-bottom:16px; }
+        .q-options label { display:flex; align-items:flex-start; gap:12px; padding:10px 14px; margin-bottom:8px; border-radius:10px; cursor:pointer; font-size:0.9rem; color:var(--text2); }
+        .q-options label:hover { background:rgba(99,102,241,0.06); }
+        .q-feedback { margin-top:14px; padding:14px 18px; border-radius:10px; font-size:0.88rem; display:none; }
+        .q-feedback.show { display:block; }
+        .q-feedback.correct-fb { background:rgba(16,185,129,0.1); border:1px solid rgba(16,185,129,0.25); color:var(--emerald); }
+        .q-feedback.wrong-fb { background:rgba(244,63,94,0.1); border:1px solid rgba(244,63,94,0.25); color:var(--rose); }
+
+        .btn { display:inline-flex; align-items:center; gap:8px; padding:14px 32px; border:none; border-radius:12px; font-family:inherit; font-size:0.9rem; font-weight:700; cursor:pointer; transition:all 0.3s; }
+        .btn-primary { background:var(--grad); color:#fff; }
+        .results-box { background:var(--bg-card); border:1px solid var(--border); border-radius:16px; padding:32px; margin-top:24px; display:none; }
+        .results-box.show { display:block; }
+        .score-display { text-align:center; }
+        .score-display .score-num { font-size:3rem; font-weight:900; color:var(--cyan); }
+    </style>
+</head>
+<body>
+<div class="bg-orbs"><span></span><span></span></div>
+<div class="wrapper">
+
+<nav class="topnav">
+    <a href="index.html">🏠 Beranda ANAP</a>
+    <span class="sep">/</span>
+    <a href="materi-1-1.html" style="color:var(--blue);">Materi 1.1</a>
+    <span class="sep">/</span>
+    <a href="materi-1-2.html">Materi 1.2 →</a>
+</nav>
+
+<div class="ch-header">
+    <div class="ch-badge">Materi 1.1</div>
+    <h1>Computer-Based Information Systems</h1>
+    <p>Memahami konsep dasar Sistem Informasi Berbasis Komputer (CBIS), elemen-elemen pengenalnya, evolusi sejarah IS dari tahun 1960 hingga Big Data, serta tipe-tipe utama sistem informasi di organisasi.</p>
+</div>
+
+<div class="toc">
+    <h3>📑 Daftar Isi</h3>
+    <ol>
+        <li><a href="#s1">Pengertian & Elemen Information System (IS)</a></li>
+        <li><a href="#s2">Evolusi Information Systems (1960 - Sekarang)</a></li>
+        <li><a href="#s3">Tipe Dasar Sistem Informasi (TPS, MIS, Strategic IS)</a></li>
+        <li><a href="#s4">Sistem Terintegrasi: ERP & Business Intelligence</a></li>
+        <li><a href="#s5">Poin-Poin Penting & Cara Menghafal</a></li>
+        <li><a href="#s6">Contoh Soal UAS & Pembahasan</a></li>
+        <li><a href="#quiz">Latihan Soal Interaktif (Jawaban Tersimpan)</a></li>
+    </ol>
+</div>
+
+<div class="section" id="s1">
+    <h2><span class="icon">💻</span> 1. Pengertian & Elemen Information System (IS)</h2>
+    <p><strong>Information System (Sistem Informasi)</strong> adalah kumpulan elemen yang saling berhubungan (interrelated components) yang bertugas untuk mengumpulkan (<strong>input</strong>), mengolah (<strong>process</strong>), dan menyebarkan (<strong>output</strong>) data serta informasi, dilengkapi dengan mekanisme balik (<strong>feedback</strong>) untuk mencapai tujuan organisasi.</p>
+
+    <div class="highlight blue">
+        <h4>💡 Elemen-Elemen Kunci Information System</h4>
+        <ul>
+            <li><strong>People:</strong> Pengguna (user), pengelola, analis sistem.</li>
+            <li><strong>Data:</strong> Bahan mentah berupa fakta atau angka sebelum diolah.</li>
+            <li><strong>Processes & Procedures:</strong> Instruksi dan aturan operasional pengolahan data.</li>
+            <li><strong>Technology & Tools:</strong> Perangkat keras (hardware), perangkat lunak (software), jaringan komputer.</li>
+        </ul>
+    </div>
+
+    <p><strong>Computer-Based Information System (CBIS):</strong> Secara definisi dasar, Sistem Informasi tidak wajib memakai komputer (bisa manual seperti pencatatan buku kas kertas). Namun, saat ini fokus utama kita adalah CBIS, yaitu sistem informasi yang memanfaatkan teknologi aplikasi komputer untuk melaksanakan tugas-tugas operasional dan manajerial.</p>
+</div>
+
+<div class="section" id="s2">
+    <h2><span class="icon">⏳</span> 2. Evolusi Information Systems (1960 - Sekarang)</h2>
+    <p>Perkembangan sistem informasi mengikuti kemajuan teknologi komputasi dari masa ke masa:</p>
+
+    <div class="table-wrap">
+        <table>
+            <thead>
+                <tr>
+                    <th>Era</th>
+                    <th>Tipe Sistem Informasi</th>
+                    <th>Fokus Pemrosesan Data (Data Processing)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>1960</strong></td>
+                    <td>Transaction Processing System (TPS)</td>
+                    <td>Otomasi aktivitas operasional yang berulang (repeating activity automation).</td>
+                </tr>
+                <tr>
+                    <td><strong>1970</strong></td>
+                    <td>Management Information System (MIS)</td>
+                    <td>Rekapitulasi data fungsional secara berkala (mingguan/bulanan).</td>
+                </tr>
+                <tr>
+                    <td><strong>1980</strong></td>
+                    <td>Strategic Information System (SIS)</td>
+                    <td>Memproses gabungan data internal dan eksternal untuk persaingan bisnis.</td>
+                </tr>
+                <tr>
+                    <td><strong>1990</strong></td>
+                    <td>e-Business, e-Commerce, e-Gov</td>
+                    <td>Memproses data secara online yang melibatkan multi-stakeholder.</td>
+                </tr>
+                <tr>
+                    <td><strong>2000</strong></td>
+                    <td>Enterprise Resource Planning (ERP)</td>
+                    <td>Mengintegrasikan data fungsional seluruh departemen perusahaan.</td>
+                </tr>
+                <tr>
+                    <td><strong>2006+</strong></td>
+                    <td>Business Intelligence (BI) & Big Data</td>
+                    <td>Memproses data temporal, spasial, dan analitik besar (Cloud, Mobile, Big Data).</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="section" id="s3">
+    <h2><span class="icon">🏛️</span> 3. Tipe Dasar Sistem Informasi</h2>
+    <p>Dalam hierarki organisasi, terdapat 3 jenis utama Sistem Informasi:</p>
+    <ol>
+        <li><strong>Transaction Processing System (TPS):</strong> Digunakan di tingkat operasional harian untuk mencatat transaksi rutin (contoh: kasir minimarket, pencatatan presensi).</li>
+        <li><strong>Management Information System (MIS):</strong> Digunakan manajer tingkat menengah untuk laporan ringkasan berkala dan pemantauan kinerja fungsional.</li>
+        <li><strong>Strategic Information System (SIS) / Executive Information System (EIS):</strong> Digunakan oleh eksekutif puncak untuk mendukung keputusan strategis jangka panjang dengan menganalisis tren internal dan eksternal.</li>
+    </ol>
+</div>
+
+<div class="section" id="s4">
+    <h2><span class="icon">🔗</span> 4. Sistem Terintegrasi: ERP & Business Intelligence</h2>
+    <div class="highlight emerald">
+        <h4>Enterprise Resource Planning (ERP)</h4>
+        <p>ERP menghubungkan berbagai fungsi bisnis (seperti HRD, Finance, Supply Chain, Sales) ke dalam satu pusat basis data terpadu (single database) sehingga tidak ada data yang terisolasi (siloed).</p>
+    </div>
+    <div class="highlight amber">
+        <h4>Business Intelligence (BI)</h4>
+        <p>BI mengubah akumulasi data transaksi menjadi dashboard visual (grafik, KPI, persentase) untuk analisis mendalam guna membantu pengambilan keputusan taktis dan strategis secara cepat.</p>
+    </div>
+</div>
+
+<div class="section" id="s5">
+    <h2><span class="icon">💡</span> 5. Poin-Poin Penting & Cara Menghafal</h2>
+    <div class="key-points">
+        <h3>📌 Poin Utama UAS</h3>
+        <ul>
+            <li>Tujuan utama IS: <strong>Menciptakan nilai (Create Value / Profit) bagi organisasi.</strong></li>
+            <li>Komponen utama IS: <strong>Input ➔ Process ➔ Output ➔ Feedback.</strong></li>
+            <li>TPS = Otomasi transaksi berulang (1960).</li>
+            <li>ERP = Integrasi data fungsional organisasi (2000).</li>
+            <li>BI = Dashboard analitik visual (2006+).</li>
+        </ul>
+    </div>
+    <div class="memory-tips">
+        <h3>🧠 Jembatan Keledai (Cara Menghafal)</h3>
+        <p><strong>"IPOF-PDP"</strong> ➔ <strong>I</strong>nput, <strong>P</strong>rocess, <strong>O</strong>utput, <strong>F</strong>eedback didukung oleh <strong>P</strong>eople, <strong>D</strong>ata, <strong>P</strong>rocess.</p>
+        <p><strong>"T-M-S-E-B"</strong> (Urutan Evolusi IS): <strong>T</strong>PS (60) ➔ <strong>M</strong>IS (70) ➔ <strong>S</strong>IS (80) ➔ <strong>E</strong>RP (2000) ➔ <strong>B</strong>I (2006).</p>
+    </div>
+</div>
+
+<div class="section" id="s6">
+    <h2><span class="icon">✍️</span> 6. Contoh Soal UAS & Pembahasan</h2>
+    <div class="example">
+        <h3>Soal 1 (Pilihan Ganda)</h3>
+        <p><strong>Sistem informasi yang berfungsi utama mengotomasikan aktivitas berulang seperti transaksi harian pada era 1960-an adalah...</strong></p>
+        <p>A. Management Information System (MIS)<br>
+        B. Transaction Processing System (TPS)<br>
+        C. Enterprise Resource Planning (ERP)<br>
+        D. Business Intelligence (BI)</p>
+        <p><strong>Jawaban: B. Transaction Processing System (TPS)</strong></p>
+        <p><em>Pembahasan: TPS adalah bentuk awal sistem informasi komputer yang dirancang untuk mengolah transaksi berulang (repeatable tasks) secara akurat dan cepat.</em></p>
+    </div>
+</div>
+
+<div class="quiz-section" id="quiz">
+    <h2>🎯 Latihan Soal Interaktif — Materi 1.1</h2>
+    <p style="color:var(--text2); margin-bottom:20px;">Jawab soal berikut. Jawabanmu otomatis disimpan di local browser!</p>
+
+    <form id="quizForm">
+        <div class="q-card" id="q1">
+            <div class="q-num">Soal 1</div>
+            <div class="q-text">Tujuan paling utama dari penerapaan Sistem Informasi dalam sebuah organisasi adalah...</div>
+            <div class="q-options">
+                <label><input type="radio" name="q1" value="A"> A. Mengurangi jumlah karyawan secara ekstrem</label>
+                <label><input type="radio" name="q1" value="B"> B. Menciptakan nilai (Create Value / Profit) bagi organisasi</label>
+                <label><input type="radio" name="q1" value="C"> C. Membeli teknologi komputer termahal</label>
+                <label><input type="radio" name="q1" value="D"> D. Mengganti seluruh proses bisnis menjadi serba otomatis tanpa manusia</label>
+            </div>
+            <div class="q-feedback" id="fb1"></div>
+        </div>
+
+        <div class="q-card" id="q2">
+            <div class="q-num">Soal 2</div>
+            <div class="q-text">Sistem informasi yang mengintegrasikan data fungsional dari berbagai departemen seperti HRD, Finance, dan Logistik adalah...</div>
+            <div class="q-options">
+                <label><input type="radio" name="q2" value="A"> A. TPS</label>
+                <label><input type="radio" name="q2" value="B"> B. MIS</label>
+                <label><input type="radio" name="q2" value="C"> C. ERP</label>
+                <label><input type="radio" name="q2" value="D"> D. Manual System</label>
+            </div>
+            <div class="q-feedback" id="fb2"></div>
+        </div>
+
+        <button type="button" class="btn btn-primary" onclick="submitQuiz()">Submit & Cek Jawaban</button>
+    </form>
+
+    <div class="results-box" id="resultsBox">
+        <div class="score-display">
+            <div class="score-num" id="scoreNum">0 / 100</div>
+            <p id="scoreText" style="color:var(--text2);">Hasil kamu telah disimpan!</p>
+        </div>
+    </div>
+</div>
+
+</div>
+
+<script>
+    const answerKey = { q1: 'B', q2: 'C' };
+    const explanations = {
+        q1: 'Tujuan utama IS adalah menciptakan value (nilai tambah/profit) untuk organisasi.',
+        q2: 'ERP (Enterprise Resource Planning) mengintegrasikan seluruh fungsi bisnis ke dalam satu sistem terpadu.'
+    };
+
+    function submitQuiz() {
+        let score = 0;
+        let total = Object.keys(answerKey).length;
+        let userAnswers = {};
+
+        for (let q in answerKey) {
+            let selected = document.querySelector(`input[name="${q}"]:checked`);
+            let card = document.getElementById(q);
+            let fb = document.getElementById('fb' + q.replace('q',''));
+            
+            if (selected) {
+                userAnswers[q] = selected.value;
+                if (selected.value === answerKey[q]) {
+                    score += (100 / total);
+                    card.className = 'q-card correct';
+                    fb.className = 'q-feedback show correct-fb';
+                    fb.innerHTML = '✅ Benar! ' + explanations[q];
+                } else {
+                    card.className = 'q-card wrong';
+                    fb.className = 'q-feedback show wrong-fb';
+                    fb.innerHTML = '❌ Salah. Jawaban benar: ' + answerKey[q] + '. ' + explanations[q];
+                }
+            } else {
+                card.className = 'q-card wrong';
+                fb.className = 'q-feedback show wrong-fb';
+                fb.innerHTML = '⚠️ Kamu belum memilih jawaban.';
+            }
+        }
+
+        document.getElementById('resultsBox').className = 'results-box show';
+        document.getElementById('scoreNum').innerText = Math.round(score) + ' / 100';
+
+        // Save to LocalStorage
+        localStorage.setItem('anap_quiz_1_1', JSON.stringify({
+            answers: userAnswers,
+            score: score
+        }));
+    }
+
+    // Load saved answers on refresh
+    window.onload = function() {
+        let saved = localStorage.getItem('anap_quiz_1_1');
+        if (saved) {
+            let data = JSON.parse(saved);
+            for (let q in data.answers) {
+                let radio = document.querySelector(`input[name="${q}"][value="${data.answers[q]}"]`);
+                if (radio) radio.checked = true;
+            }
+            submitQuiz();
+        }
+    };
+</script>
+</body>
+</html>

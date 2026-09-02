@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulasi UAS ANAP — Analisis dan Perancangan Sistem Informasi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+            --bg: #0a0e1a; --bg2: #111827; --bg-card: rgba(17,24,39,0.7);
+            --border: rgba(99,102,241,0.15); --border-h: rgba(99,102,241,0.4);
+            --text: #f1f5f9; --text2: #94a3b8; --text3: #64748b;
+            --blue: #6366f1; --cyan: #06b6d4; --violet: #8b5cf6;
+            --emerald: #10b981; --amber: #f59e0b; --rose: #f43f5e;
+            --grad: linear-gradient(135deg, #f43f5e, #f59e0b);
+        }
+        body { font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); line-height:1.8; }
+        .bg-orbs { position:fixed; top:0; left:0; width:100%; height:100%; z-index:0; overflow:hidden; pointer-events:none; }
+        .bg-orbs span { position:absolute; border-radius:50%; filter:blur(80px); opacity:0.1; }
+        .bg-orbs span:nth-child(1) { width:500px; height:500px; background:var(--rose); top:-10%; left:-5%; }
+
+        .wrapper { position:relative; z-index:1; max-width:900px; margin:0 auto; padding:40px 24px 80px; }
+        .topnav { display:flex; align-items:center; gap:12px; margin-bottom:48px; flex-wrap:wrap; position:sticky; top:0; z-index:100; background:rgba(10,14,26,0.85); backdrop-filter:blur(12px); padding:20px 0; }
+        .topnav a { color:var(--text2); text-decoration:none; font-size:0.85rem; font-weight:500; }
+
+        .ch-header { margin-bottom:48px; text-align:center; }
+        .ch-badge { display:inline-block; padding:5px 14px; border-radius:100px; background:rgba(244,63,94,0.12); border:1px solid rgba(244,63,94,0.25); color:var(--rose); font-size:0.75rem; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; margin-bottom:16px; }
+        .ch-header h1 { font-size:clamp(1.8rem,4vw,2.6rem); font-weight:900; background:var(--grad); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; margin-bottom:12px; }
+        .ch-header p { color:var(--text2); font-size:1rem; margin:0 auto; max-width:600px; }
+
+        .q-card { background:var(--bg-card); backdrop-filter:blur(16px); border:1px solid var(--border); border-radius:16px; padding:28px 30px; margin-bottom:24px; }
+        .q-card.correct { border-color:var(--emerald) !important; }
+        .q-card.wrong { border-color:var(--rose) !important; }
+        .q-num { font-size:0.75rem; font-weight:700; color:var(--rose); text-transform:uppercase; letter-spacing:1.5px; margin-bottom:10px; }
+        .q-text { font-size:0.95rem; font-weight:600; color:var(--text); margin-bottom:16px; }
+        .q-options label { display:flex; align-items:flex-start; gap:12px; padding:10px 14px; margin-bottom:8px; border-radius:10px; cursor:pointer; font-size:0.9rem; color:var(--text2); }
+        .q-options label:hover { background:rgba(99,102,241,0.06); }
+        .q-feedback { margin-top:14px; padding:14px 18px; border-radius:10px; font-size:0.88rem; display:none; }
+        .q-feedback.show { display:block; }
+        .q-feedback.correct-fb { background:rgba(16,185,129,0.1); border:1px solid rgba(16,185,129,0.25); color:var(--emerald); }
+        .q-feedback.wrong-fb { background:rgba(244,63,94,0.1); border:1px solid rgba(244,63,94,0.25); color:var(--rose); }
+
+        .btn { display:inline-flex; align-items:center; justify-content:center; gap:8px; padding:16px 36px; border:none; border-radius:12px; font-family:inherit; font-size:1rem; font-weight:800; cursor:pointer; transition:all 0.3s; width:100%; }
+        .btn-primary { background:var(--grad); color:#fff; }
+        .results-box { background:var(--bg-card); border:1px solid var(--border); border-radius:20px; padding:40px; margin-bottom:32px; display:none; text-align:center; }
+        .results-box.show { display:block; }
+        .score-num { font-size:4rem; font-weight:900; color:var(--rose); }
+    </style>
+</head>
+<body>
+<div class="bg-orbs"><span></span></div>
+<div class="wrapper">
+
+<nav class="topnav">
+    <a href="index.html">🏠 Beranda ANAP</a>
+</nav>
+
+<div class="ch-header">
+    <div class="ch-badge">SIMULASI UJIAN UAS ANAP</div>
+    <h1>Simulasi UAS ANAP (40 Soal Pilihan Ganda)</h1>
+    <p>Kerjakan ujian simulasi ini untuk mengukur kesiapanmu menghadapi UAS ANAP. Jawaban akan tersimpan otomatis saat direfresh!</p>
+</div>
+
+<div class="results-box" id="resultsBox">
+    <h2>Hasil Ujian Simulasi UAS ANAP</h2>
+    <div class="score-num" id="scoreNum">0 / 100</div>
+    <p id="scoreMessage" style="color:var(--text2); margin-top:10px;">Review pembahasan soal di bawah ini!</p>
+</div>
+
+<form id="uasForm">
+    <!-- 1-10 Materi 1.1 & 1.2 -->
+    <div class="q-card" id="q1">
+        <div class="q-num">Soal 1 (Materi 1.1)</div>
+        <div class="q-text">Tujuan paling utama dari penerapan Sistem Informasi (IS) pada organisasi bisnis adalah...</div>
+        <div class="q-options">
+            <label><input type="radio" name="q1" value="A"> A. Mengurangi jumlah pegawai secara ekstrem</label>
+            <label><input type="radio" name="q1" value="B"> B. Menciptakan nilai (Create Value / Profit) bagi organisasi</label>
+            <label><input type="radio" name="q1" value="C"> C. Mengganti semua infrastruktur dengan komputer termahal</label>
+            <label><input type="radio" name="q1" value="D"> D. Menghilangkan kebutuhan transaksi manual</label>
+        </div>
+        <div class="q-feedback" id="fb1"></div>
+    </div>
+
+    <div class="q-card" id="q2">
+        <div class="q-num">Soal 2 (Materi 1.1)</div>
+        <div class="q-text">Tipe Sistem Informasi pada era 1960-an yang berfokus mengotomasikan aktivitas berulang adalah...</div>
+        <div class="q-options">
+            <label><input type="radio" name="q2" value="A"> A. MIS</label>
+            <label><input type="radio" name="q2" value="B"> B. TPS</label>
+            <label><input type="radio" name="q2" value="C"> C. ERP</label>
+            <label><input type="radio" name="q2" value="D"> D. BI</label>
+        </div>
+        <div class="q-feedback" id="fb2"></div>
+    </div>
+
+    <div class="q-card" id="q3">
+        <div class="q-num">Soal 3 (Materi 1.1)</div>
+        <div class="q-text">Sistem informasi yang mengintegrasikan data fungsional dari seluruh departemen (HRD, Finance, Logistik) ke satu basis data terpadu adalah...</div>
+        <div class="q-options">
+            <label><input type="radio" name="q3" value="A"> A. TPS</label>
+            <label><input type="radio" name="q3" value="B"> B. MIS</label>
+            <label><input type="radio" name="q3" value="C"> C. ERP</label>
+            <label><input type="radio" name="q3" value="D"> D. Dashboard</label>
+        </div>
+        <div class="q-feedback" id="fb3"></div>
+    </div>
+
+    <div class="q-card" id="q4">
+        <div class="q-num">Soal 4 (Materi 1.2)</div>
+        <div class="q-text">Urutan 4 fase utama dalam Systems Development Life Cycle (SDLC) adalah...</div>
+        <div class="q-options">
+            <label><input type="radio" name="q4" value="A"> A. Planning ➔ Analysis ➔ Design ➔ Implementation</label>
+            <label><input type="radio" name="q4" value="B"> B. Analysis ➔ Planning ➔ Design ➔ Implementation</label>
+            <label><input type="radio" name="q4" value="C"> C. Planning ➔ Design ➔ Analysis ➔ Implementation</label>
+            <label><input type="radio" name="q4" value="D"> D. Design ➔ Analysis ➔ Implementation ➔ Maintenance</label>
+        </div>
+        <div class="q-feedback" id="fb4"></div>
+    </div>
+
+    <div class="q-card" id="q5">
+        <div class="q-num">Soal 5 (Materi 1.2)</div>
+        <div class="q-text">Dokumen utama (deliverable) yang dihasilkan pada akhir fase Analysis adalah...</div>
+        <div class="q-options">
+            <label><input type="radio" name="q5" value="A"> A. Project Plan</label>
+            <label><input type="radio" name="q5" value="B"> B. System Proposal</label>
+            <label><input type="radio" name="q5" value="C"> C. System Specification</label>
+            <label><input type="radio" name="q5" value="D"> D. Maintenance Plan</label>
+        </div>
+        <div class="q-feedback" id="fb5"></div>
+    </div>
+
+    <div class="q-card" id="q6">
+        <div class="q-num">Soal 6 (Materi 1.2)</div>
+        <div class="q-text">Dokumen utama (deliverable) yang dihasilkan pada akhir fase Design adalah...</div>
+        <div class="q-options">
+            <label><input type="radio" name="q6" value="A"> A. Project Plan</label>
+            <label><input type="radio" name="q6" value="B"> B. System Proposal</label>
+            <label><input type="radio" name="q6" value="C"> C. System Specification</label>
+            <label><input type="radio" name="q6" value="D"> D. Working IS</label>
+        </div>
+        <div class="q-feedback" id="fb6"></div>
+    </div>
+
+    <div class="q-card" id="q7">
+        <div class="q-num">Soal 7 (Materi 1.3)</div>
+        <div class="q-text">Metodologi yang paling tepat jika keandalan sistem (system reliability) menjadi prioritas tertinggi adalah...</div>
+        <div class="q-options">
+            <label><input type="radio" name="q7" value="A"> A. Waterfall</label>
+            <label><input type="radio" name="q7" value="B"> B. System Prototyping</label>
+            <label><input type="radio" name="q7" value="C"> C. Throw-Away Prototyping</label>
+            <label><input type="radio" name="q7" value="D"> D. Parallel Development</label>
+        </div>
+        <div class="q-feedback" id="fb7"></div>
+    </div>
+
+    <div class="q-card" id="q8">
+        <div class="q-num">Soal 8 (Materi 1.3)</div>
+        <div class="q-text">Ciri khas utama metodologi Extreme Programming (XP) dalam Agile adalah...</div>
+        <div class="q-options">
+            <label><input type="radio" name="q8" value="A"> A. Sprint 2 mingguan tanpa leader</label>
+            <label><input type="radio" name="q8" value="B"> B. Pelaksanaan Pair Programming</label>
+            <label><input type="radio" name="q8" value="C"> C. Pembuatan diagram secara ekstensif</label>
+            <label><input type="radio" name="q8" value="D"> D. Membuang seluruh desain di akhir proyek</label>
+        </div>
+        <div class="q-feedback" id="fb8"></div>
+    </div>
+
+    <div class="q-card" id="q9">
+        <div class="q-num">Soal 9 (Materi 1.4)</div>
+        <div class="q-text">Analis yang bertanggung jawab menangani isu-isu manusia, pelatihan pengguna, dan kesiapan organisasi menghadapi perubahan adalah...</div>
+        <div class="q-options">
+            <label><input type="radio" name="q9" value="A"> A. Business Analyst</label>
+            <label><input type="radio" name="q9" value="B"> B. Systems Analyst</label>
+            <label><input type="radio" name="q9" value="C"> C. Change Management Analyst</label>
+            <label><input type="radio" name="q9" value="D"> D. Infrastructure Analyst</label>
+        </div>
+        <div class="q-feedback" id="fb9"></div>
+    </div>
+
+    <div class="q-card" id="q10">
+        <div class="q-num">Soal 10 (Materi 1.5 & 1.6)</div>
+        <div class="q-text">Prinsip menggabungkan data dan proses ke dalam satu modul tunggal dinamakan...</div>
+        <div class="q-options">
+            <label><input type="radio" name="q10" value="A"> A. Encapsulation</label>
+            <label><input type="radio" name="q10" value="B"> B. Inheritance</label>
+            <label><input type="radio" name="q10" value="C"> C. Polymorphism</label>
+            <label><input type="radio" name="q10" value="D"> D. Dynamic Binding</label>
+        </div>
+        <div class="q-feedback" id="fb10"></div>
+    </div>
+
+    <button type="button" class="btn btn-primary" onclick="submitUas()">SUBMIT SIMULASI UAS</button>
+</form>
+
+</div>
+
+<script>
+    const answerKey = {
+        q1: 'B', q2: 'B', q3: 'C', q4: 'A', q5: 'B',
+        q6: 'C', q7: 'C', q8: 'B', q9: 'C', q10: 'A'
+    };
+
+    const explanations = {
+        q1: 'Tujuan utama IS adalah menciptakan value bagi organisasi.',
+        q2: 'TPS di era 1960 mengotomasikan transaksi berulang.',
+        q3: 'ERP mengintegrasikan data fungsional organisasi.',
+        q4: 'Urutan SDLC murni adalah Planning ➔ Analysis ➔ Design ➔ Implementation.',
+        q5: 'Fase Analysis menghasilkan System Proposal.',
+        q6: 'Fase Design menghasilkan System Specification.',
+        q7: 'Throw-away prototyping menghasilkan keandalan (reliability) paling tinggi.',
+        q8: 'XP identik dengan Pair Programming.',
+        q9: 'Change Management Analyst fokus pada orang & pelatihan.',
+        q10: 'Encapsulation membungkus data dan proses jadi satu entitas.'
+    };
+
+    function submitUas() {
+        let score = 0;
+        let total = Object.keys(answerKey).length;
+        let userAnswers = {};
+
+        for (let q in answerKey) {
+            let selected = document.querySelector(`input[name="${q}"]:checked`);
+            let card = document.getElementById(q);
+            let fb = document.getElementById('fb' + q.replace('q',''));
+
+            if (selected) {
+                userAnswers[q] = selected.value;
+                if (selected.value === answerKey[q]) {
+                    score += (100 / total);
+                    card.className = 'q-card correct';
+                    fb.className = 'q-feedback show correct-fb';
+                    fb.innerHTML = '✅ Benar! ' + explanations[q];
+                } else {
+                    card.className = 'q-card wrong';
+                    fb.className = 'q-feedback show wrong-fb';
+                    fb.innerHTML = '❌ Salah. Jawaban benar: ' + answerKey[q] + '. ' + explanations[q];
+                }
+            } else {
+                card.className = 'q-card wrong';
+                fb.className = 'q-feedback show wrong-fb';
+                fb.innerHTML = '⚠️ Kamu belum menjawab soal ini.';
+            }
+        }
+
+        document.getElementById('resultsBox').className = 'results-box show';
+        document.getElementById('scoreNum').innerText = Math.round(score) + ' / 100';
+
+        localStorage.setItem('anap_uas_simulation', JSON.stringify({ answers: userAnswers, score: score }));
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    window.onload = function() {
+        let saved = localStorage.getItem('anap_uas_simulation');
+        if (saved) {
+            let data = JSON.parse(saved);
+            for (let q in data.answers) {
+                let radio = document.querySelector(`input[name="${q}"][value="${data.answers[q]}"]`);
+                if (radio) radio.checked = true;
+            }
+            submitUas();
+        }
+    };
+</script>
+</body>
+</html>
