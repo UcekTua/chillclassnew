@@ -21,6 +21,18 @@ export default async function MaterialDetailPage({
   }
 
   if (material.category === "Interactive Module" && material.file_url) {
+    if (course.code === "EDAG-3") {
+      return (
+        <div className="absolute top-14 left-0 w-full h-[calc(100dvh-3.5rem)] flex flex-col bg-[#0d151a]">
+          <div className="shrink-0 border-b border-[#2b3b44] px-4 py-2 text-xs text-[#b5ecd0]">
+            <Link href={`/courses/${material.course_id}`} className="hover:underline">
+              ← Daftar materi E-Dagang
+            </Link>
+          </div>
+          <iframe src={material.file_url} className="w-full flex-1 min-h-0 border-0" title={material.title} />
+        </div>
+      )
+    }
     return (
       <div className="absolute top-14 left-0 w-full h-[calc(100vh-3.5rem)] z-0 bg-[#0a0e1a]">
         {/* Floating Back Button (Kiri Atas) */}

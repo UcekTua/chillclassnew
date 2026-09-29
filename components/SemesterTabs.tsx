@@ -9,8 +9,7 @@ export default function SemesterTabs() {
   const [activeSemester, setActiveSemester] = useState<number>(4)
   const [searchQuery, setSearchQuery] = useState("")
 
-  // Hardcode data khusus semester 4 menggunakan COURSES_DB
-  const courses = activeSemester === 4 ? Object.values(COURSES_DB) : []
+  const courses = Object.values(COURSES_DB).filter(course => course.semester === activeSemester)
   
   const filteredCourses = courses.filter(
     (c) =>

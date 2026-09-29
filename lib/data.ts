@@ -40,7 +40,24 @@ export const PENGSTAT_MATERIALS = [
   { id: "sim", title: 'Simulasi Kuis Essay PENGSTAT', category: 'Interactive Module', ai_summary: '', file_url: '/pengstat/simulasi-kuis.html' }
 ];
 
+export const EDAG_MATERIALS = [
+  { id: "idx", title: 'Ruang Belajar E-Dagang', category: 'Interactive Module', ai_summary: '', file_url: '/edag/index.html' },
+  ...[
+    'Fondasi E-Commerce', 'Mekanisme dan Platform', 'Retailing dalam EC',
+    'Business-to-Business', 'Sistem EC Inovatif', 'Mobile Commerce',
+    'Social dan Enterprise Commerce', 'Layanan Pendukung dan Strategi'
+  ].map((title, index) => ({ id: `ch${index + 1}`, title: `Modul ${index + 1}: ${title}`, category: 'Interactive Module', ai_summary: '', file_url: `/edag/chapter-${index + 1}.html` })),
+  { id: "sim", title: 'Simulasi Kuis 1 E-Dagang', category: 'Interactive Module', ai_summary: '', file_url: '/edag/simulasi-kuis-1.html' }
+];
+
 export const COURSES_DB = {
+  "edag-3-frontend": {
+    id: "edag-3-frontend",
+    name: "E-Dagang",
+    code: "EDAG-3",
+    semester: 3,
+    materials: EDAG_MATERIALS
+  },
   "sipa-4-frontend": {
     id: "sipa-4-frontend",
     name: "Sistem Informasi Perusahaan dan Akuntansi",

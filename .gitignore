@@ -40,6 +40,8 @@ lerna-debug.log*
 # 5. Testing & Coverage
 /coverage
 /.nyc_output
+/tmp/edag-qa/
+/tmp/pdfs/edag-3/
 
 # 6. Operating System Files
 .DS_Store
