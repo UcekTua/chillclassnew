@@ -191,4 +191,4 @@ Topik debat pada halaman yang sama dapat dianalisis dengan kerangka tujuan-pengg
 
 Semua S5 halaman 1-41 dan B5 halaman 1-24 telah diperiksa. B5 hanya mencakup halaman cetak 137-160. Daftar isi menyebut closing case **Henry Ford Health System** pada halaman cetak 162 dan daftar pustaka pada 162; keduanya tidak termuat. Lampiran online W5.1/W5.2/W5.3 juga tidak tersedia. Penyebutan kasus tersebut di dalam teks tidak cukup untuk mengklaim bahwa keseluruhan kasus sudah dipelajari.
 
-Bagian diagram yang semula tidak keluar pada ekstraksi teks (kategori SPBE, koordinasi/integrasi, tabel kinerja, penggerak e-learning, dan siklus KM) telah dibaca secara visual. Kuis memiliki pertanyaan di luar lima bab; rujuk catatan kuis dan pendalaman lintas topik untuk batas dan sumber tambahannya.
+Bagian diagram yang semula tidak keluar pada ekstraksi teks (kategori SPBE, koordinasi/integrasi, tabel kinerja, penggerak e-learning, dan siklus KM) telah dibaca secara visual. Kuis memiliki pertanyaan di luar lima bab; hanya konsep yang didukung Chapter 1–5 digunakan dalam halaman pembelajaran dan simulasi.

@@ -8,6 +8,11 @@ const browser = await chromium.launch({headless:true,...(executablePath?{executa
 try {
   const page = await browser.newPage({viewport:{width:1440,height:1000},reducedMotion:'reduce'});
   const errors=[];page.on('pageerror',e=>errors.push(e.message));
+  for(const id of [6,7,8]) {
+    assert.equal((await page.request.get(`${base}/courses/edag-3-frontend/materials/ch${id}`)).status(),404);
+    assert.equal((await page.request.get(`${base}/edag/chapter-${id}.html`)).status(),404);
+    assert.equal((await page.request.get(`${base}/edag/latihan-${id}.html`)).status(),404);
+  }
   await page.goto(base);
   await page.getByRole('button',{name:'Semester 3',exact:true}).click();
   await page.getByRole('link').filter({hasText:'EDAG-3'}).click();
@@ -16,7 +21,7 @@ try {
   await page.getByRole('link').filter({hasText:'Ruang Belajar E-Dagang'}).click();
   await expect(page).toHaveURL(/materials\/idx$/);
   const frame=page.frameLocator('iframe');
-  await expect(frame.locator('.module-card')).toHaveCount(8);
+  await expect(frame.locator('.module-card')).toHaveCount(5);
   await expect(frame.locator('h1')).toContainText('perdagangan digital');
   const bounds = await page.locator('iframe').boundingBox();
   const back = await page.getByRole('link',{name:'← Daftar materi E-Dagang'}).boundingBox();
@@ -33,5 +38,5 @@ try {
   await page.screenshot({path:'tmp/edag-qa/portal-mobile.png'});
   await page.getByRole('link',{name:'← Daftar materi E-Dagang'}).click();await expect(page).toHaveURL(/courses\/edag-3-frontend$/);
   assert.deepEqual(errors,[]);
-  console.log('PASS production portal: Semester 3 → EDAG → embedded lesson → practice → mobile simulation → course return');
+  console.log('PASS production portal: only Chapters 1–5; excluded routes return 404; Semester 3 → lesson → practice → mobile simulation → course return');
 } finally {await browser.close();}

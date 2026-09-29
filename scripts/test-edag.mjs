@@ -9,16 +9,23 @@ import questions from './edag-exam.mjs';
 const generated = { window: {} };
 vm.runInNewContext(fs.readFileSync('public/edag/lessons.js', 'utf8'), generated);
 const lessons = generated.window.EDAG_LESSONS;
-assert.equal(lessons.length, 8);
-assert.equal(questions.length, 110);
-assert.equal(new Set(questions.map(q => q.prompt)).size, 110);
-assert.equal(new Set(questions.map(q => q.id)).size, 110);
-for (let id = 1; id <= 8; id++) assert.equal(questions.filter(q => q.pool === 'practice' && q.chapter === id).length, 10);
+assert.equal(lessons.length, 5);
+assert.equal(lessons.reduce((n,l)=>n+l.sections.length,0),57);
+assert.equal(questions.length, 80);
+assert.equal(new Set(questions.map(q => q.prompt)).size, 80);
+assert.equal(new Set(questions.map(q => q.id)).size, 80);
+assert(questions.every(q=>q.chapter>=1&&q.chapter<=5));
+for (let id = 1; id <= 5; id++) assert.equal(questions.filter(q => q.pool === 'practice' && q.chapter === id).length, 10);
+for (const id of [6,7,8]) for(const prefix of ['chapter','latihan']) assert(!fs.existsSync(`public/edag/${prefix}-${id}.html`),'Out-of-scope page remains');
 const exam = questions.filter(q => q.pool === 'exam');
 assert.equal(exam.length, 30);
 assert.equal(exam.filter(q => q.type === 'mc').length, 15);
 assert.equal(exam.filter(q => q.type === 'tf').length, 15);
-for (const chapter of [5,6,7]) assert.equal(exam.filter(q => q.chapter === chapter).length, 10);
+for (const chapter of [1,2,3,4,5]) {
+  assert.equal(exam.filter(q => q.chapter === chapter).length, 6);
+  assert.equal(exam.filter(q => q.chapter === chapter && q.type==='mc').length, 3);
+  assert.equal(exam.filter(q => q.chapter === chapter && q.type==='tf').length, 3);
+}
 for (const q of questions) {
   assert(lessons.find(l => l.id === q.chapter)?.sections.some(s => s.id === q.section), `Missing reference ${q.id}`);
   assert(q.reason.length > 90 && q.source.length > 10, `Explanation ${q.id}`);
@@ -56,17 +63,18 @@ try {
   const overflow = async () => assert(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth+1), `Horizontal overflow ${page.url()}`);
   const state = key => page.evaluate(k => JSON.parse(localStorage.getItem(k)), key);
   const practiceKey = 'edag.quiz.v2.practice.1';
-  const examKey = 'edag.quiz.v2.exam';
+  const examKey = 'edag.quiz.v3.exam';
   const chooseCorrect = async key => {
     const s = await state(key); const q = questions.find(q => q.id === s.ids[s.index]);
     await page.locator(`input[name=answer][value="${q.answer}"]`).check();
   };
-  await go('index.html'); await expect(page.locator('.module-card')).toHaveCount(8); await overflow();
+  await go('index.html'); await expect(page.locator('.module-card')).toHaveCount(5); await overflow();
+  await expect(page.locator('a[href*="chapter-6"],a[href*="chapter-7"],a[href*="chapter-8"]')).toHaveCount(0);
   await screenshot('desktop-home.png',true);
   await page.locator('#search').fill('penny auction'); await expect(page.locator('.search-result')).toHaveCount(1);
   await page.locator('.search-result').click(); await expect(page).toHaveURL(/chapter-2\.html#s8$/);
   results.push('Search indexes deep lesson content and links to the correct section');
-  for (let i=1;i<=8;i++) {
+  for (let i=1;i<=5;i++) {
     await go(`chapter-${i}.html`);
     await expect(page.locator('.lesson-section')).toHaveCount(lessons[i-1].sections.length);
     await overflow();
@@ -82,7 +90,8 @@ try {
   await page.locator('#theme').click();
   await go('chapter-4.html'); await page.locator('#seller-count').selectOption('many');await page.locator('#buyer-count').selectOption('one');await expect(page.locator('#lab-result')).toContainText('Reverse auction');
   await go('chapter-5.html');await page.locator('#km-activity').selectOption('refine');await expect(page.locator('#lab-result')).toContainText('Refine');
-  results.push('All 81 lesson sections, anchors, reading persistence, theme, and three concept labs');
+  await expect(page.locator('.next-nav a').last()).toHaveAttribute('href','simulasi-kuis-1.html');
+  results.push('Only five chapters / 57 sections; Chapter 5 advances to simulation; reading persistence, theme, and three concept labs');
   await go('latihan-1.html');await page.locator('#start-quiz').click();await expect(page.locator('#check')).toBeDisabled();
   await chooseCorrect(practiceKey);await page.locator('#flag').click();
   const first = await state(practiceKey);await page.reload();assert.deepEqual(await state(practiceKey),first);
@@ -105,7 +114,14 @@ try {
   assert.equal((await state('edag.progress.v1')).read['1-s1'],true);
   await page.reload();await expect(page.locator('.result-score')).toContainText('100');
   results.push('Practice: correct/wrong/blank scoring, explanation lock, saved order/flags, filters, retry, perfect score, best score');
-  for(let i=2;i<=8;i++){await go(`latihan-${i}.html`);await page.locator('#start-quiz').click();await expect(page.locator('.qjump')).toHaveCount(10);}
+  for(let i=2;i<=5;i++){await go(`latihan-${i}.html`);await page.locator('#start-quiz').click();await expect(page.locator('.qjump')).toHaveCount(10);}
+  // A completed old-scope attempt must not resume or set the new exam's best score.
+  await page.evaluate(()=>{
+    localStorage.setItem('edag.quiz.v2.exam',JSON.stringify({version:2,submitted:true,ids:['exam-6-1']}));
+    const progress=JSON.parse(localStorage.getItem('edag.progress.v1'));
+    progress.scores.exam={best:30,last:30,total:30};progress.read['6-s1']=true;
+    localStorage.setItem('edag.progress.v1',JSON.stringify(progress));
+  });
   await go('simulasi-kuis-1.html');await page.locator('#timed').uncheck();await page.locator('#start-quiz').click();
   await expect(page.locator('#timer')).toHaveText('Tanpa timer');await expect(page.locator('#check')).toHaveCount(0);
   await chooseCorrect(examKey);await page.locator('#flag').click();await expect(page.locator('.feedback')).toHaveCount(0);
@@ -113,6 +129,9 @@ try {
   await screenshot('desktop-exam.png');
   await page.locator('#finish').click();await page.locator('#dialog-yes').click();await expect(page.locator('.result-hero')).toContainText('1 benar · 0 salah · 29 kosong');
   await expect(page.locator('.review-card')).toHaveCount(30);
+  await expect(page.locator('.topic-result')).toHaveCount(5);
+  assert.equal((await state('edag.progress.v1')).scores['exam-ch1-5-v3'].best,1);
+  assert.equal((await state('edag.progress.v1')).scores['practice-1'].best,10);
   await page.locator('#retry').click();await page.locator('#dialog-yes').click();await page.locator('#start-quiz').click();
   s=await state(examKey);assert(Math.abs(s.deadline-s.started-2700000)<1000);
   await page.evaluate(k=>{const s=JSON.parse(localStorage.getItem(k));s.deadline=Date.now()-100;localStorage.setItem(k,JSON.stringify(s));},examKey);
@@ -121,7 +140,7 @@ try {
   await page.locator('#retry').click();await page.locator('#dialog-yes').click();await page.locator('#start-quiz').click();
   await page.evaluate(k=>{const s=JSON.parse(localStorage.getItem(k));s.deadline=Date.now()+1800;localStorage.setItem(k,JSON.stringify(s));},examKey);
   await page.reload();await page.locator('#finish').click();await expect(page.locator('.result-hero')).toContainText('Waktu habis',{timeout:6000});await expect(page.locator('[role=dialog]')).toHaveCount(0);
-  results.push('Exam: 30 questions, no early feedback, untimed mode, timer persistence and auto-submit including open dialog');
+  results.push('Chapter 1–5 exam: 30 questions, isolated old scores, five chapter diagnostics, no early feedback, timer persistence and auto-submit');
   await page.evaluate(k=>localStorage.setItem(k,'{broken'),examKey);await page.reload();await expect(page.locator('#start-quiz')).toBeVisible();
   await page.locator('#start-quiz').click();await page.evaluate(k=>{const s=JSON.parse(localStorage.getItem(k));s.order[s.ids[0]]=[999];localStorage.setItem(k,JSON.stringify(s));},examKey);await page.reload();await expect(page.locator('#start-quiz')).toBeVisible();
   const blocked=await context.newPage();await blocked.addInitScript(()=>{Storage.prototype.setItem=function(){throw new Error('disabled');};});
@@ -133,7 +152,10 @@ try {
   await go('chapter-3.html');await overflow();await screenshot('mobile-chapter.png');
   await go('latihan-1.html');await overflow();await page.locator('.review-card summary').first().click();await overflow();await screenshot('mobile-review.png');
   await go('simulasi-kuis-1.html');await page.locator('#start-quiz').click();await overflow();await screenshot('mobile-exam.png',true);
-  await go('sumber.html');await overflow();await go('audit-kuis.html');await expect(page.locator('.audit-content')).toContainText('Q1');await overflow();
+  await go('sumber.html');await overflow();await expect(page.locator('.audit-content')).toContainText('324');
+  await go('audit-kuis.html');await expect(page.locator('.audit-content')).toContainText('Q1');await overflow();
+  assert.equal(await page.locator('.audit-content h3').filter({hasText:/Q[12]-\d\d/}).count(),15);
+  await expect(page.locator('.audit-content')).not.toContainText('Q1-29');
   results.push('390px layouts: home, chapters, results, exam, source audit; mobile menu keyboard dismissal');
   assert.deepEqual(errors,[],'Browser runtime errors');
   fs.writeFileSync(path.join(output,'results.json'),JSON.stringify({passed:true,questions:questions.length,sections:lessons.reduce((n,l)=>n+l.sections.length,0),results},null,2));

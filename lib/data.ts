@@ -44,8 +44,7 @@ export const EDAG_MATERIALS = [
   { id: "idx", title: 'Ruang Belajar E-Dagang', category: 'Interactive Module', ai_summary: '', file_url: '/edag/index.html' },
   ...[
     'Fondasi E-Commerce', 'Mekanisme dan Platform', 'Retailing dalam EC',
-    'Business-to-Business', 'Sistem EC Inovatif', 'Mobile Commerce',
-    'Social dan Enterprise Commerce', 'Layanan Pendukung dan Strategi'
+    'Business-to-Business', 'Sistem EC Inovatif'
   ].map((title, index) => ({ id: `ch${index + 1}`, title: `Modul ${index + 1}: ${title}`, category: 'Interactive Module', ai_summary: '', file_url: `/edag/chapter-${index + 1}.html` })),
   { id: "sim", title: 'Simulasi Kuis 1 E-Dagang', category: 'Interactive Module', ai_summary: '', file_url: '/edag/simulasi-kuis-1.html' }
 ];
