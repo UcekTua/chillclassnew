@@ -14,6 +14,12 @@ Seluruh 15 PDF dalam folder EDAG-3 telah diinventarisasi: **10 PDF materi berisi
 
 Materi tersusun menjadi **5 modul, 57 topik, dan 50 latihan**. Setiap modul memiliki sepuluh soal beserta alasan jawaban dan pembahasan setiap opsi. Semua tautan pembahasan kembali ke bagian Chapter 1–5.
 
+## Alur belajar dari nol
+
+Setiap topik dimulai dengan penjelasan bertahap, arti istilah teknis yang tetap memakai nama umumnya, serta contoh atau analogi. BukuKampus adalah contoh fiktif yang digunakan berulang untuk menghubungkan konsep. Angka pada contoh hitungan merupakan ilustrasi belajar.
+
+Ada **57 cek pemahaman**, masing-masing dengan pembahasan yang bisa dibuka setelah mencoba menjawab. Cek ini membantu persiapan sebelum 50 soal latihan analitis dan 30 soal simulasi. Rincian konsep, kasus, tabel, dan halaman sumber tetap tersedia melalui **Detail materi dan rujukan sumber** pada setiap topik. Alat interaktif ditempatkan setelah konsep yang diperlukannya dijelaskan.
+
 ## Bentuk simulasi
 
 Simulasi Kuis 1 berisi **30 soal baru: 15 pilihan ganda dengan lima opsi dan 15 benar/salah**. Bentuk ini mengikuti kuis acuan, sedangkan distribusi topik disesuaikan dengan cakupan yang ditetapkan: **enam soal setiap chapter**, masing-masing tiga pilihan ganda dan tiga benar/salah.

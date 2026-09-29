@@ -16,11 +16,11 @@ const combined = read('03-04-retailing-dan-b2b.md');
 const retail = combined.split('## Bab 3 — Retailing dalam electronic commerce')[1].split('## Bab 4 — Business-to-business e-commerce')[0].replace(/^### /gm, '## ');
 const b2b = combined.split('## Bab 4 — Business-to-business e-commerce')[1].split('## Miskonsepsi lintas bab')[0].replace(/^### /gm, '## ');
 const definitions = [
-  ['Fondasi e-commerce', 'Pelaku, nilai, dan model bisnis', 'Mulai dengan membedakan transaksi digital, organisasi digital, dan cara bisnis menciptakan nilai.', 'inti', '01-fondasi.md', ['Klasifikasikan transaksi dari pelakunya', 'Bedakan pure, partial, dan pure-play', 'Hubungkan canvas dengan nilai dan pendapatan'], ['S1 · 27 halaman', 'B1 · 26 halaman']],
-  ['Mekanisme & platform', 'Cara pasar digital bekerja', 'Telusuri pencarian, pembentukan harga, perantara, dan platform yang mempertemukan para pihak.', 'inti', '02-mekanisme.md', ['Petakan front end dan back end', 'Bedakan struktur pasar dan lelang', 'Analisis AR, komunitas, dan crowdsourcing'], ['S2 · 38 halaman', 'B2 · 26 halaman']],
-  ['Retailing dalam EC', 'Dari katalog ke pengalaman pelanggan', 'Pelajari produk, layanan, alat bantu keputusan, integrasi operasi, dan konflik antarkanal.', 'inti', null, ['Nilai kesesuaian produk dan fulfillment', 'Jelaskan layanan retail digital', 'Rancang pengalaman lintas kanal'], ['S3 · 42 halaman', 'B3 · 28 halaman']],
-  ['Business-to-business', 'Pengadaan, pertukaran, kolaborasi', 'Bedah pembelian organisasi dari kebutuhan, sourcing, dan tender sampai hubungan pemasok.', 'inti', null, ['Pisahkan sumbu klasifikasi B2B', 'Pilih mekanisme pengadaan yang tepat', 'Hubungkan SCM, PRM, dan kolaborasi'], ['S4 · 41 halaman', 'B4 · 31 halaman']],
-  ['Sistem EC inovatif', 'Pemerintah, pengetahuan, dan layanan', 'Hubungkan e-government, pembelajaran, knowledge management, e-health, dan transaksi antarindividu.', 'inti', '05-sistem-ec-inovatif.md', ['Petakan G2C, G2B, G2G, G2E dan IEE', 'Jelaskan LMS, siklus KM, dan ELS', 'Analisis e-health dan mekanisme C2C'], ['S5 · 41 halaman', 'B5 · 24 halaman']],
+  ['Fondasi e-commerce', 'Mengenal e-commerce dari nol', 'Ikuti perjalanan satu pesanan buku untuk memahami e-commerce, pelaku bisnis, dan cara memperoleh pendapatan.', 'inti', '01-fondasi.md', ['Jelaskan e-commerce dan e-business dengan contoh sehari-hari', 'Bedakan pihak yang bertransaksi dan cara toko berjualan', 'Jelaskan manfaat bisnis bagi pelanggan serta hitung pendapatan sederhananya'], ['S1 · 27 halaman', 'B1 · 26 halaman']],
+  ['Mekanisme & platform', 'Cara pasar digital bekerja', 'Pelajari apa yang terjadi saat orang mencari produk, bertemu penjual, membandingkan harga, dan membuat pesanan.', 'inti', '02-mekanisme.md', ['Ikuti alur dari halaman pembeli ke pekerjaan di belakang layar', 'Bedakan cara toko, pasar, perantara, dan lelang bekerja', 'Jelaskan bagaimana komunitas dan alat digital membantu pengguna'], ['S2 · 38 halaman', 'B2 · 26 halaman']],
+  ['Retailing dalam EC', 'Dari memilih produk sampai menerima pesanan', 'Gunakan contoh buku, tiket, dan layanan untuk memahami penjualan online serta pekerjaan yang membuat pesanan sampai.', 'inti', null, ['Jelaskan penjualan kepada konsumen dan alur pemenuhan pesanan', 'Bandingkan kebutuhan membeli barang dengan memesan layanan', 'Jelaskan cara toko fisik dan online bekerja bersama'], ['S3 · 42 halaman', 'B3 · 28 halaman']],
+  ['Business-to-business', 'Ketika organisasi berbelanja', 'Ikuti pengadaan laptop kampus: siapa menentukan kebutuhan, bagaimana pemasok dipilih, dan kapan pembayaran dilakukan.', 'inti', null, ['Kenali pihak dan peran dalam pembelian antarorganisasi', 'Pilih cara meminta serta membandingkan penawaran pemasok', 'Jelaskan bagaimana data dan kerja sama membantu pasokan'], ['S4 · 41 halaman', 'B4 · 31 halaman']],
+  ['Sistem EC inovatif', 'Sistem digital untuk pelayanan dan pengetahuan', 'Mulai dari mengurus dokumen, belajar online, dan berbagi panduan kerja untuk memahami penggunaan sistem digital yang lebih luas.', 'inti', '05-sistem-ec-inovatif.md', ['Bedakan pengguna dan tujuan layanan pemerintah digital', 'Jelaskan cara sistem membantu belajar dan berbagi pengetahuan', 'Kenali alur informasi kesehatan dan transaksi antarindividu'], ['S5 · 41 halaman', 'B5 · 24 halaman']],
 ];
 if (questions.some(q => q.chapter < 1 || q.chapter > definitions.length)) throw new Error('Question exceeds Chapter 1–5 scope');
 const render = source => renderToStaticMarkup(React.createElement(Markdown, {
@@ -31,12 +31,28 @@ const render = source => renderToStaticMarkup(React.createElement(Markdown, {
   }, children: source,
 }));
 const lessons = definitions.map((d, i) => {
-  let src = i === 2 ? retail : i === 3 ? b2b : read(d[4]);
-  const sections = src.split(/^## /m).slice(1).map((chunk, n) => {
+  const src = i === 2 ? retail : i === 3 ? b2b : read(d[4]);
+  const guide = read(`panduan-pemula/${String(i + 1).padStart(2, '0')}.md`);
+  const [intro, ...guidedSections] = guide.split(/^## /m);
+  const detailedSections = src.split(/^## /m).slice(1);
+  if (guidedSections.length !== detailedSections.length) throw new Error(`Chapter ${i + 1}: guide must cover all ${detailedSections.length} source sections`);
+  const sections = guidedSections.map((chunk, n) => {
     const [heading, ...rest] = chunk.split('\n');
-    return { id: `s${n + 1}`, title: heading.replace(/^\d+(?:\.\d+)?[.\s]+/, '').replaceAll('**', '').trim(), html: render(rest.join('\n')), text: rest.join('\n').replace(/[*#|]/g, ' ') };
+    const parts = rest.join('\n').split(/^### Cek pemahaman\s*$/m);
+    if (parts.length !== 2) throw new Error(`Chapter ${i + 1} section ${n + 1}: expected one checkpoint`);
+    const [question, answer, extra] = parts[1].split('**Jawaban:**');
+    if (!question?.trim() || !answer?.trim() || extra !== undefined) throw new Error(`Chapter ${i + 1} section ${n + 1}: incomplete checkpoint`);
+    const detail = detailedSections[n].split('\n').slice(1).join('\n');
+    return {
+      id: `s${n + 1}`,
+      title: heading.replace(/^\d+(?:\.\d+)?[.\s]+/, '').replaceAll('**', '').trim(),
+      html: render(parts[0]),
+      detailHtml: render(detail),
+      checkpoint: { questionHtml: render(question), answerHtml: render(answer) },
+      text: `${rest.join('\n')}\n${detail}`.replace(/[*#|]/g, ' '),
+    };
   });
-  return { id: i + 1, title: d[0], subtitle: d[1], description: d[2], kind: d[3], objectives: d[5], sources: d[6], minutes: Math.max(25, Math.round(src.split(/\s+/).length / 130)), sections };
+  return { id: i + 1, title: d[0], subtitle: d[1], description: d[2], kind: d[3], objectives: d[5], sources: d[6], introHtml: render(intro.replace(/^# .*\r?\n/, '')), minutes: Math.max(25, Math.round(guide.split(/\s+/).length / 130)), sections };
 });
 fs.writeFileSync(path.join(out, 'lessons.js'), `window.EDAG_LESSONS = ${JSON.stringify(lessons)};\n`);
 const html = (title, page, chapter = '') => `<!doctype html>

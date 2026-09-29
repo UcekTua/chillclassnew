@@ -11,6 +11,17 @@ vm.runInNewContext(fs.readFileSync('public/edag/lessons.js', 'utf8'), generated)
 const lessons = generated.window.EDAG_LESSONS;
 assert.equal(lessons.length, 5);
 assert.equal(lessons.reduce((n,l)=>n+l.sections.length,0),57);
+for (const lesson of lessons) {
+  assert(lesson.introHtml.length > 100, `Missing beginner introduction: ${lesson.id}`);
+  for (const section of lesson.sections) {
+    const location = `${lesson.id}-${section.id}`;
+    assert(section.html.length > 700, `Missing guided explanation: ${location}`);
+    assert(section.detailHtml.length > 100, `Missing source detail: ${location}`);
+    assert(section.checkpoint.questionHtml.length > 35, `Missing checkpoint: ${location}`);
+    assert(section.checkpoint.answerHtml.length > 90, `Missing checkpoint explanation: ${location}`);
+    assert(!section.html.includes('**Jawaban:**'), `Answer leaked into primary reading: ${location}`);
+  }
+}
 assert.equal(questions.length, 80);
 assert.equal(new Set(questions.map(q => q.prompt)).size, 80);
 assert.equal(new Set(questions.map(q => q.id)).size, 80);
@@ -77,11 +88,29 @@ try {
   for (let i=1;i<=5;i++) {
     await go(`chapter-${i}.html`);
     await expect(page.locator('.lesson-section')).toHaveCount(lessons[i-1].sections.length);
+    await expect(page.locator('.checkpoint')).toHaveCount(lessons[i-1].sections.length);
+    await expect(page.locator('.source-detail')).toHaveCount(lessons[i-1].sections.length);
+    await expect(page.locator('.lesson-intro')).toBeVisible();
+    await expect(page.locator('#s1 .checkpoint-answer > .prose')).toBeHidden();
+    await expect(page.locator('#s1 .source-detail > .prose')).toBeHidden();
+    await page.locator('#s1 .checkpoint-answer summary').focus();
+    await page.keyboard.press('Enter');
+    await expect(page.locator('#s1 .checkpoint-answer > .prose')).toBeVisible();
+    await page.locator('#s1 .source-detail summary').click();
+    await expect(page.locator('#s1 .source-detail > .prose')).toBeVisible();
+    const labSection = {1:'s2',4:'s5',5:'s5'}[i];
+    if (labSection) {
+      await expect(page.locator(`#${labSection} .lab`)).toHaveCount(1);
+      assert(await page.locator(`#${labSection}`).evaluate(el => !!(el.querySelector('.lesson-explanation').compareDocumentPosition(el.querySelector('.lab')) & Node.DOCUMENT_POSITION_FOLLOWING)));
+    }
     await overflow();
     const broken = await page.locator('.outline a').evaluateAll(as => as.filter(a => !document.getElementById(a.hash.slice(1))).map(a => a.hash));
     assert.deepEqual(broken,[]);
   }
   await go('chapter-1.html');
+  await expect(page.locator('#s1 .lesson-explanation')).toContainText('BukuKampus');
+  await expect(page.locator('#s1 .lesson-explanation')).toContainText('electronic commerce');
+  await page.locator('#s1').screenshot({path:path.join(output,'desktop-beginner-section.png')});
   await page.locator('[data-section="s1"]').check(); await page.reload(); await expect(page.locator('[data-section="s1"]')).toBeChecked();
   await page.locator('#digit-1').selectOption('digital'); await page.locator('#digit-2').selectOption('digital');
   await expect(page.locator('#lab-result')).toContainText('Pure EC');
@@ -92,6 +121,7 @@ try {
   await go('chapter-5.html');await page.locator('#km-activity').selectOption('refine');await expect(page.locator('#lab-result')).toContainText('Refine');
   await expect(page.locator('.next-nav a').last()).toHaveAttribute('href','simulasi-kuis-1.html');
   results.push('Only five chapters / 57 sections; Chapter 5 advances to simulation; reading persistence, theme, and three concept labs');
+  results.push('57 beginner explanations with explained checkpoints and expandable source details; keyboard access; labs follow relevant concepts');
   await go('latihan-1.html');await page.locator('#start-quiz').click();await expect(page.locator('#check')).toBeDisabled();
   await chooseCorrect(practiceKey);await page.locator('#flag').click();
   const first = await state(practiceKey);await page.reload();assert.deepEqual(await state(practiceKey),first);
@@ -150,6 +180,16 @@ try {
   await go('index.html');await overflow();await page.locator('#menu').click();await expect(page.locator('#menu')).toHaveAttribute('aria-expanded','true');await page.keyboard.press('Escape');await expect(page.locator('#menu')).toHaveAttribute('aria-expanded','false');
   await screenshot('mobile-home.png',true);
   await go('chapter-3.html');await overflow();await screenshot('mobile-chapter.png');
+  for (let i=1;i<=5;i++) {
+    await go(`chapter-${i}.html`);
+    await page.locator('#s1 .checkpoint-answer summary').click();
+    await expect(page.locator('#s1 .checkpoint-answer > .prose')).toBeVisible();
+    await overflow();
+    if (i===1) await page.locator('#s1').screenshot({path:path.join(output,'mobile-beginner-section.png')});
+    await page.locator('#s1 .source-detail summary').click();
+    await expect(page.locator('#s1 .source-detail > .prose')).toBeVisible();
+    await overflow();
+  }
   await go('latihan-1.html');await overflow();await page.locator('.review-card summary').first().click();await overflow();await screenshot('mobile-review.png');
   await go('simulasi-kuis-1.html');await page.locator('#start-quiz').click();await overflow();await screenshot('mobile-exam.png',true);
   await go('sumber.html');await overflow();await expect(page.locator('.audit-content')).toContainText('324');
